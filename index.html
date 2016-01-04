@@ -23,18 +23,41 @@
   <meta name="twitter:description" content=""/>
   <meta name="twitter:image:src" content="http://thejoin95.github.io/img.jpg"/>
 
+  <link href="./assets/css/main.css" rel="stylesheet">
   <!-- Roboto:400,400italic,700,700italic,300,300italic,900,900italic,100italic,100,500,500italic -->
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic,300,300italic' rel='stylesheet' type='text/css'>
 </head>
 <body>
-  <div id="particles-js-top"></div>
+  <div class="container-top">
+    <div id="particles-js-top"></div>
+    <div class="image-top" id="bg-img" style="background-image: url('./assets/images/physics.jpg');"></div>
+  </div>
+  <div id="video-top" class="fullscreen-bg">
+    <video loop muted autoplay poster="./assets/video/videoframe.jpg" class="fullscreen-bg__video">
+      <source src="./assets/video/inspired.webm" type="video/webm">
+    </video>
+  </div>
   <footer>
-    <script src="./assets/bower_components/particles.js/particles.js" type="text/javascript"></script>
+    <script src="./assets/bower_components/particles.js/particles.min.js" type="text/javascript"></script>
     <script>
+    "use strict";
       window.addEventListener('load', function() {
-        particlesJS.load('particles-js-top', './assets/bower_components/particles.js/particlesjs-config.json', function() {
-          console.log('callback - particles.js config loaded');
-        });
+        var imageAvailable = ['physics.jpg', 'road.jpg', 'camera.jpg', 'foresta.jpg', 'guitar.jpg', 'time.jpg'];
+        var d = new Date();
+        var timestamp = d.getTime();
+        console.log(timestamp % 5);
+        if(timestamp % 5 != 0) {
+          var randNum = timestamp % 6;
+          document.getElementById('bg-img').style.backgroundImage = "url('./assets/images/"+imageAvailable[randNum]+"')";
+          var el = document.getElementById('video-top');
+          el.parentNode.removeChild(el);
+          particlesJS.load('particles-js-top', './assets/bower_components/particles.js/particlesjs-config.json', function() {
+            console.log('callback - particles.js config loaded');
+          });
+        }else{
+          var el = document.getElementsByClassName('container-top')[0];
+          el.parentNode.removeChild(el);
+        }
       });
     </script>
   </footer>

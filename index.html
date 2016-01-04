@@ -30,10 +30,10 @@
 <body>
   <div class="container-top">
     <div id="particles-js-top"></div>
-    <div class="image-top" id="bg-img" style="background: #f2f2f2;"></div>
+    <div class="image-top" id="bg-img" ></div>
   </div>
   <div id="video-top" class="fullscreen-bg">
-    <video loop muted autoplay poster="./assets/video/videoframe.jpg" class="fullscreen-bg__video">
+    <video loop muted autoplay poster="./assets/iamges/poster.png" class="fullscreen-bg__video">
       <source src="./assets/video/inspired.webm" type="video/webm">
         Sorry, your browser does not support HTML5 video.
     </video>
@@ -49,7 +49,7 @@
         console.log(timestamp % 5);
         if(timestamp % 5 != 0) {
           var randNum = timestamp % 6;
-          document.getElementById('bg-img').style.background = "url('./assets/images/"+imageAvailable[randNum]+"')";
+          document.getElementById('bg-img').style.backgroundImage = "url('./assets/images/"+imageAvailable[randNum]+"')";
           var el = document.getElementById('video-top');
           el.parentNode.removeChild(el);
           particlesJS.load('particles-js-top', './assets/bower_components/particles.js/particlesjs-config.json', function() {
@@ -58,7 +58,6 @@
         }else{
           var el = document.getElementsByClassName('container-top')[0];
           el.parentNode.removeChild(el);
-          document.getElementsByClassName('fullscreen-bg__video')[0].play();
         }
       });
     </script>

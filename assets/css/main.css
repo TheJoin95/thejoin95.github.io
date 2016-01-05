@@ -66,3 +66,11 @@ body {
   position: relative;
   z-index: 99999;
 }
+
+/*
+  * header
+*/
+header{
+  background: transparent linear-gradient(0deg, transparent 0px, rgba(0, 0, 0, 0.5) 100%) repeat scroll 0% 0%;
+  padding: 85px 0 0 85px;
+}

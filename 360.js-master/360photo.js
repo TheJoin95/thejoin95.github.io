@@ -41,6 +41,8 @@ function startTHREE()
         document.addEventListener( 'mouseup', onDocumentMouseUp, false );
         document.addEventListener( 'mousewheel', onDocumentMouseWheel, false );
         document.addEventListener( 'DOMMouseScroll', onDocumentMouseWheel, false);
+        document.addEventListener( 'touchstart', onDocumentMouseDown, false );
+		document.addEventListener( 'touchmove', onDocumentMouseMove, false );
 
         //
 
@@ -56,6 +58,31 @@ function startTHREE()
         renderer.setSize( window.innerWidth, window.innerHeight );
 
     }
+    
+    // function onDocumentTouchStart( event ) {
+
+	//	event.preventDefault();
+
+    //    isUserInteracting = true;
+
+    //    onPointerDownPointerX = event.clientX;
+    //    onPointerDownPointerY = event.clientY;
+
+    //    onPointerDownLon = lon;
+    //    onPointerDownLat = lat;
+
+	// }
+
+	// function onDocumentTouchMove( event ) {
+
+	//	if ( isUserInteracting ) {
+
+    //        lon = ( onPointerDownPointerX - event.clientX ) * 0.1 + onPointerDownLon;
+    //        lat = ( event.clientY - onPointerDownPointerY ) * 0.1 + onPointerDownLat;
+
+    //    }
+
+	// }
 
     function onDocumentMouseDown( event ) {
 

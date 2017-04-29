@@ -32,7 +32,7 @@ layout: default
         {% if page.category != nil %}<br/>
         category: <a class="codinfox-tag-mark" href="{{ site.url }}/category/#{{ page.category | slugify }}">{{page.category}}</a>
         {% endif %}
-        {% if page.tags != empty %}
+        {% if page.tags != nil %}
         | tags: 
         {% for tag in page.tags %}
         <a class="codinfox-tag-mark" href="{{ site.url }}/tag/#{{ tag | slugify }}">{{ tag }}</a>

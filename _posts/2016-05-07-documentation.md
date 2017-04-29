@@ -1,7 +1,16 @@
-[Demo](http://webjeda.com/krishna)
+---
+layout: post
+title: Documentation
+icon: book
+---
+
+* Do not remove this line (it will not be displayed) 
+{:toc}
 
 # Features:
-Krishna is a minimal theme made for code based blogs and project showcases. Suitable fonts are selected for better readability. Since the theme is created for smartphone reading.
+Krishna is a minimal theme made for code based blogs and project showcases.
+
+Suitable fonts are selected for better readability. Since the theme is created for smartphone reading.
 
 # Installation: 
 Fork the ``master`` branch and delete ``gh-pages`` branch in it. This is important because ``gh-pages`` branch is used here only to host the blog. You should be using the master branch as the source and create a fresh ``gh-pages`` branch.
@@ -27,17 +36,18 @@ This process will host the theme as a **Project Page**. You can also download th
 
 The default theme will look like this
 
-![webjeda krishna jekyll theme](https://github.com/sharu725/krishna/raw/gh-pages/images/krishna-minimal-jekyll-theme-menu-bar-1.png)
+![webjeda krishna jekyll theme]({{site.baseurl}}/images/krishna-minimal-jekyll-theme-menu-bar-1.png)
 
 
 Expanded menu bar would look like this
 
-![webjeda krishna jekyll theme sidebar](https://github.com/sharu725/krishna/raw/gh-pages/images/krishna-minimal-jekyll-theme-menu-bar-2.png)
+![webjeda krishna jekyll theme sidebar]({{site.baseurl}}/images/krishna-minimal-jekyll-theme-menu-bar-2.png)
 
 
 This theme is made especially for smartphones.
 
-![webjeda krishna responsive jekyll theme](https://github.com/sharu725/krishna/raw/gh-pages/images/krishna-minimal-jekyll-theme-menu-bar-responsive.png)
+![webjeda krishna responsive jekyll theme]({{site.baseurl}}/images/krishna-minimal-jekyll-theme-menu-bar-responsive.png)
+{: style="text-align:center"}
 
 # Development
 Make changes to the **master** branch and create a pull request. Do not use **gh-pages** branch as it is used to host the theme.

@@ -1,15 +1,47 @@
 ### your site title here
 
-title: Krishna
+title: TheJoin
+description: TheJoin - Programmer blog
+url: http://thejoin95.github.io
+date_format: '%B %d, %Y'
 
-baseurl: /krishna
+# Owner configuration
+# name and email are required (change code to remove these)
+# (leave the rest blank to disable the corresponding sharing button)
+owner:
+    name: Miki Lombardi
+    email: miki.lombi@gmail.com
+    github: thejoin95
+    twitter: thejoin95
+    linkedin: miki-lombardi-8b9731a2
+    facebook: mikistorm
+    google_plus:
+    youtube:
+
+#baseurl: /
 sass: 
     style: compressed
 
 
 # Tracker
-analytics: UA-83979019-1
+analytics: UA-72014551-1
 
+# Jekyll configuration
+permalink: /:year/:month/:day/:title/
+paginate: 4
+
+# Post sharing icons
+sharing:
+    twitter: true
+    linkedin: true
+    facebook: true
+    google_plus: true
+    reddit: true
+
+# Disqus comments configuration (leave blank to disable comments)
+disqus_shortname: 'thejoin'
+
+gems: ['jekyll-paginate']
 
 exclude:
 - README.md

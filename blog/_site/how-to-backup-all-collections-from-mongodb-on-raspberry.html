@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-5221298562415460",
+      enable_page_level_ads: true
+    });
+  </script>
+  <meta charset="utf-8">
+
+  <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" href="https://blog.thejoin.it/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="propeller" content="4a3c54fcaa52c088c85bf945b9d8c0e2" />
+  <meta name="google-site-verification" content="AaQt8BwVTJPIh7bAb8T_5SxcyVv1zknL3_SooUR6FGs" />
+  
+  <title>Automatically setting up and connect Raspberry Pi to a Wifi network | TheJoin's Blog</title>
+
+  <!-- Meta information for search engines -->
+  <meta name="author" content="Miki Lombardi">
+  <meta name="description" content="Automatically setting up your raspberry to connect to your wifi, with a static ip or DHCP! Only via SSH tunnel!">
+  
+  <meta name="keywords" content="raspberry, raspberry, wifi, static, dhcp">
+  
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary" />
+  
+  <meta name="twitter:creator" content="@thejoin95" />
+  
+  <meta name="twitter:title" content="Automatically setting up and connect Raspberry Pi to a Wifi network" />
+  <meta name="twitter:description" content="Automatically setting up your raspberry to connect to your wifi, with a static ip or DHCP! Only via SSH tunnel!" />
+  <meta name="twitter:url" content="https://blog.thejoin.it/how-to-backup-all-collections-from-mongodb-on-raspberry.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Automatically setting up and connect Raspberry Pi to a Wifi network" />
+  <meta property="og:description" content="Automatically setting up your raspberry to connect to your wifi, with a static ip or DHCP! Only via SSH tunnel!" />
+  <meta property="og:url" content="https://blog.thejoin.it/how-to-backup-all-collections-from-mongodb-on-raspberry.html" />
+  <meta property="og:site_name" content="TheJoin's Blog">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <!--   Syntax highlighting is only needed for posts -->
+  
+  <link rel="stylesheet" href="/css/syntax-highlighter.css">
+  
+  <link href="//fonts.googleapis.com/css?family=Space+Mono|Work+Sans:700" rel="stylesheet">    
+  <!-- Set the canonical URL for search engines -->
+  <link rel="canonical" href="https://blog.thejoin.it/how-to-backup-all-collections-from-mongodb-on-raspberry.html">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS Feed for TheJoin's Blog" href="https://blog.thejoin.it/feed.xml" />
+  <meta name="theme-color" content="#3d8fd1" />
+
+</head>
+<body>
+
+<input type="checkbox" id="hamburger" name="hamburger">
+<label id="label-ham" for="hamburger"></label>
+<div class="menu-container">
+  <div class="menu"></div>
+  <div class="links">
+      <a href="/"><i class="fa fa-home"></i>&nbsp;Home</a>
+      <a href="/about/"><i class="fa fa-user"></i>&nbsp;About</a>
+      <a href="/archive/"><i class="fa fa-file-zip-o"></i>&nbsp;Archive</a>
+      <a href="/contact/"><i class="fa fa-address-book-o"></i>&nbsp;Contact</a>
+  </div>
+</div>
+
+<div class="content">
+<header>
+     <a href="/"><h1 class="site-title">TheJoin's Blog</h1></a>
+</header>
+  <br/>
+
+<div class="blog-post" itemscope itemType="https://schema.org/BlogPosting">
+  <meta itemprop="inLanguage" content="en-US"/>
+  <div class="post-title">
+      <div class="logo">
+          
+              <i class="fa fa-wifi fa-fw"></i>
+          
+      </div>
+      <div class="title">
+          <h2 itemprop="headline">Automatically setting up and connect Raspberry Pi to a Wifi network</h2>
+          
+          <span>
+              <time itemprop="datePublished" content="2017-05-17T00:00:00+02:00" datetime="2017-05-17T00:00:00+02:00">
+                  May 17, 2017
+                  
+                      &middot;
+                      <a href="https://blog.thejoin.it/how-to-backup-all-collections-from-mongodb-on-raspberry.htmlindex.html#disqus_thread" data-disqus-identifier="/how-to-backup-all-collections-from-mongodb-on-raspberry.html"></a>
+                      
+                  
+              </time>
+          </span>
+          
+          <br/>
+          category: <a class="codinfox-tag-mark" href="https://blog.thejoin.it/category/#raspberry">raspberry</a>
+          
+          
+          | tags: 
+          
+          <a class="codinfox-tag-mark" href="https://blog.thejoin.it/tag/#raspberry">raspberry</a>
+          
+          <a class="codinfox-tag-mark" href="https://blog.thejoin.it/tag/#wifi">wifi</a>
+          
+          <a class="codinfox-tag-mark" href="https://blog.thejoin.it/tag/#static">static</a>
+          
+          <a class="codinfox-tag-mark" href="https://blog.thejoin.it/tag/#dhcp">dhcp</a>
+          
+          
+      </div>
+  </div>
+
+  <div itemprop="articleBody">
+    <br/>
+    <p>So you have bought your Raspberry and you want to figure out how it is working! If you wanna be cool, you don’t install GUI and do your things only by CLI and via SSH… but! You need a connection to your local network!! How connect automatically our raspberry on boot to our wifi network?</p>
+
+<p>Easy, with cron (or service) and via WPA config.
+Here is how.</p>
+
+<p>First of all, you need to identify your network name.
+If you boot Raspbian to desktop, you can launch the wpa_gui (WiFi config) application and click ‘Scan’. You’ll find a list that has your network too with all flags you need.</p>
+
+<p>You know, I don’t like this solution so, if you wanna be cool, you can do like this:
+<code class="highlighter-rouge">sudo iwlist wlan0 scan</code> and find out your wifi ESSID and proto.</p>
+
+<p>SSID is your network name.
+After you found it, you need to update your /etc/wpa_supplicant/wpa_supplicant.conf file.
+Here is an example:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">network</span><span class="o">={</span>
+	<span class="nv">ssid</span><span class="o">=</span><span class="s2">"YOUR_NETWORK_NAME"</span>
+	<span class="nv">psk</span><span class="o">=</span><span class="s2">"YOUR_NETWORK_PASSWORD"</span>
+	<span class="nv">proto</span><span class="o">=</span>RSN
+	<span class="nv">priority</span><span class="o">=</span>1
+	<span class="nv">key_mgmt</span><span class="o">=</span>WPA-PSK
+	<span class="nv">pairwise</span><span class="o">=</span>CCMP
+	<span class="nv">auth_alg</span><span class="o">=</span>OPEN
+<span class="o">}</span></code></pre></figure>
+
+<p>psk is your network password. You need to write it there.
+The other parameters are network specific, I can’t tell you what you need.</p>
+
+<ul>
+  <li>proto could be either RSN (WPA2) or WPA (WPA1).</li>
+  <li>key_mgmt could be either WPA-PSK (most probably) or WPA-EAP (enterprise networks)</li>
+  <li>pairwise could be either CCMP (WPA2) or TKIP (WPA1)</li>
+  <li>auth_alg is most probably OPEN, other options are LEAP and SHARED</li>
+  <li>priority is an incremental flag because you can specify more network connetions (just by duplicate the “network object”). Priority is an ascending field.</li>
+</ul>
+
+<p>After doing this you can run <code class="highlighter-rouge">sudo ifdown wlan0 and sudo ifup wlan0</code> and verify your connection by ping another ip.
+Now you have connected your RPi via DHCP. What if you wanna have a static ip?
+Here we go.</p>
+
+<p>We need to update our /etc/dhcpd.conf (for info about this file run <code class="highlighter-rouge">man dhcpcd.conf</code>) as the follow:</p>
+
+<p>/etc/dhcpcd.conf:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># A sample configuration for dhcpcd.</span>
+<span class="c"># See dhcpcd.conf(5) for details.</span>
+
+<span class="c"># Allow users of this group to interact with dhcpcd via the control socket.</span>
+<span class="c">#controlgroup wheel</span>
+
+<span class="c"># Inform the DHCP server of our hostname for DDNS.</span>
+hostname
+
+<span class="c"># Use the hardware address of the interface for the Client ID.</span>
+clientid
+<span class="c"># or</span>
+<span class="c"># Use the same DUID + IAID as set in DHCPv6 for DHCPv4 ClientID as per RFC4361.</span>
+<span class="c">#duid</span>
+
+<span class="c"># Persist interface configuration when dhcpcd exits.</span>
+persistent
+
+<span class="c"># Rapid commit support.</span>
+<span class="c"># Safe to enable by default because it requires the equivalent option set</span>
+<span class="c"># on the server to actually work.</span>
+option rapid_commit
+
+<span class="c"># A list of options to request from the DHCP server.</span>
+option domain_name_servers, domain_name, domain_search, host_name
+option classless_static_routes
+<span class="c"># Most distributions have NTP support.</span>
+option ntp_servers
+<span class="c"># Respect the network MTU.</span>
+<span class="c"># Some interface drivers reset when changing the MTU so disabled by default.</span>
+<span class="c">#option interface_mtu</span>
+
+<span class="c"># A ServerID is required by RFC2131.</span>
+require dhcp_server_identifier
+
+<span class="c"># Generate Stable Private IPv6 Addresses instead of hardware based ones</span>
+slaac private
+
+<span class="c"># A hook script is provided to lookup the hostname if not set by the DHCP</span>
+<span class="c"># server, but it should not be run by default.</span>
+nohook lookup-hostname
+
+<span class="c"># look, I configured the static also per ethernet connection (just in case)</span>
+interface eth0
+
+static <span class="nv">ip_address</span><span class="o">=</span>192.168.1.10/24
+static <span class="nv">routers</span><span class="o">=</span>192.168.1.1
+static <span class="nv">domain_name_servers</span><span class="o">=</span>192.168.1.1
+
+<span class="c"># here is for wifi interface</span>
+interface wlan0
+
+<span class="c"># ip/subnet class</span>
+static <span class="nv">ip_address</span><span class="o">=</span>192.168.1.10/24
+static <span class="nv">routers</span><span class="o">=</span>192.168.1.1
+static <span class="nv">domain_name_servers</span><span class="o">=</span>192.168.1.1</code></pre></figure>
+
+<p>It’s pretty simply here, you need just specify your static ip and gateway. Then reboot your wifi connection.</p>
+
+<p>So, now you have configured your RPi with your wifi network and static ip but… what if the wifi network goes down and reup after 5min? You need to re-connect manually…</p>
+
+<p>BUT! If you wanna be a cool guy:
+check every minute (via crontab) if we are still connected to our wifi network and it’s all up:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#!/bin/bash</span>
+
+<span class="k">if </span>ifconfig wlan0 | grep -q <span class="s2">"inet addr:"</span> ; <span class="k">then
+   </span><span class="nb">echo</span> <span class="s2">"connected"</span>
+<span class="k">else
+   </span><span class="nb">echo</span> <span class="s2">"Network connection down! Attempting reconnection."</span>
+   ifup --force wlan0
+   sleep 10
+<span class="k">fi</span></code></pre></figure>
+
+<p>You need to program this script in your crontab like this:
+<code class="highlighter-rouge">*/10 *    * * *   root    /bin/bash /home/pi/check-wifi.sh</code></p>
+
+  </div>
+
+  <meta itemprop="publisher" content="https://blog.thejoin.it"/>
+  <meta itemprop="image" content="https://blog.thejoin.it/favicon.ico" />
+  <div style="display: none" itemprop="author">
+   <span itemscope itemtype="https://schema.org/Person">
+     Posted by 
+     <span itemprop="name">Miki Lombardi</span>, 
+     <span itemprop="worksFor">Aperion</span>
+   </span>
+  </div>
+
+  <div class="sharing">
+      <br/>
+      <br/>
+  <!-- Make an animated slide out drawer later -->
+      <ul>
+          <li><i class="fa fa-share-square-o"></i></li>
+          
+          <li><a href="https://twitter.com/intent/tweet?text=Automatically setting up and connect Raspberry Pi to a Wifi network&url=https://blog.thejoin.it/how-to-backup-all-collections-from-mongodb-on-raspberry.html" rel="nofollow" target="_blank" title="Share on Twitter">
+                  <i class="fa fa-twitter-square"></i>
+          </a></li>
+          
+
+          
+          <li><a href="https://www.linkedin.com/shareArticle?url=https://blog.thejoin.it/how-to-backup-all-collections-from-mongodb-on-raspberry.html&title=Automatically setting up and connect Raspberry Pi to a Wifi network" rel="nofollow" target="_blank" title="Share on LinkedIn">
+                  <i class="fa fa-linkedin-square"></i>
+          </a></li>
+          
+
+          
+          <li><a href="https://facebook.com/sharer.php?u=https://blog.thejoin.it/how-to-backup-all-collections-from-mongodb-on-raspberry.html" rel="nofollow" target="_blank" title="Share on Facebook">
+                  <i class="fa fa-facebook-square"></i>
+          </a></li>
+          
+
+          
+          <li><a href="https://plus.google.com/share?url=https://blog.thejoin.it/how-to-backup-all-collections-from-mongodb-on-raspberry.html" rel="nofollow" target="_blank" title="Share on Google+">
+                  <i class="fa fa-google-plus-square"></i>
+          </a></li>
+          
+
+          
+          <li><a href="https://reddit.com/submit?url=https://blog.thejoin.it/how-to-backup-all-collections-from-mongodb-on-raspberry.html&title=Automatically setting up and connect Raspberry Pi to a Wifi network" rel="nofollow" target="_blank" title="Share on Reddit">
+                  <i class="fa fa-reddit-square"></i>
+          </a></li>
+          
+      </ul>
+  </div>
+
+  <br/>
+  <br/>
+
+  
+  
+
+
+  
+  
+
+  <br/>
+  <br/>
+
+  
+  <div id="disqus_thread"></div>
+  <!-- Add Disqus comments (not comment count) -->
+  <script type="text/javascript">
+      var disqus_shortname  = 'thejoin';
+      var disqus_identifier = '/how-to-backup-all-collections-from-mongodb-on-raspberry.html';
+      var disqus_title      = 'Automatically setting up and connect Raspberry Pi to a Wifi network';
+      var disqus_url        = 'https://blog.thejoin.it/how-to-backup-all-collections-from-mongodb-on-raspberry.html';
+      // var disqus_developer = 1; // Comment out when the site is live
+
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+
+<!--   
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname  = 'thejoin';
+    // var disqus_developer = 1; // Comment out when the site is live
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+  </script> -->
+
+  <noscript>
+      Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+  
+</div>
+  
+    <footer>
+      <small>Theme based on <a href="https://github.com/ankur-gupta/trio/" target="_blank">trio</a></small>
+  </footer>
+</div>
+  <!-- Calling Fontawesome at the end to avoid delay in loading --> 
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<!-- Google Analytics Tracking code -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-98330359-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

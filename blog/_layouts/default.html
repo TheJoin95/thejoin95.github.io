@@ -1,36 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-5221298562415460",
+      enable_page_level_ads: true
+    });
+  </script>
   <meta charset="utf-8">
+
+  <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" href="https://blog.thejoin.it/favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>
-      {% if page.title %}
-          {{ page.title | strip_html }} &#8211;
-      {% endif %}
-      {{ site.title | strip_html }}
-  </title>
+  <meta name="propeller" content="4a3c54fcaa52c088c85bf945b9d8c0e2" />
+  <meta name="google-site-verification" content="AaQt8BwVTJPIh7bAb8T_5SxcyVv1zknL3_SooUR6FGs" />
+  
+  <title>{{ page.title | strip_html }} | {{ site.title | strip_html }}</title>
 
   <!-- Meta information for search engines -->
-  <meta name="author" content="{{ owner.name }}">
-  <meta name="description" content="{% if page.summary %}{{ page.summary | xml_escape }}{% else %}{{ site.description | xml_escape }}{% endif %}">
-  {% if page.categories %}
-      <meta name="keywords" content="{{ page.categories | join: ', ' }}">
+  <meta name="author" content="{{ site.owner.name }}">
+  <meta name="description" content="{% if page.description %}{{ page.description | xml_escape }}{% else %}{{ site.description | xml_escape }}{% endif %}">
+  {% if page.tags %}
+  <meta name="keywords" content="{{page.category}}, {{ page.tags | join: ', ' }}">
   {% endif %}
 
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary" />
   {% if site.owner.twitter %}
-      <meta name="twitter:creator" content="@{{ site.owner.twitter }}" />
+  <meta name="twitter:creator" content="@{{ site.owner.twitter }}" />
   {% endif %}
   <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
-  <meta name="twitter:description" content="{% if page.summary %}{{ page.summary | strip_html }}{% elsif page.excerpt %}{{ page.excerpt  | strip_html }}{% else %}{{ site.description | strip_html }}{% endif %}" />
+  <meta name="twitter:description" content="{% if page.description %}{{ page.description | strip_html }}{% elsif page.excerpt %}{{ page.excerpt  | strip_html }}{% else %}{{ site.description | strip_html }}{% endif %}" />
   <meta name="twitter:url" content="{{ site.url }}{{ page.url }}" />
 
   <!-- Open Graph -->
   <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
-  <meta property="og:description" content="{% if page.summary %}{{ page.summary | strip_html }}{% elsif page.excerpt %}{{ page.excerpt  | strip_html }}{% else %}{{ site.description | strip_html }}{% endif %}" />
+  <meta property="og:description" content="{% if page.description %}{{ page.description | strip_html }}{% elsif page.excerpt %}{{ page.excerpt  | strip_html }}{% else %}{{ site.description | strip_html }}{% endif %}" />
   <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
   <meta property="og:site_name" content="{{ site.title | strip_html | xml_escape }}">
 
@@ -45,6 +52,7 @@
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS Feed for {{ site.title }}" href="{{ site.url }}/feed.xml" />
+  <meta name="theme-color" content="#3d8fd1" />
 
 </head>
 <body>

@@ -130,8 +130,8 @@ check every minute (via crontab) if we are still connected to our wifi network a
 &lt;code class=&quot;highlighter-rouge&quot;&gt;*/10 *    * * *   root    /bin/bash /home/pi/check-wifi.sh&lt;/code&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 17 May 2017 00:00:00 +0200</pubDate>
-        <link>https://blog.thejoin.it/how-to-backup-all-collections-from-mongodb-on-raspberry.html</link>
-        <guid isPermaLink="true">https://blog.thejoin.it/how-to-backup-all-collections-from-mongodb-on-raspberry.html</guid>
+        <link>https://blog.thejoin.it/2017-05-17-automatically-connect-wifi-raspberry-dhcp-and-staticip.html</link>
+        <guid isPermaLink="true">https://blog.thejoin.it/2017-05-17-automatically-connect-wifi-raspberry-dhcp-and-staticip.html</guid>
       </item>
     
       <item>

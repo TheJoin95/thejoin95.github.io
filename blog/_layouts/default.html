@@ -49,6 +49,9 @@
   <link href="//fonts.googleapis.com/css?family=Space+Mono|Work+Sans:700" rel="stylesheet">    
   <!-- Set the canonical URL for search engines -->
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
+  {% if page.layout == 'post' %}
+  <link rel="amphtml" href="{{ page.url | prepend: site.ampdir | prepend: site.baseurl | prepend: site.url }}">
+  {% endif %}
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS Feed for {{ site.title }}" href="{{ site.url }}/feed.xml" />

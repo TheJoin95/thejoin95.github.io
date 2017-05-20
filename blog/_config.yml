@@ -30,6 +30,9 @@ analytics: UA-98330359-2
 permalink: /:year/:month/:day/:title/
 paginate: 10
 
+#AMP
+ampdir: /amp
+
 # Post sharing icons
 sharing:
     twitter: true
@@ -41,7 +44,7 @@ sharing:
 # Disqus comments configuration (leave blank to disable comments)
 disqus_shortname: 'thejoin'
 
-gems: ['jekyll-paginate']
+gems: ['jekyll-paginate', 'amp-jekyll']
 
 exclude:
 - README.md

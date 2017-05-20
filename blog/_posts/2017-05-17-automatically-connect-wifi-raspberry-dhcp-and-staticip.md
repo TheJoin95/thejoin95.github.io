@@ -2,7 +2,7 @@
 layout: post
 title: Automatically setting up and connect Raspberry Pi to a Wifi network
 description: Automatically setting up your raspberry to connect to your wifi, with a static ip or DHCP! Only via SSH tunnel!
-permalink: how-to-backup-all-collections-from-mongodb-on-raspberry.html
+permalink: 2017-05-17-automatically-connect-wifi-raspberry-dhcp-and-staticip.html
 icon: wifi
 date: 2017-05-17
 category: raspberry

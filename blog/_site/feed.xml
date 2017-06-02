@@ -7,6 +7,98 @@
     <atom:link href="https://blog.thejoin.it/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Raspberry won't boot - Recover data and fix bug with chroot [ubuntu]</title>
+        <description>&lt;p&gt;Two weeks ago I installed on my raspberry (raspbian wheezy) upstart package (an ubuntu package for process management)… and it was an error.&lt;/p&gt;
+
+&lt;p&gt;Yeah, because raspbian has systemd and you don’t need to install upstart!! Don’t do that!
+It’s a little bit strange that, after installed the package, raspberry was still going.&lt;/p&gt;
+
+&lt;p&gt;For an unlucky event at my house the current was gone. So, the raspberry was (suddendly) powered off.
+Then it won’t boot anymore.&lt;/p&gt;
+
+&lt;p&gt;The error show up at the boot screen was related to “semlinux” and it can’t mount the partition.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Mount failed &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;selinuxfs on /sys/fs/selinux: No such file or directory&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;how-you-can-resolve-this&quot;&gt;How you can resolve this?&lt;/h2&gt;
+
+&lt;p&gt;There were 3 choice:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Backup or copy the whole root partition to a new sd card&lt;/li&gt;
+  &lt;li&gt;edit cmdline.txt adding init=/bin/bash (called single-user mode or recovery mode)&lt;/li&gt;
+  &lt;li&gt;fix the issue via chroot&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;backup&quot;&gt;Backup&lt;/h3&gt;
+&lt;p&gt;Yeah, I know.. we usually have a backup (don’t you?)… but it was not my case! :(&lt;/p&gt;
+
+&lt;h3 id=&quot;single-user-mode&quot;&gt;Single-user mode&lt;/h3&gt;
+
+&lt;p&gt;So I tried to add init=/bin/bash to cmdline.txt file present in the boot partition.&lt;/p&gt;
+
+&lt;p&gt;At the startup the boot stop and, after you hit enter, you can access to the root shell.&lt;/p&gt;
+
+&lt;p&gt;Here you can mount all the partitions and use, almost, every command.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mount -rw -o remount /&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;After this command you can edit file and add/remove package via apt.&lt;/p&gt;
+
+&lt;p&gt;Before you exit the shell, you need to &lt;code class=&quot;highlighter-rouge&quot;&gt;sync&lt;/code&gt; all the disk.&lt;/p&gt;
+
+&lt;p&gt;But, if you are an unlucky person (like me), this mode doesn’t work for your issue.&lt;/p&gt;
+
+&lt;p&gt;I need to remove upstart package, but in this shell I did not have a network (even via ethernet).&lt;/p&gt;
+
+&lt;p&gt;So, before hard reset or copy the whole root partition to a new sd image, I decided to try with chroot command.&lt;/p&gt;
+
+&lt;h3 id=&quot;wtf-is-chroot&quot;&gt;WTF is chroot?&lt;/h3&gt;
+
+&lt;p&gt;It’s a command that can perform a change of root directory and you can exec some command (for example a /bin/bash). So, it’s like you were connect directly to raspberry via SSH.&lt;/p&gt;
+
+&lt;h2 id=&quot;but&quot;&gt;BUT!&lt;/h2&gt;
+
+&lt;p&gt;To this you need to have a VM or a PC with ubuntu (or other linux distro) and &lt;code class=&quot;highlighter-rouge&quot;&gt;qemu-arm&lt;/code&gt; installed.&lt;/p&gt;
+
+&lt;p&gt;qemu is a package that can simulate the raspberry’s architecture (arm64).&lt;/p&gt;
+
+&lt;p&gt;After installed qemu, you can mount from an img or from the sd card all the partitions.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt;: for creating the loopback device I usually use kpartx&lt;/p&gt;
+
+&lt;p&gt;If you are using a img file:
+For example (this command will create, for each partition, a device called /dev/mapper/loop0pN):
+&lt;code class=&quot;highlighter-rouge&quot;&gt;$ sudo kpartx -a -v 2015-02-16-raspbian-wheezy.img&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;You need to mount the root and the boot partition, together, like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo mount /dev/mapper/loop0p1 /mnt
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo mount /dev/mapper/loop0p1 /mnt/boot&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Now you have your raspberry mounted. You need to connect to it! 
+We are gonna do this using chroot command.&lt;/p&gt;
+
+&lt;p&gt;Before using chroot, we need to copy our /usr/bin/qemu-arm to the mounted raspberry partition, because chroot need that for start the shell.
+So copy from /usr/bin/qemu-arm to /mnt/usr/bin/qemu-arm&lt;/p&gt;
+
+&lt;p&gt;After that you can run:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo chroot /mnt /usr/bin/qemu-arm&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;It will open a new root shell and that’s it! Remember to sync after all the edits.&lt;/p&gt;
+
+&lt;p&gt;NOTE: remember, I’m the unluckiest man in the world, and after chroot I couldn’t connect to internet (if config did not working, even network config or dhcp or ethernet).
+So I need to mount even the proc/ directory of my ubuntu installtion to the new mounted partition of raspberry (/mnt/proc) and re-init the chroot.&lt;/p&gt;
+
+&lt;p&gt;After that, I launched ifconfig and dhcpclient config and it started to working.&lt;/p&gt;
+
+&lt;p&gt;It’s a little bit complex here, but I hope to be of help to you!&lt;/p&gt;
+</description>
+        <pubDate>Thu, 01 Jun 2017 00:00:00 +0200</pubDate>
+        <link>https://blog.thejoin.it/raspberry-wont-boot-make-backup-with-chroot-shell.html</link>
+        <guid isPermaLink="true">https://blog.thejoin.it/raspberry-wont-boot-make-backup-with-chroot-shell.html</guid>
+      </item>
+    
+      <item>
         <title>Automatically setting up and connect Raspberry Pi to a Wifi network</title>
         <description>&lt;p&gt;So you have bought your Raspberry and you want to figure out how it is working! If you wanna be cool, you don’t install GUI and do your things only by CLI and via SSH… but! You need a connection to your local network!! How connect automatically our raspberry on boot to our wifi network?&lt;/p&gt;
 

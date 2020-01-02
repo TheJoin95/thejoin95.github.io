@@ -1,12 +1,9 @@
----
-layout: amp
----
 <!doctype html>
 <html amp lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-    <link rel="canonical" href="{{ page.canonical_url | prepend: site.baseurl | prepend: site.url }}" />
+    <title>Register.it - Dynamic DNS Updater</title>
+    <link rel="canonical" href="https://blog.thejoin.it/manage-record-dns-updater-register-python.html" />
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 <style amp-custom>
@@ -181,15 +178,41 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
     <div class="content">
       <article class="post">
         <div class="post-meta">
-          <a href="{{site.baseurl}}/"><h1 class="site-title">{{site.title}}</h1></a>
-          <h1 class="post-title">{{ page.title }}</h1>
+          <a href="/"><h1 class="site-title">TheJoin's Blog</h1></a>
+          <h1 class="post-title">Register.it - Dynamic DNS Updater</h1>
         </div>
         <div class="post-content">
           <span>
-          {{ page.date }} - {{ page.author }}
+          2019-03-28 00:00:00 +0100 - 
           </span>
           
-          {{ content | markdownify | amp_images }}
+          <h1 id="registerit---dynamic-dns-updater">Register.it - Dynamic DNS Updater</h1>
+
+<p>Great! You have just purchased a .com domain for .99€ and now you can setting up everyting for running your application on your Raspberry Pi.
+You are very happy, so you take your public ip address and put it on the domain’s record A.</p>
+
+<p>The morning after you feel great to have just published your app!
+You want to share all over the world the link, but… “ERROR - Server DNS address could not be found”</p>
+
+<p>Now you feel bad, very bad.</p>
+
+<p>Ehy… I’ve got the solution: <a href="https://github.com/TheJoin95/Register.it-Dynamic-DNS-Updater">Dynamic DNS Updater</a>!</p>
+
+<h2 id="how-it-works">How it works</h2>
+
+<p>It works with Puppeteer by Google and NodeJS and it simulate the signin and the navigation trough the page and domains to add/delete a DNS record.</p>
+
+<p>Make sure to have Crhome installed and Node v. &gt; 6.</p>
+
+<p>Then you can run the script typing:</p>
+<div class="highlighter-rouge">
+<pre class="highlight"><code>node index.js --username=USERNAME_HERE --password=SECRET_PWD --domain=DOMAIN --name=RECORD_NAME --value=RECORD_VALUE --ttl=TTL_&gt;_600 --type=RECORD_TYPE
+</code></pre>
+</div>
+
+<p>Note that RECORD_TYPE can be one of the following values: NS, A, CNAME, MX, TXT, SRV, AAAA.</p>
+
+
         </div>
   </body>
 </html>

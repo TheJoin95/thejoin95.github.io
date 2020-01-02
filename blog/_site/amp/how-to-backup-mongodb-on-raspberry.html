@@ -1,12 +1,9 @@
----
-layout: amp
----
 <!doctype html>
 <html amp lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-    <link rel="canonical" href="{{ page.canonical_url | prepend: site.baseurl | prepend: site.url }}" />
+    <title>How to backup all collections from mongodb (raspberry)</title>
+    <link rel="canonical" href="https://blog.thejoin.it/how-to-backup-all-collections-from-mongodb-on-raspberry.html" />
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 <style amp-custom>
@@ -181,15 +178,58 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
     <div class="content">
       <article class="post">
         <div class="post-meta">
-          <a href="{{site.baseurl}}/"><h1 class="site-title">{{site.title}}</h1></a>
-          <h1 class="post-title">{{ page.title }}</h1>
+          <a href="/"><h1 class="site-title">TheJoin's Blog</h1></a>
+          <h1 class="post-title">How to backup all collections from mongodb (raspberry)</h1>
         </div>
         <div class="post-content">
           <span>
-          {{ page.date }} - {{ page.author }}
+          2017-02-16 00:00:00 +0100 - 
           </span>
           
-          {{ content | markdownify | amp_images }}
+          <p>After some problems with my raspberry power supply and mongo 3.0 I decided to make a dayly backup.
+Sometimes happened that, after an unexpected shutdown (for an high load average and not too much power), some mongo collections may be broken. If it’ll happen without any backup, the only words you can say are: I’m fuck.</p>
+
+<p>Yeah, I know.. if you install mongo on a 32bit system with only 1GB ram (Raspberry Pi 3), you are probabily (like me) mad.
+But! It’s useful for some testing or a micro-system.</p>
+
+<h2 id="so-the-solution">So.. the solution</h2>
+
+<p>One of the idea that I’ve got is make a dayly backup. I use 3.0 mongo version, but it will be ok for &gt; 3.0 version.
+<strong>NOTE: you need to install mongotools.</strong></p>
+
+<p>Here is the code:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#!/bin/sh</span>
+
+<span class="nv">APP_NAME</span><span class="o">=</span><span class="s2">"raspberry"</span>
+
+<span class="nv">MONGO_HOST</span><span class="o">=</span><span class="s2">"127.0.0.1"</span>
+<span class="nv">MONGO_PORT</span><span class="o">=</span><span class="s2">"27017"</span>
+<span class="nv">TIMESTAMP</span><span class="o">=</span><span class="sb">`</span>date +%F-%H%M<span class="sb">`</span>
+<span class="nv">MONGODUMP_PATH</span><span class="o">=</span><span class="s2">"/usr/bin/mongodump"</span>
+<span class="nv">BACKUPS_DIR</span><span class="o">=</span><span class="s2">"/home/pi/dump"</span>
+<span class="nv">BACKUP_NAME</span><span class="o">=</span><span class="s2">"</span><span class="nv">$APP_NAME</span><span class="s2">-</span><span class="nv">$TIMESTAMP</span><span class="s2">"</span>
+
+<span class="nv">$MONGODUMP_PATH</span>
+
+mkdir -p <span class="nv">$BACKUPS_DIR</span>
+mv dump_file <span class="nv">$BACKUP_NAME</span>
+tar -zcvf <span class="nv">$BACKUPS_DIR</span>/<span class="nv">$BACKUP_NAME</span>.tgz <span class="nv">$BACKUP_NAME</span>
+rm -rf <span class="nv">$BACKUP_NAME</span></code></pre></figure>
+
+<p>The workflow is:</p>
+<ul>
+  <li>Launch mongodump in the directory of the script</li>
+  <li>Create the directory (if not exist) for the backup’s files</li>
+  <li>Move “dump_file” (created by mongodump cmd) to our backup name file</li>
+  <li>make a tar (for storage saving) of the file and then remove the old one</li>
+</ul>
+
+<p>You need to program this script in your crontab like this:
+<code class="highlighter-rouge">30 3    * * *   root    /bin/bash /home/pi/mongo.sh &gt; /tmp/mongodump.log 2&gt;&amp;1 &amp;</code></p>
+
+<p>Note: for restore the collections you need to tar the file then to mongorestore</p>
+
         </div>
   </body>
 </html>

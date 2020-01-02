@@ -1,12 +1,9 @@
----
-layout: amp
----
 <!doctype html>
 <html amp lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-    <link rel="canonical" href="{{ page.canonical_url | prepend: site.baseurl | prepend: site.url }}" />
+    <title>Ionic - Build ios app without a mac... VM!</title>
+    <link rel="canonical" href="https://blog.thejoin.it/ionic-build-ios-app-without-mac-virtual-machine.html" />
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 <style amp-custom>
@@ -181,15 +178,62 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
     <div class="content">
       <article class="post">
         <div class="post-meta">
-          <a href="{{site.baseurl}}/"><h1 class="site-title">{{site.title}}</h1></a>
-          <h1 class="post-title">{{ page.title }}</h1>
+          <a href="/"><h1 class="site-title">TheJoin's Blog</h1></a>
+          <h1 class="post-title">Ionic - Build ios app without a mac... VM!</h1>
         </div>
         <div class="post-content">
           <span>
-          {{ page.date }} - {{ page.author }}
+          2017-12-09 00:00:00 +0100 - 
           </span>
           
-          {{ content | markdownify | amp_images }}
+          <p>Yep… same problem here! But I’ve got a solution!
+If you don’t have a mac to build your app, and if you don’t want to buy it… you can follow these guide.
+I will use Virtual Machine and vagrant.</p>
+
+<h2 id="what-we-need">What we need?</h2>
+<ul>
+  <li><a href="https://www.vagrantup.com/">Vagrant</a></li>
+  <li><a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a></li>
+  <li><a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox Extentions Pack</a></li>
+</ul>
+
+<p>After you have install it, we can search on vagrant for a good image of mac os.
+In this guide, I will use a Mac Os Sierra image, because I need at least XCode 9.</p>
+
+<p><strong>NOTE: you can search whatever you want on vagrant, just make sure the image is updated.</strong></p>
+
+<h2 id="install-mac-os-by-vagrant">Install Mac Os by vagrant</h2>
+
+<p>We will use this vagrant image: <a href="https://app.vagrantup.com/jhcook/boxes/macos-sierra">jhcook/macos-sierra</a>.</p>
+
+<p>All you need to do is to make a dir and then type:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">vagrant init jhcook/macos-sierra; vagrant up</code></pre></figure>
+
+<p>This will initialize a vagrant instance in Virtual Box and the it will try to run it.</p>
+
+<p><strong>NOTE: Mac Os Sierra is 13GB. Take a break or a night out.</strong></p>
+
+<h2 id="after-the-installation">After the installation</h2>
+<p>So, now you have a vagrant instance running.
+You can connect to the system trough a vagrant ssh (127.0.0.1) or… just open the VM on VirtualBox.</p>
+
+<p>The username and the password are the default for vagrant:</p>
+<ul>
+  <li>user: vagrant</li>
+  <li>psw: vagrant</li>
+</ul>
+
+<p>After the installation you need to install what you need, for example, XCode or GIT or Ionic.
+Yeah, it is a low budget solution, but it works.</p>
+
+<p>You can build your app and submit it to the Apple Store.
+Make sure (ALWAYS) to save your virtual machine state, otherwise you need to redo what you already do before.</p>
+
+<p>Cheers.</p>
+
+<p>P.S. Apple approve the virtualization of their O.S.</p>
+
         </div>
   </body>
 </html>

@@ -1,6 +1,76 @@
 [
   
     {
+      "title"    : "Prenotare appuntamento passaporto online - Italia",
+      "category" : "php",
+      "tags"     : "php",
+      "url"      : "https://blog.thejoin.it/prenotare-appuntamento-passaporto-online.html",
+      "date"     : "May 18, 2019",
+      "content"  : "Agenda per appuntamenti passaporto - Italia\n\nThis article is in italian.\n\nPrendere un appuntamento online per fare il passaporto italiano è un’avventura, dal titolo: “Una storia infinita”.\n\nPerché l’appuntamento online?\nE’ davvero utile. Ti permettere di saltare la fila in caserma/questura perché ti viene assegnato un orario nel quale presentarsi.\nE’ necessario essere puntuali e far notare a chiunque che si è in possesso dell’appuntamento.\n\nCome funziona?\nIl sito di riferimento mostra, una volta loggati tramite le proprie credenziali, un calendario suddiviso per località (questure e caserme) dove è possibile richiedere il passaporto.\n\nDal calendario è possibile prenotare un appuntamento per i vari slot disponibili.\n\nQui arriva il bello.\n\nGli slot disponibili… sono solo un miraggio.\nNon è ben chiaro come funziona l’assegnazione di questi slot, se esiste una procedura di lock o altro.\nQuando sono “disponibili” non lo sono per davvero.\nQuando non ci sono, invece sono disponibili.\nQuando finalmente ne scegli uno, l’interfaccia esplode.\n\nSono particolari.\n\nLa soluzione (o definita tale)\nCreare uno script che controlla la VERA disponibilità degli slot di appuntamento.\n\nLo script funziona come di seguito:\n\n  Simula l’accesso e la navigazione del portale tramite le proprie credenziali (non verranno mai condivisi con altri)\n  Effettuerà il controllo di disponibilità su tutte le località disponibili per la vostra zona\n  Recupererà e mostrerà la disponibilità a video ogni volta che verrà eseguito lo script\n\n\nNo, non prenoterà al vostro posto.\nDovrete farlo voi, perché quella è l’unica parte che funziona ed è fondamentale non sbagliare altrimenti è stata solo una perdita di tempo.\n\nLa repository del progetto per usarlo e per contribuire:\nGithub Repository\n\nPrego.\n\nNote\nLo script è datato Aprile 2019. Eventuali aggiornamenti grafici o procedurali del portale potrebbero portare a qualche malfunzionamento dello script.\nSiete liberi di farmelo notare o di contribuire direttamente su Github, così da correggere e renderlo fruibile di nuovo a tutti.\n\nGrazie\n",
+      "snippet"  : "Agenda per appuntamenti passaporto - Italia This article is in italian. Prendere un appuntamento online per fare il passaporto italiano..."
+    } ,
+  
+    {
+      "title"    : "Register.it - Dynamic DNS Updater",
+      "category" : "python",
+      "tags"     : "python",
+      "url"      : "https://blog.thejoin.it/manage-record-dns-updater-register-python.html",
+      "date"     : "March 28, 2019",
+      "content"  : "Register.it - Dynamic DNS Updater\n\nGreat! You have just purchased a .com domain for .99€ and now you can setting up everyting for running your application on your Raspberry Pi.\nYou are very happy, so you take your public ip address and put it on the domain’s record A.\n\nThe morning after you feel great to have just published your app!\nYou want to share all over the world the link, but… “ERROR - Server DNS address could not be found”\n\nNow you feel bad, very bad.\n\nEhy… I’ve got the solution: Dynamic DNS Updater!\n\nHow it works\n\nIt works with Puppeteer by Google and NodeJS and it simulate the signin and the navigation trough the page and domains to add/delete a DNS record.\n\nMake sure to have Crhome installed and Node v. &gt; 6.\n\nThen you can run the script typing:\nnode index.js --username=USERNAME_HERE --password=SECRET_PWD --domain=DOMAIN --name=RECORD_NAME --value=RECORD_VALUE --ttl=TTL_&gt;_600 --type=RECORD_TYPE\n\n\n\nNote that RECORD_TYPE can be one of the following values: NS, A, CNAME, MX, TXT, SRV, AAAA.\n\n",
+      "snippet"  : "Register.it - Dynamic DNS Updater Great! You have just purchased a .com domain for .99€ and now you can setting..."
+    } ,
+  
+    {
+      "title"    : "Scraping the web to get the best flight fares | NodeJS &amp; Puppeteer",
+      "category" : "python",
+      "tags"     : "python",
+      "url"      : "https://blog.thejoin.it/puppeteer-skyscanner-scraper-nodejs.html",
+      "date"     : "October 28, 2018",
+      "content"  : "Scraping the web to get the best flight fares | NodeJS &amp; Puppeteer\n\nPuppeteer is the official tool for Chrome Headless by Google Chrome team. Since the official announcement of Chrome Headless, many of the industry standard libraries for automated testing have been discontinued by their maintainers. Including PhantomJS (sad to hear this, I know).\nNOTE: on March 2019 the Puppeteer’s team had released also the beta of Puppeteer-Firefox, available here.\n\nTL;DR\n\nIn this article we will scrape Skyscanner, login to it, extract flights data with Chrome Headless, Puppeteer, Node and ExpressJS. Skyscanner have rate limiting mechanism in place to keep you under control but this post will give you some good ideas of what is “Scraping with Chrome Headless and Node”. Here is the accompanying GitHub repository.\n\nThe repo is just for personal or learning use. Skyscanner provide some useful APIs instead of scrape its site.\n\nFeel the power\n\nPuppeteer is a very powerful tool and easy to use, also for testing purpose.\nIn this article we will see how to scrape a page by typing some input data and submit some forms, so we can navigate trough the website and get our results.\n\nOur goal is to get the flights fare for a given destination and a date range.\n\nGetting Started\nBefore we start you need to have Node 8.+ installed.\n\nClone this repository to your local environment (it can be also a Raspberry Pi), navigate into it and then run: npm install\n\nThis will install:\n\t- Puppeteer\n\t- Puppeteer Extra (useful Puppeteer’s plugin)\n\t- ExpressJS\n\t- InquirerJS\n\nTry it\nTry to run node index-inquirer.js : it will start a simple questionnaire in order to retrieve the input data like: the airport of departure and the return one and so on.. Then it will launch a browser instance (Puppeteer), type the data in the form input and print out all the data in JSON format.\n\nYou can also try to run the other index: node index.js -h and node index-concurrency.js.\n\nThe first one is CLI style implementation, so you need to pass all the parameters by arguments.\n\nThe second one is implemented by ExpressJS and it will create a GET endpoint to interface with it. This solution can manage the concurrency by opening new Puppeteer page/instance.\n\nHow it works\nThe following example is the simplest implementation of Puppeteer:\n\nconst puppeteer = require('puppeteer'); \nasync function run() {  \n     const browser = await puppeteer.launch();  \n     const page = await browser.newPage();\n     await page.goto('https://www.skyscanner.com');\n     await page.screenshot({ path: 'screenshots/skyscanner.png' });\n     browser.close();\n}\nrun();\n\n\n\nNOTE: the Puppeteer APIs use Promises so we need to use at least the await keyword. I suggest you to add also a try catch block, to catch the errors.\n\nThe script shown before open a Puppeteer instance, then open a new page and go to the Skyscanner homepage. After the page is loaded it take a screenshot.\n\nThe screenshot taken is only of the visible viewport. You can add the fullPage: true option to retrieve the full page (it’s more expensive in terms of time and resources).\nSimple, nah?\n\nNow take a look of the following implementation to navigate trough the Skyscanner page and login on it:\n\n\n\nThe signIn function is an async function in order to use the await keyword inside of it.\n\nThe Skyscanner signIn is an AJAX request so it is not necessary to refresh our page. The script it telling:\n\t- Click on the sign in button\n\t- Focus on the email input and type in the username\n\t- Then, Focus on the password input and type in my password\n\t- After that, click on the submit button\n\nIf everything’s going well we are logged in, otherwise it will return an Error.\n\nHow to write a script\nYou need to analyze the target website, its resources and its requests and all the flow that you need to make in order to retrieve the results.\n\nPuppeteer is a Headless Browser but you can add the headless: false option and it will show you all the phases of the script.\n\nThis feature is very useful in testing environment or also in the scraping mode, because you can monitoring better what’s going on.\n\nThe Skyscanner Search\nThe following script is a simple example of what I’ve implemented in the repo of this article:\n\n\n\nI’ve mapped all the selectors to its functionality, like the datepickers selector or the adult/children counter and so on..\n\nWe are simple typing down some input data, like the origin airport and the destination airport and click on the submit button.\n\nNote that some action are delayed, like the type functions and the popup elements (waitForSelector).\n\nThis is very useful because an element can be loaded in AJAX or can be set to display: none and Puppeteer can not manage these situation: we need to wait for the rendering of an element or waiting for an AJAX response (waitForNavigation).\n\nNote also that we are taking a screenshot of the Skyscanner page, but not the Homepage like before. Instead we are taking a screenshot (1600x900) of the submitted search page.\n\n\n\nOn the result page I can run the function to retrieve all the flights data:\n\n\n\nConclusion\nPuppeteer is a very powerful and useful tool to test and scrape a Website. It’s fast to learn and easy to mange.\n\nThe script showed in the repository use some functions and classes in order to have a better code quality, but it’s use the same script put on Gist.\n\nThe script are for learning use only.\nAlways respect the website policy and don’t scrape for commercial use.\n",
+      "snippet"  : "Scraping the web to get the best flight fares | NodeJS &amp; Puppeteer Puppeteer is the official tool for Chrome..."
+    } ,
+  
+    {
+      "title"    : "How to make a 8D audio track with Python",
+      "category" : "python",
+      "tags"     : "python",
+      "url"      : "https://blog.thejoin.it/how-make-8d-ambisonic-audio-track-python.html",
+      "date"     : "October 28, 2018",
+      "content"  : "Did you ever listen to an 8D song? Or Ambisonic audio track?\nI’ll suggest you to take your headphone, 5min of your time, and search “8d song” on youtube. Enjoy.\n\nIt’s sound amazing.\n\nSo… I wanted to figure out if it was possibile to recreate the 8D effects with any audio sources.\nThe response: yes.\n\nFor this little project I choose Python with the PyDub library.\nI made a simple script right here: https://github.com/TheJoin95/ambisonics-3d-audio\nCheck it out, clone it and try it.\n\nHow it works?\nAn Ambisonic track is totally a different track from a mp3 file or a video.\nIt need to be recored by a special microphone, with at least 4channels.\nTo reproduce the Ambisonic track you need to have multiple speaker (like a 5.1 and more).\n\nMy goal is to make every single audio track an ambisonic track or, at least, make a 360/3D effects audio.\nWe can recreate the 3D effects by using some effects (pass filter low|high) and panning the audio from the left earphone to the right side and viceversa.\n\nOf course, you can try to mix the audio track by invert the phase and overlap the track. This can guarantee you a good quality result.\n\nI’ll suggest you to try the script on github with your favorite track.\n\nEditing the script\nYou can edit the init.py file with your mp3 file to convert, e.g.\n\ninterval = 0.2 * 1000 # sec\nsong = AudioSegment.from_mp3('mp3/castle-of-glass.mp3')\n\nthen you can run the init.py script. The result (a mp3 file) will be produced in a compiled folder.\n\nEnjoy your 8D track.\n",
+      "snippet"  : "Did you ever listen to an 8D song? Or Ambisonic audio track? I’ll suggest you to take your headphone, 5min..."
+    } ,
+  
+    {
+      "title"    : "Jekyll - Add AMP Pages to your blog",
+      "category" : "jekyll",
+      "tags"     : "jekyll",
+      "url"      : "https://blog.thejoin.it/how-add-amp-pages-jekyll.html",
+      "date"     : "June 25, 2018",
+      "content"  : "We already know the power of the AMP pages but… what if we’ll use in our blog?\nThat would be incredible!\n\nLet’s to this!\n\nWhat we need?\n\n  Rubygems\n  Jekyll\n  amp-jekyll\n\n\nAnd, of course… a blog with at least one post.\n\nInstall &amp; Setup the plugin\n\nInstall the plugin via the Gemfile\n\ngem install amp-jekyll\n\nThen add to your _config.yml the plugin:\n\nplugins:\n  - amp-jekyll\n\nNOTE: Older Jekyll versions (below 3.6.0) use the key gems instead of plugins. When building a site with such version, use the old key.\n\nThen we need to specify the AMP Folder in the _config.yml, where all the pages will be stored:\n\nampdir: YOURDIR\n\nSetting up the amphtml meta\nPut this meta inside your head to link the AMP page to your post page (tell to Google: “Hey, I’ve got AMP!”):\n\n  &lt;link rel=\"amphtml\" href=\"https://blog.thejoin.it/YOURDIR/how-add-amp-pages-jekyll.html\"&gt;\n\nSetting up some style\nNow it’s your turn: style your AMP page!\nI can suggest you to use this awesome theme: https://github.com/ageitgey/amplify\n",
+      "snippet"  : "We already know the power of the AMP pages but… what if we’ll use in our blog? That would be..."
+    } ,
+  
+    {
+      "title"    : "Ionic - Build ios app without a mac... VM!",
+      "category" : "ionic",
+      "tags"     : "ionic, ios, build",
+      "url"      : "https://blog.thejoin.it/ionic-build-ios-app-without-mac-virtual-machine.html",
+      "date"     : "December 09, 2017",
+      "content"  : "Yep… same problem here! But I’ve got a solution!\nIf you don’t have a mac to build your app, and if you don’t want to buy it… you can follow these guide.\nI will use Virtual Machine and vagrant.\n\nWhat we need?\n\n  Vagrant\n  VirtualBox\n  VirtualBox Extentions Pack\n\n\nAfter you have install it, we can search on vagrant for a good image of mac os.\nIn this guide, I will use a Mac Os Sierra image, because I need at least XCode 9.\n\nNOTE: you can search whatever you want on vagrant, just make sure the image is updated.\n\nInstall Mac Os by vagrant\n\nWe will use this vagrant image: jhcook/macos-sierra.\n\nAll you need to do is to make a dir and then type:\n\nvagrant init jhcook/macos-sierra; vagrant up\n\nThis will initialize a vagrant instance in Virtual Box and the it will try to run it.\n\nNOTE: Mac Os Sierra is 13GB. Take a break or a night out.\n\nAfter the installation\nSo, now you have a vagrant instance running.\nYou can connect to the system trough a vagrant ssh (127.0.0.1) or… just open the VM on VirtualBox.\n\nThe username and the password are the default for vagrant:\n\n  user: vagrant\n  psw: vagrant\n\n\nAfter the installation you need to install what you need, for example, XCode or GIT or Ionic.\nYeah, it is a low budget solution, but it works.\n\nYou can build your app and submit it to the Apple Store.\nMake sure (ALWAYS) to save your virtual machine state, otherwise you need to redo what you already do before.\n\nCheers.\n\nP.S. Apple approve the virtualization of their O.S.\n",
+      "snippet"  : "Yep… same problem here! But I’ve got a solution! If you don’t have a mac to build your app, and..."
+    } ,
+  
+    {
+      "title"    : "How to configure Dynamic DNS (DynHost) - OVH",
+      "category" : "domains",
+      "tags"     : "raspberry, dns, domain",
+      "url"      : "https://blog.thejoin.it/configure-dynhost-ovh-raspberry-for-dynamic-dns.html",
+      "date"     : "December 01, 2017",
+      "content"  : "OVH is maybe the best low cost provider, because it offers some useful tools for.. free!\n\nLet’s get into it\n\nFirst of all: what is DynHost? Here we go: https://docs.ovh.com/gb/en/\n\nIf you have a domain on OVH you can enable it and create your credentials.\n\nOh no! How can I do this?!\n\nYou need to go into your client panel and:\n\n  create a dynamic dns record in your ”zone dns records” (with your domain);\n  create your credentials to update your ip (with the same domain or a wildcard C:)\n\n\nHow it is working the DynHost?\nThe DynHost (and the DynamicDNS service in general…) is just a request from our local machine (with some authorization like “basic auth” or whatever..) to their service (like no-ip, DynHost..) with the actual ip of our local machine. Easy.\n\nThe workflow:\n\n  Local Machine make a request (with authorization) to the DynHost service\n  The service receive the request with the new ip\n  \n    \n      \n        \n          The service make a check: if the new ip is the same in our record DNS =&gt; I do nothing\n          otherwise =&gt; I need to update the record DNS\n        \n      \n    \n  \n  Then, the service anwser to the request with a message info (useful link with all the return codes)\n\n\nSo, now.. we need to update our record DNS to make sure that our site is always online.\nWe can do this simply request to OVH service (you can try to open the url on the browser).\n\nNOTE: you need to change the username, the password and the hostname.\n\ncurl -X GET 'http://yourusername:yourpassword@www.ovh.com/nic/update?system=dyndns&amp;hostname=yourdomain.org'\n\nIt was easy. Yeah, it’s not hyper secure but… you know, local machine… raspberry… low cost. ;)\n\nAnd now we can program this curl in our crontab (or whatever) to make sure that we can update our ip frequently for our dns record.\n",
+      "snippet"  : "OVH is maybe the best low cost provider, because it offers some useful tools for.. free!"
+    } ,
+  
+    {
       "title"    : "Raspberry won&#39;t boot - Recover data and fix bug with chroot [ubuntu]",
       "category" : "bug",
       "tags"     : "raspberry, boot, backup",
@@ -167,7 +237,7 @@
         "title"    : "Example Post",
         "category" : "test",
         "tags"     : "dev, test",
-        "url"      : "https://blog.thejoin.it/example.html",
+        "url"      : "https://blog.thejoin.it/amp/example",
         "date"     : "September 07, 2014",
         "content"  : "",
         "snippet"  : " "
@@ -179,7 +249,7 @@
         "title"    : "How to backup all collections from mongodb (raspberry)",
         "category" : "mongodb",
         "tags"     : "raspberry, mongodb, backup",
-        "url"      : "https://blog.thejoin.it/how-to-backup-all-collections-from-mongodb-on-raspberry.html",
+        "url"      : "https://blog.thejoin.it/amp/how-to-backup-mongodb-on-raspberry",
         "date"     : "February 16, 2017",
         "content"  : "",
         "snippet"  : " "
@@ -191,7 +261,7 @@
         "title"    : "Automatically setting up and connect Raspberry Pi to a Wifi network",
         "category" : "raspberry",
         "tags"     : "raspberry, wifi, static, dhcp",
-        "url"      : "https://blog.thejoin.it/2017-05-17-automatically-connect-wifi-raspberry-dhcp-and-staticip.html",
+        "url"      : "https://blog.thejoin.it/amp/automatically-connect-wifi-raspberry-dhcp-and-staticip",
         "date"     : "May 17, 2017",
         "content"  : "",
         "snippet"  : " "
@@ -203,8 +273,104 @@
         "title"    : "Raspberry won&#39;t boot - Recover data and fix bug with chroot [ubuntu]",
         "category" : "bug",
         "tags"     : "raspberry, boot, backup",
-        "url"      : "https://blog.thejoin.it/raspberry-wont-boot-make-backup-with-chroot-shell.html",
+        "url"      : "https://blog.thejoin.it/amp/raspberry-wont-boot-upstart-chroot",
         "date"     : "June 01, 2017",
+        "content"  : "",
+        "snippet"  : " "
+     
+   } ,
+  
+   {
+     
+        "title"    : "How to configure Dynamic DNS (DynHost) - OVH",
+        "category" : "domains",
+        "tags"     : "raspberry, dns, domain",
+        "url"      : "https://blog.thejoin.it/amp/dynamic-dns-ovh",
+        "date"     : "December 01, 2017",
+        "content"  : "",
+        "snippet"  : " "
+     
+   } ,
+  
+   {
+     
+        "title"    : "Ionic - Build ios app without a mac... VM!",
+        "category" : "ionic",
+        "tags"     : "ionic, ios, build",
+        "url"      : "https://blog.thejoin.it/amp/ionic-build-ios-app-virtual-machine",
+        "date"     : "December 09, 2017",
+        "content"  : "",
+        "snippet"  : " "
+     
+   } ,
+  
+   {
+     
+        "title"    : "Jekyll - Add AMP Pages to your blog",
+        "category" : "jekyll",
+        "tags"     : "jekyll",
+        "url"      : "https://blog.thejoin.it/amp/how-add-amp-pages-jekyll",
+        "date"     : "June 25, 2018",
+        "content"  : "",
+        "snippet"  : " "
+     
+   } ,
+  
+   {
+     
+        "title"    : "How to make a 8D audio track with Python",
+        "category" : "python",
+        "tags"     : "python",
+        "url"      : "https://blog.thejoin.it/amp/how-make-8d-audio-python",
+        "date"     : "October 28, 2018",
+        "content"  : "",
+        "snippet"  : " "
+     
+   } ,
+  
+   {
+     
+        "title"    : "Scraping the web to get the best flight fares | NodeJS &amp; Puppeteer",
+        "category" : "python",
+        "tags"     : "python",
+        "url"      : "https://blog.thejoin.it/amp/puppeteer-skyscanner-scraper-nodejs",
+        "date"     : "October 28, 2018",
+        "content"  : "",
+        "snippet"  : " "
+     
+   } ,
+  
+   {
+     
+        "title"    : "Register.it - Dynamic DNS Updater",
+        "category" : "python",
+        "tags"     : "python",
+        "url"      : "https://blog.thejoin.it/amp/dynamic-dns-updater-register",
+        "date"     : "March 28, 2019",
+        "content"  : "",
+        "snippet"  : " "
+     
+   } ,
+  
+   {
+     
+        "title"    : "Prenotare appuntamento passaporto online - Italia",
+        "category" : "php",
+        "tags"     : "php",
+        "url"      : "https://blog.thejoin.it/amp/prenotare-appuntamento-passaporto-online-python",
+        "date"     : "May 18, 2019",
+        "content"  : "",
+        "snippet"  : " "
+     
+   } ,
+  
+   {
+     
+        "title"    : "Homepage",
+        "category" : "",
+        "tags"     : "",
+        "url"      : "https://blog.thejoin.it/page2/",
+        "date"     : " ",
         "content"  : "",
         "snippet"  : " "
      

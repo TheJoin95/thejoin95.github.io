@@ -1,12 +1,9 @@
----
-layout: amp
----
 <!doctype html>
 <html amp lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-    <link rel="canonical" href="{{ page.canonical_url | prepend: site.baseurl | prepend: site.url }}" />
+    <title>Example Post</title>
+    <link rel="canonical" href="https://blog.thejoin.it/example.html" />
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 <style amp-custom>
@@ -181,15 +178,80 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
     <div class="content">
       <article class="post">
         <div class="post-meta">
-          <a href="{{site.baseurl}}/"><h1 class="site-title">{{site.title}}</h1></a>
-          <h1 class="post-title">{{ page.title }}</h1>
+          <a href="/"><h1 class="site-title">TheJoin's Blog</h1></a>
+          <h1 class="post-title">Example Post</h1>
         </div>
         <div class="post-content">
           <span>
-          {{ page.date }} - {{ page.author }}
+          2014-09-07 00:00:00 +0200 - 
           </span>
           
-          {{ content | markdownify | amp_images }}
+          <p>post di test, ok?</p>
+
+<p><amp-img src="/images/image-2.png" alt="sample post" layout="responsive"><noscript><img src="/images/image-2.png" alt="sample post"></noscript></amp-img></p>
+
+<h1 id="header-1">Header 1</h1>
+
+<h2 id="header-2">Header 2</h2>
+
+<h3 id="header-3">Header 3</h3>
+
+<h4 id="header-4">Header 4</h4>
+
+<h5 id="header-5">Header 5</h5>
+
+<h6 id="header-6">Header 6</h6>
+
+<h2 id="paragraphs">Paragraphs</h2>
+
+<p>These are sample paragraphs showing <em>italics</em>, <strong>bold</strong> and <code class="highlighter-rouge">code</code> text style. Here is an unordered  list</p>
+
+<ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ul>
+
+<p>and an ordered list</p>
+
+<ol>
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ol>
+
+<blockquote>
+  <p>A blockquote would look like this.</p>
+</blockquote>
+
+<blockquote>
+  <p>another one</p>
+
+  <p>with multiple lines</p>
+</blockquote>
+
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+
+<p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+
+<p>A code block would look like this.</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"nav"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+        <span class="nt">&lt;li&gt;</span>About<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>Contact<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>Project<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+
+<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+
+<p>Use below code to show <strong>Table of Contents</strong> on a page</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="o">*</span> <span class="nt">Do</span> <span class="nt">not</span> <span class="nt">remove</span> <span class="nt">this</span> <span class="nt">line</span> <span class="o">(</span><span class="nt">it</span> <span class="nt">will</span> <span class="nt">not</span> <span class="nt">be</span> <span class="nt">displayed</span><span class="o">)</span> 
+<span class="p">{</span><span class="err">:toc</span><span class="p">}</span></code></pre></figure>
+
         </div>
   </body>
 </html>

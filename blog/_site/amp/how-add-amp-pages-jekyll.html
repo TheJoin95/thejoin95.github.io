@@ -1,12 +1,9 @@
----
-layout: amp
----
 <!doctype html>
 <html amp lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-    <link rel="canonical" href="{{ page.canonical_url | prepend: site.baseurl | prepend: site.url }}" />
+    <title>Jekyll - Add AMP Pages to your blog</title>
+    <link rel="canonical" href="https://blog.thejoin.it/how-add-amp-pages-jekyll.html" />
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 <style amp-custom>
@@ -181,15 +178,50 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
     <div class="content">
       <article class="post">
         <div class="post-meta">
-          <a href="{{site.baseurl}}/"><h1 class="site-title">{{site.title}}</h1></a>
-          <h1 class="post-title">{{ page.title }}</h1>
+          <a href="/"><h1 class="site-title">TheJoin's Blog</h1></a>
+          <h1 class="post-title">Jekyll - Add AMP Pages to your blog</h1>
         </div>
         <div class="post-content">
           <span>
-          {{ page.date }} - {{ page.author }}
+          2018-06-25 00:00:00 +0200 - 
           </span>
           
-          {{ content | markdownify | amp_images }}
+          <p>We already know the power of the AMP pages but… what if we’ll use in our blog?
+That would be incredible!</p>
+
+<p>Let’s to this!</p>
+
+<h2 id="what-we-need">What we need?</h2>
+<ul>
+  <li><a href="https://rubygems.org/">Rubygems</a></li>
+  <li><a href="https://jekyllrb.com/">Jekyll</a></li>
+  <li><a href="https://github.com/juusaw/amp-jekyll">amp-jekyll</a></li>
+</ul>
+
+<p>And, of course… a blog with at least one post.</p>
+
+<h2 id="install--setup-the-plugin">Install &amp; Setup the plugin</h2>
+
+<p>Install the plugin via the Gemfile</p>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">gem install amp-jekyll</code></pre></figure>
+
+<p>Then add to your _config.yml the plugin:</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="ss">plugins:
+  </span><span class="o">-</span> <span class="n">amp</span><span class="o">-</span><span class="n">jekyll</span></code></pre></figure>
+
+<p><strong>NOTE: Older Jekyll versions (below 3.6.0) use the key gems instead of plugins. When building a site with such version, use the old key.</strong></p>
+
+<p>Then we need to specify the AMP Folder in the _config.yml, where all the pages will be stored:</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="ss">ampdir: </span><span class="no">YOURDIR</span></code></pre></figure>
+
+<h2 id="setting-up-the-amphtml-meta">Setting up the amphtml meta</h2>
+<p>Put this meta inside your head to link the AMP page to your post page (tell to Google: “Hey, I’ve got AMP!”):</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"></code></pre></figure>
+
+<h2 id="setting-up-some-style">Setting up some style</h2>
+<p>Now it’s your turn: style your AMP page!
+I can suggest you to use this awesome theme: https://github.com/ageitgey/amplify</p>
+
         </div>
   </body>
 </html>

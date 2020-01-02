@@ -15,11 +15,13 @@
   <meta name="propeller" content="4a3c54fcaa52c088c85bf945b9d8c0e2" />
   <meta name="google-site-verification" content="AaQt8BwVTJPIh7bAb8T_5SxcyVv1zknL3_SooUR6FGs" />
   
-  <title>About | TheJoin's Blog</title>
+  <title>Jekyll - Add AMP Pages to your blog | TheJoin's Blog</title>
 
   <!-- Meta information for search engines -->
   <meta name="author" content="Miki Lombardi">
-  <meta name="description" content="TheJoin | Programmer blog">
+  <meta name="description" content="Learn how to add the power of the AMP pages to your site built with Jekyll">
+  
+  <meta name="keywords" content="jekyll, jekyll">
   
 
   <!-- Twitter Cards -->
@@ -27,16 +29,16 @@
   
   <meta name="twitter:creator" content="@thejoin95" />
   
-  <meta name="twitter:title" content="About" />
-  <meta name="twitter:description" content="TheJoin | Programmer blog" />
-  <meta name="twitter:url" content="https://blog.thejoin.it/about/" />
+  <meta name="twitter:title" content="Jekyll - Add AMP Pages to your blog" />
+  <meta name="twitter:description" content="Learn how to add the power of the AMP pages to your site built with Jekyll" />
+  <meta name="twitter:url" content="https://blog.thejoin.it/how-add-amp-pages-jekyll.html" />
 
   <!-- Open Graph -->
   <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="About" />
-  <meta property="og:description" content="TheJoin | Programmer blog" />
-  <meta property="og:url" content="https://blog.thejoin.it/about/" />
+  <meta property="og:title" content="Jekyll - Add AMP Pages to your blog" />
+  <meta property="og:description" content="Learn how to add the power of the AMP pages to your site built with Jekyll" />
+  <meta property="og:url" content="https://blog.thejoin.it/how-add-amp-pages-jekyll.html" />
   <meta property="og:site_name" content="TheJoin's Blog">
 
   <link rel="stylesheet" href="/css/main.css">
@@ -46,9 +48,9 @@
   
   <link href="//fonts.googleapis.com/css?family=Space+Mono|Work+Sans:700" rel="stylesheet">    
   <!-- Set the canonical URL for search engines -->
-  <link rel="canonical" href="https://blog.thejoin.it/about/">
+  <link rel="canonical" href="https://blog.thejoin.it/how-add-amp-pages-jekyll.html">
   
-  <link rel="amphtml" href="https://blog.thejoin.it/amp.html">
+  <link rel="amphtml" href="https://blog.thejoin.it/amp/how-add-amp-pages-jekyll.html">
   
 
   <!-- RSS -->
@@ -81,12 +83,30 @@
   <div class="post-title">
       <div class="logo">
           
-              <i class="fa fa-question-circle fa-fw"></i>
+              <i class="fa fa-file fa-fw"></i>
           
       </div>
       <div class="title">
-          <h2 itemprop="headline">About</h2>
+          <h2 itemprop="headline">Jekyll - Add AMP Pages to your blog</h2>
           
+          <span>
+              <time itemprop="datePublished" content="2018-06-25T00:00:00+02:00" datetime="2018-06-25T00:00:00+02:00">
+                  June 25, 2018
+                  
+                      &middot;
+                      <a href="https://blog.thejoin.it/how-add-amp-pages-jekyll.htmlindex.html#disqus_thread" data-disqus-identifier="/how-add-amp-pages-jekyll.html"></a>
+                      
+                  
+              </time>
+          </span>
+          
+          <br/>
+          category: <a class="codinfox-tag-mark" href="https://blog.thejoin.it/category/#jekyll">jekyll</a>
+          
+          
+          | tags: 
+          
+          <a class="codinfox-tag-mark" href="https://blog.thejoin.it/tag/#jekyll">jekyll</a>
           
           
       </div>
@@ -94,15 +114,45 @@
 
   <div itemprop="articleBody">
     <br/>
-    <p>Hi, my name is Miki Lombardi but you can call me <strong>TheJoin</strong>.</p>
+    <p>We already know the power of the AMP pages but… what if we’ll use in our blog?
+That would be incredible!</p>
 
-<p>I’m a web dev based in Florence and actually I’m working for Aperion.</p>
+<p>Let’s to this!</p>
 
-<p>I like to improve myself and study everyday a new thing. I &lt;3 python and javascript, but I usually program in PHP (‘cause C-Style is for boss).</p>
+<h2 id="what-we-need">What we need?</h2>
+<ul>
+  <li><a href="https://rubygems.org/">Rubygems</a></li>
+  <li><a href="https://jekyllrb.com/">Jekyll</a></li>
+  <li><a href="https://github.com/juusaw/amp-jekyll">amp-jekyll</a></li>
+</ul>
 
-<p>Bike addicted, amatour photographer and backpacker.</p>
+<p>And, of course… a blog with at least one post.</p>
 
-<p>You can follow me on this blog, where sometimes I post some crazy stuff (especially with my raspberry), on <a href="https://github.com/TheJoin95">github</a>, on <a href="https://www.instagram.com/thejoin95">instagram</a> (with some mountain bike stuff and beautiful panorama) and <a href="http://stackoverflow.com/users/7257464/thejoin">stackoverflow</a></p>
+<h2 id="install--setup-the-plugin">Install &amp; Setup the plugin</h2>
+
+<p>Install the plugin via the Gemfile</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">gem install amp-jekyll</code></pre></figure>
+
+<p>Then add to your _config.yml the plugin:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="ss">plugins:
+  </span><span class="o">-</span> <span class="n">amp</span><span class="o">-</span><span class="n">jekyll</span></code></pre></figure>
+
+<p><strong>NOTE: Older Jekyll versions (below 3.6.0) use the key gems instead of plugins. When building a site with such version, use the old key.</strong></p>
+
+<p>Then we need to specify the AMP Folder in the _config.yml, where all the pages will be stored:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="ss">ampdir: </span><span class="no">YOURDIR</span></code></pre></figure>
+
+<h2 id="setting-up-the-amphtml-meta">Setting up the amphtml meta</h2>
+<p>Put this meta inside your head to link the AMP page to your post page (tell to Google: “Hey, I’ve got AMP!”):</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="o">&lt;</span><span class="n">link</span> <span class="n">rel</span><span class="o">=</span><span class="s2">"amphtml"</span> <span class="n">href</span><span class="o">=</span><span class="s2">"https://blog.thejoin.it/YOURDIR/how-add-amp-pages-jekyll.html"</span><span class="o">&gt;</span></code></pre></figure>
+
+<h2 id="setting-up-some-style">Setting up some style</h2>
+<p>Now it’s your turn: style your AMP page!
+I can suggest you to use this awesome theme: https://github.com/ageitgey/amplify</p>
 
   </div>
 
@@ -123,31 +173,31 @@
       <ul>
           <li><i class="fa fa-share-square-o"></i></li>
           
-          <li><a href="https://twitter.com/intent/tweet?text=About&url=https://blog.thejoin.it/about/" rel="nofollow" target="_blank" title="Share on Twitter">
+          <li><a href="https://twitter.com/intent/tweet?text=Jekyll - Add AMP Pages to your blog&url=https://blog.thejoin.it/how-add-amp-pages-jekyll.html" rel="nofollow" target="_blank" title="Share on Twitter">
                   <i class="fa fa-twitter-square"></i>
           </a></li>
           
 
           
-          <li><a href="https://www.linkedin.com/shareArticle?url=https://blog.thejoin.it/about/&title=About" rel="nofollow" target="_blank" title="Share on LinkedIn">
+          <li><a href="https://www.linkedin.com/shareArticle?url=https://blog.thejoin.it/how-add-amp-pages-jekyll.html&title=Jekyll - Add AMP Pages to your blog" rel="nofollow" target="_blank" title="Share on LinkedIn">
                   <i class="fa fa-linkedin-square"></i>
           </a></li>
           
 
           
-          <li><a href="https://facebook.com/sharer.php?u=https://blog.thejoin.it/about/" rel="nofollow" target="_blank" title="Share on Facebook">
+          <li><a href="https://facebook.com/sharer.php?u=https://blog.thejoin.it/how-add-amp-pages-jekyll.html" rel="nofollow" target="_blank" title="Share on Facebook">
                   <i class="fa fa-facebook-square"></i>
           </a></li>
           
 
           
-          <li><a href="https://plus.google.com/share?url=https://blog.thejoin.it/about/" rel="nofollow" target="_blank" title="Share on Google+">
+          <li><a href="https://plus.google.com/share?url=https://blog.thejoin.it/how-add-amp-pages-jekyll.html" rel="nofollow" target="_blank" title="Share on Google+">
                   <i class="fa fa-google-plus-square"></i>
           </a></li>
           
 
           
-          <li><a href="https://reddit.com/submit?url=https://blog.thejoin.it/about/&title=About" rel="nofollow" target="_blank" title="Share on Reddit">
+          <li><a href="https://reddit.com/submit?url=https://blog.thejoin.it/how-add-amp-pages-jekyll.html&title=Jekyll - Add AMP Pages to your blog" rel="nofollow" target="_blank" title="Share on Reddit">
                   <i class="fa fa-reddit-square"></i>
           </a></li>
           
@@ -172,9 +222,9 @@
   <!-- Add Disqus comments (not comment count) -->
   <script type="text/javascript">
       var disqus_shortname  = 'thejoin';
-      var disqus_identifier = '/about/';
-      var disqus_title      = 'About';
-      var disqus_url        = 'https://blog.thejoin.it/about/';
+      var disqus_identifier = '/how-add-amp-pages-jekyll.html';
+      var disqus_title      = 'Jekyll - Add AMP Pages to your blog';
+      var disqus_url        = 'https://blog.thejoin.it/how-add-amp-pages-jekyll.html';
       // var disqus_developer = 1; // Comment out when the site is live
 
       (function() {

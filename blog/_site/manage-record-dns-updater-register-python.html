@@ -15,11 +15,13 @@
   <meta name="propeller" content="4a3c54fcaa52c088c85bf945b9d8c0e2" />
   <meta name="google-site-verification" content="AaQt8BwVTJPIh7bAb8T_5SxcyVv1zknL3_SooUR6FGs" />
   
-  <title>About | TheJoin's Blog</title>
+  <title>Register.it - Dynamic DNS Updater | TheJoin's Blog</title>
 
   <!-- Meta information for search engines -->
   <meta name="author" content="Miki Lombardi">
-  <meta name="description" content="TheJoin | Programmer blog">
+  <meta name="description" content="Manage the DNS record for your domain">
+  
+  <meta name="keywords" content="python, python">
   
 
   <!-- Twitter Cards -->
@@ -27,16 +29,16 @@
   
   <meta name="twitter:creator" content="@thejoin95" />
   
-  <meta name="twitter:title" content="About" />
-  <meta name="twitter:description" content="TheJoin | Programmer blog" />
-  <meta name="twitter:url" content="https://blog.thejoin.it/about/" />
+  <meta name="twitter:title" content="Register.it - Dynamic DNS Updater" />
+  <meta name="twitter:description" content="Manage the DNS record for your domain" />
+  <meta name="twitter:url" content="https://blog.thejoin.it/manage-record-dns-updater-register-python.html" />
 
   <!-- Open Graph -->
   <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="About" />
-  <meta property="og:description" content="TheJoin | Programmer blog" />
-  <meta property="og:url" content="https://blog.thejoin.it/about/" />
+  <meta property="og:title" content="Register.it - Dynamic DNS Updater" />
+  <meta property="og:description" content="Manage the DNS record for your domain" />
+  <meta property="og:url" content="https://blog.thejoin.it/manage-record-dns-updater-register-python.html" />
   <meta property="og:site_name" content="TheJoin's Blog">
 
   <link rel="stylesheet" href="/css/main.css">
@@ -46,9 +48,9 @@
   
   <link href="//fonts.googleapis.com/css?family=Space+Mono|Work+Sans:700" rel="stylesheet">    
   <!-- Set the canonical URL for search engines -->
-  <link rel="canonical" href="https://blog.thejoin.it/about/">
+  <link rel="canonical" href="https://blog.thejoin.it/manage-record-dns-updater-register-python.html">
   
-  <link rel="amphtml" href="https://blog.thejoin.it/amp.html">
+  <link rel="amphtml" href="https://blog.thejoin.it/amp/dynamic-dns-updater-register.html">
   
 
   <!-- RSS -->
@@ -81,12 +83,30 @@
   <div class="post-title">
       <div class="logo">
           
-              <i class="fa fa-question-circle fa-fw"></i>
+              <i class="fa fa-document fa-fw"></i>
           
       </div>
       <div class="title">
-          <h2 itemprop="headline">About</h2>
+          <h2 itemprop="headline">Register.it - Dynamic DNS Updater</h2>
           
+          <span>
+              <time itemprop="datePublished" content="2019-03-28T00:00:00+01:00" datetime="2019-03-28T00:00:00+01:00">
+                  March 28, 2019
+                  
+                      &middot;
+                      <a href="https://blog.thejoin.it/manage-record-dns-updater-register-python.htmlindex.html#disqus_thread" data-disqus-identifier="/manage-record-dns-updater-register-python.html"></a>
+                      
+                  
+              </time>
+          </span>
+          
+          <br/>
+          category: <a class="codinfox-tag-mark" href="https://blog.thejoin.it/category/#python">python</a>
+          
+          
+          | tags: 
+          
+          <a class="codinfox-tag-mark" href="https://blog.thejoin.it/tag/#python">python</a>
           
           
       </div>
@@ -94,15 +114,31 @@
 
   <div itemprop="articleBody">
     <br/>
-    <p>Hi, my name is Miki Lombardi but you can call me <strong>TheJoin</strong>.</p>
+    <h1 id="registerit---dynamic-dns-updater">Register.it - Dynamic DNS Updater</h1>
 
-<p>I’m a web dev based in Florence and actually I’m working for Aperion.</p>
+<p>Great! You have just purchased a .com domain for .99€ and now you can setting up everyting for running your application on your Raspberry Pi.
+You are very happy, so you take your public ip address and put it on the domain’s record A.</p>
 
-<p>I like to improve myself and study everyday a new thing. I &lt;3 python and javascript, but I usually program in PHP (‘cause C-Style is for boss).</p>
+<p>The morning after you feel great to have just published your app!
+You want to share all over the world the link, but… “ERROR - Server DNS address could not be found”</p>
 
-<p>Bike addicted, amatour photographer and backpacker.</p>
+<p>Now you feel bad, very bad.</p>
 
-<p>You can follow me on this blog, where sometimes I post some crazy stuff (especially with my raspberry), on <a href="https://github.com/TheJoin95">github</a>, on <a href="https://www.instagram.com/thejoin95">instagram</a> (with some mountain bike stuff and beautiful panorama) and <a href="http://stackoverflow.com/users/7257464/thejoin">stackoverflow</a></p>
+<p>Ehy… I’ve got the solution: <a href="https://github.com/TheJoin95/Register.it-Dynamic-DNS-Updater">Dynamic DNS Updater</a>!</p>
+
+<h2 id="how-it-works">How it works</h2>
+
+<p>It works with Puppeteer by Google and NodeJS and it simulate the signin and the navigation trough the page and domains to add/delete a DNS record.</p>
+
+<p>Make sure to have Crhome installed and Node v. &gt; 6.</p>
+
+<p>Then you can run the script typing:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>node index.js --username=USERNAME_HERE --password=SECRET_PWD --domain=DOMAIN --name=RECORD_NAME --value=RECORD_VALUE --ttl=TTL_&gt;_600 --type=RECORD_TYPE
+</code></pre>
+</div>
+
+<p>Note that RECORD_TYPE can be one of the following values: NS, A, CNAME, MX, TXT, SRV, AAAA.</p>
+
 
   </div>
 
@@ -123,31 +159,31 @@
       <ul>
           <li><i class="fa fa-share-square-o"></i></li>
           
-          <li><a href="https://twitter.com/intent/tweet?text=About&url=https://blog.thejoin.it/about/" rel="nofollow" target="_blank" title="Share on Twitter">
+          <li><a href="https://twitter.com/intent/tweet?text=Register.it - Dynamic DNS Updater&url=https://blog.thejoin.it/manage-record-dns-updater-register-python.html" rel="nofollow" target="_blank" title="Share on Twitter">
                   <i class="fa fa-twitter-square"></i>
           </a></li>
           
 
           
-          <li><a href="https://www.linkedin.com/shareArticle?url=https://blog.thejoin.it/about/&title=About" rel="nofollow" target="_blank" title="Share on LinkedIn">
+          <li><a href="https://www.linkedin.com/shareArticle?url=https://blog.thejoin.it/manage-record-dns-updater-register-python.html&title=Register.it - Dynamic DNS Updater" rel="nofollow" target="_blank" title="Share on LinkedIn">
                   <i class="fa fa-linkedin-square"></i>
           </a></li>
           
 
           
-          <li><a href="https://facebook.com/sharer.php?u=https://blog.thejoin.it/about/" rel="nofollow" target="_blank" title="Share on Facebook">
+          <li><a href="https://facebook.com/sharer.php?u=https://blog.thejoin.it/manage-record-dns-updater-register-python.html" rel="nofollow" target="_blank" title="Share on Facebook">
                   <i class="fa fa-facebook-square"></i>
           </a></li>
           
 
           
-          <li><a href="https://plus.google.com/share?url=https://blog.thejoin.it/about/" rel="nofollow" target="_blank" title="Share on Google+">
+          <li><a href="https://plus.google.com/share?url=https://blog.thejoin.it/manage-record-dns-updater-register-python.html" rel="nofollow" target="_blank" title="Share on Google+">
                   <i class="fa fa-google-plus-square"></i>
           </a></li>
           
 
           
-          <li><a href="https://reddit.com/submit?url=https://blog.thejoin.it/about/&title=About" rel="nofollow" target="_blank" title="Share on Reddit">
+          <li><a href="https://reddit.com/submit?url=https://blog.thejoin.it/manage-record-dns-updater-register-python.html&title=Register.it - Dynamic DNS Updater" rel="nofollow" target="_blank" title="Share on Reddit">
                   <i class="fa fa-reddit-square"></i>
           </a></li>
           
@@ -172,9 +208,9 @@
   <!-- Add Disqus comments (not comment count) -->
   <script type="text/javascript">
       var disqus_shortname  = 'thejoin';
-      var disqus_identifier = '/about/';
-      var disqus_title      = 'About';
-      var disqus_url        = 'https://blog.thejoin.it/about/';
+      var disqus_identifier = '/manage-record-dns-updater-register-python.html';
+      var disqus_title      = 'Register.it - Dynamic DNS Updater';
+      var disqus_url        = 'https://blog.thejoin.it/manage-record-dns-updater-register-python.html';
       // var disqus_developer = 1; // Comment out when the site is live
 
       (function() {

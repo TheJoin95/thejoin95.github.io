@@ -1,12 +1,9 @@
----
-layout: amp
----
 <!doctype html>
 <html amp lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-    <link rel="canonical" href="{{ page.canonical_url | prepend: site.baseurl | prepend: site.url }}" />
+    <title>Prenotare appuntamento passaporto online - Italia</title>
+    <link rel="canonical" href="https://blog.thejoin.it/prenotare-appuntamento-passaporto-online.html" />
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 <style amp-custom>
@@ -181,15 +178,63 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
     <div class="content">
       <article class="post">
         <div class="post-meta">
-          <a href="{{site.baseurl}}/"><h1 class="site-title">{{site.title}}</h1></a>
-          <h1 class="post-title">{{ page.title }}</h1>
+          <a href="/"><h1 class="site-title">TheJoin's Blog</h1></a>
+          <h1 class="post-title">Prenotare appuntamento passaporto online - Italia</h1>
         </div>
         <div class="post-content">
           <span>
-          {{ page.date }} - {{ page.author }}
+          2019-05-18 00:00:00 +0200 - 
           </span>
           
-          {{ content | markdownify | amp_images }}
+          <h1 id="agenda-per-appuntamenti-passaporto---italia">Agenda per appuntamenti passaporto - Italia</h1>
+
+<p>This article is in italian.</p>
+
+<p>Prendere un appuntamento online per fare il passaporto italiano è un’avventura, dal titolo: “Una storia infinita”.</p>
+
+<h2 id="perché-lappuntamento-online">Perché l’appuntamento online?</h2>
+<p>E’ davvero utile. Ti permettere di saltare la fila in caserma/questura perché ti viene assegnato un orario nel quale presentarsi.
+E’ necessario essere puntuali e far notare a chiunque che si è in possesso dell’appuntamento.</p>
+
+<h2 id="come-funziona">Come funziona?</h2>
+<p>Il sito di <a href="https://www.passaportonline.poliziadistato.it">riferimento</a> mostra, una volta loggati tramite le proprie credenziali, un calendario suddiviso per località (questure e caserme) dove è possibile richiedere il passaporto.</p>
+
+<p>Dal calendario è possibile prenotare un appuntamento per i vari slot disponibili.</p>
+
+<p>Qui arriva il bello.</p>
+
+<p>Gli slot disponibili… sono solo un miraggio.
+Non è ben chiaro come funziona l’assegnazione di questi slot, se esiste una procedura di lock o altro.
+Quando sono “disponibili” non lo sono per davvero.
+Quando non ci sono, invece sono disponibili.
+Quando finalmente ne scegli uno, l’interfaccia esplode.</p>
+
+<p>Sono particolari.</p>
+
+<h2 id="la-soluzione-o-definita-tale">La soluzione (o definita tale)</h2>
+<p>Creare uno script che controlla la VERA disponibilità degli slot di appuntamento.</p>
+
+<p>Lo script funziona come di seguito:</p>
+<ul>
+  <li>Simula l’accesso e la navigazione del portale tramite le proprie credenziali (non verranno mai condivisi con altri)</li>
+  <li>Effettuerà il controllo di disponibilità su tutte le località disponibili per la vostra zona</li>
+  <li>Recupererà e mostrerà la disponibilità a video ogni volta che verrà eseguito lo script</li>
+</ul>
+
+<p>No, non prenoterà al vostro posto.
+Dovrete farlo voi, perché quella è l’unica parte che funziona ed è fondamentale non sbagliare altrimenti è stata solo una perdita di tempo.</p>
+
+<p>La repository del progetto per usarlo e per contribuire:
+<a href="https://github.com/TheJoin95/passport-agenda-notification">Github Repository</a></p>
+
+<p>Prego.</p>
+
+<h3 id="note">Note</h3>
+<p>Lo script è datato Aprile 2019. Eventuali aggiornamenti grafici o procedurali del portale potrebbero portare a qualche malfunzionamento dello script.
+Siete liberi di farmelo notare o di contribuire direttamente su Github, così da correggere e renderlo fruibile di nuovo a tutti.</p>
+
+<p>Grazie</p>
+
         </div>
   </body>
 </html>

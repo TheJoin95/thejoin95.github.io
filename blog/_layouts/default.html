@@ -50,7 +50,7 @@
   <!-- Set the canonical URL for search engines -->
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
   {% if page.layout == 'post' %}
-  <link rel="amphtml" href="{{ page.url | prepend: site.ampdir | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="amphtml" href="{{ page.id | append:'.html' | prepend: site.ampdir | prepend: site.baseurl | prepend: site.url }}">
   {% endif %}
 
   <!-- RSS -->

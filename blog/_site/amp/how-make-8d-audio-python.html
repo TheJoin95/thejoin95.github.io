@@ -1,12 +1,9 @@
----
-layout: amp
----
 <!doctype html>
 <html amp lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-    <link rel="canonical" href="{{ page.canonical_url | prepend: site.baseurl | prepend: site.url }}" />
+    <title>How to make a 8D audio track with Python</title>
+    <link rel="canonical" href="https://blog.thejoin.it/how-make-8d-ambisonic-audio-track-python.html" />
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 <style amp-custom>
@@ -181,15 +178,48 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
     <div class="content">
       <article class="post">
         <div class="post-meta">
-          <a href="{{site.baseurl}}/"><h1 class="site-title">{{site.title}}</h1></a>
-          <h1 class="post-title">{{ page.title }}</h1>
+          <a href="/"><h1 class="site-title">TheJoin's Blog</h1></a>
+          <h1 class="post-title">How to make a 8D audio track with Python</h1>
         </div>
         <div class="post-content">
           <span>
-          {{ page.date }} - {{ page.author }}
+          2018-10-28 00:00:00 +0200 - 
           </span>
           
-          {{ content | markdownify | amp_images }}
+          <p>Did you ever listen to an 8D song? Or Ambisonic audio track?
+I’ll suggest you to take your headphone, 5min of your time, and search “8d song” on youtube. Enjoy.</p>
+
+<p>It’s sound amazing.</p>
+
+<p>So… I wanted to figure out if it was possibile to recreate the 8D effects with any audio sources.
+The response: yes.</p>
+
+<p>For this little project I choose Python with the PyDub library.
+I made a simple script right here: https://github.com/TheJoin95/ambisonics-3d-audio
+Check it out, clone it and try it.</p>
+
+<h2 id="how-it-works">How it works?</h2>
+<p>An Ambisonic track is totally a different track from a mp3 file or a video.
+It need to be recored by a special microphone, with at least 4channels.
+To reproduce the Ambisonic track you need to have multiple speaker (like a 5.1 and more).</p>
+
+<p>My goal is to make every single audio track an ambisonic track or, at least, make a 360/3D effects audio.
+We can recreate the 3D effects by using some effects (pass filter low|high) and panning the audio from the left earphone to the right side and viceversa.</p>
+
+<p>Of course, you can try to mix the audio track by invert the phase and overlap the track. This can guarantee you a good quality result.</p>
+
+<p>I’ll suggest you to try the script on github with your favorite track.</p>
+
+<h2 id="editing-the-script">Editing the script</h2>
+<p>You can edit the init.py file with your mp3 file to convert, e.g.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">interval</span> <span class="o">=</span> <span class="mf">0.2</span> <span class="o">*</span> <span class="mi">1000</span> <span class="c"># sec</span>
+<span class="n">song</span> <span class="o">=</span> <span class="n">AudioSegment</span><span class="o">.</span><span class="n">from_mp3</span><span class="p">(</span><span class="s">'mp3/castle-of-glass.mp3'</span><span class="p">)</span></code></pre></figure>
+
+<p>then you can run the init.py script. The result (a mp3 file) will be produced in a compiled folder.</p>
+
+<p>Enjoy your 8D track.</p>
+
         </div>
   </body>
 </html>

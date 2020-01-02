@@ -46,6 +46,9 @@ disqus_shortname: 'thejoin'
 
 gems: ['jekyll-paginate', 'amp-jekyll']
 
+plugins:
+  - amp-jekyll
+
 exclude:
 - README.md
 

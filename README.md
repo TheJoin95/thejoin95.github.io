@@ -2,20 +2,40 @@
 
 > Work in progress
 
-# License
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+## License
 
 Apache
 
-# Credits
+## Credits
 
-## Inspiration
-
-> thanks to...
-
-## Illustration
+### Inspiration
 
 > thanks to...
 
-## Developed by
+### Illustration
+
+> thanks to...
+
+### Developed by
 
 thejoin95

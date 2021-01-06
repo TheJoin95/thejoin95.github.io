@@ -3,12 +3,14 @@ import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 import Article from '../views/Article.vue';
 import Error404 from '../views/Error404.vue';
+import Blog from '../views/Blog.vue';
 
 Vue.use(VueRouter);
 
-const Blog = {
-  template: '<div>blog</div>',
-};
+/**
+ * Aggiungere meta tag
+ * Dinamici, statici per rotte
+ */
 
 const routes = [
   {

@@ -12,6 +12,11 @@ const Blog = {
 
 const routes = [
   {
+    path: '*',
+    name: 'CatchAll',
+    component: Error404,
+  },
+  {
     path: '/',
     name: 'Home',
     component: Home,
@@ -42,6 +47,7 @@ const routes = [
 ];
 
 const router = new VueRouter({
+  mode: 'history',
   routes,
 });
 

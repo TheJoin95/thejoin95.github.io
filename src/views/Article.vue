@@ -19,16 +19,23 @@ export default {
     $route: 'loadArticle',
   },
   methods: {
+    redirectTo404() {
+      window.location.href = '/not-found';
+    },
     loadArticle() {
       const self = this;
       fetch(`/articles/${this.$route.params.article}.md`)
         .then(async (r) => {
+          console.log(r.status);
           const text = await r.text();
+          // Workaround, da modificare in produzione con redirect
+          if (text.search(/sorry/) !== -1) {
+            self.redirectTo404();
+          }
+
           self.article = marked(text);
-        }, (reject) => {
-          console.log(reject);
-          self.article = '404';
-          window.location.href = '/not-found';
+        }, () => {
+          self.redirectTo404();
         });
     },
   },

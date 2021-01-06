@@ -1,0 +1,12 @@
+[
+    {
+        "title": "Article 1",
+        "sefurl": "article-1",
+        "description": "Primo articolo"
+    },
+    {
+        "title": "Article 2",
+        "sefurl": "article-2",
+        "description": "Secondo articolo"
+    }
+]

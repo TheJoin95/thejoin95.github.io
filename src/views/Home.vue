@@ -14,8 +14,5 @@ export default {
   components: {
     HelloWorld,
   },
-  computed() {
-    console.log(this.$route);
-  },
 };
 </script>

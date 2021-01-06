@@ -28,7 +28,7 @@ export default {
         }, (reject) => {
           console.log(reject);
           self.article = '404';
-          // redirect to 404
+          window.location.href = '/not-found';
         });
     },
   },

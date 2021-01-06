@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 import Article from '../views/Article.vue';
+import Error404 from '../views/Error404.vue';
 
 Vue.use(VueRouter);
 
@@ -14,6 +15,11 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home,
+  },
+  {
+    path: '/not-found',
+    name: '404',
+    component: Error404,
   },
   {
     path: '/blog/',

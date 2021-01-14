@@ -19,6 +19,17 @@ export default {
   components: {
     Lettering,
   },
+  watch: {
+    $route(to, from) {
+      const toName = to.name;
+      const fromName = from.name;
+      document.querySelector('.lettering .word').innerText = (toName !== 'Home' && toName !== fromName) ? toName : 'thejoin';
+
+      document.querySelector('.lettering').style.opacity = '1';
+      document.querySelector('.lettering').style.display = 'block';
+      Lettering.methods.typeEffect();
+    },
+  },
   methods: {
     scrambleTextEffect(selector, text) {
       /* const phrases = [

@@ -1,6 +1,6 @@
 <template>
-  <section class="article">
-    <div class="content" v-html="article"></div>
+  <section class="article container mx-auto m-width-960">
+    <div class="article-content" v-html="article"></div>
   </section>
 </template>
 

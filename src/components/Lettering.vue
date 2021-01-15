@@ -115,7 +115,7 @@ export default {
     },
   },
   mounted() {
-    this.typeEffect();
+    // this.typeEffect();
   },
 };
 </script>
@@ -164,6 +164,7 @@ export default {
 
 /* Word + SVG styles */
 .word {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
   position: relative;
   display: flex;
   flex-direction: row;

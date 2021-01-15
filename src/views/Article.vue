@@ -1,5 +1,5 @@
 <template>
-  <section class="article container mx-auto m-width-960">
+  <section class="article container mx-auto m-width-780">
     <div class="article-content" v-html="article"></div>
   </section>
 </template>

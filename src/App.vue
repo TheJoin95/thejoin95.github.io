@@ -72,8 +72,11 @@ export default {
     },
   },
   mounted() {
+    const self = this;
     Lettering.methods.typeEffect();
-    this.scrambleTextEffect('.text', 'thejoin');
+    setInterval(() => {
+      self.scrambleTextEffect('.text-scramble', '');
+    }, 7500);
   },
 };
 </script>

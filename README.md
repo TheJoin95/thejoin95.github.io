@@ -38,7 +38,7 @@ Apache
 
 ### Animations
 
-> Thanks to: [vitra](https://lottiefiles.com/vitra)
+> Thanks to: [vitra](https://lottiefiles.com/vitra), [markarrow](https://lottiefiles.com/markarrow)
 
 ### Developed by
 

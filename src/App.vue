@@ -73,8 +73,10 @@ export default {
   },
   mounted() {
     const self = this;
+    let scrambleInterval;
     Lettering.methods.typeEffect();
-    setInterval(() => {
+    clearInterval(scrambleInterval);
+    scrambleInterval = setInterval(() => {
       self.scrambleTextEffect('.text-scramble', '');
     }, 7500);
   },

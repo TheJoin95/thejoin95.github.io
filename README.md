@@ -36,6 +36,10 @@ Apache
 
 > thanks to...
 
+### Animations
+
+> Thanks to: [vitra](https://lottiefiles.com/vitra)
+
 ### Developed by
 
 thejoin95

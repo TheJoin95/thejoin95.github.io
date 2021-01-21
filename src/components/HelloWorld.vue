@@ -10,7 +10,7 @@
         <div class="col-start-5 col-end-7">
           <!-- https://lottiefiles.com/44885-man-on-working -->
           <lottie-player
-            src="https://assets10.lottiefiles.com/packages/lf20_zjllsmcs.json"
+            src="/lotties/pc-man.json"
             background="transparent"
             speed="1"
             style="width: 400px; height: 400px;"

@@ -4,7 +4,7 @@ const ARTICLES_PATH = './public/articles/';
 
 fs.readdir(ARTICLES_PATH, (err, files) => {
   const outputJSON = [];
-  for (let i = 0; i < files.length; i += 1) {
+  for (let i = files.length - 1; i >= 0; i -= 1) {
     const file = fs.readFileSync(ARTICLES_PATH + files[i]).toString();
 
     const rawHeaders = file.substr(4, file.substr(4).search('---') - 1);
@@ -24,5 +24,6 @@ fs.readdir(ARTICLES_PATH, (err, files) => {
     article.permalink = `${article.date}-${article.permalink}`;
     outputJSON.push(article);
   }
+
   fs.writeFileSync('./src/assets/articles.json', `[${outputJSON}]`);
 });

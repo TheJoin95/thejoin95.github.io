@@ -1,4 +1,5 @@
----title: The Sorting Hat Experiment | WebAR in pure JS
+---
+title: The Sorting Hat Experiment | WebAR in pure JS
 description: The power of AR in the palm of a hand Google, with Chrome, is trying to develop and guarantee support for AR and VR by proposing a standard at the level of W3C. The proposals are still in draft and in the proposal phase, but there are already some experiments that can be tried.
 permalink: sorting-hat-experiment-webar-in-js
 icon: flight

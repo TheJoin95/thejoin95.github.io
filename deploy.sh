@@ -3,6 +3,9 @@
 # abort on errors
 set -e
 
+# generate articles metadata
+npm run generate-articles-metadata
+
 # build
 npm run build
 

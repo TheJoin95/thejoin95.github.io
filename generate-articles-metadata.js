@@ -21,7 +21,7 @@ fs.readdir(ARTICLES_PATH, (err, files) => {
       }
       return splittedValue.join(':');
     }).join('\n').replace('\n', '')}}`;
-    article.sefurl = article.permalink;
+    article.permalink = `${article.date}-${article.permalink}`;
     outputJSON.push(article);
   }
   fs.writeFileSync('./src/assets/articles.json', `[${outputJSON}]`);

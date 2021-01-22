@@ -4,7 +4,12 @@
       <h1 class="text-center">Blog listing</h1>
       <div v-for="article in articles" :key="article.permalink">
         <div class="article">
-          <h3><router-link :to="`/blog/${article.permalink}`">{{ article.title }}</router-link></h3>
+          <h3>
+            <router-link
+              :to="`/blog/${article.date + '-' + article.permalink}`">
+              {{ article.title }}
+              </router-link>
+          </h3>
           <small>{{ article.date }}</small>
           <p>{{ article.description }}</p>
         </div>

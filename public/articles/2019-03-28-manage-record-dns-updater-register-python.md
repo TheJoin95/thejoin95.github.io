@@ -1,4 +1,5 @@
----title: Register.it - Dynamic DNS Updater
+---
+title: Register.it - Dynamic DNS Updater
 description: Manage the DNS record for your domain
 permalink: manage-record-dns-updater-register-python
 icon: document

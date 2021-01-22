@@ -1,4 +1,5 @@
----title: Scraping the web to get the best flight fares | NodeJS & Puppeteer
+---
+title: Scraping the web to get the best flight fares | NodeJS & Puppeteer
 description: A Skyscanner web scraper made in Puppeeter
 permalink: puppeteer-skyscanner-scraper-nodejs
 icon: flight

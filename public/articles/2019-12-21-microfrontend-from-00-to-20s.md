@@ -1,4 +1,5 @@
----title: Micro Frontends - From the 00s to 20s
+---
+title: Micro Frontends - From the 00s to 20s
 description: Micro Front-ends do not carry any magic formula, but a lot of method, many concepts and principles that derive a lot from the architecture of the Microservices.
 permalink: microfrontend-from-00-to-20s
 icon: flight

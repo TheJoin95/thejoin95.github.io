@@ -1,14 +1,18 @@
 ---
 title: Register.it - Dynamic DNS Updater
-description: Manage the DNS record for your domain
+description: Manage the DNS record for your domain on Register.it platform via script or via CLI
 permalink: manage-record-dns-updater-register-python
-icon: document
+icon: h3vT1Kp0FxA
 date: 2019-03-28
 category: python
 tags: [python]
 ---
 
 # Register.it - Dynamic DNS Updater
+
+<div class="mx-auto">
+    <img class="max-w-full" src="https://source.unsplash.com/h3vT1Kp0FxA/960x680" />
+</div>
 
 Great! You have just purchased a .com domain for .99€ and now you can setting up everyting for running your application on your Raspberry Pi.
 You are very happy, so you take your public ip address and put it on the domain's record A.

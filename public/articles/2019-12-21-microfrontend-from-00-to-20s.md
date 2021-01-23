@@ -2,13 +2,18 @@
 title: Micro Frontends - From the 00s to 20s
 description: Micro Front-ends do not carry any magic formula, but a lot of method, many concepts and principles that derive a lot from the architecture of the Microservices.
 permalink: microfrontend-from-00-to-20s
-icon: flight
+icon: hHntcuiLbOg
 date: 2019-12-21
 category: python
 tags: [python]
 ---
 
 # Micro Frontends — From the 00s to 20s
+
+<div class="mx-auto">
+    <img class="max-w-full" src="https://source.unsplash.com/hHntcuiLbOg/960x680" />
+</div>
+
 Micro Frontends, if a definition is necessary, should be defined as architectural concepts and principles of an application . An architectural pattern applicable also to the most critical side of a modern application: the frontend side.
 A goal that this pattern has, is the division of a large and complex application (with a complex UI) into many small, independent applications, each suitable for carrying out only the intended task.
 Each “micro-application” is independent from the other and this allows us to develop, by keeping the main guidelines of the main application, also with different technology or framework.

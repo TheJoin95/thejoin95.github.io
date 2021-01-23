@@ -2,7 +2,7 @@
 title: The Sorting Hat Experiment | WebAR in pure JS
 description: The power of AR in the palm of a hand Google, with Chrome, is trying to develop and guarantee support for AR and VR by proposing a standard at the level of W3C. The proposals are still in draft and in the proposal phase, but there are already some experiments that can be tried.
 permalink: sorting-hat-experiment-webar-in-js
-icon: flight
+icon: Qqsgit1tyWw
 date: 2020-02-23
 category: javascript
 tags: [javascript]
@@ -11,7 +11,9 @@ tags: [javascript]
 
 # The Sorting Hat Experiment | WebAR in pure JS
 
-
+<div class="mx-auto">
+    <img class="max-w-full" src="https://source.unsplash.com/Qqsgit1tyWw/960x680" />
+</div>
 
 The power of [augmented reality](https://arvrjourney.com/) in the palm of a hand: Google, with Chrome, is trying to develop and guarantee support for AR and VR by proposing a standard at the level of W3C. The proposals are still in draft and in the proposal phase, but there are already some experiments that can be tried.
 
@@ -40,12 +42,6 @@ The result can be visited [here](https://experiments.thejoin.tech/) (self- signe
 ## Technologies used for the experiment
 
 The experiment was implemented in pure javascript, using the [Three.js](https://threejs.org/) library , the native API to retrieve the camera and accelerometer input and making use of the [https://trackingjs.com/](https://trackingjs.com/) library for facial recognition (via a MobileNet ).
-
-## Trending AR VR Articles:
-> # [1. How XR Can Unleash Cognition](https://arvrjourney.com/how-xr-can-unleash-cognition-3bda13026ade)
-> # [2. Oculus Go, the Nintendo Switch of VR](https://arvrjourney.com/oculus-go-the-nintendo-switch-of-vr-6827e1b91055)
-> # [3. Expert View: 3 ways VR is transforming Learning & Development](https://arvrjourney.com/expert-view-3-ways-vr-is-transforming-learning-development-487a021e8334)
-> # [4. Ready Player One : How Close Are We?](https://arvrjourney.com/ready-player-one-how-close-are-we-8af973c1cfa0)
 
 At the time of the experiment, there was still no google project to implement the WebXR API (API to implement the native web AR) in Chrome, nor the version of Three.js, oriented towards the management of a 3D environment in [VR](https://arvrjourney.com/), AR-oriented: [Three.ar.js](https://github.com/google-ar/three.ar.js) .
 

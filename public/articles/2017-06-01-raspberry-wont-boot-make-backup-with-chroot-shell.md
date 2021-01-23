@@ -2,11 +2,17 @@
 title: Raspberry won't boot - Recover data and fix bug with chroot [ubuntu]
 description: If raspberry won't boot and it's caused after you installed upstart, you can use chroot for make backup or fix the whole image
 permalink: raspberry-wont-boot-make-backup-with-chroot-shell
-icon: cog fa-spin
+icon: 53jnUK5LqEY
 date: 2017-06-01
 category: bug
 tags: [raspberry, boot, backup]
 ---
+
+# Raspberry won't boot - Recover data and fix bug with chroot [ubuntu]
+
+<div class="mx-auto">
+    <img class="max-w-full" src="https://source.unsplash.com/53jnUK5LqEY/960x680" />
+</div>
 
 Two weeks ago I installed on my raspberry (raspbian wheezy) upstart package (an ubuntu package for process management)... and it was an error.
 

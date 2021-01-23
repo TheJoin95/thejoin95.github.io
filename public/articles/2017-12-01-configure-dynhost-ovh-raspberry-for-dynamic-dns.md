@@ -2,11 +2,17 @@
 title: How to configure Dynamic DNS (DynHost) - OVH
 description: How to config your local machine (eg. Raspberry) to make DynHost (service of OVH) working
 permalink: configure-dynhost-ovh-raspberry-for-dynamic-dns
-icon: cog fa-spin
+icon: IlxX7xnbRF8
 date: 2017-12-01
 category: domains
 tags: [raspberry, dns, domain]
 ---
+
+# How to configure Dynamic DNS (DynHost) - OVH
+
+<div class="mx-auto">
+    <img class="max-w-full" src="https://source.unsplash.com/IlxX7xnbRF8/960x680" />
+</div>
 
 OVH is maybe the best low cost provider, because it offers some useful tools for.. free!
 

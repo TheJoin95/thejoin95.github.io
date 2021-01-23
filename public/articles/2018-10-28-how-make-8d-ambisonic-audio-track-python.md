@@ -1,12 +1,18 @@
 ---
 title: How to make a 8D audio track with Python
-description: Learn how to make a mono/stereo audio track to 8D Ambisonic audio track
+description: Learn how to make a mono/stereo audio track to 8D Ambisonic audio track with python language
 permalink: how-make-8d-ambisonic-audio-track-python
-icon: music
+icon: -enX3Ef2BjI
 date: 2018-10-28
 category: python
 tags: [python]
 ---
+
+# How to make a 8D audio track with Python
+
+<div class="mx-auto">
+    <img class="max-w-full" src="https://source.unsplash.com/-enX3Ef2BjI/960x680" />
+</div>
 
 Did you ever listen to an 8D song? Or Ambisonic audio track?
 I'll suggest you to take your headphone, 5min of your time, and search "8d song" on youtube. Enjoy.

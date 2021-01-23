@@ -2,7 +2,7 @@
 title: The Augmented Reality — A brief explanation
 description: AR is a technology that expands our physical world by adding various digital layers to it. Unlike virtual reality (in short, VR) it does not create an entire virtual environment and, above all, it does not replace the real environment with a completely virtual one
 permalink: argumented-reality-brief-explanation
-icon: flight
+icon: NrMGL5MR8uk
 date: 2020-02-21
 category: javascript
 tags: [javascript]
@@ -11,7 +11,9 @@ tags: [javascript]
 
 # The Augmented Reality — A brief explanation
 
-
+<div class="mx-auto">
+    <img class="max-w-full" src="https://source.unsplash.com/NrMGL5MR8uk/960x680" />
+</div>
 
 ## What is Argumented Reality
 

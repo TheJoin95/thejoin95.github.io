@@ -2,11 +2,17 @@
 title: Automatically setting up and connect Raspberry Pi to a Wifi network
 description: Automatically setting up your raspberry to connect to your wifi, with a static ip or DHCP! Only via SSH tunnel!
 permalink: automatically-connect-wifi-raspberry-dhcp-and-staticip
-icon: wifi
+icon: 17HaOLLOXYM
 date: 2017-05-17
 category: raspberry
 tags: [raspberry, wifi, static, dhcp]
 ---
+
+# Automatically setting up and connect Raspberry Pi to a Wifi network
+
+<div class="mx-auto">
+    <img class="max-w-full" src="https://source.unsplash.com/17HaOLLOXYM/960x680" />
+</div>
 
 So you have bought your Raspberry and you want to figure out how it is working! If you wanna be cool, you don't install GUI and do your things only by CLI and via SSH... but! You need a connection to your local network!! How connect automatically our raspberry on boot to our wifi network?
 

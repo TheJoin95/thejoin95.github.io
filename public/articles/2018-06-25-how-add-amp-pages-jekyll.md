@@ -1,12 +1,18 @@
 ---
 title: Jekyll - Add AMP Pages to your blog
-description: Learn how to add the power of the AMP pages to your site built with Jekyll
+description: Learn how to add the power of the AMP pages to your site built with Jekyll by installing a gem
 permalink: how-add-amp-pages-jekyll
-icon: file
+icon: 3XzW9nvIGdI
 date: 2018-06-25
 category: jekyll
 tags: [jekyll]
 ---
+
+# Jekyll - Add AMP Pages to your blog
+
+<div class="mx-auto">
+    <img class="max-w-full" src="https://source.unsplash.com/3XzW9nvIGdI/960x680" />
+</div>
 
 We already know the power of the AMP pages but... what if we'll use in our blog?
 That would be incredible!

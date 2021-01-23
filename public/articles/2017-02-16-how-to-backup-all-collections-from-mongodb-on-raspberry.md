@@ -2,11 +2,17 @@
 title: How to backup all collections from mongodb (raspberry)
 description: How to backup all collections and database from mongodb istance hosted in server (in this case on raspberry)
 permalink: how-to-backup-all-collections-from-mongodb-on-raspberry
-icon: database
+icon: zDxlNcdUzxk
 date: 2017-02-16
 category: mongodb
 tags: [raspberry, mongodb, backup]
 ---
+
+# How to backup all collections from mongodb (raspberry)
+
+<div class="mx-auto">
+    <img class="max-w-full" src="https://source.unsplash.com/zDxlNcdUzxk/960x680" />
+</div>
 
 After some problems with my raspberry power supply and mongo 3.0 I decided to make a dayly backup.
 Sometimes happened that, after an unexpected shutdown (for an high load average and not too much power), some mongo collections may be broken. If it'll happen without any backup, the only words you can say are: I'm fuck.

@@ -2,11 +2,17 @@
 title: Ionic - Build ios app without a mac... VM!
 description: If you don't have a macbook or a mac you can build your ionic app with virtual machine!
 permalink: ionic-build-ios-app-without-mac-virtual-machine
-icon: mobile
+icon: tdMu8W9NTnY
 date: 2017-12-09
 category: ionic
 tags: [ionic, ios, build]
 ---
+
+# Ionic - Build ios app without a mac... VM!
+
+<div class="mx-auto">
+    <img class="max-w-full" src="https://source.unsplash.com/tdMu8W9NTnY/960x680" />
+</div>
 
 Yep... same problem here! But I've got a solution!
 If you don't have a mac to build your app, and if you don't want to buy it... you can follow these guide.

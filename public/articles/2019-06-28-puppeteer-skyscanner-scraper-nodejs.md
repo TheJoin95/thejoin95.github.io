@@ -2,13 +2,17 @@
 title: Scraping the web to get the best flight fares | NodeJS & Puppeteer
 description: A Skyscanner web scraper made in Puppeeter
 permalink: puppeteer-skyscanner-scraper-nodejs
-icon: flight
+icon: rn-NLirHQPY
 date: 2018-10-28
 category: python
 tags: [python]
 ---
 
 # Scraping the web to get the best flight fares | NodeJS & Puppeteer
+
+<div class="mx-auto">
+    <img class="max-w-full" src="https://source.unsplash.com/rn-NLirHQPY/960x680" />
+</div>
 
 [Puppeteer](https://github.com/GoogleChrome/puppeteer) is the official tool for Chrome Headless by Google Chrome team. Since the official announcement of Chrome Headless, many of the industry standard libraries for automated testing have been discontinued by their maintainers. Including [PhantomJS](http://phantomjs.org/) (sad to hear this, I know).
 NOTE: on March 2019 the Puppeteer's team had released also the beta of Puppeteer-Firefox, available [here](https://github.com/GoogleChrome/puppeteer/tree/master/experimental/puppeteer-firefox).

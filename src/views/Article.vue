@@ -1,11 +1,11 @@
 <template>
-  <section class="article container mx-auto m-width-780 px-5">
+  <section class="article container mx-auto m-width-780 p-3 py-0">
     <article class="article-content p-3 prose prose-xl" v-html="article"></article>
   </section>
 </template>
 
 <script>
-import marked from 'marked';
+// import marked from 'marked';
 
 export default {
   name: 'Article',
@@ -24,20 +24,15 @@ export default {
     },
     loadArticle() {
       const self = this;
-      fetch(`/articles/${this.$route.params.article}.md`)
-        .then(async (r) => {
-          console.log(r.status);
-          let text = await r.text();
-          // Workaround, da modificare in produzione con redirect
-          if (text.search(/sorry/) !== -1) {
-            self.redirectTo404();
-          }
 
-          text = text.substr(text.substr(3).search('---') + 7);
-          self.article = marked(text);
-        }, () => {
-          self.redirectTo404();
-        });
+      // eslint-disable-next-line prefer-template
+      import('../../public/articles/' + this.$route.params.article + '.md').then((v, e) => {
+        console.log(e);
+        self.article = v.default.substr(v.default.search('h1') - 2);
+      // eslint-disable-next-line no-alert
+      }).catch(() => {
+        self.redirectTo404();
+      });
     },
   },
   created() {

@@ -9,7 +9,8 @@
                 :to="`/blog/${article.date + '-' + article.permalink}`">
             <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none
             lg:rounded-l text-center overflow-hidden"
-            :style="`background-image: url('https://source.unsplash.com/${article.icon}/200x200')`" />
+            title='Image from Unsplash'
+            :style="`background-image: url('https://source.unsplash.com/${article.icon}/400x400')`" />
           </router-link>
           <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t
           lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col

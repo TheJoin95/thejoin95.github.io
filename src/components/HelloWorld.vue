@@ -3,8 +3,10 @@
     <div class="p-5">
       <div class="flex flex-wrap">
         <div class="w-full md:w-1/2">
-          <h1 class="font-bold text-6xl mt-5 mb-1 text-scramble">I'm Miki Lombardi</h1>
-          <h2 class="text-4xl mt-1 text-scramble">A passion driven developer</h2>
+          <h1 class="leading-none font-bold text-6xl mt-5 mb-1 text-scramble">
+            I'm Miki Lombardi
+          </h1>
+          <h2 class="leading-none text-4xl mt-1 text-scramble">A passion driven developer</h2>
         </div>
         <div class="w-full ml-auto md:w-1/2">
           <!-- https://lottiefiles.com/44885-man-on-working -->

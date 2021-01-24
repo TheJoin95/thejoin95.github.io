@@ -5,7 +5,6 @@
 </template>
 
 <script>
-// import marked from 'marked';
 
 export default {
   name: 'Article',

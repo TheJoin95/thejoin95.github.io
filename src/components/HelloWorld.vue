@@ -11,11 +11,11 @@
         <div class="w-full ml-auto md:w-1/2">
           <!-- https://lottiefiles.com/44885-man-on-working -->
           <lottie-player
-            class="ml-auto sm:mx-auto md:ml-auto"
+            class="ml-auto sm:mx-auto md:ml-auto max-w-full"
             src="/lotties/pc-man.json"
             background="transparent"
             speed="1"
-            style="width: 400px; height: 400px;"
+            style="width: 100%; height: 400px;"
             loop autoplay />
         </div>
       </div>

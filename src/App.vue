@@ -59,6 +59,14 @@ export default {
       }
     },
   },
+  created() {
+    let orgTitle = null;
+    const exitMessage = 'Hey! Don\'t close me plz';
+    document.addEventListener('visibilitychange', () => {
+      orgTitle = (document.title !== exitMessage) ? document.title : orgTitle;
+      document.title = (document.hidden ? exitMessage : orgTitle);
+    });
+  },
   mounted() {
     const self = this;
     let scrambleInterval;

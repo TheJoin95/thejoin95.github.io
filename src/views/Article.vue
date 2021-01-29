@@ -47,12 +47,22 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 .article {
   background: $dark-4;
 
   &-content {
     background: $light-1;
   }
+
+  .prose-xl, .prose {
+    h1, h2, h3, h4, h5, h6 {
+      color: $dark-1;
+    }
+    p {
+      color: $dark-3;
+    }
+  }
 }
+
 </style>

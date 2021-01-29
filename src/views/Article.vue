@@ -10,8 +10,16 @@ export default {
   name: 'Article',
   data() {
     return {
-      article: 'loading...',
+      article: '<loading />',
     };
+  },
+  metaInfo: {
+    title: 'Who am I', // Titolo dell'articolo
+    meta: [{
+      vmid: 'description',
+      name: 'description',
+      content: 'A short description about me', // short description dell'articolo
+    }],
   },
   watch: {
     // call again the method if the route changes

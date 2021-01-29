@@ -20,8 +20,8 @@ export default {
     Lettering,
   },
   metaInfo: {
-    title: 'My Example App',
-    titleTemplate: '%s - Yay!',
+    title: 'A passion driven developer',
+    titleTemplate: '%s - Miki Lombardi',
     meta: [{
       vmid: 'description', name: 'description', content: 'Homepage',
     }],

@@ -43,12 +43,6 @@ To answer correctly we must premise that, unlike VR, we must also refer to some 
 
 Knowing the possible types of data we can therefore also know a series of possible devices on which it will be possible to perform the AR such as: monitors, smart mirrors, portable devices, smartphones, smart glasses and so on .. paradoxically it is sufficient to have a device with display and graphics engine (of course, there will be minimum requirements based on usage).
 
-## Trending AR VR Articles:
-> # [1. How XR Can Unleash Cognition](https://arvrjourney.com/how-xr-can-unleash-cognition-3bda13026ade)
-> # [2. Oculus Go, the Nintendo Switch of VR](https://arvrjourney.com/oculus-go-the-nintendo-switch-of-vr-6827e1b91055)
-> # [3. Expert View: 3 ways VR is transforming Learning & Development](https://arvrjourney.com/expert-view-3-ways-vr-is-transforming-learning-development-487a021e8334)
-> # [4. Ready Player One : How Close Are We?](https://arvrjourney.com/ready-player-one-how-close-are-we-8af973c1cfa0)
-
 Why did we have to refer to computer vision before? Well, because in AR we can implement computer vision technologies such as SLAM (simultaneous localization and mapping), depth tracking (distance between objects) and more.
 
 This is possible with the support of these hardware / software components:

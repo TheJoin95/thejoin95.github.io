@@ -1,6 +1,6 @@
 <template>
   <section class="article container mx-auto m-width-780 p-3 py-0">
-    <article class="article-content p-3 prose prose-xl" v-html="article"></article>
+    <article class="article-content p-3 prose md:prose-xl" v-html="article"></article>
   </section>
 </template>
 

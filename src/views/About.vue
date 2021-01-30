@@ -2,13 +2,13 @@
   <section class="about m-10 container mx-auto">
     <div class="p-5">
       <div class="flex flex-wrap">
-        <div id="column-portrait" class="w-full md:w-1/4">
+        <div id="column-portrait" class="mx-auto sm:w-2/3 md:w-1/4">
           <div class="rounded-full">
             <img src="/images/miki.jpg" class="rounded-full w-full" title="Me" />
           </div>
         </div>
-        <div class="w-full px-2 md:w-2/5">
-          <h1>This is an about page</h1>
+        <div class="mt-0 sm:mt-3 w-full px-2 md:w-2/5 prose md:prose-xl">
+          <h1 class="text-gray-400">This is an about page</h1>
         </div>
         <div class="w-full md:w-1/3">
           <lottie-player
@@ -19,6 +19,9 @@
             loop
             autoplay />
           </div>
+      </div>
+      <div class="flex flex-wrap">
+        <div class="mx-auto w-2/3"></div>
       </div>
     </div>
   </section>

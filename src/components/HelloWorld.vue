@@ -3,10 +3,10 @@
     <div class="p-5">
       <div class="flex flex-wrap">
         <div class="w-full md:w-1/2">
-          <h1 class="leading-none font-bold text-6xl mt-5 mb-1 text-scramble">
+          <h1 class="leading-none font-bold text-6xl mt-5 mb-2 text-scramble">
             I'm Miki Lombardi
           </h1>
-          <h2 class="leading-none text-4xl mt-2 text-scramble">A passion driven developer</h2>
+          <h2 class="leading-none text-4xl mt-3 text-scramble">A passion driven developer</h2>
 
           <router-link to="/about">
             <div class="mt-10 h-8 shadow appearance-none border border-gray-700 rounded

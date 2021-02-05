@@ -8,7 +8,10 @@
           </div>
         </div>
         <div class="mt-0 sm:mt-3 w-full px-2 md:w-2/5 prose md:prose-xl">
-          <h1 class="text-gray-400">This is an about page</h1>
+          <p>
+            I'm a passion & creative driven developer who has ton of others passion like basketball,
+            cycling, photography
+          </p>
         </div>
         <div class="w-full md:w-1/3">
           <lottie-player

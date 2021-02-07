@@ -32,9 +32,9 @@ Apache
 
 > thanks to...
 
-### Illustration
+### Illustration & Icons
 
-> thanks to...
+> Thanks to: [enctypo](http://www.entypo.com/), [heroicons](https://github.com/tailwindlabs/heroicons)
 
 ### Animations
 

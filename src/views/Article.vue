@@ -49,6 +49,11 @@ export default {
         content: this.metaData.description,
       },
       {
+        vmid: 'og:image',
+        name: 'og:image',
+        content: `https://source.unsplash.com/${this.metaData.icon}/960x680`,
+      },
+      {
         vmid: 'twitter:widgets:csp',
         name: 'twitter:widgets:csp',
         content: 'on',
@@ -56,12 +61,17 @@ export default {
       {
         vmid: 'twitter:card',
         name: 'twitter:card',
-        content: 'summary',
+        content: `https://source.unsplash.com/${this.metaData.icon}/960x680`,
       },
       {
         vmid: 'twitter:site',
         name: 'twitter:site',
-        content: window.location.href,
+        content: '@thejoin95',
+      },
+      {
+        vmid: 'twitter:creator',
+        name: 'twitter:creator',
+        content: '@thejoin95',
       },
       {
         vmid: 'twitter:domain',

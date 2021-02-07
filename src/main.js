@@ -14,6 +14,9 @@ Vue.use(VueMeta, {
   refreshOnceOnNavigation: true,
 });
 
+// Per sviluppo e rendering in Github Pages:
+// https://github.com/chrisvfritz/prerender-spa-plugin
+
 new Vue({
   router,
   render: (h) => h(App),

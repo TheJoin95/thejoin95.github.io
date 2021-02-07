@@ -47,6 +47,14 @@ export default {
       articles,
     };
   },
+  metaInfo: {
+    title: 'Technical blog - Programming tips',
+    meta: [{
+      vmid: 'description',
+      name: 'description',
+      content: 'A blog containing programming stuff & experiences',
+    }],
+  },
   mounted() {
     console.log(this.articles);
   },

@@ -3,7 +3,7 @@ title: Scraping the web to get the best flight fares | NodeJS & Puppeteer
 description: A Skyscanner web scraper made in Puppeeter
 permalink: puppeteer-skyscanner-scraper-nodejs
 icon: rn-NLirHQPY
-date: 2018-10-28
+date: 2019-06-28
 category: python
 tags: [python]
 ---

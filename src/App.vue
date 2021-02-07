@@ -1,11 +1,7 @@
 <template>
   <div id="app">
     <Lettering />
-    <div id="nav" class="container mx-auto text-center">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">WhoAmI</router-link> |
-      <router-link to="/blog">Blog</router-link>
-    </div>
+    <Navigation />
     <router-view/>
   </div>
 </template>
@@ -13,11 +9,13 @@
 <script>
 import TextScramble from './lib/TextScramble';
 import Lettering from './components/Lettering.vue';
+import Navigation from './components/Navigation.vue';
 
 export default {
   name: 'App',
   components: {
     Lettering,
+    Navigation,
   },
   metaInfo: {
     title: 'A passion driven developer',

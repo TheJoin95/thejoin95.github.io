@@ -1,6 +1,6 @@
 <template>
-  <section class="hello sm:m-10">
-    <div class="p-5">
+  <section class="hello m-0 md:mt-10">
+    <div class="p-5 md:mt-10">
       <div class="flex flex-wrap">
         <div class="w-full md:w-1/2">
           <h1 class="leading-none font-bold text-6xl mt-5 mb-2 text-scramble">

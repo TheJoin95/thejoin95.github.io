@@ -1,5 +1,5 @@
 <template>
-    <div class="lettering content">
+    <div class="lettering content fixed">
         <div class="slideshow">
         <div class="slide slide--current">
             <h2 class="word word--1">thejoin</h2>
@@ -122,7 +122,6 @@ export default {
 <style>
 
 .content {
-  position: fixed;
   z-index: 1;
   display: flex;
   justify-content: center;
@@ -134,6 +133,7 @@ export default {
   height: 100%;
   background: #2e3440;
   transition: opacity 600ms;
+  top: 0;
 }
 
 /* Slideshow */

@@ -3,7 +3,8 @@
     <div class="navigation-header fixed w-full">
       <div class="hidden md:block absolute say-hi tracking-wider">
         <router-link to="/">
-          <img class="mr-1 align-top inline-block w-6 m-w-full" src="/images/icon.png" />
+          <img alt="Miki go to Home"
+            class="mr-1 align-top inline-block w-6 m-w-full" src="/images/icon.png" />
         </router-link>
         <a href="#" @click="copyEmailToClipboard">Say Hi.</a>
       </div>

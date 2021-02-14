@@ -22,6 +22,12 @@ npm run build
 npm run lint
 ```
 
+## TODOs
+
+- add schema.org or json/ld to blog articles
+- add sitemap.xml
+- evalutate to add SSR
+
 ## License
 
 Apache

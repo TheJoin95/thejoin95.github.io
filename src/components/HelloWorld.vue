@@ -14,7 +14,7 @@
             focus:shadow-outline bg-gray-800">
               <span class="inline-block align-middle text-green-600">$ Miki ~</span>
               <span class="inline-block align-middle ml-2 text-red-700 typewriter">whoami</span>
-              <button class="w-6 bg-gray-500 float-right font-bold py-0 px-1
+              <span class="w-6 bg-gray-500 float-right font-bold py-0 px-1
               border-b-4 align-middle border-gray-700 hover:border-gray-500 rounded">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round"
@@ -22,7 +22,7 @@
                   3H6a3 3 0 01-3-3V7a3
                   3 0 013-3h7a3 3 0 013 3v1" />
                 </svg>
-              </button>
+              </span>
             </div>
           </router-link>
         </div>

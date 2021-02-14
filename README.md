@@ -27,6 +27,10 @@ npm run lint
 - add schema.org or json/ld to blog articles
 - add sitemap.xml [link](https://www.sitemaps.org/protocol.html)
 - evalutate to add SSR
+- add social link and social overlay in mobile menu
+- add bio with resume
+- add stuff in homepage
+- add feedback on "say hi" btn
 
 ## License
 

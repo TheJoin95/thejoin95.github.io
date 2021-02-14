@@ -38,12 +38,15 @@
       <div class="mb-5 md:mb-10 pb-3 md:pb-5 mobile-content absolute bottom-0 w-full text-3xl">
         <ul>
           <li class="pointer pb-1">
-            <router-link @click="toggleMenu" to="/about">WhoAmI</router-link>
+            <router-link @click.native="toggleMenu" to="/">/home</router-link>
           </li>
-          <li class="pointer pb-1">
-            <router-link @click="toggleMenu" to="/blog">Writing</router-link>
+          <li class="pointer py-1">
+            <router-link @click.native="toggleMenu" to="/about">WhoAmI</router-link>
           </li>
-          <li class="pointer py-1">Social</li>
+          <li class="pointer py-1">
+            <router-link @click.native="toggleMenu" to="/blog">Writing</router-link>
+          </li>
+          <li class="pointer py-1 pointer">Social</li>
           <li class="pointer pt-1" @click="copyEmailToClipboard">Say Hi</li>
         </ul>
       </div>
@@ -112,6 +115,7 @@ export default {
     top: 0;
     right: 0;
     background-color: $bg-primary;
+    animation: offCanvasAnimIn .6s ease-in-out;
 
     .close-header {
       border-bottom: 1px solid $text-color-primary;
@@ -121,6 +125,11 @@ export default {
       bottom: 0;
     }
   }
+}
+
+@keyframes offCanvasAnimIn{
+  from {right: -500px;}
+  to{right:0;}
 }
 
 </style>

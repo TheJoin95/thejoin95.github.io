@@ -38,10 +38,10 @@
       <div class="mb-5 md:mb-10 pb-3 md:pb-5 mobile-content absolute bottom-0 w-full text-3xl">
         <ul>
           <li class="pointer pb-1">
-            <router-link to="/about">WhoAmI</router-link>
+            <router-link @click="toggleMenu" to="/about">WhoAmI</router-link>
           </li>
           <li class="pointer pb-1">
-            <router-link to="/blog">Writing</router-link>
+            <router-link @click="toggleMenu" to="/blog">Writing</router-link>
           </li>
           <li class="pointer py-1">Social</li>
           <li class="pointer pt-1" @click="copyEmailToClipboard">Say Hi</li>

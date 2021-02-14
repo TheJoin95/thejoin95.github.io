@@ -25,7 +25,7 @@ npm run lint
 ## TODOs
 
 - add schema.org or json/ld to blog articles
-- add sitemap.xml
+- add sitemap.xml [link](https://www.sitemaps.org/protocol.html)
 - evalutate to add SSR
 
 ## License

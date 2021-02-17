@@ -1,8 +1,11 @@
 <template>
   <section class="about container mx-auto">
-    <div class="p-10">
-      <div class="p-5 text-center">
-        <h1 class="text-5xl font-bold">Ciao &#x1F44B;<br />I'm Miki Lombardi</h1>
+    <div class="p-0 md:p-10 mt-10 md:mt-0">
+      <div class="p-0 md:p-5 text-center">
+        <h1 class="leading-tight text-4xl md:text-5xl font-bold">
+          Ciao &#x1F44B;<br />
+          I'm Miki Lombardi
+          </h1>
       </div>
       <div class="p-5">
         <div class="flex flex-wrap">

@@ -1,5 +1,11 @@
 <template>
   <section class="navigation relative">
+    <div role="alert" class="hidden lg:hidden alert-box rounded-full mx-auto z-20 fixed p-2
+    bg-indigo-800 items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex">
+      <span class="flex rounded-full bg-indigo-500 uppercase px-2 py-1
+      text-xs font-bold mr-3">INFO</span>
+      <span class="font-semibold mr-2 text-left flex-auto">Email address copied</span>
+    </div>
     <div class="navigation-header fixed w-full">
       <div class="hidden md:block absolute say-hi tracking-wider">
         <router-link to="/">
@@ -8,7 +14,7 @@
         </router-link>
         <a href="#" @click="copyEmailToClipboard">Say Hi.</a>
       </div>
-      <div @click="toggleMenu" class="absolute hamburger cursor-pointer">
+      <div @click="toggleMenu" class="absolute hamburger cursor-pointer p-2 rounded-full">
         <svg class="w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round"
             stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -72,7 +78,15 @@ export default {
       dummy.select();
       document.execCommand('copy');
       document.body.removeChild(dummy);
-      // @todo - Tooltip di conferma
+
+      const alertBox = document.querySelector('.alert-box');
+      alertBox.classList.toggle('hidden');
+      alertBox.classList.toggle('lg:hidden');
+
+      setTimeout(() => {
+        alertBox.classList.toggle('hidden');
+        alertBox.classList.toggle('lg:hidden');
+      }, 2200);
     },
   },
 };
@@ -91,7 +105,14 @@ export default {
     bottom: 0;
   }
 
+  .alert-box {
+    top: 6em;
+    left: 50%;
+    margin-left: -117px;
+  }
+
   .hamburger {
+    background: $dark-3;
     top: 1.5rem;
     right: 2.5rem;
   }
@@ -124,12 +145,27 @@ export default {
     .mobile-content {
       bottom: 0;
     }
+
+    li.pointer {
+      border-bottom: 2px outset #3b425240;
+      border-bottom-left-radius: 15%;
+      border-bottom-right-radius: 30%;
+      width: 95%;
+    }
   }
 }
 
 @keyframes offCanvasAnimIn{
   from {right: -500px;}
   to{right:0;}
+}
+
+@media screen and (max-width: 767px) {
+  .navigation {
+    .hamburger {
+      right: 1.2rem;
+    }
+  }
 }
 
 </style>

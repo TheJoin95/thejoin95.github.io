@@ -25,7 +25,6 @@ npm run lint
 ## TODOs
 
 - evalutate to add SSR
-- add social link and social overlay in mobile menu
 - add bio with resume
 - add stuff in homepage
 - add easter egg [ball maze](https://developer.mozilla.org/en-US/docs/Games/Tutorials/HTML5_Gamedev_Phaser_Device_Orientation)

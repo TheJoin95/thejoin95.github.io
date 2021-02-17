@@ -88,8 +88,19 @@ export default {
         name: 'twitter:description',
         content: this.metaData.description,
       },
-
       ],
+      script: [{
+        type: 'application/ld+json',
+        json: {
+          '@context': 'https://schema.org',
+          '@type': 'TechArticle',
+          author: 'Miki Lombardi',
+          name: this.metaData.title,
+          articleBody: this.article,
+          abstract: this.metaData.description,
+          thumbnailUrl: this.metaData.image,
+        },
+      }],
     };
   },
   watch: {

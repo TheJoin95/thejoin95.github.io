@@ -24,13 +24,11 @@ npm run lint
 
 ## TODOs
 
-- add schema.org or json/ld to blog articles
-- add sitemap.xml [link](https://www.sitemaps.org/protocol.html)
 - evalutate to add SSR
 - add social link and social overlay in mobile menu
 - add bio with resume
 - add stuff in homepage
-- add feedback on "say hi" btn
+- add easter egg [ball maze](https://developer.mozilla.org/en-US/docs/Games/Tutorials/HTML5_Gamedev_Phaser_Device_Orientation)
 
 ## License
 

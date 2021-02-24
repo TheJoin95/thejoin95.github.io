@@ -9,7 +9,7 @@ tags: [javascript]
 ---
 
 
-# Netflix cover generator — A NuxtJS project
+# Netflix cover generator - A NuxtJS project
 
 <div class="mx-auto">
     <img class="max-w-full" src="https://source.unsplash.com/jtmwD4i4v1U/960x680" />

@@ -32,7 +32,7 @@
     <!-- da mettere i social in navigation + off-canvas -->
 
     <!-- off-canvas menu -->
-    <div class="hidden shadow md:shadow-lg w-full md:w-1/3 h-full fixed off-canvas-menu z-10 p-5">
+    <div class="hidden shadow md:shadow-2xl w-full md:w-1/3 h-full fixed off-canvas-menu z-10 p-5">
       <div @click="toggleMenu" class="close-header w-full border-opacity-50">
         <svg class="inline w-12 pointer" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round"
@@ -43,7 +43,7 @@
       <div class="mb-5 md:mb-10 pb-3 md:pb-5 mobile-content absolute bottom-0 w-full text-3xl">
         <ul>
           <li class="pointer pb-1">
-            <router-link @click.native="toggleMenu" to="/">/home</router-link>
+            <router-link @click.native="toggleMenu" to="/">~</router-link>
           </li>
           <li class="pointer py-1">
             <router-link @click.native="toggleMenu" to="/about">WhoAmI</router-link>

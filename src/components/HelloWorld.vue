@@ -2,7 +2,7 @@
   <section class="hello m-0 md:m-10">
     <div class="p-5 md:mt-10">
       <div class="flex flex-wrap">
-        <div class="w-full md:w-1/2">
+        <div class="w-full md:w-1/2 lg:w-2/3">
           <h1 class="leading-none font-bold text-6xl mt-5 mb-2 text-scramble">
             I'm Miki Lombardi
           </h1>
@@ -26,7 +26,7 @@
             </div>
           </router-link>
         </div>
-        <div class="w-full ml-auto md:w-1/2">
+        <div class="w-full ml-auto md:w-1/2 lg:w-1/3">
           <!-- https://lottiefiles.com/44885-man-on-working -->
           <lottie-player
             class="ml-auto sm:mx-auto md:ml-auto max-w-full"

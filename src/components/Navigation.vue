@@ -1,18 +1,17 @@
 <template>
   <section class="navigation relative">
-    <div role="alert" class="hidden lg:hidden alert-box rounded-full mx-auto z-20 fixed p-2
-    bg-indigo-800 items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex">
-      <span class="flex rounded-full bg-indigo-500 uppercase px-2 py-1
-      text-xs font-bold mr-3">INFO</span>
-      <span class="font-semibold mr-2 text-left flex-auto">Email address copied</span>
-    </div>
     <div class="navigation-header fixed w-full">
       <div class="hidden md:block absolute say-hi tracking-wider">
         <router-link to="/">
           <img alt="Miki go to Home"
             class="mr-1 align-top inline-block w-6 m-w-full" src="/images/icon.png" />
         </router-link>
-        <a href="#" @click="copyEmailToClipboard">Say Hi.</a>
+        <div class="hidden-tooltip inline-block">
+          <span class="tooltip rounded shadow-lg p-1 bg-gray-600 text-grey-500 -mt-8">
+            Email address copied
+          </span>
+          <a href="#" @click="copyEmailToClipboard">Say Hi.</a>
+        </div>
       </div>
       <div @click="toggleMenu" class="absolute hamburger cursor-pointer p-2 rounded-full">
         <svg class="w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -113,7 +112,14 @@
               </li>
             </ul>
           </li>
-          <li class="pointer pt-1" @click="copyEmailToClipboard">Say Hi</li>
+          <li class="pointer pt-1" @click="copyEmailToClipboard">
+            <div class="hidden-tooltip">
+              <span class="tooltip rounded shadow-lg p-1 bg-gray-600 text-grey-500 -mt-8">
+                Email address copied
+              </span>
+              Say Hi
+            </div>
+          </li>
         </ul>
       </div>
     </div>
@@ -143,13 +149,15 @@ export default {
       document.execCommand('copy');
       document.body.removeChild(dummy);
 
-      const alertBox = document.querySelector('.alert-box');
-      alertBox.classList.toggle('hidden');
-      alertBox.classList.toggle('lg:hidden');
+      const alertBox = document.querySelectorAll('.hidden-tooltip');
+      alertBox.forEach((box) => {
+        box.classList.toggle('has-tooltip');
+      });
 
       setTimeout(() => {
-        alertBox.classList.toggle('hidden');
-        alertBox.classList.toggle('lg:hidden');
+        alertBox.forEach((box) => {
+          box.classList.toggle('has-tooltip');
+        });
       }, 2200);
     },
   },

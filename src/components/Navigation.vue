@@ -34,26 +34,26 @@
     <!-- off-canvas menu -->
     <div class="hidden shadow md:shadow-2xl w-full md:w-1/3 h-full fixed off-canvas-menu z-10 p-5">
       <div @click="toggleMenu" class="close-header w-full border-opacity-50">
-        <svg class="inline w-12 pointer" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg class="inline w-12 cursor-pointer" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round"
           stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
-        <span class="text-4xl align-middle pointer">Close</span>
+        <span class="text-4xl align-middle cursor-pointer">Close</span>
       </div>
       <div class="mb-5 md:mb-10 pb-3 md:pb-5 mobile-content absolute bottom-0 w-full text-3xl">
         <ul>
-          <li class="pointer pb-1">
+          <li class="cursor-pointer pb-1">
             <router-link @click.native="toggleMenu" to="/">~</router-link>
           </li>
-          <li class="pointer py-1">
+          <li class="cursor-pointer py-1">
             <router-link @click.native="toggleMenu" to="/about">WhoAmI</router-link>
           </li>
-          <li class="pointer py-1">
+          <li class="cursor-pointer py-1">
             <router-link @click.native="toggleMenu" to="/blog">Writing</router-link>
           </li>
-          <li class="pointer py-1">
-            <span class="pointer" @click="toggleSocialBox">Social</span>
-            <ul class="hidden social-box align-middle leading-none">
+          <li class="cursor-pointer py-1 social-li">
+            <span class="cursor-pointer" @click="toggleSocialBox">Social</span>
+            <ul class="social-box align-middle leading-none">
               <li class="inline-block pr-1">
                 <a href="https://github.com/thejoin95" target="_blank">
                   <svg version="1.1" class="github-icon w-6" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
@@ -112,7 +112,7 @@
               </li>
             </ul>
           </li>
-          <li class="pointer pt-1" @click="copyEmailToClipboard">
+          <li class="cursor-pointer pt-1" @click="copyEmailToClipboard">
             <div class="hidden-tooltip">
               <span class="tooltip rounded shadow-lg p-1 bg-gray-600 text-grey-500 -mt-8">
                 Email address copied
@@ -218,11 +218,28 @@ export default {
       bottom: 0;
     }
 
-    li.pointer {
+    li.cursor-pointer {
       border-bottom: 2px outset #3b425240;
       border-bottom-left-radius: 15%;
       border-bottom-right-radius: 30%;
       width: 95%;
+    }
+  }
+
+  .social-li {
+    .social-box li {
+      transform: translateY(-10px);
+      opacity: 0;
+      transition: all 200ms;
+      position: absolute;
+    }
+
+    &:hover .social-box li,
+    &:visited .social-box li {
+      opacity: 1;
+      position: relative;
+      transform: translateY(0);
+      transition: all .8s;
     }
   }
 }

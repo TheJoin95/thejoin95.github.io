@@ -1,6 +1,6 @@
 <template>
-  <section class="hello m-0 md:m-10">
-    <div class="p-5 md:mt-10">
+  <section class="hello m-0 md:m-8">
+    <div class="p-5 md:p-0 md:py-5 md:mt-10">
       <div class="flex flex-wrap">
         <div class="w-full md:w-1/2 lg:w-2/3">
           <h1 class="leading-none font-bold text-6xl mt-5 mb-2 text-scramble">
@@ -10,9 +10,9 @@
 
           <router-link to="/about">
             <div class="mt-10 h-8 shadow appearance-none border border-gray-700 rounded
-            w-full md:w-3/4 py-2 px-3 text-gray-900 leading-none focus:outline-none
+            w-full md:w-3/4 py-2 text-gray-900 leading-none focus:outline-none
             focus:shadow-outline bg-gray-800">
-              <span class="inline-block align-middle text-green-600">$ Miki ~</span>
+              <span class="pl-3 inline-block align-middle text-green-600">$ Miki ~</span>
               <span class="inline-block align-middle ml-2 text-red-700 typewriter">whoami</span>
               <span class="w-6 bg-gray-500 float-right font-bold py-0 px-1
               border-b-4 align-middle border-gray-700 hover:border-gray-500 rounded">
@@ -33,7 +33,7 @@
             src="/lotties/pc-man.json"
             background="transparent"
             speed="1"
-            style="width: 100%; height: 400px;"
+            style="width: 100%; height: 350px;"
             loop autoplay />
         </div>
       </div>

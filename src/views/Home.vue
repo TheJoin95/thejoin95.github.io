@@ -6,7 +6,7 @@
     <div class="h-8 relative">
       <NyanCat />
     </div>
-    <div class="container mx-auto">
+    <div class="container mx-auto p-5 md:p-0 md:py-5">
       <div class="m-0 md:m-8">
         <h1 class="text-3xl">TLDR;</h1>
         <div class="prose prose-xl">

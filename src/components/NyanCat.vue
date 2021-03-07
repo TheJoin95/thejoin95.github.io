@@ -857,9 +857,17 @@ body {
   100%      {top: -90px}
 }
 
-@media (min-width: 56.25em) {
-  .nyancat-wrapper {
+.nyancat-wrapper {
     display: block;
-  }
+}
+
+@media (max-width: 768px) {
+    .loaded .rainbow {
+        width: 75%;
+    }
+
+    .loaded .nyan-cat {
+        left: 75%;
+    }
 }
 </style>

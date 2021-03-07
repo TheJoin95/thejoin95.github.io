@@ -11,7 +11,7 @@ npm run build
 
 # navigate into the build output directory
 cd dist
-cp index.html 404.html
+# cp index.html 404.html
 echo 'www.mikilombardi.com' > CNAME
 
 git init

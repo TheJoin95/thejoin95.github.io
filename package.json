@@ -5,8 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "generate-articles-metadata": "node generate-articles-metadata.js",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "generate-articles-metadata": "node generate-articles-metadata.js"
   },
   "dependencies": {
     "animejs": "^3.2.1",
@@ -33,9 +33,11 @@
     "eslint-plugin-vue": "^6.2.2",
     "node-sass": "^4.12.0",
     "postcss": "^8.2.4",
+    "prerender-spa-plugin": "^3.2.1",
     "raw-loader": "^4.0.2",
     "sass-loader": "^8.0.2",
     "tailwindcss": "^1.4.5",
+    "vue-cli-plugin-prerender-spa": "~1.1.6",
     "vue-template-compiler": "^2.6.11"
   }
 }

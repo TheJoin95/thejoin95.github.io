@@ -19,6 +19,12 @@
       <priority>0.8</priority>
    </url>
    <url>
+      <loc>https://www.mikilombardi.com/blog/2021-02-22-netflix-conver-generator-nuxtjs-konvajs</loc>
+      <lastmod>2021-02-14</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.7</priority>
+   </url>
+   <url>
       <loc>https://www.mikilombardi.com/blog/2020-02-23-sorting-hat-experiment-webar-in-js</loc>
       <lastmod>2021-02-14</lastmod>
       <changefreq>daily</changefreq>

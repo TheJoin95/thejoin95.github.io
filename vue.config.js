@@ -31,6 +31,7 @@ module.exports = {
         '/blog',
         '/about',
         '/not-found',
+        '/blog/2021-02-22-netflix-conver-generator-nuxtjs-konvajs',
         '/blog/2020-02-23-sorting-hat-experiment-webar-in-js',
         '/blog/2020-02-21-argumented-reality-brief-explanation',
         '/blog/2019-12-21-microfrontend-from-00-to-20s',

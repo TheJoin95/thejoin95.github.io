@@ -23,6 +23,9 @@
             I'm currently working as a <b>Head of Research & Development</b> divison at
             <a href="https://www.plansoft.it" target="_blank">Plansoft</a>, where I'm innovating
             the tech stack of the company.
+            <br/><br/>
+            Are you interested on reading more? Go into the
+            <router-link to="/about">WhoAmI</router-link> section
           </p>
         </div>
       </div>

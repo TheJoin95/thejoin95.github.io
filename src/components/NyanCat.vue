@@ -20,18 +20,20 @@ export default {
   mounted: () => {
     let scrollInterval = null;
     scrollInterval = setInterval(() => {
-      const parentScrollHeight = document.querySelector('.nyancat-wrapper').parentNode.scrollHeight;
-      if (window.pageYOffset >= parentScrollHeight
-      || document.body.scrollHeight <= parentScrollHeight) {
-        document.querySelector('.nyancat-wrapper').classList.add('loaded');
+      if (document.querySelector('.nyancat-wrapper') !== null) {
+        const parentScrollHeight = document.querySelector('.nyancat-wrapper').parentNode.scrollHeight;
+        if (window.pageYOffset >= parentScrollHeight
+        || document.body.scrollHeight <= parentScrollHeight) {
+          document.querySelector('.nyancat-wrapper').classList.add('loaded');
 
-        // setTimeout(() => {
-        //   const nyancatWrapper = document.querySelector('.nyancat-wrapper');
-        //   nyancatWrapper.classList.remove('loaded');
-        //   nyancatWrapper.style.display = 'none';
-        // }, 8000);
+          // setTimeout(() => {
+          //   const nyancatWrapper = document.querySelector('.nyancat-wrapper');
+          //   nyancatWrapper.classList.remove('loaded');
+          //   nyancatWrapper.style.display = 'none';
+          // }, 8000);
 
-        clearInterval(scrollInterval);
+          clearInterval(scrollInterval);
+        }
       }
     }, 200);
   },

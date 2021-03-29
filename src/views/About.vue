@@ -91,24 +91,25 @@
               I helped Aperion and Plansoft to delivery high quality products, software and
               services to their customers.
               My core knowledge has been instrumental in resolving complex architectural
-              and software development challenges.<br/>
+              and software development challenges.<br/><br/>
               Working within the scopes of a lot of technical roles such as software engineer,
                 course trainer, tech lead,
               solutions architect and head of R&D, I have developed a precise understanding of
                 various technicalities which
               has helped me in maximizing value of my company and products
               in my current leadership roles.</p>
+            <br/>
             <p>
               My colleagues know me as an excellent communicator.
               I like to use an interactive approach for understanding and solving problems
-              of varied scopes.<br/>
+              of varied scopes.<br/><br/>
               I’m also enjoying sharing the knowledge with the community by writing
               articles and build / contribute to open source project.
             </p>
             <p>
               Always striving to improve, I love learning new things and face challenging problems.
               I love to follow a mentor and I like to be mentor for others too.
-            </p>
+            </p><br/>
             <p>In my experience I have always found a friendly and homely
               environment, even in large companies.
               I like to always give a touch of style to work, especially with
@@ -117,6 +118,16 @@
               <p>I'm always looking for the next challenge and I would like to
               be part of the solution process.
             </p>
+            <div class="mt-10 text-center">
+              <a download href="/miki-lombardi-resume.pdf"
+              class="w-1/3 bg-gray-600 hover:bg-gray-500 text-white
+              font-bold py-2 px-4 border-b-4 border-gray-700 hover:border-gray-500
+              rounded inline-flex items-center">
+                <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
+                <span>Download Miki's Resume</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>

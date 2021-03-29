@@ -8,24 +8,18 @@
           </h1>
       </div>
       <div class="p-5">
-        <div class="flex flex-wrap">
-          <div id="column-portrait" class="mx-auto sm:mb-2 sm:w-2/3 md:w-1/4 lg:w-1/5">
+        <div class="text-center mx-auto">
+          <div id="column-portrait" class="inline-block">
             <div class="rounded-full">
               <img src="/images/miki.jpg" class="rounded-full max-w-full" title="Me" />
             </div>
           </div>
-          <div class="mt-2 md:mt-3 w-full px-2 md:w-2/5 lg:w-3/5 prose md:prose-xl">
-            <p class="biography">
-              I'm a passion & creative driven developer who has ton of others
-              passion like basketball, cycling, photography
-            </p>
-          </div>
-          <div class="w-full md:w-1/3 lg:w-1/5">
+          <div class="w-full md:w-1/3 inline-block">
             <lottie-player
               src="/lotties/social.json"
               background="transparent max-w-full"
               speed="1"
-              class="w-full"
+              class="w-full h-64"
               loop
               autoplay />
             <ul class="social-box text-center align-middle leading-none">
@@ -88,8 +82,42 @@
             </ul>
           </div>
         </div>
-        <div class="flex flex-wrap">
-          <div class="mx-auto w-2/3"></div>
+      </div>
+      <div class="p-5">
+        <div class="flex mt-2 flex-wrap">
+          <div class="mx-auto w-full prose md:prose-xl biography text-justify">
+            <h2 class="text-3xl font-bold">What I do?</h2>
+            <p>
+              I helped Aperion and Plansoft to delivery high quality products, software and
+              services to their customers.
+              My core knowledge has been instrumental in resolving complex architectural
+              and software development challenges.<br/>
+              Working within the scopes of a lot of technical roles such as software engineer,
+                course trainer, tech lead,
+              solutions architect and head of R&D, I have developed a precise understanding of
+                various technicalities which
+              has helped me in maximizing value of my company and products
+              in my current leadership roles.</p>
+            <p>
+              My colleagues know me as an excellent communicator.
+              I like to use an interactive approach for understanding and solving problems
+              of varied scopes.<br/>
+              I’m also enjoying sharing the knowledge with the community by writing
+              articles and build / contribute to open source project.
+            </p>
+            <p>
+              Always striving to improve, I love learning new things and face challenging problems.
+              I love to follow a mentor and I like to be mentor for others too.
+            </p>
+            <p>In my experience I have always found a friendly and homely
+              environment, even in large companies.
+              I like to always give a touch of style to work, especially with
+              the people who are part of it.
+            </p>
+              <p>I'm always looking for the next challenge and I would like to
+              be part of the solution process.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -114,7 +142,4 @@ export default {
   }
 }
 
-.biography {
-  color: $text-color-primary;
-}
 </style>

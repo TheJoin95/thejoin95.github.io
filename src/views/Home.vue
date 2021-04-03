@@ -35,7 +35,7 @@
         <div class="hr-spine mx-auto w-full" />
         <div class="container mx-auto p-5 md:p-0 md:py-5">
           <div class="m-0 md:m-8">
-            <h1 class="text-3xl">Open source projects</h1>
+            <h1 class="text-3xl mb-5">Open source projects</h1>
             <div v-for="project in projects" :key="project.title"
               class="max-w-sm rounded overflow-hidden shadow-lg bg-gray-700 inline-block">
               <div class="px-6 py-4">
@@ -55,7 +55,7 @@
         <div class="hr-spine mx-auto w-full" />
         <div class="container mx-auto p-5 md:p-0 md:py-5">
           <div class="m-0 md:m-8">
-            <h1 class="text-3xl">I've been featured on</h1>
+            <h1 class="text-3xl mb-5">I've been featured on</h1>
             <div v-for="feature in features" :key="feature.title"
               class="max-w-sm rounded overflow-hidden shadow-lg bg-gray-700 inline-block">
               <div class="px-6 py-4">
@@ -73,7 +73,7 @@
           </div>
         </div>
       </div>
-      <div class="sm:hide col-span-1 pt-5 text-center">
+      <div class="sm:hide col-span-1 pt-5 text-center relative mx-auto">
         <h3 class="text-xl mt-10"><i class="bg-grey-200">Brief</i></h3>
         <div class="circle mx-auto" style="
         visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
@@ -81,6 +81,24 @@
         <div class="spine mx-auto h-full" style="
         visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"
         ></div>
+        <div class="sidebar-breakpoint absolute text-center"
+          style="top: 32em;">
+          <h3 class="text-xl relative" style="background: $bg-primary;">
+            <i class="bg-grey-200">Projects</i>
+          </h3>
+          <div class="circle mx-auto mt-2 relative" style="
+            visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+          </div>
+        </div>
+        <div class="sidebar-breakpoint absolute text-center"
+          style="top: 54em; left: -17px;">
+          <h3 class="text-xl relative" style="background: $bg-primary;">
+            <i class="bg-grey-200">Features</i>
+          </h3>
+          <div class="circle mx-auto mt-2 relative" style="
+            visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -128,3 +146,12 @@ export default {
   },
 };
 </script>
+<style scoped lang="scss">
+.sidebar-breakpoint {
+  left: -16px;
+  h3 {
+    background: $bg-primary
+      linear-gradient(90deg, $bg-primary 10%, rgba(59, 66, 82, 0) 50%, $bg-primary 90%);
+  }
+}
+</style>

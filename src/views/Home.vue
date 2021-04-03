@@ -158,6 +158,10 @@ export default {
 };
 </script>
 <style scoped lang="scss">
+.prose a {
+  color: $blueish-1;
+}
+
 .homepage-block {
   margin: 0 5px;
 

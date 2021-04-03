@@ -59,6 +59,12 @@ body {
     }
 }
 
+.hr-spine {
+    width: 100%;
+    height: 2px;
+    background: #81a1c1 linear-gradient(90deg, $bg-primary 10%, rgba(59, 66, 82, 0) 50%, $bg-primary 90%);
+}
+
 .spine {
     width: 1px;
     background: $blueish-3 linear-gradient(0deg,$bg-primary 1rem,rgba(59, 66, 82, 0) 20vh);

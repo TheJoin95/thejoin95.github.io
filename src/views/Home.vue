@@ -32,44 +32,42 @@
             </div>
           </div>
         </div>
+        <div class="hr-spine mx-auto w-full" />
         <div class="container mx-auto p-5 md:p-0 md:py-5">
           <div class="m-0 md:m-8">
             <h1 class="text-3xl">Open source projects</h1>
-            <div class="max-w-sm rounded overflow-hidden shadow-lg bg-gray-700">
+            <div v-for="project in projects" :key="project.title"
+              class="max-w-sm rounded overflow-hidden shadow-lg bg-gray-700 inline-block">
               <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2">Covid Supermarket Waiting Times</div>
+                <div class="font-bold text-xl mb-2">{{ project.title }}</div>
                 <p class="text-base">
-                  Stuff I made on the project
+                  {{ project.description }}
                 </p>
               </div>
               <div class="px-6 pt-4 pb-2">
-                <span class="inline-block bg-gray-200 rounded-full px-3 py-1
-                text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-                <span class="inline-block bg-gray-200 rounded-full px-3 py-1
-                text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
-                <span class="inline-block bg-gray-200 rounded-full px-3 py-1
-                text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
+                <span v-for="tag in project.tags" :key="tag"
+                  class="inline-block bg-gray-200 rounded-full px-3 py-1
+                text-sm font-semibold text-gray-700 mr-2 mb-2">#{{ tag }}</span>
               </div>
             </div>
           </div>
         </div>
+        <div class="hr-spine mx-auto w-full" />
         <div class="container mx-auto p-5 md:p-0 md:py-5">
           <div class="m-0 md:m-8">
             <h1 class="text-3xl">I've been featured on</h1>
-            <div class="max-w-sm rounded overflow-hidden shadow-lg bg-gray-700">
+            <div v-for="feature in features" :key="feature.title"
+              class="max-w-sm rounded overflow-hidden shadow-lg bg-gray-700 inline-block">
               <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2">Blog.to</div>
+                <div class="font-bold text-xl mb-2">{{ feature.source }}</div>
                 <p class="text-base">
-                  Supermarket waiting times project
+                  {{ feature.title }}
                 </p>
               </div>
               <div class="px-6 pt-4 pb-2">
-                <span class="inline-block bg-gray-200 rounded-full px-3 py-1
-                text-sm font-semibold text-gray-700 mr-2 mb-2">#canada</span>
-                <span class="inline-block bg-gray-200 rounded-full px-3 py-1
-                text-sm font-semibold text-gray-700 mr-2 mb-2">#english</span>
-                <span class="inline-block bg-gray-200 rounded-full px-3 py-1
-                text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
+                <span v-for="tags in feature.tags" :key="tags"
+                  class="inline-block bg-gray-200 rounded-full px-3 py-1
+                text-sm font-semibold text-gray-700 mr-2 mb-2">#{{ tags }}</span>
               </div>
             </div>
           </div>
@@ -98,6 +96,27 @@ export default {
   components: {
     HelloWorld,
     NyanCat,
+  },
+  data() {
+    return {
+      projects: [
+        {
+          title: 'Covid Supermarket Waiting Times',
+          description: 'Supermarket waiting times project',
+          link: '',
+          tags: ['canada', 'english', 'vuejs'],
+        },
+      ],
+      features: [
+        {
+          title: 'Covid Supermarket Waiting Times',
+          description: 'Supermarket waiting times project',
+          source: 'Blog.to',
+          link: '',
+          tags: ['canada', 'english', 'vuejs'],
+        },
+      ],
+    };
   },
   metaInfo: {
     title: 'A passion driven developer',

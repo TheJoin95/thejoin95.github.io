@@ -37,7 +37,8 @@
           <div class="m-0 md:m-8">
             <h1 class="text-3xl mb-5">Open source projects</h1>
             <div v-for="project in projects" :key="project.title"
-              class="max-w-sm rounded overflow-hidden shadow-lg bg-gray-700 inline-block">
+              class="max-w-sm rounded overflow-hidden
+              shadow-lg bg-gray-700 inline-block homepage-block">
               <div class="px-6 py-4">
                 <div class="font-bold text-xl mb-2">{{ project.title }}</div>
                 <p class="text-base">
@@ -57,18 +58,21 @@
           <div class="m-0 md:m-8">
             <h1 class="text-3xl mb-5">I've been featured on</h1>
             <div v-for="feature in features" :key="feature.title"
-              class="max-w-sm rounded overflow-hidden shadow-lg bg-gray-700 inline-block">
-              <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2">{{ feature.source }}</div>
-                <p class="text-base">
-                  {{ feature.title }}
-                </p>
-              </div>
-              <div class="px-6 pt-4 pb-2">
-                <span v-for="tags in feature.tags" :key="tags"
-                  class="inline-block bg-gray-200 rounded-full px-3 py-1
-                text-sm font-semibold text-gray-700 mr-2 mb-2">#{{ tags }}</span>
-              </div>
+              class="max-w-sm rounded overflow-hidden
+                shadow-lg bg-gray-700 inline-block homepage-block">
+              <a :href="feature.link" target="_blank">
+                <div class="px-6 py-4">
+                  <div class="font-bold text-xl mb-2">{{ feature.source }}</div>
+                  <p class="text-base">
+                    {{ feature.title }}
+                  </p>
+                </div>
+                <div class="px-6 pt-4 pb-2">
+                  <span v-for="tags in feature.tags" :key="tags"
+                    class="inline-block bg-gray-200 rounded-full px-3 py-1
+                  text-sm font-semibold text-gray-700 mr-2 mb-2">#{{ tags }}</span>
+                </div>
+              </a>
             </div>
           </div>
         </div>
@@ -121,8 +125,8 @@ export default {
         {
           title: 'Covid Supermarket Waiting Times',
           description: 'Supermarket waiting times project',
-          link: '',
-          tags: ['canada', 'english', 'vuejs'],
+          link: 'https://github.com/TheJoin95/covid19-market-waiting-times',
+          tags: ['covid19', 'python', 'redis', 'vuejs'],
         },
       ],
       features: [
@@ -130,8 +134,15 @@ export default {
           title: 'Covid Supermarket Waiting Times',
           description: 'Supermarket waiting times project',
           source: 'Blog.to',
-          link: '',
+          link: 'https://www.blogto.com/eat_drink/2020/04/map-wait-times-grocery-stores-toronto/',
           tags: ['canada', 'english', 'vuejs'],
+        },
+        {
+          title: 'YouTube to Anchor.fm',
+          description: 'Automate the Publishing Process of Your Podcast With GitHub Actions',
+          source: 'BetterProgramming',
+          link: 'https://betterprogramming.pub/youtube-to-anchor-fm-a-github-action-to-automate-the-publishing-process-of-your-podcast-1dbb0fc90560',
+          tags: ['github', 'devops', 'docker'],
         },
       ],
     };
@@ -147,6 +158,14 @@ export default {
 };
 </script>
 <style scoped lang="scss">
+.homepage-block {
+  margin: 0 5px;
+
+  &:nth-of-type(1) {
+    margin: 0 0;
+  }
+}
+
 .sidebar-breakpoint {
   left: -16px;
   h3 {

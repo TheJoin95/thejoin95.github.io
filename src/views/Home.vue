@@ -36,19 +36,23 @@
         <div class="container mx-auto p-5 md:p-0 md:py-5">
           <div class="m-0 md:m-8">
             <h1 class="text-3xl mb-5">Open source projects</h1>
-            <div v-for="project in projects" :key="project.title"
-              class="max-w-sm rounded overflow-hidden
-              shadow-lg bg-gray-700 inline-block homepage-block">
-              <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2">{{ project.title }}</div>
-                <p class="text-base">
-                  {{ project.description }}
-                </p>
-              </div>
-              <div class="px-6 pt-4 pb-2">
-                <span v-for="tag in project.tags" :key="tag"
-                  class="inline-block bg-gray-200 rounded-full px-3 py-1
-                text-sm font-semibold text-gray-700 mr-2 mb-2">#{{ tag }}</span>
+            <div class="flex">
+              <div v-for="project in projects" :key="project.title"
+                class="max-w-sm rounded overflow-hidden w-full md:w-1/3
+                shadow-lg bg-gray-700 inline-block homepage-block">
+                <a target="_blank" :href="project.link">
+                  <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2">{{ project.title }}</div>
+                    <p class="text-base">
+                      {{ project.description }}
+                    </p>
+                  </div>
+                  <div class="px-6 pt-4 pb-2">
+                    <span v-for="tag in project.tags" :key="tag"
+                      class="inline-block bg-gray-200 rounded-full px-3 py-1
+                    text-sm font-semibold text-gray-700 mr-2 mb-2">#{{ tag }}</span>
+                  </div>
+                </a>
               </div>
             </div>
           </div>
@@ -57,22 +61,24 @@
         <div class="container mx-auto p-5 md:p-0 md:py-5">
           <div class="m-0 md:m-8">
             <h1 class="text-3xl mb-5">I've been featured on</h1>
-            <div v-for="feature in features" :key="feature.title"
-              class="max-w-sm rounded overflow-hidden
+            <div class="flex">
+              <div v-for="feature in features" :key="feature.title"
+                class="max-w-sm rounded overflow-hidden w-full md:w-1/3
                 shadow-lg bg-gray-700 inline-block homepage-block">
-              <a :href="feature.link" target="_blank">
-                <div class="px-6 py-4">
-                  <div class="font-bold text-xl mb-2">{{ feature.source }}</div>
-                  <p class="text-base">
-                    {{ feature.title }}
-                  </p>
-                </div>
-                <div class="px-6 pt-4 pb-2">
-                  <span v-for="tags in feature.tags" :key="tags"
-                    class="inline-block bg-gray-200 rounded-full px-3 py-1
-                  text-sm font-semibold text-gray-700 mr-2 mb-2">#{{ tags }}</span>
-                </div>
-              </a>
+                <a :href="feature.link" target="_blank">
+                  <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2">{{ feature.source }}</div>
+                    <p class="text-base">
+                      {{ feature.title }}
+                    </p>
+                  </div>
+                  <div class="px-6 pt-4 pb-2">
+                    <span v-for="tags in feature.tags" :key="tags"
+                      class="inline-block bg-gray-200 rounded-full px-3 py-1
+                    text-sm font-semibold text-gray-700 mr-2 mb-2">#{{ tags }}</span>
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -123,29 +129,33 @@ export default {
     return {
       projects: [
         {
-          title: 'Covid Supermarket Waiting Times',
+          title: 'Covid19 Market Waiting Times',
           description: 'Supermarket waiting times project',
           link: 'https://github.com/TheJoin95/covid19-market-waiting-times',
-          tags: ['covid19', 'python', 'redis', 'vuejs'],
+          icon: '',
+          tags: ['python', 'redis', 'vuejs'],
         },
         {
           title: 'Schrödinger Hat',
           description: 'Schrödinger Hat',
           link: 'https://www.schrodinger-hat.it/',
-          tags: ['community', 'python', 'youtube', 'github'],
+          icon: '',
+          tags: ['community', 'python', 'yt'],
         },
         {
           title: 'ImageGoNord',
           description: 'ImageGoNord',
           link: 'https://ign.schrodinger-hat.it/',
+          icon: '',
           tags: ['nordtheme', 'python', 'pip'],
         },
       ],
       features: [
         {
-          title: 'Covid Supermarket Waiting Times',
+          title: 'Covid19 Supermarket Waiting Times',
           description: 'Supermarket waiting times project',
           source: 'Blog.to',
+          icon: '',
           link: 'https://www.blogto.com/eat_drink/2020/04/map-wait-times-grocery-stores-toronto/',
           tags: ['canada', 'english', 'vuejs'],
         },
@@ -153,6 +163,7 @@ export default {
           title: 'YouTube to Anchor.fm',
           description: 'Automate the Publishing Process of Your Podcast With GitHub Actions',
           source: 'BetterProgramming',
+          icon: '',
           link: 'https://betterprogramming.pub/youtube-to-anchor-fm-a-github-action-to-automate-the-publishing-process-of-your-podcast-1dbb0fc90560',
           tags: ['github', 'devops', 'docker'],
         },
@@ -160,6 +171,7 @@ export default {
           title: 'The Sorting Hat Experiment',
           description: 'Implement the talking hat of the famous Harry Potter saga',
           source: 'AR/VR Journey',
+          icon: '',
           link: 'https://arvrjourney.com/the-sorting-hat-experiment-webar-in-pure-js-c53b91863c66',
           tags: ['VR', 'AR', 'threejs'],
         },
@@ -167,6 +179,7 @@ export default {
           title: 'Netflix Cover Generator',
           description: 'For our podcast, there was a need to speed up the YouTube cover creation process',
           source: 'CodeBurst',
+          icon: '',
           link: 'https://codeburst.io/netflix-cover-generator-a-nuxtjs-project-f20ea24e960f',
           tags: ['nuxtjs', 'canvas', '2d'],
         },
@@ -189,11 +202,7 @@ export default {
 }
 
 .homepage-block {
-  margin: 0 5px;
-
-  &:nth-of-type(1) {
-    margin: 0 0;
-  }
+  margin-right: 5px;
 }
 
 .sidebar-breakpoint {

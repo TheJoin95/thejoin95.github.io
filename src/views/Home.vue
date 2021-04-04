@@ -36,7 +36,7 @@
         <div class="container mx-auto p-5 md:p-0 md:py-5">
           <div class="m-0 md:m-8">
             <h1 class="text-3xl mb-5">Open source projects</h1>
-            <div class="flex">
+            <div class="md:flex">
               <div v-for="project in projects" :key="project.title"
                 class="max-w-sm rounded overflow-hidden w-full md:w-1/3
                 shadow-lg bg-gray-700 inline-block homepage-block">
@@ -64,7 +64,7 @@
         <div class="container mx-auto p-5 md:p-0 md:py-5">
           <div class="m-0 md:m-8">
             <h1 class="text-3xl mb-5">I've been featured on</h1>
-            <div class="flex">
+            <div class="md:flex">
               <div v-for="feature in features" :key="feature.title"
                 class="max-w-sm rounded overflow-hidden w-full md:w-1/3
                 shadow-lg bg-gray-700 inline-block homepage-block">
@@ -89,7 +89,7 @@
           </div>
         </div>
       </div>
-      <div class="sm:hide col-span-1 pt-5 text-center relative mx-auto">
+      <div class="hidden md:block col-span-1 pt-5 text-center relative mx-auto">
         <h3 class="text-xl mt-10"><i class="bg-grey-200">Brief</i></h3>
         <div class="circle mx-auto" style="
         visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">

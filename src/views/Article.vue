@@ -64,6 +64,11 @@ export default {
         content: `https://source.unsplash.com/${this.metaData.icon}/960x680`,
       },
       {
+        vmid: 'twitter:image',
+        name: 'twitter:image',
+        content: `https://source.unsplash.com/${this.metaData.icon}/960x680`,
+      },
+      {
         vmid: 'twitter:site',
         name: 'twitter:site',
         content: '@thejoin95',

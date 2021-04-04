@@ -128,6 +128,18 @@ export default {
           link: 'https://github.com/TheJoin95/covid19-market-waiting-times',
           tags: ['covid19', 'python', 'redis', 'vuejs'],
         },
+        {
+          title: 'Schrödinger Hat',
+          description: 'Schrödinger Hat',
+          link: 'https://www.schrodinger-hat.it/',
+          tags: ['community', 'python', 'youtube', 'github'],
+        },
+        {
+          title: 'ImageGoNord',
+          description: 'ImageGoNord',
+          link: 'https://ign.schrodinger-hat.it/',
+          tags: ['nordtheme', 'python', 'pip'],
+        },
       ],
       features: [
         {
@@ -143,6 +155,20 @@ export default {
           source: 'BetterProgramming',
           link: 'https://betterprogramming.pub/youtube-to-anchor-fm-a-github-action-to-automate-the-publishing-process-of-your-podcast-1dbb0fc90560',
           tags: ['github', 'devops', 'docker'],
+        },
+        {
+          title: 'The Sorting Hat Experiment',
+          description: 'Implement the talking hat of the famous Harry Potter saga',
+          source: 'AR/VR Journey',
+          link: 'https://arvrjourney.com/the-sorting-hat-experiment-webar-in-pure-js-c53b91863c66',
+          tags: ['VR', 'AR', 'threejs'],
+        },
+        {
+          title: 'Netflix Cover Generator',
+          description: 'For our podcast, there was a need to speed up the YouTube cover creation process',
+          source: 'CodeBurst',
+          link: 'https://codeburst.io/netflix-cover-generator-a-nuxtjs-project-f20ea24e960f',
+          tags: ['nuxtjs', 'canvas', '2d'],
         },
       ],
     };

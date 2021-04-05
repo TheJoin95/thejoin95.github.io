@@ -88,6 +88,13 @@
             </div>
           </div>
         </div>
+        <div class="hr-spine mx-auto w-full" />
+        <div class="container mx-auto p-5 md:p-0 md:py-5">
+          <div class="m-0 md:m-8">
+            <h3 class="text-3xl mb-5 text-center">You can find me on</h3>
+            <Social />
+          </div>
+        </div>
       </div>
       <div class="hidden md:block col-span-1 pt-5 text-center relative mx-auto">
         <h3 class="text-xl mt-10"><i class="bg-grey-200">Brief</i></h3>
@@ -115,6 +122,15 @@
             visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
           </div>
         </div>
+        <div class="sidebar-breakpoint absolute text-center"
+          style="bottom: 5em; left: -5px;">
+          <h3 class="text-xl relative" style="background: $bg-primary;">
+            <i class="bg-grey-200">Social</i>
+          </h3>
+          <div class="circle mx-auto mt-2 relative" style="
+            visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -124,12 +140,14 @@
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue';
 import NyanCat from '@/components/NyanCat.vue';
+import Social from '@/components/Social.vue';
 
 export default {
   name: 'Home',
   components: {
     HelloWorld,
     NyanCat,
+    Social,
   },
   data() {
     return {

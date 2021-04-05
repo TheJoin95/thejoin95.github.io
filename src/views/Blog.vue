@@ -2,7 +2,6 @@
 <template>
   <div class="blog">
     <div class="container mx-auto blog-list m-width-780">
-      <h1 class="text-center">Blog listing</h1>
       <section v-for="article in articles" :key="article.permalink">
         <div class="p-2 mx-auto my-5 max-w-sm max-w-md w-full lg:max-w-full lg:flex">
           <router-link style="display: inherit"

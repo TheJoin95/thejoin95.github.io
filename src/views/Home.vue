@@ -27,7 +27,7 @@
                 the tech stack of the company.
                 <br/><br/>
                 Are you interested on reading more? Go into the
-                <router-link to="/about">WhoAmI</router-link> section
+                <router-link to="/whoami">WhoAmI</router-link> section
               </p>
             </div>
           </div>

@@ -53,7 +53,18 @@ export default {
         }
 
         const fx = new TextScramble(el);
-        fx.setText(textToWrite);
+        // fx.setText(textToWrite);
+
+        let counter = 0;
+        const next = (word) => {
+          fx.setText(word).then(() => {
+            setTimeout(() => {
+              next(word);
+            }, 5000);
+          });
+          counter = (counter + 1) % 13;
+        };
+        next(textToWrite);
       }
     },
   },
@@ -79,12 +90,12 @@ export default {
   },
   mounted() {
     const self = this;
-    let scrambleInterval;
+    // let scrambleInterval;
     Lettering.methods.typeEffect();
-    clearInterval(scrambleInterval);
-    scrambleInterval = setInterval(() => {
-      self.scrambleTextEffect('.text-scramble', '');
-    }, 7500);
+    // clearInterval(scrambleInterval);
+    // scrambleInterval = setInterval(() => {
+    self.scrambleTextEffect('.text-scramble', '');
+    // }, 7500);
   },
 };
 </script>

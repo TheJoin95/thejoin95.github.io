@@ -8,7 +8,7 @@
           </h1>
           <h2 class="leading-none text-4xl mt-3 text-scramble">A passion driven developer</h2>
 
-          <router-link to="/about">
+          <router-link to="/whoami">
             <div class="mt-10 h-8 shadow appearance-none border border-gray-700 rounded
             w-full md:w-3/4 py-2 text-gray-900 leading-none focus:outline-none
             focus:shadow-outline bg-gray-800">

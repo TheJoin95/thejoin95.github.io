@@ -22,7 +22,7 @@
     </div>
     <div class="navigation-footer fixed w-full">
       <div class="hidden md:block absolute whoami tracking-wider">
-        <router-link to="/about">WhoAmI</router-link>
+        <router-link to="/whoami">WhoAmI</router-link>
       </div>
       <div class="hidden md:block absolute writing tracking-wider">
         <router-link to="/blog">Writing</router-link>
@@ -43,13 +43,13 @@
       <div class="mb-5 md:mb-10 pb-3 md:pb-5 mobile-content absolute bottom-0 w-full text-3xl">
         <ul>
           <li class="cursor-pointer pb-1">
-            <router-link @click.native="toggleMenu" to="/">~</router-link>
+            <router-link class="block" @click.native="toggleMenu" to="/">~</router-link>
           </li>
           <li class="cursor-pointer py-1">
-            <router-link @click.native="toggleMenu" to="/about">WhoAmI</router-link>
+            <router-link class="block" @click.native="toggleMenu" to="/whoami">WhoAmI</router-link>
           </li>
           <li class="cursor-pointer py-1">
-            <router-link @click.native="toggleMenu" to="/blog">Writing</router-link>
+            <router-link class="block" @click.native="toggleMenu" to="/blog">Writing</router-link>
           </li>
           <li class="cursor-pointer py-1 social-li">
             <span class="cursor-pointer" @click="toggleSocialBox">Social</span>

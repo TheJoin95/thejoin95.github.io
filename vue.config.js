@@ -29,7 +29,7 @@ module.exports = {
       renderRoutes: [
         '/',
         '/blog',
-        '/about',
+        '/whoami',
         '/not-found',
         '/blog/2021-02-22-netflix-conver-generator-nuxtjs-konvajs',
         '/blog/2020-02-23-sorting-hat-experiment-webar-in-js',

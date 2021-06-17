@@ -33,6 +33,7 @@
             <p>
               I helped Aperion and Plansoft to delivery high quality products, software and
               services to their customers.
+              Since June 2021, I'm working at <a href="https://www.growens.io/it/" target="_blank">Growens</a>
               My core knowledge has been instrumental in resolving complex architectural
               and software development challenges.<br/><br/>
               Working within the scopes of a lot of technical roles such as software engineer,

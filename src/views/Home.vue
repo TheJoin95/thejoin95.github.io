@@ -22,9 +22,9 @@
                 I've been working as a software engineer & solution architect
                 for <b>7+ years</b> in both product and
                 consultancy companies, taking the best from both worlds.<br/>
-                I'm currently working as a <b>Head of Research & Development</b> divison at
-                <a href="https://www.plansoft.it" target="_blank">Plansoft</a>, where I'm innovating
-                the tech stack of the company.
+                I'm currently working as a <b>Full Stack Engineer</b> at
+                <a href="https://www.growens.io/it/" target="_blank">Growens</a>, where I'm developing
+                and optimizing the email marketing platform in an Agile team (SCRUM).
                 <br/><br/>
                 Are you interested on reading more? Go into the
                 <router-link to="/whoami">WhoAmI</router-link> section

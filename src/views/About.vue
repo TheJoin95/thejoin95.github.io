@@ -11,7 +11,7 @@
         <div class="text-center mx-auto">
           <div id="column-portrait" class="inline-block">
             <div class="rounded-full">
-              <img src="/images/miki.jpg" class="rounded-full max-w-full" title="Me" />
+              <img src="/images/miki.jpg" width="256" class="rounded-full max-w-full" title="Me" />
             </div>
           </div>
           <div class="w-full md:w-1/3 inline-block">

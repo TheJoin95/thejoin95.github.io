@@ -24,10 +24,6 @@ npm run lint
 
 ## TODOs
 
-- evalutate to add SSR
-- add bio with resume
-- add stuff in homepage
-- add meta tag in homepage, about also for social
 - add easter egg [ball maze](https://developer.mozilla.org/en-US/docs/Games/Tutorials/HTML5_Gamedev_Phaser_Device_Orientation)
 
 ## License

@@ -31,9 +31,9 @@
           <div class="mx-auto w-full prose md:prose-xl biography text-justify">
             <h2 class="text-3xl font-bold">What I do?</h2>
             <p>
-              I helped Aperion and Plansoft to delivery high quality products, software and
+              I helped Aperion, Plansoft and Growens (ex-Mailup) to delivery high quality products, software and
               services to their customers.
-              Since June 2021, I'm working at <a href="https://www.growens.io/it/" target="_blank">Growens</a>
+              Since September 2022, I'm working at <a href="https://www.adobe.com/" target="_blank">Adobe</a>
               My core knowledge has been instrumental in resolving complex architectural
               and software development challenges.<br/><br/>
               Working within the scopes of a lot of technical roles such as software engineer,

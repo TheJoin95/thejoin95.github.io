@@ -18,13 +18,13 @@
               </p>
               <p class="biography">
                 Since <b>2014</b> I have lent my expertise in the <b>software develpoment</b>
-                and <b>solution architect</b> fields in <b>Florence, Italy</b>. <br/>
+                and <b>solution architect</b> fields in <b>Europe</b>. <br/>
                 I've been working as a software engineer & solution architect
                 for <b>{{ (new Date().getFullYear()) - 2014 }}+ years</b> in both product and
                 consultancy companies, taking the best from both worlds.<br/>
-                I'm currently working as a <b>Full Stack Engineer</b> at
-                <a href="https://www.growens.io/it/" target="_blank">Growens</a>, where I'm developing
-                and optimizing the email marketing platform in an Agile team (SCRUM).
+                I'm currently working as a <b>Software Development Engineer</b> at
+                <a href="https://www.adobe.com" target="_blank">Adobe</a>, in Paris, where I'm developing
+                and optimizing the Adobe Stock project in an Agile team (SCRUM).
                 <br/><br/>
                 Are you interested on reading more? Go into the
                 <router-link to="/whoami">WhoAmI</router-link> section

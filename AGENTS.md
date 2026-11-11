@@ -21,6 +21,16 @@
 - Keep Three.js and Lottie behind client boundaries and lazy imports; respect
   reduced motion. Server Components are the default.
 - Run `bun run check` and `bun run build` before handing off code changes.
+- Every implementation or feature must have automated tests covering its behavior.
+  Include regression tests for fixes and preservation checks for migrated content.
+- The blog uses repository Markdown and Next.js page routes. Backfill articles
+  from `origin/old`, preserving published URLs, dates, titles and content.
+- SEO and GEO are requirements: serve readable HTML, accurate metadata and
+  structured data, and test crawlability and discovery routes.
+- Apply relevant installed skills for the topic being worked on, including
+  SEO audit, AI SEO/GEO and schema guidance for blog/search features.
+- Netlify deployment is configured; the custom domain still serves the old site.
+  Keep the domain cutover separate from implementation and preview verification.
 - The newsletter API requires a Next.js server. GitHub Pages alone cannot run it.
   Do not switch to static export without addressing that route.
 

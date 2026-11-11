@@ -5,6 +5,11 @@ Radix-based shadcn/ui provide the UI foundation. Google Analytics 4 handles opti
 analytics; Brevo handles newsletter double opt in. Three.js runs through React
 Three Fiber/drei; dotLottie supports small animations.
 
+The [technical approach](docs/technical-approach.md) records the portfolio/Journal
+content and route contracts, existing-work review and remaining ticket handoffs.
+Use the [preview runbook](docs/preview-workflow.md) to review a production-mode
+build locally with analytics and newsletter delivery disabled.
+
 ## Local development
 
 Use Bun **1.4.4 or newer** (the expected version is in `.bun-version`).
@@ -158,8 +163,10 @@ pins Bun 1.4.4 and Node.js 22. Installs use the frozen Bun lockfile. Netlify
 automatically applies its Next.js adapter to run the newsletter API.
 See [Netlify's Next.js documentation](https://docs.netlify.com/build/frameworks/framework-setup-guides/nextjs/overview/).
 
-When ready to deploy, connect this repository to Netlify and select `main` as
-the production branch. In Netlify's environment variable settings, configure:
+Netlify deployment is already configured for `mikilombardi`. The custom domain
+still serves the old site; domain cutover remains a separate release step.
+Verify the production branch and pull-request previews before release.
+In Netlify's environment variable settings, configure:
 
 | Variable | Scope | Value |
 | --- | --- | --- |

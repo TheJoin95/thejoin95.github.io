@@ -155,6 +155,14 @@ Fetch `origin old` if missing. Do not switch branches or restore the Vue app.
 
 ## Setup, preview and deployment boundaries
 
+SEO, GEO and social sharing are shared page requirements. MIC-25 owns canonical
+metadata, structured data, sitemap/RSS, Open Graph and Twitter cards, including
+a branded default share image and article/project-specific images with a fallback.
+Use absolute image URLs, meaningful image alt text and readable title/identity
+composition. Share-image artwork must not imply authentic product evidence.
+MIC-28/page tests must verify crawler-visible metadata, valid image responses,
+fallbacks, long-title layouts and correct canonical-origin handling before launch.
+
 Use the [local preview runbook](preview-workflow.md). Existing CI and `netlify.toml`
 remain the reproducible baseline. The local production build validates the
 foundation without an account, public deployment, DNS change or live email.

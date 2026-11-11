@@ -15,6 +15,10 @@ inventory, featured case-study drafts, page copy and authentic-media requirement
 The existing CV is preserved at `/miki-lombardi-resume.pdf`; content integrity and
 CV preservation checks run with the Bun test suite.
 
+The [MIC-11 design contract](docs/design/responsive-layouts.md) specifies phone,
+tablet and desktop compositions, shared tokens, interaction/failure states,
+motion, social images and the acceptance tests required by implementation tickets.
+
 ## Local development
 
 Use Bun **1.4.4 or newer** (the expected version is in `.bun-version`).

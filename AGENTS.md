@@ -27,6 +27,10 @@
   from `origin/old`, preserving published URLs, dates, titles and content.
 - SEO and GEO are requirements: serve readable HTML, accurate metadata and
   structured data, and test crawlability and discovery routes.
+- Social sharing is required across public pages: provide accurate Open Graph
+  and Twitter card metadata, absolute image URLs, a branded default OG image,
+  and article/project-specific share images with a reliable fallback. Test image
+  responses and metadata, including crawler-visible HTML and long-title layouts.
 - Apply relevant installed skills for the topic being worked on, including
   SEO audit, AI SEO/GEO and schema guidance for blog/search features.
 - Netlify deployment is configured; the custom domain still serves the old site.

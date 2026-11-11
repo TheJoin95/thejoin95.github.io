@@ -93,6 +93,17 @@ URLs, Open Graph/Twitter metadata and `BlogPosting` JSON-LD with matching visibl
 author/date/title. Escape structured data safely. Do not emit missing images,
 invented author profile URLs or unsupported claims.
 
+Social previews include an actual branded default OG image and article-specific
+share images generated from real title/author metadata, with approved artwork
+where available and a reliable default fallback. Include Open Graph image
+dimensions/alt text and Twitter large-image card metadata with absolute URLs.
+Share-image design can use a 1200 × 630 canvas as the initial implementation
+default. Keep titles readable at thumbnail size, handle long titles deliberately
+and avoid cropping essential text. Use the sparse fox only when original artwork
+is ready. A branded title card is preferable to invented product screenshots.
+Verify the image route returns a usable image with the correct content type and
+that sharing crawlers receive metadata without client-side rendering.
+
 Use `NEXT_PUBLIC_SITE_URL` as the canonical production origin. Validate it for
 discovery generation and avoid localhost/Netlify aliases in a release sitemap.
 Default every Netlify URL and deploy-preview/branch context to noindex while the
@@ -139,6 +150,7 @@ Every feature includes automated behavioral tests, not just a successful build:
 | Backfill | All 16 source records accounted for, preserved text/dates/URLs, manifest coverage and recap alias |
 | Archive/article routes | Published pages include expected HTML; real HTTP 404 for missing/draft/future entries |
 | SEO/GEO | Canonical/OG/JSON-LD agree with visible article metadata; full body present before hydration; safe serialization |
+| Social images | Default and article-specific images return valid image bytes/type; metadata uses absolute URLs and alt/dimensions; missing artwork falls back; long titles remain readable |
 | Discovery | Valid RSS/XML escaping, sitemap contains only canonical published pages, no drafts/future entries |
 | Prelaunch controls | Netlify/preview noindex, release indexing opt-in, no draft leaks in production/raw routes |
 | Publishing workflow | New valid fixture appears, draft stays private, invalid content fails checks/build |

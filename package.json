@@ -15,7 +15,8 @@
     "test:ci": "bun test --coverage --bail",
     "build:tools": "bun build ./scripts/verify-env.ts --target=bun --env=disable --outdir=dist/tools --minify",
     "verify:env": "bun ./scripts/verify-env.ts",
-    "verify:services": "bun ./scripts/verify-env.ts --remote"
+    "verify:services": "bun ./scripts/verify-env.ts --remote",
+    "test:e2e": "bun --bun playwright test"
   },
   "dependencies": {
     "@lottiefiles/dotlottie-react": "^0.22.0",
@@ -36,6 +37,7 @@
     "zod": "^4.6.7"
   },
   "devDependencies": {
+    "@playwright/test": "1.65.0",
     "@tailwindcss/turbopack": "4.3.3",
     "@types/bun": "^1.4.4",
     "@types/node": "^20",

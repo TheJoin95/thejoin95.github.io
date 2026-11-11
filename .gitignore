@@ -13,3 +13,7 @@ next-env.d.ts
 .vercel/
 .netlify/
 .idea/
+
+# Browser test artifacts
+/test-results/
+/playwright-report/

@@ -19,6 +19,26 @@ The [MIC-11 design contract](docs/design/responsive-layouts.md) specifies phone,
 tablet and desktop compositions, shared tokens, interaction/failure states,
 motion, social images and the acceptance tests required by implementation tickets.
 
+The shared editorial shell now provides navigation, footer, page intros, semantic
+sections, media frames and empty/loading/error states. Work, Journal, Play and
+About have introductory routes; their complete galleries, article migration,
+Three.js palette stage, character artwork and social images remain with their
+own implementation tickets. Palette tokens live in `src/app/globals.css`;
+contact/navigation destinations live in `src/lib/site.ts`.
+
+Browser checks run against a production build:
+
+```sh
+bun --bun playwright install chromium
+bun run build
+bun run test:e2e
+```
+
+CI installs Chromium and runs these checks after the unit suite and build.
+Tests cover six viewport widths, keyboard/skip navigation, no-script access,
+large text/reduced motion, the CV and 404. They do not replace physical-device
+touch or screen-reader review.
+
 ## Local development
 
 Use Bun **1.4.4 or newer** (the expected version is in `.bun-version`).

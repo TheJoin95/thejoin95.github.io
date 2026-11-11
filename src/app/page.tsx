@@ -1,27 +1,20 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { NewsletterForm } from "@/components/newsletter-form";
+import { PageIntro, Section } from "@/components/site/primitives";
 
 export default function Home() {
-  return (
-    <main className="mx-auto flex min-h-svh w-full max-w-3xl flex-col justify-center gap-12 px-6 py-16">
-      <header className="flex flex-col gap-4">
-        <p className="text-sm text-muted-foreground">Miki Lombardi</p>
-        <h1 className="text-4xl font-semibold tracking-tight sm:text-6xl">A new space for ideas.</h1>
-        <p className="max-w-xl text-lg text-muted-foreground">
-          The next chapter of my website is taking shape. More soon.
-        </p>
-        <div><Button asChild variant="outline">
-          <Link href="/experience">Explore the experience</Link>
-        </Button></div>
-      </header>
-      <section aria-labelledby="newsletter-title" className="flex max-w-md flex-col gap-4">
-        <h2 id="newsletter-title" className="text-xl font-medium">Stay in the loop</h2>
-        <p className="text-sm text-muted-foreground">
-          Subscribe for new writing and updates. Unsubscribe at any time.
-        </p>
-        <NewsletterForm />
-      </section>
-    </main>
-  );
+  return <div className="home-page">
+    <PageIntro title="Engineering, with curiosity."><p>I’m Miki, a Senior Software Engineer at Adobe. I build software, contribute to open source, and share what I learn along the way.</p></PageIntro>
+    <Section labelledBy="explore-title" className="surface-charcoal"><div className="site-container editorial-row">
+      <h2 id="explore-title" className="section-title">Built, shaped,<br /> and shared.</h2>
+      <div className="reading-copy"><p>Software, open source, and practical experiments. Explore the projects and the decisions behind them.</p>
+        <div className="inline-actions"><Link href="/work">Explore the work</Link><Link href="/experience">Explore the experiment</Link></div>
+      </div>
+    </div></Section>
+    <Section labelledBy="newsletter-title"><div className="site-container editorial-row">
+      <h2 id="newsletter-title" className="section-title">Stay in the loop.</h2>
+      <div className="reading-copy"><p>Subscribe for new writing and updates. Unsubscribe at any time.</p><NewsletterForm /><Button asChild variant="link"><Link href="/blog">Read the Journal</Link></Button></div>
+    </div></Section>
+  </div>;
 }

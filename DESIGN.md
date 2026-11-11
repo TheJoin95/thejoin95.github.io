@@ -22,6 +22,8 @@ Page copy, project status, evidence and media provenance come from the
 [MIC-10 content handoff](docs/content/README.md). Runtime, route and publishing
 contracts come from the [technical approach](docs/technical-approach.md).
 
-This file describes the approved target. The current scaffold has not yet
-implemented the editorial gallery. MIC-12 owns the shared token/shell implementation;
-the page tickets and MIC-29 own rendered comparison with the source mockups.
+This file describes the approved target. MIC-12 implements the shared tokens,
+navigation, footer, primitives and introductory routes. Full editorial galleries,
+article publishing and character/interaction assets remain with the page tickets;
+MIC-29 owns the complete rendered comparison with the source mockups. See the
+[shell verification record](docs/design/mic12-verification.md) for scope and proof.

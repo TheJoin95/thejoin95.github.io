@@ -1,27 +1,64 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { siteStyles } from "./styles";
 
 export function PageIntro({ title, children }: { title: string; children: ReactNode }) {
-  return <div className="site-container page-intro"><h1 className="display-title">{title}</h1><div className="page-lead">{children}</div></div>;
+  return (
+    <div className={cn(
+      siteStyles.container,
+      "grid gap-6 py-(--section-space)",
+      "md:grid-cols-[minmax(0,5fr)_minmax(0,3fr)] md:items-end",
+      "desktop:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] desktop:gap-12",
+    )}>
+      <h1 className={cn(
+        "text-[clamp(3rem,8.1vw,9rem)] leading-[1.02] tracking-[-0.04em]",
+        "text-balance [overflow-wrap:anywhere]",
+        "md:text-[clamp(4.5rem,7.8vw,6rem)]",
+        "desktop:text-[clamp(6rem,8.1vw,9rem)] desktop:leading-[0.98]",
+      )}>{title}</h1>
+      <div className="max-w-[40ch] text-[clamp(1.25rem,2.2vw,2rem)] leading-[1.35] [&>*+*]:mt-6">
+        {children}
+      </div>
+    </div>
+  );
 }
 
 export function Section({ children, className, labelledBy }: { children: ReactNode; className?: string; labelledBy: string }) {
-  return <section className={cn("section-space", className)} aria-labelledby={labelledBy}>{children}</section>;
+  return <section className={cn(siteStyles.sectionSpace, className)} aria-labelledby={labelledBy}>{children}</section>;
 }
 
 export function ContentState({ title, children, action, loading = false }: { title: string; children: ReactNode; action?: ReactNode; loading?: boolean }) {
-  return <div className="content-state" role={loading ? "status" : undefined} aria-live={loading ? "polite" : undefined}>
-    <h2 className="section-title">{title}</h2><div className="reading-copy">{children}</div>{action ? <div className="state-actions">{action}</div> : null}
-  </div>;
+  return (
+    <div className="grid max-w-[68ch] gap-6" role={loading ? "status" : undefined} aria-live={loading ? "polite" : undefined}>
+      <h2 className={siteStyles.sectionTitle}>{title}</h2>
+      <div className={siteStyles.copy}>{children}</div>
+      {action ? <div className={siteStyles.actions}>{action}</div> : null}
+    </div>
+  );
 }
 
 export function MediaFrame({ src, alt, width, height, caption, credit, fit = "contain", priority = false }: {
   src?: string; alt: string; width: number; height: number; caption?: string; credit?: string;
   fit?: "contain" | "cover"; priority?: boolean;
 }) {
-  return <figure className="media-figure"><div className="media-frame" style={{ aspectRatio: `${width} / ${height}` }}>
-    {src ? <Image src={src} alt={alt} width={width} height={height} sizes="(min-width: 1600px) 1504px, (min-width: 1200px) calc(100vw - 96px), (min-width: 768px) calc(100vw - 64px), calc(100vw - 40px)" className={fit === "cover" ? "media-cover" : "media-contain"} priority={priority} />
-      : <p className="media-unavailable">Image unavailable{alt ? <span> — {alt}</span> : null}</p>}
-  </div>{caption || credit ? <figcaption>{caption}{credit ? <span className="media-credit">{credit}</span> : null}</figcaption> : null}</figure>;
+  return (
+    <figure className="media-figure">
+      <div className="grid place-items-center overflow-hidden border border-input bg-background" style={{ aspectRatio: `${width} / ${height}` }}>
+        {src ? (
+          <Image src={src} alt={alt} width={width} height={height}
+            sizes="(min-width: 1600px) 1504px, (min-width: 1200px) calc(100vw - 96px), (min-width: 768px) calc(100vw - 64px), calc(100vw - 40px)"
+            className={cn("h-full min-h-0 w-full", fit === "cover" ? "media-cover object-cover" : "media-contain object-contain")}
+            priority={priority} />
+        ) : (
+          <p className="p-6 text-muted-foreground">Image unavailable{alt ? <span> — {alt}</span> : null}</p>
+        )}
+      </div>
+      {caption || credit ? (
+        <figcaption className="mt-3 text-[1rem] text-muted-foreground">
+          {caption}{credit ? <span className="block">{credit}</span> : null}
+        </figcaption>
+      ) : null}
+    </figure>
+  );
 }

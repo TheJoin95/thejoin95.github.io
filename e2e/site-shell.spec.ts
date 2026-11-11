@@ -68,3 +68,24 @@ test("large text and reduced motion preserve the shell", async ({ page }) => {
   await expect(page.getByRole("navigation", { name: "Primary" }).getByRole("link", { name: "Work", exact: true })).toBeVisible();
   expect(await page.locator('a[href="/work"]').first().evaluate((el) => getComputedStyle(el).transitionDuration)).toBe("0s");
 });
+
+test("newsletter controls retain sizing, disabled feedback and invalid focus", async ({ page }) => {
+  await page.goto("/");
+  const input = page.getByRole("textbox", { name: "Email address" });
+  const button = page.getByRole("button", { name: "Subscribe", exact: true });
+  for (const control of [input, button]) {
+    await expect(control).toHaveCSS("font-size", "16px");
+    await expect(control).toHaveCSS("border-radius", "4px");
+    expect((await control.boundingBox())!.height).toBeGreaterThanOrEqual(44);
+  }
+  await input.evaluate((el) => el.setAttribute("aria-invalid", "true"));
+  await input.focus();
+  await expect(input).toHaveCSS("outline-width", "3px");
+  await expect(input).toHaveCSS("outline-style", "solid");
+  await expect(input).toHaveCSS("box-shadow", "none");
+  await button.focus();
+  await expect(button).toHaveCSS("outline-width", "3px");
+  await button.evaluate((el) => (el as HTMLButtonElement).disabled = true);
+  await expect(button).toBeDisabled();
+  await expect(button).toHaveCSS("opacity", "0.65");
+});

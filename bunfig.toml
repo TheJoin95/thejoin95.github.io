@@ -1,0 +1,17 @@
+[run]
+# Run CLI shebangs with Bun, including ESLint, TypeScript, and Next.js.
+bun = true
+shell = "bun"
+
+[install]
+exact = true
+saveTextLockfile = true
+
+[test]
+root = "tests"
+preload = ["./tests/setup.ts"]
+coverageSkipTestFiles = true
+coveragePathIgnorePatterns = ["tests/**"]
+coverageReporter = ["text", "lcov"]
+coverageDir = "coverage"
+coverageThreshold = { lines = 0.85, functions = 0.85 }

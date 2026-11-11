@@ -1,0 +1,20 @@
+[build]
+  command = "bun run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"
+  BUN_VERSION = "1.4.4"
+  BUN_FLAGS = "--frozen-lockfile"
+
+# Netlify automatically applies its Next.js adapter, including the
+# serverless function for /api/newsletter. Do not add an SPA catch-all redirect.
+# Set service credentials in Netlify's UI, not in this file; Brevo variables
+# must be available to Functions. See README.md for the deployment checklist.
+
+# Keep preview traffic out of production Google Analytics reports.
+[context.deploy-preview.environment]
+  NEXT_PUBLIC_GA_MEASUREMENT_ID = ""
+
+[context.branch-deploy.environment]
+  NEXT_PUBLIC_GA_MEASUREMENT_ID = ""

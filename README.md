@@ -10,6 +10,11 @@ content and route contracts, existing-work review and remaining ticket handoffs.
 Use the [preview runbook](docs/preview-workflow.md) to review a production-mode
 build locally with analytics and newsletter delivery disabled.
 
+The [MIC-10 content handoff](docs/content/README.md) contains the sourced project
+inventory, featured case-study drafts, page copy and authentic-media requirements.
+The existing CV is preserved at `/miki-lombardi-resume.pdf`; content integrity and
+CV preservation checks run with the Bun test suite.
+
 ## Local development
 
 Use Bun **1.4.4 or newer** (the expected version is in `.bun-version`).

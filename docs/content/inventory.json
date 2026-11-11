@@ -1,0 +1,850 @@
+{
+  "version": 1,
+  "reviewedOn": "2026-11-11",
+  "scope": "MIC-10 editorial handoff; not yet wired into public routes",
+  "sources": [
+    {
+      "id": "mic8",
+      "location": "https://linear.app/michelino-experiment/issue/MIC-8/build-and-deploy-the-personal-portfolio-with-the-editorial-gallery",
+      "note": "Approved audience, project coverage, design and personal interests."
+    },
+    {
+      "id": "owner",
+      "location": "User confirmations in this chat, 2026-11-11",
+      "note": "All work approved to show; Senior Software Engineer at Adobe; public email; retain current CV; Hop naming; Broskis URL; Social post and comic drawings in progress."
+    },
+    {
+      "id": "legacy-home",
+      "location": "origin/old:src/views/Home.vue",
+      "note": "Preserved reference at 22bad0992edf92a28898d8645d6621d993b14fdf; historical career, projects and talks."
+    },
+    {
+      "id": "legacy-about",
+      "location": "origin/old:src/views/About.vue",
+      "note": "Historical employers and resume route; current title superseded by owner confirmation."
+    },
+    {
+      "id": "legacy-architecture",
+      "location": "origin/old:public/articles/2021-04-16-covid19-supermarket-waiting-times-2020-recap.md",
+      "note": "Miki-authored architecture narrative; public metrics/date wording require reconciliation."
+    },
+    {
+      "id": "legacy-recap",
+      "location": "origin/old:public/articles/2021-04-17-covid19-supermarket-waiting-times-how-it-was-made.md",
+      "note": "First-person project account, role, Raspberry-to-VPS choices, contributor credit and June 2020 shutdown claim."
+    },
+    {
+      "id": "waiting-readme",
+      "location": "https://github.com/TheJoin95/covid19-market-waiting-times",
+      "note": "Public README says end of life July 2020, unlike the article. Archived project, not necessarily GitHub archived flag."
+    },
+    {
+      "id": "image-web",
+      "location": "https://github.com/Schroedinger-Hat/ImageGoNord-Web",
+      "note": "Public README credits TheJoin95 and Wabri; web/API/queue implementation; avoid attributing all later community changes to Miki."
+    },
+    {
+      "id": "image-package",
+      "location": "https://github.com/Schrodinger-Hat/ImageGoNord-pip",
+      "note": "Public package README credits both authors; Python/Pillow and PaletteNet support. No measured speed claim."
+    },
+    {
+      "id": "sh-site",
+      "location": "https://schroedinger-hat.org/",
+      "note": "Public organization site: open-source community, events and software. Team outcomes are not individual achievements."
+    },
+    {
+      "id": "speaker",
+      "location": "https://sessionize.com/thejoin95/",
+      "note": "Public self-authored speaker profile supports co-founder attribution. Do not reuse its blended project metrics."
+    },
+    {
+      "id": "chromatique",
+      "location": "local:chromatique-lab/chromatique/README.md",
+      "note": "Working-tree snapshot 2026-11-11; latest commit 79a1c5b. Git origin identifies ChromatiqueLab/chromatique; public access not established."
+    },
+    {
+      "id": "chromatique-rust",
+      "location": "local:chromatique-lab/chromatique/docs/adr/ADR-0001-rust-core.md",
+      "note": "Accepted Rust core decision, alternatives, deterministic CPU path and benchmark requirement."
+    },
+    {
+      "id": "chromatique-luminance",
+      "location": "local:chromatique-lab/chromatique/docs/adr/ADR-0010-preserve-semantics.md",
+      "note": "Lightness-first selection; structure section partly superseded; contrast remains unsupported."
+    },
+    {
+      "id": "chromatique-history",
+      "location": "local:chromatique-lab/chromatique git history",
+      "note": "f7913e7 (thejoin95) implements luminance preservation; 4eab3b4/2a42673 implement analysis/comparison; 6226bab (Miki) adds features. Authorship is implementation evidence, not proof of sole ownership."
+    },
+    {
+      "id": "holy",
+      "location": "local:holy-moly/README.md",
+      "note": "Working-tree snapshot 2026-11-11; latest commit 5cad66b. HolyCard AI digital-only beta; do not imply physical orders."
+    },
+    {
+      "id": "holy-history",
+      "location": "local:holy-moly git history",
+      "note": "5cad66b (Miki) customizable holy card studio; e8f289c (Miki) free-tier image/form/Cloudflare work."
+    },
+    {
+      "id": "copro",
+      "location": "local:conseil-syndacal-plat/README.md",
+      "note": "Working-tree snapshot 2026-11-11; latest commit 2f90344. CoproSync product/workflow and optional integrations."
+    },
+    {
+      "id": "copro-history",
+      "location": "local:conseil-syndacal-plat git history",
+      "note": "a9b0857 (thejoin95) end-to-end project workflow; do not claim independently measured resident adoption."
+    },
+    {
+      "id": "alerting",
+      "location": "local:economic-crisis-alert/README.md",
+      "note": "Working-tree snapshot 2026-11-11; latest commit 8b022be. Economic/systemic-risk signals; FastAPI/Nuxt; no investment-performance claim."
+    },
+    {
+      "id": "alerting-history",
+      "location": "local:economic-crisis-alert git history",
+      "note": "9eba696/068d19c (Miki) monitoring during database outages and database retry behavior."
+    },
+    {
+      "id": "hop",
+      "location": "local:around/README.md",
+      "note": "Working-tree snapshot 2026-11-11; latest commit 4cd8196. Hop early prototype; Flutter/Fastify/OIDC/LiveKit; documented reliability/platform limits."
+    },
+    {
+      "id": "hop-history",
+      "location": "local:around git history",
+      "note": "4cd8196 (Miki), reliability prerequisites. No configured GitHub remote found in this checkout."
+    },
+    {
+      "id": "broskis",
+      "location": "https://broski.substack.com/",
+      "note": "Owner supplied mapping. HTTP 200; page description identifies a personal Substack, by Broski Abroad. Topic/editorial remit not yet supplied."
+    },
+    {
+      "id": "contacts",
+      "location": "Read-only public URL checks, 2026-11-11",
+      "note": "GitHub, LinkedIn, ImageGoNord demo and organization home returned 200. Email syntax checked without sending. Live CV returned a genuine PDF matching the legacy SHA-256."
+    }
+  ],
+  "profile": {
+    "name": "Miki Lombardi",
+    "title": "Senior Software Engineer",
+    "employer": "Adobe",
+    "location": null,
+    "locationNote": "Paris appears in historical/public sources; current location was not reconfirmed in the owner's reply.",
+    "email": "miki.lombi@gmail.com",
+    "github": "https://github.com/TheJoin95",
+    "linkedin": "https://www.linkedin.com/in/miki-lombardi/",
+    "cvPath": "/miki-lombardi-resume.pdf",
+    "cvSha256": "0880b936361edcde02a67c110a249218bb7aa80ee522fb419cc525f7a798cb0e",
+    "sources": [
+      "owner",
+      "contacts"
+    ]
+  },
+  "projects": [
+    {
+      "id": "schrodinger-hat",
+      "requestedName": "Schrödinger Hat",
+      "title": "Schrödinger Hat",
+      "kind": "community",
+      "publicationPermission": "owner-approved",
+      "editorialState": "prepared-for-review",
+      "featuredRank": null,
+      "facts": {
+        "summary": {
+          "text": "An open-source community creating software and sharing knowledge through events, talks and a podcast.",
+          "sources": [
+            "legacy-home",
+            "sh-site"
+          ]
+        },
+        "problem": {
+          "text": "Connect people around open-source software and make technical knowledge accessible.",
+          "sources": [
+            "sh-site"
+          ]
+        },
+        "role": {
+          "text": "Co-founder and speaker; distinguish Miki's contribution from the collective's ongoing work.",
+          "sources": [
+            "speaker",
+            "legacy-home"
+          ]
+        },
+        "decisions": {
+          "text": "Combine community activity with open-source projects and public technical talks; specific organizational decisions are not individually attributed.",
+          "sources": [
+            "legacy-home",
+            "sh-site"
+          ]
+        },
+        "outcomes": {
+          "text": "Public events, published talks and open-source software provide evidence of activity; no personal share of community metrics is claimed.",
+          "sources": [
+            "sh-site",
+            "legacy-home"
+          ]
+        },
+        "status": {
+          "text": "Ongoing community activity is visible on its public site.",
+          "sources": [
+            "sh-site"
+          ]
+        },
+        "dates": null
+      },
+      "links": [
+        {
+          "label": "Community",
+          "url": "https://schroedinger-hat.org/",
+          "source": "sh-site",
+          "verification": "http-200"
+        }
+      ],
+      "mediaRequirements": [
+        "One event photograph with photographer credit and consent/usage rights recorded.",
+        "One authentic talk/video still or open-source project image; identify collaborators."
+      ],
+      "gaps": {
+        "dates": "Confirm Miki's co-founder start date and exact current responsibilities."
+      }
+    },
+    {
+      "id": "broskis",
+      "requestedName": "Broskis",
+      "title": "Broskis",
+      "kind": "writing",
+      "publicationPermission": "owner-approved",
+      "editorialState": "prepared-for-review",
+      "featuredRank": null,
+      "facts": {
+        "summary": {
+          "text": "A personal publication on Substack.",
+          "sources": [
+            "broskis",
+            "owner"
+          ]
+        },
+        "problem": null,
+        "role": {
+          "text": "Miki identifies this publication as the Broskis entry for his portfolio; no technical-build credit is claimed.",
+          "sources": [
+            "owner"
+          ]
+        },
+        "decisions": null,
+        "outcomes": {
+          "text": "A reachable publication destination is available; no subscriber or readership numbers are claimed.",
+          "sources": [
+            "broskis"
+          ]
+        },
+        "status": {
+          "text": "Publication destination is available; publishing cadence is not asserted.",
+          "sources": [
+            "broskis"
+          ]
+        },
+        "dates": null
+      },
+      "links": [
+        {
+          "label": "Read Broskis",
+          "url": "https://broski.substack.com/",
+          "source": "broskis",
+          "verification": "http-200"
+        }
+      ],
+      "mediaRequirements": [
+        "An approved publication cover or representative authored post image; use text-only until selected."
+      ],
+      "gaps": {
+        "problem": "Confirm the publication's topics and intended reader.",
+        "decisions": "Confirm the editorial angle before writing a longer description.",
+        "dates": "Confirm publication start date if it should appear."
+      }
+    },
+    {
+      "id": "chromatique",
+      "requestedName": "Chromatique",
+      "title": "Chromatique",
+      "kind": "software",
+      "publicationPermission": "owner-approved",
+      "editorialState": "prepared-for-review",
+      "featuredRank": 3,
+      "facts": {
+        "summary": {
+          "text": "An open-source ecosystem for transforming visual media into a target color palette.",
+          "sources": [
+            "chromatique"
+          ]
+        },
+        "problem": {
+          "text": "Make palette transformation reusable across languages and creative tools while keeping processing semantics explicit.",
+          "sources": [
+            "chromatique",
+            "chromatique-rust"
+          ]
+        },
+        "role": {
+          "text": "Developer, with authored core analysis, comparison and luminance-preservation commits visible in local history; no claim of sole authorship.",
+          "sources": [
+            "chromatique-history"
+          ]
+        },
+        "decisions": {
+          "text": "Keep a shared Rust core with language bindings and a deterministic CPU path; lightness-first OKLab selection preserves palette membership and rejects unsupported requests.",
+          "sources": [
+            "chromatique-rust",
+            "chromatique-luminance"
+          ]
+        },
+        "outcomes": {
+          "text": "Repository evidence includes a core engine, CLI, bindings and Studio integrations. No benchmark, adoption or production-readiness claim is made.",
+          "sources": [
+            "chromatique"
+          ]
+        },
+        "status": {
+          "text": "In development; repository components and roadmap are evidence of work, not a verified public release.",
+          "sources": [
+            "chromatique"
+          ]
+        },
+        "dates": {
+          "text": "Recorded Rust core decision dated 2026-09-09; not presented as the project's founding date.",
+          "sources": [
+            "chromatique-rust"
+          ]
+        }
+      },
+      "links": [
+        {
+          "label": "Repository",
+          "url": "https://github.com/ChromatiqueLab/chromatique",
+          "source": "chromatique",
+          "verification": "identified-not-publicly-verified"
+        }
+      ],
+      "mediaRequirements": [
+        "Owned/licensed input image, real generated output, exact palette and recipe/version.",
+        "Real Studio/CLI screenshot and a source-derived diagram showing Rust core and bindings."
+      ],
+      "gaps": {
+        "public-link": "Git remote identifies the repository, but anonymous access/release URL needs verification.",
+        "media": "Capture approved real outputs; no generated mockups as proof."
+      }
+    },
+    {
+      "id": "holy-card-generator",
+      "requestedName": "The Holy Card Generator",
+      "title": "HolyCard AI",
+      "kind": "software",
+      "publicationPermission": "owner-approved",
+      "editorialState": "prepared-for-review",
+      "featuredRank": null,
+      "facts": {
+        "summary": {
+          "text": "A digital devotional-card creator that turns a portrait into an editable card and exports PNG or print-ready PDF.",
+          "sources": [
+            "holy"
+          ]
+        },
+        "problem": {
+          "text": "Let a person direct an image and adjust text/ornaments before exporting a custom card.",
+          "sources": [
+            "holy"
+          ]
+        },
+        "role": {
+          "text": "Developer; repository history credits Miki for the customizable card studio and image-generation/form work.",
+          "sources": [
+            "holy-history"
+          ]
+        },
+        "decisions": {
+          "text": "Separate a digital-only beta from physical ordering; use a mock generation mode locally and bounded image/storage behavior in the documented beta.",
+          "sources": [
+            "holy"
+          ]
+        },
+        "outcomes": {
+          "text": "The repository documents an editable canvas and export workflow; no revenue, customer count or print-fulfillment claim.",
+          "sources": [
+            "holy"
+          ]
+        },
+        "status": {
+          "text": "Digital-only beta per README; deployment/delivery not independently tested in MIC-10.",
+          "sources": [
+            "holy"
+          ]
+        },
+        "dates": null
+      },
+      "links": [
+        {
+          "label": "Repository",
+          "url": "https://github.com/TheJoin95/holy-moly",
+          "source": "holy",
+          "verification": "identified-not-publicly-verified"
+        }
+      ],
+      "mediaRequirements": [
+        "A consented portrait and its actual card output, or an explicitly labeled synthetic demo portrait.",
+        "Real editing-canvas and export screenshots; avoid implying paid orders or shipped products."
+      ],
+      "gaps": {
+        "dates": "Confirm launch date if needed.",
+        "public-link": "Verify anonymous repository access or provide a working demo URL."
+      }
+    },
+    {
+      "id": "copro-syndic",
+      "requestedName": "Copro syndic platform",
+      "title": "CoproSync",
+      "kind": "software",
+      "publicationPermission": "owner-approved",
+      "editorialState": "prepared-for-review",
+      "featuredRank": null,
+      "facts": {
+        "summary": {
+          "text": "A self-hostable workspace for a condominium's Conseil Syndical, with project tracking, incident triage and a separate co-owner portal.",
+          "sources": [
+            "copro"
+          ]
+        },
+        "problem": {
+          "text": "Keep quotations, shared email, reminders and resident information connected while separating council work from co-owner access.",
+          "sources": [
+            "copro"
+          ]
+        },
+        "role": {
+          "text": "Developer; local history credits thejoin95 with the end-to-end project workflow.",
+          "sources": [
+            "copro-history"
+          ]
+        },
+        "decisions": {
+          "text": "Separate council and co-owner surfaces; treat email and WhatsApp as optional configured integrations rather than prerequisites.",
+          "sources": [
+            "copro"
+          ]
+        },
+        "outcomes": {
+          "text": "Documented workflows, multilingual interface and maintenance CSV export; no measured building adoption, savings or legal-compliance claim.",
+          "sources": [
+            "copro"
+          ]
+        },
+        "status": {
+          "text": "Implementation exists in the local repository; public release and deployment status are not verified.",
+          "sources": [
+            "copro"
+          ]
+        },
+        "dates": null
+      },
+      "links": [
+        {
+          "label": "Repository",
+          "url": "https://github.com/TheJoin95/copro",
+          "source": "copro",
+          "verification": "identified-not-publicly-verified"
+        }
+      ],
+      "mediaRequirements": [
+        "Demo-data project/quotation workflow and resident portal screenshots.",
+        "Source-derived role/access diagram; redact residents, addresses, mailbox contents and credentials."
+      ],
+      "gaps": {
+        "dates": "Confirm project dates if displayed.",
+        "public-link": "Verify anonymous repository access or supply a public demo.",
+        "media": "Prepare a clean demo dataset; approval of the project does not identify which resident data is suitable."
+      }
+    },
+    {
+      "id": "alerting",
+      "requestedName": "Alerting",
+      "title": "Alerting",
+      "kind": "software",
+      "publicationPermission": "owner-approved",
+      "editorialState": "prepared-for-review",
+      "featuredRank": null,
+      "facts": {
+        "summary": {
+          "text": "A dashboard for exploring economic and systemic-risk signals from public data sources.",
+          "sources": [
+            "alerting"
+          ]
+        },
+        "problem": {
+          "text": "Bring macroeconomic indicators and methodology into a regional monitoring view.",
+          "sources": [
+            "alerting"
+          ]
+        },
+        "role": {
+          "text": "Developer; Miki-authored commits document monitoring continuity and retry behavior when the subscriber database is unavailable.",
+          "sources": [
+            "alerting-history"
+          ]
+        },
+        "decisions": {
+          "text": "Separate a FastAPI data/API layer from a Nuxt server-rendered frontend and document metric definitions and methodology.",
+          "sources": [
+            "alerting"
+          ]
+        },
+        "outcomes": {
+          "text": "Repository evidence includes dashboard/API and methodology work; no predictive accuracy, financial return or investment-advice claim.",
+          "sources": [
+            "alerting"
+          ]
+        },
+        "status": {
+          "text": "Implementation under development; live end-to-end service status not tested here.",
+          "sources": [
+            "alerting"
+          ]
+        },
+        "dates": null
+      },
+      "links": [
+        {
+          "label": "Repository",
+          "url": "https://github.com/TheJoin95/economic-crisis-alert",
+          "source": "alerting",
+          "verification": "identified-not-publicly-verified"
+        }
+      ],
+      "mediaRequirements": [
+        "Real dashboard capture with observation date, geography, source and freshness visible.",
+        "A methodology or outage/retry flow diagram derived from source, clearly labeled as a diagram."
+      ],
+      "gaps": {
+        "dates": "Confirm project start/release dates if displayed.",
+        "public-link": "The README names alerting.cc, but exact public app destination needs end-to-end verification."
+      }
+    },
+    {
+      "id": "hop",
+      "requestedName": "Round app meeting",
+      "title": "Hop",
+      "kind": "software",
+      "publicationPermission": "owner-approved",
+      "editorialState": "prepared-for-review",
+      "featuredRank": null,
+      "facts": {
+        "summary": {
+          "text": "An early team-room prototype combining shared conversation, notes, ideas and an optional room agent.",
+          "sources": [
+            "hop",
+            "owner"
+          ]
+        },
+        "problem": {
+          "text": "Keep team conversation and captured follow-up material together in a shared room.",
+          "sources": [
+            "hop"
+          ]
+        },
+        "role": {
+          "text": "Developer; local Git history credits Miki. Exact contribution breakdown is not expanded beyond documented implementation.",
+          "sources": [
+            "hop-history"
+          ]
+        },
+        "decisions": {
+          "text": "Use a Flutter client and typed Fastify API with OIDC, membership-scoped room access and narrowly scoped LiveKit tokens.",
+          "sources": [
+            "hop"
+          ]
+        },
+        "outcomes": {
+          "text": "The README reports a locally verified sign-in/room-connection path and explicit limits; no claim of completed cross-platform media reliability or connected external project integrations.",
+          "sources": [
+            "hop"
+          ]
+        },
+        "status": {
+          "text": "Early prototype, not a production-ready conferencing replacement.",
+          "sources": [
+            "hop"
+          ]
+        },
+        "dates": null
+      },
+      "links": [],
+      "mediaRequirements": [
+        "Real room entry, shared notes and team invitation screenshots with demo accounts.",
+        "A typed API/membership flow diagram; label local/mock-provider captures accurately."
+      ],
+      "gaps": {
+        "dates": "Confirm project dates if needed.",
+        "public-link": "No GitHub origin was configured in the inspected local checkout; supply a public repo/demo when available."
+      }
+    },
+    {
+      "id": "social-post",
+      "requestedName": "Social post",
+      "title": "Social post",
+      "kind": "creative",
+      "publicationPermission": "owner-approved",
+      "editorialState": "prepared-for-review",
+      "featuredRank": null,
+      "facts": {
+        "summary": {
+          "text": "A work in progress around social posts; detailed scope is still being developed.",
+          "sources": [
+            "owner"
+          ]
+        },
+        "problem": null,
+        "role": {
+          "text": "Miki's ongoing personal work, as confirmed in this chat.",
+          "sources": [
+            "owner"
+          ]
+        },
+        "decisions": null,
+        "outcomes": null,
+        "status": {
+          "text": "In progress; there is no public link at the moment.",
+          "sources": [
+            "owner"
+          ]
+        },
+        "dates": null
+      },
+      "links": [],
+      "mediaRequirements": [
+        "Select a real authored post/carousel when ready, with sources and image rights recorded."
+      ],
+      "gaps": {
+        "problem": "Confirm intended audience and concrete output.",
+        "decisions": "Add a real workflow description once settled.",
+        "outcomes": "No completed result yet; keep the entry marked in progress.",
+        "dates": "Optional start date; no invented timeline."
+      }
+    },
+    {
+      "id": "imagegonord",
+      "requestedName": "ImageGoNord",
+      "title": "ImageGoNord",
+      "kind": "software",
+      "publicationPermission": "owner-approved",
+      "editorialState": "prepared-for-review",
+      "featuredRank": 1,
+      "facts": {
+        "summary": {
+          "text": "An open-source Python tool and web experience for converting images into a chosen color palette.",
+          "sources": [
+            "legacy-home",
+            "image-package"
+          ]
+        },
+        "problem": {
+          "text": "Make image palette conversion reusable as a package and approachable through a browser.",
+          "sources": [
+            "image-web",
+            "image-package"
+          ]
+        },
+        "role": {
+          "text": "Co-author credited as TheJoin95 alongside Wabri; later community changes are not all attributed to Miki.",
+          "sources": [
+            "image-web",
+            "image-package"
+          ]
+        },
+        "decisions": {
+          "text": "Separate the Python/Pillow conversion package from the web/API layer; the web README describes Redis-backed conversion jobs and workers.",
+          "sources": [
+            "image-web",
+            "image-package"
+          ]
+        },
+        "outcomes": {
+          "text": "A public package, source repositories and working demo can be shown. No current traffic, conversion or star metric is included.",
+          "sources": [
+            "image-web",
+            "image-package",
+            "contacts"
+          ]
+        },
+        "status": {
+          "text": "Public project and reachable demo; current maintenance commitments are not asserted.",
+          "sources": [
+            "contacts",
+            "image-web"
+          ]
+        },
+        "dates": {
+          "text": "The old site documents it by 2023/2024; exact project start date is not established by that source.",
+          "sources": [
+            "legacy-home"
+          ]
+        }
+      },
+      "links": [
+        {
+          "label": "Try ImageGoNord",
+          "url": "https://ign.schroedinger-hat.org/",
+          "source": "contacts",
+          "verification": "http-200"
+        },
+        {
+          "label": "Web source",
+          "url": "https://github.com/Schroedinger-Hat/ImageGoNord-Web",
+          "source": "image-web",
+          "verification": "public-source-read"
+        },
+        {
+          "label": "Python source",
+          "url": "https://github.com/Schrodinger-Hat/ImageGoNord-pip",
+          "source": "image-package",
+          "verification": "public-source-read"
+        }
+      ],
+      "mediaRequirements": [
+        "Real before/after conversions from an owned or licensed source image.",
+        "Actual palette swatches and browser capture; identify version and collaborator credits."
+      ],
+      "gaps": {
+        "media": "Choose an owned/licensed input and capture reproducible output.",
+        "dates": "Confirm exact start date before showing a year range."
+      }
+    },
+    {
+      "id": "supermarket-waiting-times",
+      "requestedName": "Supermarket waiting times",
+      "title": "Supermarket waiting times",
+      "kind": "software",
+      "publicationPermission": "owner-approved",
+      "editorialState": "prepared-for-review",
+      "featuredRank": 2,
+      "facts": {
+        "summary": {
+          "text": "An archived 2020 project mapping estimated supermarket and pharmacy waiting times with crowdsourced corrections.",
+          "sources": [
+            "legacy-recap",
+            "waiting-readme"
+          ]
+        },
+        "problem": {
+          "text": "Help people choose when to visit essential shops during lockdown.",
+          "sources": [
+            "legacy-recap"
+          ]
+        },
+        "role": {
+          "text": "Miki's first-person account describes creating and scaling the service, with contributor help on graphics.",
+          "sources": [
+            "legacy-recap"
+          ]
+        },
+        "decisions": {
+          "text": "Use Redis geospatial queries and expiring data; move from a Raspberry Pi to regional VPS backends and static frontend hosting as load grew.",
+          "sources": [
+            "legacy-architecture",
+            "legacy-recap"
+          ]
+        },
+        "outcomes": {
+          "text": "Published source, technical articles and a EuroPython case-study talk document the work. Traffic measures and shutdown month conflict and are omitted from launch claims.",
+          "sources": [
+            "legacy-recap",
+            "legacy-architecture",
+            "waiting-readme"
+          ]
+        },
+        "status": {
+          "text": "Archived/end-of-life project from 2020. Do not offer the original service as a working live tool.",
+          "sources": [
+            "waiting-readme"
+          ]
+        },
+        "dates": {
+          "text": "2020 project; article says June shutdown, README says July. Use the year until reconciled.",
+          "sources": [
+            "legacy-recap",
+            "waiting-readme"
+          ]
+        }
+      },
+      "links": [
+        {
+          "label": "Source archive",
+          "url": "https://github.com/TheJoin95/covid19-market-waiting-times",
+          "source": "waiting-readme",
+          "verification": "public-source-read"
+        }
+      ],
+      "mediaRequirements": [
+        "An original map screenshot from the repository, slides or Miki's archive with time period and provider credit.",
+        "Reconstructed architecture diagram labeled as a diagram; remove personal/location identifiers where present."
+      ],
+      "gaps": {
+        "metrics": "Confirm original analytics evidence and distinguish users, sessions and visits before quoting numbers.",
+        "shutdown": "Resolve June versus July if an exact end date is needed.",
+        "media": "Choose a source-authentic map capture; a mockup map is not a product screenshot."
+      }
+    },
+    {
+      "id": "comic-learning",
+      "requestedName": "Learning to make comic books",
+      "title": "Learning to make comic books",
+      "kind": "learning",
+      "publicationPermission": "owner-approved",
+      "editorialState": "prepared-for-review",
+      "featuredRank": null,
+      "facts": {
+        "summary": {
+          "text": "An ongoing exploration of learning to make comic books.",
+          "sources": [
+            "mic8",
+            "owner"
+          ]
+        },
+        "problem": {
+          "text": "Share the learning process once original drawings are ready.",
+          "sources": [
+            "mic8"
+          ]
+        },
+        "role": {
+          "text": "Learner; do not describe Miki as an established comic artist.",
+          "sources": [
+            "owner",
+            "mic8"
+          ]
+        },
+        "decisions": null,
+        "outcomes": null,
+        "status": {
+          "text": "In progress; finished comic drawings are not supplied.",
+          "sources": [
+            "owner"
+          ]
+        },
+        "dates": null
+      },
+      "links": [],
+      "mediaRequirements": [
+        "Miki-authored sketches/pages with creation date and honest process captions.",
+        "Until available, use a text-only in-progress entry; generated fox art is not a drawing by Miki."
+      ],
+      "gaps": {
+        "decisions": "Capture a concrete learning exercise once attempted.",
+        "outcomes": "No finished page or progress outcome is claimed.",
+        "dates": "Optional process dates once original drawings are supplied."
+      }
+    }
+  ]
+}

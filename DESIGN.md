@@ -4,6 +4,15 @@ The latest five mockups attached to MIC-8 are the visual authority. Preserve the
 oversized regular-weight typography, white/charcoal section rhythm, narrow project
 descriptions, square oversized media, expressive palette opening and sparse fox.
 
+Owner reminder (2026-11-12): colour palettes, a Three.js experiment, the mascot
+and website characters are explicit deliverables. MIC-12 defines coordinated
+site, interaction and character colour tokens. MIC-22 develops a working Three.js
+experiment using the existing React Three Fiber/drei foundation, with a useful
+static alternative. MIC-21 defines the fox-led character language, palette,
+expressions and poses; MIC-23 integrates it sparingly into the website. Keep the
+editorial white/charcoal base while making these expressive elements deliberate.
+Every implementation includes automated behaviour tests and visual review.
+
 Use the [MIC-11 responsive and interaction contract](docs/design/responsive-layouts.md)
 for page compositions, tokens, component states, accessibility, motion, social
 cards and implementation acceptance tests. The [composition board](docs/design/composition-board.svg)

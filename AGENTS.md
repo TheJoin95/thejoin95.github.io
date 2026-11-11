@@ -20,6 +20,9 @@
 - Keep credentials server-side. Document configuration in `.env.example`.
 - Keep Three.js and Lottie behind client boundaries and lazy imports; respect
   reduced motion. Server Components are the default.
+- Include coordinated colour palettes, a working Three.js experiment, and a
+  consistent mascot/character language in the website. Follow DESIGN.md and the
+  approved sparse fox direction; provide accessible static alternatives and tests.
 - Run `bun run check` and `bun run build` before handing off code changes.
 - Every implementation or feature must have automated tests covering its behavior.
   Include regression tests for fixes and preservation checks for migrated content.

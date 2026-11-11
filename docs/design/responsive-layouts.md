@@ -234,6 +234,16 @@ renders the summary and link, without a large fake screenshot frame.
 
 ## Opening image/palette interaction — MIC-22
 
+The owner explicitly requested a working Three.js experiment. Build the enhanced
+stage with the existing React Three Fiber/drei foundation, behind a lazy client
+boundary. The stage's image/palette transformation is the experiment's purpose;
+the existing generic 3D demo is not its completed implementation. Reuse the same
+controls, selected value and static comparison across the enhanced and fallback
+renderers. Keep HTML text and controls outside the canvas. Handle unavailable
+WebGL, context loss and rendering failure by restoring the useful static view,
+without losing the project link or trapping focus. Pause rendering offscreen and
+in hidden tabs; reduced motion must not require continuous rendering.
+
 Two views of the same approved image share one frame: Original and Palette.
 Initially render a useful static 50/50 comparison and text caption on the server.
 Provide an explicitly labelled native range “Palette reveal”, 0–100, initially
@@ -287,6 +297,16 @@ easter egg uses a labelled button, keyboard activation and explicit close; Escap
 closes it and returns focus. No automatic audio, hidden essential links or modal
 interruption. A fox animation cannot be the only signal of success/error.
 
+The mascot and character language are explicit deliverables, not incidental
+decoration. MIC-21 defines a consistent fox-led model, expressions, poses and
+character colour palette; MIC-23 places the approved characters in the site.
+MIC-12 maps the editorial colours above, experiment palettes and character
+colours to coordinated tokens. Keep image-transformation palette values separate
+from semantic UI colours so an experiment cannot reduce text/focus contrast.
+Review palettes in original/transformed comparisons and character poses at their
+actual small display sizes. Any supporting characters must use the same visual
+language and restrained placement rather than multiply illustrations per section.
+
 ## SEO, GEO and social image composition — MIC-25
 
 Server-render the same meaningful headings, project summaries, role/status,
@@ -324,7 +344,7 @@ Tests of document phrases would not prove responsive or interaction behaviour.
 | R1 · MIC-12/14–20/26 | At 320, 390, 768, 1024, 1200, 1440px, assert body has no horizontal overflow and critical links/headings remain visible; include long title and 200% text fixture. | Capture all five pages at 390×844, 834×1112 and 1440×1000; compare section order, proportions, typography, charcoal/white rhythm and real media with the five references. Inspect 320px, landscape and 400% zoom reflow too. |
 | N1 · MIC-12 | Header/footer destinations, active nested section, skip link and keyboard order; navigation works with JS disabled. | Visible focus on light/dark sections; no collisions at 1199/1200 or large text; 44px targets. |
 | G1 · MIC-13 | 0/1/many media; next/previous/endpoints; captions, focus retention; failed slide fallback; gallery scroll does not enlarge body. | Swipe strip and scroll page across strip; inspect first/last focus and long captions. Real touch check, not only viewport resize. |
-| P1 · MIC-22 | Range initial/endpoints/reset, keyboard arrows/Home/End, pointer preview vs committed value, reduced motion and enhancement failure. | Complete a drag on iOS Safari and Android Chrome; vertical swipe across image scrolls page; native range still manipulates reveal; compare selected output. |
+| P1 · MIC-22 | Range initial/endpoints/reset, keyboard arrows/Home/End, pointer preview vs committed value, reduced motion, unavailable WebGL/context loss and fallback focus/link preservation. | Complete a drag on iOS Safari and Android Chrome; vertical swipe across image scrolls page; native range still manipulates reveal; compare selected output and verify offscreen rendering pauses. |
 | J1 · MIC-18/19 | Direct article refresh/404, full title/date, filters/query/back restoration, no matches/clear/retry, draft exclusion. | Long legacy titles, code/tables/diagrams and empty sketchbook remain readable at all widths. |
 | S1 · MIC-12/23 | Loading/error/retry, newsletter validation/provider failures, reduced-motion change, offscreen pause and easter-egg close/focus return if implemented. | Keyboard-only route journey, screen-reader landmarks/status, failed script/media; fox remains sparse and unobtrusive. |
 | O1 · MIC-25 | HTML metadata/canonicals/JSON-LD match content; default/specific/fallback image routes return valid images; draft exclusion and absolute origin. | Inspect default, article, project and longest-title OG cards at full/thumbnail size, light/dark source media and missing art. |

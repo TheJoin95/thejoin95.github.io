@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { describe, expect, test, mock } from "bun:test";
 import { renderToStaticMarkup } from "react-dom/server";
 import { readFileSync } from "node:fs";
@@ -41,9 +42,9 @@ describe("site navigation and semantic shell", () => {
     expect(output).toContain("PDF");
     expect(output).toContain('id="contact"');
   });
-  test("introductory destinations each provide one H1 and useful content", () => {
+  test("introductory destinations each provide one H1 and useful content", async () => {
     for (const Page of [Work, Journal, Play, About, NotFound]) {
-      const output = html(<Page />);
+      const output = html(await Page());
       expect(output.match(/<h1\b/g)).toHaveLength(1);
       expect(output).not.toContain("<main");
       expect(output).not.toContain('href="#"');
@@ -51,7 +52,7 @@ describe("site navigation and semantic shell", () => {
     expect(html(<Work />)).toContain("archived");
     expect(html(<Play />)).toContain("A work in progress");
     expect(html(<About />)).toContain("Senior Software Engineer at Adobe");
-    expect(html(<Journal />)).toContain("original titles and publication dates");
+    expect(html(await Journal())).toContain("original titles and publication dates");
   });
 });
 
@@ -63,7 +64,7 @@ describe("reusable states and primitives", () => {
   });
   test("loading announces status; empty content offers a working recovery", () => {
     expect(html(<Loading />)).toContain('role="status"');
-    const output = html(<ContentState title="No results" action={<a href="/blog">Clear filters</a>}><p>Try another query.</p></ContentState>);
+    const output = html(<ContentState title="No results" action={<Link href="/blog">Clear filters</Link>}><p>Try another query.</p></ContentState>);
     expect(output).toContain('href="/blog"');
     expect(output).not.toContain('role="status"');
   });

@@ -1,0 +1,16 @@
+// login.js
+async signIn(username, password) {
+        console.log('Initating Log in');
+        try {
+            await this.page.click('#login-button-nav-item button');
+            await this.page.click('[data-testid="login-email-button"]');
+
+            await this.page.type('.js-loginEmailInput', username);
+            await this.page.type('#password', password);
+
+            await this.page.click('[data-testid="login-button"]');
+            console.log('Login succesfully');
+        }catch(e) {
+            throw Error('Login failed');
+        }
+    }

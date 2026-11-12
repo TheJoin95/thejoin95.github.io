@@ -1,0 +1,3 @@
+export function ArticleBody({ html }: { html: string }) {
+  return <div className="min-w-0 text-lg leading-relaxed [overflow-wrap:anywhere] [&_p]:my-6 [&_h2]:mt-12 [&_h2]:mb-5 [&_h2]:text-3xl [&_h2]:tracking-tight [&_h3]:mt-8 [&_h3]:text-2xl [&_a]:underline [&_a]:underline-offset-4 [&_pre]:my-8 [&_pre]:max-w-full [&_pre]:overflow-x-auto [&_pre]:rounded-sm [&_pre]:bg-(--ink) [&_pre]:p-5 [&_pre]:text-sm [&_pre]:text-(--paper) [&_code]:font-mono [&_ul]:list-disc [&_ol]:list-decimal [&_ul]:ps-6 [&_ol]:ps-6 [&_li]:my-2 [&_img]:h-auto [&_img]:max-w-full [&_blockquote]:border-s-2 [&_blockquote]:ps-5 [&_table]:block [&_table]:overflow-x-auto [&_td]:border [&_td]:p-2 [&_th]:border [&_th]:p-2" dangerouslySetInnerHTML={{ __html: html }} />;
+}

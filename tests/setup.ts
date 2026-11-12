@@ -1,3 +1,5 @@
+import { mock } from "bun:test";
+mock.module("server-only", () => ({}));
 // Tests must never use credentials from a developer's .env or contact a service.
 process.env.NEXT_PUBLIC_SITE_URL = "https://example.com";
 process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID = "";

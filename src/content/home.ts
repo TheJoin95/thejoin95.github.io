@@ -7,7 +7,7 @@ export const homeIdentity = {
 export const featuredWriting = {
   title: "Micro Frontends - From the 00s to 20s",
   published: "2019-12-21",
-  href: "https://www.mikilombardi.com/blog/2019-12-21-microfrontend-from-00-to-20s",
+  href: "/blog/2019-12-21-microfrontend-from-00-to-20s",
   summary: "When independently developed frontend applications share one experience: the boundaries, trade-offs and maintenance costs.",
 };
 

@@ -1,0 +1,94 @@
+// search.js
+(async () => {
+  // Open a Puppeteer Instance with a 1600x900 viewport
+  const browser = await puppeteer.launch({
+  	headless: true,
+  	defaultViewport: {
+  		width: 1600,
+  		height: 900
+  	}
+	});
+  
+  // Open a new Page
+  const page = await browser.newPage();
+  // Navigate to Skyscanner HP
+  await page.goto('https://www.skyscanner.com');
+  
+  // Check if is oneway trip or not. If yes, I click on the button of "Oneway"
+  if(args['oneWay'] === true)
+  	await page.click('#fsc-trip-type-selector-one-way');
+
+  // If I want only the direct flights I need to click on the relative button to active this option
+  if(args['directOnly'] === true)
+  	await page.click('input[name="directOnly"]');
+
+  // Focus on the departure airport input
+  await page.click('#fsc-origin-search');
+  
+  // Type the departure airport code or city
+  await page.type('#fsc-origin-search', args['origin'], {delay: 120});
+  console.log(`Compiled origin airport: ${args['origin']}`);
+  
+  // I'll do the same for the destination one
+  if(args['destination'] != 'Everywhere') {
+  	await page.click('#fsc-destination-search');
+
+	  await page.type('#fsc-destination-search', args['destination'], {delay: 120});
+  }
+
+  // Open the datepicker popup
+  await page.click('#depart-fsc-datepicker-button');
+  
+  // I need to wait the loading of the popup
+  await page.waitForSelector('select[name="months"]');
+  
+  // I made a functions for this
+  await setDatepicker(page, args['wholeMonthStart'], args['dayStart'], args['monthStart'], args['yearStart']);
+  console.log('Departure datepicker updated');
+  await page.waitFor(1000);
+
+  // If it is not an oneway trip, I'll do the same for the return date
+  if(args['oneWay'] !== true) {
+  	console.log('Opening return datepicker');
+  	await page.click('#return-fsc-datepicker-button');
+
+	await page.waitForSelector('select[name="months"]');
+
+  	await setDatepicker(page, args['wholeMonthEnd'], args['dayEnd'], args['monthEnd'], args['yearEnd']);
+  	console.log('Return datepicker updated');
+  }
+
+  // Then I check the passenger data, and eventually open the popup and compile the information
+  if(args['adults'] !== undefined && args['children'] !== undefined) {
+  	args['adults'] = parseInt(args['adults']);
+  	args['children'] = parseInt(args['children']);
+
+  	console.log('Opening passenger popover');
+		await page.click('[class*="CabinClassTravellersSelector_fsc-class-"]'); // Apro popover num passeggeri
+		await page.waitForSelector('[class*="BpkPopover"]');
+		console.log('Passenger popover opened');
+
+		if(args['adults'] > 0){
+			console.log(`Adding ${args['adults']} adults`);
+			for (var i = 0; i < args['adults']-1; i++) {
+				await page.click('[class*="BpkPopover"] div [class*="CabinClassTravellersSelector_CabinClassTravellersSelector__nudger-wrapper"]:nth-of-type(1) button:nth-of-type(2)'); // Aggiunta adulti, default 1
+			};
+		}
+
+		if(args['children'] > 0) {
+			console.log(`Adding ${args['children']} children`);
+			for (var i = 0; i < args['children']-1; i++) {
+				await page.click('[class*="BpkPopover"] div [class*="CabinClassTravellersSelector_CabinClassTravellersSelector__nudger-wrapper"]:nth-of-type(2) button:nth-of-type(2)'); // aggiunta bambini, default 0
+			}
+		}
+  }
+
+  // Then, I finally click on the submit button
+  await page.click('button[type="submit"]');
+  // I wait the new page loading correctly
+  await page.waitForNavigation();
+  // And take a screenshot
+  await page.screenshot({path: 'screen/submitted.png'});
+  
+  await browser.close();
+})();

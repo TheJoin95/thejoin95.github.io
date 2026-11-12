@@ -1,10 +1,11 @@
+import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { cn } from "@/lib/utils";
 import { siteStyles } from "@/components/site/styles";
 import Link from "next/link";
 import { Experience } from "@/components/experience/experience";
 
-export const metadata: Metadata = { title: "Experience" };
+export const metadata: Metadata = pageMetadata({ title: "Experience", description: "An interactive Three.js sculpture by Miki Lombardi. Rotate the form and explore a small experiment in geometry and motion.", path: "/experience" });
 export default function ExperiencePage() {
   return (
     <div className={cn(siteStyles.container, siteStyles.sectionSpace, "flex flex-col gap-6")}>

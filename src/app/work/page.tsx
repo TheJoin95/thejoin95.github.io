@@ -1,3 +1,5 @@
+import { pageMetadata, serializeStructuredData } from "@/lib/seo";
+import { siteOrigin } from "@/lib/seo-config";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageIntro, Section } from "@/components/site/primitives";
@@ -7,16 +9,11 @@ import { ProjectIndex } from "@/components/work/project-index";
 import { siteStyles } from "@/components/site/styles";
 import { workDescription, workStructuredData } from "@/content/work";
 
-export const metadata: Metadata = {
-  title: "Work", description: workDescription, alternates: { canonical: "/work" },
-  openGraph: { type: "website", title: "Work — Miki Lombardi", description: workDescription, url: "/work", siteName: "Miki Lombardi",
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Miki Lombardi — Engineering, with curiosity." }] },
-  twitter: { card: "summary_large_image", title: "Work — Miki Lombardi", description: workDescription,
-    images: [{ url: "/opengraph-image", alt: "Miki Lombardi — Engineering, with curiosity." }] },
-};
+export const metadata: Metadata = pageMetadata({ title: "Work", description: workDescription, path: "/work" });
+
 export default function Work() {
   return <div className="surface-charcoal" data-surface="charcoal">
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(workStructuredData(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000")).replace(/</g, "\\u003c") }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeStructuredData(workStructuredData(siteOrigin())) }} />
     <PageIntro title="Selected work."><p>Software, systems, and open-source contributions. Explore the problem, the implementation and the decisions behind each project.</p></PageIntro>
     {selectedProjects.map(project => <ProjectFeature key={project.id} project={project} />)}
     <ProjectIndex />

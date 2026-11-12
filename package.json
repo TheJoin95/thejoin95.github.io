@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "bun run build:journal && bun --bun next dev --turbopack",
-    "build": "bun run build:journal && bun run build:tools && bun --bun next build --turbopack",
+    "dev": "bun run verify:seo && bun run build:journal && bun --bun next dev --turbopack",
+    "build": "bun run verify:seo && bun run build:journal && bun run build:tools && bun --bun next build --turbopack",
     "start": "bun --bun next start",
     "lint": "bun --bun eslint .",
     "typecheck": "bun --bun next typegen && bun --bun tsc --noEmit",
@@ -19,7 +19,8 @@
     "test:e2e": "bun run build:test-fixtures && bun --bun playwright test",
     "build:test-fixtures": "bun build e2e/fixtures/gallery.tsx --target=browser --env=disable --define 'process.env={\"NODE_ENV\":\"production\"}' --outdir=.test-fixtures",
     "build:journal": "bun scripts/build-journal.ts",
-    "migrate:legacy": "bun scripts/migrate-legacy.ts"
+    "migrate:legacy": "bun scripts/migrate-legacy.ts",
+    "verify:seo": "bun scripts/verify-seo.ts"
   },
   "dependencies": {
     "@lottiefiles/dotlottie-react": "^0.22.0",
@@ -28,6 +29,7 @@
     "@react-three/fiber": "^9.8.2",
     "class-variance-authority": "^0.7.1",
     "cn": "^0.5.2",
+    "feed": "6.0.0",
     "gray-matter": "4.0.3",
     "lucide-react": "^1.72.0",
     "next": "16.4.6",

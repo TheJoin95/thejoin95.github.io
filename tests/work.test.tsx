@@ -40,9 +40,9 @@ describe("Work gallery and complete project index", () => {
     expect(html).toContain('href="/play"');
     expect(html).toContain('data-surface="charcoal"');
     expect(html).toContain('type="application/ld+json"');
-    expect(metadata.alternates?.canonical).toBe("/work");
-    expect(metadata.openGraph).toMatchObject({ images: [{ url: "/opengraph-image", width: 1200, height: 630 }] });
-    expect(metadata.twitter).toMatchObject({ card: "summary_large_image", images: [{ url: "/opengraph-image" }] });
+    expect(metadata.alternates?.canonical).toBe("https://example.com/work");
+    expect(metadata.openGraph).toMatchObject({ images: [{ url: "https://example.com/opengraph-image", width: 1200, height: 630 }] });
+    expect(metadata.twitter).toMatchObject({ card: "summary_large_image", images: [{ url: "https://example.com/opengraph-image" }] });
   });
   test("structured data mirrors all visible entries without inventing URLs or claims", () => {
     const schema = workStructuredData("https://example.com");

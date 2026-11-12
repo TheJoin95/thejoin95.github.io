@@ -12,3 +12,14 @@ test("the build route inventory admits published articles and rejects unknown/pr
     expect(response.headers.get("X-Robots-Tag")).toBe("noindex");
   }
 });
+test("indexing headers follow the build decision and canonical host, independently of article visibility", () => {
+  const previous = process.env.PORTFOLIO_INDEXABLE;
+  try {
+    process.env.PORTFOLIO_INDEXABLE = "false";
+    expect(proxy(new NextRequest("https://example.com/about")).headers.get("X-Robots-Tag")).toBe("noindex, follow");
+    process.env.PORTFOLIO_INDEXABLE = "true";
+    expect(proxy(new NextRequest("https://example.com/about")).headers.get("X-Robots-Tag")).toBeNull();
+    expect(proxy(new NextRequest("http://localhost/about", { headers: { Host: "example.com" } })).headers.get("X-Robots-Tag")).toBeNull();
+    expect(proxy(new NextRequest("https://preview.netlify.app/about")).headers.get("X-Robots-Tag")).toBe("noindex, follow");
+  } finally { process.env.PORTFOLIO_INDEXABLE = previous; }
+});

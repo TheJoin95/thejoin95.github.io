@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
+import { seoConfiguration } from "./src/lib/seo-config";
+const seo = seoConfiguration(process.env);
 
 const nextConfig: NextConfig = {
+  env: { NEXT_PUBLIC_SITE_URL: seo.origin, PORTFOLIO_INDEXABLE: String(seo.indexable) },
   async redirects() {
     return [
       { source: "/whoami", destination: "/about", permanent: true },
@@ -8,7 +11,11 @@ const nextConfig: NextConfig = {
     ];
   },
   async headers() {
-    return [{ source: "/articles/:path*", headers: [{ key: "X-Robots-Tag", value: "noindex" }] }];
+    return [
+      ...(!seo.indexable ? [{ source: "/:path*", headers: [{ key: "X-Robots-Tag", value: "noindex, follow" }] }] : []),
+      { source: "/articles/:path*", headers: [{ key: "X-Robots-Tag", value: "noindex" }] },
+      { source: "/rss.xml", headers: [{ key: "X-Robots-Tag", value: "noindex" }] },
+    ];
   },
   cacheComponents: true,
   partialPrefetching: true,

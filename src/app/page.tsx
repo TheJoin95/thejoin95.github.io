@@ -1,3 +1,5 @@
+import { pageMetadata, serializeStructuredData } from "@/lib/seo";
+import { siteOrigin } from "@/lib/seo-config";
 import Link from "next/link";
 import { siteStyles } from "@/components/site/styles";
 import { Button } from "@/components/ui/button";
@@ -9,16 +11,14 @@ import { SelectedWriting } from "@/components/home/selected-writing";
 import { homeIdentity, homeStructuredData } from "@/content/home";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: { absolute: homeIdentity.title }, description: homeIdentity.description,
-  alternates: { canonical: "/" },
-  openGraph: { type: "website", title: homeIdentity.title, description: homeIdentity.description, url: "/", siteName: homeIdentity.name },
-  twitter: { card: "summary_large_image", title: homeIdentity.title, description: homeIdentity.description, images: [{ url: "/opengraph-image", alt: "Miki Lombardi — Engineering, with curiosity." }] },
-};
+const homeMetadata = pageMetadata({ title: "Home", description: homeIdentity.description, path: "/" });
+export const metadata: Metadata = { ...homeMetadata, title: { absolute: homeIdentity.title },
+  openGraph: { ...homeMetadata.openGraph, title: homeIdentity.title }, twitter: { ...homeMetadata.twitter, title: homeIdentity.title } };
+
 
 export default function Home() {
   return <div className="home-page">
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeStructuredData(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000")).replace(/</g, "\\u003c") }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeStructuredData(homeStructuredData(siteOrigin())) }} />
     <PageIntro title="Engineering, with curiosity."><p>I’m Miki, a Senior Software Engineer at Adobe. I build software, contribute to open source, and share what I learn along the way.</p></PageIntro>
     <PaletteStage />
     <SelectedWork />

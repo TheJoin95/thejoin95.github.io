@@ -20,7 +20,7 @@ test("all historical routes, source downloads, aliases and assets survive in the
     expect(schema.dateModified).toBeUndefined();
     const raw = await request.get(`/articles/${record.filename}`);
     expect(raw.status()).toBe(200);
-    expect(raw.headers()["x-robots-tag"]).toBe("noindex");
+    expect(raw.headers()["x-robots-tag"]).toContain("noindex");
     expect(hash(await raw.body())).toBe(record.sha256);
     for (const alias of record.aliases) {
       const redirect = await request.get(alias, { maxRedirects: 0 });

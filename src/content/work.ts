@@ -1,4 +1,4 @@
-import { chromatiqueProject, imageGoNordProject, supermarketProject } from "./selected-projects";
+import { chromatiqueProject, imageGoNordProject, supermarketProject, selectedProjects } from "./selected-projects";
 
 export type ProjectIndexEntry = {
   id: string; title: string; summary: string; contribution: string; status: string; href?: string;
@@ -38,6 +38,12 @@ export function workStructuredData(origin: string) {
   return {
     "@context": "https://schema.org", "@type": "CollectionPage", url,
     name: "Work — Miki Lombardi", description: workDescription,
+    hasPart: selectedProjects.map(project => ({
+      "@type": "CreativeWork", "@id": `${url}#${project.id}`, url: `${url}#${project.id}`,
+      name: project.title, abstract: project.summary, description: project.contribution,
+      contributor: { "@id": `${new URL("/", origin).href}#miki` },
+      image: new URL(`/share/projects/${project.id}`, origin).href,
+    })),
     mainEntity: { "@type": "ItemList", numberOfItems: projectIndex.length,
       itemListElement: projectIndex.map((project, index) => ({
         "@type": "ListItem", position: index + 1, name: project.title,

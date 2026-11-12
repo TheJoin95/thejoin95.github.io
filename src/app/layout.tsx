@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
+import { siteOrigin, siteIndexable } from "@/lib/seo-config";
 import { Analytics } from "@/components/analytics";
 import { SiteFooter, SiteHeader } from "@/components/site/shell";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
+  metadataBase: new URL(siteOrigin()),
+  robots: { index: siteIndexable(), follow: true },
+  alternates: { types: { "application/rss+xml": new URL("/rss.xml", siteOrigin()).href } },
   title: { default: "Miki Lombardi", template: "%s | Miki Lombardi" },
   description: "Ideas, writing, and experiments by Miki Lombardi.",
 };

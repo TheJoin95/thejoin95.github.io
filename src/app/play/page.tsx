@@ -1,9 +1,10 @@
+import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { siteStyles } from "@/components/site/styles";
 import Link from "next/link";
 import { PageIntro, Section } from "@/components/site/primitives";
 
-export const metadata: Metadata = { title: "Play", description: "Side projects, community and creative experiments by Miki Lombardi." };
+export const metadata: Metadata = pageMetadata({ title: "Play", description: "Side projects, community and creative experiments by Miki Lombardi.", path: "/play" });
 export default function Play() {
   return <><PageIntro title="Built out of curiosity."><p>Side projects, community, and experiments.</p></PageIntro>
     <Section labelledBy="play-title" className="surface-charcoal"><div className={siteStyles.editorialRow}>

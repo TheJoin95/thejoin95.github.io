@@ -11,9 +11,9 @@ for (const width of [320, 390, 768, 1024, 1200, 1440]) {
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
       for (const link of await page.getByRole("navigation", { name: "Primary" }).getByRole("link").all()) {
         await expect(link).toBeVisible();
-        const bounds = await link.boundingBox();
-        expect(bounds!.height).toBeGreaterThanOrEqual(44);
-        expect(bounds!.width).toBeGreaterThanOrEqual(44);
+        // The Suspense navigation fallback may be replaced between reads.
+        await expect.poll(async () => (await link.boundingBox())?.height || 0).toBeGreaterThanOrEqual(44);
+        await expect.poll(async () => (await link.boundingBox())?.width || 0).toBeGreaterThanOrEqual(44);
       }
       if (["/work", "/blog", "/play", "/about"].includes(route)) {
         await expect(page.locator(`nav[aria-label="Primary"] a[href="${route}"]`)).toHaveAttribute("aria-current", "page");

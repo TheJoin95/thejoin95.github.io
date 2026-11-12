@@ -7,7 +7,7 @@ export const contacts = [
   { href: "mailto:miki.lombi@gmail.com", label: "Email Miki" },
   { href: "https://github.com/TheJoin95", label: "GitHub" },
   { href: "https://www.linkedin.com/in/miki-lombardi/", label: "LinkedIn" },
-  { href: "/miki-lombardi-resume.pdf", label: "Download CV", detail: "PDF" },
+  { href: "/miki-lombardi-resume.pdf", label: "Download CV", detail: "PDF", download: "miki-lombardi-resume.pdf" },
 ] as const;
 
 export function currentSection(pathname: string, href: string) {

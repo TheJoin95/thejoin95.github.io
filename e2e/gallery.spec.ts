@@ -16,6 +16,8 @@ for (const width of [390, 834, 1440]) {
     await page.goto("/work");
     const gallery = page.getByRole("region", { name: "ImageGoNord media", exact: true });
     const list = gallery.locator("ol");
+    // The server-rendered static strip is replaced by the enhanced gallery.
+    await expect(gallery.getByRole("button", { name: /Next/ })).toBeVisible();
     const first = await list.locator("li").first().boundingBox();
     const bounds = await list.boundingBox();
     const expected = width >= 1200 ? 0.48 : width >= 768 ? 0.76 : 0.88;

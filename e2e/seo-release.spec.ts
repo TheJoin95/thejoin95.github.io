@@ -23,6 +23,19 @@ test("a release build serves canonical-only discovery and indexes only its confi
   }, await home.text());
   expect(meta.robots).toContain("index, follow"); expect(meta.robots).not.toContain("noindex");
   expect(new URL(meta.canonical!).href).toBe(`${origin}/`);
+  // Pagination may be indexed, while internal search/tag combinations may not.
+  for (const [path, canonical, indexed] of [["/blog?page=2", "/blog?page=2", true], ["/blog?q=python", "/blog", false], ["/blog?tag=python", "/blog", false]] as const) {
+    const archive = await request.get(path, { headers: { ...headers, "User-Agent": "Googlebot" } });
+    expect(archive.status()).toBe(200);
+    expect(archive.headers()["x-robots-tag"]).toBeUndefined();
+    const metadata = await page.evaluate(html => {
+      const doc = new DOMParser().parseFromString(html, "text/html");
+      return { robots: doc.querySelector('meta[name="robots"]')?.getAttribute("content"), canonical: doc.querySelector('link[rel="canonical"]')?.getAttribute("href"), count: doc.querySelectorAll("#archive li").length };
+    }, await archive.text());
+    expect(metadata.canonical).toBe(`${origin}${canonical}`);
+    expect(metadata.robots?.includes("noindex")).toBe(!indexed);
+    expect(metadata.count).toBeGreaterThan(0);
+  }
   const alias = await request.get("/", { headers: { Host: "preview.netlify.app" } });
   expect(alias.headers()["x-robots-tag"]).toContain("noindex");
   const rss = await request.get("/rss.xml", { headers });

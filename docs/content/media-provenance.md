@@ -113,3 +113,14 @@ evidence. The supermarket period-map screenshot remains unavailable; the page
 shows the diagram honestly and links to the preserved articles and official talk.
 Chromatique's example is ordinary OKLab mapping with no dithering, and is labelled
 separately from the story's optional lightness-preservation discussion.
+
+## MIC-18 featured Journal diagram
+
+`public/media/journal/microfrontends.svg` is an explanatory vector authored for
+the new Journal in 2026. It illustrates the school-administration example in the
+preserved `2019-12-21-microfrontend-from-00-to-20s.md` article: staff, subjects and
+register frontends composed into one application shell. It is not a period
+screenshot, original project architecture evidence or comic artwork. That
+distinction is visible in the caption and SVG description. There is no external
+asset dependency or third-party photograph. Dimensions: 1200 × 630. SHA-256:
+`f7d6e846eedf5850c9e5d3935c0da7065ba822cf14e10716bd4d6a27d628cbe3`.

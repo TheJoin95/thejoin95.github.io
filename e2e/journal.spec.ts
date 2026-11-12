@@ -56,8 +56,13 @@ for (const width of [390, 834, 1440]) test(`archive and long article work withou
   const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width, height: 900 } });
   const page = await context.newPage();
   await page.goto("http://127.0.0.1:3109/blog");
-  await expect(page.locator('main li a')).toHaveCount(16);
-  await page.locator('main li a').first().click();
+  const archive = page.getByRole("list", { name: "Archive articles" });
+  await expect(archive.getByRole("listitem")).toHaveCount(8);
+  const links = await archive.locator("h3 a").evaluateAll(anchors => anchors.map(a => a.getAttribute("href")));
+  await page.getByRole("link", { name: "Next page", exact: true }).click();
+  links.push(...await archive.locator("h3 a").evaluateAll(anchors => anchors.map(a => a.getAttribute("href"))));
+  expect([...new Set(links)].sort()).toEqual(manifest.articles.map(a => a.canonical).sort());
+  await archive.locator("h3 a").first().click();
   await expect(page.locator("h1")).toHaveCount(1);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.screenshot({ path: `/tmp/mic24-article-${width}.png` });

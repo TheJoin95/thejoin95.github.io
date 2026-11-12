@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+<title id="title">Composing a school application with micro frontends</title>
+<desc id="desc">A shared school application shell combines Staff, Subjects and Register frontends. Each can be developed independently; the shell presents a coherent application. Source-derived illustration made in 2026, not a historical screenshot.</desc>
+<rect width="1200" height="630" fill="#f5f5f5"/>
+<g fill="#111111" font-family="sans-serif" text-anchor="middle">
+<text x="600" y="80" font-size="30">Independent frontends. One application.</text>
+<g stroke="#111111" stroke-width="2"><rect x="70" y="150" width="300" height="150" fill="none"/><rect x="450" y="150" width="300" height="150" fill="none"/><rect x="830" y="150" width="300" height="150" fill="none"/>
+<path d="M220 300V380H980V300M600 300V440" fill="none"/>
+<rect x="290" y="440" width="620" height="110" fill="#d7ef36"/></g>
+<text x="220" y="215" font-size="36">Staff</text><text x="600" y="215" font-size="36">Subjects</text><text x="980" y="215" font-size="36">Register</text>
+<g font-size="24"><text x="220" y="258">Frontend</text><text x="600" y="258">Frontend</text><text x="980" y="258">Frontend</text></g>
+<text x="600" y="506" font-size="36">School application shell</text>
+</g></svg>

@@ -11,8 +11,8 @@ saveTextLockfile = true
 root = "tests"
 preload = ["./tests/setup.ts"]
 coverageSkipTestFiles = true
-# Stateful gallery interaction is exercised in Playwright, not the Bun unit suite.
-coveragePathIgnorePatterns = ["tests/**", "src/components/gallery/media-gallery.tsx"]
+# Stateful gallery/animation lifecycle and motion preference changes are exercised in Playwright.
+coveragePathIgnorePatterns = ["tests/**", "src/components/gallery/media-gallery.tsx", "src/components/animations/*.tsx", "src/hooks/use-reduced-motion.ts"]
 coverageReporter = ["text", "lcov"]
 coverageDir = "coverage"
 coverageThreshold = { lines = 0.85, functions = 0.85 }

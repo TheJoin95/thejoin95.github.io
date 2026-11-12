@@ -1,0 +1,93 @@
+{
+  "model": "Miki fox",
+  "artboard": [
+    192,
+    160
+  ],
+  "palette": {
+    "fur": "#d87332",
+    "cream": "#fff3df",
+    "ink": "#263445"
+  },
+  "fps": 30,
+  "authorship": "Original vector construction authored with Codex for this portfolio; not Miki-authored comic artwork.",
+  "clips": {
+    "notice": {
+      "frames": 30,
+      "peak": 10,
+      "description": "Ears and head lift to notice a deliberate interaction, then return to rest."
+    },
+    "follow": {
+      "frames": 36,
+      "peak": 14,
+      "description": "A small head turn, lifted forepaw and tail response follow one connection; no pointer chasing."
+    },
+    "settle": {
+      "frames": 42,
+      "peak": 18,
+      "description": "A quiet head dip and tail release settle back into the resting pose."
+    }
+  },
+  "files": [
+    {
+      "path": "assets/fox/model.ts",
+      "bytes": 3623,
+      "sha256": "c7af7c40af2ee508981cc730d984edef8ef8d6be779aaa1b5f38e636c9f02bd1"
+    },
+    {
+      "path": "assets/fox/fox-layered.svg",
+      "bytes": 2787,
+      "sha256": "6ec579d3474e262a1a6ff60b48b9d12a00ab549757d99f192e150b15cc4e16f7"
+    },
+    {
+      "path": "public/characters/fox/rest.svg",
+      "bytes": 2347,
+      "sha256": "d3b63c9a8ec0ececa186b53ca464cdee95ca4528ccd4db52c764918cab38029a"
+    },
+    {
+      "path": "public/characters/fox/notice.svg",
+      "bytes": 2351,
+      "sha256": "852bd0a4757e64e290f112161b999685c5c464fe7233a676993ca3e9205ed4b7"
+    },
+    {
+      "path": "public/characters/fox/follow.svg",
+      "bytes": 2352,
+      "sha256": "622554123fda26f126bc2d29e54ce0de080ddcf66217f8075fd542fa7c30fe5c"
+    },
+    {
+      "path": "public/characters/fox/settle.svg",
+      "bytes": 2351,
+      "sha256": "53866f02db4daf113c9ff9d4c6e1abc5cf84db4f307288e04309583c39161a3d"
+    },
+    {
+      "path": "public/animations/fox/notice.json",
+      "bytes": 10655,
+      "sha256": "e48c5e23eb136d58cd7e7d6018c4eb290afc7b6e8b2fa7ad4cb2e40b1106e1c9"
+    },
+    {
+      "path": "public/animations/fox/notice.lottie",
+      "bytes": 1873,
+      "sha256": "f3932c7804c18cdb92baca657a948a76b2fef8161b32f69afde5848569157aa2"
+    },
+    {
+      "path": "public/animations/fox/follow.json",
+      "bytes": 10633,
+      "sha256": "bb8749194205112179bf294167304d2e3028a6204946fe859348dbf94a301439"
+    },
+    {
+      "path": "public/animations/fox/follow.lottie",
+      "bytes": 1856,
+      "sha256": "e9d69e72c97194e9f9aa386af0598636bee6c1d77f94bf6bf8834eb7c8e27e1c"
+    },
+    {
+      "path": "public/animations/fox/settle.json",
+      "bytes": 10657,
+      "sha256": "52b45fa2cc45e0828d4069b8dd65481f9c7ad14d46e14446fc6e9a00ab5db3cd"
+    },
+    {
+      "path": "public/animations/fox/settle.lottie",
+      "bytes": 1868,
+      "sha256": "4b9d7e45ece604c13cd78c40023ca3f122c1ac118e4ed52ac349f5a2afa75018"
+    }
+  ]
+}

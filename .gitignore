@@ -18,3 +18,6 @@ next-env.d.ts
 /test-results/
 /playwright-report/
 /.test-fixtures/
+
+# Reproduced from the locked dotLottie dependency by build:fox.
+/public/animations/runtime/

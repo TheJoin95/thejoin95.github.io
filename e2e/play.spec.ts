@@ -1,0 +1,43 @@
+import { expect, test } from "@playwright/test";
+for (const [width, columns] of [[320, 1], [390, 1], [834, 2], [1440, 3]]) test(`Play composition and directory at ${width}px without JavaScript`, async ({ browser }) => {
+  const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width, height: 1000 } });
+  const page = await context.newPage(); await page.goto("http://127.0.0.1:3109/play");
+  const directory = page.getByRole("region", { name: "Projects & community.", exact: true });
+  await expect(directory.getByRole("listitem")).toHaveCount(10);
+  expect(await directory.locator("ul").evaluate(element => getComputedStyle(element).gridTemplateColumns.split(" ").length)).toBe(columns);
+  await expect(directory.getByText("No public link yet.", { exact: true })).toHaveCount(5);
+  await expect(directory.getByRole("link")).toHaveCount(5);
+  for (const title of ["Broskis", "Chromatique", "HolyCard AI", "CoproSync", "Alerting", "Hop", "Social post", "ImageGoNord", "Supermarket waiting times", "Schrödinger Hat"]) await expect(directory.getByRole("heading", { level: 3, name: title, exact: true })).toBeVisible();
+  const comic = page.getByRole("region", { name: "Learning to make comic books.", exact: true });
+  await expect(comic).toContainText("A work in progress"); await expect(comic.locator("img, canvas, svg")).toHaveCount(0);
+  await expect(comic.getByRole("link", { name: "Explore the Journal", exact: true })).toHaveAttribute("href", "/blog");
+  const stage = page.getByRole("region", { name: "Chromatique static palette comparison", exact: true });
+  await expect(stage.locator("img")).toHaveCount(2); await expect(stage.getByRole("button")).toHaveCount(0);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await page.evaluate(() => scrollTo(0, 0));
+  if (width !== 320) await page.screenshot({ path: `/tmp/mic17-play-${width}.png`, fullPage: true });
+  await directory.getByRole("link", { name: "Chromatique", exact: true }).click();
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Chromatique");
+  await context.close();
+});
+test("Play keyboard destinations, comic Journal link and large text work", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 }); await page.goto("/play");
+  const stageLink = page.getByRole("link", { name: "Chromatique — explore the palette study", exact: true });
+  await stageLink.focus(); await page.keyboard.press("Enter"); await expect(page).toHaveURL(/\/work\/chromatique$/);
+  await page.goto("/play"); await page.addStyleTag({ content: "html { font-size: 200%; }" });
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  const journal = page.getByRole("link", { name: "Explore the Journal", exact: true });
+  await journal.focus(); await page.keyboard.press("Enter"); await expect(page).toHaveURL(/\/blog$/);
+});
+test("Play provides crawler-visible collection schema, canonical and the real default social card", async ({ page, request }) => {
+  await page.goto("/play");
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", "http://127.0.0.1:3109/play");
+  const schema = JSON.parse((await page.locator('script[type="application/ld+json"]').textContent())!);
+  expect(schema.mainEntity.numberOfItems).toBe(10); expect(schema.hasPart.name).toBe("Learning to make comic books");
+  const imageUrl = await page.locator('meta[property="og:image"]').getAttribute("content");
+  const response = await request.get(imageUrl!); expect(response.status()).toBe(200);
+  expect(response.headers()["content-type"]).toContain("image/png");
+  const png = await response.body(); expect(png.readUInt32BE(16)).toBe(1200); expect(png.readUInt32BE(20)).toBe(630);
+  const crawler = await request.get("/play", { headers: { "User-Agent": "OAI-SearchBot" } });
+  expect(await crawler.text()).toContain("No drawings are published here yet.");
+});

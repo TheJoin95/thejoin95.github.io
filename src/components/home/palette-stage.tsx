@@ -1,7 +1,7 @@
 import { MediaCaption, MediaSurface } from "@/components/media/presentation";
 import { siteStyles } from "@/components/site/styles";
 
-export function PaletteStage() {
+export function PaletteStage({ href = "#chromatique" }: { href?: string }) {
   return <section aria-label="Chromatique static palette comparison">
     <figure className="mx-auto max-w-[100rem]">
       <MediaSurface className="relative aspect-[4/3] overflow-hidden bg-(--experiment-ink) md:aspect-video desktop:aspect-[3/1] desktop:min-h-[360px] desktop:max-h-[560px]">
@@ -23,7 +23,7 @@ export function PaletteStage() {
       </MediaSurface>
       <MediaCaption className="surface-charcoal m-0! px-5 py-4 text-base md:px-8 desktop:px-12">
         <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-2">
-          <a href="#chromatique" className={siteStyles.link}>Chromatique — explore the palette study</a>
+          <a href={href} className={siteStyles.link}>Chromatique — explore the palette study</a>
           <span>Static comparison · original / actual CLI output</span>
         </div>
         <p className="mt-2 text-muted-foreground">Photograph: Frances Benjamin Johnston / <a href="https://www.loc.gov/pictures/item/2007686318/">Library of Congress</a>. Nord palette: Sven Greb.</p>

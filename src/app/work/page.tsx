@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
-import { siteStyles } from "@/components/site/styles";
-import { PageIntro, Section } from "@/components/site/primitives";
+import { PageIntro } from "@/components/site/primitives";
+import { ProjectGallery } from "@/components/gallery/project-gallery";
+import { imageGoNordMedia } from "@/content/featured-media";
 
 export const metadata: Metadata = { title: "Work", description: "Software, systems and open-source contributions by Miki Lombardi." };
 export default function Work() {
   return <div className="surface-charcoal" data-surface="charcoal">
     <PageIntro title="Selected work."><p>Software, systems, and open-source contributions. Explore the problem, the implementation and the decisions behind each project.</p></PageIntro>
-    <Section labelledBy="work-projects"><div className={siteStyles.editorialRow}>
-      <h2 id="work-projects" className={siteStyles.sectionTitle}>Open source,<br /> in practice.</h2>
-      <div className={siteStyles.copy}><p>ImageGoNord converts images into a chosen palette. Built with the Schrödinger Hat community, it brings software and visual experimentation together.</p><a href="https://github.com/Schroedinger-Hat/ImageGoNord-Web">Explore ImageGoNord on GitHub</a>
-        <p>Supermarket waiting times was a crowdsourced map built in 2020. The project is archived.</p><a href="https://github.com/TheJoin95/covid19-market-waiting-times">View the archived project</a></div>
-    </div></Section>
+    <ProjectGallery id="imagegonord" title="ImageGoNord" href="https://github.com/Schroedinger-Hat/ImageGoNord-Web" linkLabel="Explore ImageGoNord on GitHub" media={imageGoNordMedia}>
+      <p>An open-source tool for converting images into a chosen palette, built with the Schrödinger Hat community.</p>
+    </ProjectGallery>
+    <ProjectGallery id="supermarket" title="Supermarket waiting times" href="https://github.com/TheJoin95/covid19-market-waiting-times" linkLabel="View the archived project" media={[]}>
+      <p>A crowdsourced map of shop waiting times, built in 2020. The project is archived.</p>
+    </ProjectGallery>
   </div>;
 }

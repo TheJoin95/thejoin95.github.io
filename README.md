@@ -39,6 +39,14 @@ Tests cover six viewport widths, keyboard/skip navigation, no-script access,
 large text/reduced motion, the CV and 404. They do not replace physical-device
 touch or screen-reader review.
 
+Reusable project galleries now live in `src/components/gallery`; Work includes
+the first gallery with credited ImageGoNord UI captures. See the
+[gallery API and verification](docs/design/mic13-galleries.md) and
+[media provenance](docs/content/media-provenance.md). Browser checks also build
+an isolated test fixture under `.test-fixtures` (never served by the website).
+Interactive gallery coverage is verified in Playwright; Bun coverage remains
+scoped to the pure model, server fallback and other imported unit-tested modules.
+
 ## Local development
 
 Use Bun **1.4.4 or newer** (the expected version is in `.bun-version`).

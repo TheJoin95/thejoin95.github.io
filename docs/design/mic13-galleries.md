@@ -91,3 +91,17 @@ remain MIC-26. Chromium touch synthesis proves browser behaviour, not hardware
 testing. Further project media belongs to the page/content tickets; no mockup
 screenshots or generated project imagery were substituted. No push, deployment,
 domain change, live newsletter action or modification of other repositories.
+
+## Reuse review before MIC-14
+
+`MediaSurface` and `MediaCaption` are shared presentation atoms;
+`GalleryCaption` composes credits, full-size links and transcripts for both the
+enhanced and static galleries. `MediaFrame` uses those same presentation atoms.
+The native fallback and enhanced image renderer remain separate because their
+server/failure responsibilities differ.
+
+The [shadcn Carousel source](https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/carousel.tsx)
+was reviewed: it uses Embla with an `overflow-hidden` viewport and captures arrow
+keys. It is not a drop-in match for this project's native scrolling, ordered-list
+semantics and no-script access. Retain browser scrolling plus the existing
+Radix/shadcn Button; no additional carousel engine is needed for this contract.

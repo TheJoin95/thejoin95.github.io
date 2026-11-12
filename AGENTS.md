@@ -17,6 +17,16 @@
 - Stack: Next.js App Router, TypeScript, Tailwind, Radix-based shadcn/ui,
   Google Analytics 4, Brevo newsletter, Three.js with React Three Fiber/drei,
   and dotLottie for small animations.
+- Follow atomic design through composition: reusable UI primitives (atoms),
+  small combinations (molecules), sections (organisms), then templates and pages.
+  Keep responsibilities clear; avoid speculative abstractions or a forced folder
+  hierarchy. Reuse existing components and shared tokens before adding new ones.
+- Check installed components and established libraries before implementing common
+  UI behaviour. Prefer Radix/shadcn and suitable maintained libraries over custom
+  replacements; assess accessibility, SSR/progressive enhancement, bundle cost
+  and fit with the approved design. Document a concrete gap when custom behaviour
+  is necessary. Use Tailwind for component styling; keep globals focused on theme
+  tokens and genuinely global rules.
 - Keep credentials server-side. Document configuration in `.env.example`.
 - Keep Three.js and Lottie behind client boundaries and lazy imports; respect
   reduced motion. Server Components are the default.

@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { siteStyles } from "./styles";
+import { MediaCaption, MediaSurface } from "@/components/media/presentation";
 
 export function PageIntro({ title, children }: { title: string; children: ReactNode }) {
   return (
@@ -44,7 +45,7 @@ export function MediaFrame({ src, alt, width, height, caption, credit, fit = "co
 }) {
   return (
     <figure className="media-figure">
-      <div className="grid place-items-center overflow-hidden border border-input bg-background" style={{ aspectRatio: `${width} / ${height}` }}>
+      <MediaSurface className="overflow-hidden border border-input bg-background" style={{ aspectRatio: `${width} / ${height}` }}>
         {src ? (
           <Image src={src} alt={alt} width={width} height={height}
             sizes="(min-width: 1600px) 1504px, (min-width: 1200px) calc(100vw - 96px), (min-width: 768px) calc(100vw - 64px), calc(100vw - 40px)"
@@ -53,11 +54,11 @@ export function MediaFrame({ src, alt, width, height, caption, credit, fit = "co
         ) : (
           <p className="p-6 text-muted-foreground">Image unavailable{alt ? <span> — {alt}</span> : null}</p>
         )}
-      </div>
+      </MediaSurface>
       {caption || credit ? (
-        <figcaption className="mt-3 text-[1rem] text-muted-foreground">
+        <MediaCaption className="text-muted-foreground">
           {caption}{credit ? <span className="block">{credit}</span> : null}
-        </figcaption>
+        </MediaCaption>
       ) : null}
     </figure>
   );

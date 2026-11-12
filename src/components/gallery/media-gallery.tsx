@@ -6,6 +6,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { boundedIndex, indexAtScroll, type GalleryMedia } from "@/lib/gallery";
+import { GalleryCaption, MediaSurface } from "@/components/media/presentation";
 
 const subscribe = () => () => {};
 const clientSnapshot = () => true;
@@ -20,7 +21,7 @@ function GalleryItem({ item, eager }: { item: GalleryMedia; eager: boolean }) {
   const hydrated = useHydrated();
 
   return <figure className="min-w-0">
-    <div className="relative grid aspect-[4/3] place-items-center bg-(--experiment-ink) text-(--reverse) md:aspect-[5/3]" aria-busy={hydrated && state === "loading" && item.kind === "image"}>
+    <MediaSurface className="relative aspect-[4/3] bg-(--experiment-ink) text-(--reverse) md:aspect-[5/3]" aria-busy={hydrated && state === "loading" && item.kind === "image"}>
       {item.kind === "image" && item.src && !failed ? (
         <Image src={item.src} alt={item.alt} width={item.width} height={item.height}
           sizes="(min-width: 1600px) 590px, (min-width: 1200px) 38vw, (min-width: 768px) 70vw, 85vw"
@@ -39,12 +40,8 @@ function GalleryItem({ item, eager }: { item: GalleryMedia; eager: boolean }) {
       ) : null}
       {hydrated && state === "loading" && item.kind === "image" ? <span className="pointer-events-none absolute bottom-3 left-3 bg-(--charcoal) px-3 py-1 text-base">Loading image…</span> : null}
       {failed ? <p className="p-6 text-center">{item.kind === "image" ? "Image" : "Video"} unavailable.{item.kind === "image" && item.alt ? <span className="block text-base">{item.alt}</span> : null}</p> : null}
-    </div>
-    <figcaption className="mt-3 text-[1rem] [overflow-wrap:anywhere]">
-      <p>{item.caption}</p><p className="text-muted-foreground">{item.credit}</p>
-      {item.kind === "image" && item.src && !failed ? <a className="inline-flex min-h-11 items-center" href={item.src}>View full-size image<span className="sr-only">: {item.caption}</span></a> : null}
-      {item.kind === "video" ? <details className="mt-2"><summary className="min-h-11 cursor-pointer">Video transcript</summary><p>{item.transcript}</p></details> : null}
-    </figcaption>
+    </MediaSurface>
+    <GalleryCaption item={item} failed={failed} />
   </figure>;
 }
 

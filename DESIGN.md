@@ -13,6 +13,15 @@ expressions and poses; MIC-23 integrates it sparingly into the website. Keep the
 editorial white/charcoal base while making these expressive elements deliberate.
 Every implementation includes automated behaviour tests and visual review.
 
+Component design follows atomic composition: shared primitives → small component
+groups → reusable sections → templates/pages. Reuse the existing UI and tokens;
+extract shared responsibilities as they emerge. Prefer established, maintained
+libraries for standard interaction patterns, starting with Radix/shadcn. Check
+accessibility, server rendering, no-script behaviour and bundle cost before
+choosing a library or custom code. Keep component layout/states in Tailwind and
+reserve global CSS for theme tokens and global defaults. This is a composition
+principle, not a requirement to rename every folder or wrap every HTML element.
+
 Use the [MIC-11 responsive and interaction contract](docs/design/responsive-layouts.md)
 for page compositions, tokens, component states, accessibility, motion, social
 cards and implementation acceptance tests. The [composition board](docs/design/composition-board.svg)

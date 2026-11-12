@@ -118,7 +118,7 @@ export function MediaGallery({ label, items }: { label: string; items: readonly 
     </ol>
     {items.length > 1 && enhanced ? <div className="mt-4 flex flex-wrap items-center justify-between gap-4">
       <p className="text-base tabular-nums" aria-hidden="true">{selected + 1} of {items.length}</p>
-      <div className="flex gap-2">
+      <div className="flex max-w-full flex-wrap gap-2">
         <Button variant="ghost" aria-label={`Previous media in ${label}`} aria-controls={`${id}-media`} disabled={selected === 0} onClick={() => navigate(selected - 1)}><ArrowLeft aria-hidden="true" />Previous</Button>
         <Button variant="ghost" aria-label={`Next media in ${label}`} aria-controls={`${id}-media`} disabled={selected === items.length - 1} onClick={() => navigate(selected + 1)}>Next<ArrowRight aria-hidden="true" /></Button>
       </div>

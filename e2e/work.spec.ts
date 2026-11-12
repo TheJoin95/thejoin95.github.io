@@ -14,11 +14,11 @@ for (const [width, columns] of [[390, 1], [834, 2], [1440, 3]]) {
       await expect(page.getByRole("region", { name, exact: true })).toBeVisible();
     }
     await index.getByRole("link", { name: "Chromatique", exact: true }).click();
-    await expect(page).toHaveURL(/\/work#chromatique$/);
-    await expect(page.locator("h2#chromatique")).toBeInViewport();
+    await expect(page).toHaveURL(/\/work\/chromatique$/);
+    await expect(page.getByRole("heading", { level: 1, name: "Chromatique" })).toBeInViewport();
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     await page.screenshot({ path: `/tmp/mic15-work-${width}.png`, fullPage: true });
-    await index.screenshot({ path: `/tmp/mic15-index-${width}.png` });
+
   });
 }
 
@@ -31,8 +31,9 @@ test("Work index is readable and keyboard navigable without JavaScript", async (
   const anchor = index.getByRole("link", { name: "ImageGoNord", exact: true });
   await anchor.focus();
   await page.keyboard.press("Enter");
-  await expect(page).toHaveURL(/#imagegonord$/);
-  await expect(page.locator("h2#imagegonord")).toBeInViewport();
+  await expect(page).toHaveURL(/\/work\/imagegonord$/);
+  await expect(page.getByRole("heading", { level: 1, name: "ImageGoNord" })).toBeInViewport();
+  await page.getByRole("link", { name: "← All work", exact: true }).click();
   await expect(page.getByRole("region", { name: "Chromatique media", exact: true }).locator("img")).toHaveCount(2);
   await context.close();
 });

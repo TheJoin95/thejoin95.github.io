@@ -1,3 +1,4 @@
+import { findCaseStudy } from "./content/case-studies";
 import { NextRequest, NextResponse } from "next/server";
 import { siteOrigin, siteIndexable } from "./lib/seo-config";
 import publishedSlugs from "./content/journal-routes.json";
@@ -6,7 +7,9 @@ import publishedSlugs from "./content/journal-routes.json";
 // A streamed notFound() alone would retain HTTP 200 under Cache Components.
 export function proxy(request: NextRequest) {
   const slug = request.nextUrl.pathname.split("/")[2];
-  if (request.nextUrl.pathname.startsWith("/blog/") && !publishedSlugs.includes(slug)) {
+  const unknownArticle = request.nextUrl.pathname.startsWith("/blog/") && !publishedSlugs.includes(slug);
+  const unknownStory = request.nextUrl.pathname.startsWith("/work/") && !findCaseStudy(slug);
+  if (unknownArticle || unknownStory) {
     return NextResponse.rewrite(new URL("/not-found", request.url), { status: 404, headers: { "X-Robots-Tag": "noindex" } });
   }
   const response = NextResponse.next();

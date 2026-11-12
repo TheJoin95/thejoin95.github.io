@@ -90,3 +90,26 @@ Two remote images referenced by the old articles were inspected but were analyti
 graphs, not map captures. They were not included in the portfolio. The SVG's
 editable geometry and labels are the source asset; there is no generated product
 screenshot or imitation of Miki's drawings.
+
+## Chromatique decision extracts — MIC-16, 2026-11-12
+
+`public/media/chromatique/decision-extracts.md` contains verbatim selected sections
+from the owner-approved project source at revision
+`79a1c5b2a37439f3731113b58b4c3265e5777df7`:
+
+- `docs/adr/ADR-0001-rust-core.md`, Decision and Alternatives (dated 2026-09-09).
+- `docs/adr/ADR-0010-preserve-semantics.md`, sections 1 and 2 (dated 2026-09-17).
+
+The framing explicitly identifies this as an extract and notes that ADR-0010 is
+partly superseded for structure preservation. It does not publish an unverified
+performance result or imply a current public repository URL. No local machine
+path or credentials are included. Owner permission to show all project work was
+already recorded in MIC-10. SHA-256:
+`3251ad17947d5e4221f36cf464d9a783efbefdd0a82daca82f4bcea730887c41`.
+
+The case studies reuse the existing screenshots, palette output and labelled
+supermarket architecture diagram above. No new image was generated as product
+evidence. The supermarket period-map screenshot remains unavailable; the page
+shows the diagram honestly and links to the preserved articles and official talk.
+Chromatique's example is ordinary OKLab mapping with no dithering, and is labelled
+separately from the story's optional lightness-preservation discussion.

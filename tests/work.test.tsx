@@ -14,7 +14,7 @@ describe("Work gallery and complete project index", () => {
       const entry = projectIndex.find(project => project.title === featured.title)!;
       expect(entry.summary).toBe(featured.summary);
       expect(entry.contribution).toBe(featured.contribution);
-      expect(entry.href).toBe(`/work#${featured.id}`);
+      expect(entry.href).toBe(`/work/${featured.id}`);
     }
     expect(projectIndex.find(project => project.id === "hop")?.title).toBe("Hop");
     expect(projectIndex.find(project => project.id === "supermarket-waiting-times")?.status).toBe("Archived project · 2020");

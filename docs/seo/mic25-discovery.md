@@ -2,6 +2,11 @@
 
 ## Implementation
 
+MIC-16 adds three published case-study routes after this baseline, bringing the
+current release sitemap to 25 entries. The 22-entry figures below describe the
+MIC-25 verification baseline; see `docs/design/mic16-case-studies.md` for the
+expanded catalogue and tests.
+
 All six current public pages use the same metadata builder for accurate titles,
 descriptions, absolute canonicals, social URL/type, image alt/dimensions and RSS
 advertisement. Experience now has its own description. Home retains its approved

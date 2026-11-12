@@ -1,3 +1,4 @@
+import { caseStudyPath, publishedCaseStudies } from "@/content/case-studies";
 import type { MetadataRoute } from "next";
 import { Feed } from "feed";
 import { visibleArticles, type JournalArticle } from "./journal";
@@ -5,6 +6,7 @@ import { publicPages } from "./seo";
 export function sitemapEntries(articles: JournalArticle[], origin: string, indexable: boolean, now: Date): MetadataRoute.Sitemap {
   if (!indexable) return [];
   return [...publicPages.map(path => ({ url: new URL(path, origin).href })),
+    ...publishedCaseStudies.map(story => ({ url: new URL(caseStudyPath(story.project), origin).href })),
     ...visibleArticles(articles, now).map(article => ({ url: new URL(`/blog/${article.slug}`, origin).href, lastModified: article.updated || article.date }))];
 }
 export function journalFeed(articles: JournalArticle[], origin: string, now: Date) {

@@ -1,3 +1,4 @@
+import { caseStudyPath } from "./case-studies";
 import { chromatiqueProject, imageGoNordProject, supermarketProject, selectedProjects } from "./selected-projects";
 
 export type ProjectIndexEntry = {
@@ -10,7 +11,7 @@ export const projectIndex: readonly ProjectIndexEntry[] = [
     contribution: "I co-founded the community and contribute as a speaker. This is collective work.", href: "https://schroedinger-hat.org/" },
   { id: "broskis", title: "Broskis", status: "Publication",
     summary: "My personal publication on Substack.", contribution: "I write here.", href: "https://broski.substack.com/" },
-  { ...chromatiqueProject, status: "In development", href: "/work#chromatique" },
+  { ...chromatiqueProject, status: "In development", href: caseStudyPath(chromatiqueProject) },
   { id: "holy-card-generator", title: "HolyCard AI", status: "Digital-only beta",
     summary: "An editable devotional portrait-card studio with PNG and PDF exports.",
     contribution: "I developed the card studio, image-generation flow and forms." },
@@ -25,8 +26,8 @@ export const projectIndex: readonly ProjectIndexEntry[] = [
     contribution: "I’m developing the meeting-app prototype." },
   { id: "social-post", title: "Social post", status: "In progress",
     summary: "An ongoing personal project around social posts.", contribution: "Personal work in progress." },
-  { ...imageGoNordProject, status: "Public source", href: "/work#imagegonord" },
-  { ...supermarketProject, id: "supermarket-waiting-times", status: "Archived project · 2020", href: "/work#supermarket" },
+  { ...imageGoNordProject, status: "Public source", href: caseStudyPath(imageGoNordProject) },
+  { ...supermarketProject, id: "supermarket-waiting-times", status: "Archived project · 2020", href: caseStudyPath(supermarketProject) },
   { id: "comic-learning", title: "Learning to make comic books", status: "In progress",
     summary: "Learning to tell stories through comic-book drawings.", contribution: "I’m learning and practising." },
 ];
@@ -39,7 +40,7 @@ export function workStructuredData(origin: string) {
     "@context": "https://schema.org", "@type": "CollectionPage", url,
     name: "Work — Miki Lombardi", description: workDescription,
     hasPart: selectedProjects.map(project => ({
-      "@type": "CreativeWork", "@id": `${url}#${project.id}`, url: `${url}#${project.id}`,
+      "@type": "CreativeWork", "@id": `${url}#${project.id}`, url: new URL(caseStudyPath(project), origin).href,
       name: project.title, abstract: project.summary, description: project.contribution,
       contributor: { "@id": `${new URL("/", origin).href}#miki` },
       image: new URL(`/share/projects/${project.id}`, origin).href,

@@ -91,7 +91,7 @@ describe("reusable states and primitives", () => {
   });
   test("button supports links, disabled state and native input semantics", () => {
     expect(html(<Button disabled>Unavailable</Button>)).toContain('disabled=""');
-    expect(html(<Button asChild variant="outline"><a href="/work">Work</a></Button>)).toContain('href="/work"');
+    expect(html(<Button asChild variant="outline"><Link href="/work">Work</Link></Button>)).toContain('href="/work"');
     expect(html(<Input type="email" required aria-label="Email" />)).toContain('type="email"');
   });
   test("the specified UI token pairs meet text and focus contrast requirements", () => {

@@ -9,9 +9,9 @@ test("a release build serves canonical-only discovery and indexes only its confi
     const doc = new DOMParser().parseFromString(xml, "application/xml");
     return { errors: doc.querySelectorAll("parsererror").length, urls: [...doc.querySelectorAll("loc")].map(node => node.textContent) };
   }, await sitemap.text());
-  expect(entries.errors).toBe(0); expect(entries.urls).toHaveLength(22);
+  expect(entries.errors).toBe(0); expect(entries.urls).toHaveLength(25);
   expect(entries.urls.every(url => url?.startsWith(origin) && !/[?#]/.test(url))).toBe(true);
-  expect(new Set(entries.urls).size).toBe(22);
+  expect(new Set(entries.urls).size).toBe(25);
   expect(entries.urls.some(url => /2021-04-16|whoami|confirmed|missing|draft|future/.test(url!))).toBe(false);
   const robots = await request.get("/robots.txt", { headers });
   expect(await robots.text()).toContain(`Sitemap: ${origin}/sitemap.xml`);

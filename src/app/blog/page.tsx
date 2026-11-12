@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { pageMetadata, serializeStructuredData } from "@/lib/seo";
 import { siteOrigin } from "@/lib/seo-config";
 import { PageIntro, Section } from "@/components/site/primitives";
@@ -9,6 +8,7 @@ import { archiveCanonical, archiveStructuredData, archiveView, type ArchiveParam
 import { featuredWriting } from "@/content/home";
 import { FeaturedWriting } from "@/components/journal/featured-writing";
 import { JournalArchive } from "@/components/journal/archive";
+import { SketchbookDiscovery } from "@/components/journal/sketchbook-discovery";
 
 // Request-specific discovery uses complete server HTML rather than an instant shell.
 export const instant = false;
@@ -25,10 +25,7 @@ export default async function Journal({ searchParams = Promise.resolve({}) }: Pr
   return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeStructuredData(archiveStructuredData(view, siteOrigin())) }} /><PageIntro title="Notes & experiments."><p>On software, architecture, and learning by making.</p></PageIntro>
     {featured ? <FeaturedWriting article={featured} /> : null}
     <JournalArchive view={view} />
-    <div id="sketchbook"><Section labelledBy="sketchbook-title" className="surface-charcoal"><div className={siteStyles.editorialRow}>
-      <h2 id="sketchbook-title" className={siteStyles.sectionTitle}>From the sketchbook.</h2>
-      <div className={siteStyles.copy}><p>I’m learning to make comic books. A work in progress: I’ll share the process here as it takes shape.</p><p>No drawings or sketchbook articles are published here yet.</p><Link href="/play#comic-title" className={siteStyles.link}>Explore comic learning in Play</Link></div>
-    </div></Section></div>
+    <SketchbookDiscovery articles={articles} />
     <Section labelledBy="journal-rss-title"><div className={siteStyles.editorialRow}><h2 id="journal-rss-title" className={siteStyles.sectionTitle}>Follow the writing.</h2><div className={siteStyles.copy}><p>The complete Journal feed, independent of archive filters.</p><a href="/rss.xml" className={siteStyles.link}>Subscribe via RSS</a></div></div></Section>
   </>;
 }

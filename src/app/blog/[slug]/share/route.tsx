@@ -5,5 +5,5 @@ export async function generateStaticParams() { return (await publishedArticles()
 export async function GET(_request: Request, { params }: { params: Promise<{ slug: string }> }) {
   const article = await findArticle((await params).slug);
   if (!article) return new Response(null, { status: 404 });
-  return new ImageResponse(<TitleCard title={article.title} label="JOURNAL" detail={`${article.date} · Software, architecture & experiments`} />, shareSize);
+  return new ImageResponse(<TitleCard title={article.title} label={article.kind === "sketchbook" ? "SKETCHBOOK" : "JOURNAL"} detail={`${article.date} · ${article.kind === "sketchbook" ? "Learning notes" : "Software, architecture & experiments"}`} />, shareSize);
 }

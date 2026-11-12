@@ -153,3 +153,12 @@ were reverted. Published routes, no-JavaScript content and unknown-route 404s pa
 production HTTP tests; the early route gate prevents serving that unknown shell.
 Check this diagnostic against the hosted adapter/runtime during MIC-31 rather than
 silently disabling navigation validation globally or changing the shared shell.
+
+### Editorial reader follow-up
+
+MIC-18 adds archive search, tags, pagination and discovery; MIC-19 adds the shared
+article/sketchbook reader, native contents, related writing and described,
+credited sequential panels. The original migration files and URL manifest remain
+unchanged. For current authoring and draft/media rules, use the
+[publishing guide](../publishing/journal.md). Verification and design details are
+in [MIC-18](../design/mic18-journal.md) and [MIC-19](../design/mic19-reading.md).

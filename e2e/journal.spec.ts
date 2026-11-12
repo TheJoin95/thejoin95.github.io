@@ -60,6 +60,8 @@ for (const width of [390, 834, 1440]) test(`archive and long article work withou
   await expect(archive.getByRole("listitem")).toHaveCount(8);
   const links = await archive.locator("h3 a").evaluateAll(anchors => anchors.map(a => a.getAttribute("href")));
   await page.getByRole("link", { name: "Next page", exact: true }).click();
+  await expect(page).toHaveURL(/\/blog\?page=2#archive$/);
+  await expect(page.getByRole("navigation", { name: "Archive pagination" })).toContainText("Page 2 of 2");
   links.push(...await archive.locator("h3 a").evaluateAll(anchors => anchors.map(a => a.getAttribute("href"))));
   expect([...new Set(links)].sort()).toEqual(manifest.articles.map(a => a.canonical).sort());
   await archive.locator("h3 a").first().click();

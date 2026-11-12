@@ -47,6 +47,12 @@ an isolated test fixture under `.test-fixtures` (never served by the website).
 Interactive gallery coverage is verified in Playwright; Bun coverage remains
 scoped to the pure model, server fallback and other imported unit-tested modules.
 
+The [MIC-14 homepage record](docs/design/mic14-homepage.md) documents the editorial
+Home, real static palette study, shared selected-project records, selected writing
+and branded social image. The signature Three.js interaction and original mascot
+assets remain separate. Static page content works without JavaScript; opt into
+the shared loading presentation only at an enhancement boundary.
+
 ## Local development
 
 Use Bun **1.4.4 or newer** (the expected version is in `.bun-version`).

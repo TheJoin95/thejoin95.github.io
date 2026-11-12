@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="480" viewBox="0 0 1200 480" role="img" aria-labelledby="title desc">
+  <title id="title">Supermarket waiting times — documented architecture</title>
+  <desc id="desc">A source-derived diagram, not a historical screenshot. A GitHub Pages frontend connects to a Flask and uWSGI backend using Redis for geospatial lookup and expiring cached data. Hosting evolved from a Raspberry Pi to VPS instances in Europe and America.</desc>
+  <rect width="1200" height="480" fill="#18212b"/>
+  <g fill="#f5f5f5" font-family="Arial, Helvetica, sans-serif" font-weight="400">
+    <text x="48" y="72" font-size="32">Supermarket waiting times</text>
+    <text x="48" y="111" font-size="22" fill="#b7c7d4">Source-derived architecture overview · archived 2020 project</text>
+  </g>
+  <g fill="none" stroke="#8eafc8" stroke-width="2">
+    <rect x="48" y="176" width="320" height="152"/>
+    <rect x="440" y="176" width="320" height="152"/>
+    <rect x="832" y="176" width="320" height="152"/>
+    <path d="M368 252h72m-14-10 14 10-14 10M760 252h72m-14-10 14 10-14 10"/>
+  </g>
+  <g fill="#f5f5f5" font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+    <text x="208" y="232" font-size="32">Frontend</text>
+    <text x="208" y="281" font-size="26" fill="#b7c7d4">GitHub Pages</text>
+    <text x="600" y="232" font-size="32">Backend</text>
+    <text x="600" y="281" font-size="26" fill="#b7c7d4">Flask + uWSGI</text>
+    <text x="992" y="232" font-size="32">Redis</text>
+    <text x="992" y="273" font-size="23" fill="#b7c7d4">Geospatial lookup</text>
+    <text x="992" y="304" font-size="23" fill="#b7c7d4">Expiring cache</text>
+  </g>
+  <text x="48" y="406" fill="#f5f5f5" font-family="Arial, Helvetica, sans-serif" font-size="25">Hosting: Raspberry Pi → VPS instances in Europe and America.</text>
+</svg>

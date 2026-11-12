@@ -10,7 +10,7 @@ import Journal from "@/app/blog/page";
 import Play from "@/app/play/page";
 import About from "@/app/about/page";
 import NotFound from "@/app/not-found";
-import Loading from "@/app/loading";
+import Loading from "@/components/site/page-loading";
 import { ErrorState } from "@/components/site/error-state";
 
 mock.module("next/navigation", () => ({ usePathname: () => "/work" }));

@@ -11,7 +11,7 @@ for (const [width, columns] of [[320, 1], [390, 1], [834, 2], [1440, 3]]) test(`
   const comic = page.getByRole("region", { name: "Learning to make comic books.", exact: true });
   await expect(comic).toContainText("A work in progress"); await expect(comic.locator("img, canvas, svg")).toHaveCount(0);
   await expect(comic.getByRole("link", { name: "Explore the Journal", exact: true })).toHaveAttribute("href", "/blog");
-  const stage = page.getByRole("region", { name: "Chromatique static palette comparison", exact: true });
+  const stage = page.getByRole("region", { name: "Chromatique palette comparison", exact: true });
   await expect(stage.locator("img")).toHaveCount(2); await expect(stage.getByRole("button")).toHaveCount(0);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.evaluate(() => scrollTo(0, 0));

@@ -28,10 +28,10 @@ describe("Play directory and comic-learning preview", () => {
   test("Play composes the shared stage, real directory, comic state and passions without inventing artwork", () => {
     const html = renderToStaticMarkup(<Play />);
     expect(html.match(/<h1/g)).toHaveLength(1);
-    expect(html).toContain("Chromatique static palette comparison");
+    expect(html).toContain("Chromatique palette comparison");
     expect(html).toContain('href="/work/chromatique"');
     expect(html).not.toContain('href="#chromatique"');
-    expect(html).toContain("Static comparison");
+    expect(html).toContain("no dithering");
     expect(html).toContain("Cycling, photography, and whatever comes next.");
     expect(html).toContain('href="/experience"');
     expect(html).not.toContain('href="#"');

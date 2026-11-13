@@ -26,8 +26,8 @@ describe("editorial homepage", () => {
   });
   test("static stage identifies input/output and artist without pretending controls exist", () => {
     const html = renderToStaticMarkup(<PaletteStage />);
-    expect(html).toContain("Chromatique static palette comparison");
-    expect(html).toContain("original / actual CLI output");
+    expect(html).toContain("Chromatique palette comparison");
+    expect(html).toContain("Original / actual CLI output");
     expect(html).toContain("Frances Benjamin Johnston");
     expect(html).toContain('href="#chromatique"');
     expect(html).toContain('loading="eager"');

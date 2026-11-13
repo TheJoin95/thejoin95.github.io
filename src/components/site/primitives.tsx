@@ -30,10 +30,11 @@ export function Section({ children, className, labelledBy }: { children: ReactNo
   return <section className={cn(siteStyles.sectionSpace, className)} aria-labelledby={labelledBy}>{children}</section>;
 }
 
-export function ContentState({ title, children, action, loading = false }: { title: string; children: ReactNode; action?: ReactNode; loading?: boolean }) {
+export function ContentState({ title, children, action, loading = false, headingLevel = "h2" }: { title: string; children: ReactNode; action?: ReactNode; loading?: boolean; headingLevel?: "h1" | "h2" }) {
+  const Heading = headingLevel;
   return (
     <div className="grid max-w-[68ch] gap-6" role={loading ? "status" : undefined} aria-live={loading ? "polite" : undefined}>
-      <h2 className={siteStyles.sectionTitle}>{title}</h2>
+      <Heading className={siteStyles.sectionTitle}>{title}</Heading>
       <div className={siteStyles.copy}>{children}</div>
       {action ? <div className={siteStyles.actions}>{action}</div> : null}
     </div>

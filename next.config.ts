@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
   env: { NEXT_PUBLIC_SITE_URL: seo.origin, PORTFOLIO_INDEXABLE: String(seo.indexable) },
   async redirects() {
     return [
+      { source: "/experience", destination: "/play", permanent: true },
       { source: "/whoami", destination: "/about", permanent: true },
       { source: "/blog/2021-04-16-covid19-supermarket-waiting-times-2020-recap", destination: "/blog/2021-04-17-covid19-supermarket-waiting-times-2020-recap", permanent: true },
     ];

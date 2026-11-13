@@ -24,7 +24,7 @@ export default function Play() {
     <Section labelledBy="play-passions-title"><div className={siteStyles.editorialRow}>
       <h2 id="play-passions-title" className={siteStyles.sectionTitle}>Beyond the keyboard.</h2>
       <div className={siteStyles.copy}><p>Cycling, photography, and whatever comes next.</p>
-        <div className={siteStyles.actions}><Link href="/about">More about Miki</Link><Link href="/experience">Explore the Three.js experiment</Link></div>
+        <div className={siteStyles.actions}><Link href="/about">More about Miki</Link></div>
       </div>
     </div></Section>
   </>;

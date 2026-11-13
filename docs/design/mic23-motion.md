@@ -1,3 +1,9 @@
+Owner update — 2026-11-13: the website 3D/Three.js parts were removed during
+MIC-26. The palette comparison now uses HTML only, `/experience` redirects to
+`/play`, and the 3D dependencies are removed. Earlier GPU verification below is
+a historical implementation record, not the current requirement. The sparse
+2D fox remains. See `docs/a11y/mic26-audit.md` for the current audit.
+
 # MIC-23 — Sparse fox reactions and a quiet corner
 
 Extend the approved design, without changing its visual system. Place one

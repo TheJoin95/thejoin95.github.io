@@ -21,8 +21,8 @@ describe("article and sketchbook reading", () => {
     for (const entry of reading.contents) expect(navigation).toContain(`href="#${entry.id}"`);
     expect(html(<ContentsNavigation entries={reading.contents.slice(0, 2)} />)).toBe("");
     const rendered = await renderReading(specimen.body);
-    expect(rendered.html).toContain('role="region" aria-label="Code example"');
-    expect(rendered.html).toContain('aria-label="Data table" tabindex="0"');
+    expect(rendered.html).toContain('role="region" aria-label="Code example 1"');
+    expect(rendered.html).toContain('aria-label="Data table 1" tabindex="0"');
     expect(rendered.html).toContain("<blockquote>"); expect(rendered.html).toContain("<ul>");
     const captioned = await renderReading('<figure onclick="evil()"><img src="/media/journal/microfrontends.svg" alt="A diagram" onerror="evil()"><figcaption>Authored caption<script>evil()</script></figcaption></figure>');
     expect(captioned.html).toContain('<figure><img src="/media/journal/microfrontends.svg" alt="A diagram"><figcaption>Authored caption</figcaption></figure>');

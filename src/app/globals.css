@@ -159,6 +159,11 @@
   --background: var(--charcoal);
   --foreground: var(--reverse);
   --muted-foreground: #bdbdbd;
+  --muted: var(--experiment-ink);
+  --accent: var(--experiment-ink);
+  --accent-foreground: var(--reverse);
+  --secondary: var(--experiment-ink);
+  --secondary-foreground: var(--reverse);
   --primary: var(--reverse);
   --primary-foreground: var(--charcoal);
   --ring: var(--experiment-accent);

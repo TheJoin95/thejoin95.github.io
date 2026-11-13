@@ -37,7 +37,7 @@ for (const width of [320, 390, 834, 1440]) test(`articles and sequential sketchb
   await expect(page.locator("#section-what-i-tried, #section-what-i-tried-1")).toHaveCount(2);
   await page.screenshot({ path: `/tmp/mic19-sketchbook-${width}.png`, fullPage: true });
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-  const table = page.getByRole("region", { name: "Data table", exact: true });
+  const table = page.getByRole("region", { name: "Data table 1", exact: true });
   const firstHeader = table.getByRole("columnheader").first();
   expect(await firstHeader.evaluate(node => node.getBoundingClientRect().width)).toBeGreaterThan(100);
   if (width <= 390) expect(await table.evaluate(node => node.scrollWidth > node.clientWidth)).toBe(true);
@@ -53,10 +53,10 @@ test("keyboard contents, scrollable code/tables and 200% text retain reading con
   await expect(page.locator(target)).toBeFocused();
   await sketchbookFixture(page);
   await page.evaluate(() => { document.documentElement.style.fontSize = "200%"; });
-  const code = page.getByRole("region", { name: "Code example", exact: true });
+  const code = page.getByRole("region", { name: "Code example 1", exact: true });
   await code.focus(); await page.keyboard.press("ArrowRight");
   await expect.poll(() => code.evaluate(node => node.scrollLeft)).toBeGreaterThan(0);
-  const table = page.getByRole("region", { name: "Data table", exact: true });
+  const table = page.getByRole("region", { name: "Data table 1", exact: true });
   await table.focus(); await expect(table).toBeFocused(); await expect(table.getByRole("table")).toHaveCount(1);
   await page.keyboard.press("ArrowRight");
   await expect.poll(() => table.evaluate(node => node.scrollLeft)).toBeGreaterThan(0);

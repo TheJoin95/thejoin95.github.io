@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 import { writeFileSync } from "node:fs";
-const pages = ["/", "/work", "/about", "/blog", "/play", "/experience"];
+const pages = ["/", "/work", "/about", "/blog", "/play"];
 const article = "/blog/2019-12-21-microfrontend-from-00-to-20s";
 test("all public pages serve consistent metadata, noindex and social PNGs to crawlers without JavaScript", async ({ browser, request }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });

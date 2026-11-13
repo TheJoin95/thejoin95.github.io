@@ -67,7 +67,7 @@ export async function renderReading(body: string, archival = false) {
           "/media/blog/legacy-5.png": "Supermarket waiting times architecture diagram",
         };
         const image = `<img src="${media.path}" alt="${altText[media.path]}" width="${media.width}" height="${media.height}" loading="lazy" />`;
-        markdown = markdown.replace(new RegExp(`!\\[([^\\]]*)\\]\\(${media.source.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\)`, "g"), (_match, alt: string) => alt ? image.replace(/alt="[^"]*"/, `alt="${escapeHtml(alt)}"`) : image);
+        markdown = markdown.replace(new RegExp(`!\\[([^\\]]*)\\]\\(${media.source.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\)`, "g"), () => image);
         markdown = markdown.replace(`<img src="${media.source}" />`, image);
       }
     }

@@ -1,15 +1,13 @@
 "use client";
 
-import { useId, useRef, useState, useSyncExternalStore } from "react";
+import { useId, useRef, useState } from "react";
 import Image from "next/image";
+import { useHydrated } from "@/hooks/use-hydrated";
 import { Collapsible } from "radix-ui";
 import { Button } from "@/components/ui/button";
 import { LottieAnimation } from "@/components/animations/lottie-animation";
 import { foxAssets } from "@/content/fox";
 
-const subscribe = () => () => {};
-const clientSnapshot = () => true;
-const serverSnapshot = () => false;
 const foxSize = "aspect-[6/5] w-12 shrink-0 desktop:w-20";
 type Reaction = "notice" | "follow" | "settle";
 
@@ -23,7 +21,7 @@ function FoxPoster() {
 }
 
 export function FoxCompanion() {
-  const hydrated = useSyncExternalStore(subscribe, clientSnapshot, serverSnapshot);
+  const hydrated = useHydrated();
   const trigger = useRef<HTMLButtonElement>(null);
   const id = useId();
   const [open, setOpen] = useState(false);

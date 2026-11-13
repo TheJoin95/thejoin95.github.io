@@ -45,7 +45,7 @@ describe("legacy journal migration", () => {
   });
   test("renderer handles standard Markdown and rejects scripts, event handlers and unsafe URLs", async () => {
     const html = await renderMarkdown('## Heading\n\n```js\nconst a = 1;\n```\n\n- List\n\n| A | B |\n| - | - |\n| 1 | 2 |\n\n[Safe](https://example.com) ![Caption](/image.png)\n\n<script>alert(1)</script><img src="x" onerror="evil()"><a href="javascript:evil()">bad</a>');
-    for (const part of ['<h2 id="section-heading" tabindex="-1">Heading</h2>', 'aria-label="Code example"', "<ul>", "<table>", 'aria-label="Data table"', 'alt="Caption"', 'href="https://example.com"']) expect(html).toContain(part);
+    for (const part of ['<h2 id="section-heading" tabindex="-1">Heading</h2>', 'aria-label="Code example 1"', "<ul>", "<table>", 'aria-label="Data table 1"', 'alt="Caption"', 'href="https://example.com"']) expect(html).toContain(part);
     for (const part of ["<script", "onerror", "javascript:", "alert(1)"]) expect(html).not.toContain(part);
   });
   test("every legacy body renders with local media and code, without Liquid, covers or duplicate H1", async () => {

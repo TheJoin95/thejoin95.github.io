@@ -1,3 +1,9 @@
+Owner update — 2026-11-13: website 3D/Three.js support has been removed.
+The palette reveal uses HTML, `/experience` redirects to `/play`, and Three.js/
+R3F/drei packages are removed. The foundation record below describes the earlier
+implementation; its 3D requirements are historical. Current implementation and
+audit evidence are recorded in `docs/a11y/mic26-audit.md`.
+
 # Portfolio foundation — MIC-9
 
 Recorded 2026-11-11 against scaffold commit `e3d4ecf`.

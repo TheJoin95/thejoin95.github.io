@@ -51,8 +51,8 @@ describe("shared metadata, schema and discovery", () => {
     const hidden = [ { ...articles[0], slug: "draft", draft: true }, { ...articles[0], slug: "future", date: "2999-01-01" } ];
     expect(sitemapEntries([...articles, ...hidden], origin, false, now)).toEqual([]);
     const map = sitemapEntries([...articles, ...hidden], origin, true, now);
-    expect(map).toHaveLength(25);
-    expect(new Set(map.map(item => item.url)).size).toBe(25);
+    expect(map).toHaveLength(24);
+    expect(new Set(map.map(item => item.url)).size).toBe(24);
     expect(map.every(item => item.url.startsWith(origin) && !/[?#]/.test(item.url))).toBe(true);
     expect(map.some(item => /draft|future|confirmed|whoami|2021-04-16/.test(item.url))).toBe(false);
     expect(map.slice(0, 6).every(item => !item.lastModified)).toBe(true);

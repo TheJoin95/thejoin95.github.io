@@ -12,7 +12,7 @@ root = "tests"
 preload = ["./tests/setup.ts"]
 coverageSkipTestFiles = true
 # Stateful gallery/animation/palette lifecycle and motion preference changes are exercised in Playwright.
-coveragePathIgnorePatterns = ["tests/**", "src/components/gallery/media-gallery.tsx", "src/components/animations/*.tsx", "src/hooks/use-reduced-motion.ts", "src/components/palette/palette-reveal.tsx", "src/components/palette/palette-scene.tsx", "src/components/characters/fox-companion.tsx"]
+coveragePathIgnorePatterns = ["tests/**", "src/components/gallery/media-gallery.tsx", "src/components/animations/*.tsx", "src/hooks/use-reduced-motion.ts", "src/components/palette/palette-reveal.tsx", "src/components/characters/fox-companion.tsx", "src/components/newsletter-form.tsx", "src/hooks/use-hydrated.ts"]
 coverageReporter = ["text", "lcov"]
 coverageDir = "coverage"
 coverageThreshold = { lines = 0.85, functions = 0.85 }

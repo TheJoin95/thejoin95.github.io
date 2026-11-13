@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 
 // Shared Tailwind compositions used by semantic elements on several pages.
 const container = cn(
-  "mx-auto w-full max-w-[100rem] [&>*]:min-w-0",
+  "mx-auto w-full max-w-[100rem] [overflow-wrap:anywhere] [&>*]:min-w-0",
   "ps-[max(var(--gutter),env(safe-area-inset-left))]",
   "pe-[max(var(--gutter),env(safe-area-inset-right))]",
 );

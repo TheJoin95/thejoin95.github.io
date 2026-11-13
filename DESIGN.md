@@ -4,13 +4,12 @@ The latest five mockups attached to MIC-8 are the visual authority. Preserve the
 oversized regular-weight typography, white/charcoal section rhythm, narrow project
 descriptions, square oversized media, expressive palette opening and sparse fox.
 
-Owner reminder (2026-11-12): colour palettes, a Three.js experiment, the mascot
-and website characters are explicit deliverables. MIC-12 defines coordinated
-site, interaction and character colour tokens. MIC-22 develops a working Three.js
-experiment using the existing React Three Fiber/drei foundation, with a useful
-static alternative. MIC-21 defines the fox-led character language, palette,
-expressions and poses; MIC-23 integrates it sparingly into the website. Keep the
-editorial white/charcoal base while making these expressive elements deliberate.
+Owner update (2026-11-13): remove all website 3D/Three.js parts. The signature
+image/palette stage remains a controllable HTML comparison; the standalone
+experience, WebGL renderer and Three.js dependencies are removed. Keep the
+coordinated site/character palettes and sparse original fox language. MIC-23
+integrates deliberate 2D fox reactions. Do not reintroduce 3D to satisfy older
+handoff notes; historical implementation records are superseded by this update.
 Every implementation includes automated behaviour tests and visual review.
 
 Component design follows atomic composition: shared primitives → small component

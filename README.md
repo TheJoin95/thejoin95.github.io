@@ -2,8 +2,8 @@
 
 Next.js App Router + React + TypeScript, managed with Bun. Tailwind CSS and
 Radix-based shadcn/ui provide the UI foundation. Google Analytics 4 handles optional
-analytics; Brevo handles newsletter double opt in. Three.js runs through React
-Three Fiber/drei; dotLottie supports small animations.
+analytics; Brevo handles newsletter double opt in. The palette comparison uses
+HTML images and native controls; dotLottie supports small animations.
 
 The [technical approach](docs/technical-approach.md) records the portfolio/Journal
 content and route contracts, existing-work review and remaining ticket handoffs.
@@ -21,9 +21,8 @@ motion, social images and the acceptance tests required by implementation ticket
 
 The shared editorial shell now provides navigation, footer, page intros, semantic
 sections, media frames and empty/loading/error states. Work, Journal, Play and
-About have introductory routes; their complete galleries, article migration,
-Three.js palette stage, character artwork and social images remain with their
-own implementation tickets. Palette tokens live in `src/app/globals.css`;
+About provide galleries, preserved articles, the HTML palette stage, original
+character artwork and social images. Palette tokens live in `src/app/globals.css`;
 contact/navigation destinations live in `src/lib/site.ts`.
 
 Browser checks run against a production build:
@@ -49,8 +48,8 @@ scoped to the pure model, server fallback and other imported unit-tested modules
 
 The [MIC-14 homepage record](docs/design/mic14-homepage.md) documents the editorial
 Home, real static palette study, shared selected-project records, selected writing
-and branded social image. The signature Three.js interaction and original mascot
-assets remain separate. Static page content works without JavaScript; opt into
+and branded social image. The signature HTML comparison and original mascot
+have their own implementation records. Static page content works without JavaScript; opt into
 the shared loading presentation only at an enhancement boundary.
 
 ## Local development
@@ -152,11 +151,12 @@ API security settings. When deploying, check the rules against Netlify's outboun
 networking as well. The checker redacts response bodies and credentials. It does
 not prove email delivery or GA4 property access.
 
-### Experience and animations
+### Palette comparison and animations
 
-`/experience` provides a lazy-loaded Three.js scene with drag controls, bounded
-pixel ratio, a device fallback, and reduced-motion support. The homepage does
-not import the 3D runtime. Replace the demo scene as the experience develops.
+Home and Play share an HTML image/palette comparison with a labelled native
+range, endpoint buttons and reset. It works without a canvas or GPU runtime;
+without JavaScript it retains the initial comparison and project link.
+The owner removed 3D on 2026-11-13. `/experience` permanently redirects to `/play`.
 
 `LottieAnimation` in `src/components/animations` is a lazy, viewport-aware,
 decorative player. Put `.lottie` assets in `public/animations` and provide a

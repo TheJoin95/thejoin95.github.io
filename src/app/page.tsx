@@ -26,7 +26,7 @@ export default function Home() {
     <SelectedWriting />
     <Section labelledBy="newsletter-title"><div className={siteStyles.editorialRow}>
       <h2 id="newsletter-title" className={siteStyles.sectionTitle}>Stay in the loop.</h2>
-      <div className={siteStyles.copy}><p>Subscribe for new writing and updates. Unsubscribe at any time.</p><NewsletterForm /><Button asChild variant="link"><Link href="/blog">Read the Journal</Link></Button><Link href="/experience" className="ml-6 inline-flex min-h-11 items-center">Explore the experiment</Link></div>
+      <div className={siteStyles.copy}><p>Subscribe for new writing and updates. Unsubscribe at any time.</p><NewsletterForm /><Button asChild variant="link"><Link href="/blog">Read the Journal</Link></Button></div>
     </div></Section>
   </div>;
 }

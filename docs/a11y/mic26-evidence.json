@@ -1,0 +1,626 @@
+{
+  "date": "2026-11-13",
+  "scope": "Local production build; public HTML templates and preserved articles",
+  "scans": [
+    {
+      "axe": "4.14.0",
+      "browser": "Chromium",
+      "browserVersion": "158.0.8127.18",
+      "tags": [
+        "wcag2a",
+        "wcag2aa",
+        "wcag21a",
+        "wcag21aa",
+        "wcag22aa",
+        "best-practice"
+      ],
+      "evidence": [
+        {
+          "path": "/",
+          "width": 320,
+          "status": 200,
+          "violations": [],
+          "incomplete": [
+            {
+              "id": "color-contrast",
+              "targets": [
+                [
+                  "#_R_j8ludb_-media > .basis-\\[88\\%\\].md\\:basis-\\[76\\%\\][data-media-index=\"1\"] > figure > figcaption > p:nth-child(1)"
+                ],
+                [
+                  "#_R_j8ludb_-media > .basis-\\[88\\%\\].md\\:basis-\\[76\\%\\][data-media-index=\"1\"] > figure > figcaption > .text-muted-foreground"
+                ],
+                [
+                  "#_R_j8ludb_-media > .basis-\\[88\\%\\].md\\:basis-\\[76\\%\\][data-media-index=\"1\"] > figure > figcaption > a"
+                ],
+                [
+                  "li[data-media-index=\"2\"] > figure > figcaption > p:nth-child(1)"
+                ],
+                [
+                  "li[data-media-index=\"2\"] > figure > figcaption > .text-muted-foreground"
+                ],
+                [
+                  "li[data-media-index=\"2\"] > figure > figcaption > a"
+                ],
+                [
+                  "#_R_n8ludb_-media > .basis-\\[88\\%\\].md\\:basis-\\[76\\%\\][data-media-index=\"1\"] > figure > figcaption > p:nth-child(1)"
+                ],
+                [
+                  "#_R_n8ludb_-media > .basis-\\[88\\%\\].md\\:basis-\\[76\\%\\][data-media-index=\"1\"] > figure > figcaption > .text-muted-foreground"
+                ],
+                [
+                  "#_R_n8ludb_-media > .basis-\\[88\\%\\].md\\:basis-\\[76\\%\\][data-media-index=\"1\"] > figure > figcaption > a"
+                ]
+              ]
+            }
+          ],
+          "passes": 48
+        },
+        {
+          "path": "/work",
+          "width": 320,
+          "status": 200,
+          "violations": [],
+          "incomplete": [
+            {
+              "id": "color-contrast",
+              "targets": [
+                [
+                  "#_R_2bav5udb_-media > .basis-\\[88\\%\\].md\\:basis-\\[76\\%\\][data-media-index=\"1\"] > figure > figcaption > p:nth-child(1)"
+                ],
+                [
+                  "#_R_2bav5udb_-media > .basis-\\[88\\%\\].md\\:basis-\\[76\\%\\][data-media-index=\"1\"] > figure > figcaption > .text-muted-foreground"
+                ],
+                [
+                  "#_R_2bav5udb_-media > .basis-\\[88\\%\\].md\\:basis-\\[76\\%\\][data-media-index=\"1\"] > figure > figcaption > a"
+                ],
+                [
+                  "li[data-media-index=\"2\"] > figure > figcaption > p:nth-child(1)"
+                ],
+                [
+                  "li[data-media-index=\"2\"] > figure > figcaption > .text-muted-foreground"
+                ],
+                [
+                  "li[data-media-index=\"2\"] > figure > figcaption > a"
+                ],
+                [
+                  "#_R_2rav5udb_-media > .basis-\\[88\\%\\].md\\:basis-\\[76\\%\\][data-media-index=\"1\"] > figure > figcaption > p:nth-child(1)"
+                ],
+                [
+                  "#_R_2rav5udb_-media > .basis-\\[88\\%\\].md\\:basis-\\[76\\%\\][data-media-index=\"1\"] > figure > figcaption > .text-muted-foreground"
+                ],
+                [
+                  "#_R_2rav5udb_-media > .basis-\\[88\\%\\].md\\:basis-\\[76\\%\\][data-media-index=\"1\"] > figure > figcaption > a"
+                ]
+              ]
+            }
+          ],
+          "passes": 43
+        },
+        {
+          "path": "/play",
+          "width": 320,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 46
+        },
+        {
+          "path": "/blog",
+          "width": 320,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 46
+        },
+        {
+          "path": "/about",
+          "width": 320,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 39
+        },
+        {
+          "path": "/newsletter/confirmed",
+          "width": 320,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 37
+        },
+        {
+          "path": "/not-a-page",
+          "width": 320,
+          "status": 404,
+          "violations": [],
+          "incomplete": [],
+          "passes": 37
+        },
+        {
+          "path": "/work/imagegonord",
+          "width": 320,
+          "status": 200,
+          "violations": [],
+          "incomplete": [
+            {
+              "id": "color-contrast",
+              "targets": [
+                [
+                  "li[data-media-index=\"1\"] > figure > figcaption > p:nth-child(1)"
+                ],
+                [
+                  "li[data-media-index=\"1\"] > figure > figcaption > .text-muted-foreground"
+                ],
+                [
+                  "li[data-media-index=\"1\"] > figure > figcaption > .inline-flex.min-h-11"
+                ],
+                [
+                  "li[data-media-index=\"2\"] > figure > figcaption > p:nth-child(1)"
+                ],
+                [
+                  "li[data-media-index=\"2\"] > figure > figcaption > .text-muted-foreground"
+                ],
+                [
+                  "li[data-media-index=\"2\"] > figure > figcaption > .inline-flex.min-h-11"
+                ]
+              ]
+            }
+          ],
+          "passes": 45
+        },
+        {
+          "path": "/work/supermarket",
+          "width": 320,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 43
+        },
+        {
+          "path": "/work/chromatique",
+          "width": 320,
+          "status": 200,
+          "violations": [],
+          "incomplete": [
+            {
+              "id": "color-contrast",
+              "targets": [
+                [
+                  "li[data-media-index=\"1\"] > figure > figcaption > p:nth-child(1)"
+                ],
+                [
+                  "li[data-media-index=\"1\"] > figure > figcaption > .text-muted-foreground"
+                ],
+                [
+                  "li[data-media-index=\"1\"] > figure > figcaption > .inline-flex.min-h-11"
+                ]
+              ]
+            }
+          ],
+          "passes": 45
+        },
+        {
+          "path": "/blog/2021-04-17-covid19-supermarket-waiting-times-2020-recap",
+          "width": 320,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 42
+        },
+        {
+          "path": "/blog/2021-04-17-covid19-supermarket-waiting-times-how-it-was-made",
+          "width": 320,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 43
+        },
+        {
+          "path": "/blog/2021-02-22-netflix-conver-generator-nuxtjs-konvajs",
+          "width": 320,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 40
+        },
+        {
+          "path": "/blog/2020-02-23-sorting-hat-experiment-webar-in-js",
+          "width": 320,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 43
+        },
+        {
+          "path": "/blog/2020-02-21-argumented-reality-brief-explanation",
+          "width": 320,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 40
+        },
+        {
+          "path": "/blog/2019-12-21-microfrontend-from-00-to-20s",
+          "width": 320,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 39
+        },
+        {
+          "path": "/blog/2019-06-28-puppeteer-skyscanner-scraper-nodejs",
+          "width": 320,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 44
+        },
+        {
+          "path": "/blog/2019-05-18-prenotare-appuntamento-passaporto-online",
+          "width": 320,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 40
+        },
+        {
+          "path": "/blog/2019-03-28-manage-record-dns-updater-register-python",
+          "width": 320,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 41
+        },
+        {
+          "path": "/blog/2018-10-28-how-make-8d-ambisonic-audio-track-python",
+          "width": 320,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 41
+        },
+        {
+          "path": "/blog/2018-06-25-how-add-amp-pages-jekyll",
+          "width": 320,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 41
+        },
+        {
+          "path": "/blog/2017-12-09-ionic-build-ios-app-without-mac-virtual-machine",
+          "width": 320,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 41
+        },
+        {
+          "path": "/blog/2017-12-01-configure-dynhost-ovh-raspberry-for-dynamic-dns",
+          "width": 320,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 41
+        },
+        {
+          "path": "/blog/2017-06-01-raspberry-wont-boot-make-backup-with-chroot-shell",
+          "width": 320,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 40
+        },
+        {
+          "path": "/blog/2017-05-17-automatically-connect-wifi-raspberry-dhcp-and-staticip",
+          "width": 320,
+          "status": 200,
+          "violations": [],
+          "incomplete": [
+            {
+              "id": "color-contrast",
+              "targets": [
+                [
+                  "pre[aria-label=\"Code example 1\"] > .language-bash"
+                ],
+                [
+                  "pre[aria-label=\"Code example 2\"] > .language-bash"
+                ]
+              ]
+            }
+          ],
+          "passes": 40
+        },
+        {
+          "path": "/blog/2017-02-16-how-to-backup-all-collections-from-mongodb-on-raspberry",
+          "width": 320,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 40
+        }
+      ]
+    },
+    {
+      "axe": "4.14.0",
+      "browser": "Chromium",
+      "browserVersion": "158.0.8127.18",
+      "tags": [
+        "wcag2a",
+        "wcag2aa",
+        "wcag21a",
+        "wcag21aa",
+        "wcag22aa",
+        "best-practice"
+      ],
+      "evidence": [
+        {
+          "path": "/",
+          "width": 1440,
+          "status": 200,
+          "violations": [],
+          "incomplete": [
+            {
+              "id": "color-contrast",
+              "targets": [
+                [
+                  "li[data-media-index=\"2\"] > figure > figcaption > p:nth-child(1)"
+                ],
+                [
+                  "li[data-media-index=\"2\"] > figure > figcaption > .text-muted-foreground"
+                ],
+                [
+                  "li[data-media-index=\"2\"] > figure > figcaption > a"
+                ]
+              ]
+            }
+          ],
+          "passes": 48
+        },
+        {
+          "path": "/work",
+          "width": 1440,
+          "status": 200,
+          "violations": [],
+          "incomplete": [
+            {
+              "id": "color-contrast",
+              "targets": [
+                [
+                  "li[data-media-index=\"2\"] > figure > figcaption > p:nth-child(1)"
+                ],
+                [
+                  "li[data-media-index=\"2\"] > figure > figcaption > .text-muted-foreground"
+                ],
+                [
+                  "li[data-media-index=\"2\"] > figure > figcaption > a"
+                ]
+              ]
+            }
+          ],
+          "passes": 43
+        },
+        {
+          "path": "/play",
+          "width": 1440,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 46
+        },
+        {
+          "path": "/blog",
+          "width": 1440,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 46
+        },
+        {
+          "path": "/about",
+          "width": 1440,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 39
+        },
+        {
+          "path": "/newsletter/confirmed",
+          "width": 1440,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 37
+        },
+        {
+          "path": "/not-a-page",
+          "width": 1440,
+          "status": 404,
+          "violations": [],
+          "incomplete": [],
+          "passes": 37
+        },
+        {
+          "path": "/work/imagegonord",
+          "width": 1440,
+          "status": 200,
+          "violations": [],
+          "incomplete": [
+            {
+              "id": "color-contrast",
+              "targets": [
+                [
+                  "li[data-media-index=\"2\"] > figure > figcaption > p:nth-child(1)"
+                ],
+                [
+                  "li[data-media-index=\"2\"] > figure > figcaption > .text-muted-foreground"
+                ],
+                [
+                  "li[data-media-index=\"2\"] > figure > figcaption > .inline-flex.min-h-11"
+                ]
+              ]
+            }
+          ],
+          "passes": 45
+        },
+        {
+          "path": "/work/supermarket",
+          "width": 1440,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 43
+        },
+        {
+          "path": "/work/chromatique",
+          "width": 1440,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 44
+        },
+        {
+          "path": "/blog/2021-04-17-covid19-supermarket-waiting-times-2020-recap",
+          "width": 1440,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 42
+        },
+        {
+          "path": "/blog/2021-04-17-covid19-supermarket-waiting-times-how-it-was-made",
+          "width": 1440,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 43
+        },
+        {
+          "path": "/blog/2021-02-22-netflix-conver-generator-nuxtjs-konvajs",
+          "width": 1440,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 40
+        },
+        {
+          "path": "/blog/2020-02-23-sorting-hat-experiment-webar-in-js",
+          "width": 1440,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 43
+        },
+        {
+          "path": "/blog/2020-02-21-argumented-reality-brief-explanation",
+          "width": 1440,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 40
+        },
+        {
+          "path": "/blog/2019-12-21-microfrontend-from-00-to-20s",
+          "width": 1440,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 39
+        },
+        {
+          "path": "/blog/2019-06-28-puppeteer-skyscanner-scraper-nodejs",
+          "width": 1440,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 44
+        },
+        {
+          "path": "/blog/2019-05-18-prenotare-appuntamento-passaporto-online",
+          "width": 1440,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 40
+        },
+        {
+          "path": "/blog/2019-03-28-manage-record-dns-updater-register-python",
+          "width": 1440,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 41
+        },
+        {
+          "path": "/blog/2018-10-28-how-make-8d-ambisonic-audio-track-python",
+          "width": 1440,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 40
+        },
+        {
+          "path": "/blog/2018-06-25-how-add-amp-pages-jekyll",
+          "width": 1440,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 41
+        },
+        {
+          "path": "/blog/2017-12-09-ionic-build-ios-app-without-mac-virtual-machine",
+          "width": 1440,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 40
+        },
+        {
+          "path": "/blog/2017-12-01-configure-dynhost-ovh-raspberry-for-dynamic-dns",
+          "width": 1440,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 41
+        },
+        {
+          "path": "/blog/2017-06-01-raspberry-wont-boot-make-backup-with-chroot-shell",
+          "width": 1440,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 39
+        },
+        {
+          "path": "/blog/2017-05-17-automatically-connect-wifi-raspberry-dhcp-and-staticip",
+          "width": 1440,
+          "status": 200,
+          "violations": [],
+          "incomplete": [
+            {
+              "id": "color-contrast",
+              "targets": [
+                [
+                  "pre[aria-label=\"Code example 1\"] > .language-bash"
+                ],
+                [
+                  "pre[aria-label=\"Code example 2\"] > .language-bash"
+                ]
+              ]
+            }
+          ],
+          "passes": 39
+        },
+        {
+          "path": "/blog/2017-02-16-how-to-backup-all-collections-from-mongodb-on-raspberry",
+          "width": 1440,
+          "status": 200,
+          "violations": [],
+          "incomplete": [],
+          "passes": 39
+        }
+      ]
+    }
+  ]
+}

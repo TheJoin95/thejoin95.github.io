@@ -234,15 +234,11 @@ renders the summary and link, without a large fake screenshot frame.
 
 ## Opening image/palette interaction — MIC-22
 
-The owner explicitly requested a working Three.js experiment. Build the enhanced
-stage with the existing React Three Fiber/drei foundation, behind a lazy client
-boundary. The stage's image/palette transformation is the experiment's purpose;
-the existing generic 3D demo is not its completed implementation. Reuse the same
-controls, selected value and static comparison across the enhanced and fallback
-renderers. Keep HTML text and controls outside the canvas. Handle unavailable
-WebGL, context loss and rendering failure by restoring the useful static view,
-without losing the project link or trapping focus. Pause rendering offscreen and
-in hidden tabs; reduced motion must not require continuous rendering.
+Owner update — 2026-11-13: the website 3D/Three.js parts are removed. Use the
+same two authentic images in the HTML comparison before and after enhancement.
+Keep its labelled native controls and shared selected value. No canvas, WebGL
+renderer or GPU dependency belongs in this stage. Reduced motion suppresses
+hover previews while keeping direct input available.
 
 Two views of the same approved image share one frame: Original and Palette.
 Initially render a useful static 50/50 comparison and text caption on the server.
@@ -261,8 +257,7 @@ labels and controls sit below the frame; desktop overlays only a backed title
 and optional “Move to reveal” hint, leaving controls below for reliable access.
 
 States: static poster → enhancement ready; dragging/focused; original endpoint;
-palette endpoint; reset to 50; enhancement unavailable. If scripts, GPU, image
-processing or animation fail, retain the static comparison, explanatory caption
+palette endpoint; reset to 50; enhancement unavailable. If scripts or image loading fail, retain the static comparison, explanatory caption
 and project link; never leave a blank canvas. Hide inoperative enhancement-only
 controls until ready. No upload or live processing workflow is added by this spec.
 
@@ -344,7 +339,7 @@ Tests of document phrases would not prove responsive or interaction behaviour.
 | R1 · MIC-12/14–20/26 | At 320, 390, 768, 1024, 1200, 1440px, assert body has no horizontal overflow and critical links/headings remain visible; include long title and 200% text fixture. | Capture all five pages at 390×844, 834×1112 and 1440×1000; compare section order, proportions, typography, charcoal/white rhythm and real media with the five references. Inspect 320px, landscape and 400% zoom reflow too. |
 | N1 · MIC-12 | Header/footer destinations, active nested section, skip link and keyboard order; navigation works with JS disabled. | Visible focus on light/dark sections; no collisions at 1199/1200 or large text; 44px targets. |
 | G1 · MIC-13 | 0/1/many media; next/previous/endpoints; captions, focus retention; failed slide fallback; gallery scroll does not enlarge body. | Swipe strip and scroll page across strip; inspect first/last focus and long captions. Real touch check, not only viewport resize. |
-| P1 · MIC-22 | Range initial/endpoints/reset, keyboard arrows/Home/End, pointer preview vs committed value, reduced motion, unavailable WebGL/context loss and fallback focus/link preservation. | Complete a drag on iOS Safari and Android Chrome; vertical swipe across image scrolls page; native range still manipulates reveal; compare selected output and verify offscreen rendering pauses. |
+| P1 · MIC-22 | Range initial/endpoints/reset, keyboard arrows/Home/End, pointer preview vs committed value, reduced motion, failed-image explanation and link preservation; no canvas or WebGL required. | Complete a drag on iOS Safari and Android Chrome; vertical swipe across image scrolls page; native range still manipulates reveal; compare selected output. |
 | J1 · MIC-18/19 | Direct article refresh/404, full title/date, filters/query/back restoration, no matches/clear/retry, draft exclusion. | Long legacy titles, code/tables/diagrams and empty sketchbook remain readable at all widths. |
 | S1 · MIC-12/23 | Loading/error/retry, newsletter validation/provider failures, reduced-motion change, offscreen pause and easter-egg close/focus return if implemented. | Keyboard-only route journey, screen-reader landmarks/status, failed script/media; fox remains sparse and unobtrusive. |
 | O1 · MIC-25 | HTML metadata/canonicals/JSON-LD match content; default/specific/fallback image routes return valid images; draft exclusion and absolute origin. | Inspect default, article, project and longest-title OG cards at full/thumbnail size, light/dark source media and missing art. |

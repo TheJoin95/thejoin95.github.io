@@ -33,7 +33,7 @@ describe("Play directory and comic-learning preview", () => {
     expect(html).not.toContain('href="#chromatique"');
     expect(html).toContain("no dithering");
     expect(html).toContain("Cycling, photography, and whatever comes next.");
-    expect(html).toContain('href="/experience"');
+    expect(html).not.toContain('href="/experience"');
     expect(html).not.toContain('href="#"');
     const comic = renderToStaticMarkup(<ComicPreview />);
     expect(comic).toContain("A work in progress");

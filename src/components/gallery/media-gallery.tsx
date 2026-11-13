@@ -1,19 +1,13 @@
 "use client";
 
-import { useEffect, useId, useRef, useState, useSyncExternalStore } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import Image from "next/image";
+import { useHydrated } from "@/hooks/use-hydrated";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { boundedIndex, indexAtScroll, type GalleryMedia } from "@/lib/gallery";
 import { GalleryCaption, MediaSurface } from "@/components/media/presentation";
-
-const subscribe = () => () => {};
-const clientSnapshot = () => true;
-const serverSnapshot = () => false;
-function useHydrated() {
-  return useSyncExternalStore(subscribe, clientSnapshot, serverSnapshot);
-}
 
 function GalleryItem({ item, eager }: { item: GalleryMedia; eager: boolean }) {
   const [state, setState] = useState<"loading" | "ready" | "failed">(item.src ? "loading" : "failed");

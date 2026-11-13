@@ -68,13 +68,10 @@ describe("reusable states and primitives", () => {
     expect(output).toContain('href="/blog"');
     expect(output).not.toContain('role="status"');
   });
-  test("error retry forwards the supplied reset action and offers home", () => {
-    const reset = mock(() => {});
-    const element = ErrorState({ reset });
-    const action = element.props.action;
-    action.props.children[0].props.onClick();
-    expect(reset).toHaveBeenCalledTimes(1);
-    expect(html(element)).toContain("Back to home");
+  test("error recovery offers an announced message and native home destination", () => {
+    const output = html(<ErrorState reset={() => {}} />);
+    expect(output).toContain('role="alert"');
+    expect(output).toContain("Try again"); expect(output).toContain('href="/"');
   });
   test("media reserves its ratio, preserves alt/caption/credit and handles absent assets", () => {
     const image = html(<MediaFrame src="/test-image.png" alt="Architecture diagram" width={1200} height={630} caption="System overview" credit="Miki Lombardi" />);

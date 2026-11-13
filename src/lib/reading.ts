@@ -8,6 +8,8 @@ export type ContentsEntry = { id: string; title: string; level: 2 | 3 };
 // Runs after sanitizing and slugging; no authored script or arbitrary attributes survive.
 export function readingElements(contents: ContentsEntry[]) {
   return () => (tree: Root) => {
+    let codeNumber = 0;
+    let tableNumber = 0;
     visit(tree, "element", (node: Element, index, parent) => {
       if (node.tagName === "h1") node.tagName = "h2"; // The template owns the sole H1.
       if (node.tagName === "h2" || node.tagName === "h3") {
@@ -18,10 +20,10 @@ export function readingElements(contents: ContentsEntry[]) {
       if (node.tagName === "pre") {
         node.properties.tabIndex = 0;
         node.properties.role = "region";
-        node.properties.ariaLabel = "Code example";
+        node.properties.ariaLabel = `Code example ${++codeNumber}`;
       }
       if (node.tagName === "table" && parent && index !== undefined) {
-        parent.children[index] = { type: "element", tagName: "div", properties: { role: "region", ariaLabel: "Data table", tabIndex: 0, className: ["my-8", "max-w-full", "overflow-x-auto"] }, children: [node] };
+        parent.children[index] = { type: "element", tagName: "div", properties: { role: "region", ariaLabel: `Data table ${++tableNumber}`, tabIndex: 0, className: ["my-8", "max-w-full", "overflow-x-auto"] }, children: [node] };
         return "skip";
       }
     });

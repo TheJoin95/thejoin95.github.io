@@ -13,45 +13,25 @@ async function start(page: Page, path = "/") {
 async function expectReveal(stage: Locator, percent: number) {
   await expect(stage.locator("[data-palette-output]")).toHaveCSS("clip-path", `inset(0px 0px 0px ${100 - percent}%)`);
 }
-async function settle(page: Page) {
-  await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
-}
-
-test("real WebGL reveal matches the HTML output, crop and colour at every breakpoint", async ({ page }) => {
-  // Capture renderer fidelity without incidental hover previews during auto-scroll.
+test("native reveal shows the real endpoints and combines their correct halves at each breakpoint", async ({ page }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   for (const width of [320, 834, 1440]) {
-    await page.setViewportSize({ width, height: 1000 });
-    const stage = await start(page);
-    const surface = stage.locator("[data-palette-surface]");
-    await expect(surface).toHaveAttribute("data-renderer", "webgl");
-    const canvas = surface.locator("canvas"); await expect(canvas).toBeVisible();
-    const frames: Buffer[] = [];
+    await page.setViewportSize({ width, height: 1000 }); const stage = await start(page);
+    const surface = stage.locator("[data-palette-surface]"); const frames: Buffer[] = [];
     for (const [button, percent] of [["Original", 0], ["Palette", 100], ["Reset comparison", 50]] as const) {
-      await stage.getByRole("button", { name: button, exact: true }).click(); await settle(page);
-      await expect(stage.getByRole("slider")).toHaveValue(String(percent));
-      await surface.scrollIntoViewIfNeeded();
-      await expect(canvas).toBeVisible(); await settle(page);
-      const gpu = await surface.screenshot();
-      await canvas.evaluate(el => { el.style.visibility = "hidden"; });
-      const html = await surface.screenshot();
-      await canvas.evaluate(el => { el.style.visibility = ""; });
-      // Compare colour/crop at a common resolution: GPU mipmaps and native image
-      // downsampling have different high-frequency detail, especially at 320px.
-      const a = await sharp(gpu).resize({ width: 160 }).removeAlpha().raw().toBuffer();
-      const b = await sharp(html).resize({ width: 160 }).removeAlpha().raw().toBuffer();
-      let difference = 0; for (let index = 0; index < a.length; index++) difference += Math.abs(a[index] - b[index]);
-      expect(difference / a.length, `${width}px at ${percent}% reveal`).toBeLessThan(6);
-      frames.push(gpu);
+      await stage.getByRole("button", { name: button, exact: true }).click();
+      await expect(stage.getByRole("slider")).toHaveValue(String(percent)); await expectReveal(stage, percent);
+      frames.push(await surface.screenshot());
     }
-    const originalPixels = await sharp(frames[0]).resize({ width: 160 }).removeAlpha().raw().toBuffer();
-    const palettePixels = await sharp(frames[1]).resize({ width: 160 }).removeAlpha().raw().toBuffer();
-    const endpointDifference = originalPixels.reduce((sum, value, index) => sum + Math.abs(value - palettePixels[index]), 0) / originalPixels.length;
-    expect(endpointDifference).toBeGreaterThan(10);
     expect(frames[0].equals(frames[1])).toBe(false);
-    expect(frames[0].equals(frames[2])).toBe(false);
+    const metadata = await sharp(frames[2]).metadata();
+    const half = Math.floor(metadata.width! / 2);
+    const crop = async (frame: Buffer, left: number, width: number) => sharp(frame).extract({ left, top: 0, width, height: metadata.height! }).raw().toBuffer();
+    expect((await crop(frames[2], 0, half - 1)).equals(await crop(frames[0], 0, half - 1))).toBe(true);
+    expect((await crop(frames[2], half + 1, half - 1)).equals(await crop(frames[1], half + 1, half - 1))).toBe(true);
+    await expect(stage.locator("canvas")).toHaveCount(0);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-    await stage.screenshot({ path: `/tmp/mic22-stage-${width}.png` });
+    await stage.screenshot({ path: `/tmp/mic26-palette-${width}.png` });
   }
 });
 
@@ -94,33 +74,6 @@ test("touch uses explicit range input while the image retains vertical page scro
   await context.close();
 });
 
-test("unavailable WebGL and context loss preserve selected comparison and project link", async ({ browser, page }) => {
-  const context = await browser.newContext();
-  await context.addInitScript(() => {
-    const original = HTMLCanvasElement.prototype.getContext;
-    HTMLCanvasElement.prototype.getContext = function(this: HTMLCanvasElement, type: string, ...args: unknown[]) {
-      if (type.includes("webgl")) return null;
-      return original.call(this, type as "2d", ...args);
-    } as typeof original;
-  });
-  const fallback = await context.newPage(); const staticStage = await start(fallback);
-  await expect(staticStage.getByText(/3D view is unavailable/)).toBeVisible();
-  await staticStage.getByRole("button", { name: "Palette", exact: true }).click();
-  await expectReveal(staticStage, 100);
-  await expect(staticStage.getByRole("link", { name: /explore the palette study/ })).toBeVisible();
-  await context.close();
-  const stage = await start(page); const surface = stage.locator("[data-palette-surface]");
-  await expect(surface).toHaveAttribute("data-renderer", "webgl");
-  await stage.getByRole("slider").fill("73");
-  await surface.locator("canvas").evaluate(el => {
-    (el as HTMLCanvasElement).getContext("webgl2")!.getExtension("WEBGL_lose_context")!.loseContext();
-  });
-  await expect(surface).toHaveAttribute("data-renderer", "html");
-  await expect(stage.getByRole("slider")).toHaveValue("73");
-  await expect(stage.getByRole("slider")).toBeFocused();
-  await expectReveal(stage, 73);
-});
-
 test("failed media retains an honest explanation, dimensions, provenance and project destination", async ({ page }) => {
   await page.route("**/media/chromatique/irises-nord.png", route => route.abort());
   await page.goto("/play"); const stage = region(page);
@@ -159,49 +112,15 @@ test("reduced motion suppresses hover but retains immediate native controls and 
   }
 });
 
-test("GPU work stops at rest, offscreen and in hidden tabs, then resumes on input", async ({ page }) => {
+test("palette interaction never requires a canvas or a 3D context", async ({ page }) => {
   await page.addInitScript(() => {
-    const original = WebGL2RenderingContext.prototype.drawElements;
-    window.paletteDraws = 0;
-    WebGL2RenderingContext.prototype.drawElements = function(...args: Parameters<typeof original>) {
-      window.paletteDraws++; return original.apply(this, args);
-    };
+    const original = HTMLCanvasElement.prototype.getContext;
+    HTMLCanvasElement.prototype.getContext = function(this: HTMLCanvasElement, type: string, ...args: unknown[]) {
+      if (type.includes("webgl")) throw new Error("Unexpected 3D context");
+      return original.call(this, type as "2d", ...args);
+    } as typeof original;
   });
-  const stage = await start(page); const canvas = stage.locator("canvas");
-  await expect(stage.locator("[data-palette-surface]")).toHaveAttribute("data-renderer", "webgl");
-  const draws = () => page.evaluate(() => window.paletteDraws);
-  await expect.poll(draws).toBeGreaterThan(0); await page.waitForTimeout(250);
-  const rest = await draws(); await page.waitForTimeout(250); expect(await draws()).toBe(rest);
-  await stage.getByRole("slider").fill("72"); await expect.poll(draws).toBeGreaterThan(rest);
-  await page.evaluate(() => scrollTo(0, document.body.scrollHeight)); await expect(canvas).toBeHidden();
-  await page.waitForTimeout(250); const offscreen = await draws();
-  await page.setViewportSize({ width: 800, height: 900 }); await page.waitForTimeout(250); expect(await draws()).toBe(offscreen);
-  await stage.locator("[data-palette-surface]").scrollIntoViewIfNeeded(); await expect(canvas).toBeVisible();
-  await page.evaluate(() => { Object.defineProperty(document, "hidden", { configurable: true, value: true }); document.dispatchEvent(new Event("visibilitychange")); });
-  await expect(canvas).toBeHidden(); await page.waitForTimeout(250); const hidden = await draws();
-  await stage.getByRole("slider").fill("12"); await page.waitForTimeout(250); expect(await draws()).toBe(hidden);
-  await page.evaluate(() => { Object.defineProperty(document, "hidden", { configurable: true, value: false }); document.dispatchEvent(new Event("visibilitychange")); });
-  await expect(canvas).toBeVisible(); await expect.poll(draws).toBeGreaterThan(hidden);
-});
-
-declare global { interface Window { paletteDraws: number } }
-
-test("scene code waits for viewport entry and a failed scene download retains working HTML controls", async ({ page }) => {
-  await page.setViewportSize({ width: 390, height: 240 });
-  let sceneRequests = 0;
-  await page.route("**/_next/static/chunks/*.js", async route => {
-    const response = await route.fetch();
-    if ((await response.text()).includes("uniform sampler2D originalImage")) {
-      sceneRequests++; await route.abort();
-    } else await route.fulfill({ response });
-  });
-  await page.goto("/"); const stage = region(page);
-  await expect(stage.getByRole("slider")).toHaveValue("50");
-  await expect(stage.locator("canvas")).toHaveCount(0);
-  expect(sceneRequests).toBe(0);
-  await stage.locator("[data-palette-surface]").scrollIntoViewIfNeeded();
-  await expect(stage.getByText(/3D view is unavailable/)).toBeVisible({ timeout: 15000 });
-  expect(sceneRequests).toBeGreaterThan(0);
-  const slider = stage.getByRole("slider"); await slider.focus(); await slider.fill("25");
-  await expect(slider).toBeFocused(); await expectReveal(stage, 25);
+  const stage = await start(page); await stage.getByRole("slider").fill("73");
+  await expectReveal(stage, 73); await expect(stage.locator("canvas")).toHaveCount(0);
+  await expect(stage.getByRole("link", { name: /explore the palette study/ })).toBeVisible();
 });

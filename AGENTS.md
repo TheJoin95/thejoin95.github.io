@@ -15,8 +15,7 @@
   Fetch `origin old` if the reference is missing.
 - Do not restore the old Vue implementation into the new Next.js application.
 - Stack: Next.js App Router, TypeScript, Tailwind, Radix-based shadcn/ui,
-  Google Analytics 4, Brevo newsletter, Three.js with React Three Fiber/drei,
-  and dotLottie for small animations.
+  Google Analytics 4, Brevo newsletter, and dotLottie for small animations.
 - Follow atomic design through composition: reusable UI primitives (atoms),
   small combinations (molecules), sections (organisms), then templates and pages.
   Keep responsibilities clear; avoid speculative abstractions or a forced folder
@@ -28,11 +27,12 @@
   is necessary. Use Tailwind for component styling; keep globals focused on theme
   tokens and genuinely global rules.
 - Keep credentials server-side. Document configuration in `.env.example`.
-- Keep Three.js and Lottie behind client boundaries and lazy imports; respect
+- Keep Lottie behind client boundaries and lazy imports; respect
   reduced motion. Server Components are the default.
-- Include coordinated colour palettes, a working Three.js experiment, and a
-  consistent mascot/character language in the website. Follow DESIGN.md and the
-  approved sparse fox direction; provide accessible static alternatives and tests.
+- Include coordinated colour palettes and a consistent mascot/character language
+  in the website. Follow DESIGN.md and the approved sparse fox direction; provide accessible static alternatives and tests.
+- The owner removed the 3D/Three.js parts on 2026-11-13. Keep the palette reveal
+  as an HTML interaction; do not restore the demo, WebGL renderer or dependencies.
 - Run `bun run check` and `bun run build` before handing off code changes.
 - Every implementation or feature must have automated tests covering its behavior.
   Include regression tests for fixes and preservation checks for migrated content.

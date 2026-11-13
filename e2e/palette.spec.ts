@@ -75,7 +75,7 @@ test("touch uses explicit range input while the image retains vertical page scro
 });
 
 test("failed media retains an honest explanation, dimensions, provenance and project destination", async ({ page }) => {
-  await page.route("**/media/chromatique/irises-nord.png", route => route.abort());
+  await page.route("**/_next/image?**", route => decodeURIComponent(route.request().url()).includes("/media/chromatique/irises-nord.png") ? route.abort() : route.continue());
   await page.goto("/play"); const stage = region(page);
   await expect(stage.getByText(/comparison image could not load/)).toBeVisible();
   await expect(stage.getByRole("slider")).toHaveCount(0);

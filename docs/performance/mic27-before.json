@@ -1,0 +1,3963 @@
+{
+  "date": "2026-11-13",
+  "browser": "158.0.8127.18",
+  "profile": {
+    "viewport": "390x844",
+    "dpr": 2,
+    "cpuSlowdown": 4,
+    "latencyMs": 150,
+    "downloadBytesPerSecond": 196608,
+    "cache": "fresh browser context, browser cache disabled; server optimizer cache may be warm",
+    "observation": "load + 2500ms; no scroll or interaction"
+  },
+  "runs": [
+    {
+      "path": "/",
+      "run": 1,
+      "lcp": 4520,
+      "lcpElement": "IMG",
+      "cls": 0,
+      "longTasks": [
+        170,
+        139
+      ],
+      "fcp": 1120,
+      "resources": [
+        {
+          "url": "/media/chromatique/irises-original.jpg",
+          "type": "link",
+          "bytes": 174354,
+          "duration": 4070
+        },
+        {
+          "url": "/media/supermarket/architecture.svg",
+          "type": "link",
+          "bytes": 744,
+          "duration": 240
+        },
+        {
+          "url": "/media/chromatique/irises-nord.png",
+          "type": "link",
+          "bytes": 161408,
+          "duration": 3932.100000023842
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fconversion-interface.png&w=750&q=75",
+          "type": "link",
+          "bytes": 6472,
+          "duration": 342.09999999403954
+        },
+        {
+          "url": "/_next/static/chunks/2plfrcg2f6_ak.css",
+          "type": "link",
+          "bytes": 10692,
+          "duration": 440.09999999403954
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-original.jpg&w=750&q=75",
+          "type": "link",
+          "bytes": 64238,
+          "duration": 1919
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "type": "link",
+          "bytes": 2352,
+          "duration": 407.2000000178814
+        },
+        {
+          "url": "/_next/static/chunks/2kjxkkhnsfwuv.js",
+          "type": "script",
+          "bytes": 7752,
+          "duration": 705.2000000178814
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+          "type": "script",
+          "bytes": 4377,
+          "duration": 1031.4000000059605
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "type": "script",
+          "bytes": 47040,
+          "duration": 1931.2000000178814
+        },
+        {
+          "url": "/_next/static/chunks/32-8bc_la5bzb.js",
+          "type": "script",
+          "bytes": 72246,
+          "duration": 2481.2000000178814
+        },
+        {
+          "url": "/_next/static/chunks/12--yb3mz_k19.js",
+          "type": "script",
+          "bytes": 6055,
+          "duration": 1595.7000000178814
+        },
+        {
+          "url": "/_next/static/chunks/01-fdoz1wyvuf.js",
+          "type": "script",
+          "bytes": 213,
+          "duration": 2098.9000000059605
+        },
+        {
+          "url": "/_next/static/chunks/1k8ws4wy_mqz_.js",
+          "type": "script",
+          "bytes": 13801,
+          "duration": 2130.300000011921
+        },
+        {
+          "url": "/_next/static/chunks/3mou9oq7g37u1.js",
+          "type": "script",
+          "bytes": 8555,
+          "duration": 2290.9000000059605
+        },
+        {
+          "url": "/_next/static/chunks/0wj0noag-9_fs.js",
+          "type": "script",
+          "bytes": 3612,
+          "duration": 2397.199999988079
+        },
+        {
+          "url": "/_next/static/chunks/38yk6g6jjlk_a.js",
+          "type": "script",
+          "bytes": 10607,
+          "duration": 2534.800000011921
+        },
+        {
+          "url": "/_next/static/chunks/2dn1wguorfoo0.js",
+          "type": "script",
+          "bytes": 3728,
+          "duration": 2541.300000011921
+        },
+        {
+          "url": "/characters/fox/rest.svg",
+          "type": "img",
+          "bytes": 885,
+          "duration": 630.8000000119209
+        },
+        {
+          "url": "/media/imagegonord/palette-controls.png",
+          "type": "img",
+          "bytes": 29983,
+          "duration": 2986.399999976158
+        },
+        {
+          "url": "/media/imagegonord/introduction.png",
+          "type": "img",
+          "bytes": 34332,
+          "duration": 3025.699999988079
+        },
+        {
+          "url": "/media/imagegonord/conversion-interface.png",
+          "type": "img",
+          "bytes": 42139,
+          "duration": 3054.7999999821186
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fintroduction.png&w=750&q=75",
+          "type": "img",
+          "bytes": 6994,
+          "duration": 2002.7000000178814
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fpalette-controls.png&w=750&q=75",
+          "type": "img",
+          "bytes": 8972,
+          "duration": 2468.300000011921
+        },
+        {
+          "url": "/?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 166,
+          "duration": 849.6999999880791
+        },
+        {
+          "url": "/work?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 930.3000000119209
+        },
+        {
+          "url": "/blog?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 943
+        },
+        {
+          "url": "/play?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 972.5
+        },
+        {
+          "url": "/about?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 183,
+          "duration": 225.59999999403954
+        },
+        {
+          "url": "/work?_rsc=w8QaQBDeNiATQLUS",
+          "type": "fetch",
+          "bytes": 5838,
+          "duration": 245
+        },
+        {
+          "url": "/blog?_rsc=Npvf18QV6N2pz_RZ",
+          "type": "fetch",
+          "bytes": 646,
+          "duration": 167
+        },
+        {
+          "url": "/play?_rsc=PegjG-Ni8kbs15L_",
+          "type": "fetch",
+          "bytes": 4377,
+          "duration": 239.5
+        },
+        {
+          "url": "/about?_rsc=hzcUC6YqarYE9pKE",
+          "type": "fetch",
+          "bytes": 3333,
+          "duration": 217.40000000596046
+        },
+        {
+          "url": "/_next/static/chunks/0y8s02wt2-v9n.js",
+          "type": "script",
+          "bytes": 14333,
+          "duration": 263.7000000178814
+        },
+        {
+          "url": "/_next/static/chunks/26x-4nqan8_un.js",
+          "type": "script",
+          "bytes": 5653,
+          "duration": 219.7000000178814
+        }
+      ],
+      "fonts": 0,
+      "images": [
+        {
+          "url": "/characters/fox/rest.svg",
+          "displayed": 48,
+          "natural": 192,
+          "loading": "lazy"
+        },
+        {
+          "url": "/media/chromatique/irises-original.jpg",
+          "displayed": 390,
+          "natural": 1024,
+          "loading": "eager"
+        },
+        {
+          "url": "/media/chromatique/irises-nord.png",
+          "displayed": 390,
+          "natural": 1024,
+          "loading": "eager"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fconversion-interface.png&w=750&q=75",
+          "displayed": 308,
+          "natural": 331,
+          "loading": "eager"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fintroduction.png&w=750&q=75",
+          "displayed": 308,
+          "natural": 331,
+          "loading": "lazy"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fpalette-controls.png&w=750&q=75",
+          "displayed": 308,
+          "natural": 115,
+          "loading": "lazy"
+        },
+        {
+          "url": "/media/supermarket/architecture.svg",
+          "displayed": 350,
+          "natural": 1200,
+          "loading": "eager"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-original.jpg&w=750&q=75",
+          "displayed": 308,
+          "natural": 331,
+          "loading": "eager"
+        },
+        {
+          "url": "",
+          "displayed": 308,
+          "natural": 0,
+          "loading": "lazy"
+        }
+      ],
+      "navigation": {
+        "name": "http://127.0.0.1:3109/",
+        "entryType": "navigation",
+        "startTime": 0,
+        "duration": 4511.5,
+        "navigationId": 9177,
+        "initiatorType": "navigation",
+        "deliveryType": "",
+        "nextHopProtocol": "http/1.1",
+        "renderBlockingStatus": "non-blocking",
+        "contentType": "text/html",
+        "contentEncoding": "gzip",
+        "workerStart": 0,
+        "workerRouterEvaluationStart": 0,
+        "workerCacheLookupStart": 0,
+        "workerMatchedSourceType": "",
+        "workerFinalSourceType": "",
+        "redirectStart": 0,
+        "redirectEnd": 0,
+        "fetchStart": 0.5,
+        "domainLookupStart": 7.800000011920929,
+        "domainLookupEnd": 8.300000011920929,
+        "connectStart": 8.300000011920929,
+        "secureConnectionStart": 0,
+        "connectEnd": 9.300000011920929,
+        "requestStart": 10,
+        "responseStart": 383.80000001192093,
+        "firstInterimResponseStart": 0,
+        "finalResponseHeadersStart": 383.80000001192093,
+        "responseEnd": 466.90000000596046,
+        "transferSize": 14791,
+        "encodedBodySize": 14491,
+        "decodedBodySize": 85383,
+        "responseStatus": 200,
+        "serverTiming": [],
+        "unloadEventStart": 0,
+        "unloadEventEnd": 0,
+        "domInteractive": 1137.800000011921,
+        "domContentLoadedEventStart": 1137.800000011921,
+        "domContentLoadedEventEnd": 1137.9000000059605,
+        "domComplete": 4510.800000011921,
+        "loadEventStart": 4511.5,
+        "loadEventEnd": 4511.5,
+        "type": "navigate",
+        "redirectCount": 0,
+        "activationStart": 0,
+        "criticalCHRestart": 0,
+        "notRestoredReasons": null,
+        "confidence": {
+          "randomizedTriggerRate": 0.4994798,
+          "value": "high"
+        }
+      }
+    },
+    {
+      "path": "/",
+      "run": 2,
+      "lcp": 4268,
+      "lcpElement": "IMG",
+      "cls": 0,
+      "longTasks": [
+        88
+      ],
+      "fcp": 660,
+      "resources": [
+        {
+          "url": "/media/chromatique/irises-original.jpg",
+          "type": "link",
+          "bytes": 174354,
+          "duration": 4095.199999988079
+        },
+        {
+          "url": "/media/supermarket/architecture.svg",
+          "type": "link",
+          "bytes": 744,
+          "duration": 197.60000002384186
+        },
+        {
+          "url": "/media/chromatique/irises-nord.png",
+          "type": "link",
+          "bytes": 161408,
+          "duration": 3927.9000000059605
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fconversion-interface.png&w=750&q=75",
+          "type": "link",
+          "bytes": 6472,
+          "duration": 333.59999999403954
+        },
+        {
+          "url": "/_next/static/chunks/2plfrcg2f6_ak.css",
+          "type": "link",
+          "bytes": 10692,
+          "duration": 440.5
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-original.jpg&w=750&q=75",
+          "type": "link",
+          "bytes": 64238,
+          "duration": 1958.5999999940395
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "type": "link",
+          "bytes": 2352,
+          "duration": 409.90000000596046
+        },
+        {
+          "url": "/_next/static/chunks/2kjxkkhnsfwuv.js",
+          "type": "script",
+          "bytes": 7752,
+          "duration": 699.8000000119209
+        },
+        {
+          "url": "/_next/static/chunks/32-8bc_la5bzb.js",
+          "type": "script",
+          "bytes": 72246,
+          "duration": 2477
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+          "type": "script",
+          "bytes": 4377,
+          "duration": 1026.5
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "type": "script",
+          "bytes": 47040,
+          "duration": 1935.5
+        },
+        {
+          "url": "/_next/static/chunks/12--yb3mz_k19.js",
+          "type": "script",
+          "bytes": 6055,
+          "duration": 1591.5999999940395
+        },
+        {
+          "url": "/_next/static/chunks/01-fdoz1wyvuf.js",
+          "type": "script",
+          "bytes": 213,
+          "duration": 2118
+        },
+        {
+          "url": "/_next/static/chunks/1k8ws4wy_mqz_.js",
+          "type": "script",
+          "bytes": 13801,
+          "duration": 2125
+        },
+        {
+          "url": "/_next/static/chunks/3mou9oq7g37u1.js",
+          "type": "script",
+          "bytes": 8555,
+          "duration": 2308.7999999821186
+        },
+        {
+          "url": "/_next/static/chunks/38yk6g6jjlk_a.js",
+          "type": "script",
+          "bytes": 10607,
+          "duration": 2544.199999988079
+        },
+        {
+          "url": "/_next/static/chunks/0wj0noag-9_fs.js",
+          "type": "script",
+          "bytes": 3612,
+          "duration": 2392.5
+        },
+        {
+          "url": "/_next/static/chunks/2dn1wguorfoo0.js",
+          "type": "script",
+          "bytes": 3728,
+          "duration": 2551.4000000059605
+        },
+        {
+          "url": "/characters/fox/rest.svg",
+          "type": "img",
+          "bytes": 885,
+          "duration": 742.2000000178814
+        },
+        {
+          "url": "/media/imagegonord/palette-controls.png",
+          "type": "img",
+          "bytes": 29983,
+          "duration": 3113
+        },
+        {
+          "url": "/media/imagegonord/introduction.png",
+          "type": "img",
+          "bytes": 34332,
+          "duration": 3137.4000000059605
+        },
+        {
+          "url": "/media/imagegonord/conversion-interface.png",
+          "type": "img",
+          "bytes": 42139,
+          "duration": 3182
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fintroduction.png&w=750&q=75",
+          "type": "img",
+          "bytes": 6994,
+          "duration": 2174
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fpalette-controls.png&w=750&q=75",
+          "type": "img",
+          "bytes": 8972,
+          "duration": 2638.2000000178814
+        },
+        {
+          "url": "/?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 166,
+          "duration": 946.5
+        },
+        {
+          "url": "/work?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 1055.9000000059605
+        },
+        {
+          "url": "/blog?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 1070.800000011921
+        },
+        {
+          "url": "/play?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 1094.1000000238419
+        },
+        {
+          "url": "/about?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 183,
+          "duration": 237.69999998807907
+        },
+        {
+          "url": "/work?_rsc=w8QaQBDeNiATQLUS",
+          "type": "fetch",
+          "bytes": 5838,
+          "duration": 267.5
+        },
+        {
+          "url": "/blog?_rsc=Npvf18QV6N2pz_RZ",
+          "type": "fetch",
+          "bytes": 646,
+          "duration": 173.30000001192093
+        },
+        {
+          "url": "/play?_rsc=PegjG-Ni8kbs15L_",
+          "type": "fetch",
+          "bytes": 4377,
+          "duration": 256.39999997615814
+        },
+        {
+          "url": "/about?_rsc=hzcUC6YqarYE9pKE",
+          "type": "fetch",
+          "bytes": 3333,
+          "duration": 232.40000000596046
+        },
+        {
+          "url": "/_next/static/chunks/0y8s02wt2-v9n.js",
+          "type": "script",
+          "bytes": 14333,
+          "duration": 264.19999998807907
+        },
+        {
+          "url": "/_next/static/chunks/26x-4nqan8_un.js",
+          "type": "script",
+          "bytes": 5653,
+          "duration": 220.09999999403954
+        }
+      ],
+      "fonts": 0,
+      "images": [
+        {
+          "url": "/characters/fox/rest.svg",
+          "displayed": 48,
+          "natural": 192,
+          "loading": "lazy"
+        },
+        {
+          "url": "/media/chromatique/irises-original.jpg",
+          "displayed": 390,
+          "natural": 1024,
+          "loading": "eager"
+        },
+        {
+          "url": "/media/chromatique/irises-nord.png",
+          "displayed": 390,
+          "natural": 1024,
+          "loading": "eager"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fconversion-interface.png&w=750&q=75",
+          "displayed": 308,
+          "natural": 331,
+          "loading": "eager"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fintroduction.png&w=750&q=75",
+          "displayed": 308,
+          "natural": 331,
+          "loading": "lazy"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fpalette-controls.png&w=750&q=75",
+          "displayed": 308,
+          "natural": 115,
+          "loading": "lazy"
+        },
+        {
+          "url": "/media/supermarket/architecture.svg",
+          "displayed": 350,
+          "natural": 1200,
+          "loading": "eager"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-original.jpg&w=750&q=75",
+          "displayed": 308,
+          "natural": 331,
+          "loading": "eager"
+        },
+        {
+          "url": "",
+          "displayed": 308,
+          "natural": 0,
+          "loading": "lazy"
+        }
+      ],
+      "navigation": {
+        "name": "http://127.0.0.1:3109/",
+        "entryType": "navigation",
+        "startTime": 0,
+        "duration": 4492.199999988079,
+        "navigationId": 6195,
+        "initiatorType": "navigation",
+        "deliveryType": "",
+        "nextHopProtocol": "http/1.1",
+        "renderBlockingStatus": "non-blocking",
+        "contentType": "text/html",
+        "contentEncoding": "gzip",
+        "workerStart": 0,
+        "workerRouterEvaluationStart": 0,
+        "workerCacheLookupStart": 0,
+        "workerMatchedSourceType": "",
+        "workerFinalSourceType": "",
+        "redirectStart": 0,
+        "redirectEnd": 0,
+        "fetchStart": 0,
+        "domainLookupStart": 0.5,
+        "domainLookupEnd": 0.5999999940395355,
+        "connectStart": 0.5999999940395355,
+        "secureConnectionStart": 0,
+        "connectEnd": 0.800000011920929,
+        "requestStart": 0.800000011920929,
+        "responseStart": 150.90000000596046,
+        "firstInterimResponseStart": 0,
+        "finalResponseHeadersStart": 150.90000000596046,
+        "responseEnd": 233.40000000596046,
+        "transferSize": 14791,
+        "encodedBodySize": 14491,
+        "decodedBodySize": 85383,
+        "responseStatus": 200,
+        "serverTiming": [],
+        "unloadEventStart": 0,
+        "unloadEventEnd": 0,
+        "domInteractive": 668.6999999880791,
+        "domContentLoadedEventStart": 668.6999999880791,
+        "domContentLoadedEventEnd": 668.6999999880791,
+        "domComplete": 4492.199999988079,
+        "loadEventStart": 4492.199999988079,
+        "loadEventEnd": 4492.199999988079,
+        "type": "navigate",
+        "redirectCount": 0,
+        "activationStart": 0,
+        "criticalCHRestart": 0,
+        "notRestoredReasons": null,
+        "confidence": {
+          "randomizedTriggerRate": 0.4994798,
+          "value": "high"
+        }
+      }
+    },
+    {
+      "path": "/",
+      "run": 3,
+      "lcp": 4284,
+      "lcpElement": "IMG",
+      "cls": 0,
+      "longTasks": [
+        135
+      ],
+      "fcp": 668,
+      "resources": [
+        {
+          "url": "/media/chromatique/irises-original.jpg",
+          "type": "link",
+          "bytes": 174354,
+          "duration": 4094.5999999940395
+        },
+        {
+          "url": "/media/supermarket/architecture.svg",
+          "type": "link",
+          "bytes": 744,
+          "duration": 202.40000000596046
+        },
+        {
+          "url": "/media/chromatique/irises-nord.png",
+          "type": "link",
+          "bytes": 161408,
+          "duration": 3927.9000000059605
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fconversion-interface.png&w=750&q=75",
+          "type": "link",
+          "bytes": 6472,
+          "duration": 337.09999999403954
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "type": "link",
+          "bytes": 2352,
+          "duration": 413.2999999821186
+        },
+        {
+          "url": "/_next/static/chunks/2plfrcg2f6_ak.css",
+          "type": "link",
+          "bytes": 10692,
+          "duration": 435.09999999403954
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-original.jpg&w=750&q=75",
+          "type": "link",
+          "bytes": 64238,
+          "duration": 1954
+        },
+        {
+          "url": "/_next/static/chunks/2kjxkkhnsfwuv.js",
+          "type": "script",
+          "bytes": 7752,
+          "duration": 701.9000000059605
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "type": "script",
+          "bytes": 47040,
+          "duration": 1931.7999999821186
+        },
+        {
+          "url": "/_next/static/chunks/32-8bc_la5bzb.js",
+          "type": "script",
+          "bytes": 72246,
+          "duration": 2495.9000000059605
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+          "type": "script",
+          "bytes": 4377,
+          "duration": 1029.699999988079
+        },
+        {
+          "url": "/_next/static/chunks/12--yb3mz_k19.js",
+          "type": "script",
+          "bytes": 6055,
+          "duration": 1595.699999988079
+        },
+        {
+          "url": "/_next/static/chunks/01-fdoz1wyvuf.js",
+          "type": "script",
+          "bytes": 213,
+          "duration": 2112.7000000178814
+        },
+        {
+          "url": "/_next/static/chunks/1k8ws4wy_mqz_.js",
+          "type": "script",
+          "bytes": 13801,
+          "duration": 2129.2000000178814
+        },
+        {
+          "url": "/_next/static/chunks/3mou9oq7g37u1.js",
+          "type": "script",
+          "bytes": 8555,
+          "duration": 2304
+        },
+        {
+          "url": "/_next/static/chunks/38yk6g6jjlk_a.js",
+          "type": "script",
+          "bytes": 10607,
+          "duration": 2546.9000000059605
+        },
+        {
+          "url": "/_next/static/chunks/0wj0noag-9_fs.js",
+          "type": "script",
+          "bytes": 3612,
+          "duration": 2395.5999999940395
+        },
+        {
+          "url": "/_next/static/chunks/2dn1wguorfoo0.js",
+          "type": "script",
+          "bytes": 3728,
+          "duration": 2554.699999988079
+        },
+        {
+          "url": "/characters/fox/rest.svg",
+          "type": "img",
+          "bytes": 885,
+          "duration": 743.1999999880791
+        },
+        {
+          "url": "/media/imagegonord/introduction.png",
+          "type": "img",
+          "bytes": 34332,
+          "duration": 3153.2000000178814
+        },
+        {
+          "url": "/media/imagegonord/conversion-interface.png",
+          "type": "img",
+          "bytes": 42139,
+          "duration": 3184.0999999940395
+        },
+        {
+          "url": "/media/imagegonord/palette-controls.png",
+          "type": "img",
+          "bytes": 29983,
+          "duration": 3114.4000000059605
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fintroduction.png&w=750&q=75",
+          "type": "img",
+          "bytes": 6994,
+          "duration": 2136.4000000059605
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fpalette-controls.png&w=750&q=75",
+          "type": "img",
+          "bytes": 8972,
+          "duration": 2602.300000011921
+        },
+        {
+          "url": "/?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 166,
+          "duration": 841.1999999880791
+        },
+        {
+          "url": "/work?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 916.0999999940395
+        },
+        {
+          "url": "/blog?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 930.5999999940395
+        },
+        {
+          "url": "/play?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 960
+        },
+        {
+          "url": "/about?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 183,
+          "duration": 231.40000000596046
+        },
+        {
+          "url": "/work?_rsc=w8QaQBDeNiATQLUS",
+          "type": "fetch",
+          "bytes": 5838,
+          "duration": 244.5
+        },
+        {
+          "url": "/blog?_rsc=Npvf18QV6N2pz_RZ",
+          "type": "fetch",
+          "bytes": 646,
+          "duration": 164.40000000596046
+        },
+        {
+          "url": "/play?_rsc=PegjG-Ni8kbs15L_",
+          "type": "fetch",
+          "bytes": 4377,
+          "duration": 248.5
+        },
+        {
+          "url": "/about?_rsc=hzcUC6YqarYE9pKE",
+          "type": "fetch",
+          "bytes": 3333,
+          "duration": 224.90000000596046
+        },
+        {
+          "url": "/_next/static/chunks/0y8s02wt2-v9n.js",
+          "type": "script",
+          "bytes": 14333,
+          "duration": 269
+        },
+        {
+          "url": "/_next/static/chunks/26x-4nqan8_un.js",
+          "type": "script",
+          "bytes": 5653,
+          "duration": 224.5
+        }
+      ],
+      "fonts": 0,
+      "images": [
+        {
+          "url": "/characters/fox/rest.svg",
+          "displayed": 48,
+          "natural": 192,
+          "loading": "lazy"
+        },
+        {
+          "url": "/media/chromatique/irises-original.jpg",
+          "displayed": 390,
+          "natural": 1024,
+          "loading": "eager"
+        },
+        {
+          "url": "/media/chromatique/irises-nord.png",
+          "displayed": 390,
+          "natural": 1024,
+          "loading": "eager"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fconversion-interface.png&w=750&q=75",
+          "displayed": 308,
+          "natural": 331,
+          "loading": "eager"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fintroduction.png&w=750&q=75",
+          "displayed": 308,
+          "natural": 331,
+          "loading": "lazy"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fpalette-controls.png&w=750&q=75",
+          "displayed": 308,
+          "natural": 115,
+          "loading": "lazy"
+        },
+        {
+          "url": "/media/supermarket/architecture.svg",
+          "displayed": 350,
+          "natural": 1200,
+          "loading": "eager"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-original.jpg&w=750&q=75",
+          "displayed": 308,
+          "natural": 331,
+          "loading": "eager"
+        },
+        {
+          "url": "",
+          "displayed": 308,
+          "natural": 0,
+          "loading": "lazy"
+        }
+      ],
+      "navigation": {
+        "name": "http://127.0.0.1:3109/",
+        "entryType": "navigation",
+        "startTime": 0,
+        "duration": 4509.300000011921,
+        "navigationId": 1021,
+        "initiatorType": "navigation",
+        "deliveryType": "",
+        "nextHopProtocol": "http/1.1",
+        "renderBlockingStatus": "non-blocking",
+        "contentType": "text/html",
+        "contentEncoding": "gzip",
+        "workerStart": 0,
+        "workerRouterEvaluationStart": 0,
+        "workerCacheLookupStart": 0,
+        "workerMatchedSourceType": "",
+        "workerFinalSourceType": "",
+        "redirectStart": 0,
+        "redirectEnd": 0,
+        "fetchStart": 0,
+        "domainLookupStart": 0.5,
+        "domainLookupEnd": 0.5999999940395355,
+        "connectStart": 0.5999999940395355,
+        "secureConnectionStart": 0,
+        "connectEnd": 0.699999988079071,
+        "requestStart": 0.800000011920929,
+        "responseStart": 151,
+        "firstInterimResponseStart": 0,
+        "finalResponseHeadersStart": 151,
+        "responseEnd": 233.69999998807907,
+        "transferSize": 14791,
+        "encodedBodySize": 14491,
+        "decodedBodySize": 85383,
+        "responseStatus": 200,
+        "serverTiming": [],
+        "unloadEventStart": 0,
+        "unloadEventEnd": 0,
+        "domInteractive": 678.3000000119209,
+        "domContentLoadedEventStart": 678.3000000119209,
+        "domContentLoadedEventEnd": 678.3000000119209,
+        "domComplete": 4508.5,
+        "loadEventStart": 4509.300000011921,
+        "loadEventEnd": 4509.300000011921,
+        "type": "navigate",
+        "redirectCount": 0,
+        "activationStart": 0,
+        "criticalCHRestart": 0,
+        "notRestoredReasons": null,
+        "confidence": {
+          "randomizedTriggerRate": 0.4994798,
+          "value": "high"
+        }
+      }
+    },
+    {
+      "path": "/work",
+      "run": 1,
+      "lcp": 644,
+      "lcpElement": "P",
+      "cls": 0,
+      "longTasks": [
+        127,
+        59,
+        172
+      ],
+      "fcp": 644,
+      "resources": [
+        {
+          "url": "/media/supermarket/architecture.svg",
+          "type": "link",
+          "bytes": 744,
+          "duration": 158.39999997615814
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fconversion-interface.png&w=750&q=75",
+          "type": "link",
+          "bytes": 6472,
+          "duration": 272.90000000596046
+        },
+        {
+          "url": "/_next/static/chunks/2plfrcg2f6_ak.css",
+          "type": "link",
+          "bytes": 10692,
+          "duration": 387.59999999403954
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-original.jpg&w=750&q=75",
+          "type": "link",
+          "bytes": 64238,
+          "duration": 1721.2999999821186
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "type": "link",
+          "bytes": 2352,
+          "duration": 217.90000000596046
+        },
+        {
+          "url": "/_next/static/chunks/2kjxkkhnsfwuv.js",
+          "type": "script",
+          "bytes": 7752,
+          "duration": 370
+        },
+        {
+          "url": "/_next/static/chunks/32-8bc_la5bzb.js",
+          "type": "script",
+          "bytes": 72246,
+          "duration": 2072.5999999940395
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+          "type": "script",
+          "bytes": 4377,
+          "duration": 538.6999999880791
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "type": "script",
+          "bytes": 47040,
+          "duration": 1522.2999999821186
+        },
+        {
+          "url": "/_next/static/chunks/12--yb3mz_k19.js",
+          "type": "script",
+          "bytes": 6055,
+          "duration": 706
+        },
+        {
+          "url": "/_next/static/chunks/1k8ws4wy_mqz_.js",
+          "type": "script",
+          "bytes": 13801,
+          "duration": 934.3000000119209
+        },
+        {
+          "url": "/_next/static/chunks/0wj0noag-9_fs.js",
+          "type": "script",
+          "bytes": 3612,
+          "duration": 981
+        },
+        {
+          "url": "/_next/static/chunks/38yk6g6jjlk_a.js",
+          "type": "script",
+          "bytes": 10607,
+          "duration": 1011.5999999940395
+        },
+        {
+          "url": "/_next/static/chunks/2dn1wguorfoo0.js",
+          "type": "script",
+          "bytes": 3728,
+          "duration": 1179.5
+        },
+        {
+          "url": "/media/imagegonord/introduction.png",
+          "type": "img",
+          "bytes": 34332,
+          "duration": 1657.699999988079
+        },
+        {
+          "url": "/media/imagegonord/conversion-interface.png",
+          "type": "img",
+          "bytes": 42139,
+          "duration": 1719.5
+        },
+        {
+          "url": "/media/imagegonord/palette-controls.png",
+          "type": "img",
+          "bytes": 29983,
+          "duration": 1696.0999999940395
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fintroduction.png&w=750&q=75",
+          "type": "img",
+          "bytes": 6994,
+          "duration": 1167.2000000178814
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fpalette-controls.png&w=750&q=75",
+          "type": "img",
+          "bytes": 8972,
+          "duration": 1427.300000011921
+        },
+        {
+          "url": "/?_rsc=2w9-JQzBEdMnhII4",
+          "type": "fetch",
+          "bytes": 166,
+          "duration": 156.39999997615814
+        },
+        {
+          "url": "/work?_rsc=2w9-JQzBEdMnhII4",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 160.30000001192093
+        },
+        {
+          "url": "/blog?_rsc=2w9-JQzBEdMnhII4",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 167.59999999403954
+        },
+        {
+          "url": "/play?_rsc=2w9-JQzBEdMnhII4",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 174.90000000596046
+        },
+        {
+          "url": "/about?_rsc=2w9-JQzBEdMnhII4",
+          "type": "fetch",
+          "bytes": 183,
+          "duration": 155.19999998807907
+        },
+        {
+          "url": "/?_rsc=q1vWSaOy6B75S8Zt",
+          "type": "fetch",
+          "bytes": 5514,
+          "duration": 206.7000000178814
+        },
+        {
+          "url": "/blog?_rsc=dY9ZXQrg5D5OxTrA",
+          "type": "fetch",
+          "bytes": 646,
+          "duration": 163.59999999403954
+        },
+        {
+          "url": "/play?_rsc=ZNOYImMjba6BdxGH",
+          "type": "fetch",
+          "bytes": 4377,
+          "duration": 210
+        },
+        {
+          "url": "/about?_rsc=DWhRfLNBMUooaPKd",
+          "type": "fetch",
+          "bytes": 3333,
+          "duration": 171.69999998807907
+        },
+        {
+          "url": "/_next/static/chunks/01-fdoz1wyvuf.js",
+          "type": "script",
+          "bytes": 213,
+          "duration": 155.89999997615814
+        },
+        {
+          "url": "/_next/static/chunks/3mou9oq7g37u1.js",
+          "type": "script",
+          "bytes": 8555,
+          "duration": 240.5
+        },
+        {
+          "url": "/_next/static/chunks/0y8s02wt2-v9n.js",
+          "type": "script",
+          "bytes": 14333,
+          "duration": 303.80000001192093
+        },
+        {
+          "url": "/_next/static/chunks/26x-4nqan8_un.js",
+          "type": "script",
+          "bytes": 5653,
+          "duration": 227.59999999403954
+        }
+      ],
+      "fonts": 0,
+      "images": [
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fconversion-interface.png&w=750&q=75",
+          "displayed": 308,
+          "natural": 331,
+          "loading": "eager"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fintroduction.png&w=750&q=75",
+          "displayed": 308,
+          "natural": 331,
+          "loading": "lazy"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fpalette-controls.png&w=750&q=75",
+          "displayed": 308,
+          "natural": 115,
+          "loading": "lazy"
+        },
+        {
+          "url": "/media/supermarket/architecture.svg",
+          "displayed": 350,
+          "natural": 1200,
+          "loading": "eager"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-original.jpg&w=750&q=75",
+          "displayed": 308,
+          "natural": 331,
+          "loading": "eager"
+        },
+        {
+          "url": "",
+          "displayed": 308,
+          "natural": 0,
+          "loading": "lazy"
+        }
+      ],
+      "navigation": {
+        "name": "http://127.0.0.1:3109/work",
+        "entryType": "navigation",
+        "startTime": 0,
+        "duration": 2443.600000023842,
+        "navigationId": 7971,
+        "initiatorType": "navigation",
+        "deliveryType": "",
+        "nextHopProtocol": "http/1.1",
+        "renderBlockingStatus": "non-blocking",
+        "contentType": "text/html",
+        "contentEncoding": "gzip",
+        "workerStart": 0,
+        "workerRouterEvaluationStart": 0,
+        "workerCacheLookupStart": 0,
+        "workerMatchedSourceType": "",
+        "workerFinalSourceType": "",
+        "redirectStart": 0,
+        "redirectEnd": 0,
+        "fetchStart": 0.10000002384185791,
+        "domainLookupStart": 0.7000000178813934,
+        "domainLookupEnd": 1.300000011920929,
+        "connectStart": 1.300000011920929,
+        "secureConnectionStart": 0,
+        "connectEnd": 1.5,
+        "requestStart": 1.5,
+        "responseStart": 151.60000002384186,
+        "firstInterimResponseStart": 0,
+        "finalResponseHeadersStart": 151.60000002384186,
+        "responseEnd": 227,
+        "transferSize": 14030,
+        "encodedBodySize": 13730,
+        "decodedBodySize": 94721,
+        "responseStatus": 200,
+        "serverTiming": [],
+        "unloadEventStart": 0,
+        "unloadEventEnd": 0,
+        "domInteractive": 648.7000000178814,
+        "domContentLoadedEventStart": 648.7000000178814,
+        "domContentLoadedEventEnd": 648.9000000059605,
+        "domComplete": 2443.600000023842,
+        "loadEventStart": 2443.600000023842,
+        "loadEventEnd": 2443.600000023842,
+        "type": "navigate",
+        "redirectCount": 0,
+        "activationStart": 0,
+        "criticalCHRestart": 0,
+        "notRestoredReasons": null,
+        "confidence": {
+          "randomizedTriggerRate": 0.4994798,
+          "value": "high"
+        }
+      }
+    },
+    {
+      "path": "/work",
+      "run": 2,
+      "lcp": 588,
+      "lcpElement": "P",
+      "cls": 0,
+      "longTasks": [
+        94
+      ],
+      "fcp": 588,
+      "resources": [
+        {
+          "url": "/media/supermarket/architecture.svg",
+          "type": "link",
+          "bytes": 744,
+          "duration": 157.80000001192093
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fconversion-interface.png&w=750&q=75",
+          "type": "link",
+          "bytes": 6472,
+          "duration": 269.39999997615814
+        },
+        {
+          "url": "/_next/static/chunks/2plfrcg2f6_ak.css",
+          "type": "link",
+          "bytes": 10692,
+          "duration": 368.5
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-original.jpg&w=750&q=75",
+          "type": "link",
+          "bytes": 64238,
+          "duration": 1720.0999999940395
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "type": "link",
+          "bytes": 2352,
+          "duration": 215.2000000178814
+        },
+        {
+          "url": "/_next/static/chunks/2kjxkkhnsfwuv.js",
+          "type": "script",
+          "bytes": 7752,
+          "duration": 376.2000000178814
+        },
+        {
+          "url": "/_next/static/chunks/32-8bc_la5bzb.js",
+          "type": "script",
+          "bytes": 72246,
+          "duration": 2093.100000023842
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+          "type": "script",
+          "bytes": 4377,
+          "duration": 536.0999999940395
+        },
+        {
+          "url": "/_next/static/chunks/12--yb3mz_k19.js",
+          "type": "script",
+          "bytes": 6055,
+          "duration": 703.5
+        },
+        {
+          "url": "/_next/static/chunks/1k8ws4wy_mqz_.js",
+          "type": "script",
+          "bytes": 13801,
+          "duration": 917.3999999761581
+        },
+        {
+          "url": "/_next/static/chunks/0wj0noag-9_fs.js",
+          "type": "script",
+          "bytes": 3612,
+          "duration": 978.6999999880791
+        },
+        {
+          "url": "/_next/static/chunks/38yk6g6jjlk_a.js",
+          "type": "script",
+          "bytes": 10607,
+          "duration": 1000.5
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "type": "script",
+          "bytes": 47040,
+          "duration": 1519.3999999761581
+        },
+        {
+          "url": "/_next/static/chunks/2dn1wguorfoo0.js",
+          "type": "script",
+          "bytes": 3728,
+          "duration": 1153.5
+        },
+        {
+          "url": "/media/imagegonord/palette-controls.png",
+          "type": "img",
+          "bytes": 29983,
+          "duration": 1742.0999999940395
+        },
+        {
+          "url": "/media/imagegonord/introduction.png",
+          "type": "img",
+          "bytes": 34332,
+          "duration": 1719.199999988079
+        },
+        {
+          "url": "/media/imagegonord/conversion-interface.png",
+          "type": "img",
+          "bytes": 42139,
+          "duration": 1771.2999999821186
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fintroduction.png&w=750&q=75",
+          "type": "img",
+          "bytes": 6994,
+          "duration": 1189.800000011921
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fpalette-controls.png&w=750&q=75",
+          "type": "img",
+          "bytes": 8972,
+          "duration": 1449.2999999821186
+        },
+        {
+          "url": "/?_rsc=2w9-JQzBEdMnhII4",
+          "type": "fetch",
+          "bytes": 166,
+          "duration": 155.5
+        },
+        {
+          "url": "/work?_rsc=2w9-JQzBEdMnhII4",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 158.2000000178814
+        },
+        {
+          "url": "/blog?_rsc=2w9-JQzBEdMnhII4",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 165.2000000178814
+        },
+        {
+          "url": "/play?_rsc=2w9-JQzBEdMnhII4",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 172.7000000178814
+        },
+        {
+          "url": "/about?_rsc=2w9-JQzBEdMnhII4",
+          "type": "fetch",
+          "bytes": 183,
+          "duration": 155.30000001192093
+        },
+        {
+          "url": "/?_rsc=q1vWSaOy6B75S8Zt",
+          "type": "fetch",
+          "bytes": 5514,
+          "duration": 192
+        },
+        {
+          "url": "/blog?_rsc=dY9ZXQrg5D5OxTrA",
+          "type": "fetch",
+          "bytes": 646,
+          "duration": 165.10000002384186
+        },
+        {
+          "url": "/play?_rsc=ZNOYImMjba6BdxGH",
+          "type": "fetch",
+          "bytes": 4377,
+          "duration": 203.5
+        },
+        {
+          "url": "/about?_rsc=DWhRfLNBMUooaPKd",
+          "type": "fetch",
+          "bytes": 3333,
+          "duration": 172.59999999403954
+        },
+        {
+          "url": "/_next/static/chunks/01-fdoz1wyvuf.js",
+          "type": "script",
+          "bytes": 213,
+          "duration": 158
+        },
+        {
+          "url": "/_next/static/chunks/3mou9oq7g37u1.js",
+          "type": "script",
+          "bytes": 8555,
+          "duration": 233.69999998807907
+        },
+        {
+          "url": "/_next/static/chunks/0y8s02wt2-v9n.js",
+          "type": "script",
+          "bytes": 14333,
+          "duration": 266.10000002384186
+        },
+        {
+          "url": "/_next/static/chunks/26x-4nqan8_un.js",
+          "type": "script",
+          "bytes": 5653,
+          "duration": 197.2000000178814
+        }
+      ],
+      "fonts": 0,
+      "images": [
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fconversion-interface.png&w=750&q=75",
+          "displayed": 308,
+          "natural": 331,
+          "loading": "eager"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fintroduction.png&w=750&q=75",
+          "displayed": 308,
+          "natural": 331,
+          "loading": "lazy"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fpalette-controls.png&w=750&q=75",
+          "displayed": 308,
+          "natural": 115,
+          "loading": "lazy"
+        },
+        {
+          "url": "/media/supermarket/architecture.svg",
+          "displayed": 350,
+          "natural": 1200,
+          "loading": "eager"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-original.jpg&w=750&q=75",
+          "displayed": 308,
+          "natural": 331,
+          "loading": "eager"
+        },
+        {
+          "url": "",
+          "displayed": 308,
+          "natural": 0,
+          "loading": "lazy"
+        }
+      ],
+      "navigation": {
+        "name": "http://127.0.0.1:3109/work",
+        "entryType": "navigation",
+        "startTime": 0,
+        "duration": 2385.5999999940395,
+        "navigationId": 4155,
+        "initiatorType": "navigation",
+        "deliveryType": "",
+        "nextHopProtocol": "http/1.1",
+        "renderBlockingStatus": "non-blocking",
+        "contentType": "text/html",
+        "contentEncoding": "gzip",
+        "workerStart": 0,
+        "workerRouterEvaluationStart": 0,
+        "workerCacheLookupStart": 0,
+        "workerMatchedSourceType": "",
+        "workerFinalSourceType": "",
+        "redirectStart": 0,
+        "redirectEnd": 0,
+        "fetchStart": 0.09999999403953552,
+        "domainLookupStart": 0.5,
+        "domainLookupEnd": 0.800000011920929,
+        "connectStart": 0.800000011920929,
+        "secureConnectionStart": 0,
+        "connectEnd": 1,
+        "requestStart": 1.0999999940395355,
+        "responseStart": 151.09999999403954,
+        "firstInterimResponseStart": 0,
+        "finalResponseHeadersStart": 151.09999999403954,
+        "responseEnd": 232.80000001192093,
+        "transferSize": 14030,
+        "encodedBodySize": 13730,
+        "decodedBodySize": 94721,
+        "responseStatus": 200,
+        "serverTiming": [],
+        "unloadEventStart": 0,
+        "unloadEventEnd": 0,
+        "domInteractive": 593.3000000119209,
+        "domContentLoadedEventStart": 593.3000000119209,
+        "domContentLoadedEventEnd": 593.3000000119209,
+        "domComplete": 2385.5999999940395,
+        "loadEventStart": 2385.5999999940395,
+        "loadEventEnd": 2385.5999999940395,
+        "type": "navigate",
+        "redirectCount": 0,
+        "activationStart": 0,
+        "criticalCHRestart": 0,
+        "notRestoredReasons": null,
+        "confidence": {
+          "randomizedTriggerRate": 0.4994798,
+          "value": "high"
+        }
+      }
+    },
+    {
+      "path": "/work",
+      "run": 3,
+      "lcp": 580,
+      "lcpElement": "P",
+      "cls": 0,
+      "longTasks": [
+        99
+      ],
+      "fcp": 580,
+      "resources": [
+        {
+          "url": "/media/supermarket/architecture.svg",
+          "type": "link",
+          "bytes": 744,
+          "duration": 160.39999997615814
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fconversion-interface.png&w=750&q=75",
+          "type": "link",
+          "bytes": 6472,
+          "duration": 281.90000000596046
+        },
+        {
+          "url": "/_next/static/chunks/2plfrcg2f6_ak.css",
+          "type": "link",
+          "bytes": 10692,
+          "duration": 374
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-original.jpg&w=750&q=75",
+          "type": "link",
+          "bytes": 64238,
+          "duration": 1723.5
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "type": "link",
+          "bytes": 2352,
+          "duration": 213.80000001192093
+        },
+        {
+          "url": "/_next/static/chunks/2kjxkkhnsfwuv.js",
+          "type": "script",
+          "bytes": 7752,
+          "duration": 381.09999999403954
+        },
+        {
+          "url": "/_next/static/chunks/32-8bc_la5bzb.js",
+          "type": "script",
+          "bytes": 72246,
+          "duration": 2105.5
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+          "type": "script",
+          "bytes": 4377,
+          "duration": 547.8000000119209
+        },
+        {
+          "url": "/_next/static/chunks/12--yb3mz_k19.js",
+          "type": "script",
+          "bytes": 6055,
+          "duration": 709.2000000178814
+        },
+        {
+          "url": "/_next/static/chunks/1k8ws4wy_mqz_.js",
+          "type": "script",
+          "bytes": 13801,
+          "duration": 921
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "type": "script",
+          "bytes": 47040,
+          "duration": 1516.7000000178814
+        },
+        {
+          "url": "/_next/static/chunks/38yk6g6jjlk_a.js",
+          "type": "script",
+          "bytes": 10607,
+          "duration": 1014
+        },
+        {
+          "url": "/_next/static/chunks/0wj0noag-9_fs.js",
+          "type": "script",
+          "bytes": 3612,
+          "duration": 983.2999999821186
+        },
+        {
+          "url": "/_next/static/chunks/2dn1wguorfoo0.js",
+          "type": "script",
+          "bytes": 3728,
+          "duration": 1158
+        },
+        {
+          "url": "/media/imagegonord/conversion-interface.png",
+          "type": "img",
+          "bytes": 42139,
+          "duration": 1769.0999999940395
+        },
+        {
+          "url": "/media/imagegonord/palette-controls.png",
+          "type": "img",
+          "bytes": 29983,
+          "duration": 1737.9000000059605
+        },
+        {
+          "url": "/media/imagegonord/introduction.png",
+          "type": "img",
+          "bytes": 34332,
+          "duration": 1716.300000011921
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fintroduction.png&w=750&q=75",
+          "type": "img",
+          "bytes": 6994,
+          "duration": 1151.2999999821186
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fpalette-controls.png&w=750&q=75",
+          "type": "img",
+          "bytes": 8972,
+          "duration": 1419.5999999940395
+        },
+        {
+          "url": "/?_rsc=2w9-JQzBEdMnhII4",
+          "type": "fetch",
+          "bytes": 166,
+          "duration": 154.30000001192093
+        },
+        {
+          "url": "/work?_rsc=2w9-JQzBEdMnhII4",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 161.5
+        },
+        {
+          "url": "/blog?_rsc=2w9-JQzBEdMnhII4",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 169.19999998807907
+        },
+        {
+          "url": "/play?_rsc=2w9-JQzBEdMnhII4",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 177.2999999821186
+        },
+        {
+          "url": "/about?_rsc=2w9-JQzBEdMnhII4",
+          "type": "fetch",
+          "bytes": 183,
+          "duration": 155.40000000596046
+        },
+        {
+          "url": "/?_rsc=q1vWSaOy6B75S8Zt",
+          "type": "fetch",
+          "bytes": 5514,
+          "duration": 194.40000000596046
+        },
+        {
+          "url": "/blog?_rsc=dY9ZXQrg5D5OxTrA",
+          "type": "fetch",
+          "bytes": 646,
+          "duration": 165.09999999403954
+        },
+        {
+          "url": "/play?_rsc=ZNOYImMjba6BdxGH",
+          "type": "fetch",
+          "bytes": 4377,
+          "duration": 202.19999998807907
+        },
+        {
+          "url": "/about?_rsc=DWhRfLNBMUooaPKd",
+          "type": "fetch",
+          "bytes": 3333,
+          "duration": 173.5
+        },
+        {
+          "url": "/_next/static/chunks/01-fdoz1wyvuf.js",
+          "type": "script",
+          "bytes": 213,
+          "duration": 163.39999997615814
+        },
+        {
+          "url": "/_next/static/chunks/3mou9oq7g37u1.js",
+          "type": "script",
+          "bytes": 8555,
+          "duration": 249.2999999821186
+        },
+        {
+          "url": "/_next/static/chunks/0y8s02wt2-v9n.js",
+          "type": "script",
+          "bytes": 14333,
+          "duration": 265.80000001192093
+        },
+        {
+          "url": "/_next/static/chunks/26x-4nqan8_un.js",
+          "type": "script",
+          "bytes": 5653,
+          "duration": 196.5
+        }
+      ],
+      "fonts": 0,
+      "images": [
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fconversion-interface.png&w=750&q=75",
+          "displayed": 308,
+          "natural": 331,
+          "loading": "eager"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fintroduction.png&w=750&q=75",
+          "displayed": 308,
+          "natural": 331,
+          "loading": "lazy"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fpalette-controls.png&w=750&q=75",
+          "displayed": 308,
+          "natural": 115,
+          "loading": "lazy"
+        },
+        {
+          "url": "/media/supermarket/architecture.svg",
+          "displayed": 350,
+          "natural": 1200,
+          "loading": "eager"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-original.jpg&w=750&q=75",
+          "displayed": 308,
+          "natural": 331,
+          "loading": "eager"
+        },
+        {
+          "url": "",
+          "displayed": 308,
+          "natural": 0,
+          "loading": "lazy"
+        }
+      ],
+      "navigation": {
+        "name": "http://127.0.0.1:3109/work",
+        "entryType": "navigation",
+        "startTime": 0,
+        "duration": 2392.0999999940395,
+        "navigationId": 4211,
+        "initiatorType": "navigation",
+        "deliveryType": "",
+        "nextHopProtocol": "http/1.1",
+        "renderBlockingStatus": "non-blocking",
+        "contentType": "text/html",
+        "contentEncoding": "gzip",
+        "workerStart": 0,
+        "workerRouterEvaluationStart": 0,
+        "workerCacheLookupStart": 0,
+        "workerMatchedSourceType": "",
+        "workerFinalSourceType": "",
+        "redirectStart": 0,
+        "redirectEnd": 0,
+        "fetchStart": 0.09999999403953552,
+        "domainLookupStart": 0.4000000059604645,
+        "domainLookupEnd": 0.5999999940395355,
+        "connectStart": 0.5999999940395355,
+        "secureConnectionStart": 0,
+        "connectEnd": 0.699999988079071,
+        "requestStart": 0.699999988079071,
+        "responseStart": 150.7999999821186,
+        "firstInterimResponseStart": 0,
+        "finalResponseHeadersStart": 150.7999999821186,
+        "responseEnd": 226.59999999403954,
+        "transferSize": 14030,
+        "encodedBodySize": 13730,
+        "decodedBodySize": 94721,
+        "responseStatus": 200,
+        "serverTiming": [],
+        "unloadEventStart": 0,
+        "unloadEventEnd": 0,
+        "domInteractive": 590.5,
+        "domContentLoadedEventStart": 590.5,
+        "domContentLoadedEventEnd": 590.5,
+        "domComplete": 2392.0999999940395,
+        "loadEventStart": 2392.0999999940395,
+        "loadEventEnd": 2392.0999999940395,
+        "type": "navigate",
+        "redirectCount": 0,
+        "activationStart": 0,
+        "criticalCHRestart": 0,
+        "notRestoredReasons": null,
+        "confidence": {
+          "randomizedTriggerRate": 0.4994798,
+          "value": "high"
+        }
+      }
+    },
+    {
+      "path": "/play",
+      "run": 1,
+      "lcp": 3348,
+      "lcpElement": "IMG",
+      "cls": 0,
+      "longTasks": [
+        101
+      ],
+      "fcp": 688,
+      "resources": [
+        {
+          "url": "/media/chromatique/irises-original.jpg",
+          "type": "link",
+          "bytes": 174354,
+          "duration": 3170.9000000059605
+        },
+        {
+          "url": "/media/chromatique/irises-nord.png",
+          "type": "link",
+          "bytes": 161408,
+          "duration": 3103.4000000059605
+        },
+        {
+          "url": "/_next/static/chunks/2plfrcg2f6_ak.css",
+          "type": "link",
+          "bytes": 10692,
+          "duration": 444.30000001192093
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "type": "link",
+          "bytes": 2352,
+          "duration": 231.2999999821186
+        },
+        {
+          "url": "/_next/static/chunks/2kjxkkhnsfwuv.js",
+          "type": "script",
+          "bytes": 7752,
+          "duration": 390.40000000596046
+        },
+        {
+          "url": "/_next/static/chunks/32-8bc_la5bzb.js",
+          "type": "script",
+          "bytes": 72246,
+          "duration": 1932.5
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+          "type": "script",
+          "bytes": 4377,
+          "duration": 703.5999999940395
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "type": "script",
+          "bytes": 47040,
+          "duration": 1604
+        },
+        {
+          "url": "/_next/static/chunks/12--yb3mz_k19.js",
+          "type": "script",
+          "bytes": 6055,
+          "duration": 801.7999999821186
+        },
+        {
+          "url": "/_next/static/chunks/01-fdoz1wyvuf.js",
+          "type": "script",
+          "bytes": 213,
+          "duration": 1183.3999999761581
+        },
+        {
+          "url": "/_next/static/chunks/1k8ws4wy_mqz_.js",
+          "type": "script",
+          "bytes": 13801,
+          "duration": 1243.5999999940395
+        },
+        {
+          "url": "/_next/static/chunks/0wj0noag-9_fs.js",
+          "type": "script",
+          "bytes": 3612,
+          "duration": 1526
+        },
+        {
+          "url": "/_next/static/chunks/0y8s02wt2-v9n.js",
+          "type": "script",
+          "bytes": 14333,
+          "duration": 1716.8999999761581
+        },
+        {
+          "url": "/_next/static/chunks/2dn1wguorfoo0.js",
+          "type": "script",
+          "bytes": 3728,
+          "duration": 1777.5
+        },
+        {
+          "url": "/characters/fox/rest.svg",
+          "type": "img",
+          "bytes": 885,
+          "duration": 504.10000002384186
+        },
+        {
+          "url": "/?_rsc=Wo5TOlOgpSQutS66",
+          "type": "fetch",
+          "bytes": 166,
+          "duration": 169.30000001192093
+        },
+        {
+          "url": "/work?_rsc=Wo5TOlOgpSQutS66",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 173.59999999403954
+        },
+        {
+          "url": "/blog?_rsc=Wo5TOlOgpSQutS66",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 180.10000002384186
+        },
+        {
+          "url": "/play?_rsc=Wo5TOlOgpSQutS66",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 187.80000001192093
+        },
+        {
+          "url": "/about?_rsc=Wo5TOlOgpSQutS66",
+          "type": "fetch",
+          "bytes": 183,
+          "duration": 169.7999999821186
+        },
+        {
+          "url": "/work?_rsc=UdxZ98uBZMbkv2tP",
+          "type": "fetch",
+          "bytes": 5838,
+          "duration": 306.7999999821186
+        },
+        {
+          "url": "/blog?_rsc=tckT2x9pUr3ZJq4r",
+          "type": "fetch",
+          "bytes": 646,
+          "duration": 180.90000000596046
+        },
+        {
+          "url": "/?_rsc=LffFfAWQz7T_n4BJ",
+          "type": "fetch",
+          "bytes": 5514,
+          "duration": 279.5
+        },
+        {
+          "url": "/about?_rsc=0dTM-NjzfZUdfsrZ",
+          "type": "fetch",
+          "bytes": 3333,
+          "duration": 218
+        },
+        {
+          "url": "/_next/static/chunks/3mou9oq7g37u1.js",
+          "type": "script",
+          "bytes": 8555,
+          "duration": 348.69999998807907
+        },
+        {
+          "url": "/_next/static/chunks/38yk6g6jjlk_a.js",
+          "type": "script",
+          "bytes": 10607,
+          "duration": 415.5
+        },
+        {
+          "url": "/_next/static/chunks/26x-4nqan8_un.js",
+          "type": "script",
+          "bytes": 5653,
+          "duration": 326.19999998807907
+        }
+      ],
+      "fonts": 0,
+      "images": [
+        {
+          "url": "/characters/fox/rest.svg",
+          "displayed": 48,
+          "natural": 192,
+          "loading": "lazy"
+        },
+        {
+          "url": "/media/chromatique/irises-original.jpg",
+          "displayed": 390,
+          "natural": 1024,
+          "loading": "eager"
+        },
+        {
+          "url": "/media/chromatique/irises-nord.png",
+          "displayed": 390,
+          "natural": 1024,
+          "loading": "eager"
+        }
+      ],
+      "navigation": {
+        "name": "http://127.0.0.1:3109/play",
+        "entryType": "navigation",
+        "startTime": 0,
+        "duration": 3339.2000000178814,
+        "navigationId": 4412,
+        "initiatorType": "navigation",
+        "deliveryType": "",
+        "nextHopProtocol": "http/1.1",
+        "renderBlockingStatus": "non-blocking",
+        "contentType": "text/html",
+        "contentEncoding": "gzip",
+        "workerStart": 0,
+        "workerRouterEvaluationStart": 0,
+        "workerCacheLookupStart": 0,
+        "workerMatchedSourceType": "",
+        "workerFinalSourceType": "",
+        "redirectStart": 0,
+        "redirectEnd": 0,
+        "fetchStart": 0.09999999403953552,
+        "domainLookupStart": 0.5999999940395355,
+        "domainLookupEnd": 0.800000011920929,
+        "connectStart": 0.800000011920929,
+        "secureConnectionStart": 0,
+        "connectEnd": 1,
+        "requestStart": 1,
+        "responseStart": 151.09999999403954,
+        "firstInterimResponseStart": 0,
+        "finalResponseHeadersStart": 151.09999999403954,
+        "responseEnd": 203.2000000178814,
+        "transferSize": 9663,
+        "encodedBodySize": 9363,
+        "decodedBodySize": 55125,
+        "responseStatus": 200,
+        "serverTiming": [],
+        "unloadEventStart": 0,
+        "unloadEventEnd": 0,
+        "domInteractive": 676.0999999940395,
+        "domContentLoadedEventStart": 676.0999999940395,
+        "domContentLoadedEventEnd": 676.0999999940395,
+        "domComplete": 3339.2000000178814,
+        "loadEventStart": 3339.2000000178814,
+        "loadEventEnd": 3339.2000000178814,
+        "type": "navigate",
+        "redirectCount": 0,
+        "activationStart": 0,
+        "criticalCHRestart": 0,
+        "notRestoredReasons": null,
+        "confidence": {
+          "randomizedTriggerRate": 0.4994798,
+          "value": "high"
+        }
+      }
+    },
+    {
+      "path": "/play",
+      "run": 2,
+      "lcp": 3348,
+      "lcpElement": "IMG",
+      "cls": 0,
+      "longTasks": [
+        99
+      ],
+      "fcp": 704,
+      "resources": [
+        {
+          "url": "/media/chromatique/irises-original.jpg",
+          "type": "link",
+          "bytes": 174354,
+          "duration": 3174.5999999940395
+        },
+        {
+          "url": "/media/chromatique/irises-nord.png",
+          "type": "link",
+          "bytes": 161408,
+          "duration": 3105.199999988079
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "type": "link",
+          "bytes": 2352,
+          "duration": 213.39999997615814
+        },
+        {
+          "url": "/_next/static/chunks/2kjxkkhnsfwuv.js",
+          "type": "script",
+          "bytes": 7752,
+          "duration": 380.69999998807907
+        },
+        {
+          "url": "/_next/static/chunks/2plfrcg2f6_ak.css",
+          "type": "link",
+          "bytes": 10692,
+          "duration": 435.09999999403954
+        },
+        {
+          "url": "/_next/static/chunks/32-8bc_la5bzb.js",
+          "type": "script",
+          "bytes": 72246,
+          "duration": 1928.199999988079
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+          "type": "script",
+          "bytes": 4377,
+          "duration": 692.6999999880791
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "type": "script",
+          "bytes": 47040,
+          "duration": 1700.5999999940395
+        },
+        {
+          "url": "/_next/static/chunks/12--yb3mz_k19.js",
+          "type": "script",
+          "bytes": 6055,
+          "duration": 792.6999999880791
+        },
+        {
+          "url": "/_next/static/chunks/01-fdoz1wyvuf.js",
+          "type": "script",
+          "bytes": 213,
+          "duration": 983.6999999880791
+        },
+        {
+          "url": "/_next/static/chunks/1k8ws4wy_mqz_.js",
+          "type": "script",
+          "bytes": 13801,
+          "duration": 1234.5
+        },
+        {
+          "url": "/_next/static/chunks/0wj0noag-9_fs.js",
+          "type": "script",
+          "bytes": 3612,
+          "duration": 1517
+        },
+        {
+          "url": "/_next/static/chunks/0y8s02wt2-v9n.js",
+          "type": "script",
+          "bytes": 14333,
+          "duration": 1731.300000011921
+        },
+        {
+          "url": "/_next/static/chunks/2dn1wguorfoo0.js",
+          "type": "script",
+          "bytes": 3728,
+          "duration": 1775.5
+        },
+        {
+          "url": "/characters/fox/rest.svg",
+          "type": "img",
+          "bytes": 885,
+          "duration": 663.3000000119209
+        },
+        {
+          "url": "/?_rsc=Wo5TOlOgpSQutS66",
+          "type": "fetch",
+          "bytes": 166,
+          "duration": 168.30000001192093
+        },
+        {
+          "url": "/work?_rsc=Wo5TOlOgpSQutS66",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 173.5
+        },
+        {
+          "url": "/blog?_rsc=Wo5TOlOgpSQutS66",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 181.09999999403954
+        },
+        {
+          "url": "/play?_rsc=Wo5TOlOgpSQutS66",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 189.09999999403954
+        },
+        {
+          "url": "/about?_rsc=Wo5TOlOgpSQutS66",
+          "type": "fetch",
+          "bytes": 183,
+          "duration": 172.19999998807907
+        },
+        {
+          "url": "/work?_rsc=UdxZ98uBZMbkv2tP",
+          "type": "fetch",
+          "bytes": 5838,
+          "duration": 300.59999999403954
+        },
+        {
+          "url": "/blog?_rsc=tckT2x9pUr3ZJq4r",
+          "type": "fetch",
+          "bytes": 646,
+          "duration": 180.59999999403954
+        },
+        {
+          "url": "/?_rsc=LffFfAWQz7T_n4BJ",
+          "type": "fetch",
+          "bytes": 5514,
+          "duration": 278.2000000178814
+        },
+        {
+          "url": "/about?_rsc=0dTM-NjzfZUdfsrZ",
+          "type": "fetch",
+          "bytes": 3333,
+          "duration": 217.2000000178814
+        },
+        {
+          "url": "/_next/static/chunks/3mou9oq7g37u1.js",
+          "type": "script",
+          "bytes": 8555,
+          "duration": 349.30000001192093
+        },
+        {
+          "url": "/_next/static/chunks/38yk6g6jjlk_a.js",
+          "type": "script",
+          "bytes": 10607,
+          "duration": 417.80000001192093
+        },
+        {
+          "url": "/_next/static/chunks/26x-4nqan8_un.js",
+          "type": "script",
+          "bytes": 5653,
+          "duration": 334.5
+        }
+      ],
+      "fonts": 0,
+      "images": [
+        {
+          "url": "/characters/fox/rest.svg",
+          "displayed": 48,
+          "natural": 192,
+          "loading": "lazy"
+        },
+        {
+          "url": "/media/chromatique/irises-original.jpg",
+          "displayed": 390,
+          "natural": 1024,
+          "loading": "eager"
+        },
+        {
+          "url": "/media/chromatique/irises-nord.png",
+          "displayed": 390,
+          "natural": 1024,
+          "loading": "eager"
+        }
+      ],
+      "navigation": {
+        "name": "http://127.0.0.1:3109/play",
+        "entryType": "navigation",
+        "startTime": 0,
+        "duration": 3339.600000023842,
+        "navigationId": 6223,
+        "initiatorType": "navigation",
+        "deliveryType": "",
+        "nextHopProtocol": "http/1.1",
+        "renderBlockingStatus": "non-blocking",
+        "contentType": "text/html",
+        "contentEncoding": "gzip",
+        "workerStart": 0,
+        "workerRouterEvaluationStart": 0,
+        "workerCacheLookupStart": 0,
+        "workerMatchedSourceType": "",
+        "workerFinalSourceType": "",
+        "redirectStart": 0,
+        "redirectEnd": 0,
+        "fetchStart": 0.10000002384185791,
+        "domainLookupStart": 0.4000000059604645,
+        "domainLookupEnd": 0.6000000238418579,
+        "connectStart": 0.6000000238418579,
+        "secureConnectionStart": 0,
+        "connectEnd": 0.800000011920929,
+        "requestStart": 0.800000011920929,
+        "responseStart": 150.80000001192093,
+        "firstInterimResponseStart": 0,
+        "finalResponseHeadersStart": 150.80000001192093,
+        "responseEnd": 203.7000000178814,
+        "transferSize": 9663,
+        "encodedBodySize": 9363,
+        "decodedBodySize": 55125,
+        "responseStatus": 200,
+        "serverTiming": [],
+        "unloadEventStart": 0,
+        "unloadEventEnd": 0,
+        "domInteractive": 695.5,
+        "domContentLoadedEventStart": 695.5,
+        "domContentLoadedEventEnd": 695.6000000238419,
+        "domComplete": 3339.600000023842,
+        "loadEventStart": 3339.600000023842,
+        "loadEventEnd": 3339.600000023842,
+        "type": "navigate",
+        "redirectCount": 0,
+        "activationStart": 0,
+        "criticalCHRestart": 0,
+        "notRestoredReasons": null,
+        "confidence": {
+          "randomizedTriggerRate": 0.4994798,
+          "value": "low"
+        }
+      }
+    },
+    {
+      "path": "/play",
+      "run": 3,
+      "lcp": 3348,
+      "lcpElement": "IMG",
+      "cls": 0,
+      "longTasks": [
+        100
+      ],
+      "fcp": 660,
+      "resources": [
+        {
+          "url": "/media/chromatique/irises-original.jpg",
+          "type": "link",
+          "bytes": 174354,
+          "duration": 3173.5999999940395
+        },
+        {
+          "url": "/media/chromatique/irises-nord.png",
+          "type": "link",
+          "bytes": 161408,
+          "duration": 3105.7999999821186
+        },
+        {
+          "url": "/_next/static/chunks/2plfrcg2f6_ak.css",
+          "type": "link",
+          "bytes": 10692,
+          "duration": 441.30000001192093
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "type": "link",
+          "bytes": 2352,
+          "duration": 226.60000002384186
+        },
+        {
+          "url": "/_next/static/chunks/2kjxkkhnsfwuv.js",
+          "type": "script",
+          "bytes": 7752,
+          "duration": 386.30000001192093
+        },
+        {
+          "url": "/_next/static/chunks/32-8bc_la5bzb.js",
+          "type": "script",
+          "bytes": 72246,
+          "duration": 1935.0999999940395
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+          "type": "script",
+          "bytes": 4377,
+          "duration": 699.0999999940395
+        },
+        {
+          "url": "/_next/static/chunks/12--yb3mz_k19.js",
+          "type": "script",
+          "bytes": 6055,
+          "duration": 799.2000000178814
+        },
+        {
+          "url": "/_next/static/chunks/1k8ws4wy_mqz_.js",
+          "type": "script",
+          "bytes": 13801,
+          "duration": 1240.9000000059605
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "type": "script",
+          "bytes": 47040,
+          "duration": 1599.2000000178814
+        },
+        {
+          "url": "/_next/static/chunks/01-fdoz1wyvuf.js",
+          "type": "script",
+          "bytes": 213,
+          "duration": 1179.5999999940395
+        },
+        {
+          "url": "/_next/static/chunks/0wj0noag-9_fs.js",
+          "type": "script",
+          "bytes": 3612,
+          "duration": 1523.7000000178814
+        },
+        {
+          "url": "/_next/static/chunks/0y8s02wt2-v9n.js",
+          "type": "script",
+          "bytes": 14333,
+          "duration": 1714
+        },
+        {
+          "url": "/_next/static/chunks/2dn1wguorfoo0.js",
+          "type": "script",
+          "bytes": 3728,
+          "duration": 1775.2000000178814
+        },
+        {
+          "url": "/characters/fox/rest.svg",
+          "type": "img",
+          "bytes": 885,
+          "duration": 509
+        },
+        {
+          "url": "/?_rsc=Wo5TOlOgpSQutS66",
+          "type": "fetch",
+          "bytes": 166,
+          "duration": 171.2999999821186
+        },
+        {
+          "url": "/work?_rsc=Wo5TOlOgpSQutS66",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 175.2000000178814
+        },
+        {
+          "url": "/blog?_rsc=Wo5TOlOgpSQutS66",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 181.80000001192093
+        },
+        {
+          "url": "/play?_rsc=Wo5TOlOgpSQutS66",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 189.5
+        },
+        {
+          "url": "/about?_rsc=Wo5TOlOgpSQutS66",
+          "type": "fetch",
+          "bytes": 183,
+          "duration": 167.2000000178814
+        },
+        {
+          "url": "/work?_rsc=UdxZ98uBZMbkv2tP",
+          "type": "fetch",
+          "bytes": 5838,
+          "duration": 306.7000000178814
+        },
+        {
+          "url": "/blog?_rsc=tckT2x9pUr3ZJq4r",
+          "type": "fetch",
+          "bytes": 646,
+          "duration": 180.90000000596046
+        },
+        {
+          "url": "/?_rsc=LffFfAWQz7T_n4BJ",
+          "type": "fetch",
+          "bytes": 5514,
+          "duration": 278.19999998807907
+        },
+        {
+          "url": "/about?_rsc=0dTM-NjzfZUdfsrZ",
+          "type": "fetch",
+          "bytes": 3333,
+          "duration": 218
+        },
+        {
+          "url": "/_next/static/chunks/3mou9oq7g37u1.js",
+          "type": "script",
+          "bytes": 8555,
+          "duration": 334.7000000178814
+        },
+        {
+          "url": "/_next/static/chunks/38yk6g6jjlk_a.js",
+          "type": "script",
+          "bytes": 10607,
+          "duration": 410
+        },
+        {
+          "url": "/_next/static/chunks/26x-4nqan8_un.js",
+          "type": "script",
+          "bytes": 5653,
+          "duration": 320
+        }
+      ],
+      "fonts": 0,
+      "images": [
+        {
+          "url": "/characters/fox/rest.svg",
+          "displayed": 48,
+          "natural": 192,
+          "loading": "lazy"
+        },
+        {
+          "url": "/media/chromatique/irises-original.jpg",
+          "displayed": 390,
+          "natural": 1024,
+          "loading": "eager"
+        },
+        {
+          "url": "/media/chromatique/irises-nord.png",
+          "displayed": 390,
+          "natural": 1024,
+          "loading": "eager"
+        }
+      ],
+      "navigation": {
+        "name": "http://127.0.0.1:3109/play",
+        "entryType": "navigation",
+        "startTime": 0,
+        "duration": 3340.199999988079,
+        "navigationId": 2538,
+        "initiatorType": "navigation",
+        "deliveryType": "",
+        "nextHopProtocol": "http/1.1",
+        "renderBlockingStatus": "non-blocking",
+        "contentType": "text/html",
+        "contentEncoding": "gzip",
+        "workerStart": 0,
+        "workerRouterEvaluationStart": 0,
+        "workerCacheLookupStart": 0,
+        "workerMatchedSourceType": "",
+        "workerFinalSourceType": "",
+        "redirectStart": 0,
+        "redirectEnd": 0,
+        "fetchStart": 0.09999999403953552,
+        "domainLookupStart": 0.5,
+        "domainLookupEnd": 0.699999988079071,
+        "connectStart": 0.699999988079071,
+        "secureConnectionStart": 0,
+        "connectEnd": 0.7999999821186066,
+        "requestStart": 0.7999999821186066,
+        "responseStart": 150.90000000596046,
+        "firstInterimResponseStart": 0,
+        "finalResponseHeadersStart": 150.90000000596046,
+        "responseEnd": 204.09999999403954,
+        "transferSize": 9663,
+        "encodedBodySize": 9363,
+        "decodedBodySize": 55125,
+        "responseStatus": 200,
+        "serverTiming": [],
+        "unloadEventStart": 0,
+        "unloadEventEnd": 0,
+        "domInteractive": 661,
+        "domContentLoadedEventStart": 661,
+        "domContentLoadedEventEnd": 661,
+        "domComplete": 3339.9000000059605,
+        "loadEventStart": 3339.9000000059605,
+        "loadEventEnd": 3340.199999988079,
+        "type": "navigate",
+        "redirectCount": 0,
+        "activationStart": 0,
+        "criticalCHRestart": 0,
+        "notRestoredReasons": null,
+        "confidence": {
+          "randomizedTriggerRate": 0.4994798,
+          "value": "high"
+        }
+      }
+    },
+    {
+      "path": "/about",
+      "run": 1,
+      "lcp": 644,
+      "lcpElement": "P",
+      "cls": 0,
+      "longTasks": [
+        95
+      ],
+      "fcp": 644,
+      "resources": [
+        {
+          "url": "/_next/static/chunks/2plfrcg2f6_ak.css",
+          "type": "link",
+          "bytes": 10692,
+          "duration": 427.7999999821186
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "type": "link",
+          "bytes": 2352,
+          "duration": 198.2999999821186
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+          "type": "script",
+          "bytes": 4377,
+          "duration": 319.59999999403954
+        },
+        {
+          "url": "/_next/static/chunks/2kjxkkhnsfwuv.js",
+          "type": "script",
+          "bytes": 7752,
+          "duration": 388.80000001192093
+        },
+        {
+          "url": "/_next/static/chunks/12--yb3mz_k19.js",
+          "type": "script",
+          "bytes": 6055,
+          "duration": 502
+        },
+        {
+          "url": "/_next/static/chunks/1k8ws4wy_mqz_.js",
+          "type": "script",
+          "bytes": 13801,
+          "duration": 792
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "type": "script",
+          "bytes": 47040,
+          "duration": 982.5
+        },
+        {
+          "url": "/_next/static/chunks/32-8bc_la5bzb.js",
+          "type": "script",
+          "bytes": 72246,
+          "duration": 1120.699999988079
+        },
+        {
+          "url": "/_next/static/chunks/26x-4nqan8_un.js",
+          "type": "script",
+          "bytes": 5653,
+          "duration": 717.0999999940395
+        },
+        {
+          "url": "/_next/static/chunks/0wj0noag-9_fs.js",
+          "type": "script",
+          "bytes": 3612,
+          "duration": 684.8000000119209
+        },
+        {
+          "url": "/_next/static/chunks/2dn1wguorfoo0.js",
+          "type": "script",
+          "bytes": 3728,
+          "duration": 760.5999999940395
+        },
+        {
+          "url": "/?_rsc=Sdev7PUlRw12F58X",
+          "type": "fetch",
+          "bytes": 166,
+          "duration": 152.90000000596046
+        },
+        {
+          "url": "/work?_rsc=Sdev7PUlRw12F58X",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 159.60000002384186
+        },
+        {
+          "url": "/blog?_rsc=Sdev7PUlRw12F58X",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 167.19999998807907
+        },
+        {
+          "url": "/play?_rsc=Sdev7PUlRw12F58X",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 175.19999998807907
+        },
+        {
+          "url": "/about?_rsc=Sdev7PUlRw12F58X",
+          "type": "fetch",
+          "bytes": 183,
+          "duration": 155.30000001192093
+        },
+        {
+          "url": "/?_rsc=IbqYazZHyjXYH_Ld",
+          "type": "fetch",
+          "bytes": 5514,
+          "duration": 201.59999999403954
+        },
+        {
+          "url": "/work?_rsc=mowVjYH_erLkYKsO",
+          "type": "fetch",
+          "bytes": 5838,
+          "duration": 219
+        },
+        {
+          "url": "/blog?_rsc=PvdXdD9hzpthEKPE",
+          "type": "fetch",
+          "bytes": 646,
+          "duration": 173.7999999821186
+        },
+        {
+          "url": "/play?_rsc=wZX9sy3fpurxP1rR",
+          "type": "fetch",
+          "bytes": 4377,
+          "duration": 180.69999998807907
+        },
+        {
+          "url": "/_next/static/chunks/01-fdoz1wyvuf.js",
+          "type": "script",
+          "bytes": 213,
+          "duration": 158.40000000596046
+        },
+        {
+          "url": "/_next/static/chunks/3mou9oq7g37u1.js",
+          "type": "script",
+          "bytes": 8555,
+          "duration": 240.5
+        },
+        {
+          "url": "/_next/static/chunks/38yk6g6jjlk_a.js",
+          "type": "script",
+          "bytes": 10607,
+          "duration": 263
+        },
+        {
+          "url": "/_next/static/chunks/0y8s02wt2-v9n.js",
+          "type": "script",
+          "bytes": 14333,
+          "duration": 226.39999997615814
+        }
+      ],
+      "fonts": 0,
+      "images": [],
+      "navigation": {
+        "name": "http://127.0.0.1:3109/about",
+        "entryType": "navigation",
+        "startTime": 0,
+        "duration": 1400.7999999821186,
+        "navigationId": 5635,
+        "initiatorType": "navigation",
+        "deliveryType": "",
+        "nextHopProtocol": "http/1.1",
+        "renderBlockingStatus": "non-blocking",
+        "contentType": "text/html",
+        "contentEncoding": "gzip",
+        "workerStart": 0,
+        "workerRouterEvaluationStart": 0,
+        "workerCacheLookupStart": 0,
+        "workerMatchedSourceType": "",
+        "workerFinalSourceType": "",
+        "redirectStart": 0,
+        "redirectEnd": 0,
+        "fetchStart": 0,
+        "domainLookupStart": 0.29999998211860657,
+        "domainLookupEnd": 0.5,
+        "connectStart": 0.5,
+        "secureConnectionStart": 0,
+        "connectEnd": 0.5999999940395355,
+        "requestStart": 0.5999999940395355,
+        "responseStart": 150.69999998807907,
+        "firstInterimResponseStart": 0,
+        "finalResponseHeadersStart": 150.69999998807907,
+        "responseEnd": 188,
+        "transferSize": 7050,
+        "encodedBodySize": 6750,
+        "decodedBodySize": 36933,
+        "responseStatus": 200,
+        "serverTiming": [],
+        "unloadEventStart": 0,
+        "unloadEventEnd": 0,
+        "domInteractive": 644.5,
+        "domContentLoadedEventStart": 644.5,
+        "domContentLoadedEventEnd": 644.5,
+        "domComplete": 1400.7999999821186,
+        "loadEventStart": 1400.7999999821186,
+        "loadEventEnd": 1400.7999999821186,
+        "type": "navigate",
+        "redirectCount": 0,
+        "activationStart": 0,
+        "criticalCHRestart": 0,
+        "notRestoredReasons": null,
+        "confidence": {
+          "randomizedTriggerRate": 0.4994798,
+          "value": "low"
+        }
+      }
+    },
+    {
+      "path": "/about",
+      "run": 2,
+      "lcp": 664,
+      "lcpElement": "P",
+      "cls": 0,
+      "longTasks": [
+        94
+      ],
+      "fcp": 664,
+      "resources": [
+        {
+          "url": "/_next/static/chunks/2plfrcg2f6_ak.css",
+          "type": "link",
+          "bytes": 10692,
+          "duration": 428.5
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "type": "link",
+          "bytes": 2352,
+          "duration": 168.80000001192093
+        },
+        {
+          "url": "/_next/static/chunks/2kjxkkhnsfwuv.js",
+          "type": "script",
+          "bytes": 7752,
+          "duration": 368.59999999403954
+        },
+        {
+          "url": "/_next/static/chunks/32-8bc_la5bzb.js",
+          "type": "script",
+          "bytes": 72246,
+          "duration": 1114.699999988079
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "type": "script",
+          "bytes": 47040,
+          "duration": 977.7000000178814
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+          "type": "script",
+          "bytes": 4377,
+          "duration": 314.2000000178814
+        },
+        {
+          "url": "/_next/static/chunks/12--yb3mz_k19.js",
+          "type": "script",
+          "bytes": 6055,
+          "duration": 474.5
+        },
+        {
+          "url": "/_next/static/chunks/26x-4nqan8_un.js",
+          "type": "script",
+          "bytes": 5653,
+          "duration": 687.8000000119209
+        },
+        {
+          "url": "/_next/static/chunks/1k8ws4wy_mqz_.js",
+          "type": "script",
+          "bytes": 13801,
+          "duration": 779.5
+        },
+        {
+          "url": "/_next/static/chunks/0wj0noag-9_fs.js",
+          "type": "script",
+          "bytes": 3612,
+          "duration": 695.4000000059605
+        },
+        {
+          "url": "/_next/static/chunks/2dn1wguorfoo0.js",
+          "type": "script",
+          "bytes": 3728,
+          "duration": 739.5999999940395
+        },
+        {
+          "url": "/?_rsc=Sdev7PUlRw12F58X",
+          "type": "fetch",
+          "bytes": 166,
+          "duration": 161.30000001192093
+        },
+        {
+          "url": "/work?_rsc=Sdev7PUlRw12F58X",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 168.40000000596046
+        },
+        {
+          "url": "/blog?_rsc=Sdev7PUlRw12F58X",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 175
+        },
+        {
+          "url": "/play?_rsc=Sdev7PUlRw12F58X",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 183.40000000596046
+        },
+        {
+          "url": "/about?_rsc=Sdev7PUlRw12F58X",
+          "type": "fetch",
+          "bytes": 183,
+          "duration": 162
+        },
+        {
+          "url": "/?_rsc=IbqYazZHyjXYH_Ld",
+          "type": "fetch",
+          "bytes": 5514,
+          "duration": 215.7000000178814
+        },
+        {
+          "url": "/work?_rsc=mowVjYH_erLkYKsO",
+          "type": "fetch",
+          "bytes": 5838,
+          "duration": 226
+        },
+        {
+          "url": "/blog?_rsc=PvdXdD9hzpthEKPE",
+          "type": "fetch",
+          "bytes": 646,
+          "duration": 173.59999999403954
+        },
+        {
+          "url": "/play?_rsc=wZX9sy3fpurxP1rR",
+          "type": "fetch",
+          "bytes": 4377,
+          "duration": 179.40000000596046
+        },
+        {
+          "url": "/_next/static/chunks/01-fdoz1wyvuf.js",
+          "type": "script",
+          "bytes": 213,
+          "duration": 159.59999999403954
+        },
+        {
+          "url": "/_next/static/chunks/3mou9oq7g37u1.js",
+          "type": "script",
+          "bytes": 8555,
+          "duration": 242.59999999403954
+        },
+        {
+          "url": "/_next/static/chunks/38yk6g6jjlk_a.js",
+          "type": "script",
+          "bytes": 10607,
+          "duration": 265
+        },
+        {
+          "url": "/_next/static/chunks/0y8s02wt2-v9n.js",
+          "type": "script",
+          "bytes": 14333,
+          "duration": 227.2999999821186
+        }
+      ],
+      "fonts": 0,
+      "images": [],
+      "navigation": {
+        "name": "http://127.0.0.1:3109/about",
+        "entryType": "navigation",
+        "startTime": 0,
+        "duration": 1411.5999999940395,
+        "navigationId": 9465,
+        "initiatorType": "navigation",
+        "deliveryType": "",
+        "nextHopProtocol": "http/1.1",
+        "renderBlockingStatus": "non-blocking",
+        "contentType": "text/html",
+        "contentEncoding": "gzip",
+        "workerStart": 0,
+        "workerRouterEvaluationStart": 0,
+        "workerCacheLookupStart": 0,
+        "workerMatchedSourceType": "",
+        "workerFinalSourceType": "",
+        "redirectStart": 0,
+        "redirectEnd": 0,
+        "fetchStart": 0,
+        "domainLookupStart": 0.5999999940395355,
+        "domainLookupEnd": 0.9000000059604645,
+        "connectStart": 0.9000000059604645,
+        "secureConnectionStart": 0,
+        "connectEnd": 1,
+        "requestStart": 1.0999999940395355,
+        "responseStart": 151.19999998807907,
+        "firstInterimResponseStart": 0,
+        "finalResponseHeadersStart": 151.19999998807907,
+        "responseEnd": 193.80000001192093,
+        "transferSize": 7050,
+        "encodedBodySize": 6750,
+        "decodedBodySize": 36933,
+        "responseStatus": 200,
+        "serverTiming": [],
+        "unloadEventStart": 0,
+        "unloadEventEnd": 0,
+        "domInteractive": 662.4000000059605,
+        "domContentLoadedEventStart": 662.4000000059605,
+        "domContentLoadedEventEnd": 662.5999999940395,
+        "domComplete": 1411.5999999940395,
+        "loadEventStart": 1411.5999999940395,
+        "loadEventEnd": 1411.5999999940395,
+        "type": "navigate",
+        "redirectCount": 0,
+        "activationStart": 0,
+        "criticalCHRestart": 0,
+        "notRestoredReasons": null,
+        "confidence": {
+          "randomizedTriggerRate": 0.4994798,
+          "value": "high"
+        }
+      }
+    },
+    {
+      "path": "/about",
+      "run": 3,
+      "lcp": 632,
+      "lcpElement": "P",
+      "cls": 0,
+      "longTasks": [
+        103
+      ],
+      "fcp": 632,
+      "resources": [
+        {
+          "url": "/_next/static/chunks/2plfrcg2f6_ak.css",
+          "type": "link",
+          "bytes": 10692,
+          "duration": 423.40000000596046
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "type": "link",
+          "bytes": 2352,
+          "duration": 170.10000002384186
+        },
+        {
+          "url": "/_next/static/chunks/2kjxkkhnsfwuv.js",
+          "type": "script",
+          "bytes": 7752,
+          "duration": 368.7000000178814
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "type": "script",
+          "bytes": 47040,
+          "duration": 979.7000000178814
+        },
+        {
+          "url": "/_next/static/chunks/32-8bc_la5bzb.js",
+          "type": "script",
+          "bytes": 72246,
+          "duration": 1116.6000000238419
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+          "type": "script",
+          "bytes": 4377,
+          "duration": 321.80000001192093
+        },
+        {
+          "url": "/_next/static/chunks/12--yb3mz_k19.js",
+          "type": "script",
+          "bytes": 6055,
+          "duration": 474.40000000596046
+        },
+        {
+          "url": "/_next/static/chunks/1k8ws4wy_mqz_.js",
+          "type": "script",
+          "bytes": 13801,
+          "duration": 788.8000000119209
+        },
+        {
+          "url": "/_next/static/chunks/26x-4nqan8_un.js",
+          "type": "script",
+          "bytes": 5653,
+          "duration": 696.4000000059605
+        },
+        {
+          "url": "/_next/static/chunks/0wj0noag-9_fs.js",
+          "type": "script",
+          "bytes": 3612,
+          "duration": 689.1999999880791
+        },
+        {
+          "url": "/_next/static/chunks/2dn1wguorfoo0.js",
+          "type": "script",
+          "bytes": 3728,
+          "duration": 742.6999999880791
+        },
+        {
+          "url": "/?_rsc=Sdev7PUlRw12F58X",
+          "type": "fetch",
+          "bytes": 166,
+          "duration": 160.39999997615814
+        },
+        {
+          "url": "/work?_rsc=Sdev7PUlRw12F58X",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 166.7999999821186
+        },
+        {
+          "url": "/blog?_rsc=Sdev7PUlRw12F58X",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 173.2999999821186
+        },
+        {
+          "url": "/play?_rsc=Sdev7PUlRw12F58X",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 180.69999998807907
+        },
+        {
+          "url": "/about?_rsc=Sdev7PUlRw12F58X",
+          "type": "fetch",
+          "bytes": 183,
+          "duration": 161.69999998807907
+        },
+        {
+          "url": "/?_rsc=IbqYazZHyjXYH_Ld",
+          "type": "fetch",
+          "bytes": 5514,
+          "duration": 216.89999997615814
+        },
+        {
+          "url": "/work?_rsc=mowVjYH_erLkYKsO",
+          "type": "fetch",
+          "bytes": 5838,
+          "duration": 226.60000002384186
+        },
+        {
+          "url": "/blog?_rsc=PvdXdD9hzpthEKPE",
+          "type": "fetch",
+          "bytes": 646,
+          "duration": 165.7999999821186
+        },
+        {
+          "url": "/play?_rsc=wZX9sy3fpurxP1rR",
+          "type": "fetch",
+          "bytes": 4377,
+          "duration": 180.2999999821186
+        },
+        {
+          "url": "/_next/static/chunks/01-fdoz1wyvuf.js",
+          "type": "script",
+          "bytes": 213,
+          "duration": 156.30000001192093
+        },
+        {
+          "url": "/_next/static/chunks/3mou9oq7g37u1.js",
+          "type": "script",
+          "bytes": 8555,
+          "duration": 247.7000000178814
+        },
+        {
+          "url": "/_next/static/chunks/38yk6g6jjlk_a.js",
+          "type": "script",
+          "bytes": 10607,
+          "duration": 263
+        },
+        {
+          "url": "/_next/static/chunks/0y8s02wt2-v9n.js",
+          "type": "script",
+          "bytes": 14333,
+          "duration": 225.2999999821186
+        }
+      ],
+      "fonts": 0,
+      "images": [],
+      "navigation": {
+        "name": "http://127.0.0.1:3109/about",
+        "entryType": "navigation",
+        "startTime": 0,
+        "duration": 1399.4000000059605,
+        "navigationId": 973,
+        "initiatorType": "navigation",
+        "deliveryType": "",
+        "nextHopProtocol": "http/1.1",
+        "renderBlockingStatus": "non-blocking",
+        "contentType": "text/html",
+        "contentEncoding": "gzip",
+        "workerStart": 0,
+        "workerRouterEvaluationStart": 0,
+        "workerCacheLookupStart": 0,
+        "workerMatchedSourceType": "",
+        "workerFinalSourceType": "",
+        "redirectStart": 0,
+        "redirectEnd": 0,
+        "fetchStart": 0.09999999403953552,
+        "domainLookupStart": 0.5,
+        "domainLookupEnd": 0.699999988079071,
+        "connectStart": 0.699999988079071,
+        "secureConnectionStart": 0,
+        "connectEnd": 0.7999999821186066,
+        "requestStart": 0.7999999821186066,
+        "responseStart": 150.90000000596046,
+        "firstInterimResponseStart": 0,
+        "finalResponseHeadersStart": 150.90000000596046,
+        "responseEnd": 188,
+        "transferSize": 7050,
+        "encodedBodySize": 6750,
+        "decodedBodySize": 36933,
+        "responseStatus": 200,
+        "serverTiming": [],
+        "unloadEventStart": 0,
+        "unloadEventEnd": 0,
+        "domInteractive": 630.1999999880791,
+        "domContentLoadedEventStart": 630.1999999880791,
+        "domContentLoadedEventEnd": 630.1999999880791,
+        "domComplete": 1399.4000000059605,
+        "loadEventStart": 1399.4000000059605,
+        "loadEventEnd": 1399.4000000059605,
+        "type": "navigate",
+        "redirectCount": 0,
+        "activationStart": 0,
+        "criticalCHRestart": 0,
+        "notRestoredReasons": null,
+        "confidence": {
+          "randomizedTriggerRate": 0.4994798,
+          "value": "high"
+        }
+      }
+    },
+    {
+      "path": "/blog/2019-12-21-microfrontend-from-00-to-20s",
+      "run": 1,
+      "lcp": 760,
+      "lcpElement": "P",
+      "cls": 0,
+      "longTasks": [
+        101
+      ],
+      "fcp": 760,
+      "resources": [
+        {
+          "url": "/_next/static/chunks/2plfrcg2f6_ak.css",
+          "type": "link",
+          "bytes": 10692,
+          "duration": 446.69999998807907
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "type": "link",
+          "bytes": 2352,
+          "duration": 217.40000000596046
+        },
+        {
+          "url": "/_next/static/chunks/2kjxkkhnsfwuv.js",
+          "type": "script",
+          "bytes": 7752,
+          "duration": 377.80000001192093
+        },
+        {
+          "url": "/_next/static/chunks/32-8bc_la5bzb.js",
+          "type": "script",
+          "bytes": 72246,
+          "duration": 1141.2000000178814
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+          "type": "script",
+          "bytes": 4377,
+          "duration": 339.60000002384186
+        },
+        {
+          "url": "/_next/static/chunks/12--yb3mz_k19.js",
+          "type": "script",
+          "bytes": 6055,
+          "duration": 508
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "type": "script",
+          "bytes": 47040,
+          "duration": 1003.9000000059605
+        },
+        {
+          "url": "/_next/static/chunks/1k8ws4wy_mqz_.js",
+          "type": "script",
+          "bytes": 13801,
+          "duration": 801.2999999821186
+        },
+        {
+          "url": "/_next/static/chunks/26x-4nqan8_un.js",
+          "type": "script",
+          "bytes": 5653,
+          "duration": 686.9000000059605
+        },
+        {
+          "url": "/_next/static/chunks/0wj0noag-9_fs.js",
+          "type": "script",
+          "bytes": 3612,
+          "duration": 710.5
+        },
+        {
+          "url": "/_next/static/chunks/2dn1wguorfoo0.js",
+          "type": "script",
+          "bytes": 3728,
+          "duration": 763.9000000059605
+        },
+        {
+          "url": "/?_rsc=-0Q_h0N-BrDyZlS7",
+          "type": "fetch",
+          "bytes": 166,
+          "duration": 157.2999999821186
+        },
+        {
+          "url": "/work?_rsc=-0Q_h0N-BrDyZlS7",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 152.09999999403954
+        },
+        {
+          "url": "/blog?_rsc=-0Q_h0N-BrDyZlS7",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 159.69999998807907
+        },
+        {
+          "url": "/play?_rsc=-0Q_h0N-BrDyZlS7",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 167
+        },
+        {
+          "url": "/about?_rsc=-0Q_h0N-BrDyZlS7",
+          "type": "fetch",
+          "bytes": 183,
+          "duration": 161.59999999403954
+        },
+        {
+          "url": "/blog?tag=python&_rsc=-0Q_h0N-BrDyZlS7",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 164.80000001192093
+        },
+        {
+          "url": "/blog?_rsc=jFyFTMmVLlDghypW",
+          "type": "fetch",
+          "bytes": 646,
+          "duration": 162.90000000596046
+        },
+        {
+          "url": "/work?_rsc=5StssJ2eYhsf1wW7",
+          "type": "fetch",
+          "bytes": 5838,
+          "duration": 195.80000001192093
+        },
+        {
+          "url": "/about?_rsc=ym4qmxoFNGQBLq_0",
+          "type": "fetch",
+          "bytes": 3333,
+          "duration": 183
+        },
+        {
+          "url": "/play?_rsc=3kotZL3E1DIoAWS0",
+          "type": "fetch",
+          "bytes": 4377,
+          "duration": 226.2000000178814
+        },
+        {
+          "url": "/?_rsc=PDtRVJkgbpxMSAqz",
+          "type": "fetch",
+          "bytes": 5514,
+          "duration": 232.89999997615814
+        },
+        {
+          "url": "/_next/static/chunks/38yk6g6jjlk_a.js",
+          "type": "script",
+          "bytes": 10607,
+          "duration": 241.69999998807907
+        },
+        {
+          "url": "/_next/static/chunks/01-fdoz1wyvuf.js",
+          "type": "script",
+          "bytes": 213,
+          "duration": 156.69999998807907
+        },
+        {
+          "url": "/_next/static/chunks/0y8s02wt2-v9n.js",
+          "type": "script",
+          "bytes": 14333,
+          "duration": 279.30000001192093
+        },
+        {
+          "url": "/_next/static/chunks/3mou9oq7g37u1.js",
+          "type": "script",
+          "bytes": 8555,
+          "duration": 234.7999999821186
+        }
+      ],
+      "fonts": 0,
+      "images": [],
+      "navigation": {
+        "name": "http://127.0.0.1:3109/blog/2019-12-21-microfrontend-from-00-to-20s",
+        "entryType": "navigation",
+        "startTime": 0,
+        "duration": 1505.800000011921,
+        "navigationId": 3041,
+        "initiatorType": "navigation",
+        "deliveryType": "",
+        "nextHopProtocol": "http/1.1",
+        "renderBlockingStatus": "non-blocking",
+        "contentType": "text/html",
+        "contentEncoding": "gzip",
+        "workerStart": 0,
+        "workerRouterEvaluationStart": 0,
+        "workerCacheLookupStart": 0,
+        "workerMatchedSourceType": "",
+        "workerFinalSourceType": "",
+        "redirectStart": 0,
+        "redirectEnd": 0,
+        "fetchStart": 0.09999999403953552,
+        "domainLookupStart": 0.5,
+        "domainLookupEnd": 0.699999988079071,
+        "connectStart": 0.699999988079071,
+        "secureConnectionStart": 0,
+        "connectEnd": 0.9000000059604645,
+        "requestStart": 0.9000000059604645,
+        "responseStart": 151,
+        "firstInterimResponseStart": 0,
+        "finalResponseHeadersStart": 151,
+        "responseEnd": 287,
+        "transferSize": 10175,
+        "encodedBodySize": 9875,
+        "decodedBodySize": 48596,
+        "responseStatus": 200,
+        "serverTiming": [],
+        "unloadEventStart": 0,
+        "unloadEventEnd": 0,
+        "domInteractive": 760.4000000059605,
+        "domContentLoadedEventStart": 760.4000000059605,
+        "domContentLoadedEventEnd": 760.4000000059605,
+        "domComplete": 1505.800000011921,
+        "loadEventStart": 1505.800000011921,
+        "loadEventEnd": 1505.800000011921,
+        "type": "navigate",
+        "redirectCount": 0,
+        "activationStart": 0,
+        "criticalCHRestart": 0,
+        "notRestoredReasons": null,
+        "confidence": {
+          "randomizedTriggerRate": 0.4994798,
+          "value": "high"
+        }
+      }
+    },
+    {
+      "path": "/blog/2019-12-21-microfrontend-from-00-to-20s",
+      "run": 2,
+      "lcp": 644,
+      "lcpElement": "P",
+      "cls": 0,
+      "longTasks": [
+        104
+      ],
+      "fcp": 644,
+      "resources": [
+        {
+          "url": "/_next/static/chunks/2plfrcg2f6_ak.css",
+          "type": "link",
+          "bytes": 10692,
+          "duration": 425.69999998807907
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "type": "link",
+          "bytes": 2352,
+          "duration": 197.30000001192093
+        },
+        {
+          "url": "/_next/static/chunks/2kjxkkhnsfwuv.js",
+          "type": "script",
+          "bytes": 7752,
+          "duration": 365
+        },
+        {
+          "url": "/_next/static/chunks/32-8bc_la5bzb.js",
+          "type": "script",
+          "bytes": 72246,
+          "duration": 1119.800000011921
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "type": "script",
+          "bytes": 47040,
+          "duration": 982.5
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+          "type": "script",
+          "bytes": 4377,
+          "duration": 334.40000000596046
+        },
+        {
+          "url": "/_next/static/chunks/12--yb3mz_k19.js",
+          "type": "script",
+          "bytes": 6055,
+          "duration": 486.30000001192093
+        },
+        {
+          "url": "/_next/static/chunks/26x-4nqan8_un.js",
+          "type": "script",
+          "bytes": 5653,
+          "duration": 684
+        },
+        {
+          "url": "/_next/static/chunks/1k8ws4wy_mqz_.js",
+          "type": "script",
+          "bytes": 13801,
+          "duration": 798.3000000119209
+        },
+        {
+          "url": "/_next/static/chunks/0wj0noag-9_fs.js",
+          "type": "script",
+          "bytes": 3612,
+          "duration": 691.5999999940395
+        },
+        {
+          "url": "/_next/static/chunks/2dn1wguorfoo0.js",
+          "type": "script",
+          "bytes": 3728,
+          "duration": 753.9000000059605
+        },
+        {
+          "url": "/?_rsc=-0Q_h0N-BrDyZlS7",
+          "type": "fetch",
+          "bytes": 166,
+          "duration": 156.09999999403954
+        },
+        {
+          "url": "/work?_rsc=-0Q_h0N-BrDyZlS7",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 160.2999999821186
+        },
+        {
+          "url": "/blog?_rsc=-0Q_h0N-BrDyZlS7",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 166
+        },
+        {
+          "url": "/play?_rsc=-0Q_h0N-BrDyZlS7",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 173.40000000596046
+        },
+        {
+          "url": "/about?_rsc=-0Q_h0N-BrDyZlS7",
+          "type": "fetch",
+          "bytes": 183,
+          "duration": 155.30000001192093
+        },
+        {
+          "url": "/blog?tag=python&_rsc=-0Q_h0N-BrDyZlS7",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 156.40000000596046
+        },
+        {
+          "url": "/blog?_rsc=jFyFTMmVLlDghypW",
+          "type": "fetch",
+          "bytes": 646,
+          "duration": 155.30000001192093
+        },
+        {
+          "url": "/work?_rsc=5StssJ2eYhsf1wW7",
+          "type": "fetch",
+          "bytes": 5838,
+          "duration": 188.2999999821186
+        },
+        {
+          "url": "/about?_rsc=ym4qmxoFNGQBLq_0",
+          "type": "fetch",
+          "bytes": 3333,
+          "duration": 179.19999998807907
+        },
+        {
+          "url": "/play?_rsc=3kotZL3E1DIoAWS0",
+          "type": "fetch",
+          "bytes": 4377,
+          "duration": 202.30000001192093
+        },
+        {
+          "url": "/?_rsc=PDtRVJkgbpxMSAqz",
+          "type": "fetch",
+          "bytes": 5514,
+          "duration": 217.2999999821186
+        },
+        {
+          "url": "/_next/static/chunks/38yk6g6jjlk_a.js",
+          "type": "script",
+          "bytes": 10607,
+          "duration": 232.90000000596046
+        },
+        {
+          "url": "/_next/static/chunks/01-fdoz1wyvuf.js",
+          "type": "script",
+          "bytes": 213,
+          "duration": 159.10000002384186
+        },
+        {
+          "url": "/_next/static/chunks/0y8s02wt2-v9n.js",
+          "type": "script",
+          "bytes": 14333,
+          "duration": 280.5
+        },
+        {
+          "url": "/_next/static/chunks/3mou9oq7g37u1.js",
+          "type": "script",
+          "bytes": 8555,
+          "duration": 233.90000000596046
+        }
+      ],
+      "fonts": 0,
+      "images": [],
+      "navigation": {
+        "name": "http://127.0.0.1:3109/blog/2019-12-21-microfrontend-from-00-to-20s",
+        "entryType": "navigation",
+        "startTime": 0,
+        "duration": 1407.4000000059605,
+        "navigationId": 1684,
+        "initiatorType": "navigation",
+        "deliveryType": "",
+        "nextHopProtocol": "http/1.1",
+        "renderBlockingStatus": "non-blocking",
+        "contentType": "text/html",
+        "contentEncoding": "gzip",
+        "workerStart": 0,
+        "workerRouterEvaluationStart": 0,
+        "workerCacheLookupStart": 0,
+        "workerMatchedSourceType": "",
+        "workerFinalSourceType": "",
+        "redirectStart": 0,
+        "redirectEnd": 0,
+        "fetchStart": 0.09999999403953552,
+        "domainLookupStart": 0.4000000059604645,
+        "domainLookupEnd": 0.5999999940395355,
+        "connectStart": 0.5999999940395355,
+        "secureConnectionStart": 0,
+        "connectEnd": 0.800000011920929,
+        "requestStart": 0.800000011920929,
+        "responseStart": 150.80000001192093,
+        "firstInterimResponseStart": 0,
+        "finalResponseHeadersStart": 150.80000001192093,
+        "responseEnd": 203,
+        "transferSize": 10186,
+        "encodedBodySize": 9886,
+        "decodedBodySize": 48604,
+        "responseStatus": 200,
+        "serverTiming": [],
+        "unloadEventStart": 0,
+        "unloadEventEnd": 0,
+        "domInteractive": 643.9000000059605,
+        "domContentLoadedEventStart": 643.9000000059605,
+        "domContentLoadedEventEnd": 643.9000000059605,
+        "domComplete": 1407.4000000059605,
+        "loadEventStart": 1407.4000000059605,
+        "loadEventEnd": 1407.4000000059605,
+        "type": "navigate",
+        "redirectCount": 0,
+        "activationStart": 0,
+        "criticalCHRestart": 0,
+        "notRestoredReasons": null,
+        "confidence": {
+          "randomizedTriggerRate": 0.4994798,
+          "value": "high"
+        }
+      }
+    },
+    {
+      "path": "/blog/2019-12-21-microfrontend-from-00-to-20s",
+      "run": 3,
+      "lcp": 636,
+      "lcpElement": "P",
+      "cls": 0,
+      "longTasks": [
+        116
+      ],
+      "fcp": 636,
+      "resources": [
+        {
+          "url": "/_next/static/chunks/2plfrcg2f6_ak.css",
+          "type": "link",
+          "bytes": 10692,
+          "duration": 428.09999999403954
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "type": "link",
+          "bytes": 2352,
+          "duration": 200.59999999403954
+        },
+        {
+          "url": "/_next/static/chunks/2kjxkkhnsfwuv.js",
+          "type": "script",
+          "bytes": 7752,
+          "duration": 367.30000001192093
+        },
+        {
+          "url": "/_next/static/chunks/32-8bc_la5bzb.js",
+          "type": "script",
+          "bytes": 72246,
+          "duration": 1122.0999999940395
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "type": "script",
+          "bytes": 47040,
+          "duration": 985.7000000178814
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+          "type": "script",
+          "bytes": 4377,
+          "duration": 335.60000002384186
+        },
+        {
+          "url": "/_next/static/chunks/12--yb3mz_k19.js",
+          "type": "script",
+          "bytes": 6055,
+          "duration": 488.2000000178814
+        },
+        {
+          "url": "/_next/static/chunks/1k8ws4wy_mqz_.js",
+          "type": "script",
+          "bytes": 13801,
+          "duration": 801.0999999940395
+        },
+        {
+          "url": "/_next/static/chunks/26x-4nqan8_un.js",
+          "type": "script",
+          "bytes": 5653,
+          "duration": 686.3000000119209
+        },
+        {
+          "url": "/_next/static/chunks/0wj0noag-9_fs.js",
+          "type": "script",
+          "bytes": 3612,
+          "duration": 694.0999999940395
+        },
+        {
+          "url": "/_next/static/chunks/2dn1wguorfoo0.js",
+          "type": "script",
+          "bytes": 3728,
+          "duration": 756.8000000119209
+        },
+        {
+          "url": "/?_rsc=-0Q_h0N-BrDyZlS7",
+          "type": "fetch",
+          "bytes": 166,
+          "duration": 156
+        },
+        {
+          "url": "/work?_rsc=-0Q_h0N-BrDyZlS7",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 160.40000000596046
+        },
+        {
+          "url": "/blog?_rsc=-0Q_h0N-BrDyZlS7",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 167.40000000596046
+        },
+        {
+          "url": "/play?_rsc=-0Q_h0N-BrDyZlS7",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 174.40000000596046
+        },
+        {
+          "url": "/about?_rsc=-0Q_h0N-BrDyZlS7",
+          "type": "fetch",
+          "bytes": 183,
+          "duration": 153.80000001192093
+        },
+        {
+          "url": "/blog?tag=python&_rsc=-0Q_h0N-BrDyZlS7",
+          "type": "fetch",
+          "bytes": 182,
+          "duration": 156.19999998807907
+        },
+        {
+          "url": "/blog?_rsc=jFyFTMmVLlDghypW",
+          "type": "fetch",
+          "bytes": 646,
+          "duration": 155
+        },
+        {
+          "url": "/work?_rsc=5StssJ2eYhsf1wW7",
+          "type": "fetch",
+          "bytes": 5838,
+          "duration": 188.5
+        },
+        {
+          "url": "/about?_rsc=ym4qmxoFNGQBLq_0",
+          "type": "fetch",
+          "bytes": 3333,
+          "duration": 173.19999998807907
+        },
+        {
+          "url": "/play?_rsc=3kotZL3E1DIoAWS0",
+          "type": "fetch",
+          "bytes": 4377,
+          "duration": 196.60000002384186
+        },
+        {
+          "url": "/?_rsc=PDtRVJkgbpxMSAqz",
+          "type": "fetch",
+          "bytes": 5514,
+          "duration": 209.90000000596046
+        },
+        {
+          "url": "/_next/static/chunks/38yk6g6jjlk_a.js",
+          "type": "script",
+          "bytes": 10607,
+          "duration": 226.5
+        },
+        {
+          "url": "/_next/static/chunks/01-fdoz1wyvuf.js",
+          "type": "script",
+          "bytes": 213,
+          "duration": 158
+        },
+        {
+          "url": "/_next/static/chunks/0y8s02wt2-v9n.js",
+          "type": "script",
+          "bytes": 14333,
+          "duration": 280.2000000178814
+        },
+        {
+          "url": "/_next/static/chunks/3mou9oq7g37u1.js",
+          "type": "script",
+          "bytes": 8555,
+          "duration": 235.19999998807907
+        }
+      ],
+      "fonts": 0,
+      "images": [],
+      "navigation": {
+        "name": "http://127.0.0.1:3109/blog/2019-12-21-microfrontend-from-00-to-20s",
+        "entryType": "navigation",
+        "startTime": 0,
+        "duration": 1427,
+        "navigationId": 6286,
+        "initiatorType": "navigation",
+        "deliveryType": "",
+        "nextHopProtocol": "http/1.1",
+        "renderBlockingStatus": "non-blocking",
+        "contentType": "text/html",
+        "contentEncoding": "gzip",
+        "workerStart": 0,
+        "workerRouterEvaluationStart": 0,
+        "workerCacheLookupStart": 0,
+        "workerMatchedSourceType": "",
+        "workerFinalSourceType": "",
+        "redirectStart": 0,
+        "redirectEnd": 0,
+        "fetchStart": 0,
+        "domainLookupStart": 0.4000000059604645,
+        "domainLookupEnd": 0.5,
+        "connectStart": 0.5,
+        "secureConnectionStart": 0,
+        "connectEnd": 0.7000000178813934,
+        "requestStart": 0.7000000178813934,
+        "responseStart": 150.7000000178814,
+        "firstInterimResponseStart": 0,
+        "finalResponseHeadersStart": 150.7000000178814,
+        "responseEnd": 203.5,
+        "transferSize": 10186,
+        "encodedBodySize": 9886,
+        "decodedBodySize": 48604,
+        "responseStatus": 200,
+        "serverTiming": [],
+        "unloadEventStart": 0,
+        "unloadEventEnd": 0,
+        "domInteractive": 641,
+        "domContentLoadedEventStart": 641,
+        "domContentLoadedEventEnd": 641,
+        "domComplete": 1426.9000000059605,
+        "loadEventStart": 1427,
+        "loadEventEnd": 1427,
+        "type": "navigate",
+        "redirectCount": 0,
+        "activationStart": 0,
+        "criticalCHRestart": 0,
+        "notRestoredReasons": null,
+        "confidence": {
+          "randomizedTriggerRate": 0.4994798,
+          "value": "high"
+        }
+      }
+    }
+  ]
+}

@@ -28,15 +28,20 @@ contact/navigation destinations live in `src/lib/site.ts`.
 Browser checks run against a production build:
 
 ```sh
-bun --bun playwright install chromium
-bun run build
+bun --bun playwright install chromium firefox webkit
+NEXT_PUBLIC_SITE_URL=http://127.0.0.1:3109 SITE_INDEXING=disabled bun run build
 bun run test:e2e
 ```
 
-CI installs Chromium and runs these checks after the unit suite and build.
+CI installs the three browser engines and runs these checks after the unit suite and build.
 Tests cover six viewport widths, keyboard/skip navigation, no-script access,
 large text/reduced motion, the CV and 404. They do not replace physical-device
 touch or screen-reader review.
+
+The [MIC-27 performance record](docs/performance/mic27-performance.md) contains
+repeatable mobile lab measurements, before/after data and the remaining hosted
+and field checks. Use `bun scripts/measure-performance.ts` and
+`bun scripts/measure-interactions.ts` with a production server running locally.
 
 Reusable project galleries now live in `src/components/gallery`; Work includes
 the first gallery with credited ImageGoNord UI captures. See the
@@ -160,8 +165,9 @@ The owner removed 3D on 2026-11-13. `/experience` permanently redirects to `/pla
 
 `LottieAnimation` in `src/components/animations` is a lazy, viewport-aware,
 decorative player. Put `.lottie` assets in `public/animations` and provide a
-static fallback and fixed dimensions. No animation artwork is included yet.
-Its WASM runtime uses the LottieFiles CDN by default.
+static fallback and fixed dimensions. Original fox clips live in
+`public/animations/fox`; `build:fox` reproduces them and the local WASM runtime
+at `/animations/runtime/dotlottie-player.wasm`. The player does not need a CDN.
 
 ```tsx
 <LottieAnimation

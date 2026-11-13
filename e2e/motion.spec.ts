@@ -102,6 +102,8 @@ for (const failed of ["clip", "wasm", "poster", "player chunk"]) test(`failed ${
   await expect(fox.getByRole("button", { name: "Meet the fox", exact: true })).toBeFocused();
   await expect(page.locator("h1")).toBeVisible();
   await expect(page.getByRole("link", { name: "Explore all work", exact: true })).toBeVisible();
+  // Drain intercepted prefetches before Playwright disposes their response bodies.
+  await page.unrouteAll({ behavior: "wait" });
 });
 
 test("no-script pages retain one decorative fox and all essential content without dead controls", async ({ browser }) => {

@@ -15,8 +15,9 @@ test("reveal input clamps at both endpoints and reverses the right-hand palette 
 test("initial HTML is a useful 50/50 comparison with authentic sources and no inoperative controls", () => {
   const html = renderToStaticMarkup(<PaletteStage href="/work/chromatique" />);
   expect(html).toContain('clip-path:inset(0 0 0 50%)');
-  expect(html).toContain(paletteImages.original);
-  expect(html).toContain(paletteImages.palette);
+  expect(html).toContain(encodeURIComponent(paletteImages.original));
+  expect(html).toContain(encodeURIComponent(paletteImages.palette));
+  expect(html).toContain('sizes="(min-width: 1600px) 1600px, 100vw"');
   expect(html).toContain("no dithering");
   expect(html).toContain("Frances Benjamin Johnston");
   expect(html).toContain('href="/work/chromatique"');

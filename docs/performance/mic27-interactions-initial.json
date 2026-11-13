@@ -1,0 +1,274 @@
+{
+  "browser": "158.0.8127.18",
+  "profile": "390x844 DPR2, 4x CPU, 150ms RTT, 196608B/s; synthetic click EventTiming, not field INP",
+  "runs": [
+    {
+      "path": "/",
+      "action": "Open fox corner",
+      "events": [
+        {
+          "name": "pointerover",
+          "duration": 104,
+          "interactionId": 0
+        },
+        {
+          "name": "pointerenter",
+          "duration": 104,
+          "interactionId": 0
+        },
+        {
+          "name": "pointerenter",
+          "duration": 104,
+          "interactionId": 0
+        },
+        {
+          "name": "pointerenter",
+          "duration": 104,
+          "interactionId": 0
+        },
+        {
+          "name": "pointerenter",
+          "duration": 104,
+          "interactionId": 0
+        },
+        {
+          "name": "pointerenter",
+          "duration": 104,
+          "interactionId": 0
+        },
+        {
+          "name": "pointerenter",
+          "duration": 104,
+          "interactionId": 0
+        },
+        {
+          "name": "pointerenter",
+          "duration": 104,
+          "interactionId": 0
+        },
+        {
+          "name": "pointerenter",
+          "duration": 104,
+          "interactionId": 0
+        },
+        {
+          "name": "pointerenter",
+          "duration": 104,
+          "interactionId": 0
+        },
+        {
+          "name": "pointerenter",
+          "duration": 104,
+          "interactionId": 0
+        },
+        {
+          "name": "mouseover",
+          "duration": 104,
+          "interactionId": 0
+        },
+        {
+          "name": "pointerdown",
+          "duration": 104,
+          "interactionId": 5040
+        },
+        {
+          "name": "mousedown",
+          "duration": 104,
+          "interactionId": 0
+        },
+        {
+          "name": "pointerup",
+          "duration": 104,
+          "interactionId": 5040
+        },
+        {
+          "name": "mouseup",
+          "duration": 104,
+          "interactionId": 0
+        },
+        {
+          "name": "click",
+          "duration": 104,
+          "interactionId": 5040
+        }
+      ]
+    },
+    {
+      "path": "/work",
+      "action": "Next media",
+      "events": [
+        {
+          "name": "pointerover",
+          "duration": 56,
+          "interactionId": 0
+        },
+        {
+          "name": "pointerenter",
+          "duration": 56,
+          "interactionId": 0
+        },
+        {
+          "name": "pointerenter",
+          "duration": 56,
+          "interactionId": 0
+        },
+        {
+          "name": "pointerenter",
+          "duration": 56,
+          "interactionId": 0
+        },
+        {
+          "name": "pointerenter",
+          "duration": 56,
+          "interactionId": 0
+        },
+        {
+          "name": "pointerenter",
+          "duration": 56,
+          "interactionId": 0
+        },
+        {
+          "name": "pointerenter",
+          "duration": 56,
+          "interactionId": 0
+        },
+        {
+          "name": "pointerenter",
+          "duration": 56,
+          "interactionId": 0
+        },
+        {
+          "name": "pointerenter",
+          "duration": 56,
+          "interactionId": 0
+        },
+        {
+          "name": "pointerenter",
+          "duration": 56,
+          "interactionId": 0
+        },
+        {
+          "name": "pointerenter",
+          "duration": 56,
+          "interactionId": 0
+        },
+        {
+          "name": "mouseover",
+          "duration": 56,
+          "interactionId": 0
+        },
+        {
+          "name": "pointerdown",
+          "duration": 56,
+          "interactionId": 2575
+        },
+        {
+          "name": "mousedown",
+          "duration": 56,
+          "interactionId": 0
+        },
+        {
+          "name": "pointerup",
+          "duration": 56,
+          "interactionId": 2575
+        },
+        {
+          "name": "mouseup",
+          "duration": 56,
+          "interactionId": 0
+        },
+        {
+          "name": "click",
+          "duration": 56,
+          "interactionId": 2575
+        }
+      ]
+    },
+    {
+      "path": "/play",
+      "action": "Open fox corner",
+      "events": [
+        {
+          "name": "pointerover",
+          "duration": 408,
+          "interactionId": 0
+        },
+        {
+          "name": "pointerenter",
+          "duration": 408,
+          "interactionId": 0
+        },
+        {
+          "name": "pointerenter",
+          "duration": 408,
+          "interactionId": 0
+        },
+        {
+          "name": "pointerenter",
+          "duration": 408,
+          "interactionId": 0
+        },
+        {
+          "name": "pointerenter",
+          "duration": 408,
+          "interactionId": 0
+        },
+        {
+          "name": "pointerenter",
+          "duration": 408,
+          "interactionId": 0
+        },
+        {
+          "name": "pointerenter",
+          "duration": 408,
+          "interactionId": 0
+        },
+        {
+          "name": "pointerenter",
+          "duration": 408,
+          "interactionId": 0
+        },
+        {
+          "name": "pointerenter",
+          "duration": 408,
+          "interactionId": 0
+        },
+        {
+          "name": "pointerenter",
+          "duration": 408,
+          "interactionId": 0
+        },
+        {
+          "name": "mouseover",
+          "duration": 408,
+          "interactionId": 0
+        },
+        {
+          "name": "pointerdown",
+          "duration": 400,
+          "interactionId": 2163
+        },
+        {
+          "name": "mousedown",
+          "duration": 400,
+          "interactionId": 0
+        },
+        {
+          "name": "pointerup",
+          "duration": 400,
+          "interactionId": 2163
+        },
+        {
+          "name": "mouseup",
+          "duration": 400,
+          "interactionId": 0
+        },
+        {
+          "name": "click",
+          "duration": 400,
+          "interactionId": 2163
+        }
+      ]
+    }
+  ]
+}

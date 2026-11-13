@@ -1,0 +1,3800 @@
+{
+  "date": "2026-11-13",
+  "browser": "158.0.8127.18",
+  "profile": {
+    "viewport": "390x844",
+    "dpr": 2,
+    "cpuSlowdown": 4,
+    "latencyMs": 150,
+    "downloadBytesPerSecond": 196608,
+    "cache": "fresh browser context, browser cache disabled; server optimizer cache may be warm",
+    "observation": "load + 2500ms; no scroll or interaction"
+  },
+  "runs": [
+    {
+      "path": "/",
+      "run": 1,
+      "lcp": 2352,
+      "lcpElement": "IMG",
+      "cls": 0,
+      "longTasks": [
+        169,
+        131
+      ],
+      "fcp": 832,
+      "resources": [
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-original.jpg&w=828&q=75",
+          "type": "link",
+          "bytes": 77434,
+          "duration": 2046.0999999940395
+        },
+        {
+          "url": "/_next/static/chunks/2plfrcg2f6_ak.css",
+          "type": "link",
+          "bytes": 10692,
+          "duration": 419.7000000178814
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-nord.png&w=828&q=75",
+          "type": "link",
+          "bytes": 77202,
+          "duration": 2028
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "type": "link",
+          "bytes": 2352,
+          "duration": 234.40000000596046
+        },
+        {
+          "url": "/_next/static/chunks/2kjxkkhnsfwuv.js",
+          "type": "script",
+          "bytes": 7752,
+          "duration": 394.40000000596046
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+          "type": "script",
+          "bytes": 4377,
+          "duration": 716
+        },
+        {
+          "url": "/_next/static/chunks/12--yb3mz_k19.js",
+          "type": "script",
+          "bytes": 6055,
+          "duration": 783.9000000059605
+        },
+        {
+          "url": "/_next/static/chunks/1k8ws4wy_mqz_.js",
+          "type": "script",
+          "bytes": 13801,
+          "duration": 1257.699999988079
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "type": "script",
+          "bytes": 47040,
+          "duration": 1616.0999999940395
+        },
+        {
+          "url": "/_next/static/chunks/32-8bc_la5bzb.js",
+          "type": "script",
+          "bytes": 72246,
+          "duration": 1981.199999988079
+        },
+        {
+          "url": "/_next/static/chunks/01-fdoz1wyvuf.js",
+          "type": "script",
+          "bytes": 213,
+          "duration": 1166.0999999940395
+        },
+        {
+          "url": "/_next/static/chunks/3c9i7y94mintb.js",
+          "type": "script",
+          "bytes": 8590,
+          "duration": 1606.3999999761581
+        },
+        {
+          "url": "/_next/static/chunks/3--r5s__5dfgh.js",
+          "type": "script",
+          "bytes": 10631,
+          "duration": 1722
+        },
+        {
+          "url": "/_next/static/chunks/0wj0noag-9_fs.js",
+          "type": "script",
+          "bytes": 3612,
+          "duration": 1859
+        },
+        {
+          "url": "/_next/static/chunks/2dn1wguorfoo0.js",
+          "type": "script",
+          "bytes": 3728,
+          "duration": 1873.5999999940395
+        },
+        {
+          "url": "/characters/fox/rest.svg",
+          "type": "img",
+          "bytes": 885,
+          "duration": 380.90000000596046
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fconversion-interface.png&w=750&q=75",
+          "type": "img",
+          "bytes": 6472,
+          "duration": 1424
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fintroduction.png&w=750&q=75",
+          "type": "img",
+          "bytes": 6994,
+          "duration": 1509.4000000059605
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fpalette-controls.png&w=750&q=75",
+          "type": "img",
+          "bytes": 8972,
+          "duration": 1532.2999999821186
+        },
+        {
+          "url": "/?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 168,
+          "duration": 156.69999998807907
+        },
+        {
+          "url": "/work?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 184,
+          "duration": 172.80000001192093
+        },
+        {
+          "url": "/blog?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 184,
+          "duration": 164.69999998807907
+        },
+        {
+          "url": "/play?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 183,
+          "duration": 156.89999997615814
+        },
+        {
+          "url": "/about?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 186,
+          "duration": 160.19999998807907
+        },
+        {
+          "url": "/play?_rsc=PegjG-Ni8kbs15L_",
+          "type": "fetch",
+          "bytes": 4374,
+          "duration": 193.19999998807907
+        },
+        {
+          "url": "/blog?_rsc=Npvf18QV6N2pz_RZ",
+          "type": "fetch",
+          "bytes": 646,
+          "duration": 165
+        },
+        {
+          "url": "/work?_rsc=w8QaQBDeNiATQLUS",
+          "type": "fetch",
+          "bytes": 6276,
+          "duration": 211.59999999403954
+        },
+        {
+          "url": "/about?_rsc=hzcUC6YqarYE9pKE",
+          "type": "fetch",
+          "bytes": 3330,
+          "duration": 172.59999999403954
+        },
+        {
+          "url": "/_next/static/chunks/3g22-cx_7kee7.js",
+          "type": "script",
+          "bytes": 14357,
+          "duration": 226.59999999403954
+        },
+        {
+          "url": "/_next/static/chunks/26x-4nqan8_un.js",
+          "type": "script",
+          "bytes": 5653,
+          "duration": 189.59999999403954
+        }
+      ],
+      "fonts": 0,
+      "images": [
+        {
+          "url": "/characters/fox/rest.svg",
+          "displayed": 48,
+          "natural": 192,
+          "loading": "lazy"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-original.jpg&w=828&q=75",
+          "displayed": 390,
+          "natural": 390,
+          "loading": "eager"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-nord.png&w=828&q=75",
+          "displayed": 390,
+          "natural": 390,
+          "loading": "eager"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fconversion-interface.png&w=750&q=75",
+          "displayed": 308,
+          "natural": 331,
+          "loading": "lazy"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fintroduction.png&w=750&q=75",
+          "displayed": 308,
+          "natural": 331,
+          "loading": "lazy"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fpalette-controls.png&w=750&q=75",
+          "displayed": 308,
+          "natural": 115,
+          "loading": "lazy"
+        },
+        {
+          "url": "",
+          "displayed": 350,
+          "natural": 0,
+          "loading": "lazy"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-original.jpg&w=828&q=75",
+          "displayed": 308,
+          "natural": 331,
+          "loading": "lazy"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-nord.png&w=828&q=75",
+          "displayed": 308,
+          "natural": 331,
+          "loading": "lazy"
+        }
+      ],
+      "navigation": {
+        "name": "http://127.0.0.1:3109/",
+        "entryType": "navigation",
+        "startTime": 0,
+        "duration": 2361.4000000059605,
+        "navigationId": 870,
+        "initiatorType": "navigation",
+        "deliveryType": "",
+        "nextHopProtocol": "http/1.1",
+        "renderBlockingStatus": "non-blocking",
+        "contentType": "text/html",
+        "contentEncoding": "gzip",
+        "workerStart": 0,
+        "workerRouterEvaluationStart": 0,
+        "workerCacheLookupStart": 0,
+        "workerMatchedSourceType": "",
+        "workerFinalSourceType": "",
+        "redirectStart": 0,
+        "redirectEnd": 0,
+        "fetchStart": 0.5,
+        "domainLookupStart": 4.4000000059604645,
+        "domainLookupEnd": 4.800000011920929,
+        "connectStart": 4.800000011920929,
+        "secureConnectionStart": 0,
+        "connectEnd": 5.5,
+        "requestStart": 5.9000000059604645,
+        "responseStart": 156.5,
+        "firstInterimResponseStart": 0,
+        "finalResponseHeadersStart": 156.5,
+        "responseEnd": 239.80000001192093,
+        "transferSize": 15208,
+        "encodedBodySize": 14908,
+        "decodedBodySize": 96075,
+        "responseStatus": 200,
+        "serverTiming": [],
+        "unloadEventStart": 0,
+        "unloadEventEnd": 0,
+        "domInteractive": 839.8000000119209,
+        "domContentLoadedEventStart": 839.8000000119209,
+        "domContentLoadedEventEnd": 839.9000000059605,
+        "domComplete": 2361.4000000059605,
+        "loadEventStart": 2361.4000000059605,
+        "loadEventEnd": 2361.4000000059605,
+        "type": "navigate",
+        "redirectCount": 0,
+        "activationStart": 0,
+        "criticalCHRestart": 0,
+        "notRestoredReasons": null,
+        "confidence": {
+          "randomizedTriggerRate": 0.4994798,
+          "value": "high"
+        }
+      }
+    },
+    {
+      "path": "/",
+      "run": 2,
+      "lcp": 2304,
+      "lcpElement": "IMG",
+      "cls": 0,
+      "longTasks": [
+        96
+      ],
+      "fcp": 652,
+      "resources": [
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-original.jpg&w=828&q=75",
+          "type": "link",
+          "bytes": 77434,
+          "duration": 2032.5
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-nord.png&w=828&q=75",
+          "type": "link",
+          "bytes": 77202,
+          "duration": 2047.5999999940395
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "type": "link",
+          "bytes": 2352,
+          "duration": 224.7999999821186
+        },
+        {
+          "url": "/_next/static/chunks/2kjxkkhnsfwuv.js",
+          "type": "script",
+          "bytes": 7752,
+          "duration": 383.7999999821186
+        },
+        {
+          "url": "/_next/static/chunks/2plfrcg2f6_ak.css",
+          "type": "link",
+          "bytes": 10692,
+          "duration": 438.09999999403954
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "type": "script",
+          "bytes": 47040,
+          "duration": 1604
+        },
+        {
+          "url": "/_next/static/chunks/32-8bc_la5bzb.js",
+          "type": "script",
+          "bytes": 72246,
+          "duration": 2024.699999988079
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+          "type": "script",
+          "bytes": 4377,
+          "duration": 697.2999999821186
+        },
+        {
+          "url": "/_next/static/chunks/12--yb3mz_k19.js",
+          "type": "script",
+          "bytes": 6055,
+          "duration": 795.6999999880791
+        },
+        {
+          "url": "/_next/static/chunks/01-fdoz1wyvuf.js",
+          "type": "script",
+          "bytes": 213,
+          "duration": 1177.5
+        },
+        {
+          "url": "/_next/static/chunks/1k8ws4wy_mqz_.js",
+          "type": "script",
+          "bytes": 13801,
+          "duration": 1238.9000000059605
+        },
+        {
+          "url": "/_next/static/chunks/3c9i7y94mintb.js",
+          "type": "script",
+          "bytes": 8590,
+          "duration": 1626.199999988079
+        },
+        {
+          "url": "/_next/static/chunks/3--r5s__5dfgh.js",
+          "type": "script",
+          "bytes": 10631,
+          "duration": 1710.3999999761581
+        },
+        {
+          "url": "/_next/static/chunks/0wj0noag-9_fs.js",
+          "type": "script",
+          "bytes": 3612,
+          "duration": 1855.699999988079
+        },
+        {
+          "url": "/_next/static/chunks/2dn1wguorfoo0.js",
+          "type": "script",
+          "bytes": 3728,
+          "duration": 1886.0999999940395
+        },
+        {
+          "url": "/characters/fox/rest.svg",
+          "type": "img",
+          "bytes": 885,
+          "duration": 507.90000000596046
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fconversion-interface.png&w=750&q=75",
+          "type": "img",
+          "bytes": 6472,
+          "duration": 1537.300000011921
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fintroduction.png&w=750&q=75",
+          "type": "img",
+          "bytes": 6994,
+          "duration": 1629.199999988079
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fpalette-controls.png&w=750&q=75",
+          "type": "img",
+          "bytes": 8972,
+          "duration": 1652.9000000059605
+        },
+        {
+          "url": "/?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 168,
+          "duration": 157.89999997615814
+        },
+        {
+          "url": "/work?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 184,
+          "duration": 157.69999998807907
+        },
+        {
+          "url": "/blog?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 184,
+          "duration": 165.10000002384186
+        },
+        {
+          "url": "/play?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 183,
+          "duration": 172.90000000596046
+        },
+        {
+          "url": "/about?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 186,
+          "duration": 155.59999999403954
+        },
+        {
+          "url": "/work?_rsc=w8QaQBDeNiATQLUS",
+          "type": "fetch",
+          "bytes": 6276,
+          "duration": 218.5
+        },
+        {
+          "url": "/blog?_rsc=Npvf18QV6N2pz_RZ",
+          "type": "fetch",
+          "bytes": 646,
+          "duration": 157.19999998807907
+        },
+        {
+          "url": "/play?_rsc=PegjG-Ni8kbs15L_",
+          "type": "fetch",
+          "bytes": 4374,
+          "duration": 210.2999999821186
+        },
+        {
+          "url": "/about?_rsc=hzcUC6YqarYE9pKE",
+          "type": "fetch",
+          "bytes": 3330,
+          "duration": 173.90000000596046
+        },
+        {
+          "url": "/_next/static/chunks/3g22-cx_7kee7.js",
+          "type": "script",
+          "bytes": 14357,
+          "duration": 249.10000002384186
+        },
+        {
+          "url": "/_next/static/chunks/26x-4nqan8_un.js",
+          "type": "script",
+          "bytes": 5653,
+          "duration": 212
+        }
+      ],
+      "fonts": 0,
+      "images": [
+        {
+          "url": "/characters/fox/rest.svg",
+          "displayed": 48,
+          "natural": 192,
+          "loading": "lazy"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-original.jpg&w=828&q=75",
+          "displayed": 390,
+          "natural": 390,
+          "loading": "eager"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-nord.png&w=828&q=75",
+          "displayed": 390,
+          "natural": 390,
+          "loading": "eager"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fconversion-interface.png&w=750&q=75",
+          "displayed": 308,
+          "natural": 331,
+          "loading": "lazy"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fintroduction.png&w=750&q=75",
+          "displayed": 308,
+          "natural": 331,
+          "loading": "lazy"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fpalette-controls.png&w=750&q=75",
+          "displayed": 308,
+          "natural": 115,
+          "loading": "lazy"
+        },
+        {
+          "url": "",
+          "displayed": 350,
+          "natural": 0,
+          "loading": "lazy"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-original.jpg&w=828&q=75",
+          "displayed": 308,
+          "natural": 331,
+          "loading": "lazy"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-nord.png&w=828&q=75",
+          "displayed": 308,
+          "natural": 331,
+          "loading": "lazy"
+        }
+      ],
+      "navigation": {
+        "name": "http://127.0.0.1:3109/",
+        "entryType": "navigation",
+        "startTime": 0,
+        "duration": 2311.7000000178814,
+        "navigationId": 7395,
+        "initiatorType": "navigation",
+        "deliveryType": "",
+        "nextHopProtocol": "http/1.1",
+        "renderBlockingStatus": "non-blocking",
+        "contentType": "text/html",
+        "contentEncoding": "gzip",
+        "workerStart": 0,
+        "workerRouterEvaluationStart": 0,
+        "workerCacheLookupStart": 0,
+        "workerMatchedSourceType": "",
+        "workerFinalSourceType": "",
+        "redirectStart": 0,
+        "redirectEnd": 0,
+        "fetchStart": 0.20000001788139343,
+        "domainLookupStart": 0.5,
+        "domainLookupEnd": 0.7000000178813934,
+        "connectStart": 0.7000000178813934,
+        "secureConnectionStart": 0,
+        "connectEnd": 0.9000000059604645,
+        "requestStart": 0.9000000059604645,
+        "responseStart": 150.90000000596046,
+        "firstInterimResponseStart": 0,
+        "finalResponseHeadersStart": 150.90000000596046,
+        "responseEnd": 233.5,
+        "transferSize": 15208,
+        "encodedBodySize": 14908,
+        "decodedBodySize": 96075,
+        "responseStatus": 200,
+        "serverTiming": [],
+        "unloadEventStart": 0,
+        "unloadEventEnd": 0,
+        "domInteractive": 657.3000000119209,
+        "domContentLoadedEventStart": 657.3000000119209,
+        "domContentLoadedEventEnd": 657.4000000059605,
+        "domComplete": 2311.7000000178814,
+        "loadEventStart": 2311.7000000178814,
+        "loadEventEnd": 2311.7000000178814,
+        "type": "navigate",
+        "redirectCount": 0,
+        "activationStart": 0,
+        "criticalCHRestart": 0,
+        "notRestoredReasons": null,
+        "confidence": {
+          "randomizedTriggerRate": 0.4994798,
+          "value": "high"
+        }
+      }
+    },
+    {
+      "path": "/",
+      "run": 3,
+      "lcp": 2296,
+      "lcpElement": "IMG",
+      "cls": 0,
+      "longTasks": [
+        89
+      ],
+      "fcp": 668,
+      "resources": [
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-original.jpg&w=828&q=75",
+          "type": "link",
+          "bytes": 77434,
+          "duration": 2030.9000000059605
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-nord.png&w=828&q=75",
+          "type": "link",
+          "bytes": 77202,
+          "duration": 2046.199999988079
+        },
+        {
+          "url": "/_next/static/chunks/2plfrcg2f6_ak.css",
+          "type": "link",
+          "bytes": 10692,
+          "duration": 437.19999998807907
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "type": "link",
+          "bytes": 2352,
+          "duration": 223.5
+        },
+        {
+          "url": "/_next/static/chunks/2kjxkkhnsfwuv.js",
+          "type": "script",
+          "bytes": 7752,
+          "duration": 383.30000001192093
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+          "type": "script",
+          "bytes": 4377,
+          "duration": 695
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "type": "script",
+          "bytes": 47040,
+          "duration": 1602.7000000178814
+        },
+        {
+          "url": "/_next/static/chunks/32-8bc_la5bzb.js",
+          "type": "script",
+          "bytes": 72246,
+          "duration": 2024
+        },
+        {
+          "url": "/_next/static/chunks/12--yb3mz_k19.js",
+          "type": "script",
+          "bytes": 6055,
+          "duration": 795.2000000178814
+        },
+        {
+          "url": "/_next/static/chunks/01-fdoz1wyvuf.js",
+          "type": "script",
+          "bytes": 213,
+          "duration": 1175.2000000178814
+        },
+        {
+          "url": "/_next/static/chunks/1k8ws4wy_mqz_.js",
+          "type": "script",
+          "bytes": 13801,
+          "duration": 1236.300000011921
+        },
+        {
+          "url": "/_next/static/chunks/3c9i7y94mintb.js",
+          "type": "script",
+          "bytes": 8590,
+          "duration": 1625
+        },
+        {
+          "url": "/_next/static/chunks/3--r5s__5dfgh.js",
+          "type": "script",
+          "bytes": 10631,
+          "duration": 1709.5
+        },
+        {
+          "url": "/_next/static/chunks/0wj0noag-9_fs.js",
+          "type": "script",
+          "bytes": 3612,
+          "duration": 1854.800000011921
+        },
+        {
+          "url": "/_next/static/chunks/2dn1wguorfoo0.js",
+          "type": "script",
+          "bytes": 3728,
+          "duration": 1884.4000000059605
+        },
+        {
+          "url": "/characters/fox/rest.svg",
+          "type": "img",
+          "bytes": 885,
+          "duration": 504.2999999821186
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fconversion-interface.png&w=750&q=75",
+          "type": "img",
+          "bytes": 6472,
+          "duration": 1534.699999988079
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fintroduction.png&w=750&q=75",
+          "type": "img",
+          "bytes": 6994,
+          "duration": 1626
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fpalette-controls.png&w=750&q=75",
+          "type": "img",
+          "bytes": 8972,
+          "duration": 1648.9000000059605
+        },
+        {
+          "url": "/?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 168,
+          "duration": 159.40000000596046
+        },
+        {
+          "url": "/work?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 184,
+          "duration": 157.10000002384186
+        },
+        {
+          "url": "/blog?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 184,
+          "duration": 164
+        },
+        {
+          "url": "/play?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 183,
+          "duration": 171.90000000596046
+        },
+        {
+          "url": "/about?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "bytes": 186,
+          "duration": 154.09999999403954
+        },
+        {
+          "url": "/work?_rsc=w8QaQBDeNiATQLUS",
+          "type": "fetch",
+          "bytes": 6276,
+          "duration": 210.40000000596046
+        },
+        {
+          "url": "/blog?_rsc=Npvf18QV6N2pz_RZ",
+          "type": "fetch",
+          "bytes": 646,
+          "duration": 165.5
+        },
+        {
+          "url": "/play?_rsc=PegjG-Ni8kbs15L_",
+          "type": "fetch",
+          "bytes": 4374,
+          "duration": 211.39999997615814
+        },
+        {
+          "url": "/about?_rsc=hzcUC6YqarYE9pKE",
+          "type": "fetch",
+          "bytes": 3330,
+          "duration": 173.69999998807907
+        },
+        {
+          "url": "/_next/static/chunks/3g22-cx_7kee7.js",
+          "type": "script",
+          "bytes": 14357,
+          "duration": 248.19999998807907
+        },
+        {
+          "url": "/_next/static/chunks/26x-4nqan8_un.js",
+          "type": "script",
+          "bytes": 5653,
+          "duration": 212.40000000596046
+        }
+      ],
+      "fonts": 0,
+      "images": [
+        {
+          "url": "/characters/fox/rest.svg",
+          "displayed": 48,
+          "natural": 192,
+          "loading": "lazy"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-original.jpg&w=828&q=75",
+          "displayed": 390,
+          "natural": 390,
+          "loading": "eager"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-nord.png&w=828&q=75",
+          "displayed": 390,
+          "natural": 390,
+          "loading": "eager"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fconversion-interface.png&w=750&q=75",
+          "displayed": 308,
+          "natural": 331,
+          "loading": "lazy"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fintroduction.png&w=750&q=75",
+          "displayed": 308,
+          "natural": 331,
+          "loading": "lazy"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fpalette-controls.png&w=750&q=75",
+          "displayed": 308,
+          "natural": 115,
+          "loading": "lazy"
+        },
+        {
+          "url": "",
+          "displayed": 350,
+          "natural": 0,
+          "loading": "lazy"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-original.jpg&w=828&q=75",
+          "displayed": 308,
+          "natural": 331,
+          "loading": "lazy"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-nord.png&w=828&q=75",
+          "displayed": 308,
+          "natural": 331,
+          "loading": "lazy"
+        }
+      ],
+      "navigation": {
+        "name": "http://127.0.0.1:3109/",
+        "entryType": "navigation",
+        "startTime": 0,
+        "duration": 2311.199999988079,
+        "navigationId": 525,
+        "initiatorType": "navigation",
+        "deliveryType": "",
+        "nextHopProtocol": "http/1.1",
+        "renderBlockingStatus": "non-blocking",
+        "contentType": "text/html",
+        "contentEncoding": "gzip",
+        "workerStart": 0,
+        "workerRouterEvaluationStart": 0,
+        "workerCacheLookupStart": 0,
+        "workerMatchedSourceType": "",
+        "workerFinalSourceType": "",
+        "redirectStart": 0,
+        "redirectEnd": 0,
+        "fetchStart": 0,
+        "domainLookupStart": 0.29999998211860657,
+        "domainLookupEnd": 0.5,
+        "connectStart": 0.5,
+        "secureConnectionStart": 0,
+        "connectEnd": 0.5999999940395355,
+        "requestStart": 0.699999988079071,
+        "responseStart": 150.69999998807907,
+        "firstInterimResponseStart": 0,
+        "finalResponseHeadersStart": 150.69999998807907,
+        "responseEnd": 233.09999999403954,
+        "transferSize": 15208,
+        "encodedBodySize": 14908,
+        "decodedBodySize": 96075,
+        "responseStatus": 200,
+        "serverTiming": [],
+        "unloadEventStart": 0,
+        "unloadEventEnd": 0,
+        "domInteractive": 661.6999999880791,
+        "domContentLoadedEventStart": 661.6999999880791,
+        "domContentLoadedEventEnd": 662.3999999761581,
+        "domComplete": 2311.199999988079,
+        "loadEventStart": 2311.199999988079,
+        "loadEventEnd": 2311.199999988079,
+        "type": "navigate",
+        "redirectCount": 0,
+        "activationStart": 0,
+        "criticalCHRestart": 0,
+        "notRestoredReasons": null,
+        "confidence": {
+          "randomizedTriggerRate": 0.4994798,
+          "value": "high"
+        }
+      }
+    },
+    {
+      "path": "/work",
+      "run": 1,
+      "lcp": 644,
+      "lcpElement": "P",
+      "cls": 0,
+      "longTasks": [
+        93
+      ],
+      "fcp": 644,
+      "resources": [
+        {
+          "url": "/_next/static/chunks/2plfrcg2f6_ak.css",
+          "type": "link",
+          "bytes": 10692,
+          "duration": 429.7999999821186
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "type": "link",
+          "bytes": 2352,
+          "duration": 200
+        },
+        {
+          "url": "/_next/static/chunks/2kjxkkhnsfwuv.js",
+          "type": "script",
+          "bytes": 7752,
+          "duration": 367.5
+        },
+        {
+          "url": "/_next/static/chunks/32-8bc_la5bzb.js",
+          "type": "script",
+          "bytes": 72246,
+          "duration": 1281.9000000059605
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+          "type": "script",
+          "bytes": 4377,
+          "duration": 350.90000000596046
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "type": "script",
+          "bytes": 47040,
+          "duration": 1145.300000011921
+        },
+        {
+          "url": "/_next/static/chunks/12--yb3mz_k19.js",
+          "type": "script",
+          "bytes": 6055,
+          "duration": 496
+        },
+        {
+          "url": "/_next/static/chunks/0wj0noag-9_fs.js",
+          "type": "script",
+          "bytes": 3612,
+          "duration": 695.1000000238419
+        },
+        {
+          "url": "/_next/static/chunks/2dn1wguorfoo0.js",
+          "type": "script",
+          "bytes": 3728,
+          "duration": 771.9000000059605
+        },
+        {
+          "url": "/_next/static/chunks/3--r5s__5dfgh.js",
+          "type": "script",
+          "bytes": 10631,
+          "duration": 802.3000000119209
+        },
+        {
+          "url": "/_next/static/chunks/1k8ws4wy_mqz_.js",
+          "type": "script",
+          "bytes": 13801,
+          "duration": 832.9000000059605
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fconversion-interface.png&w=750&q=75",
+          "type": "img",
+          "bytes": 6472,
+          "duration": 492.69999998807907
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fintroduction.png&w=750&q=75",
+          "type": "img",
+          "bytes": 6994,
+          "duration": 607.1999999880791
+        },
+        {
+          "url": "/media/supermarket/architecture.svg",
+          "type": "img",
+          "bytes": 744,
+          "duration": 545
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fpalette-controls.png&w=750&q=75",
+          "type": "img",
+          "bytes": 8972,
+          "duration": 683.6999999880791
+        },
+        {
+          "url": "/?_rsc=2w9-JQzBEdMnhII4",
+          "type": "fetch",
+          "bytes": 168,
+          "duration": 155.19999998807907
+        },
+        {
+          "url": "/work?_rsc=2w9-JQzBEdMnhII4",
+          "type": "fetch",
+          "bytes": 184,
+          "duration": 156.89999997615814
+        },
+        {
+          "url": "/blog?_rsc=2w9-JQzBEdMnhII4",
+          "type": "fetch",
+          "bytes": 184,
+          "duration": 164
+        },
+        {
+          "url": "/play?_rsc=2w9-JQzBEdMnhII4",
+          "type": "fetch",
+          "bytes": 183,
+          "duration": 171.5
+        },
+        {
+          "url": "/about?_rsc=2w9-JQzBEdMnhII4",
+          "type": "fetch",
+          "bytes": 186,
+          "duration": 155.5
+        },
+        {
+          "url": "/?_rsc=q1vWSaOy6B75S8Zt",
+          "type": "fetch",
+          "bytes": 5958,
+          "duration": 216.69999998807907
+        },
+        {
+          "url": "/blog?_rsc=dY9ZXQrg5D5OxTrA",
+          "type": "fetch",
+          "bytes": 646,
+          "duration": 165.90000000596046
+        },
+        {
+          "url": "/play?_rsc=ZNOYImMjba6BdxGH",
+          "type": "fetch",
+          "bytes": 4374,
+          "duration": 211.40000000596046
+        },
+        {
+          "url": "/about?_rsc=DWhRfLNBMUooaPKd",
+          "type": "fetch",
+          "bytes": 3330,
+          "duration": 174.19999998807907
+        },
+        {
+          "url": "/_next/static/chunks/01-fdoz1wyvuf.js",
+          "type": "script",
+          "bytes": 213,
+          "duration": 156.80000001192093
+        },
+        {
+          "url": "/_next/static/chunks/3c9i7y94mintb.js",
+          "type": "script",
+          "bytes": 8590,
+          "duration": 255
+        },
+        {
+          "url": "/_next/static/chunks/3g22-cx_7kee7.js",
+          "type": "script",
+          "bytes": 14357,
+          "duration": 303.30000001192093
+        },
+        {
+          "url": "/_next/static/chunks/26x-4nqan8_un.js",
+          "type": "script",
+          "bytes": 5653,
+          "duration": 227.5
+        }
+      ],
+      "fonts": 0,
+      "images": [
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fconversion-interface.png&w=750&q=75",
+          "displayed": 308,
+          "natural": 331,
+          "loading": "lazy"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fintroduction.png&w=750&q=75",
+          "displayed": 308,
+          "natural": 331,
+          "loading": "lazy"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fpalette-controls.png&w=750&q=75",
+          "displayed": 308,
+          "natural": 115,
+          "loading": "lazy"
+        },
+        {
+          "url": "/media/supermarket/architecture.svg",
+          "displayed": 350,
+          "natural": 1200,
+          "loading": "lazy"
+        },
+        {
+          "url": "",
+          "displayed": 308,
+          "natural": 0,
+          "loading": "lazy"
+        },
+        {
+          "url": "",
+          "displayed": 308,
+          "natural": 0,
+          "loading": "lazy"
+        }
+      ],
+      "navigation": {
+        "name": "http://127.0.0.1:3109/work",
+        "entryType": "navigation",
+        "startTime": 0,
+        "duration": 1554.7000000178814,
+        "navigationId": 7227,
+        "initiatorType": "navigation",
+        "deliveryType": "",
+        "nextHopProtocol": "http/1.1",
+        "renderBlockingStatus": "non-blocking",
+        "contentType": "text/html",
+        "contentEncoding": "gzip",
+        "workerStart": 0,
+        "workerRouterEvaluationStart": 0,
+        "workerCacheLookupStart": 0,
+        "workerMatchedSourceType": "",
+        "workerFinalSourceType": "",
+        "redirectStart": 0,
+        "redirectEnd": 0,
+        "fetchStart": 0.09999999403953552,
+        "domainLookupStart": 0.5999999940395355,
+        "domainLookupEnd": 0.800000011920929,
+        "connectStart": 0.800000011920929,
+        "secureConnectionStart": 0,
+        "connectEnd": 0.9000000059604645,
+        "requestStart": 1,
+        "responseStart": 151.09999999403954,
+        "firstInterimResponseStart": 0,
+        "finalResponseHeadersStart": 151.09999999403954,
+        "responseEnd": 225.7000000178814,
+        "transferSize": 14256,
+        "encodedBodySize": 13956,
+        "decodedBodySize": 102122,
+        "responseStatus": 200,
+        "serverTiming": [],
+        "unloadEventStart": 0,
+        "unloadEventEnd": 0,
+        "domInteractive": 654.8000000119209,
+        "domContentLoadedEventStart": 654.8000000119209,
+        "domContentLoadedEventEnd": 654.9000000059605,
+        "domComplete": 1554.7000000178814,
+        "loadEventStart": 1554.7000000178814,
+        "loadEventEnd": 1554.7000000178814,
+        "type": "navigate",
+        "redirectCount": 0,
+        "activationStart": 0,
+        "criticalCHRestart": 0,
+        "notRestoredReasons": null,
+        "confidence": {
+          "randomizedTriggerRate": 0.4994798,
+          "value": "high"
+        }
+      }
+    },
+    {
+      "path": "/work",
+      "run": 2,
+      "lcp": 640,
+      "lcpElement": "P",
+      "cls": 0,
+      "longTasks": [
+        90
+      ],
+      "fcp": 640,
+      "resources": [
+        {
+          "url": "/_next/static/chunks/2plfrcg2f6_ak.css",
+          "type": "link",
+          "bytes": 10692,
+          "duration": 427.30000001192093
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "type": "link",
+          "bytes": 2352,
+          "duration": 197.5
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+          "type": "script",
+          "bytes": 4377,
+          "duration": 349.80000001192093
+        },
+        {
+          "url": "/_next/static/chunks/2kjxkkhnsfwuv.js",
+          "type": "script",
+          "bytes": 7752,
+          "duration": 365.30000001192093
+        },
+        {
+          "url": "/_next/static/chunks/12--yb3mz_k19.js",
+          "type": "script",
+          "bytes": 6055,
+          "duration": 495.40000000596046
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "type": "script",
+          "bytes": 47040,
+          "duration": 1135.800000011921
+        },
+        {
+          "url": "/_next/static/chunks/32-8bc_la5bzb.js",
+          "type": "script",
+          "bytes": 72246,
+          "duration": 1281.300000011921
+        },
+        {
+          "url": "/_next/static/chunks/3--r5s__5dfgh.js",
+          "type": "script",
+          "bytes": 10631,
+          "duration": 800.9000000059605
+        },
+        {
+          "url": "/_next/static/chunks/1k8ws4wy_mqz_.js",
+          "type": "script",
+          "bytes": 13801,
+          "duration": 832
+        },
+        {
+          "url": "/_next/static/chunks/0wj0noag-9_fs.js",
+          "type": "script",
+          "bytes": 3612,
+          "duration": 692.6999999880791
+        },
+        {
+          "url": "/_next/static/chunks/2dn1wguorfoo0.js",
+          "type": "script",
+          "bytes": 3728,
+          "duration": 770.1999999880791
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fconversion-interface.png&w=750&q=75",
+          "type": "img",
+          "bytes": 6472,
+          "duration": 498.59999999403954
+        },
+        {
+          "url": "/media/supermarket/architecture.svg",
+          "type": "img",
+          "bytes": 744,
+          "duration": 550.7999999821186
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fintroduction.png&w=750&q=75",
+          "type": "img",
+          "bytes": 6994,
+          "duration": 611
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fpalette-controls.png&w=750&q=75",
+          "type": "img",
+          "bytes": 8972,
+          "duration": 688.6999999880791
+        },
+        {
+          "url": "/?_rsc=2w9-JQzBEdMnhII4",
+          "type": "fetch",
+          "bytes": 168,
+          "duration": 155.2999999821186
+        },
+        {
+          "url": "/work?_rsc=2w9-JQzBEdMnhII4",
+          "type": "fetch",
+          "bytes": 184,
+          "duration": 162.30000001192093
+        },
+        {
+          "url": "/blog?_rsc=2w9-JQzBEdMnhII4",
+          "type": "fetch",
+          "bytes": 184,
+          "duration": 170.10000002384186
+        },
+        {
+          "url": "/play?_rsc=2w9-JQzBEdMnhII4",
+          "type": "fetch",
+          "bytes": 183,
+          "duration": 178
+        },
+        {
+          "url": "/about?_rsc=2w9-JQzBEdMnhII4",
+          "type": "fetch",
+          "bytes": 186,
+          "duration": 155.2999999821186
+        },
+        {
+          "url": "/?_rsc=q1vWSaOy6B75S8Zt",
+          "type": "fetch",
+          "bytes": 5958,
+          "duration": 210.30000001192093
+        },
+        {
+          "url": "/blog?_rsc=dY9ZXQrg5D5OxTrA",
+          "type": "fetch",
+          "bytes": 646,
+          "duration": 165
+        },
+        {
+          "url": "/play?_rsc=ZNOYImMjba6BdxGH",
+          "type": "fetch",
+          "bytes": 4374,
+          "duration": 211.5
+        },
+        {
+          "url": "/about?_rsc=DWhRfLNBMUooaPKd",
+          "type": "fetch",
+          "bytes": 3330,
+          "duration": 172.59999999403954
+        },
+        {
+          "url": "/_next/static/chunks/01-fdoz1wyvuf.js",
+          "type": "script",
+          "bytes": 213,
+          "duration": 157.09999999403954
+        },
+        {
+          "url": "/_next/static/chunks/3c9i7y94mintb.js",
+          "type": "script",
+          "bytes": 8590,
+          "duration": 254.60000002384186
+        },
+        {
+          "url": "/_next/static/chunks/3g22-cx_7kee7.js",
+          "type": "script",
+          "bytes": 14357,
+          "duration": 294.09999999403954
+        },
+        {
+          "url": "/_next/static/chunks/26x-4nqan8_un.js",
+          "type": "script",
+          "bytes": 5653,
+          "duration": 213.40000000596046
+        }
+      ],
+      "fonts": 0,
+      "images": [
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fconversion-interface.png&w=750&q=75",
+          "displayed": 308,
+          "natural": 331,
+          "loading": "lazy"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fintroduction.png&w=750&q=75",
+          "displayed": 308,
+          "natural": 331,
+          "loading": "lazy"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fpalette-controls.png&w=750&q=75",
+          "displayed": 308,
+          "natural": 115,
+          "loading": "lazy"
+        },
+        {
+          "url": "/media/supermarket/architecture.svg",
+          "displayed": 350,
+          "natural": 1200,
+          "loading": "lazy"
+        },
+        {
+          "url": "",
+          "displayed": 308,
+          "natural": 0,
+          "loading": "lazy"
+        },
+        {
+          "url": "",
+          "displayed": 308,
+          "natural": 0,
+          "loading": "lazy"
+        }
+      ],
+      "navigation": {
+        "name": "http://127.0.0.1:3109/work",
+        "entryType": "navigation",
+        "startTime": 0,
+        "duration": 1551.699999988079,
+        "navigationId": 4379,
+        "initiatorType": "navigation",
+        "deliveryType": "",
+        "nextHopProtocol": "http/1.1",
+        "renderBlockingStatus": "non-blocking",
+        "contentType": "text/html",
+        "contentEncoding": "gzip",
+        "workerStart": 0,
+        "workerRouterEvaluationStart": 0,
+        "workerCacheLookupStart": 0,
+        "workerMatchedSourceType": "",
+        "workerFinalSourceType": "",
+        "redirectStart": 0,
+        "redirectEnd": 0,
+        "fetchStart": 0.09999999403953552,
+        "domainLookupStart": 0.5,
+        "domainLookupEnd": 0.699999988079071,
+        "connectStart": 0.699999988079071,
+        "secureConnectionStart": 0,
+        "connectEnd": 0.9000000059604645,
+        "requestStart": 0.9000000059604645,
+        "responseStart": 150.90000000596046,
+        "firstInterimResponseStart": 0,
+        "finalResponseHeadersStart": 150.90000000596046,
+        "responseEnd": 226,
+        "transferSize": 14256,
+        "encodedBodySize": 13956,
+        "decodedBodySize": 102122,
+        "responseStatus": 200,
+        "serverTiming": [],
+        "unloadEventStart": 0,
+        "unloadEventEnd": 0,
+        "domInteractive": 644.4000000059605,
+        "domContentLoadedEventStart": 644.4000000059605,
+        "domContentLoadedEventEnd": 644.4000000059605,
+        "domComplete": 1551.699999988079,
+        "loadEventStart": 1551.699999988079,
+        "loadEventEnd": 1551.699999988079,
+        "type": "navigate",
+        "redirectCount": 0,
+        "activationStart": 0,
+        "criticalCHRestart": 0,
+        "notRestoredReasons": null,
+        "confidence": {
+          "randomizedTriggerRate": 0.4994798,
+          "value": "high"
+        }
+      }
+    },
+    {
+      "path": "/work",
+      "run": 3,
+      "lcp": 648,
+      "lcpElement": "P",
+      "cls": 0,
+      "longTasks": [
+        92
+      ],
+      "fcp": 648,
+      "resources": [
+        {
+          "url": "/_next/static/chunks/2plfrcg2f6_ak.css",
+          "type": "link",
+          "bytes": 10692,
+          "duration": 430.89999997615814
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "type": "link",
+          "bytes": 2352,
+          "duration": 200.09999999403954
+        },
+        {
+          "url": "/_next/static/chunks/2kjxkkhnsfwuv.js",
+          "type": "script",
+          "bytes": 7752,
+          "duration": 369.59999999403954
+        },
+        {
+          "url": "/_next/static/chunks/32-8bc_la5bzb.js",
+          "type": "script",
+          "bytes": 72246,
+          "duration": 1283.3999999761581
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+          "type": "script",
+          "bytes": 4377,
+          "duration": 352.5
+        },
+        {
+          "url": "/_next/static/chunks/12--yb3mz_k19.js",
+          "type": "script",
+          "bytes": 6055,
+          "duration": 497.90000000596046
+        },
+        {
+          "url": "/_next/static/chunks/0wj0noag-9_fs.js",
+          "type": "script",
+          "bytes": 3612,
+          "duration": 697
+        },
+        {
+          "url": "/_next/static/chunks/2dn1wguorfoo0.js",
+          "type": "script",
+          "bytes": 3728,
+          "duration": 773.5999999940395
+        },
+        {
+          "url": "/_next/static/chunks/3--r5s__5dfgh.js",
+          "type": "script",
+          "bytes": 10631,
+          "duration": 803.9000000059605
+        },
+        {
+          "url": "/_next/static/chunks/1k8ws4wy_mqz_.js",
+          "type": "script",
+          "bytes": 13801,
+          "duration": 834.7999999821186
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "type": "script",
+          "bytes": 47040,
+          "duration": 1139.7999999821186
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fconversion-interface.png&w=750&q=75",
+          "type": "img",
+          "bytes": 6472,
+          "duration": 491.40000000596046
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fintroduction.png&w=750&q=75",
+          "type": "img",
+          "bytes": 6994,
+          "duration": 606.8000000119209
+        },
+        {
+          "url": "/media/supermarket/architecture.svg",
+          "type": "img",
+          "bytes": 744,
+          "duration": 544.9000000059605
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fpalette-controls.png&w=750&q=75",
+          "type": "img",
+          "bytes": 8972,
+          "duration": 683.2000000178814
+        },
+        {
+          "url": "/?_rsc=2w9-JQzBEdMnhII4",
+          "type": "fetch",
+          "bytes": 168,
+          "duration": 156.80000001192093
+        },
+        {
+          "url": "/work?_rsc=2w9-JQzBEdMnhII4",
+          "type": "fetch",
+          "bytes": 184,
+          "duration": 158.19999998807907
+        },
+        {
+          "url": "/blog?_rsc=2w9-JQzBEdMnhII4",
+          "type": "fetch",
+          "bytes": 184,
+          "duration": 165.5
+        },
+        {
+          "url": "/play?_rsc=2w9-JQzBEdMnhII4",
+          "type": "fetch",
+          "bytes": 183,
+          "duration": 171.7999999821186
+        },
+        {
+          "url": "/about?_rsc=2w9-JQzBEdMnhII4",
+          "type": "fetch",
+          "bytes": 186,
+          "duration": 154.19999998807907
+        },
+        {
+          "url": "/?_rsc=q1vWSaOy6B75S8Zt",
+          "type": "fetch",
+          "bytes": 5958,
+          "duration": 206.7000000178814
+        },
+        {
+          "url": "/blog?_rsc=dY9ZXQrg5D5OxTrA",
+          "type": "fetch",
+          "bytes": 646,
+          "duration": 163.80000001192093
+        },
+        {
+          "url": "/play?_rsc=ZNOYImMjba6BdxGH",
+          "type": "fetch",
+          "bytes": 4374,
+          "duration": 211.10000002384186
+        },
+        {
+          "url": "/about?_rsc=DWhRfLNBMUooaPKd",
+          "type": "fetch",
+          "bytes": 3330,
+          "duration": 172.90000000596046
+        },
+        {
+          "url": "/_next/static/chunks/01-fdoz1wyvuf.js",
+          "type": "script",
+          "bytes": 213,
+          "duration": 158
+        },
+        {
+          "url": "/_next/static/chunks/3c9i7y94mintb.js",
+          "type": "script",
+          "bytes": 8590,
+          "duration": 256.2999999821186
+        },
+        {
+          "url": "/_next/static/chunks/3g22-cx_7kee7.js",
+          "type": "script",
+          "bytes": 14357,
+          "duration": 296.69999998807907
+        },
+        {
+          "url": "/_next/static/chunks/26x-4nqan8_un.js",
+          "type": "script",
+          "bytes": 5653,
+          "duration": 219.69999998807907
+        }
+      ],
+      "fonts": 0,
+      "images": [
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fconversion-interface.png&w=750&q=75",
+          "displayed": 308,
+          "natural": 331,
+          "loading": "lazy"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fintroduction.png&w=750&q=75",
+          "displayed": 308,
+          "natural": 331,
+          "loading": "lazy"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fimagegonord%2Fpalette-controls.png&w=750&q=75",
+          "displayed": 308,
+          "natural": 115,
+          "loading": "lazy"
+        },
+        {
+          "url": "/media/supermarket/architecture.svg",
+          "displayed": 350,
+          "natural": 1200,
+          "loading": "lazy"
+        },
+        {
+          "url": "",
+          "displayed": 308,
+          "natural": 0,
+          "loading": "lazy"
+        },
+        {
+          "url": "",
+          "displayed": 308,
+          "natural": 0,
+          "loading": "lazy"
+        }
+      ],
+      "navigation": {
+        "name": "http://127.0.0.1:3109/work",
+        "entryType": "navigation",
+        "startTime": 0,
+        "duration": 1554.800000011921,
+        "navigationId": 7210,
+        "initiatorType": "navigation",
+        "deliveryType": "",
+        "nextHopProtocol": "http/1.1",
+        "renderBlockingStatus": "non-blocking",
+        "contentType": "text/html",
+        "contentEncoding": "gzip",
+        "workerStart": 0,
+        "workerRouterEvaluationStart": 0,
+        "workerCacheLookupStart": 0,
+        "workerMatchedSourceType": "",
+        "workerFinalSourceType": "",
+        "redirectStart": 0,
+        "redirectEnd": 0,
+        "fetchStart": 0.09999999403953552,
+        "domainLookupStart": 0.5,
+        "domainLookupEnd": 0.699999988079071,
+        "connectStart": 0.699999988079071,
+        "secureConnectionStart": 0,
+        "connectEnd": 0.800000011920929,
+        "requestStart": 0.800000011920929,
+        "responseStart": 150.90000000596046,
+        "firstInterimResponseStart": 0,
+        "finalResponseHeadersStart": 150.90000000596046,
+        "responseEnd": 225,
+        "transferSize": 14256,
+        "encodedBodySize": 13956,
+        "decodedBodySize": 102122,
+        "responseStatus": 200,
+        "serverTiming": [],
+        "unloadEventStart": 0,
+        "unloadEventEnd": 0,
+        "domInteractive": 654.9000000059605,
+        "domContentLoadedEventStart": 654.9000000059605,
+        "domContentLoadedEventEnd": 654.9000000059605,
+        "domComplete": 1554.800000011921,
+        "loadEventStart": 1554.800000011921,
+        "loadEventEnd": 1554.800000011921,
+        "type": "navigate",
+        "redirectCount": 0,
+        "activationStart": 0,
+        "criticalCHRestart": 0,
+        "notRestoredReasons": null,
+        "confidence": {
+          "randomizedTriggerRate": 0.4994798,
+          "value": "high"
+        }
+      }
+    },
+    {
+      "path": "/play",
+      "run": 1,
+      "lcp": 2220,
+      "lcpElement": "IMG",
+      "cls": 0,
+      "longTasks": [
+        97
+      ],
+      "fcp": 660,
+      "resources": [
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-original.jpg&w=828&q=75",
+          "type": "link",
+          "bytes": 77434,
+          "duration": 1962.4000000059605
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-nord.png&w=828&q=75",
+          "type": "link",
+          "bytes": 77202,
+          "duration": 1969
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "type": "link",
+          "bytes": 2352,
+          "duration": 228.90000000596046
+        },
+        {
+          "url": "/_next/static/chunks/2kjxkkhnsfwuv.js",
+          "type": "script",
+          "bytes": 7752,
+          "duration": 389.2000000178814
+        },
+        {
+          "url": "/_next/static/chunks/2plfrcg2f6_ak.css",
+          "type": "link",
+          "bytes": 10692,
+          "duration": 450
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+          "type": "script",
+          "bytes": 4377,
+          "duration": 702.7000000178814
+        },
+        {
+          "url": "/_next/static/chunks/12--yb3mz_k19.js",
+          "type": "script",
+          "bytes": 6055,
+          "duration": 809.5
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "type": "script",
+          "bytes": 47040,
+          "duration": 1603.5
+        },
+        {
+          "url": "/_next/static/chunks/32-8bc_la5bzb.js",
+          "type": "script",
+          "bytes": 72246,
+          "duration": 1939
+        },
+        {
+          "url": "/_next/static/chunks/01-fdoz1wyvuf.js",
+          "type": "script",
+          "bytes": 213,
+          "duration": 1190.7999999821186
+        },
+        {
+          "url": "/_next/static/chunks/1k8ws4wy_mqz_.js",
+          "type": "script",
+          "bytes": 13801,
+          "duration": 1243.7999999821186
+        },
+        {
+          "url": "/_next/static/chunks/3g22-cx_7kee7.js",
+          "type": "script",
+          "bytes": 14357,
+          "duration": 1723.5
+        },
+        {
+          "url": "/_next/static/chunks/0wj0noag-9_fs.js",
+          "type": "script",
+          "bytes": 3612,
+          "duration": 1525.7000000178814
+        },
+        {
+          "url": "/_next/static/chunks/2dn1wguorfoo0.js",
+          "type": "script",
+          "bytes": 3728,
+          "duration": 1777.7999999821186
+        },
+        {
+          "url": "/characters/fox/rest.svg",
+          "type": "img",
+          "bytes": 885,
+          "duration": 515.2999999821186
+        },
+        {
+          "url": "/?_rsc=Wo5TOlOgpSQutS66",
+          "type": "fetch",
+          "bytes": 168,
+          "duration": 161.59999999403954
+        },
+        {
+          "url": "/work?_rsc=Wo5TOlOgpSQutS66",
+          "type": "fetch",
+          "bytes": 184,
+          "duration": 157.90000000596046
+        },
+        {
+          "url": "/blog?_rsc=Wo5TOlOgpSQutS66",
+          "type": "fetch",
+          "bytes": 184,
+          "duration": 165.40000000596046
+        },
+        {
+          "url": "/play?_rsc=Wo5TOlOgpSQutS66",
+          "type": "fetch",
+          "bytes": 183,
+          "duration": 173.09999999403954
+        },
+        {
+          "url": "/about?_rsc=Wo5TOlOgpSQutS66",
+          "type": "fetch",
+          "bytes": 186,
+          "duration": 163.7999999821186
+        },
+        {
+          "url": "/work?_rsc=UdxZ98uBZMbkv2tP",
+          "type": "fetch",
+          "bytes": 6276,
+          "duration": 209.10000002384186
+        },
+        {
+          "url": "/blog?_rsc=tckT2x9pUr3ZJq4r",
+          "type": "fetch",
+          "bytes": 646,
+          "duration": 164.7000000178814
+        },
+        {
+          "url": "/?_rsc=LffFfAWQz7T_n4BJ",
+          "type": "fetch",
+          "bytes": 5958,
+          "duration": 218.80000001192093
+        },
+        {
+          "url": "/about?_rsc=0dTM-NjzfZUdfsrZ",
+          "type": "fetch",
+          "bytes": 3330,
+          "duration": 171.59999999403954
+        },
+        {
+          "url": "/_next/static/chunks/3--r5s__5dfgh.js",
+          "type": "script",
+          "bytes": 10631,
+          "duration": 248.90000000596046
+        },
+        {
+          "url": "/_next/static/chunks/3c9i7y94mintb.js",
+          "type": "script",
+          "bytes": 8590,
+          "duration": 241.19999998807907
+        },
+        {
+          "url": "/_next/static/chunks/26x-4nqan8_un.js",
+          "type": "script",
+          "bytes": 5653,
+          "duration": 190.40000000596046
+        }
+      ],
+      "fonts": 0,
+      "images": [
+        {
+          "url": "/characters/fox/rest.svg",
+          "displayed": 48,
+          "natural": 192,
+          "loading": "lazy"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-original.jpg&w=828&q=75",
+          "displayed": 390,
+          "natural": 390,
+          "loading": "eager"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-nord.png&w=828&q=75",
+          "displayed": 390,
+          "natural": 390,
+          "loading": "eager"
+        }
+      ],
+      "navigation": {
+        "name": "http://127.0.0.1:3109/play",
+        "entryType": "navigation",
+        "startTime": 0,
+        "duration": 2221.5,
+        "navigationId": 2823,
+        "initiatorType": "navigation",
+        "deliveryType": "",
+        "nextHopProtocol": "http/1.1",
+        "renderBlockingStatus": "non-blocking",
+        "contentType": "text/html",
+        "contentEncoding": "gzip",
+        "workerStart": 0,
+        "workerRouterEvaluationStart": 0,
+        "workerCacheLookupStart": 0,
+        "workerMatchedSourceType": "",
+        "workerFinalSourceType": "",
+        "redirectStart": 0,
+        "redirectEnd": 0,
+        "fetchStart": 0,
+        "domainLookupStart": 0.5,
+        "domainLookupEnd": 0.5999999940395355,
+        "connectStart": 0.5999999940395355,
+        "secureConnectionStart": 0,
+        "connectEnd": 0.699999988079071,
+        "requestStart": 0.7999999821186066,
+        "responseStart": 150.7999999821186,
+        "firstInterimResponseStart": 0,
+        "finalResponseHeadersStart": 150.7999999821186,
+        "responseEnd": 202.39999997615814,
+        "transferSize": 9900,
+        "encodedBodySize": 9600,
+        "decodedBodySize": 58390,
+        "responseStatus": 200,
+        "serverTiming": [],
+        "unloadEventStart": 0,
+        "unloadEventEnd": 0,
+        "domInteractive": 663.3999999761581,
+        "domContentLoadedEventStart": 663.3999999761581,
+        "domContentLoadedEventEnd": 663.3999999761581,
+        "domComplete": 2221.5,
+        "loadEventStart": 2221.5,
+        "loadEventEnd": 2221.5,
+        "type": "navigate",
+        "redirectCount": 0,
+        "activationStart": 0,
+        "criticalCHRestart": 0,
+        "notRestoredReasons": null,
+        "confidence": {
+          "randomizedTriggerRate": 0.4994798,
+          "value": "high"
+        }
+      }
+    },
+    {
+      "path": "/play",
+      "run": 2,
+      "lcp": 2216,
+      "lcpElement": "IMG",
+      "cls": 0,
+      "longTasks": [
+        95
+      ],
+      "fcp": 656,
+      "resources": [
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-original.jpg&w=828&q=75",
+          "type": "link",
+          "bytes": 77434,
+          "duration": 1955.9000000059605
+        },
+        {
+          "url": "/_next/static/chunks/2plfrcg2f6_ak.css",
+          "type": "link",
+          "bytes": 10692,
+          "duration": 444.40000000596046
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-nord.png&w=828&q=75",
+          "type": "link",
+          "bytes": 77202,
+          "duration": 1964.5999999940395
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "type": "link",
+          "bytes": 2352,
+          "duration": 232.10000002384186
+        },
+        {
+          "url": "/_next/static/chunks/2kjxkkhnsfwuv.js",
+          "type": "script",
+          "bytes": 7752,
+          "duration": 392.60000002384186
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "type": "script",
+          "bytes": 47040,
+          "duration": 1603.5999999940395
+        },
+        {
+          "url": "/_next/static/chunks/32-8bc_la5bzb.js",
+          "type": "script",
+          "bytes": 72246,
+          "duration": 1939.8999999761581
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+          "type": "script",
+          "bytes": 4377,
+          "duration": 704.1999999880791
+        },
+        {
+          "url": "/_next/static/chunks/12--yb3mz_k19.js",
+          "type": "script",
+          "bytes": 6055,
+          "duration": 804.2999999821186
+        },
+        {
+          "url": "/_next/static/chunks/01-fdoz1wyvuf.js",
+          "type": "script",
+          "bytes": 213,
+          "duration": 1185.5999999940395
+        },
+        {
+          "url": "/_next/static/chunks/1k8ws4wy_mqz_.js",
+          "type": "script",
+          "bytes": 13801,
+          "duration": 1245.699999988079
+        },
+        {
+          "url": "/_next/static/chunks/0wj0noag-9_fs.js",
+          "type": "script",
+          "bytes": 3612,
+          "duration": 1527.2999999821186
+        },
+        {
+          "url": "/_next/static/chunks/3g22-cx_7kee7.js",
+          "type": "script",
+          "bytes": 14357,
+          "duration": 1719.5999999940395
+        },
+        {
+          "url": "/_next/static/chunks/2dn1wguorfoo0.js",
+          "type": "script",
+          "bytes": 3728,
+          "duration": 1778.7999999821186
+        },
+        {
+          "url": "/characters/fox/rest.svg",
+          "type": "img",
+          "bytes": 885,
+          "duration": 512.5
+        },
+        {
+          "url": "/?_rsc=Wo5TOlOgpSQutS66",
+          "type": "fetch",
+          "bytes": 168,
+          "duration": 156.80000001192093
+        },
+        {
+          "url": "/work?_rsc=Wo5TOlOgpSQutS66",
+          "type": "fetch",
+          "bytes": 184,
+          "duration": 154.59999999403954
+        },
+        {
+          "url": "/blog?_rsc=Wo5TOlOgpSQutS66",
+          "type": "fetch",
+          "bytes": 184,
+          "duration": 161.40000000596046
+        },
+        {
+          "url": "/play?_rsc=Wo5TOlOgpSQutS66",
+          "type": "fetch",
+          "bytes": 183,
+          "duration": 169
+        },
+        {
+          "url": "/about?_rsc=Wo5TOlOgpSQutS66",
+          "type": "fetch",
+          "bytes": 186,
+          "duration": 154.80000001192093
+        },
+        {
+          "url": "/work?_rsc=UdxZ98uBZMbkv2tP",
+          "type": "fetch",
+          "bytes": 6276,
+          "duration": 215.80000001192093
+        },
+        {
+          "url": "/blog?_rsc=tckT2x9pUr3ZJq4r",
+          "type": "fetch",
+          "bytes": 646,
+          "duration": 165.7999999821186
+        },
+        {
+          "url": "/?_rsc=LffFfAWQz7T_n4BJ",
+          "type": "fetch",
+          "bytes": 5958,
+          "duration": 220.19999998807907
+        },
+        {
+          "url": "/about?_rsc=0dTM-NjzfZUdfsrZ",
+          "type": "fetch",
+          "bytes": 3330,
+          "duration": 172.7999999821186
+        },
+        {
+          "url": "/_next/static/chunks/3--r5s__5dfgh.js",
+          "type": "script",
+          "bytes": 10631,
+          "duration": 263.69999998807907
+        },
+        {
+          "url": "/_next/static/chunks/3c9i7y94mintb.js",
+          "type": "script",
+          "bytes": 8590,
+          "duration": 256.5
+        },
+        {
+          "url": "/_next/static/chunks/26x-4nqan8_un.js",
+          "type": "script",
+          "bytes": 5653,
+          "duration": 212.2999999821186
+        }
+      ],
+      "fonts": 0,
+      "images": [
+        {
+          "url": "/characters/fox/rest.svg",
+          "displayed": 48,
+          "natural": 192,
+          "loading": "lazy"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-original.jpg&w=828&q=75",
+          "displayed": 390,
+          "natural": 390,
+          "loading": "eager"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-nord.png&w=828&q=75",
+          "displayed": 390,
+          "natural": 390,
+          "loading": "eager"
+        }
+      ],
+      "navigation": {
+        "name": "http://127.0.0.1:3109/play",
+        "entryType": "navigation",
+        "startTime": 0,
+        "duration": 2218,
+        "navigationId": 8931,
+        "initiatorType": "navigation",
+        "deliveryType": "",
+        "nextHopProtocol": "http/1.1",
+        "renderBlockingStatus": "non-blocking",
+        "contentType": "text/html",
+        "contentEncoding": "gzip",
+        "workerStart": 0,
+        "workerRouterEvaluationStart": 0,
+        "workerCacheLookupStart": 0,
+        "workerMatchedSourceType": "",
+        "workerFinalSourceType": "",
+        "redirectStart": 0,
+        "redirectEnd": 0,
+        "fetchStart": 0.09999999403953552,
+        "domainLookupStart": 0.5,
+        "domainLookupEnd": 0.699999988079071,
+        "connectStart": 0.699999988079071,
+        "secureConnectionStart": 0,
+        "connectEnd": 0.7999999821186066,
+        "requestStart": 0.9000000059604645,
+        "responseStart": 150.90000000596046,
+        "firstInterimResponseStart": 0,
+        "finalResponseHeadersStart": 150.90000000596046,
+        "responseEnd": 203.40000000596046,
+        "transferSize": 9900,
+        "encodedBodySize": 9600,
+        "decodedBodySize": 58390,
+        "responseStatus": 200,
+        "serverTiming": [],
+        "unloadEventStart": 0,
+        "unloadEventEnd": 0,
+        "domInteractive": 665,
+        "domContentLoadedEventStart": 665,
+        "domContentLoadedEventEnd": 665,
+        "domComplete": 2218,
+        "loadEventStart": 2218,
+        "loadEventEnd": 2218,
+        "type": "navigate",
+        "redirectCount": 0,
+        "activationStart": 0,
+        "criticalCHRestart": 0,
+        "notRestoredReasons": null,
+        "confidence": {
+          "randomizedTriggerRate": 0.4994798,
+          "value": "high"
+        }
+      }
+    },
+    {
+      "path": "/play",
+      "run": 3,
+      "lcp": 2216,
+      "lcpElement": "IMG",
+      "cls": 0,
+      "longTasks": [
+        94
+      ],
+      "fcp": 656,
+      "resources": [
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-original.jpg&w=828&q=75",
+          "type": "link",
+          "bytes": 77434,
+          "duration": 1955
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "type": "link",
+          "bytes": 2352,
+          "duration": 230.5
+        },
+        {
+          "url": "/_next/static/chunks/2plfrcg2f6_ak.css",
+          "type": "link",
+          "bytes": 10692,
+          "duration": 443.30000001192093
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-nord.png&w=828&q=75",
+          "type": "link",
+          "bytes": 77202,
+          "duration": 1961.5999999940395
+        },
+        {
+          "url": "/_next/static/chunks/2kjxkkhnsfwuv.js",
+          "type": "script",
+          "bytes": 7752,
+          "duration": 390.80000001192093
+        },
+        {
+          "url": "/_next/static/chunks/32-8bc_la5bzb.js",
+          "type": "script",
+          "bytes": 72246,
+          "duration": 1937.9000000059605
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "type": "script",
+          "bytes": 47040,
+          "duration": 1601.5
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+          "type": "script",
+          "bytes": 4377,
+          "duration": 701.2999999821186
+        },
+        {
+          "url": "/_next/static/chunks/12--yb3mz_k19.js",
+          "type": "script",
+          "bytes": 6055,
+          "duration": 801.4000000059605
+        },
+        {
+          "url": "/_next/static/chunks/01-fdoz1wyvuf.js",
+          "type": "script",
+          "bytes": 213,
+          "duration": 1182.5
+        },
+        {
+          "url": "/_next/static/chunks/1k8ws4wy_mqz_.js",
+          "type": "script",
+          "bytes": 13801,
+          "duration": 1244.0999999940395
+        },
+        {
+          "url": "/_next/static/chunks/0wj0noag-9_fs.js",
+          "type": "script",
+          "bytes": 3612,
+          "duration": 1525.5999999940395
+        },
+        {
+          "url": "/_next/static/chunks/3g22-cx_7kee7.js",
+          "type": "script",
+          "bytes": 14357,
+          "duration": 1717.199999988079
+        },
+        {
+          "url": "/_next/static/chunks/2dn1wguorfoo0.js",
+          "type": "script",
+          "bytes": 3728,
+          "duration": 1777
+        },
+        {
+          "url": "/characters/fox/rest.svg",
+          "type": "img",
+          "bytes": 885,
+          "duration": 515.5
+        },
+        {
+          "url": "/?_rsc=Wo5TOlOgpSQutS66",
+          "type": "fetch",
+          "bytes": 168,
+          "duration": 156.19999998807907
+        },
+        {
+          "url": "/work?_rsc=Wo5TOlOgpSQutS66",
+          "type": "fetch",
+          "bytes": 184,
+          "duration": 164
+        },
+        {
+          "url": "/blog?_rsc=Wo5TOlOgpSQutS66",
+          "type": "fetch",
+          "bytes": 184,
+          "duration": 170.40000000596046
+        },
+        {
+          "url": "/play?_rsc=Wo5TOlOgpSQutS66",
+          "type": "fetch",
+          "bytes": 183,
+          "duration": 178.5
+        },
+        {
+          "url": "/about?_rsc=Wo5TOlOgpSQutS66",
+          "type": "fetch",
+          "bytes": 186,
+          "duration": 162.60000002384186
+        },
+        {
+          "url": "/?_rsc=LffFfAWQz7T_n4BJ",
+          "type": "fetch",
+          "bytes": 5958,
+          "duration": 232.5
+        },
+        {
+          "url": "/work?_rsc=UdxZ98uBZMbkv2tP",
+          "type": "fetch",
+          "bytes": 6276,
+          "duration": 234
+        },
+        {
+          "url": "/blog?_rsc=tckT2x9pUr3ZJq4r",
+          "type": "fetch",
+          "bytes": 646,
+          "duration": 172.30000001192093
+        },
+        {
+          "url": "/about?_rsc=0dTM-NjzfZUdfsrZ",
+          "type": "fetch",
+          "bytes": 3330,
+          "duration": 171.39999997615814
+        },
+        {
+          "url": "/_next/static/chunks/3c9i7y94mintb.js",
+          "type": "script",
+          "bytes": 8590,
+          "duration": 247.5
+        },
+        {
+          "url": "/_next/static/chunks/3--r5s__5dfgh.js",
+          "type": "script",
+          "bytes": 10631,
+          "duration": 271.09999999403954
+        },
+        {
+          "url": "/_next/static/chunks/26x-4nqan8_un.js",
+          "type": "script",
+          "bytes": 5653,
+          "duration": 205.2000000178814
+        }
+      ],
+      "fonts": 0,
+      "images": [
+        {
+          "url": "/characters/fox/rest.svg",
+          "displayed": 48,
+          "natural": 192,
+          "loading": "lazy"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-original.jpg&w=828&q=75",
+          "displayed": 390,
+          "natural": 390,
+          "loading": "eager"
+        },
+        {
+          "url": "/_next/image?url=%2Fmedia%2Fchromatique%2Firises-nord.png&w=828&q=75",
+          "displayed": 390,
+          "natural": 390,
+          "loading": "eager"
+        }
+      ],
+      "navigation": {
+        "name": "http://127.0.0.1:3109/play",
+        "entryType": "navigation",
+        "startTime": 0,
+        "duration": 2216.199999988079,
+        "navigationId": 4771,
+        "initiatorType": "navigation",
+        "deliveryType": "",
+        "nextHopProtocol": "http/1.1",
+        "renderBlockingStatus": "non-blocking",
+        "contentType": "text/html",
+        "contentEncoding": "gzip",
+        "workerStart": 0,
+        "workerRouterEvaluationStart": 0,
+        "workerCacheLookupStart": 0,
+        "workerMatchedSourceType": "",
+        "workerFinalSourceType": "",
+        "redirectStart": 0,
+        "redirectEnd": 0,
+        "fetchStart": 0.09999999403953552,
+        "domainLookupStart": 0.4000000059604645,
+        "domainLookupEnd": 0.5,
+        "connectStart": 0.5,
+        "secureConnectionStart": 0,
+        "connectEnd": 0.699999988079071,
+        "requestStart": 0.699999988079071,
+        "responseStart": 150.80000001192093,
+        "firstInterimResponseStart": 0,
+        "finalResponseHeadersStart": 150.80000001192093,
+        "responseEnd": 203.19999998807907,
+        "transferSize": 9900,
+        "encodedBodySize": 9600,
+        "decodedBodySize": 58390,
+        "responseStatus": 200,
+        "serverTiming": [],
+        "unloadEventStart": 0,
+        "unloadEventEnd": 0,
+        "domInteractive": 658.3000000119209,
+        "domContentLoadedEventStart": 658.3000000119209,
+        "domContentLoadedEventEnd": 658.3000000119209,
+        "domComplete": 2216.199999988079,
+        "loadEventStart": 2216.199999988079,
+        "loadEventEnd": 2216.199999988079,
+        "type": "navigate",
+        "redirectCount": 0,
+        "activationStart": 0,
+        "criticalCHRestart": 0,
+        "notRestoredReasons": null,
+        "confidence": {
+          "randomizedTriggerRate": 0.4994798,
+          "value": "high"
+        }
+      }
+    },
+    {
+      "path": "/about",
+      "run": 1,
+      "lcp": 636,
+      "lcpElement": "P",
+      "cls": 0,
+      "longTasks": [
+        111
+      ],
+      "fcp": 636,
+      "resources": [
+        {
+          "url": "/_next/static/chunks/2plfrcg2f6_ak.css",
+          "type": "link",
+          "bytes": 10692,
+          "duration": 429.09999999403954
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "type": "link",
+          "bytes": 2352,
+          "duration": 198.80000001192093
+        },
+        {
+          "url": "/_next/static/chunks/2kjxkkhnsfwuv.js",
+          "type": "script",
+          "bytes": 7752,
+          "duration": 367.89999997615814
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "type": "script",
+          "bytes": 47040,
+          "duration": 985.7999999821186
+        },
+        {
+          "url": "/_next/static/chunks/32-8bc_la5bzb.js",
+          "type": "script",
+          "bytes": 72246,
+          "duration": 1122.0999999940395
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+          "type": "script",
+          "bytes": 4377,
+          "duration": 320.69999998807907
+        },
+        {
+          "url": "/_next/static/chunks/12--yb3mz_k19.js",
+          "type": "script",
+          "bytes": 6055,
+          "duration": 488.90000000596046
+        },
+        {
+          "url": "/_next/static/chunks/26x-4nqan8_un.js",
+          "type": "script",
+          "bytes": 5653,
+          "duration": 686.9000000059605
+        },
+        {
+          "url": "/_next/static/chunks/0wj0noag-9_fs.js",
+          "type": "script",
+          "bytes": 3612,
+          "duration": 694.6999999880791
+        },
+        {
+          "url": "/_next/static/chunks/2dn1wguorfoo0.js",
+          "type": "script",
+          "bytes": 3728,
+          "duration": 756
+        },
+        {
+          "url": "/_next/static/chunks/1k8ws4wy_mqz_.js",
+          "type": "script",
+          "bytes": 13801,
+          "duration": 788.0999999940395
+        },
+        {
+          "url": "/?_rsc=Sdev7PUlRw12F58X",
+          "type": "fetch",
+          "bytes": 168,
+          "duration": 161.09999999403954
+        },
+        {
+          "url": "/work?_rsc=Sdev7PUlRw12F58X",
+          "type": "fetch",
+          "bytes": 184,
+          "duration": 158.5
+        },
+        {
+          "url": "/blog?_rsc=Sdev7PUlRw12F58X",
+          "type": "fetch",
+          "bytes": 184,
+          "duration": 166.59999999403954
+        },
+        {
+          "url": "/play?_rsc=Sdev7PUlRw12F58X",
+          "type": "fetch",
+          "bytes": 183,
+          "duration": 174
+        },
+        {
+          "url": "/about?_rsc=Sdev7PUlRw12F58X",
+          "type": "fetch",
+          "bytes": 186,
+          "duration": 163
+        },
+        {
+          "url": "/work?_rsc=mowVjYH_erLkYKsO",
+          "type": "fetch",
+          "bytes": 6276,
+          "duration": 225.80000001192093
+        },
+        {
+          "url": "/blog?_rsc=PvdXdD9hzpthEKPE",
+          "type": "fetch",
+          "bytes": 646,
+          "duration": 166.09999999403954
+        },
+        {
+          "url": "/play?_rsc=wZX9sy3fpurxP1rR",
+          "type": "fetch",
+          "bytes": 4374,
+          "duration": 217.80000001192093
+        },
+        {
+          "url": "/?_rsc=IbqYazZHyjXYH_Ld",
+          "type": "fetch",
+          "bytes": 5958,
+          "duration": 187.5
+        },
+        {
+          "url": "/_next/static/chunks/3--r5s__5dfgh.js",
+          "type": "script",
+          "bytes": 10631,
+          "duration": 270.40000000596046
+        },
+        {
+          "url": "/_next/static/chunks/01-fdoz1wyvuf.js",
+          "type": "script",
+          "bytes": 213,
+          "duration": 159.2000000178814
+        },
+        {
+          "url": "/_next/static/chunks/3g22-cx_7kee7.js",
+          "type": "script",
+          "bytes": 14357,
+          "duration": 303.80000001192093
+        },
+        {
+          "url": "/_next/static/chunks/3c9i7y94mintb.js",
+          "type": "script",
+          "bytes": 8590,
+          "duration": 227.40000000596046
+        }
+      ],
+      "fonts": 0,
+      "images": [],
+      "navigation": {
+        "name": "http://127.0.0.1:3109/about",
+        "entryType": "navigation",
+        "startTime": 0,
+        "duration": 1416.5999999940395,
+        "navigationId": 530,
+        "initiatorType": "navigation",
+        "deliveryType": "",
+        "nextHopProtocol": "http/1.1",
+        "renderBlockingStatus": "non-blocking",
+        "contentType": "text/html",
+        "contentEncoding": "gzip",
+        "workerStart": 0,
+        "workerRouterEvaluationStart": 0,
+        "workerCacheLookupStart": 0,
+        "workerMatchedSourceType": "",
+        "workerFinalSourceType": "",
+        "redirectStart": 0,
+        "redirectEnd": 0,
+        "fetchStart": 0.09999999403953552,
+        "domainLookupStart": 0.4000000059604645,
+        "domainLookupEnd": 0.5999999940395355,
+        "connectStart": 0.5999999940395355,
+        "secureConnectionStart": 0,
+        "connectEnd": 0.699999988079071,
+        "requestStart": 0.699999988079071,
+        "responseStart": 150.7999999821186,
+        "firstInterimResponseStart": 0,
+        "finalResponseHeadersStart": 150.7999999821186,
+        "responseEnd": 187.19999998807907,
+        "transferSize": 7050,
+        "encodedBodySize": 6750,
+        "decodedBodySize": 36933,
+        "responseStatus": 200,
+        "serverTiming": [],
+        "unloadEventStart": 0,
+        "unloadEventEnd": 0,
+        "domInteractive": 638.0999999940395,
+        "domContentLoadedEventStart": 638.0999999940395,
+        "domContentLoadedEventEnd": 638.0999999940395,
+        "domComplete": 1416.5999999940395,
+        "loadEventStart": 1416.5999999940395,
+        "loadEventEnd": 1416.5999999940395,
+        "type": "navigate",
+        "redirectCount": 0,
+        "activationStart": 0,
+        "criticalCHRestart": 0,
+        "notRestoredReasons": null,
+        "confidence": {
+          "randomizedTriggerRate": 0.4994798,
+          "value": "high"
+        }
+      }
+    },
+    {
+      "path": "/about",
+      "run": 2,
+      "lcp": 644,
+      "lcpElement": "P",
+      "cls": 0,
+      "longTasks": [
+        96
+      ],
+      "fcp": 644,
+      "resources": [
+        {
+          "url": "/_next/static/chunks/2plfrcg2f6_ak.css",
+          "type": "link",
+          "bytes": 10692,
+          "duration": 429.30000001192093
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "type": "link",
+          "bytes": 2352,
+          "duration": 199.7000000178814
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+          "type": "script",
+          "bytes": 4377,
+          "duration": 320.80000001192093
+        },
+        {
+          "url": "/_next/static/chunks/2kjxkkhnsfwuv.js",
+          "type": "script",
+          "bytes": 7752,
+          "duration": 367.2000000178814
+        },
+        {
+          "url": "/_next/static/chunks/12--yb3mz_k19.js",
+          "type": "script",
+          "bytes": 6055,
+          "duration": 489.90000000596046
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "type": "script",
+          "bytes": 47040,
+          "duration": 984.7000000178814
+        },
+        {
+          "url": "/_next/static/chunks/32-8bc_la5bzb.js",
+          "type": "script",
+          "bytes": 72246,
+          "duration": 1121.800000011921
+        },
+        {
+          "url": "/_next/static/chunks/26x-4nqan8_un.js",
+          "type": "script",
+          "bytes": 5653,
+          "duration": 687.0999999940395
+        },
+        {
+          "url": "/_next/static/chunks/1k8ws4wy_mqz_.js",
+          "type": "script",
+          "bytes": 13801,
+          "duration": 786.2999999821186
+        },
+        {
+          "url": "/_next/static/chunks/0wj0noag-9_fs.js",
+          "type": "script",
+          "bytes": 3612,
+          "duration": 695.0999999940395
+        },
+        {
+          "url": "/_next/static/chunks/2dn1wguorfoo0.js",
+          "type": "script",
+          "bytes": 3728,
+          "duration": 755.5
+        },
+        {
+          "url": "/?_rsc=Sdev7PUlRw12F58X",
+          "type": "fetch",
+          "bytes": 168,
+          "duration": 156.80000001192093
+        },
+        {
+          "url": "/work?_rsc=Sdev7PUlRw12F58X",
+          "type": "fetch",
+          "bytes": 184,
+          "duration": 163.90000000596046
+        },
+        {
+          "url": "/blog?_rsc=Sdev7PUlRw12F58X",
+          "type": "fetch",
+          "bytes": 184,
+          "duration": 171.5
+        },
+        {
+          "url": "/play?_rsc=Sdev7PUlRw12F58X",
+          "type": "fetch",
+          "bytes": 183,
+          "duration": 179.59999999403954
+        },
+        {
+          "url": "/about?_rsc=Sdev7PUlRw12F58X",
+          "type": "fetch",
+          "bytes": 186,
+          "duration": 155.2000000178814
+        },
+        {
+          "url": "/?_rsc=IbqYazZHyjXYH_Ld",
+          "type": "fetch",
+          "bytes": 5958,
+          "duration": 216.90000000596046
+        },
+        {
+          "url": "/work?_rsc=mowVjYH_erLkYKsO",
+          "type": "fetch",
+          "bytes": 6276,
+          "duration": 227.19999998807907
+        },
+        {
+          "url": "/blog?_rsc=PvdXdD9hzpthEKPE",
+          "type": "fetch",
+          "bytes": 646,
+          "duration": 173.39999997615814
+        },
+        {
+          "url": "/play?_rsc=wZX9sy3fpurxP1rR",
+          "type": "fetch",
+          "bytes": 4374,
+          "duration": 181.80000001192093
+        },
+        {
+          "url": "/_next/static/chunks/01-fdoz1wyvuf.js",
+          "type": "script",
+          "bytes": 213,
+          "duration": 158.2000000178814
+        },
+        {
+          "url": "/_next/static/chunks/3c9i7y94mintb.js",
+          "type": "script",
+          "bytes": 8590,
+          "duration": 256.19999998807907
+        },
+        {
+          "url": "/_next/static/chunks/3--r5s__5dfgh.js",
+          "type": "script",
+          "bytes": 10631,
+          "duration": 271
+        },
+        {
+          "url": "/_next/static/chunks/3g22-cx_7kee7.js",
+          "type": "script",
+          "bytes": 14357,
+          "duration": 234.40000000596046
+        }
+      ],
+      "fonts": 0,
+      "images": [],
+      "navigation": {
+        "name": "http://127.0.0.1:3109/about",
+        "entryType": "navigation",
+        "startTime": 0,
+        "duration": 1398.9000000059605,
+        "navigationId": 2756,
+        "initiatorType": "navigation",
+        "deliveryType": "",
+        "nextHopProtocol": "http/1.1",
+        "renderBlockingStatus": "non-blocking",
+        "contentType": "text/html",
+        "contentEncoding": "gzip",
+        "workerStart": 0,
+        "workerRouterEvaluationStart": 0,
+        "workerCacheLookupStart": 0,
+        "workerMatchedSourceType": "",
+        "workerFinalSourceType": "",
+        "redirectStart": 0,
+        "redirectEnd": 0,
+        "fetchStart": 0.09999999403953552,
+        "domainLookupStart": 0.5,
+        "domainLookupEnd": 0.5999999940395355,
+        "connectStart": 0.5999999940395355,
+        "secureConnectionStart": 0,
+        "connectEnd": 0.800000011920929,
+        "requestStart": 0.800000011920929,
+        "responseStart": 150.80000001192093,
+        "firstInterimResponseStart": 0,
+        "finalResponseHeadersStart": 150.80000001192093,
+        "responseEnd": 188.7000000178814,
+        "transferSize": 7050,
+        "encodedBodySize": 6750,
+        "decodedBodySize": 36933,
+        "responseStatus": 200,
+        "serverTiming": [],
+        "unloadEventStart": 0,
+        "unloadEventEnd": 0,
+        "domInteractive": 641.4000000059605,
+        "domContentLoadedEventStart": 641.4000000059605,
+        "domContentLoadedEventEnd": 642.2000000178814,
+        "domComplete": 1398.9000000059605,
+        "loadEventStart": 1398.9000000059605,
+        "loadEventEnd": 1398.9000000059605,
+        "type": "navigate",
+        "redirectCount": 0,
+        "activationStart": 0,
+        "criticalCHRestart": 0,
+        "notRestoredReasons": null,
+        "confidence": {
+          "randomizedTriggerRate": 0.4994798,
+          "value": "low"
+        }
+      }
+    },
+    {
+      "path": "/about",
+      "run": 3,
+      "lcp": 636,
+      "lcpElement": "P",
+      "cls": 0,
+      "longTasks": [
+        92
+      ],
+      "fcp": 636,
+      "resources": [
+        {
+          "url": "/_next/static/chunks/2plfrcg2f6_ak.css",
+          "type": "link",
+          "bytes": 10692,
+          "duration": 428.09999999403954
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "type": "link",
+          "bytes": 2352,
+          "duration": 199.7000000178814
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+          "type": "script",
+          "bytes": 4377,
+          "duration": 322.30000001192093
+        },
+        {
+          "url": "/_next/static/chunks/2kjxkkhnsfwuv.js",
+          "type": "script",
+          "bytes": 7752,
+          "duration": 367.90000000596046
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "type": "script",
+          "bytes": 47040,
+          "duration": 985.7000000178814
+        },
+        {
+          "url": "/_next/static/chunks/32-8bc_la5bzb.js",
+          "type": "script",
+          "bytes": 72246,
+          "duration": 1122.4000000059605
+        },
+        {
+          "url": "/_next/static/chunks/12--yb3mz_k19.js",
+          "type": "script",
+          "bytes": 6055,
+          "duration": 489.19999998807907
+        },
+        {
+          "url": "/_next/static/chunks/26x-4nqan8_un.js",
+          "type": "script",
+          "bytes": 5653,
+          "duration": 686.2999999821186
+        },
+        {
+          "url": "/_next/static/chunks/0wj0noag-9_fs.js",
+          "type": "script",
+          "bytes": 3612,
+          "duration": 695.0999999940395
+        },
+        {
+          "url": "/_next/static/chunks/1k8ws4wy_mqz_.js",
+          "type": "script",
+          "bytes": 13801,
+          "duration": 786.0999999940395
+        },
+        {
+          "url": "/_next/static/chunks/2dn1wguorfoo0.js",
+          "type": "script",
+          "bytes": 3728,
+          "duration": 754.6999999880791
+        },
+        {
+          "url": "/?_rsc=Sdev7PUlRw12F58X",
+          "type": "fetch",
+          "bytes": 168,
+          "duration": 156.39999997615814
+        },
+        {
+          "url": "/work?_rsc=Sdev7PUlRw12F58X",
+          "type": "fetch",
+          "bytes": 184,
+          "duration": 163.89999997615814
+        },
+        {
+          "url": "/blog?_rsc=Sdev7PUlRw12F58X",
+          "type": "fetch",
+          "bytes": 184,
+          "duration": 171.59999999403954
+        },
+        {
+          "url": "/play?_rsc=Sdev7PUlRw12F58X",
+          "type": "fetch",
+          "bytes": 183,
+          "duration": 179.09999999403954
+        },
+        {
+          "url": "/about?_rsc=Sdev7PUlRw12F58X",
+          "type": "fetch",
+          "bytes": 186,
+          "duration": 155.2000000178814
+        },
+        {
+          "url": "/?_rsc=IbqYazZHyjXYH_Ld",
+          "type": "fetch",
+          "bytes": 5958,
+          "duration": 218
+        },
+        {
+          "url": "/work?_rsc=mowVjYH_erLkYKsO",
+          "type": "fetch",
+          "bytes": 6276,
+          "duration": 227.30000001192093
+        },
+        {
+          "url": "/blog?_rsc=PvdXdD9hzpthEKPE",
+          "type": "fetch",
+          "bytes": 646,
+          "duration": 174.09999999403954
+        },
+        {
+          "url": "/play?_rsc=wZX9sy3fpurxP1rR",
+          "type": "fetch",
+          "bytes": 4374,
+          "duration": 181.59999999403954
+        },
+        {
+          "url": "/_next/static/chunks/01-fdoz1wyvuf.js",
+          "type": "script",
+          "bytes": 213,
+          "duration": 156
+        },
+        {
+          "url": "/_next/static/chunks/3c9i7y94mintb.js",
+          "type": "script",
+          "bytes": 8590,
+          "duration": 254.7999999821186
+        },
+        {
+          "url": "/_next/static/chunks/3--r5s__5dfgh.js",
+          "type": "script",
+          "bytes": 10631,
+          "duration": 270
+        },
+        {
+          "url": "/_next/static/chunks/3g22-cx_7kee7.js",
+          "type": "script",
+          "bytes": 14357,
+          "duration": 233.19999998807907
+        }
+      ],
+      "fonts": 0,
+      "images": [],
+      "navigation": {
+        "name": "http://127.0.0.1:3109/about",
+        "entryType": "navigation",
+        "startTime": 0,
+        "duration": 1397.300000011921,
+        "navigationId": 393,
+        "initiatorType": "navigation",
+        "deliveryType": "",
+        "nextHopProtocol": "http/1.1",
+        "renderBlockingStatus": "non-blocking",
+        "contentType": "text/html",
+        "contentEncoding": "gzip",
+        "workerStart": 0,
+        "workerRouterEvaluationStart": 0,
+        "workerCacheLookupStart": 0,
+        "workerMatchedSourceType": "",
+        "workerFinalSourceType": "",
+        "redirectStart": 0,
+        "redirectEnd": 0,
+        "fetchStart": 0.09999999403953552,
+        "domainLookupStart": 0.4000000059604645,
+        "domainLookupEnd": 0.5999999940395355,
+        "connectStart": 0.5999999940395355,
+        "secureConnectionStart": 0,
+        "connectEnd": 0.800000011920929,
+        "requestStart": 0.800000011920929,
+        "responseStart": 150.80000001192093,
+        "firstInterimResponseStart": 0,
+        "finalResponseHeadersStart": 150.80000001192093,
+        "responseEnd": 187.2000000178814,
+        "transferSize": 7050,
+        "encodedBodySize": 6750,
+        "decodedBodySize": 36933,
+        "responseStatus": 200,
+        "serverTiming": [],
+        "unloadEventStart": 0,
+        "unloadEventEnd": 0,
+        "domInteractive": 637.3000000119209,
+        "domContentLoadedEventStart": 637.3000000119209,
+        "domContentLoadedEventEnd": 637.3000000119209,
+        "domComplete": 1397.300000011921,
+        "loadEventStart": 1397.300000011921,
+        "loadEventEnd": 1397.300000011921,
+        "type": "navigate",
+        "redirectCount": 0,
+        "activationStart": 0,
+        "criticalCHRestart": 0,
+        "notRestoredReasons": null,
+        "confidence": {
+          "randomizedTriggerRate": 0.4994798,
+          "value": "high"
+        }
+      }
+    },
+    {
+      "path": "/blog/2019-12-21-microfrontend-from-00-to-20s",
+      "run": 1,
+      "lcp": 640,
+      "lcpElement": "P",
+      "cls": 0,
+      "longTasks": [
+        101
+      ],
+      "fcp": 640,
+      "resources": [
+        {
+          "url": "/_next/static/chunks/2plfrcg2f6_ak.css",
+          "type": "link",
+          "bytes": 10692,
+          "duration": 422.09999999403954
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "type": "link",
+          "bytes": 2352,
+          "duration": 168.69999998807907
+        },
+        {
+          "url": "/_next/static/chunks/2kjxkkhnsfwuv.js",
+          "type": "script",
+          "bytes": 7752,
+          "duration": 368.19999998807907
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+          "type": "script",
+          "bytes": 4377,
+          "duration": 328.30000001192093
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "type": "script",
+          "bytes": 47040,
+          "duration": 976.8000000119209
+        },
+        {
+          "url": "/_next/static/chunks/32-8bc_la5bzb.js",
+          "type": "script",
+          "bytes": 72246,
+          "duration": 1115.300000011921
+        },
+        {
+          "url": "/_next/static/chunks/12--yb3mz_k19.js",
+          "type": "script",
+          "bytes": 6055,
+          "duration": 472.90000000596046
+        },
+        {
+          "url": "/_next/static/chunks/1k8ws4wy_mqz_.js",
+          "type": "script",
+          "bytes": 13801,
+          "duration": 786.1999999880791
+        },
+        {
+          "url": "/_next/static/chunks/26x-4nqan8_un.js",
+          "type": "script",
+          "bytes": 5653,
+          "duration": 693.9000000059605
+        },
+        {
+          "url": "/_next/static/chunks/0wj0noag-9_fs.js",
+          "type": "script",
+          "bytes": 3612,
+          "duration": 686.2000000178814
+        },
+        {
+          "url": "/_next/static/chunks/2dn1wguorfoo0.js",
+          "type": "script",
+          "bytes": 3728,
+          "duration": 740.9000000059605
+        },
+        {
+          "url": "/?_rsc=-0Q_h0N-BrDyZlS7",
+          "type": "fetch",
+          "bytes": 168,
+          "duration": 159.30000001192093
+        },
+        {
+          "url": "/work?_rsc=-0Q_h0N-BrDyZlS7",
+          "type": "fetch",
+          "bytes": 184,
+          "duration": 165.89999997615814
+        },
+        {
+          "url": "/blog?_rsc=-0Q_h0N-BrDyZlS7",
+          "type": "fetch",
+          "bytes": 184,
+          "duration": 173.5
+        },
+        {
+          "url": "/play?_rsc=-0Q_h0N-BrDyZlS7",
+          "type": "fetch",
+          "bytes": 183,
+          "duration": 181.2999999821186
+        },
+        {
+          "url": "/about?_rsc=-0Q_h0N-BrDyZlS7",
+          "type": "fetch",
+          "bytes": 186,
+          "duration": 162.40000000596046
+        },
+        {
+          "url": "/blog?tag=python&_rsc=-0Q_h0N-BrDyZlS7",
+          "type": "fetch",
+          "bytes": 184,
+          "duration": 165.39999997615814
+        },
+        {
+          "url": "/?_rsc=PDtRVJkgbpxMSAqz",
+          "type": "fetch",
+          "bytes": 5958,
+          "duration": 224.59999999403954
+        },
+        {
+          "url": "/work?_rsc=5StssJ2eYhsf1wW7",
+          "type": "fetch",
+          "bytes": 6276,
+          "duration": 224.5
+        },
+        {
+          "url": "/blog?_rsc=jFyFTMmVLlDghypW",
+          "type": "fetch",
+          "bytes": 646,
+          "duration": 155.7999999821186
+        },
+        {
+          "url": "/play?_rsc=3kotZL3E1DIoAWS0",
+          "type": "fetch",
+          "bytes": 4374,
+          "duration": 179.2999999821186
+        },
+        {
+          "url": "/_next/static/chunks/01-fdoz1wyvuf.js",
+          "type": "script",
+          "bytes": 213,
+          "duration": 156.30000001192093
+        },
+        {
+          "url": "/_next/static/chunks/3c9i7y94mintb.js",
+          "type": "script",
+          "bytes": 8590,
+          "duration": 276.59999999403954
+        },
+        {
+          "url": "/_next/static/chunks/3--r5s__5dfgh.js",
+          "type": "script",
+          "bytes": 10631,
+          "duration": 308.40000000596046
+        },
+        {
+          "url": "/about?_rsc=ym4qmxoFNGQBLq_0",
+          "type": "fetch",
+          "bytes": 3330,
+          "duration": 219.60000002384186
+        },
+        {
+          "url": "/_next/static/chunks/3g22-cx_7kee7.js",
+          "type": "script",
+          "bytes": 14357,
+          "duration": 257.60000002384186
+        }
+      ],
+      "fonts": 0,
+      "images": [],
+      "navigation": {
+        "name": "http://127.0.0.1:3109/blog/2019-12-21-microfrontend-from-00-to-20s",
+        "entryType": "navigation",
+        "startTime": 0,
+        "duration": 1396.300000011921,
+        "navigationId": 3351,
+        "initiatorType": "navigation",
+        "deliveryType": "",
+        "nextHopProtocol": "http/1.1",
+        "renderBlockingStatus": "non-blocking",
+        "contentType": "text/html",
+        "contentEncoding": "gzip",
+        "workerStart": 0,
+        "workerRouterEvaluationStart": 0,
+        "workerCacheLookupStart": 0,
+        "workerMatchedSourceType": "",
+        "workerFinalSourceType": "",
+        "redirectStart": 0,
+        "redirectEnd": 0,
+        "fetchStart": 0,
+        "domainLookupStart": 0.4000000059604645,
+        "domainLookupEnd": 0.5,
+        "connectStart": 0.5,
+        "secureConnectionStart": 0,
+        "connectEnd": 0.5999999940395355,
+        "requestStart": 0.5999999940395355,
+        "responseStart": 150.59999999403954,
+        "firstInterimResponseStart": 0,
+        "finalResponseHeadersStart": 150.59999999403954,
+        "responseEnd": 203.5,
+        "transferSize": 10175,
+        "encodedBodySize": 9875,
+        "decodedBodySize": 48596,
+        "responseStatus": 200,
+        "serverTiming": [],
+        "unloadEventStart": 0,
+        "unloadEventEnd": 0,
+        "domInteractive": 639.8000000119209,
+        "domContentLoadedEventStart": 639.8000000119209,
+        "domContentLoadedEventEnd": 639.8000000119209,
+        "domComplete": 1396.300000011921,
+        "loadEventStart": 1396.300000011921,
+        "loadEventEnd": 1396.300000011921,
+        "type": "navigate",
+        "redirectCount": 0,
+        "activationStart": 0,
+        "criticalCHRestart": 0,
+        "notRestoredReasons": null,
+        "confidence": {
+          "randomizedTriggerRate": 0.4994798,
+          "value": "high"
+        }
+      }
+    },
+    {
+      "path": "/blog/2019-12-21-microfrontend-from-00-to-20s",
+      "run": 2,
+      "lcp": 648,
+      "lcpElement": "P",
+      "cls": 0,
+      "longTasks": [
+        107
+      ],
+      "fcp": 648,
+      "resources": [
+        {
+          "url": "/_next/static/chunks/2plfrcg2f6_ak.css",
+          "type": "link",
+          "bytes": 10692,
+          "duration": 425.59999999403954
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "type": "link",
+          "bytes": 2352,
+          "duration": 203.19999998807907
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+          "type": "script",
+          "bytes": 4377,
+          "duration": 333
+        },
+        {
+          "url": "/_next/static/chunks/2kjxkkhnsfwuv.js",
+          "type": "script",
+          "bytes": 7752,
+          "duration": 362.59999999403954
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "type": "script",
+          "bytes": 47040,
+          "duration": 981.1999999880791
+        },
+        {
+          "url": "/_next/static/chunks/32-8bc_la5bzb.js",
+          "type": "script",
+          "bytes": 72246,
+          "duration": 1118.4000000059605
+        },
+        {
+          "url": "/_next/static/chunks/12--yb3mz_k19.js",
+          "type": "script",
+          "bytes": 6055,
+          "duration": 491.80000001192093
+        },
+        {
+          "url": "/_next/static/chunks/26x-4nqan8_un.js",
+          "type": "script",
+          "bytes": 5653,
+          "duration": 675.2000000178814
+        },
+        {
+          "url": "/_next/static/chunks/1k8ws4wy_mqz_.js",
+          "type": "script",
+          "bytes": 13801,
+          "duration": 797
+        },
+        {
+          "url": "/_next/static/chunks/0wj0noag-9_fs.js",
+          "type": "script",
+          "bytes": 3612,
+          "duration": 690.5999999940395
+        },
+        {
+          "url": "/_next/static/chunks/2dn1wguorfoo0.js",
+          "type": "script",
+          "bytes": 3728,
+          "duration": 750.5
+        },
+        {
+          "url": "/?_rsc=-0Q_h0N-BrDyZlS7",
+          "type": "fetch",
+          "bytes": 168,
+          "duration": 158.90000000596046
+        },
+        {
+          "url": "/work?_rsc=-0Q_h0N-BrDyZlS7",
+          "type": "fetch",
+          "bytes": 184,
+          "duration": 166
+        },
+        {
+          "url": "/blog?_rsc=-0Q_h0N-BrDyZlS7",
+          "type": "fetch",
+          "bytes": 184,
+          "duration": 173.40000000596046
+        },
+        {
+          "url": "/play?_rsc=-0Q_h0N-BrDyZlS7",
+          "type": "fetch",
+          "bytes": 183,
+          "duration": 182.30000001192093
+        },
+        {
+          "url": "/about?_rsc=-0Q_h0N-BrDyZlS7",
+          "type": "fetch",
+          "bytes": 186,
+          "duration": 161.7999999821186
+        },
+        {
+          "url": "/blog?tag=python&_rsc=-0Q_h0N-BrDyZlS7",
+          "type": "fetch",
+          "bytes": 184,
+          "duration": 164.90000000596046
+        },
+        {
+          "url": "/blog?_rsc=jFyFTMmVLlDghypW",
+          "type": "fetch",
+          "bytes": 646,
+          "duration": 163.5
+        },
+        {
+          "url": "/?_rsc=PDtRVJkgbpxMSAqz",
+          "type": "fetch",
+          "bytes": 5958,
+          "duration": 194
+        },
+        {
+          "url": "/about?_rsc=ym4qmxoFNGQBLq_0",
+          "type": "fetch",
+          "bytes": 3330,
+          "duration": 178.5
+        },
+        {
+          "url": "/work?_rsc=5StssJ2eYhsf1wW7",
+          "type": "fetch",
+          "bytes": 6276,
+          "duration": 271.40000000596046
+        },
+        {
+          "url": "/play?_rsc=3kotZL3E1DIoAWS0",
+          "type": "fetch",
+          "bytes": 4374,
+          "duration": 237.09999999403954
+        },
+        {
+          "url": "/_next/static/chunks/01-fdoz1wyvuf.js",
+          "type": "script",
+          "bytes": 213,
+          "duration": 172.69999998807907
+        },
+        {
+          "url": "/_next/static/chunks/3c9i7y94mintb.js",
+          "type": "script",
+          "bytes": 8590,
+          "duration": 292.40000000596046
+        },
+        {
+          "url": "/_next/static/chunks/3--r5s__5dfgh.js",
+          "type": "script",
+          "bytes": 10631,
+          "duration": 309.2000000178814
+        },
+        {
+          "url": "/_next/static/chunks/3g22-cx_7kee7.js",
+          "type": "script",
+          "bytes": 14357,
+          "duration": 225
+        }
+      ],
+      "fonts": 0,
+      "images": [],
+      "navigation": {
+        "name": "http://127.0.0.1:3109/blog/2019-12-21-microfrontend-from-00-to-20s",
+        "entryType": "navigation",
+        "startTime": 0,
+        "duration": 1411.699999988079,
+        "navigationId": 551,
+        "initiatorType": "navigation",
+        "deliveryType": "",
+        "nextHopProtocol": "http/1.1",
+        "renderBlockingStatus": "non-blocking",
+        "contentType": "text/html",
+        "contentEncoding": "gzip",
+        "workerStart": 0,
+        "workerRouterEvaluationStart": 0,
+        "workerCacheLookupStart": 0,
+        "workerMatchedSourceType": "",
+        "workerFinalSourceType": "",
+        "redirectStart": 0,
+        "redirectEnd": 0,
+        "fetchStart": 0,
+        "domainLookupStart": 0.5,
+        "domainLookupEnd": 0.5999999940395355,
+        "connectStart": 0.5999999940395355,
+        "secureConnectionStart": 0,
+        "connectEnd": 0.800000011920929,
+        "requestStart": 0.800000011920929,
+        "responseStart": 150.90000000596046,
+        "firstInterimResponseStart": 0,
+        "finalResponseHeadersStart": 150.90000000596046,
+        "responseEnd": 202.90000000596046,
+        "transferSize": 10175,
+        "encodedBodySize": 9875,
+        "decodedBodySize": 48596,
+        "responseStatus": 200,
+        "serverTiming": [],
+        "unloadEventStart": 0,
+        "unloadEventEnd": 0,
+        "domInteractive": 652.3000000119209,
+        "domContentLoadedEventStart": 652.4000000059605,
+        "domContentLoadedEventEnd": 652.4000000059605,
+        "domComplete": 1411.699999988079,
+        "loadEventStart": 1411.699999988079,
+        "loadEventEnd": 1411.699999988079,
+        "type": "navigate",
+        "redirectCount": 0,
+        "activationStart": 0,
+        "criticalCHRestart": 0,
+        "notRestoredReasons": null,
+        "confidence": {
+          "randomizedTriggerRate": 0.4994798,
+          "value": "high"
+        }
+      }
+    },
+    {
+      "path": "/blog/2019-12-21-microfrontend-from-00-to-20s",
+      "run": 3,
+      "lcp": 848,
+      "lcpElement": "P",
+      "cls": 0,
+      "longTasks": [
+        199,
+        135
+      ],
+      "fcp": 848,
+      "resources": [
+        {
+          "url": "/_next/static/chunks/2plfrcg2f6_ak.css",
+          "type": "link",
+          "bytes": 10692,
+          "duration": 431.30000001192093
+        },
+        {
+          "url": "/_next/static/chunks/0uk63h0tuavo5.js",
+          "type": "link",
+          "bytes": 2352,
+          "duration": 210.09999999403954
+        },
+        {
+          "url": "/_next/static/chunks/2kjxkkhnsfwuv.js",
+          "type": "script",
+          "bytes": 7752,
+          "duration": 370.10000002384186
+        },
+        {
+          "url": "/_next/static/chunks/32-8bc_la5bzb.js",
+          "type": "script",
+          "bytes": 72246,
+          "duration": 1124.300000011921
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+          "type": "script",
+          "bytes": 4377,
+          "duration": 300.69999998807907
+        },
+        {
+          "url": "/_next/static/chunks/12--yb3mz_k19.js",
+          "type": "script",
+          "bytes": 6055,
+          "duration": 513.6999999880791
+        },
+        {
+          "url": "/_next/static/chunks/26x-4nqan8_un.js",
+          "type": "script",
+          "bytes": 5653,
+          "duration": 681.5999999940395
+        },
+        {
+          "url": "/_next/static/chunks/0wj0noag-9_fs.js",
+          "type": "script",
+          "bytes": 3612,
+          "duration": 689.0999999940395
+        },
+        {
+          "url": "/_next/static/chunks/2dn1wguorfoo0.js",
+          "type": "script",
+          "bytes": 3728,
+          "duration": 766.1999999880791
+        },
+        {
+          "url": "/_next/static/chunks/1k8ws4wy_mqz_.js",
+          "type": "script",
+          "bytes": 13801,
+          "duration": 781.3999999761581
+        },
+        {
+          "url": "/_next/static/chunks/2fuxlcqleg9x-.js",
+          "type": "script",
+          "bytes": 47040,
+          "duration": 995.0999999940395
+        },
+        {
+          "url": "/?_rsc=-0Q_h0N-BrDyZlS7",
+          "type": "fetch",
+          "bytes": 168,
+          "duration": 159
+        },
+        {
+          "url": "/work?_rsc=-0Q_h0N-BrDyZlS7",
+          "type": "fetch",
+          "bytes": 184,
+          "duration": 166
+        },
+        {
+          "url": "/blog?_rsc=-0Q_h0N-BrDyZlS7",
+          "type": "fetch",
+          "bytes": 184,
+          "duration": 173.59999999403954
+        },
+        {
+          "url": "/play?_rsc=-0Q_h0N-BrDyZlS7",
+          "type": "fetch",
+          "bytes": 183,
+          "duration": 179.60000002384186
+        },
+        {
+          "url": "/about?_rsc=-0Q_h0N-BrDyZlS7",
+          "type": "fetch",
+          "bytes": 186,
+          "duration": 152.7000000178814
+        },
+        {
+          "url": "/blog?tag=python&_rsc=-0Q_h0N-BrDyZlS7",
+          "type": "fetch",
+          "bytes": 184,
+          "duration": 156.09999999403954
+        },
+        {
+          "url": "/blog?_rsc=jFyFTMmVLlDghypW",
+          "type": "fetch",
+          "bytes": 646,
+          "duration": 155.19999998807907
+        },
+        {
+          "url": "/?_rsc=PDtRVJkgbpxMSAqz",
+          "type": "fetch",
+          "bytes": 5958,
+          "duration": 189.69999998807907
+        },
+        {
+          "url": "/about?_rsc=ym4qmxoFNGQBLq_0",
+          "type": "fetch",
+          "bytes": 3330,
+          "duration": 181.5
+        },
+        {
+          "url": "/work?_rsc=5StssJ2eYhsf1wW7",
+          "type": "fetch",
+          "bytes": 6276,
+          "duration": 272.40000000596046
+        },
+        {
+          "url": "/play?_rsc=3kotZL3E1DIoAWS0",
+          "type": "fetch",
+          "bytes": 4374,
+          "duration": 241.7000000178814
+        },
+        {
+          "url": "/_next/static/chunks/01-fdoz1wyvuf.js",
+          "type": "script",
+          "bytes": 213,
+          "duration": 172.5
+        },
+        {
+          "url": "/_next/static/chunks/3c9i7y94mintb.js",
+          "type": "script",
+          "bytes": 8590,
+          "duration": 292.19999998807907
+        },
+        {
+          "url": "/_next/static/chunks/3--r5s__5dfgh.js",
+          "type": "script",
+          "bytes": 10631,
+          "duration": 307.7999999821186
+        },
+        {
+          "url": "/_next/static/chunks/3g22-cx_7kee7.js",
+          "type": "script",
+          "bytes": 14357,
+          "duration": 226.7000000178814
+        }
+      ],
+      "fonts": 0,
+      "images": [],
+      "navigation": {
+        "name": "http://127.0.0.1:3109/blog/2019-12-21-microfrontend-from-00-to-20s",
+        "entryType": "navigation",
+        "startTime": 0,
+        "duration": 1470.800000011921,
+        "navigationId": 3355,
+        "initiatorType": "navigation",
+        "deliveryType": "",
+        "nextHopProtocol": "http/1.1",
+        "renderBlockingStatus": "non-blocking",
+        "contentType": "text/html",
+        "contentEncoding": "gzip",
+        "workerStart": 0,
+        "workerRouterEvaluationStart": 0,
+        "workerCacheLookupStart": 0,
+        "workerMatchedSourceType": "",
+        "workerFinalSourceType": "",
+        "redirectStart": 0,
+        "redirectEnd": 0,
+        "fetchStart": 0.30000001192092896,
+        "domainLookupStart": 1,
+        "domainLookupEnd": 1.4000000059604645,
+        "connectStart": 1.4000000059604645,
+        "secureConnectionStart": 0,
+        "connectEnd": 1.5,
+        "requestStart": 1.5,
+        "responseStart": 151.5,
+        "firstInterimResponseStart": 0,
+        "finalResponseHeadersStart": 151.5,
+        "responseEnd": 201.7000000178814,
+        "transferSize": 10175,
+        "encodedBodySize": 9875,
+        "decodedBodySize": 48596,
+        "responseStatus": 200,
+        "serverTiming": [],
+        "unloadEventStart": 0,
+        "unloadEventEnd": 0,
+        "domInteractive": 850.0999999940395,
+        "domContentLoadedEventStart": 850.0999999940395,
+        "domContentLoadedEventEnd": 850.0999999940395,
+        "domComplete": 1470.4000000059605,
+        "loadEventStart": 1470.800000011921,
+        "loadEventEnd": 1470.800000011921,
+        "type": "navigate",
+        "redirectCount": 0,
+        "activationStart": 0,
+        "criticalCHRestart": 0,
+        "notRestoredReasons": null,
+        "confidence": {
+          "randomizedTriggerRate": 0.4994798,
+          "value": "high"
+        }
+      }
+    }
+  ]
+}

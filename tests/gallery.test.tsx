@@ -33,6 +33,18 @@ describe("gallery navigation model", () => {
     expect(html).not.toContain("Loading image…");
     expect(html).not.toContain('role="tablist"');
   });
+  test("native fallback and hydrated gallery share lazy responsive image requests for single and multiple media", () => {
+    for (const items of [[image], [image, { ...image, id: "two" }]]) {
+      const native = renderToStaticMarkup(<StaticGallery label="Media" items={items} />);
+      const enhanced = renderToStaticMarkup(<MediaGallery label="Media" items={items} />);
+      const images = (html: string) => [...html.matchAll(/<img[^>]*>/g)].map(([tag]) => ({
+        srcSet: tag.match(/srcSet="([^"]+)"/)?.[1], sizes: tag.match(/sizes="([^"]+)"/)?.[1], lazy: tag.includes('loading="lazy"'),
+      }));
+      expect(images(native)).toEqual(images(enhanced));
+      expect(images(native)).toHaveLength(items.length);
+      for (const item of images(native)) { expect(item.srcSet).toContain("/_next/image?"); expect(item.lazy).toBe(true); expect(item.sizes).toBeTruthy(); }
+    }
+  });
   test("zero and missing media preserve the summary and project destination", () => {
     expect(renderToStaticMarkup(<MediaGallery label="Empty" items={[]} />)).toBe("");
     const html = renderToStaticMarkup(<ProjectGallery id="project" title="Project" href="/work" linkLabel="Project story" media={[]}><p>Actual summary</p></ProjectGallery>);

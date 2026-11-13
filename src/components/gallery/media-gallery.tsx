@@ -6,10 +6,10 @@ import { useHydrated } from "@/hooks/use-hydrated";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { boundedIndex, indexAtScroll, type GalleryMedia } from "@/lib/gallery";
+import { boundedIndex, galleryImageSizes, indexAtScroll, type GalleryMedia } from "@/lib/gallery";
 import { GalleryCaption, MediaSurface } from "@/components/media/presentation";
 
-function GalleryItem({ item, eager }: { item: GalleryMedia; eager: boolean }) {
+function GalleryItem({ item, sizes }: { item: GalleryMedia; sizes: string }) {
   const [state, setState] = useState<"loading" | "ready" | "failed">(item.src ? "loading" : "failed");
   const failed = state === "failed";
   const hydrated = useHydrated();
@@ -18,8 +18,7 @@ function GalleryItem({ item, eager }: { item: GalleryMedia; eager: boolean }) {
     <MediaSurface className="relative aspect-[4/3] bg-(--experiment-ink) text-(--reverse) md:aspect-[5/3]" aria-busy={hydrated && state === "loading" && item.kind === "image"}>
       {item.kind === "image" && item.src && !failed ? (
         <Image src={item.src} alt={item.alt} width={item.width} height={item.height}
-          sizes="(min-width: 1600px) 590px, (min-width: 1200px) 38vw, (min-width: 768px) 70vw, 85vw"
-          loading={eager ? "eager" : "lazy"}
+          sizes={sizes} loading="lazy"
           className={cn("h-full min-h-0 w-full", item.fit === "cover" ? "object-cover" : "object-contain")}
           style={{ objectPosition: item.focalPoint }}
           onLoad={() => setState("ready")} onError={() => setState("failed")} />
@@ -107,7 +106,7 @@ export function MediaGallery({ label, items }: { label: string; items: readonly 
       }}>
       {items.map((item, index) => <li key={item.id} data-media-index={index}
         className={cn("min-w-0 shrink-0 snap-start", items.length === 1 ? "basis-full" : "basis-[88%] md:basis-[76%] desktop:basis-[48%]")}>
-        <GalleryItem item={item} eager={index === 0} />
+        <GalleryItem item={item} sizes={galleryImageSizes(items.length)} />
       </li>)}
     </ol>
     {items.length > 1 && enhanced ? <div className="mt-4 flex flex-wrap items-center justify-between gap-4">

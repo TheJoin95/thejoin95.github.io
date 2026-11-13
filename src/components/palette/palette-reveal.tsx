@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useHydrated } from "@/hooks/use-hydrated";
 import { useCallback, useId, useState, type PointerEvent } from "react";
 import { MediaSurface } from "@/components/media/presentation";
@@ -40,13 +41,13 @@ export function PaletteReveal() {
       }} onPointerUp={event => { if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId); }}
       onPointerLeave={() => setPreview(null)} onPointerCancel={() => setPreview(null)}>
       {/* The same accessible HTML images serve the initial and interactive comparison. */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img ref={checkImage} draggable={false} src={paletteImages.original} width={paletteImages.width} height={paletteImages.height}
+      <Image ref={checkImage} draggable={false} src={paletteImages.original} width={paletteImages.width} height={paletteImages.height}
+        sizes="(min-width: 1600px) 1600px, 100vw"
         alt="Original hand-coloured garden photograph by Frances Benjamin Johnston."
         loading="eager" fetchPriority="high" onError={() => setImageFailed(true)} className="absolute inset-0 h-full w-full object-cover" />
       <div className="absolute inset-0" data-palette-output style={{ clipPath: `inset(0 0 0 ${100 - value}%)` }}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img ref={checkImage} draggable={false} src={paletteImages.palette} width={paletteImages.width} height={paletteImages.height}
+        <Image ref={checkImage} draggable={false} src={paletteImages.palette} width={paletteImages.width} height={paletteImages.height}
+          sizes="(min-width: 1600px) 1600px, 100vw"
           alt="The same photograph converted by Chromatique into the Nord palette."
           loading="eager" onError={() => setImageFailed(true)} className="h-full w-full object-cover" />
       </div>

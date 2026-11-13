@@ -1,4 +1,5 @@
-import type { GalleryMedia } from "@/lib/gallery";
+import { galleryImageSizes, type GalleryMedia } from "@/lib/gallery";
+import { getImageProps } from "next/image";
 import { cn } from "@/lib/utils";
 import { GalleryCaption, MediaSurface } from "@/components/media/presentation";
 
@@ -13,7 +14,7 @@ export function StaticGallery({ label, items }: { label: string; items: readonly
             {item.kind === "image" && item.src ? (
               // Native markup keeps media visible if client rendering is suspended.
               // eslint-disable-next-line @next/next/no-img-element
-              <img src={item.src} alt={item.alt} width={item.width} height={item.height} loading="lazy" className={cn("h-full min-h-0 w-full", item.fit === "cover" ? "object-cover" : "object-contain")} style={{ objectPosition: item.focalPoint }} />
+              <img {...getImageProps({ src: item.src, alt: item.alt, width: item.width, height: item.height, sizes: galleryImageSizes(items.length), loading: "lazy" }).props} className={cn("h-full min-h-0 w-full", item.fit === "cover" ? "object-cover" : "object-contain")} style={{ objectPosition: item.focalPoint }} />
             ) : item.kind === "video" && item.src ? (
               <video src={item.src} controls playsInline preload="none" poster={item.poster} width={item.width} height={item.height} aria-label={item.caption} className="h-full min-h-0 w-full object-contain">
                 {item.captions?.map(track => <track key={track.src} kind="captions" src={track.src} srcLang={track.language} label={track.label} />)}

@@ -77,7 +77,7 @@ test("homepage galleries keep independent controls and accessible IDs", async ({
 });
 
 test("failed static-stage images do not hide the profile or project evidence", async ({ page }) => {
-  await page.route("**/media/chromatique/*", route => route.abort());
+  await page.route("**/_next/image?**", route => decodeURIComponent(route.request().url()).includes("/media/chromatique/") ? route.abort() : route.continue());
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
   const stage = page.getByRole("region", { name: "Chromatique palette comparison", exact: true });

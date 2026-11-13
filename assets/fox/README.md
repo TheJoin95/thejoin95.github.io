@@ -48,7 +48,8 @@ The 192×160 artboard stays identical for every export. Use the intrinsic ratio;
 do not stretch it into a square. Preview at 40, 48, 64 and 96px wide on both white
 and charcoal. At most one fox per public page, 40–64px on phones and 64–96px on
 desktop, with space from controls/copy. Do not place the proof contact sheet or
-all poses together on a public page. Actual page placement remains MIC-23.
+all poses together on a public page. MIC-23 places one companion in each Home/Play introduction;
+other pages keep their existing composition.
 
 ## Motion and expression vocabulary
 
@@ -66,7 +67,7 @@ inspection; the normal reduced-motion/error/no-script alternative is `rest.svg`.
 
 Use `LottieAnimation` with the resting poster and reserved dimensions. Mount it
 only for a deliberate reaction, using a new React key for each authorized
-interaction. It loads near the viewport, completes once and returns to the
+interaction. It loads in the viewport, completes once and returns to the
 poster. Leaving the observed region or enabling reduced motion cancels that
 reaction to the poster; returning does not replay it. Hidden-tab visibility
 events pause/resume an unfinished clip. This is decorative and `aria-hidden`;

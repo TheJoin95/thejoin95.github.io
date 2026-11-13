@@ -4,13 +4,14 @@ import { cn } from "@/lib/utils";
 import { siteStyles } from "./styles";
 import { MediaCaption, MediaSurface } from "@/components/media/presentation";
 
-export function PageIntro({ title, children }: { title: string; children: ReactNode }) {
+export function PageIntro({ title, children, className }: { title: string; children: ReactNode; className?: string }) {
   return (
     <div className={cn(
       siteStyles.container,
       "grid gap-6 py-(--section-space)",
       "md:grid-cols-[minmax(0,5fr)_minmax(0,3fr)] md:items-end",
       "desktop:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] desktop:gap-12",
+      className,
     )}>
       <h1 className={cn(
         "text-[clamp(3rem,8.1vw,9rem)] leading-[1.02] tracking-[-0.04em]",

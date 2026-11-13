@@ -24,9 +24,10 @@ export default function LottiePlayer({ src, fallback, onComplete }: { src: strin
       if (document.hidden) { resume = player?.isPlaying ?? false; player?.pause(); }
       else if (resume) { player?.play(); resume = false; }
     };
+    visibility();
     document.addEventListener("visibilitychange", visibility);
     return () => document.removeEventListener("visibilitychange", visibility);
-  }, [player]);
+  }, [player, loaded]);
   if (failed) return fallback;
   const ready = loaded || player?.isLoaded;
   return <div className="relative h-full w-full">

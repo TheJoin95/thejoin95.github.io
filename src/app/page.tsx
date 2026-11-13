@@ -10,6 +10,7 @@ import { SelectedWork } from "@/components/home/selected-work";
 import { SelectedWriting } from "@/components/home/selected-writing";
 import { homeIdentity, homeStructuredData } from "@/content/home";
 import type { Metadata } from "next";
+import { FoxCompanion } from "@/components/characters/fox-companion";
 
 const homeMetadata = pageMetadata({ title: "Home", description: homeIdentity.description, path: "/" });
 export const metadata: Metadata = { ...homeMetadata, title: { absolute: homeIdentity.title },
@@ -19,7 +20,7 @@ export const metadata: Metadata = { ...homeMetadata, title: { absolute: homeIden
 export default function Home() {
   return <div className="home-page">
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeStructuredData(homeStructuredData(siteOrigin())) }} />
-    <PageIntro title="Engineering, with curiosity."><p>I’m Miki, a Senior Software Engineer at Adobe. I build software, contribute to open source, and share what I learn along the way.</p></PageIntro>
+    <PageIntro className="md:items-start" title="Engineering, with curiosity."><p>I’m Miki, a Senior Software Engineer at Adobe. I build software, contribute to open source, and share what I learn along the way.</p><FoxCompanion /></PageIntro>
     <PaletteStage />
     <SelectedWork />
     <SelectedWriting />

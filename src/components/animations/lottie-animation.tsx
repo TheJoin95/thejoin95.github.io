@@ -1,10 +1,15 @@
 "use client";
 
-import dynamic from "next/dynamic";
-import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
+import { Component, lazy, Suspense, useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 
-const Player = dynamic(() => import("./lottie-player"), { ssr: false });
+const Player = lazy(() => import("./lottie-player"));
+
+class AnimationBoundary extends Component<{ children: ReactNode; fallback: ReactNode }, { failed: boolean }> {
+  state = { failed: false };
+  static getDerivedStateFromError() { return { failed: true }; }
+  render() { return this.state.failed ? this.props.fallback : this.props.children; }
+}
 
 /** Reserve dimensions with className; supply a static fallback for reduced motion. */
 export function LottieAnimation({ src, fallback, className }: {
@@ -22,7 +27,7 @@ export function LottieAnimation({ src, fallback, className }: {
       if (entry.isIntersecting) started.current = true;
       else if (started.current) finish();
     },
-      { rootMargin: "100px" });
+      { rootMargin: "0px" });
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, [finish]);
@@ -34,7 +39,9 @@ export function LottieAnimation({ src, fallback, className }: {
   }, [finish]);
   return (
     <div ref={ref} className={className} aria-hidden="true">
-      {visible && !reducedMotion && !completed ? <Player key={src} src={src} fallback={fallback} onComplete={finish} /> : fallback}
+      {visible && !reducedMotion && !completed ? <AnimationBoundary fallback={fallback}>
+        <Suspense fallback={fallback}><Player key={src} src={src} fallback={fallback} onComplete={finish} /></Suspense>
+      </AnimationBoundary> : fallback}
     </div>
   );
 }

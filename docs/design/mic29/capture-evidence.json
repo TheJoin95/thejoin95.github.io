@@ -1,0 +1,575 @@
+{
+  "date": "2026-11-13",
+  "deployId": "6af72fcaea42b736c5a1bb47",
+  "origin": "https://mic29-review--mikilombardi.netlify.app",
+  "mode": "reduced-motion resting state; native scrolling to load images; WebP copies of full-page PNG captures",
+  "evidence": [
+    {
+      "name": "home",
+      "path": "/",
+      "status": 200,
+      "title": "Engineering, with curiosity.",
+      "width": 390,
+      "scrollWidth": 390,
+      "height": 5795,
+      "images": [
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/characters/fox/rest.svg",
+          "width": 192,
+          "alt": ""
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fchromatique%2Firises-original.jpg&w=640&q=75",
+          "width": 390,
+          "alt": "Original hand-coloured garden photograph by Frances Benjamin Johnston."
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fchromatique%2Firises-nord.png&w=640&q=75",
+          "width": 390,
+          "alt": "The same photograph converted by Chromatique into the Nord palette."
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fimagegonord%2Fconversion-interface.png&w=384&q=75",
+          "width": 331,
+          "alt": "ImageGoNord upload area beside Nord palette swatches and conversion options."
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fimagegonord%2Fintroduction.png&w=384&q=75",
+          "width": 331,
+          "alt": "ImageGoNord’s introduction with links to more palettes and documentation."
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fimagegonord%2Fpalette-controls.png&w=384&q=75",
+          "width": 225,
+          "alt": "Polar Night, Snow Storm, Frost and Aurora colour swatches above conversion settings."
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/media/supermarket/architecture.svg",
+          "width": 1200,
+          "alt": "Architecture: GitHub Pages frontend, Flask and uWSGI backend, Redis geospatial lookup and expiring cache; hosting evolved from Raspberry Pi to regional VPS instances."
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fchromatique%2Firises-original.jpg&w=640&q=75",
+          "width": 331,
+          "alt": "Hand-coloured photograph of irises and trees along the West Potomac Park embankment."
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fchromatique%2Firises-nord.png&w=640&q=75",
+          "width": 331,
+          "alt": "The same garden photograph mapped to the sixteen colours of the Nord palette."
+        }
+      ],
+      "headings": [
+        "Engineering, with curiosity.",
+        "A few things I’ve built, shaped, and shared.",
+        "ImageGoNord",
+        "Supermarket waiting times",
+        "Chromatique",
+        "Notes & experiments",
+        "Stay in the loop.",
+        "Let’s talk."
+      ]
+    },
+    {
+      "name": "work",
+      "path": "/work",
+      "status": 200,
+      "title": "Selected work.",
+      "width": 390,
+      "scrollWidth": 390,
+      "height": 7295,
+      "images": [
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fimagegonord%2Fconversion-interface.png&w=384&q=75",
+          "width": 331,
+          "alt": "ImageGoNord upload area beside Nord palette swatches and conversion options."
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fimagegonord%2Fintroduction.png&w=384&q=75",
+          "width": 331,
+          "alt": "ImageGoNord’s introduction with links to more palettes and documentation."
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fimagegonord%2Fpalette-controls.png&w=384&q=75",
+          "width": 225,
+          "alt": "Polar Night, Snow Storm, Frost and Aurora colour swatches above conversion settings."
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/media/supermarket/architecture.svg",
+          "width": 1200,
+          "alt": "Architecture: GitHub Pages frontend, Flask and uWSGI backend, Redis geospatial lookup and expiring cache; hosting evolved from Raspberry Pi to regional VPS instances."
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fchromatique%2Firises-original.jpg&w=384&q=75",
+          "width": 331,
+          "alt": "Hand-coloured photograph of irises and trees along the West Potomac Park embankment."
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fchromatique%2Firises-nord.png&w=384&q=75",
+          "width": 331,
+          "alt": "The same garden photograph mapped to the sixteen colours of the Nord palette."
+        }
+      ],
+      "headings": [
+        "Selected work.",
+        "ImageGoNord",
+        "Supermarket waiting times",
+        "Chromatique",
+        "The complete index.",
+        "Beyond the brief.",
+        "Let’s talk."
+      ]
+    },
+    {
+      "name": "journal",
+      "path": "/blog",
+      "status": 200,
+      "title": "Notes & experiments.",
+      "width": 390,
+      "scrollWidth": 390,
+      "height": 6099,
+      "images": [
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/media/journal/microfrontends.svg",
+          "width": 1200,
+          "alt": "A school application shell composes independently developed staff, subjects and register frontends."
+        }
+      ],
+      "headings": [
+        "Notes & experiments.",
+        "Featured writing.",
+        "From the archive.",
+        "From the sketchbook.",
+        "Follow the writing.",
+        "Let’s talk."
+      ]
+    },
+    {
+      "name": "play",
+      "path": "/play",
+      "status": 200,
+      "title": "Built out of curiosity.",
+      "width": 390,
+      "scrollWidth": 390,
+      "height": 5614,
+      "images": [
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/characters/fox/rest.svg",
+          "width": 192,
+          "alt": ""
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fchromatique%2Firises-original.jpg&w=640&q=75",
+          "width": 390,
+          "alt": "Original hand-coloured garden photograph by Frances Benjamin Johnston."
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fchromatique%2Firises-nord.png&w=640&q=75",
+          "width": 390,
+          "alt": "The same photograph converted by Chromatique into the Nord palette."
+        }
+      ],
+      "headings": [
+        "Built out of curiosity.",
+        "Projects & community.",
+        "Learning to make comic books.",
+        "Beyond the keyboard.",
+        "Let’s talk."
+      ]
+    },
+    {
+      "name": "about",
+      "path": "/about",
+      "status": 200,
+      "title": "Engineering with curiosity.",
+      "width": 390,
+      "scrollWidth": 390,
+      "height": 3069,
+      "images": [],
+      "headings": [
+        "Engineering with curiosity.",
+        "Software. People. Shared ideas.",
+        "Beyond the keyboard.",
+        "Let’s talk."
+      ]
+    },
+    {
+      "name": "home",
+      "path": "/",
+      "status": 200,
+      "title": "Engineering, with curiosity.",
+      "width": 834,
+      "scrollWidth": 834,
+      "height": 5611,
+      "images": [
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/characters/fox/rest.svg",
+          "width": 192,
+          "alt": ""
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fchromatique%2Firises-original.jpg&w=1080&q=75",
+          "width": 790,
+          "alt": "Original hand-coloured garden photograph by Frances Benjamin Johnston."
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fchromatique%2Firises-nord.png&w=1080&q=75",
+          "width": 790,
+          "alt": "The same photograph converted by Chromatique into the Nord palette."
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fimagegonord%2Fconversion-interface.png&w=640&q=75",
+          "width": 583,
+          "alt": "ImageGoNord upload area beside Nord palette swatches and conversion options."
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fimagegonord%2Fintroduction.png&w=640&q=75",
+          "width": 583,
+          "alt": "ImageGoNord’s introduction with links to more palettes and documentation."
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fimagegonord%2Fpalette-controls.png&w=640&q=75",
+          "width": 238,
+          "alt": "Polar Night, Snow Storm, Frost and Aurora colour swatches above conversion settings."
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/media/supermarket/architecture.svg",
+          "width": 1200,
+          "alt": "Architecture: GitHub Pages frontend, Flask and uWSGI backend, Redis geospatial lookup and expiring cache; hosting evolved from Raspberry Pi to regional VPS instances."
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fchromatique%2Firises-original.jpg&w=1080&q=75",
+          "width": 553,
+          "alt": "Hand-coloured photograph of irises and trees along the West Potomac Park embankment."
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fchromatique%2Firises-nord.png&w=1080&q=75",
+          "width": 553,
+          "alt": "The same garden photograph mapped to the sixteen colours of the Nord palette."
+        }
+      ],
+      "headings": [
+        "Engineering, with curiosity.",
+        "A few things I’ve built, shaped, and shared.",
+        "ImageGoNord",
+        "Supermarket waiting times",
+        "Chromatique",
+        "Notes & experiments",
+        "Stay in the loop.",
+        "Let’s talk."
+      ]
+    },
+    {
+      "name": "work",
+      "path": "/work",
+      "status": 200,
+      "title": "Selected work.",
+      "width": 834,
+      "scrollWidth": 834,
+      "height": 5980,
+      "images": [
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fimagegonord%2Fconversion-interface.png&w=640&q=75",
+          "width": 583,
+          "alt": "ImageGoNord upload area beside Nord palette swatches and conversion options."
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fimagegonord%2Fintroduction.png&w=640&q=75",
+          "width": 583,
+          "alt": "ImageGoNord’s introduction with links to more palettes and documentation."
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fimagegonord%2Fpalette-controls.png&w=640&q=75",
+          "width": 238,
+          "alt": "Polar Night, Snow Storm, Frost and Aurora colour swatches above conversion settings."
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/media/supermarket/architecture.svg",
+          "width": 1200,
+          "alt": "Architecture: GitHub Pages frontend, Flask and uWSGI backend, Redis geospatial lookup and expiring cache; hosting evolved from Raspberry Pi to regional VPS instances."
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fchromatique%2Firises-original.jpg&w=640&q=75",
+          "width": 583,
+          "alt": "Hand-coloured photograph of irises and trees along the West Potomac Park embankment."
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fchromatique%2Firises-nord.png&w=640&q=75",
+          "width": 583,
+          "alt": "The same garden photograph mapped to the sixteen colours of the Nord palette."
+        }
+      ],
+      "headings": [
+        "Selected work.",
+        "ImageGoNord",
+        "Supermarket waiting times",
+        "Chromatique",
+        "The complete index.",
+        "Beyond the brief.",
+        "Let’s talk."
+      ]
+    },
+    {
+      "name": "journal",
+      "path": "/blog",
+      "status": 200,
+      "title": "Notes & experiments.",
+      "width": 834,
+      "scrollWidth": 834,
+      "height": 4730,
+      "images": [
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/media/journal/microfrontends.svg",
+          "width": 1200,
+          "alt": "A school application shell composes independently developed staff, subjects and register frontends."
+        }
+      ],
+      "headings": [
+        "Notes & experiments.",
+        "Featured writing.",
+        "From the archive.",
+        "From the sketchbook.",
+        "Follow the writing.",
+        "Let’s talk."
+      ]
+    },
+    {
+      "name": "play",
+      "path": "/play",
+      "status": 200,
+      "title": "Built out of curiosity.",
+      "width": 834,
+      "scrollWidth": 834,
+      "height": 3904,
+      "images": [
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/characters/fox/rest.svg",
+          "width": 192,
+          "alt": ""
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fchromatique%2Firises-original.jpg&w=1080&q=75",
+          "width": 790,
+          "alt": "Original hand-coloured garden photograph by Frances Benjamin Johnston."
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fchromatique%2Firises-nord.png&w=1080&q=75",
+          "width": 790,
+          "alt": "The same photograph converted by Chromatique into the Nord palette."
+        }
+      ],
+      "headings": [
+        "Built out of curiosity.",
+        "Projects & community.",
+        "Learning to make comic books.",
+        "Beyond the keyboard.",
+        "Let’s talk."
+      ]
+    },
+    {
+      "name": "about",
+      "path": "/about",
+      "status": 200,
+      "title": "Engineering with curiosity.",
+      "width": 834,
+      "scrollWidth": 834,
+      "height": 2531,
+      "images": [],
+      "headings": [
+        "Engineering with curiosity.",
+        "Software. People. Shared ideas.",
+        "Beyond the keyboard.",
+        "Let’s talk."
+      ]
+    },
+    {
+      "name": "home",
+      "path": "/",
+      "status": 200,
+      "title": "Engineering, with curiosity.",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "height": 5134,
+      "images": [
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/characters/fox/rest.svg",
+          "width": 192,
+          "alt": ""
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fchromatique%2Firises-original.jpg&w=1920&q=75",
+          "width": 768,
+          "alt": "Original hand-coloured garden photograph by Frances Benjamin Johnston."
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fchromatique%2Firises-nord.png&w=1920&q=75",
+          "width": 768,
+          "alt": "The same photograph converted by Chromatique into the Nord palette."
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fimagegonord%2Fconversion-interface.png&w=750&q=75",
+          "width": 691,
+          "alt": "ImageGoNord upload area beside Nord palette swatches and conversion options."
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fimagegonord%2Fintroduction.png&w=750&q=75",
+          "width": 691,
+          "alt": "ImageGoNord’s introduction with links to more palettes and documentation."
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fimagegonord%2Fpalette-controls.png&w=750&q=75",
+          "width": 240,
+          "alt": "Polar Night, Snow Storm, Frost and Aurora colour swatches above conversion settings."
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/media/supermarket/architecture.svg",
+          "width": 1200,
+          "alt": "Architecture: GitHub Pages frontend, Flask and uWSGI backend, Redis geospatial lookup and expiring cache; hosting evolved from Raspberry Pi to regional VPS instances."
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fchromatique%2Firises-original.jpg&w=1920&q=75",
+          "width": 368,
+          "alt": "Hand-coloured photograph of irises and trees along the West Potomac Park embankment."
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fchromatique%2Firises-nord.png&w=1920&q=75",
+          "width": 368,
+          "alt": "The same garden photograph mapped to the sixteen colours of the Nord palette."
+        }
+      ],
+      "headings": [
+        "Engineering, with curiosity.",
+        "A few things I’ve built, shaped, and shared.",
+        "ImageGoNord",
+        "Supermarket waiting times",
+        "Chromatique",
+        "Notes & experiments",
+        "Stay in the loop.",
+        "Let’s talk."
+      ]
+    },
+    {
+      "name": "work",
+      "path": "/work",
+      "status": 200,
+      "title": "Selected work.",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "height": 5079,
+      "images": [
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fimagegonord%2Fconversion-interface.png&w=750&q=75",
+          "width": 691,
+          "alt": "ImageGoNord upload area beside Nord palette swatches and conversion options."
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fimagegonord%2Fintroduction.png&w=750&q=75",
+          "width": 691,
+          "alt": "ImageGoNord’s introduction with links to more palettes and documentation."
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fimagegonord%2Fpalette-controls.png&w=750&q=75",
+          "width": 240,
+          "alt": "Polar Night, Snow Storm, Frost and Aurora colour swatches above conversion settings."
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/media/supermarket/architecture.svg",
+          "width": 1200,
+          "alt": "Architecture: GitHub Pages frontend, Flask and uWSGI backend, Redis geospatial lookup and expiring cache; hosting evolved from Raspberry Pi to regional VPS instances."
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fchromatique%2Firises-original.jpg&w=750&q=75",
+          "width": 691,
+          "alt": "Hand-coloured photograph of irises and trees along the West Potomac Park embankment."
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fchromatique%2Firises-nord.png&w=750&q=75",
+          "width": 691,
+          "alt": "The same garden photograph mapped to the sixteen colours of the Nord palette."
+        }
+      ],
+      "headings": [
+        "Selected work.",
+        "ImageGoNord",
+        "Supermarket waiting times",
+        "Chromatique",
+        "The complete index.",
+        "Beyond the brief.",
+        "Let’s talk."
+      ]
+    },
+    {
+      "name": "journal",
+      "path": "/blog",
+      "status": 200,
+      "title": "Notes & experiments.",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "height": 4729,
+      "images": [
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/media/journal/microfrontends.svg",
+          "width": 1200,
+          "alt": "A school application shell composes independently developed staff, subjects and register frontends."
+        }
+      ],
+      "headings": [
+        "Notes & experiments.",
+        "Featured writing.",
+        "From the archive.",
+        "From the sketchbook.",
+        "Follow the writing.",
+        "Let’s talk."
+      ]
+    },
+    {
+      "name": "play",
+      "path": "/play",
+      "status": 200,
+      "title": "Built out of curiosity.",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "height": 3954,
+      "images": [
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/characters/fox/rest.svg",
+          "width": 192,
+          "alt": ""
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fchromatique%2Firises-original.jpg&w=1920&q=75",
+          "width": 768,
+          "alt": "Original hand-coloured garden photograph by Frances Benjamin Johnston."
+        },
+        {
+          "src": "https://mic29-review--mikilombardi.netlify.app/_next/image?url=%2Fmedia%2Fchromatique%2Firises-nord.png&w=1920&q=75",
+          "width": 768,
+          "alt": "The same photograph converted by Chromatique into the Nord palette."
+        }
+      ],
+      "headings": [
+        "Built out of curiosity.",
+        "Projects & community.",
+        "Learning to make comic books.",
+        "Beyond the keyboard.",
+        "Let’s talk."
+      ]
+    },
+    {
+      "name": "about",
+      "path": "/about",
+      "status": 200,
+      "title": "Engineering with curiosity.",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "height": 2676,
+      "images": [],
+      "headings": [
+        "Engineering with curiosity.",
+        "Software. People. Shared ideas.",
+        "Beyond the keyboard.",
+        "Let’s talk."
+      ]
+    }
+  ]
+}

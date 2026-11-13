@@ -35,3 +35,8 @@ navigation, footer, primitives and introductory routes. Full editorial galleries
 article publishing and character/interaction assets remain with the page tickets;
 MIC-29 owns the complete rendered comparison with the source mockups. See the
 [shell verification record](docs/design/mic12-verification.md) for scope and proof.
+
+The [MIC-29 complete preview review](docs/design/mic29/README.md) records the
+hosted artifact, all five source mockups, fifteen responsive captures and the
+deliberate content/design deviations before production review. Inner-page
+introductions use the specified 8/4 desktop split; Home retains 7/5.

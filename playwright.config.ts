@@ -11,7 +11,7 @@ export default defineConfig({
   outputDir: `${reportDirectory}/artifacts`,
   reporter: [["list"], ["junit", { outputFile: `${reportDirectory}/junit.xml` }], ["html", { outputFolder: `${reportDirectory}/html`, open: "never" }]],
   use: { baseURL: "http://127.0.0.1:3109", screenshot: "only-on-failure", trace: "retain-on-failure" },
-  webServer: {
+  webServer: process.env.REVIEW_BASE_URL ? undefined : {
     command: "bun run start -- --hostname 127.0.0.1 --port 3109",
     url: "http://127.0.0.1:3109",
     reuseExistingServer: false,

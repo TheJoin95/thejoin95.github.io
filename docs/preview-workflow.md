@@ -55,6 +55,13 @@ The local-only publishing fixtures are removed automatically; do not deploy them
 
 ## Hosted review handoff — MIC-7
 
+The [MIC-29 review](design/mic29/README.md) now links a ready, noindex Netlify
+draft of the implemented site, with comparison captures and known limitations.
+Its production deploy and DNS were left unchanged. Use one build/deploy lifecycle
+for the Next.js adapter; a separate `deploy --no-build` upload omitted generated
+asset routes during this review. The preview context pins the approved public
+canonical origin in `netlify.toml`; it is separate from production configuration.
+
 Netlify deployment is already configured. A read-only project lookup on 2026-11-11
 confirmed a ready current deploy for `mikilombardi`; the user reports the custom
 domain still points at the old version. Open a pull request from a feature

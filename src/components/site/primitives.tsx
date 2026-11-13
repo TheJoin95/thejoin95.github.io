@@ -10,7 +10,7 @@ export function PageIntro({ title, children, className }: { title: string; child
       siteStyles.container,
       "grid gap-6 py-(--section-space)",
       "md:grid-cols-[minmax(0,5fr)_minmax(0,3fr)] md:items-end",
-      "desktop:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] desktop:gap-12",
+      "desktop:grid-cols-[minmax(0,8fr)_minmax(0,4fr)] desktop:gap-12",
       className,
     )}>
       <h1 className={cn(

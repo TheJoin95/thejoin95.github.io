@@ -20,7 +20,7 @@ export const metadata: Metadata = { ...homeMetadata, title: { absolute: homeIden
 export default function Home() {
   return <div className="home-page">
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeStructuredData(homeStructuredData(siteOrigin())) }} />
-    <PageIntro className="md:items-start" title="Engineering, with curiosity."><p>I’m Miki, a Senior Software Engineer at Adobe. I build software, contribute to open source, and share what I learn along the way.</p><FoxCompanion /></PageIntro>
+    <PageIntro className="md:items-start desktop:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]" title="Engineering, with curiosity."><p>I’m Miki, a Senior Software Engineer at Adobe. I build software, contribute to open source, and share what I learn along the way.</p><FoxCompanion /></PageIntro>
     <PaletteStage />
     <SelectedWork />
     <SelectedWriting />

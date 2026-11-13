@@ -31,12 +31,18 @@ Browser checks run against a production build:
 bun --bun playwright install chromium firefox webkit
 NEXT_PUBLIC_SITE_URL=http://127.0.0.1:3109 SITE_INDEXING=disabled bun run build
 bun run test:e2e
+bun run test:release
 ```
 
 CI installs the three browser engines and runs these checks after the unit suite and build.
 Tests cover six viewport widths, keyboard/skip navigation, no-script access,
 large text/reduced motion, the CV and 404. They do not replace physical-device
 touch or screen-reader review.
+
+See [regression checks](docs/regression-checks.md) for the coverage map, publishing
+fixture lifecycle and CI reports. `test:release` performs local-only release and
+preview builds, checks publication/withdrawal, then restores a noindex build.
+Stop existing servers first and run these commands sequentially.
 
 The [MIC-27 performance record](docs/performance/mic27-performance.md) contains
 repeatable mobile lab measurements, before/after data and the remaining hosted

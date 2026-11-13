@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import slugs from "../src/content/journal-routes.json";
 test.skip(process.env.SEO_RELEASE_TEST !== "true", "Requires the explicit simulated release build; see docs/seo/mic25-discovery.md");
 test("a release build serves canonical-only discovery and indexes only its configured host", async ({ request, page }) => {
   const origin = "https://www.mikilombardi.com";
@@ -9,9 +10,9 @@ test("a release build serves canonical-only discovery and indexes only its confi
     const doc = new DOMParser().parseFromString(xml, "application/xml");
     return { errors: doc.querySelectorAll("parsererror").length, urls: [...doc.querySelectorAll("loc")].map(node => node.textContent) };
   }, await sitemap.text());
-  expect(entries.errors).toBe(0); expect(entries.urls).toHaveLength(24);
+  expect(entries.errors).toBe(0); expect(entries.urls).toHaveLength(8 + slugs.length);
   expect(entries.urls.every(url => url?.startsWith(origin) && !/[?#]/.test(url))).toBe(true);
-  expect(new Set(entries.urls).size).toBe(24);
+  expect(new Set(entries.urls).size).toBe(8 + slugs.length);
   expect(entries.urls.some(url => /2021-04-16|whoami|confirmed|missing|draft|future/.test(url!))).toBe(false);
   const robots = await request.get("/robots.txt", { headers });
   expect(await robots.text()).toContain(`Sitemap: ${origin}/sitemap.xml`);

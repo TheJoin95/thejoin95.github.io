@@ -10,7 +10,7 @@ describe("legacy journal migration", () => {
   test("all 16 published records retain exact source bytes, dates, titles and canonical routes", () => {
     const oldIndex = JSON.parse(execFileSync("git", ["show", `${manifest.sourceRef}:src/assets/articles.json`], { encoding: "utf8" })) as { date: string; permalink: string }[];
     expect(manifest.articles.map(a => a.canonical).sort()).toEqual(oldIndex.map(a => `/blog/${a.date}-${a.permalink}`).sort());
-    const articles = publishedArticles();
+    const articles = publishedArticles().filter(article => article.archival);
     expect(articles).toHaveLength(16);
     for (const record of manifest.articles) {
       const original = execFileSync("git", ["show", `${manifest.sourceRef}:${record.source}`]);
@@ -49,7 +49,7 @@ describe("legacy journal migration", () => {
     for (const part of ["<script", "onerror", "javascript:", "alert(1)"]) expect(html).not.toContain(part);
   });
   test("every legacy body renders with local media and code, without Liquid, covers or duplicate H1", async () => {
-    for (const article of publishedArticles()) {
+    for (const article of publishedArticles().filter(article => article.archival)) {
       const html = await renderMarkdown(article.body, true);
       for (const part of ["<h1", "{% highlight", "{% endhighlight", "source.unsplash.com", "data:image", "cdn-images-1.medium.com", "<script"]) expect(html).not.toContain(part);
       expect(html.length).toBeGreaterThan(400);

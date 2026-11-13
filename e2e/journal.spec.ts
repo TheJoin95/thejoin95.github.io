@@ -2,6 +2,7 @@ import { test, expect } from "@playwright/test";
 import { writeFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import manifest from "../docs/migration/legacy-manifest.json";
+import slugs from "../src/content/journal-routes.json";
 const hash = (data: Buffer) => createHash("sha256").update(data).digest("hex");
 test("all historical routes, source downloads, aliases and assets survive in the production server", async ({ request, browser }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
@@ -59,11 +60,15 @@ for (const width of [390, 834, 1440]) test(`archive and long article work withou
   const archive = page.getByRole("list", { name: "Archive articles" });
   await expect(archive.getByRole("listitem")).toHaveCount(8);
   const links = await archive.locator("h3 a").evaluateAll(anchors => anchors.map(a => a.getAttribute("href")));
-  await page.getByRole("link", { name: "Next page", exact: true }).click();
-  await expect(page).toHaveURL(/\/blog\?page=2#archive$/);
-  await expect(page.getByRole("navigation", { name: "Archive pagination" })).toContainText("Page 2 of 2");
-  links.push(...await archive.locator("h3 a").evaluateAll(anchors => anchors.map(a => a.getAttribute("href"))));
-  expect([...new Set(links)].sort()).toEqual(manifest.articles.map(a => a.canonical).sort());
+  const totalPages = Math.ceil(slugs.length / 8);
+  for (let number = 2; number <= totalPages; number++) {
+    await page.getByRole("link", { name: "Next page", exact: true }).click();
+    await expect(page).toHaveURL(new RegExp(`/blog\\?page=${number}#archive$`));
+    await expect(page.getByRole("navigation", { name: "Archive pagination" })).toContainText(`Page ${number} of ${totalPages}`);
+    links.push(...await archive.locator("h3 a").evaluateAll(anchors => anchors.map(a => a.getAttribute("href"))));
+  }
+  expect(links).toHaveLength(slugs.length);
+  expect([...new Set(links)].sort()).toEqual(slugs.map(slug => `/blog/${slug}`).sort());
   await archive.locator("h3 a").first().click();
   await expect(page.locator("h1")).toHaveCount(1);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);

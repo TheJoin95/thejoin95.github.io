@@ -47,7 +47,7 @@ describe("shared metadata, schema and discovery", () => {
     expect(serializeStructuredData({ text: "</script><script>bad()</script>" })).not.toContain("<");
   });
   test("only public canonical pages and published articles enter the release sitemap", () => {
-    const articles = publishedArticles();
+    const articles = publishedArticles().filter(article => article.archival);
     const hidden = [ { ...articles[0], slug: "draft", draft: true }, { ...articles[0], slug: "future", date: "2999-01-01" } ];
     expect(sitemapEntries([...articles, ...hidden], origin, false, now)).toEqual([]);
     const map = sitemapEntries([...articles, ...hidden], origin, true, now);

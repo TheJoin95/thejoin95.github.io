@@ -17,6 +17,7 @@
     "verify:env": "bun ./scripts/verify-env.ts",
     "verify:services": "bun ./scripts/verify-env.ts --remote",
     "test:e2e": "bun run build:test-fixtures && bun --bun playwright test",
+    "test:release": "bun scripts/check-release.ts",
     "build:test-fixtures": "bun build e2e/fixtures/gallery.tsx e2e/fixtures/fox.tsx e2e/fixtures/accessibility.tsx --target=browser --env=disable --define 'process.env={\"NODE_ENV\":\"production\"}' --outdir=.test-fixtures && bun scripts/build-reader-fixture.tsx",
     "build:journal": "bun scripts/build-journal.ts",
     "build:fox": "bun scripts/build-fox.ts",

@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import slugs from "../src/content/journal-routes.json";
 
 for (const width of [320, 390, 834, 1440]) test(`Journal discovery works without JavaScript at ${width}px`, async ({ browser }) => {
   const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width, height: 900 } });
@@ -76,6 +77,6 @@ test("crawler HTML, pagination canonicals, schema, social image and filter index
   await page.goto(`http://127.0.0.1:3109/blog?q=${"W".repeat(160)}&tag=${"W".repeat(80)}#archive`);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.screenshot({ path: "/tmp/mic18-long-query-320.png", fullPage: true });
-  const feed = await request.get("/rss.xml"); expect((await feed.text()).match(/<item>/g)).toHaveLength(16);
+  const feed = await request.get("/rss.xml"); expect((await feed.text()).match(/<item>/g)).toHaveLength(slugs.length);
   await context.close();
 });

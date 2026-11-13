@@ -13,6 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version-file: .bun-version
@@ -24,6 +26,7 @@ jobs:
           SITE_INDEXING: disabled
       - run: bun --bun playwright install --with-deps chromium firefox webkit
       - run: bun run test:e2e
+      - run: bun run test:release
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -31,7 +34,7 @@ jobs:
           path: coverage/lcov.info
           if-no-files-found: ignore
       - uses: actions/upload-artifact@v4
-        if: failure()
+        if: always()
         with:
           name: browser-test-results
           path: test-results/

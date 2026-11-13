@@ -20,37 +20,38 @@ Stop the development server before building in the same checkout. Run:
 
 ```sh
 bun run check
-NEXT_PUBLIC_SITE_URL=http://localhost:3109 NEXT_PUBLIC_GA_MEASUREMENT_ID= BREVO_API_KEY= BREVO_NEWSLETTER_LIST_ID= BREVO_DOI_TEMPLATE_ID= bun run build
-NEXT_PUBLIC_SITE_URL=http://localhost:3109 NEXT_PUBLIC_GA_MEASUREMENT_ID= BREVO_API_KEY= BREVO_NEWSLETTER_LIST_ID= BREVO_DOI_TEMPLATE_ID= bun run start -- --hostname 127.0.0.1 --port 3109
+NEXT_PUBLIC_SITE_URL=http://127.0.0.1:3109 SITE_INDEXING=disabled NEXT_PUBLIC_GA_MEASUREMENT_ID= BREVO_API_KEY= BREVO_NEWSLETTER_LIST_ID= BREVO_DOI_TEMPLATE_ID= bun run build
+bun run test:e2e
+bun run test:release
 ```
 
-The explicit empty variables override any local service configuration. Public
-variables are baked into the build, so set them before both build and start.
-Use `http://localhost:3109` in the browser so form origins match the configured
-site origin. Stop the server with Ctrl-C when review is complete. No deployment
-or production configuration change is involved.
+The explicit empty variables override local service configuration during build;
+the test server and release runner also clear credentials and analytics. The
+release runner restores a clean noindex build after testing synthetic content.
+Public variables are baked into the build. Do not run these commands concurrently
+or leave another server listening on port 3109.
 
-| Check | Expected result in the existing scaffold |
+For manual review after the checks, start `bun run start -- --hostname 127.0.0.1
+--port 3109` with the same empty service variables and open
+`http://127.0.0.1:3109`. Stop the server with Ctrl-C when review is complete.
+
+| Check | Expected current result |
 | --- | --- |
-| Direct visit and refresh of `/` | 200, holding page, experience link and newsletter form |
-| `/experience` | 200, lazy 3D demo, usable fallback if WebGL fails |
+| Direct visit/refresh of `/`, `/work`, `/play`, `/blog`, `/about` | 200, readable page and native navigation |
+| `/experience` | 308 to `/play`; no 3D runtime |
+| Original article and published project story | 200, correct title/content/metadata |
 | `/newsletter/confirmed` | 200, confirmation page |
-| An unknown URL | 404 |
+| Unknown article/story/URL | HTTP 404 |
 | Invalid newsletter email | Validation message; no email |
-| Valid email with the service variables empty | 503, unavailable message; no email |
-| Valid JSON POST with a different Origin | 403 |
-| Reduced motion | 3D automatic motion reduced; Lottie static fallback when used |
+| Valid email with service variables empty | 503, unavailable message; no email |
+| JSON POST with a different Origin | 403 |
+| Reduced motion | Static fox; direct HTML palette controls stay available |
 
-Check keyboard focus/order and the browser console. The Lottie component exists
-but has no supplied artwork or rendered demo; do not report its visual review as
-complete. A confirmation page visit alone does not prove double opt-in delivery.
-
-The fixture set for MIC-6/MIC-14–20 should include one verified project, one real
-legacy article (the microfrontend article is referenced by the Journal mockup), an
-archived project and one local-only draft. Use the same data retrieval paths
-as production. Include sketchbook content only once authorship is confirmed.
-Until those tickets are implemented, `/work`, `/play`, `/blog` and `/about` are
-planned routes and are expected to return 404.
+Check keyboard/focus, gallery and native touch controls, original fox reactions,
+media failures and console errors. A confirmation page visit does not prove
+actual double-opt-in delivery. The [regression coverage map](regression-checks.md)
+records automated proof, report locations and remaining human/hosted checks.
+The local-only publishing fixtures are removed automatically; do not deploy them.
 
 ## Hosted review handoff — MIC-7
 
@@ -62,7 +63,7 @@ branch. CI uses the pinned Bun version, frozen install, `bun run check` and
 configuration. Pull-request Deploy Previews still need to be exercised in MIC-7;
 a ready current deploy alone does not prove that workflow.
 
-Set the preview's public origin before building. Keep GA4 blank (already configured
+Set the approved HTTPS custom canonical origin before building; preview contexts stay noindex. Keep GA4 blank (already configured
 for deploy previews/branch deploys). Leave Brevo blank for read-only review; any
 delivery testing needs a separate list/template and an explicitly chosen address.
 Never expose production drafts or credentials in a public preview. Implement

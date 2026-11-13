@@ -1,5 +1,6 @@
 import { test, expect } from "@playwright/test";
 import { writeFileSync } from "node:fs";
+import slugs from "../src/content/journal-routes.json";
 const pages = ["/", "/work", "/about", "/blog", "/play"];
 const article = "/blog/2019-12-21-microfrontend-from-00-to-20s";
 test("all public pages serve consistent metadata, noindex and social PNGs to crawlers without JavaScript", async ({ browser, request }) => {
@@ -39,7 +40,7 @@ test("RSS parses as XML, contains the 16 public articles and prelaunch sitemap s
     const doc = new DOMParser().parseFromString(xml, "application/xml");
     return { errors: doc.querySelectorAll("parsererror").length, links: [...doc.querySelectorAll("item > link")].map(item => item.textContent), dates: [...doc.querySelectorAll("item > pubDate")].map(item => item.textContent) };
   }, await rss.text());
-  expect(parsed.errors).toBe(0); expect(parsed.links).toHaveLength(16);
+  expect(parsed.errors).toBe(0); expect(parsed.links).toHaveLength(slugs.length);
   expect(parsed.links.every(link => link?.startsWith("http://127.0.0.1:3109/blog/"))).toBe(true);
   expect(parsed.dates.every(date => Number.isFinite(Date.parse(date!)))).toBe(true);
   const sitemap = await request.get("/sitemap.xml");

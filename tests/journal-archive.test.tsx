@@ -7,7 +7,8 @@ import { JournalArchive } from "@/components/journal/archive";
 import { FeaturedWriting } from "@/components/journal/featured-writing";
 import { featuredWriting } from "@/content/home";
 
-const articles = publishedArticles();
+// A fixed historical dataset tests pagination without blocking new publications.
+const articles = publishedArticles().filter(article => article.archival);
 describe("Journal archive and discovery", () => {
   test("pagination preserves every published source record once in chronological order", () => {
     const first = archiveView(articles, {}), second = archiveView(articles, { page: "2" });

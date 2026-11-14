@@ -1,0 +1,1292 @@
+{
+  "auditedAt": "2026-11-12T10:06:41.503Z",
+  "commit": "d7fae2c",
+  "scope": "Local production build with JavaScript disabled; origin intentionally localhost; no live Netlify or Search Console access measured",
+  "pages": [
+    {
+      "route": "/",
+      "status": 200,
+      "xRobotsTag": null,
+      "title": "Miki Lombardi | Software engineering and open source",
+      "description": "Software engineering, open-source projects and practical experiments by Miki Lombardi, Senior Software Engineer at Adobe.",
+      "canonical": "http://127.0.0.1:3109",
+      "robots": [],
+      "og": {
+        "og:title": "Miki Lombardi | Software engineering and open source",
+        "og:description": "Software engineering, open-source projects and practical experiments by Miki Lombardi, Senior Software Engineer at Adobe.",
+        "og:url": "http://127.0.0.1:3109",
+        "og:site_name": "Miki Lombardi",
+        "og:image": "http://127.0.0.1:3109/opengraph-image?e6c4a5236a93a531",
+        "og:image:type": "image/png",
+        "og:image:width": "1200",
+        "og:image:height": "630",
+        "og:image:alt": "Miki Lombardi — Engineering, with curiosity.",
+        "og:type": "website"
+      },
+      "twitter": {
+        "twitter:card": "summary_large_image",
+        "twitter:title": "Miki Lombardi | Software engineering and open source",
+        "twitter:description": "Software engineering, open-source projects and practical experiments by Miki Lombardi, Senior Software Engineer at Adobe.",
+        "twitter:image": "http://127.0.0.1:3109/opengraph-image",
+        "twitter:image:alt": "Miki Lombardi — Engineering, with curiosity."
+      },
+      "schemas": [
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Person",
+              "@id": "http://127.0.0.1:3109/#miki",
+              "name": "Miki Lombardi",
+              "url": "http://127.0.0.1:3109/",
+              "jobTitle": "Senior Software Engineer",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "Adobe"
+              },
+              "sameAs": [
+                "https://github.com/TheJoin95",
+                "https://www.linkedin.com/in/miki-lombardi/"
+              ]
+            },
+            {
+              "@type": "WebSite",
+              "@id": "http://127.0.0.1:3109/#website",
+              "url": "http://127.0.0.1:3109/",
+              "name": "Miki Lombardi",
+              "description": "Software engineering, open-source projects and practical experiments by Miki Lombardi, Senior Software Engineer at Adobe.",
+              "author": {
+                "@id": "http://127.0.0.1:3109/#miki"
+              }
+            }
+          ]
+        }
+      ],
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Engineering, with curiosity."
+        },
+        {
+          "level": "H2",
+          "text": "A few things I’ve built, shaped, and shared."
+        },
+        {
+          "level": "H2",
+          "text": "ImageGoNord"
+        },
+        {
+          "level": "H2",
+          "text": "Supermarket waiting times"
+        },
+        {
+          "level": "H2",
+          "text": "Chromatique"
+        },
+        {
+          "level": "H2",
+          "text": "Notes & experiments"
+        },
+        {
+          "level": "H3",
+          "text": "Micro Frontends - From the 00s to 20s"
+        },
+        {
+          "level": "H2",
+          "text": "Stay in the loop."
+        }
+      ],
+      "text": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Person\",\"@id\":\"http://127.0.0.1:3109/#miki\",\"name\":\"Miki Lombardi\",\"url\":\"http://127.0.0.1:3109/\",\"jobTitle\":\"Senior Software Engineer\",\"worksFor\":{\"@type\":\"Organization\",\"name\":\"Adobe\"},\"sameAs\":[\"https://github.com/TheJoin95\",\"https://www.linkedin.com/in/miki-lombardi/\"]},{\"@type\":\"WebSite\",\"@id\":\"http://127.0.0.1:3109/#website\",\"url\":\"http://127.0.0.1:3109/\",\"name\":\"Miki Lombardi\",\"description\":\"Software engineering, open-source projects and practical experiments by Miki Lombardi, Senior Software Engineer at Adobe.\",\"author\":{\"@id\":\"http://127.0.0.1:3109/#miki\"}}]}Engineering, with curiosity.I’m Miki, a Senior Software Engineer at Adobe. I build software, contribute to open source, and share what I learn along the way.OriginalNord paletteChromatique — explore the palette studyStatic comparison · original / actual CLI outputPhotograph: Frances Benjamin Johnston / Library of Congress. Nord palette: Sven Greb.A few things I’ve built, shaped, and shared.ImageGoNordAn open-source tool for converting images into a chosen palette.I co-authored ImageGoNord with Wabri, alongside the work of the Schrödinger Hat community.Explore ImageGoNord on GitHubThe conversion interface: upload an image and choose palette options.ImageGoNord / Schrödinger Hat · interface capture, November 2026View full-size image: The conversion interface: upload an image and choose palette options.The live website’s introduction to palette conversion.ImageGoNord / Schrödinger Hat · interface capture, November 2026View full-size image: The live website’s introduction to palette conversion.Palette groups and conversion settings. Open the full-size image to read the controls.ImageGoNord / Schrödinger Hat · interface detail, November 2026View full-size image: Palette groups and conversion settings. Open the full-size image to read the controls.Supermarket waiting timesArchived project · 2020A crowdsourced map of shop waiting times, built during lockdown.I built the service and evolved it from a Raspberry Pi to regional VPS infrastructure as demand grew.View the archived projectDocumented architecture, drawn from the preserved technical article. This is a diagram, not a historical screenshot.Miki Lombardi’s 2021 technical article · source-derived diagram, 2026View full-size image: Documented architecture, drawn from the preserved technical article. This is a diagram, not a historical screenshot.ChromatiqueIn developmentOne colour engine, several ways to use it: a Rust core with a CLI, language bindings and creative-tool interfaces.My work includes image analysis, image comparison and lightness-preserving palette selection.View the generated outputOriginal input: Irises along the embankment, West Potomac Park, 1921.Frances Benjamin Johnston / Library of Congress · no known restrictions on publicationView full-size image: Original input: Irises along the embankment, West Potomac Park, 1921.Actual Chromatique CLI output: Nord palette, OKLab, CPU, no dithering.Chromatique 0.2.0 · source photograph: Frances Benjamin Johnston / Library of Congress; Nord palette: Sven GrebView full-size image: Actual Chromatique CLI output: Nord palette, OKLab, CPU, no dithering.Explore all workMore experiments in PlayAbout MikiNotes & experimentsMicro Frontends - From the 00s to 20sWhen independently developed frontend applications share one experience: the boundaries, trade-offs and maintenance costs.Miki Lombardi · 21 December 2019Read the articleAll writingStay in the loop.Subscribe for new writing and updates. Unsubscribe at any time.Email addressLeave this emptySubscribeRead the JournalExplore the experiment",
+      "links": [
+        "#main-content",
+        "/",
+        "/work",
+        "/blog",
+        "/play",
+        "/about",
+        "https://github.com/TheJoin95",
+        "https://www.linkedin.com/in/miki-lombardi/",
+        "/about#contact",
+        "#chromatique",
+        "https://www.loc.gov/pictures/item/2007686318/",
+        "https://github.com/Schroedinger-Hat/ImageGoNord-Web",
+        "/media/imagegonord/conversion-interface.png",
+        "/media/imagegonord/introduction.png",
+        "/media/imagegonord/palette-controls.png",
+        "https://github.com/TheJoin95/covid19-market-waiting-times",
+        "/media/supermarket/architecture.svg",
+        "/media/chromatique/irises-nord.png",
+        "/media/chromatique/irises-original.jpg",
+        "/media/chromatique/irises-nord.png",
+        "/work",
+        "/play",
+        "/about",
+        "https://www.mikilombardi.com/blog/2019-12-21-microfrontend-from-00-to-20s",
+        "https://www.mikilombardi.com/blog/2019-12-21-microfrontend-from-00-to-20s",
+        "/blog",
+        "/blog",
+        "/experience",
+        "mailto:miki.lombi@gmail.com",
+        "https://github.com/TheJoin95",
+        "https://www.linkedin.com/in/miki-lombardi/",
+        "/miki-lombardi-resume.pdf",
+        "/work",
+        "/blog",
+        "/play",
+        "/about",
+        "/media/imagegonord/conversion-interface.png",
+        "/media/imagegonord/introduction.png",
+        "/media/imagegonord/palette-controls.png",
+        "/media/supermarket/architecture.svg",
+        "/media/chromatique/irises-original.jpg",
+        "/media/chromatique/irises-nord.png"
+      ],
+      "images": [
+        {
+          "src": "/media/chromatique/irises-original.jpg",
+          "alt": "Original hand-coloured garden photograph by Frances Benjamin Johnston.",
+          "width": "1024",
+          "height": "846",
+          "loading": "eager"
+        },
+        {
+          "src": "/media/chromatique/irises-nord.png",
+          "alt": "The same photograph converted by Chromatique into the Nord palette.",
+          "width": "1024",
+          "height": "846",
+          "loading": "eager"
+        },
+        {
+          "src": "/media/imagegonord/conversion-interface.png",
+          "alt": "ImageGoNord upload area beside Nord palette swatches and conversion options.",
+          "width": "1200",
+          "height": "870",
+          "loading": "lazy"
+        },
+        {
+          "src": "/media/imagegonord/introduction.png",
+          "alt": "ImageGoNord’s introduction with links to more palettes and documentation.",
+          "width": "1200",
+          "height": "363",
+          "loading": "lazy"
+        },
+        {
+          "src": "/media/imagegonord/palette-controls.png",
+          "alt": "Polar Night, Snow Storm, Frost and Aurora colour swatches above conversion settings.",
+          "width": "261",
+          "height": "710",
+          "loading": "lazy"
+        },
+        {
+          "src": "/media/supermarket/architecture.svg",
+          "alt": "Architecture: GitHub Pages frontend, Flask and uWSGI backend, Redis geospatial lookup and expiring cache; hosting evolved from Raspberry Pi to regional VPS instances.",
+          "width": "1200",
+          "height": "480",
+          "loading": "lazy"
+        },
+        {
+          "src": "/media/chromatique/irises-original.jpg",
+          "alt": "Hand-coloured photograph of irises and trees along the West Potomac Park embankment.",
+          "width": "1024",
+          "height": "846",
+          "loading": "lazy"
+        },
+        {
+          "src": "/media/chromatique/irises-nord.png",
+          "alt": "The same garden photograph mapped to the sixteen colours of the Nord palette.",
+          "width": "1024",
+          "height": "846",
+          "loading": "lazy"
+        }
+      ]
+    },
+    {
+      "route": "/work",
+      "status": 200,
+      "xRobotsTag": null,
+      "title": "Work | Miki Lombardi",
+      "description": "Software, open-source contributions and creative work by Miki Lombardi. Explore project media, contributions and a complete index, including archived work and prototypes.",
+      "canonical": "http://127.0.0.1:3109/work",
+      "robots": [],
+      "og": {
+        "og:title": "Work — Miki Lombardi",
+        "og:description": "Software, open-source contributions and creative work by Miki Lombardi. Explore project media, contributions and a complete index, including archived work and prototypes.",
+        "og:url": "http://127.0.0.1:3109/work",
+        "og:site_name": "Miki Lombardi",
+        "og:image": "http://127.0.0.1:3109/opengraph-image",
+        "og:image:width": "1200",
+        "og:image:height": "630",
+        "og:image:alt": "Miki Lombardi — Engineering, with curiosity.",
+        "og:type": "website"
+      },
+      "twitter": {
+        "twitter:card": "summary_large_image",
+        "twitter:title": "Work — Miki Lombardi",
+        "twitter:description": "Software, open-source contributions and creative work by Miki Lombardi. Explore project media, contributions and a complete index, including archived work and prototypes.",
+        "twitter:image": "http://127.0.0.1:3109/opengraph-image",
+        "twitter:image:alt": "Miki Lombardi — Engineering, with curiosity."
+      },
+      "schemas": [
+        {
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "url": "http://127.0.0.1:3109/work",
+          "name": "Work — Miki Lombardi",
+          "description": "Software, open-source contributions and creative work by Miki Lombardi. Explore project media, contributions and a complete index, including archived work and prototypes.",
+          "mainEntity": {
+            "@type": "ItemList",
+            "numberOfItems": 11,
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Schrödinger Hat",
+                "description": "Software, events, talks and a podcast made together. I co-founded the community and contribute as a speaker. This is collective work. Open-source community.",
+                "url": "https://schroedinger-hat.org/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Broskis",
+                "description": "My personal publication on Substack. I write here. Publication.",
+                "url": "https://broski.substack.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Chromatique",
+                "description": "One colour engine, several ways to use it: a Rust core with a CLI, language bindings and creative-tool interfaces. My work includes image analysis, image comparison and lightness-preserving palette selection. In development.",
+                "url": "http://127.0.0.1:3109/work#chromatique"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "HolyCard AI",
+                "description": "An editable devotional portrait-card studio with PNG and PDF exports. I developed the card studio, image-generation flow and forms. Digital-only beta."
+              },
+              {
+                "@type": "ListItem",
+                "position": 5,
+                "name": "CoproSync",
+                "description": "A self-hosted workspace for condominium councils, projects and incidents. I developed the project workflow and co-owner portal. In development."
+              },
+              {
+                "@type": "ListItem",
+                "position": 6,
+                "name": "Alerting",
+                "description": "A dashboard exploring economic and systemic-risk signals from public data. My development work includes monitoring continuity and retry handling. In development."
+              },
+              {
+                "@type": "ListItem",
+                "position": 7,
+                "name": "Hop",
+                "description": "A shared team room for conversation, notes and ideas, with an optional agent. I’m developing the meeting-app prototype. Early prototype."
+              },
+              {
+                "@type": "ListItem",
+                "position": 8,
+                "name": "Social post",
+                "description": "An ongoing personal project around social posts. Personal work in progress. In progress."
+              },
+              {
+                "@type": "ListItem",
+                "position": 9,
+                "name": "ImageGoNord",
+                "description": "An open-source tool for converting images into a chosen palette. I co-authored ImageGoNord with Wabri, alongside the work of the Schrödinger Hat community. Public source.",
+                "url": "http://127.0.0.1:3109/work#imagegonord"
+              },
+              {
+                "@type": "ListItem",
+                "position": 10,
+                "name": "Supermarket waiting times",
+                "description": "A crowdsourced map of shop waiting times, built during lockdown. I built the service and evolved it from a Raspberry Pi to regional VPS infrastructure as demand grew. Archived project · 2020.",
+                "url": "http://127.0.0.1:3109/work#supermarket"
+              },
+              {
+                "@type": "ListItem",
+                "position": 11,
+                "name": "Learning to make comic books",
+                "description": "Learning to tell stories through comic-book drawings. I’m learning and practising. In progress."
+              }
+            ]
+          }
+        }
+      ],
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Selected work."
+        },
+        {
+          "level": "H2",
+          "text": "ImageGoNord"
+        },
+        {
+          "level": "H2",
+          "text": "Supermarket waiting times"
+        },
+        {
+          "level": "H2",
+          "text": "Chromatique"
+        },
+        {
+          "level": "H2",
+          "text": "The complete index."
+        },
+        {
+          "level": "H3",
+          "text": "Schrödinger Hat"
+        },
+        {
+          "level": "H3",
+          "text": "Broskis"
+        },
+        {
+          "level": "H3",
+          "text": "Chromatique"
+        },
+        {
+          "level": "H3",
+          "text": "HolyCard AI"
+        },
+        {
+          "level": "H3",
+          "text": "CoproSync"
+        },
+        {
+          "level": "H3",
+          "text": "Alerting"
+        },
+        {
+          "level": "H3",
+          "text": "Hop"
+        },
+        {
+          "level": "H3",
+          "text": "Social post"
+        },
+        {
+          "level": "H3",
+          "text": "ImageGoNord"
+        },
+        {
+          "level": "H3",
+          "text": "Supermarket waiting times"
+        },
+        {
+          "level": "H3",
+          "text": "Learning to make comic books"
+        },
+        {
+          "level": "H2",
+          "text": "Beyond the brief."
+        }
+      ],
+      "text": "{\"@context\":\"https://schema.org\",\"@type\":\"CollectionPage\",\"url\":\"http://127.0.0.1:3109/work\",\"name\":\"Work — Miki Lombardi\",\"description\":\"Software, open-source contributions and creative work by Miki Lombardi. Explore project media, contributions and a complete index, including archived work and prototypes.\",\"mainEntity\":{\"@type\":\"ItemList\",\"numberOfItems\":11,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Schrödinger Hat\",\"description\":\"Software, events, talks and a podcast made together. I co-founded the community and contribute as a speaker. This is collective work. Open-source community.\",\"url\":\"https://schroedinger-hat.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Broskis\",\"description\":\"My personal publication on Substack. I write here. Publication.\",\"url\":\"https://broski.substack.com/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Chromatique\",\"description\":\"One colour engine, several ways to use it: a Rust core with a CLI, language bindings and creative-tool interfaces. My work includes image analysis, image comparison and lightness-preserving palette selection. In development.\",\"url\":\"http://127.0.0.1:3109/work#chromatique\"},{\"@type\":\"ListItem\",\"position\":4,\"name\":\"HolyCard AI\",\"description\":\"An editable devotional portrait-card studio with PNG and PDF exports. I developed the card studio, image-generation flow and forms. Digital-only beta.\"},{\"@type\":\"ListItem\",\"position\":5,\"name\":\"CoproSync\",\"description\":\"A self-hosted workspace for condominium councils, projects and incidents. I developed the project workflow and co-owner portal. In development.\"},{\"@type\":\"ListItem\",\"position\":6,\"name\":\"Alerting\",\"description\":\"A dashboard exploring economic and systemic-risk signals from public data. My development work includes monitoring continuity and retry handling. In development.\"},{\"@type\":\"ListItem\",\"position\":7,\"name\":\"Hop\",\"description\":\"A shared team room for conversation, notes and ideas, with an optional agent. I’m developing the meeting-app prototype. Early prototype.\"},{\"@type\":\"ListItem\",\"position\":8,\"name\":\"Social post\",\"description\":\"An ongoing personal project around social posts. Personal work in progress. In progress.\"},{\"@type\":\"ListItem\",\"position\":9,\"name\":\"ImageGoNord\",\"description\":\"An open-source tool for converting images into a chosen palette. I co-authored ImageGoNord with Wabri, alongside the work of the Schrödinger Hat community. Public source.\",\"url\":\"http://127.0.0.1:3109/work#imagegonord\"},{\"@type\":\"ListItem\",\"position\":10,\"name\":\"Supermarket waiting times\",\"description\":\"A crowdsourced map of shop waiting times, built during lockdown. I built the service and evolved it from a Raspberry Pi to regional VPS infrastructure as demand grew. Archived project · 2020.\",\"url\":\"http://127.0.0.1:3109/work#supermarket\"},{\"@type\":\"ListItem\",\"position\":11,\"name\":\"Learning to make comic books\",\"description\":\"Learning to tell stories through comic-book drawings. I’m learning and practising. In progress.\"}]}}Selected work.Software, systems, and open-source contributions. Explore the problem, the implementation and the decisions behind each project.ImageGoNordAn open-source tool for converting images into a chosen palette.I co-authored ImageGoNord with Wabri, alongside the work of the Schrödinger Hat community.Explore ImageGoNord on GitHubThe conversion interface: upload an image and choose palette options.ImageGoNord / Schrödinger Hat · interface capture, November 2026View full-size image: The conversion interface: upload an image and choose palette options.The live website’s introduction to palette conversion.ImageGoNord / Schrödinger Hat · interface capture, November 2026View full-size image: The live website’s introduction to palette conversion.Palette groups and conversion settings. Open the full-size image to read the controls.ImageGoNord / Schrödinger Hat · interface detail, November 2026View full-size image: Palette groups and conversion settings. Open the full-size image to read the controls.Supermarket waiting timesArchived project · 2020A crowdsourced map of shop waiting times, built during lockdown.I built the service and evolved it from a Raspberry Pi to regional VPS infrastructure as demand grew.View the archived projectDocumented architecture, drawn from the preserved technical article. This is a diagram, not a historical screenshot.Miki Lombardi’s 2021 technical article · source-derived diagram, 2026View full-size image: Documented architecture, drawn from the preserved technical article. This is a diagram, not a historical screenshot.ChromatiqueIn developmentOne colour engine, several ways to use it: a Rust core with a CLI, language bindings and creative-tool interfaces.My work includes image analysis, image comparison and lightness-preserving palette selection.View the generated outputOriginal input: Irises along the embankment, West Potomac Park, 1921.Frances Benjamin Johnston / Library of Congress · no known restrictions on publicationView full-size image: Original input: Irises along the embankment, West Potomac Park, 1921.Actual Chromatique CLI output: Nord palette, OKLab, CPU, no dithering.Chromatique 0.2.0 · source photograph: Frances Benjamin Johnston / Library of Congress; Nord palette: Sven GrebView full-size image: Actual Chromatique CLI output: Nord palette, OKLab, CPU, no dithering.The complete index.Schrödinger HatOpen-source communitySoftware, events, talks and a podcast made together.I co-founded the community and contribute as a speaker. This is collective work.BroskisPublicationMy personal publication on Substack.I write here.ChromatiqueIn developmentOne colour engine, several ways to use it: a Rust core with a CLI, language bindings and creative-tool interfaces.My work includes image analysis, image comparison and lightness-preserving palette selection.HolyCard AIDigital-only betaAn editable devotional portrait-card studio with PNG and PDF exports.I developed the card studio, image-generation flow and forms.No public link yet.CoproSyncIn developmentA self-hosted workspace for condominium councils, projects and incidents.I developed the project workflow and co-owner portal.No public link yet.AlertingIn developmentA dashboard exploring economic and systemic-risk signals from public data.My development work includes monitoring continuity and retry handling.No public link yet.HopEarly prototypeA shared team room for conversation, notes and ideas, with an optional agent.I’m developing the meeting-app prototype.No public link yet.Social postIn progressAn ongoing personal project around social posts.Personal work in progress.No public link yet.ImageGoNordPublic sourceAn open-source tool for converting images into a chosen palette.I co-authored ImageGoNord with Wabri, alongside the work of the Schrödinger Hat community.Supermarket waiting timesArchived project · 2020A crowdsourced map of shop waiting times, built during lockdown.I built the service and evolved it from a Raspberry Pi to regional VPS infrastructure as demand grew.Learning to make comic booksIn progressLearning to tell stories through comic-book drawings.I’m learning and practising.No public link yet.Beyond the brief.Small experiments and things I’m learning along the way.Explore Play",
+      "links": [
+        "#main-content",
+        "/",
+        "/work",
+        "/blog",
+        "/play",
+        "/about",
+        "https://github.com/TheJoin95",
+        "https://www.linkedin.com/in/miki-lombardi/",
+        "/about#contact",
+        "https://github.com/Schroedinger-Hat/ImageGoNord-Web",
+        "/media/imagegonord/conversion-interface.png",
+        "/media/imagegonord/introduction.png",
+        "/media/imagegonord/palette-controls.png",
+        "https://github.com/TheJoin95/covid19-market-waiting-times",
+        "/media/supermarket/architecture.svg",
+        "/media/chromatique/irises-nord.png",
+        "/media/chromatique/irises-original.jpg",
+        "/media/chromatique/irises-nord.png",
+        "https://schroedinger-hat.org/",
+        "https://broski.substack.com/",
+        "/work#chromatique",
+        "/work#imagegonord",
+        "/work#supermarket",
+        "/play",
+        "mailto:miki.lombi@gmail.com",
+        "https://github.com/TheJoin95",
+        "https://www.linkedin.com/in/miki-lombardi/",
+        "/miki-lombardi-resume.pdf",
+        "/work",
+        "/blog",
+        "/play",
+        "/about",
+        "/media/imagegonord/conversion-interface.png",
+        "/media/imagegonord/introduction.png",
+        "/media/imagegonord/palette-controls.png",
+        "/media/supermarket/architecture.svg",
+        "/media/chromatique/irises-original.jpg",
+        "/media/chromatique/irises-nord.png"
+      ],
+      "images": [
+        {
+          "src": "/media/imagegonord/conversion-interface.png",
+          "alt": "ImageGoNord upload area beside Nord palette swatches and conversion options.",
+          "width": "1200",
+          "height": "870",
+          "loading": "lazy"
+        },
+        {
+          "src": "/media/imagegonord/introduction.png",
+          "alt": "ImageGoNord’s introduction with links to more palettes and documentation.",
+          "width": "1200",
+          "height": "363",
+          "loading": "lazy"
+        },
+        {
+          "src": "/media/imagegonord/palette-controls.png",
+          "alt": "Polar Night, Snow Storm, Frost and Aurora colour swatches above conversion settings.",
+          "width": "261",
+          "height": "710",
+          "loading": "lazy"
+        },
+        {
+          "src": "/media/supermarket/architecture.svg",
+          "alt": "Architecture: GitHub Pages frontend, Flask and uWSGI backend, Redis geospatial lookup and expiring cache; hosting evolved from Raspberry Pi to regional VPS instances.",
+          "width": "1200",
+          "height": "480",
+          "loading": "lazy"
+        },
+        {
+          "src": "/media/chromatique/irises-original.jpg",
+          "alt": "Hand-coloured photograph of irises and trees along the West Potomac Park embankment.",
+          "width": "1024",
+          "height": "846",
+          "loading": "lazy"
+        },
+        {
+          "src": "/media/chromatique/irises-nord.png",
+          "alt": "The same garden photograph mapped to the sixteen colours of the Nord palette.",
+          "width": "1024",
+          "height": "846",
+          "loading": "lazy"
+        }
+      ]
+    },
+    {
+      "route": "/about",
+      "status": 200,
+      "xRobotsTag": null,
+      "title": "About | Miki Lombardi",
+      "description": "Meet Miki Lombardi, Senior Software Engineer at Adobe and Schrödinger Hat co-founder.",
+      "canonical": null,
+      "robots": [],
+      "og": {
+        "og:title": "About | Miki Lombardi",
+        "og:description": "Meet Miki Lombardi, Senior Software Engineer at Adobe and Schrödinger Hat co-founder.",
+        "og:image": "http://127.0.0.1:3109/opengraph-image?e6c4a5236a93a531",
+        "og:image:type": "image/png",
+        "og:image:width": "1200",
+        "og:image:height": "630",
+        "og:image:alt": "Miki Lombardi — Engineering, with curiosity."
+      },
+      "twitter": {
+        "twitter:card": "summary_large_image",
+        "twitter:title": "About | Miki Lombardi",
+        "twitter:description": "Meet Miki Lombardi, Senior Software Engineer at Adobe and Schrödinger Hat co-founder.",
+        "twitter:image": "http://127.0.0.1:3109/opengraph-image?e6c4a5236a93a531",
+        "twitter:image:alt": "Miki Lombardi — Engineering, with curiosity.",
+        "twitter:image:type": "image/png",
+        "twitter:image:width": "1200",
+        "twitter:image:height": "630"
+      },
+      "schemas": [],
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Engineering with curiosity."
+        },
+        {
+          "level": "H2",
+          "text": "Software. People. Shared ideas."
+        },
+        {
+          "level": "H2",
+          "text": "Beyond the keyboard."
+        }
+      ],
+      "text": "Engineering with curiosity.I’m Miki Lombardi, a Senior Software Engineer at Adobe. My work spans software development, architecture and open source.Software. People. Shared ideas.I’ve worked in product and consultancy teams, including Aperion, Plansoft and Growens, before joining Adobe.I co-founded Schrödinger Hat, where software and community meet. Open-source projects, talks and shared experiments are part of how I learn and contribute beyond my day-to-day work.Beyond the keyboard.Cycling and photography are two of my other interests. I’m also learning to make comic books. The sketchbook will follow that process as I develop original drawings.",
+      "links": [
+        "#main-content",
+        "/",
+        "/work",
+        "/blog",
+        "/play",
+        "/about",
+        "https://github.com/TheJoin95",
+        "https://www.linkedin.com/in/miki-lombardi/",
+        "/about#contact",
+        "mailto:miki.lombi@gmail.com",
+        "https://github.com/TheJoin95",
+        "https://www.linkedin.com/in/miki-lombardi/",
+        "/miki-lombardi-resume.pdf"
+      ],
+      "images": []
+    },
+    {
+      "route": "/blog",
+      "status": 200,
+      "xRobotsTag": null,
+      "title": "Journal | Miki Lombardi",
+      "description": "Notes from Miki Lombardi on software, architecture, open source and learning by making.",
+      "canonical": null,
+      "robots": [],
+      "og": {
+        "og:title": "Journal | Miki Lombardi",
+        "og:description": "Notes from Miki Lombardi on software, architecture, open source and learning by making.",
+        "og:image": "http://127.0.0.1:3109/opengraph-image?e6c4a5236a93a531",
+        "og:image:type": "image/png",
+        "og:image:width": "1200",
+        "og:image:height": "630",
+        "og:image:alt": "Miki Lombardi — Engineering, with curiosity."
+      },
+      "twitter": {
+        "twitter:card": "summary_large_image",
+        "twitter:title": "Journal | Miki Lombardi",
+        "twitter:description": "Notes from Miki Lombardi on software, architecture, open source and learning by making.",
+        "twitter:image": "http://127.0.0.1:3109/opengraph-image?e6c4a5236a93a531",
+        "twitter:image:alt": "Miki Lombardi — Engineering, with curiosity.",
+        "twitter:image:type": "image/png",
+        "twitter:image:width": "1200",
+        "twitter:image:height": "630"
+      },
+      "schemas": [],
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Notes & experiments."
+        },
+        {
+          "level": "H2",
+          "text": "The archive is moving here."
+        }
+      ],
+      "text": "Notes & experiments.On software, architecture, and learning by making.The archive is moving here.I’m bringing the articles from my previous website into this Journal. The archive will return here with its original titles and publication dates.Get new writing by email",
+      "links": [
+        "#main-content",
+        "/",
+        "/work",
+        "/blog",
+        "/play",
+        "/about",
+        "https://github.com/TheJoin95",
+        "https://www.linkedin.com/in/miki-lombardi/",
+        "/about#contact",
+        "/#newsletter-title",
+        "mailto:miki.lombi@gmail.com",
+        "https://github.com/TheJoin95",
+        "https://www.linkedin.com/in/miki-lombardi/",
+        "/miki-lombardi-resume.pdf"
+      ],
+      "images": []
+    },
+    {
+      "route": "/play",
+      "status": 200,
+      "xRobotsTag": null,
+      "title": "Play | Miki Lombardi",
+      "description": "Side projects, community and creative experiments by Miki Lombardi.",
+      "canonical": null,
+      "robots": [],
+      "og": {
+        "og:title": "Play | Miki Lombardi",
+        "og:description": "Side projects, community and creative experiments by Miki Lombardi.",
+        "og:image": "http://127.0.0.1:3109/opengraph-image?e6c4a5236a93a531",
+        "og:image:type": "image/png",
+        "og:image:width": "1200",
+        "og:image:height": "630",
+        "og:image:alt": "Miki Lombardi — Engineering, with curiosity."
+      },
+      "twitter": {
+        "twitter:card": "summary_large_image",
+        "twitter:title": "Play | Miki Lombardi",
+        "twitter:description": "Side projects, community and creative experiments by Miki Lombardi.",
+        "twitter:image": "http://127.0.0.1:3109/opengraph-image?e6c4a5236a93a531",
+        "twitter:image:alt": "Miki Lombardi — Engineering, with curiosity.",
+        "twitter:image:type": "image/png",
+        "twitter:image:width": "1200",
+        "twitter:image:height": "630"
+      },
+      "schemas": [],
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Built out of curiosity."
+        },
+        {
+          "level": "H2",
+          "text": "Make something. Learn something."
+        },
+        {
+          "level": "H2",
+          "text": "Learning to make comics."
+        }
+      ],
+      "text": "Built out of curiosity.Side projects, community, and experiments.Make something. Learn something.I experiment with software and colour, contribute to community projects, and share what I learn.Explore the experimentSchrödinger HatRead BroskisLearning to make comics.A work in progress. I’m developing original drawings and learning the craft, alongside cycling, photography, and whatever comes next.",
+      "links": [
+        "#main-content",
+        "/",
+        "/work",
+        "/blog",
+        "/play",
+        "/about",
+        "https://github.com/TheJoin95",
+        "https://www.linkedin.com/in/miki-lombardi/",
+        "/about#contact",
+        "/experience",
+        "https://schroedinger-hat.org/",
+        "https://broski.substack.com/",
+        "mailto:miki.lombi@gmail.com",
+        "https://github.com/TheJoin95",
+        "https://www.linkedin.com/in/miki-lombardi/",
+        "/miki-lombardi-resume.pdf"
+      ],
+      "images": []
+    },
+    {
+      "route": "/experience",
+      "status": 200,
+      "xRobotsTag": null,
+      "title": "Experience | Miki Lombardi",
+      "description": "Ideas, writing, and experiments by Miki Lombardi.",
+      "canonical": null,
+      "robots": [],
+      "og": {
+        "og:title": "Experience | Miki Lombardi",
+        "og:description": "Ideas, writing, and experiments by Miki Lombardi.",
+        "og:image": "http://127.0.0.1:3109/opengraph-image?e6c4a5236a93a531",
+        "og:image:type": "image/png",
+        "og:image:width": "1200",
+        "og:image:height": "630",
+        "og:image:alt": "Miki Lombardi — Engineering, with curiosity."
+      },
+      "twitter": {
+        "twitter:card": "summary_large_image",
+        "twitter:title": "Experience | Miki Lombardi",
+        "twitter:description": "Ideas, writing, and experiments by Miki Lombardi.",
+        "twitter:image": "http://127.0.0.1:3109/opengraph-image?e6c4a5236a93a531",
+        "twitter:image:alt": "Miki Lombardi — Engineering, with curiosity.",
+        "twitter:image:type": "image/png",
+        "twitter:image:width": "1200",
+        "twitter:image:height": "630"
+      },
+      "schemas": [],
+      "headings": [
+        {
+          "level": "H1",
+          "text": "A little room to explore."
+        }
+      ],
+      "text": "Back to homeA little room to explore.Drag to rotate the sculpture.Loading experience…",
+      "links": [
+        "#main-content",
+        "/",
+        "/work",
+        "/blog",
+        "/play",
+        "/about",
+        "https://github.com/TheJoin95",
+        "https://www.linkedin.com/in/miki-lombardi/",
+        "/about#contact",
+        "/",
+        "mailto:miki.lombi@gmail.com",
+        "https://github.com/TheJoin95",
+        "https://www.linkedin.com/in/miki-lombardi/",
+        "/miki-lombardi-resume.pdf"
+      ],
+      "images": []
+    },
+    {
+      "route": "/newsletter/confirmed",
+      "status": 200,
+      "xRobotsTag": null,
+      "title": "Subscription confirmed | Miki Lombardi",
+      "description": "Ideas, writing, and experiments by Miki Lombardi.",
+      "canonical": null,
+      "robots": [
+        "noindex"
+      ],
+      "og": {
+        "og:title": "Subscription confirmed | Miki Lombardi",
+        "og:description": "Ideas, writing, and experiments by Miki Lombardi.",
+        "og:image": "http://127.0.0.1:3109/opengraph-image?e6c4a5236a93a531",
+        "og:image:type": "image/png",
+        "og:image:width": "1200",
+        "og:image:height": "630",
+        "og:image:alt": "Miki Lombardi — Engineering, with curiosity."
+      },
+      "twitter": {
+        "twitter:card": "summary_large_image",
+        "twitter:title": "Subscription confirmed | Miki Lombardi",
+        "twitter:description": "Ideas, writing, and experiments by Miki Lombardi.",
+        "twitter:image": "http://127.0.0.1:3109/opengraph-image?e6c4a5236a93a531",
+        "twitter:image:alt": "Miki Lombardi — Engineering, with curiosity.",
+        "twitter:image:type": "image/png",
+        "twitter:image:width": "1200",
+        "twitter:image:height": "630"
+      },
+      "schemas": [],
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Thanks for confirming."
+        }
+      ],
+      "text": "Thanks for confirming.You’re on the list. See you in your inbox.Back to home",
+      "links": [
+        "#main-content",
+        "/",
+        "/work",
+        "/blog",
+        "/play",
+        "/about",
+        "https://github.com/TheJoin95",
+        "https://www.linkedin.com/in/miki-lombardi/",
+        "/about#contact",
+        "/",
+        "mailto:miki.lombi@gmail.com",
+        "https://github.com/TheJoin95",
+        "https://www.linkedin.com/in/miki-lombardi/",
+        "/miki-lombardi-resume.pdf"
+      ],
+      "images": []
+    },
+    {
+      "route": "/not-a-real-page",
+      "status": 404,
+      "xRobotsTag": null,
+      "title": "Miki Lombardi",
+      "description": "Ideas, writing, and experiments by Miki Lombardi.",
+      "canonical": null,
+      "robots": [
+        "noindex"
+      ],
+      "og": {
+        "og:title": "Miki Lombardi",
+        "og:description": "Ideas, writing, and experiments by Miki Lombardi.",
+        "og:image": "http://127.0.0.1:3109/opengraph-image?e6c4a5236a93a531",
+        "og:image:type": "image/png",
+        "og:image:width": "1200",
+        "og:image:height": "630",
+        "og:image:alt": "Miki Lombardi — Engineering, with curiosity."
+      },
+      "twitter": {
+        "twitter:card": "summary_large_image",
+        "twitter:title": "Miki Lombardi",
+        "twitter:description": "Ideas, writing, and experiments by Miki Lombardi.",
+        "twitter:image": "http://127.0.0.1:3109/opengraph-image?e6c4a5236a93a531",
+        "twitter:image:alt": "Miki Lombardi — Engineering, with curiosity.",
+        "twitter:image:type": "image/png",
+        "twitter:image:width": "1200",
+        "twitter:image:height": "630"
+      },
+      "schemas": [],
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Page not found."
+        }
+      ],
+      "text": "Page not found.This address doesn’t lead to a page. Try the work or Journal, or head back home.HomeWorkJournal",
+      "links": [
+        "#main-content",
+        "/",
+        "/work",
+        "/blog",
+        "/play",
+        "/about",
+        "https://github.com/TheJoin95",
+        "https://www.linkedin.com/in/miki-lombardi/",
+        "/about#contact",
+        "/",
+        "/work",
+        "/blog",
+        "mailto:miki.lombi@gmail.com",
+        "https://github.com/TheJoin95",
+        "https://www.linkedin.com/in/miki-lombardi/",
+        "/miki-lombardi-resume.pdf"
+      ],
+      "images": []
+    },
+    {
+      "route": "/robots.txt",
+      "status": 404,
+      "xRobotsTag": null,
+      "title": "Miki Lombardi",
+      "description": "Ideas, writing, and experiments by Miki Lombardi.",
+      "canonical": null,
+      "robots": [
+        "noindex"
+      ],
+      "og": {
+        "og:title": "Miki Lombardi",
+        "og:description": "Ideas, writing, and experiments by Miki Lombardi.",
+        "og:image": "http://127.0.0.1:3109/opengraph-image?e6c4a5236a93a531",
+        "og:image:type": "image/png",
+        "og:image:width": "1200",
+        "og:image:height": "630",
+        "og:image:alt": "Miki Lombardi — Engineering, with curiosity."
+      },
+      "twitter": {
+        "twitter:card": "summary_large_image",
+        "twitter:title": "Miki Lombardi",
+        "twitter:description": "Ideas, writing, and experiments by Miki Lombardi.",
+        "twitter:image": "http://127.0.0.1:3109/opengraph-image?e6c4a5236a93a531",
+        "twitter:image:alt": "Miki Lombardi — Engineering, with curiosity.",
+        "twitter:image:type": "image/png",
+        "twitter:image:width": "1200",
+        "twitter:image:height": "630"
+      },
+      "schemas": [],
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Page not found."
+        }
+      ],
+      "text": "Page not found.This address doesn’t lead to a page. Try the work or Journal, or head back home.HomeWorkJournal",
+      "links": [
+        "#main-content",
+        "/",
+        "/work",
+        "/blog",
+        "/play",
+        "/about",
+        "https://github.com/TheJoin95",
+        "https://www.linkedin.com/in/miki-lombardi/",
+        "/about#contact",
+        "/",
+        "/work",
+        "/blog",
+        "mailto:miki.lombi@gmail.com",
+        "https://github.com/TheJoin95",
+        "https://www.linkedin.com/in/miki-lombardi/",
+        "/miki-lombardi-resume.pdf"
+      ],
+      "images": []
+    },
+    {
+      "route": "/sitemap.xml",
+      "status": 404,
+      "xRobotsTag": null,
+      "title": "Miki Lombardi",
+      "description": "Ideas, writing, and experiments by Miki Lombardi.",
+      "canonical": null,
+      "robots": [
+        "noindex"
+      ],
+      "og": {
+        "og:title": "Miki Lombardi",
+        "og:description": "Ideas, writing, and experiments by Miki Lombardi.",
+        "og:image": "http://127.0.0.1:3109/opengraph-image?e6c4a5236a93a531",
+        "og:image:type": "image/png",
+        "og:image:width": "1200",
+        "og:image:height": "630",
+        "og:image:alt": "Miki Lombardi — Engineering, with curiosity."
+      },
+      "twitter": {
+        "twitter:card": "summary_large_image",
+        "twitter:title": "Miki Lombardi",
+        "twitter:description": "Ideas, writing, and experiments by Miki Lombardi.",
+        "twitter:image": "http://127.0.0.1:3109/opengraph-image?e6c4a5236a93a531",
+        "twitter:image:alt": "Miki Lombardi — Engineering, with curiosity.",
+        "twitter:image:type": "image/png",
+        "twitter:image:width": "1200",
+        "twitter:image:height": "630"
+      },
+      "schemas": [],
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Page not found."
+        }
+      ],
+      "text": "Page not found.This address doesn’t lead to a page. Try the work or Journal, or head back home.HomeWorkJournal",
+      "links": [
+        "#main-content",
+        "/",
+        "/work",
+        "/blog",
+        "/play",
+        "/about",
+        "https://github.com/TheJoin95",
+        "https://www.linkedin.com/in/miki-lombardi/",
+        "/about#contact",
+        "/",
+        "/work",
+        "/blog",
+        "mailto:miki.lombi@gmail.com",
+        "https://github.com/TheJoin95",
+        "https://www.linkedin.com/in/miki-lombardi/",
+        "/miki-lombardi-resume.pdf"
+      ],
+      "images": []
+    },
+    {
+      "route": "/rss.xml",
+      "status": 404,
+      "xRobotsTag": null,
+      "title": "Miki Lombardi",
+      "description": "Ideas, writing, and experiments by Miki Lombardi.",
+      "canonical": null,
+      "robots": [
+        "noindex"
+      ],
+      "og": {
+        "og:title": "Miki Lombardi",
+        "og:description": "Ideas, writing, and experiments by Miki Lombardi.",
+        "og:image": "http://127.0.0.1:3109/opengraph-image?e6c4a5236a93a531",
+        "og:image:type": "image/png",
+        "og:image:width": "1200",
+        "og:image:height": "630",
+        "og:image:alt": "Miki Lombardi — Engineering, with curiosity."
+      },
+      "twitter": {
+        "twitter:card": "summary_large_image",
+        "twitter:title": "Miki Lombardi",
+        "twitter:description": "Ideas, writing, and experiments by Miki Lombardi.",
+        "twitter:image": "http://127.0.0.1:3109/opengraph-image?e6c4a5236a93a531",
+        "twitter:image:alt": "Miki Lombardi — Engineering, with curiosity.",
+        "twitter:image:type": "image/png",
+        "twitter:image:width": "1200",
+        "twitter:image:height": "630"
+      },
+      "schemas": [],
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Page not found."
+        }
+      ],
+      "text": "Page not found.This address doesn’t lead to a page. Try the work or Journal, or head back home.HomeWorkJournal",
+      "links": [
+        "#main-content",
+        "/",
+        "/work",
+        "/blog",
+        "/play",
+        "/about",
+        "https://github.com/TheJoin95",
+        "https://www.linkedin.com/in/miki-lombardi/",
+        "/about#contact",
+        "/",
+        "/work",
+        "/blog",
+        "mailto:miki.lombi@gmail.com",
+        "https://github.com/TheJoin95",
+        "https://www.linkedin.com/in/miki-lombardi/",
+        "/miki-lombardi-resume.pdf"
+      ],
+      "images": []
+    },
+    {
+      "route": "/llms.txt",
+      "status": 404,
+      "xRobotsTag": null,
+      "title": "Miki Lombardi",
+      "description": "Ideas, writing, and experiments by Miki Lombardi.",
+      "canonical": null,
+      "robots": [
+        "noindex"
+      ],
+      "og": {
+        "og:title": "Miki Lombardi",
+        "og:description": "Ideas, writing, and experiments by Miki Lombardi.",
+        "og:image": "http://127.0.0.1:3109/opengraph-image?e6c4a5236a93a531",
+        "og:image:type": "image/png",
+        "og:image:width": "1200",
+        "og:image:height": "630",
+        "og:image:alt": "Miki Lombardi — Engineering, with curiosity."
+      },
+      "twitter": {
+        "twitter:card": "summary_large_image",
+        "twitter:title": "Miki Lombardi",
+        "twitter:description": "Ideas, writing, and experiments by Miki Lombardi.",
+        "twitter:image": "http://127.0.0.1:3109/opengraph-image?e6c4a5236a93a531",
+        "twitter:image:alt": "Miki Lombardi — Engineering, with curiosity.",
+        "twitter:image:type": "image/png",
+        "twitter:image:width": "1200",
+        "twitter:image:height": "630"
+      },
+      "schemas": [],
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Page not found."
+        }
+      ],
+      "text": "Page not found.This address doesn’t lead to a page. Try the work or Journal, or head back home.HomeWorkJournal",
+      "links": [
+        "#main-content",
+        "/",
+        "/work",
+        "/blog",
+        "/play",
+        "/about",
+        "https://github.com/TheJoin95",
+        "https://www.linkedin.com/in/miki-lombardi/",
+        "/about#contact",
+        "/",
+        "/work",
+        "/blog",
+        "mailto:miki.lombi@gmail.com",
+        "https://github.com/TheJoin95",
+        "https://www.linkedin.com/in/miki-lombardi/",
+        "/miki-lombardi-resume.pdf"
+      ],
+      "images": []
+    },
+    {
+      "route": "/blog/2019-12-21-microfrontend-from-00-to-20s",
+      "status": 404,
+      "xRobotsTag": null,
+      "title": "Miki Lombardi",
+      "description": "Ideas, writing, and experiments by Miki Lombardi.",
+      "canonical": null,
+      "robots": [
+        "noindex"
+      ],
+      "og": {
+        "og:title": "Miki Lombardi",
+        "og:description": "Ideas, writing, and experiments by Miki Lombardi.",
+        "og:image": "http://127.0.0.1:3109/opengraph-image?e6c4a5236a93a531",
+        "og:image:type": "image/png",
+        "og:image:width": "1200",
+        "og:image:height": "630",
+        "og:image:alt": "Miki Lombardi — Engineering, with curiosity."
+      },
+      "twitter": {
+        "twitter:card": "summary_large_image",
+        "twitter:title": "Miki Lombardi",
+        "twitter:description": "Ideas, writing, and experiments by Miki Lombardi.",
+        "twitter:image": "http://127.0.0.1:3109/opengraph-image?e6c4a5236a93a531",
+        "twitter:image:alt": "Miki Lombardi — Engineering, with curiosity.",
+        "twitter:image:type": "image/png",
+        "twitter:image:width": "1200",
+        "twitter:image:height": "630"
+      },
+      "schemas": [],
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Page not found."
+        }
+      ],
+      "text": "Page not found.This address doesn’t lead to a page. Try the work or Journal, or head back home.HomeWorkJournal",
+      "links": [
+        "#main-content",
+        "/",
+        "/work",
+        "/blog",
+        "/play",
+        "/about",
+        "https://github.com/TheJoin95",
+        "https://www.linkedin.com/in/miki-lombardi/",
+        "/about#contact",
+        "/",
+        "/work",
+        "/blog",
+        "mailto:miki.lombi@gmail.com",
+        "https://github.com/TheJoin95",
+        "https://www.linkedin.com/in/miki-lombardi/",
+        "/miki-lombardi-resume.pdf"
+      ],
+      "images": []
+    }
+  ],
+  "internalLinks": [
+    {
+      "href": "/",
+      "status": 200
+    },
+    {
+      "href": "/work",
+      "status": 200
+    },
+    {
+      "href": "/blog",
+      "status": 200
+    },
+    {
+      "href": "/play",
+      "status": 200
+    },
+    {
+      "href": "/about",
+      "status": 200
+    },
+    {
+      "href": "/about#contact",
+      "status": 200
+    },
+    {
+      "href": "/media/imagegonord/conversion-interface.png",
+      "status": 200
+    },
+    {
+      "href": "/media/imagegonord/introduction.png",
+      "status": 200
+    },
+    {
+      "href": "/media/imagegonord/palette-controls.png",
+      "status": 200
+    },
+    {
+      "href": "/media/supermarket/architecture.svg",
+      "status": 200
+    },
+    {
+      "href": "/media/chromatique/irises-nord.png",
+      "status": 200
+    },
+    {
+      "href": "/media/chromatique/irises-original.jpg",
+      "status": 200
+    },
+    {
+      "href": "/experience",
+      "status": 200
+    },
+    {
+      "href": "/miki-lombardi-resume.pdf",
+      "status": 200
+    },
+    {
+      "href": "/work#chromatique",
+      "status": 200
+    },
+    {
+      "href": "/work#imagegonord",
+      "status": 200
+    },
+    {
+      "href": "/work#supermarket",
+      "status": 200
+    },
+    {
+      "href": "/#newsletter-title",
+      "status": 200
+    }
+  ],
+  "legacyArticleChecks": [
+    {
+      "path": "/blog/2021-04-17-covid19-supermarket-waiting-times-how-it-was-made",
+      "status": 404
+    },
+    {
+      "path": "/blog/2021-04-17-covid19-supermarket-waiting-times-2020-recap",
+      "status": 404
+    },
+    {
+      "path": "/blog/2021-02-22-netflix-conver-generator-nuxtjs-konvajs",
+      "status": 404
+    },
+    {
+      "path": "/blog/2020-02-23-sorting-hat-experiment-webar-in-js",
+      "status": 404
+    },
+    {
+      "path": "/blog/2020-02-21-argumented-reality-brief-explanation",
+      "status": 404
+    },
+    {
+      "path": "/blog/2019-12-21-microfrontend-from-00-to-20s",
+      "status": 404
+    },
+    {
+      "path": "/blog/2019-06-28-puppeteer-skyscanner-scraper-nodejs",
+      "status": 404
+    },
+    {
+      "path": "/blog/2019-05-18-prenotare-appuntamento-passaporto-online",
+      "status": 404
+    },
+    {
+      "path": "/blog/2019-03-28-manage-record-dns-updater-register-python",
+      "status": 404
+    },
+    {
+      "path": "/blog/2018-10-28-how-make-8d-ambisonic-audio-track-python",
+      "status": 404
+    },
+    {
+      "path": "/blog/2018-06-25-how-add-amp-pages-jekyll",
+      "status": 404
+    },
+    {
+      "path": "/blog/2017-12-09-ionic-build-ios-app-without-mac-virtual-machine",
+      "status": 404
+    },
+    {
+      "path": "/blog/2017-12-01-configure-dynhost-ovh-raspberry-for-dynamic-dns",
+      "status": 404
+    },
+    {
+      "path": "/blog/2017-06-01-raspberry-wont-boot-make-backup-with-chroot-shell",
+      "status": 404
+    },
+    {
+      "path": "/blog/2017-05-17-automatically-connect-wifi-raspberry-dhcp-and-staticip",
+      "status": 404
+    },
+    {
+      "path": "/blog/2017-02-16-how-to-backup-all-collections-from-mongodb-on-raspberry",
+      "status": 404
+    }
+  ],
+  "socialImages": [
+    {
+      "url": "http://127.0.0.1:3109/opengraph-image?e6c4a5236a93a531",
+      "status": 200,
+      "contentType": "image/png",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "url": "http://127.0.0.1:3109/opengraph-image",
+      "status": 200,
+      "contentType": "image/png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "crawlerHtml": [
+    {
+      "userAgent": "Googlebot",
+      "status": 200,
+      "hasIndex": true,
+      "hasArchivedStatus": true,
+      "hasStructuredData": true,
+      "hasSocialImage": true
+    },
+    {
+      "userAgent": "OAI-SearchBot",
+      "status": 200,
+      "hasIndex": true,
+      "hasArchivedStatus": true,
+      "hasStructuredData": true,
+      "hasSocialImage": true
+    },
+    {
+      "userAgent": "PerplexityBot",
+      "status": 200,
+      "hasIndex": true,
+      "hasArchivedStatus": true,
+      "hasStructuredData": true,
+      "hasSocialImage": true
+    },
+    {
+      "userAgent": "Claude-SearchBot",
+      "status": 200,
+      "hasIndex": true,
+      "hasArchivedStatus": true,
+      "hasStructuredData": true,
+      "hasSocialImage": true
+    }
+  ]
+}

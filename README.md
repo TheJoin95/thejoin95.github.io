@@ -5,6 +5,12 @@ Radix-based shadcn/ui provide the UI foundation. Google Analytics 4 handles opti
 analytics; Brevo handles newsletter double opt in. The palette comparison uses
 HTML images and native controls; dotLottie supports small animations.
 
+Start with the [maintenance guide](docs/maintenance/README.md) to
+[create a blog post](docs/publishing/journal.md#create-a-blog-post-step-by-step),
+update projects/assets, deploy or recover. Editable draft templates are included.
+The reviewed preview exists; production cutover and live verification remain
+separate MIC-30/MIC-31 work.
+
 The [technical approach](docs/technical-approach.md) records the portfolio/Journal
 content and route contracts, existing-work review and remaining ticket handoffs.
 Use the [preview runbook](docs/preview-workflow.md) to review a production-mode
@@ -203,18 +209,20 @@ git show origin/old:src/views/About.vue
 
 ## Deployment
 
-Deploy to a host supporting the Next.js server runtime, such as Vercel, Netlify,
-or a Node/Bun server. **GitHub Pages alone cannot run the newsletter API.** This
-scaffold deliberately does not use `output: "export"`. To retain GitHub Pages,
-move the subscription handler to an external service first.
+The configured Netlify site runs the Next.js server application.
+**GitHub Pages alone cannot run the newsletter API.** The app does not use
+`output: "export"`; changing that requires a separate API/runtime design.
 
 Set the service variables on the hosting platform and run `bun run build`.
-Deployment and the old site's custom-domain migration are outside this scaffold.
+Use the [deployment/recovery runbook](docs/maintenance/deployment.md).
+The old site's custom-domain cutover remains pending MIC-30, with live checks
+under MIC-31; do not treat a preview as production-release evidence.
 
 ### Netlify
 
 `netlify.toml` sets the build command to `bun run build`, publishes `.next`, and
-pins Bun 1.4.4 and Node.js 22. Installs use the frozen Bun lockfile. Netlify
+pins Bun 1.4.4 and Node.js 22 for builds. Netlify controls the function runtime;
+record the actual runtime on the deploy. Installs use the frozen Bun lockfile. Netlify
 automatically applies its Next.js adapter to run the newsletter API.
 See [Netlify's Next.js documentation](https://docs.netlify.com/build/frameworks/framework-setup-guides/nextjs/overview/).
 
@@ -226,17 +234,20 @@ In Netlify's environment variable settings, configure:
 | Variable | Scope | Value |
 | --- | --- | --- |
 | `NEXT_PUBLIC_SITE_URL` | Builds and Functions | Live HTTPS origin, without a path |
+| `SITE_INDEXING` | Builds | Disabled until approved custom-domain cutover; production-only enabled thereafter |
 | `NEXT_PUBLIC_GA_MEASUREMENT_ID` | Builds | Production GA4 measurement ID, optional |
 | `BREVO_API_KEY` | Functions | Private Brevo API key |
 | `BREVO_NEWSLETTER_LIST_ID` | Functions | Newsletter list ID |
 | `BREVO_DOI_TEMPLATE_ID` | Functions | Double opt-in template ID |
 
 Set production values in the production context. The configuration disables GA4
-on deploy previews and branch deploys. To test newsletter signup on previews,
-give that context its own site origin matching the preview URL and preferably
-a separate Brevo list/template; otherwise leave Brevo unconfigured there.
+on deploy previews and branch deploys. Keep the approved custom canonical origin
+on hosted previews and leave newsletter delivery unconfigured there. The current
+Origin guard can reject preview-host signup; don't change the canonical to a
+`netlify.app` URL or weaken the guard for a demo. Real delivery testing is a
+separate check with an explicitly chosen address/list/template.
 Runtime secrets belong in Netlify's UI: values in `netlify.toml` are build-time
 configuration, not Function secrets. Rebuild after changing public variables.
 
 After the first deployment, test a real newsletter opt-in and check GA4 Realtime.
-No Netlify site or deployment is created by adding this configuration.
+The current reviewed draft and its limits are recorded in the maintenance guide.

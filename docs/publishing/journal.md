@@ -5,6 +5,63 @@ the same archive, RSS, canonical metadata and social image pipeline. No CMS or
 MDX JavaScript is required. Existing migrated files and their raw downloads must
 retain their source bytes; write new entries instead of rewriting the archive.
 
+For project updates, deployments, recovery and the current release state, start
+with the [maintenance guide](../maintenance/README.md).
+
+## Create a blog post, step by step
+
+The blog already exists at `/blog`. Creating a post means adding one Markdown
+file; do not create a Next.js route or install a CMS. From the repository root:
+
+```sh
+git switch -c codex/blog-my-first-post
+cp docs/publishing/templates/article.md content/journal/my-first-post.md
+bun run build:journal
+bun run dev
+```
+
+Use a new filename; do not overwrite an existing post. Replace the template's
+title, description, example date, tags and body with your actual writing.
+`my-first-post.md` becomes `/blog/my-first-post`; the filename is the complete
+slug, with lowercase letters, digits and single hyphens. A date prefix is optional
+for new posts. Keep a published slug stable when editing its title.
+
+The copied template has `draft: true`, so visiting that route correctly returns
+404. There is no authenticated draft-reader UI. To review the real reader locally,
+stop the server, temporarily set `draft: false` and a date no later than today,
+then run `bun run dev` again and open `http://localhost:3000/blog/my-first-post`.
+Use local preview only for material not yet approved for public access. Restore
+`draft: true` before sharing or committing an unfinished draft. Do not run a
+public preview deploy while that local-only publication switch is enabled.
+
+Once the post is approved, set `draft: false` and its real publication date,
+stop the server and run these commands sequentially:
+
+```sh
+bun run check
+NEXT_PUBLIC_SITE_URL=http://127.0.0.1:3109 SITE_INDEXING=disabled NEXT_PUBLIC_GA_MEASUREMENT_ID= BREVO_API_KEY= BREVO_NEWSLETTER_LIST_ID= BREVO_DOI_TEMPLATE_ID= bun run build
+bun run test:e2e
+bun run test:release
+git diff -- content/journal/my-first-post.md src/content/journal-routes.json
+git add content/journal/my-first-post.md src/content/journal-routes.json
+git commit -m "feat(journal): publish my first post"
+```
+
+Add any new approved image files explicitly too. `build:journal` updates
+`src/content/journal-routes.json`; commit that generated inventory with the post.
+Do not edit it by hand. `test:release` temporarily tests synthetic content and
+restores a clean local build. It does not deploy your post. Push the content branch
+and open a PR when ready; check CI and the real preview before the approved
+production-branch merge. See [deployment and recovery](../maintenance/deployment.md).
+
+The page, article-specific share card, archive/search, related writing and RSS
+discover approved Markdown automatically after a rebuild. The release sitemap
+includes it only in an indexable production build; an empty preview sitemap is
+intentional. There is no automatic article-to-newsletter send.
+
+For a drawing study, copy [the sketchbook template](templates/sketchbook.md)
+instead and complete the panel fields below before changing `draft` to false.
+
 ## Start with a draft
 
 ```yaml
@@ -96,6 +153,10 @@ observations. Published sketchbooks appear automatically in the Journal archive,
 search, related writing, RSS and the sketchbook discovery section. Until one is
 published, the current honest “no drawings or sketchbook articles” state remains.
 
+When publishing the first genuine sketchbook, update the page tests that currently
+assert this site-wide empty state to cover the real published work. Keep isolated
+empty-state tests too; do not remove draft exclusion or image/credit validation.
+
 ## Validate and publish
 
 1. Keep `draft: true` while preparing content. A future publication date also
@@ -105,6 +166,47 @@ published, the current honest “no drawings or sketchbook articles” state rem
 3. Set `draft: false` (or remove it) and the real date only when ready. Run checks
    and build again; verify the direct route, readable panels/captions and share
    image on the preview deployment before releasing.
+
+Visibility uses the UTC calendar date at build time. A future date is not a
+scheduler: rebuild/redeploy once that date arrives. Restart development after
+changes to publication status or filenames, because the early route inventory
+and cached readers must agree. Use `updated` only for an actual substantive edit;
+do not replace publication dates with build dates. Do not rename migrated files
+or alter their original raw downloads to correct historical copy.
+
+## SEO, GEO and social sharing before release
+
+Write a clear title and accurate description, introduce the subject in readable
+prose and use meaningful headings, sources and internal links. Credit people and
+state limitations. Keep original dates on historical writing. These make the
+article understandable to people and search/AI crawlers; they do not guarantee
+rankings or citations.
+
+Verify the direct `/blog/<slug>` response, one H1, body without JavaScript,
+canonical URL, real author/date and BlogPosting JSON-LD. The shared implementation
+generates Open Graph/Twitter large-image metadata and `/blog/<slug>/share` as a
+1200×630 PNG, with a branded fallback. Inspect the actual image for long titles
+and a thumbnail crop. It is a title card, not an automatically generated article
+hero; there is no supported per-post `ogImage` frontmatter field. If custom share
+art is needed, change the shared implementation and its image/metadata tests.
+
+After an update, verify archive/search and RSS; on an indexable release also
+verify the sitemap. Search/tag queries stay noindex while ordinary archive pages
+have their own canonicals. Check actual hosted headers as well as HTML, and use
+the relevant social platform's preview/debugger to refresh its independent cache.
+Do not add fake FAQs, dates, claims or AI-only files to chase rich results.
+
+## Correct, withdraw or remove writing
+
+For a new post, edit its existing file and retain the slug. Add the actual
+`updated` date for a substantive correction. To withdraw it, set `draft: true`,
+rebuild and verify that its page/card return HTTP 404 and discovery excludes it.
+An already indexed URL may remain in search caches temporarily. For a permanent
+rename, add a deliberate redirect in `next.config.ts`, preserve its old URL in a
+regression and rebuild; do not silently break shared links. Historical migrated
+articles and raw downloads have byte-preservation tests: record a correction in
+a new entry or a separately reviewed presentation change instead of rewriting
+their original source.
 
 Draft status is an editorial publication gate, not private storage or an
 authenticated preview. Files committed under `public/` are directly accessible

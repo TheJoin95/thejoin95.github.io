@@ -7,6 +7,7 @@ import { PaletteStage } from "@/components/home/palette-stage";
 import { ProjectDirectory } from "@/components/projects/project-directory";
 import { ComicPreview } from "@/components/play/comic-preview";
 import { playDescription, playProjects, playStructuredData } from "@/content/play";
+import { publicGitHubRepositories, publicPullRequestRepositories } from "@/content/github-projects";
 
 export const metadata = pageMetadata({ title: "Play", description: playDescription, path: "/play" });
 export default function Play() {
@@ -18,6 +19,26 @@ export default function Play() {
       <h2 id="play-directory-title" className={siteStyles.sectionTitle}>Projects &amp; community.</h2>
       <p className="mt-6 max-w-[68ch]">Things I build, contribute to, and keep exploring. Some are public; others are still taking shape.</p>
       <ProjectDirectory entries={playProjects} />
+    </div></Section>
+    <Section labelledBy="github-projects"><div className={siteStyles.container}>
+      <h2 id="github-projects" className={siteStyles.sectionTitle}>GitHub project index</h2>
+      <details className="mt-6 border-y border-border py-3">
+        <summary className="min-h-11 cursor-pointer py-2">Public repositories on my GitHub profile</summary>
+        <ul className="grid gap-x-6 md:grid-cols-2">
+          {publicGitHubRepositories.map(repository => <li key={repository}>
+            <a className={`${siteStyles.link} underline underline-offset-4`} href={`https://github.com/${repository}`}>{repository.split("/")[1]}</a>
+          </li>)}
+        </ul>
+      </details>
+      <details className="border-b border-border py-3">
+        <summary className="min-h-11 cursor-pointer py-2">Repositories with my merged pull requests</summary>
+        <ul className="grid gap-x-6 md:grid-cols-2">
+          {publicPullRequestRepositories.map(repository => <li key={repository}>
+            <a className={`${siteStyles.link} underline underline-offset-4`} href={`https://github.com/${repository}/pulls?q=is%3Apr+is%3Amerged+author%3ATheJoin95`}>{repository}</a>
+          </li>)}
+        </ul>
+      </details>
+      <a className={`${siteStyles.link} mt-4 underline underline-offset-4`} href="https://github.com/search?q=is%3Apr+is%3Apublic+author%3ATheJoin95&type=pullrequests">Search all my public pull requests on GitHub</a>
     </div></Section>
     <ComicPreview />
     <Section labelledBy="play-passions-title"><div className={siteStyles.editorialRow}>

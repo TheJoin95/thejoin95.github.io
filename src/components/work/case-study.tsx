@@ -31,10 +31,10 @@ export function CaseStudyPage({ story }: { story: CaseStudy }) {
         <div><dt className="font-medium">Project context</dt><dd className="mt-2 max-w-[68ch]">{story.team}</dd></div>
       </dl>
     </header>
-    <section aria-labelledby="story-media" className={`surface-charcoal ${siteStyles.sectionSpace}`}>
+    {project.media.length > 0 ? <section aria-labelledby="story-media" className={`surface-charcoal ${siteStyles.sectionSpace}`}>
       <div className={`${siteStyles.editorialRow} mb-8`}><h2 id="story-media" className={siteStyles.sectionTitle}>In pictures.</h2><p className={`${siteStyles.copy} text-base leading-relaxed`}>{story.mediaNote}</p></div>
       <div className={siteStyles.container}><Suspense fallback={<StaticGallery label={galleryLabel} items={project.media} />}><MediaGallery label={galleryLabel} items={project.media} /></Suspense></div>
-    </section>
+    </section> : null}
     {story.sections.map(section => <StoryBodySection key={section.id} section={section} />)}
     <Section labelledBy="more-work" className="surface-charcoal"><div className={siteStyles.editorialRow}>
       <h2 id="more-work" className={siteStyles.sectionTitle}>Keep exploring.</h2>

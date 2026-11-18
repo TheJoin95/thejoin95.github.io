@@ -5,11 +5,11 @@ for (const [width, columns] of [[390, 1], [834, 2], [1440, 3]]) {
     await page.setViewportSize({ width, height: 1000 });
     await page.goto("/work");
     const index = page.getByRole("region", { name: "The complete index.", exact: true });
-    await expect(index.getByRole("listitem")).toHaveCount(11);
-    await expect(index.getByRole("heading", { level: 3 })).toHaveCount(11);
+    await expect(index.getByRole("listitem")).toHaveCount(19);
+    await expect(index.getByRole("heading", { level: 3 })).toHaveCount(19);
     expect(await index.locator("ul").evaluate(el => getComputedStyle(el).gridTemplateColumns.split(" ").length)).toBe(columns);
     await expect(index.getByText("No public link yet.", { exact: true })).toHaveCount(6);
-    await expect(index.getByRole("link")).toHaveCount(5);
+    await expect(index.getByRole("link")).toHaveCount(13);
     for (const name of ["ImageGoNord media", "Supermarket waiting times media", "Chromatique media"]) {
       await expect(page.getByRole("region", { name, exact: true })).toBeVisible();
     }
@@ -27,7 +27,7 @@ test("Work index is readable and keyboard navigable without JavaScript", async (
   const page = await context.newPage();
   await page.goto("/work");
   const index = page.getByRole("region", { name: "The complete index.", exact: true });
-  await expect(index.getByRole("listitem")).toHaveCount(11);
+  await expect(index.getByRole("listitem")).toHaveCount(19);
   const anchor = index.getByRole("link", { name: "ImageGoNord", exact: true });
   await anchor.focus();
   await page.keyboard.press("Enter");
@@ -43,8 +43,8 @@ test("Work exposes canonical, accurate index schema and a real social image", as
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", /\/work$/);
   const schema = JSON.parse((await page.locator('script[type="application/ld+json"]').textContent())!);
   expect(schema["@type"]).toBe("CollectionPage");
-  expect(schema.mainEntity.itemListElement).toHaveLength(11);
-  expect(schema.mainEntity.itemListElement.filter((item: { url?: string }) => item.url)).toHaveLength(5);
+  expect(schema.mainEntity.itemListElement).toHaveLength(19);
+  expect(schema.mainEntity.itemListElement.filter((item: { url?: string }) => item.url)).toHaveLength(13);
   await expect(page.locator('meta[name="twitter:card"]')).toHaveAttribute("content", "summary_large_image");
   const image = await page.locator('meta[property="og:image"]').getAttribute("content");
   expect(image).toMatch(/^https?:\/\//);

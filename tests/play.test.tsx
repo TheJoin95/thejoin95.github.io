@@ -5,17 +5,17 @@ import Play, { metadata } from "@/app/play/page";
 import { ComicPreview } from "@/components/play/comic-preview";
 import { ProjectDirectory } from "@/components/projects/project-directory";
 import { playProjects, comicLearning, playStructuredData } from "@/content/play";
-import { projectIndex } from "@/content/work";
+import { sideProjectCaseStudies, projectIndex } from "@/content/work";
 
 describe("Play directory and comic-learning preview", () => {
   test("the directory and separate comic preview cover every approved project using shared records", () => {
-    expect([...playProjects, comicLearning].map(project => project.id).sort()).toEqual(inventory.projects.map(project => project.id).sort());
-    expect(playProjects).toHaveLength(10);
+    expect([...playProjects, comicLearning].map(project => project.id).sort()).toEqual([...inventory.projects, ...sideProjectCaseStudies].map(project => project.id).sort());
+    expect(playProjects).toHaveLength(18);
     for (const project of playProjects) expect(project).toBe(projectIndex.find(entry => entry.id === project.id)!);
     expect(playProjects.find(project => project.id === "hop")!.title).toBe("Hop");
     expect(playProjects.find(project => project.id === "broskis")!.href).toBe("https://broski.substack.com/");
     expect(playProjects.find(project => project.id === "supermarket-waiting-times")!.status).toBe("Archived project · 2020");
-    expect(playProjects.filter(project => project.href)).toHaveLength(5);
+    expect(playProjects.filter(project => project.href)).toHaveLength(13);
   });
   test("unlinked prototypes retain honest states and never get fake actions or external arrows", () => {
     const entries = playProjects.filter(project => !project.href);
@@ -45,7 +45,7 @@ describe("Play directory and comic-learning preview", () => {
     expect(metadata.alternates?.canonical).toBe("https://example.com/play");
     expect(metadata.openGraph).toMatchObject({ type: "website", images: [{ url: "https://example.com/opengraph-image" }] });
     const schema = playStructuredData("https://example.com");
-    expect(schema.mainEntity.numberOfItems).toBe(10);
+    expect(schema.mainEntity.numberOfItems).toBe(18);
     schema.mainEntity.itemListElement.forEach((item, index) => {
       const project = playProjects[index];
       expect(item.name).toBe(project.title); expect(item.position).toBe(index + 1);

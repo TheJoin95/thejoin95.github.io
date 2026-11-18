@@ -1,8 +1,9 @@
+import { sideProjectStories } from "./side-project-stories";
 import { paletteImages } from "./featured-media";
 import { chromatiqueProject, imageGoNordProject, supermarketProject, type SelectedProject } from "./selected-projects";
 
 export type StorySection = { id: string; title: string; paragraphs: readonly string[]; links?: readonly { href: string; label: string }[]; code?: string };
-export type CaseStudy = { project: SelectedProject; published: boolean; introduction: string; team: string; mediaNote: string; sections: readonly StorySection[] };
+export type CaseStudy = { project: Omit<SelectedProject, "href" | "linkLabel">; published: boolean; introduction: string; team: string; mediaNote?: string; sections: readonly StorySection[] };
 
 const stories: readonly CaseStudy[] = [
   {
@@ -77,6 +78,7 @@ const stories: readonly CaseStudy[] = [
       ], code: "chromatique map --palette nord --palette-dir ./palettes \\\n  --space oklab --dither none --indexed \\\n  irises-study-original.jpg -o irises-study-nord.png", links: [{ href: paletteImages.original, label: "Download the cropped input" }, { href: chromatiqueProject.href, label: "View the actual CLI output" }, { href: "/lab#palette-comparison", label: "Try the interactive palette comparison" }, { href: "https://www.loc.gov/pictures/item/2007686318/", label: "Read the photograph’s catalogue and rights advisory" }] },
     ],
   },
+  ...sideProjectStories,
 ];
 
 export function caseStudyPath(project: Pick<SelectedProject, "id">) { return `/work/${project.id}`; }

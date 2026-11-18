@@ -1,9 +1,17 @@
-import { caseStudyPath } from "./case-studies";
+import { caseStudyPath, publishedCaseStudies } from "./case-studies";
 import { chromatiqueProject, imageGoNordProject, supermarketProject, selectedProjects } from "./selected-projects";
 
 export type ProjectIndexEntry = {
   id: string; title: string; summary: string; contribution: string; status: string; href?: string;
 };
+
+export const sideProjectCaseStudies: readonly (ProjectIndexEntry & { href: string })[] = publishedCaseStudies
+  .filter(({ project }) => !selectedProjects.some(selected => selected.id === project.id))
+  .map(({ project }) => ({
+    id: project.id, title: project.title, summary: project.summary,
+    contribution: project.contribution, status: project.status ?? "Project",
+    href: caseStudyPath(project),
+  }));
 
 export const projectIndex: readonly ProjectIndexEntry[] = [
   { id: "schrodinger-hat", title: "Schrödinger Hat", status: "Open-source community",
@@ -28,6 +36,7 @@ export const projectIndex: readonly ProjectIndexEntry[] = [
     summary: "An ongoing personal project around social posts.", contribution: "Personal work in progress." },
   { ...imageGoNordProject, status: "Public source", href: caseStudyPath(imageGoNordProject) },
   { ...supermarketProject, id: "supermarket-waiting-times", status: "Archived project · 2020", href: caseStudyPath(supermarketProject) },
+  ...sideProjectCaseStudies,
   { id: "comic-learning", title: "Learning to make comic books", status: "In progress",
     summary: "Learning to tell stories through comic-book drawings.", contribution: "I’m learning and practising." },
 ];

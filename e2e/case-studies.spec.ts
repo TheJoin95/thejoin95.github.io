@@ -23,7 +23,7 @@ for (const width of [320, 390, 834, 1440]) test(`all project stories are readabl
       await page.screenshot({ path: `/tmp/mic16-${story.id}-${width}.png`, fullPage: true });
       await page.screenshot({ path: `/tmp/mic16-${story.id}-${width}-opening.png` });
     }
-    await expect(page.getByRole("navigation", { name: "More project stories" }).getByRole("link")).toHaveCount(3);
+    await expect(page.getByRole("navigation", { name: "More project stories" }).getByRole("link")).toHaveCount(11);
     await page.getByRole("link", { name: "← All work", exact: true }).click();
     await expect(page.getByRole("heading", { level: 1 })).toHaveText("Selected work.");
   }
@@ -77,4 +77,27 @@ test("large text reflows while the recipe scrolls within its own region", async 
   const recipe = page.getByRole("region", { name: "Reproduce the palette conversion", exact: true });
   await recipe.focus(); await expect(recipe).toBeFocused();
   expect(await recipe.evaluate(element => element.scrollWidth > element.clientWidth)).toBe(true);
+});
+
+test("Lab and Play expose the named project stories and their branded share cards", async ({ page, request }) => {
+  for (const path of ["/lab", "/play"]) {
+    await page.goto(path);
+    if (path === "/lab") await expect(page.getByRole("heading", { name: "Project case studies" })).toBeInViewport();
+    for (const [title, slug] of [["Certo", "certo"], ["Vitni", "vitni"], ["Ambisonic Audio", "ambisonic-audio"]]) {
+      await expect(page.getByRole("link", { name: title, exact: true })).toHaveAttribute("href", `/work/${slug}`);
+    }
+  }
+  const githubIndex = page.getByRole("region", { name: "GitHub project index", exact: true });
+  await expect(githubIndex.getByRole("link", { name: "Search all my public pull requests on GitHub" })).toBeVisible();
+  await githubIndex.getByText("Repositories with my merged pull requests", { exact: true }).click();
+  await expect(githubIndex.getByRole("link", { name: "puppeteer/puppeteer", exact: true })).toBeVisible();
+  await page.getByRole("link", { name: "Ambisonic Audio", exact: true }).click();
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Ambisonic Audio");
+  await expect(page.getByRole("link", { name: "Read the original journal article" })).toHaveAttribute("href", "/blog/2018-10-28-how-make-8d-ambisonic-audio-track-python");
+  await expect(page.locator("article img")).toHaveCount(0);
+  const card = await request.get("/share/projects/ambisonic-audio");
+  expect(card.ok()).toBe(true);
+  expect(card.headers()["content-type"]).toContain("image/png");
+  const fallback = await request.get("/opengraph-image");
+  expect((await card.body()).equals(await fallback.body())).toBe(false);
 });

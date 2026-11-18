@@ -1,15 +1,15 @@
 import { describe, expect, test } from "bun:test";
 import { renderToStaticMarkup } from "react-dom/server";
 import inventory from "../docs/content/inventory.json";
-import { projectIndex, workStructuredData } from "@/content/work";
+import { sideProjectCaseStudies, projectIndex, workStructuredData } from "@/content/work";
 import { selectedProjects } from "@/content/selected-projects";
 import { ProjectIndex } from "@/components/work/project-index";
 import Work, { metadata } from "@/app/work/page";
 
 describe("Work gallery and complete project index", () => {
   test("publishes every approved inventory entry once, preserving shared featured copy", () => {
-    expect(projectIndex.map(project => project.id).sort()).toEqual(inventory.projects.map(project => project.id).sort());
-    expect(new Set(projectIndex.map(project => project.id)).size).toBe(11);
+    expect(projectIndex.map(project => project.id).sort()).toEqual([...inventory.projects, ...sideProjectCaseStudies].map(project => project.id).sort());
+    expect(new Set(projectIndex.map(project => project.id)).size).toBe(19);
     for (const featured of selectedProjects) {
       const entry = projectIndex.find(project => project.title === featured.title)!;
       expect(entry.summary).toBe(featured.summary);
@@ -21,10 +21,10 @@ describe("Work gallery and complete project index", () => {
   });
   test("renders usable destinations and honest unlinked prototypes in semantic HTML", () => {
     const html = renderToStaticMarkup(<ProjectIndex />);
-    expect(html.match(/<li /g)).toHaveLength(11);
-    expect(html.match(/<h3/g)).toHaveLength(11);
+    expect(html.match(/<li /g)).toHaveLength(19);
+    expect(html.match(/<h3/g)).toHaveLength(19);
     expect(html.match(/No public link yet/g)).toHaveLength(6);
-    expect(html.match(/<a /g)).toHaveLength(5);
+    expect(html.match(/<a /g)).toHaveLength(13);
     expect(html).toContain('href="https://broski.substack.com/"');
     expect(html).toContain("co-founded");
     expect(html).toContain("collective work");
@@ -47,7 +47,7 @@ describe("Work gallery and complete project index", () => {
   test("structured data mirrors all visible entries without inventing URLs or claims", () => {
     const schema = workStructuredData("https://example.com");
     expect(schema.url).toBe("https://example.com/work");
-    expect(schema.mainEntity.numberOfItems).toBe(11);
+    expect(schema.mainEntity.numberOfItems).toBe(19);
     schema.mainEntity.itemListElement.forEach((item, index) => {
       const project = projectIndex[index];
       expect(item.position).toBe(index + 1);

@@ -9,13 +9,13 @@ import { proxy } from "@/proxy";
 import { NextRequest } from "next/server";
 
 describe("evidenced project stories", () => {
-  test("only the three approved stories publish with shared identity, distinct decisions and real evidence", () => {
-    expect(publishedCaseStudies.map(story => story.project)).toEqual([...selectedProjects]);
-    expect(generateStaticParams()).toEqual(selectedProjects.map(project => ({ slug: project.id })));
+  test("featured and side-project stories publish with distinct decisions and real evidence", () => {
+    expect(publishedCaseStudies.slice(0, selectedProjects.length).map(story => story.project)).toEqual([...selectedProjects]);
+    expect(publishedCaseStudies.slice(3).map(({ project }) => project.id)).toEqual(["certo", "vitni", "vitni-credentials", "ambisonic-audio", "open-source-day", "browsir", "open-source-wrapped", "youtube-to-anchorfm"]);
+    expect(generateStaticParams()).toEqual(publishedCaseStudies.map(({ project }) => ({ slug: project.id })));
     for (const story of publishedCaseStudies) {
-      expect(story.project).toBe(selectedProjects.find(project => project.id === story.project.id)!);
       expect(story.sections.map(section => section.id)).toEqual(["problem", "decisions", "implementation", "evidence"]);
-      expect(story.sections.flatMap(section => section.paragraphs).join(" ").length).toBeGreaterThan(1700);
+      expect(story.sections.flatMap(section => section.paragraphs).join(" ").length).toBeGreaterThan(story.project.media.length ? 1700 : 350);
       expect(story.project.media.every(item => item.kind === "image" && item.alt && item.caption && item.credit)).toBe(true);
       for (const link of story.sections.flatMap(section => section.links || [])) {
         expect(link.href).toMatch(/^(https:\/\/|\/)/);
@@ -44,6 +44,7 @@ describe("evidenced project stories", () => {
       expect(html.match(/<h1/g)).toHaveLength(1);
       expect(html).toContain(story.project.contribution.replaceAll("&", "&amp;"));
       expect(html).toContain("My contribution");
+      expect(html.includes('aria-labelledby="story-media"')).toBe(story.project.media.length > 0);
       expect(html).toContain('href="/work"');
       expect(html).toContain('aria-label="More project stories"');
       for (const section of story.sections) expect(html).toContain(`id="${section.id}"`);

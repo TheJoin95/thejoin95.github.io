@@ -14,11 +14,16 @@ describe("gallery navigation model", () => {
     expect(boundedIndex(99, 3)).toBe(2);
     expect(boundedIndex(1, 3)).toBe(1);
     expect(boundedIndex(0, 0)).toBe(0);
-    expect(indexAtScroll(0, 0, 3)).toBe(0);
-    expect(indexAtScroll(0, 100, 3)).toBe(0);
-    expect(indexAtScroll(50, 100, 3)).toBe(1);
-    expect(indexAtScroll(100, 100, 3)).toBe(2);
-    expect(indexAtScroll(150, 100, 3)).toBe(2);
+    expect(indexAtScroll(0, 0, [0])).toBe(0);
+    expect(indexAtScroll(0, 100, [])).toBe(0);
+  });
+  test("uses the actual snap points and reaches the last slide at the scroll limit", () => {
+    const offsets = [0, 770, 1540];
+    expect(indexAtScroll(0, 1300, offsets)).toBe(0);
+    expect(indexAtScroll(350, 1300, offsets)).toBe(0);
+    expect(indexAtScroll(770, 1300, offsets)).toBe(1);
+    expect(indexAtScroll(1300, 1300, offsets)).toBe(2);
+    expect(indexAtScroll(1500, 1300, offsets)).toBe(2);
   });
   test("renders a meaningful labelled list before hydration", () => {
     const html = renderToStaticMarkup(<MediaGallery label="Project media" items={[image, { ...image, id: "two" }]} />);

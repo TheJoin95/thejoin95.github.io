@@ -2,7 +2,7 @@ import { expect, test, type Page, type Locator } from "@playwright/test";
 import sharp from "sharp";
 
 const region = (page: Page) => page.getByRole("region", { name: "Chromatique palette comparison", exact: true });
-async function start(page: Page, path = "/") {
+async function start(page: Page, path = "/play") {
   await page.goto(path);
   const stage = region(page);
   await stage.locator("[data-palette-surface]").scrollIntoViewIfNeeded();
@@ -13,22 +13,39 @@ async function start(page: Page, path = "/") {
 async function expectReveal(stage: Locator, percent: number) {
   await expect(stage.locator("[data-palette-output]")).toHaveCSS("clip-path", `inset(0px 0px 0px ${100 - percent}%)`);
 }
-test("native reveal shows the real endpoints and combines their correct halves at each breakpoint", async ({ page }) => {
+test("native reveal shows the real endpoints and combines their correct halves at each breakpoint", async ({ page }, testInfo) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   for (const width of [320, 834, 1440]) {
     await page.setViewportSize({ width, height: 1000 }); const stage = await start(page);
     const surface = stage.locator("[data-palette-surface]"); const frames: Buffer[] = [];
+    await surface.locator("img").evaluateAll(images => Promise.all(images.map(image => (image as HTMLImageElement).decode())));
     for (const [button, percent] of [["Original", 0], ["Palette", 100], ["Reset comparison", 50]] as const) {
       await stage.getByRole("button", { name: button, exact: true }).click();
       await expect(stage.getByRole("slider")).toHaveValue(String(percent)); await expectReveal(stage, percent);
+      await surface.evaluate(element => element.scrollIntoView({ block: "start" }));
       frames.push(await surface.screenshot());
     }
     expect(frames[0].equals(frames[1])).toBe(false);
     const metadata = await sharp(frames[2]).metadata();
     const half = Math.floor(metadata.width! / 2);
-    const crop = async (frame: Buffer, left: number, width: number) => sharp(frame).extract({ left, top: 0, width, height: metadata.height! }).raw().toBuffer();
-    expect((await crop(frames[2], 0, half - 1)).equals(await crop(frames[0], 0, half - 1))).toBe(true);
-    expect((await crop(frames[2], half + 1, half - 1)).equals(await crop(frames[1], half + 1, half - 1))).toBe(true);
+    // Exclude antialiased edges where the responsive frame meets fractional pixels.
+    const margin = 3;
+    const interior = (frame: Buffer, left: number) => sharp(frame).extract({
+      left: left + margin, top: margin, width: half - 2 * margin, height: metadata.height! - 2 * margin,
+    }).raw().toBuffer();
+    const meanDifference = (actual: Buffer, expected: Buffer) =>
+      actual.reduce((difference, channel, index) => difference + Math.abs(channel - expected[index]), 0) / actual.length;
+    const originalDifference = meanDifference(await interior(frames[2], 0), await interior(frames[0], 0));
+    const paletteDifference = meanDifference(await interior(frames[2], half), await interior(frames[1], half));
+    // Chromium can rasterise a single tile boundary differently when the clip changes.
+    const tolerance = 0.05;
+    if (originalDifference >= tolerance || paletteDifference >= tolerance) {
+      for (const [index, name] of ["original", "palette", "comparison"].entries()) {
+        await testInfo.attach(`${name}-${width}`, { body: frames[index], contentType: "image/png" });
+      }
+    }
+    expect(originalDifference, `Original half at ${width}px`).toBeLessThan(tolerance);
+    expect(paletteDifference, `Nord half at ${width}px`).toBeLessThan(tolerance);
     await expect(stage.locator("canvas")).toHaveCount(0);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     await stage.screenshot({ path: `/tmp/mic26-palette-${width}.png` });
@@ -75,9 +92,12 @@ test("touch uses explicit range input while the image retains vertical page scro
 });
 
 test("failed media retains an honest explanation, dimensions, provenance and project destination", async ({ page }) => {
-  await page.route("**/_next/image?**", route => decodeURIComponent(route.request().url()).includes("/media/chromatique/irises-nord.png") ? route.abort() : route.continue());
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.route("**/_next/image?**", route => decodeURIComponent(route.request().url()).includes("/media/chromatique/irises-study-nord.png") ? route.abort() : route.continue());
   await page.goto("/play"); const stage = region(page);
   await expect(stage.getByText(/comparison image could not load/)).toBeVisible();
+  const frame = await stage.locator("[data-palette-surface]").boundingBox();
+  expect(frame!.height).toBeCloseTo(frame!.width / 1.5, 0);
   await expect(stage.getByRole("slider")).toHaveCount(0);
   await expect(stage.locator("canvas")).toHaveCount(0);
   await expect(stage.getByText(/Photograph: Frances/)).toBeVisible();

@@ -3,7 +3,7 @@ import { siteStyles } from "@/components/site/styles";
 import { PaletteReveal } from "@/components/palette/palette-reveal";
 
 export function PaletteStage({ href = "#chromatique" }: { href?: string }) {
-  return <section aria-label="Chromatique palette comparison">
+  return <section id="palette-comparison" aria-label="Chromatique palette comparison">
     <figure className="mx-auto max-w-[100rem]">
       <PaletteReveal />
       <MediaCaption className="surface-charcoal m-0! px-5 py-4 text-base md:px-8 desktop:px-12">

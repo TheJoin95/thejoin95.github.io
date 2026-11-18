@@ -15,7 +15,7 @@
   Fetch `origin old` if the reference is missing.
 - Do not restore the old Vue implementation into the new Next.js application.
 - Stack: Next.js App Router, TypeScript, Tailwind, Radix-based shadcn/ui,
-  Google Analytics 4, Brevo newsletter, and dotLottie for small animations.
+  Google Analytics 4, and Brevo newsletter.
 - Follow atomic design through composition: reusable UI primitives (atoms),
   small combinations (molecules), sections (organisms), then templates and pages.
   Keep responsibilities clear; avoid speculative abstractions or a forced folder
@@ -27,10 +27,8 @@
   is necessary. Use Tailwind for component styling; keep globals focused on theme
   tokens and genuinely global rules.
 - Keep credentials server-side. Document configuration in `.env.example`.
-- Keep Lottie behind client boundaries and lazy imports; respect
-  reduced motion. Server Components are the default.
-- Include coordinated colour palettes and a consistent mascot/character language
-  in the website. Follow DESIGN.md and the approved sparse fox direction; provide accessible static alternatives and tests.
+- Respect reduced motion. Server Components are the default.
+- Follow the coordinated colour palettes in DESIGN.md. The owner removed the fox.
 - The owner removed the 3D/Three.js parts on 2026-11-13. Keep the palette reveal
   as an HTML interaction; do not restore the demo, WebGL renderer or dependencies.
 - Run `bun run check` and `bun run build` before handing off code changes.

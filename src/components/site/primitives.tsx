@@ -8,18 +8,13 @@ export function PageIntro({ title, children, className }: { title: string; child
   return (
     <div className={cn(
       siteStyles.container,
-      "grid gap-6 py-(--section-space)",
-      "md:grid-cols-[minmax(0,5fr)_minmax(0,3fr)] md:items-end",
+      "grid gap-5 py-(--intro-space)",
+      "md:grid-cols-[minmax(0,5fr)_minmax(0,3fr)] md:items-start",
       "desktop:grid-cols-[minmax(0,8fr)_minmax(0,4fr)] desktop:gap-12",
       className,
     )}>
-      <h1 className={cn(
-        "text-[clamp(3rem,8.1vw,9rem)] leading-[1.02] tracking-[-0.04em]",
-        "text-balance [overflow-wrap:anywhere]",
-        "md:text-[clamp(4.5rem,7.8vw,6rem)]",
-        "desktop:text-[clamp(6rem,8.1vw,9rem)] desktop:leading-[0.98]",
-      )}>{title}</h1>
-      <div className="max-w-[40ch] text-[clamp(1.25rem,2.2vw,2rem)] leading-[1.35] [&>*+*]:mt-6">
+      <h1 className="font-heading text-display text-balance [overflow-wrap:anywhere]">{title}</h1>
+      <div className="max-w-[32ch] text-lead [&>*+*]:mt-6">
         {children}
       </div>
     </div>

@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "bun run verify:seo && bun run build:journal && bun run build:fox && bun --bun next dev --turbopack",
-    "build": "bun run verify:seo && bun run build:journal && bun run build:fox && bun run build:tools && bun --bun next build --turbopack",
+    "dev": "bun run verify:seo && bun run build:journal && bun --bun next dev --turbopack",
+    "build": "bun run verify:seo && bun run build:journal && bun run build:tools && bun --bun next build --turbopack",
     "start": "bun --bun next start",
     "lint": "bun --bun eslint .",
     "typecheck": "bun --bun next typegen && bun --bun tsc --noEmit",
@@ -18,14 +18,13 @@
     "verify:services": "bun ./scripts/verify-env.ts --remote",
     "test:e2e": "bun run build:test-fixtures && bun --bun playwright test",
     "test:release": "bun scripts/check-release.ts",
-    "build:test-fixtures": "bun build e2e/fixtures/gallery.tsx e2e/fixtures/fox.tsx e2e/fixtures/accessibility.tsx --target=browser --env=disable --define 'process.env={\"NODE_ENV\":\"production\"}' --outdir=.test-fixtures && bun scripts/build-reader-fixture.tsx",
+    "build:test-fixtures": "bun build e2e/fixtures/gallery.tsx e2e/fixtures/accessibility.tsx --target=browser --env=disable --define 'process.env={\"NODE_ENV\":\"production\"}' --outdir=.test-fixtures && bun scripts/build-reader-fixture.tsx",
     "build:journal": "bun scripts/build-journal.ts",
-    "build:fox": "bun scripts/build-fox.ts",
     "migrate:legacy": "bun scripts/migrate-legacy.ts",
     "verify:seo": "bun scripts/verify-seo.ts"
   },
   "dependencies": {
-    "@lottiefiles/dotlottie-react": "^0.22.0",
+    "@fontsource-variable/instrument-sans": "5.3.0",
     "@next/third-parties": "16.4.6",
     "class-variance-authority": "^0.7.1",
     "cn": "^0.5.2",
@@ -54,7 +53,6 @@
   },
   "devDependencies": {
     "@axe-core/playwright": "4.14.0",
-    "@lottiefiles/dotlottie-web": "0.83.0",
     "@playwright/test": "1.65.0",
     "@tailwindcss/turbopack": "4.3.3",
     "@types/bun": "^1.4.4",
@@ -63,8 +61,6 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.4.6",
-    "fflate": "0.8.3",
-    "svg-pathdata": "9.0.0",
     "tailwindcss": "4.3.3",
     "typescript": "^5"
   },

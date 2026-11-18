@@ -4,13 +4,35 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@font-face {
+  font-family: "Instrument Sans Extended";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: optional;
+  src: url("@fontsource-variable/instrument-sans/files/instrument-sans-latin-ext-wght-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
 @theme inline {
   --breakpoint-desktop: 75rem;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: Arial, Helvetica, sans-serif;
+  --font-sans: "Instrument Sans Extended", var(--font-instrument), "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-mono: "SFMono-Regular", Consolas, monospace;
   --font-heading: var(--font-sans);
+  --text-display: clamp(3rem, 1.4rem + 6.35vw, 9rem);
+  --text-display--line-height: 1.02;
+  --text-display--letter-spacing: -0.05em;
+  --text-reader-title: clamp(2.25rem, 1.4rem + 3.3vw, 4.5rem);
+  --text-reader-title--line-height: 1.08;
+  --text-reader-title--letter-spacing: -0.035em;
+  --text-lead: clamp(1.125rem, 0.95rem + 0.85vw, 1.625rem);
+  --text-lead--line-height: 1.4;
+  --text-lead--letter-spacing: -0.015em;
+  --text-copy: clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem);
+  --text-copy--line-height: 1.6;
+  --text-meta: 1rem;
+  --text-meta--line-height: 1.4;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -152,9 +174,17 @@
   --space-12: 3rem;
   --space-18: 4.5rem;
   --space-24: 6rem;
-  --gutter: 1.25rem;
+  --gutter: clamp(1rem, 0.5rem + 3.1vw, 3rem);
   --section-space: var(--space-12);
+  --intro-space: clamp(2rem, 1.5rem + 2vw, 3rem);
+  --project-space: clamp(1.75rem, 1.25rem + 1.7vw, 2.75rem);
 }
+body:has(main > .home-page) {
+  --gutter: clamp(1rem, 5vw, 5rem);
+  --header-columns: repeat(4, minmax(0, 1fr));
+  --header-column-gap: 2rem;
+}
+
 .surface-charcoal, body:has(main > [data-surface="charcoal"]) .site-header {
   --background: var(--charcoal);
   --foreground: var(--reverse);
@@ -174,7 +204,7 @@
 }
 @layer base {
   html { scroll-padding-top: 1rem; }
-  body { margin: 0; font-size: 1.125rem; line-height: 1.6; }
+  body { margin: 0; @apply text-copy; }
   h1, h2, h3, p, ul, figure { margin: 0; }
   h1, h2, h3 { font-weight: 400; }
   a { text-underline-offset: 0.22em; text-decoration-thickness: 1px; }
@@ -186,13 +216,11 @@
   ::selection { background: var(--foreground); color: var(--background); }
   input { caret-color: var(--foreground); }
 }
-@media (max-width: 359px) { :root { --gutter: 1rem; } }
 @media (min-width: 768px) {
-  :root { --gutter: 2rem; --section-space: var(--space-18); }
+  :root { --section-space: var(--space-18); }
 }
 @media (min-width: 1200px) {
-  :root { --gutter: 3rem; --section-space: var(--space-24); }
-  body { font-size: 1.25rem; }
+  :root { --section-space: var(--space-24); }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }

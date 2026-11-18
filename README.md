@@ -3,7 +3,7 @@
 Next.js App Router + React + TypeScript, managed with Bun. Tailwind CSS and
 Radix-based shadcn/ui provide the UI foundation. Google Analytics 4 handles optional
 analytics; Brevo handles newsletter double opt in. The palette comparison uses
-HTML images and native controls; dotLottie supports small animations.
+HTML images and native controls.
 
 Start with the [maintenance guide](docs/maintenance/README.md) to
 [create a blog post](docs/publishing/journal.md#create-a-blog-post-step-by-step),
@@ -170,24 +170,10 @@ not prove email delivery or GA4 property access.
 
 ### Palette comparison and animations
 
-Home and Play share an HTML image/palette comparison with a labelled native
+Lab and Play share an HTML image/palette comparison with a labelled native
 range, endpoint buttons and reset. It works without a canvas or GPU runtime;
 without JavaScript it retains the initial comparison and project link.
 The owner removed 3D on 2026-11-13. `/experience` permanently redirects to `/play`.
-
-`LottieAnimation` in `src/components/animations` is a lazy, viewport-aware,
-decorative player. Put `.lottie` assets in `public/animations` and provide a
-static fallback and fixed dimensions. Original fox clips live in
-`public/animations/fox`; `build:fox` reproduces them and the local WASM runtime
-at `/animations/runtime/dotlottie-player.wasm`. The player does not need a CDN.
-
-```tsx
-<LottieAnimation
-  src="/animations/check.lottie"
-  className="size-12"
-  fallback={<span>✓</span>}
-/>
-```
 
 Add more UI primitives using the Radix configuration in `components.json`:
 

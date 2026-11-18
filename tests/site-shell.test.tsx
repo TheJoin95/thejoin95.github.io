@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input";
 import Work from "@/app/work/page";
 import Journal from "@/app/blog/page";
 import Play from "@/app/play/page";
+import Lab from "@/app/lab/page";
 import About from "@/app/about/page";
 import NotFound from "@/app/not-found";
 import Loading from "@/components/site/page-loading";
@@ -26,7 +27,7 @@ describe("site navigation and semantic shell", () => {
     expect(currentSection("/work/imagegonord", "/work")).toBe("location");
     expect(currentSection("/workshop", "/work")).toBeUndefined();
     expect(currentSection("/", "/blog")).toBeUndefined();
-    expect(navigation.map((n) => n.href)).toEqual(["/work", "/blog", "/play", "/about"]);
+    expect(navigation.map((n) => n.href)).toEqual(["/work", "/blog", "/play", "/about", "/lab"]);
   });
   test("all navigation destinations render as real links before hydration", () => {
     const output = html(<NavigationLinks pathname="/blog/legacy-article" />);
@@ -43,7 +44,7 @@ describe("site navigation and semantic shell", () => {
     expect(output).toContain('id="contact"');
   });
   test("introductory destinations each provide one H1 and useful content", async () => {
-    for (const Page of [Work, Journal, Play, About, NotFound]) {
+    for (const Page of [Work, Journal, Play, Lab, About, NotFound]) {
       const output = html(await Page());
       expect(output.match(/<h1\b/g)).toHaveLength(1);
       expect(output).not.toContain("<main");
@@ -51,6 +52,7 @@ describe("site navigation and semantic shell", () => {
     }
     expect(html(<Work />)).toContain("archived");
     expect(html(<Play />)).toContain("A work in progress");
+    expect(html(<Lab />)).toContain("Chromatique palette comparison");
     expect(html(<About />)).toContain("Senior Software Engineer at Adobe");
     expect(html(await Journal())).toContain("original titles and publication dates");
   });

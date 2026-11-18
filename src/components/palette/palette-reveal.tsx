@@ -6,8 +6,11 @@ import { useCallback, useId, useState, type PointerEvent } from "react";
 import { MediaSurface } from "@/components/media/presentation";
 import { Button } from "@/components/ui/button";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
-import { paletteImages, revealAt } from "./reveal";
+import { paletteImages } from "@/content/featured-media";
+import { revealAt } from "./reveal";
 
+const imageStyle = "h-full w-full object-cover object-[50%_64%]";
+const imageSizes = "(min-width: 1600px) 1600px, 100vw";
 const controlStyle = "max-w-full shrink [overflow-wrap:anywhere]";
 
 export function PaletteReveal() {
@@ -35,21 +38,21 @@ export function PaletteReveal() {
 
   return <>
     <MediaSurface data-palette-surface
-      className="relative aspect-[4/3] touch-pan-y overflow-hidden bg-(--experiment-ink) md:aspect-video desktop:aspect-[3/1] desktop:min-h-[360px] desktop:max-h-[560px]"
+      className="relative aspect-[3/2] touch-pan-y overflow-hidden bg-(--experiment-ink) md:aspect-video desktop:aspect-[5/2] desktop:min-h-[360px] desktop:max-h-[560px]"
       onPointerMove={pointer} onPointerDown={event => {
         if (event.pointerType === "mouse" && event.button === 0) { event.currentTarget.setPointerCapture(event.pointerId); pointer(event); }
       }} onPointerUp={event => { if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId); }}
       onPointerLeave={() => setPreview(null)} onPointerCancel={() => setPreview(null)}>
       {/* The same accessible HTML images serve the initial and interactive comparison. */}
       <Image ref={checkImage} draggable={false} src={paletteImages.original} width={paletteImages.width} height={paletteImages.height}
-        sizes="(min-width: 1600px) 1600px, 100vw"
+        sizes={imageSizes}
         alt="Original hand-coloured garden photograph by Frances Benjamin Johnston."
-        loading="eager" fetchPriority="high" onError={() => setImageFailed(true)} className="absolute inset-0 h-full w-full object-cover" />
+        loading="eager" fetchPriority="high" onError={() => setImageFailed(true)} className={`absolute inset-0 ${imageStyle}`} />
       <div className="absolute inset-0" data-palette-output style={{ clipPath: `inset(0 0 0 ${100 - value}%)` }}>
         <Image ref={checkImage} draggable={false} src={paletteImages.palette} width={paletteImages.width} height={paletteImages.height}
-          sizes="(min-width: 1600px) 1600px, 100vw"
+          sizes={imageSizes} quality={70}
           alt="The same photograph converted by Chromatique into the Nord palette."
-          loading="eager" onError={() => setImageFailed(true)} className="h-full w-full object-cover" />
+          loading="eager" onError={() => setImageFailed(true)} className={imageStyle} />
       </div>
       {imageFailed ? <p className="absolute inset-x-4 bottom-4 bg-(--charcoal) p-3 text-(--reverse)">The comparison image could not load. Explore the palette study below for the project and full-size output.</p> : null}
       <div className="pointer-events-none absolute inset-x-0 top-6 hidden justify-between gap-3 px-8 text-base text-(--reverse) md:flex">

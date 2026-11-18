@@ -1,6 +1,6 @@
 export const navigation = [
   { href: "/work", label: "Work" }, { href: "/blog", label: "Journal" },
-  { href: "/play", label: "Play" }, { href: "/about", label: "About" },
+  { href: "/play", label: "Play" }, { href: "/about", label: "About" }, { href: "/lab", label: "Lab" },
 ] as const;
 
 export const contacts = [

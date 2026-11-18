@@ -13,7 +13,7 @@ declare global {
 const browser = await chromium.launch();
 const runs = [];
 try {
-  for (const path of ["/", "/work", "/play"]) for (let run = 1; run <= 3; run++) {
+  for (const path of ["/", "/work", "/lab"]) for (let run = 1; run <= 3; run++) {
     const context = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
     const page = await context.newPage();
     const cdp = await context.newCDPSession(page);
@@ -35,12 +35,20 @@ try {
     await page.goto("http://127.0.0.1:3109" + path);
     await page.waitForTimeout(2500);
     const gallery = page.getByRole("region", { name: "ImageGoNord media", exact: true });
-    const target = path === "/work" ? gallery.getByRole("button", { name: /Next media/ }) : page.getByRole("button", { name: "Meet the fox", exact: true });
-    await target.click();
-    if (path === "/work") await gallery.getByRole("status").filter({ hasText: "2 of 3" }).waitFor();
-    else await page.getByRole("region", { name: "A quiet corner.", exact: true }).waitFor();
+    const action = path === "/lab" ? "Reveal Nord palette" : "Next media";
+    if (path === "/lab") {
+      const comparison = page.getByRole("region", { name: "Chromatique palette comparison", exact: true });
+      await comparison.getByRole("button", { name: "Palette", exact: true }).click();
+      const slider = comparison.getByRole("slider", { name: "Palette reveal" });
+      await slider.evaluate((element: HTMLInputElement) => {
+        if (element.value !== "100") throw new Error("Palette reveal did not reach its endpoint.");
+      });
+    } else {
+      await gallery.getByRole("button", { name: /Next media/ }).click();
+      await gallery.getByRole("status").filter({ hasText: "2 of 3" }).waitFor();
+    }
     await page.waitForTimeout(500);
-    runs.push({ path, run, action: path === "/work" ? "Next media" : "Open fox corner", ...await page.evaluate(() => ({ events: window.labEvents, longTasks: window.labTasks })) });
+    runs.push({ path, run, action, ...await page.evaluate(() => ({ events: window.labEvents, longTasks: window.labTasks })) });
     await context.close();
   }
   await Bun.write(process.argv[2] || "/tmp/portfolio-interactions.json", JSON.stringify({ browser: browser.version(), profile: "390x844 DPR2, 4x CPU, 150ms RTT, 196608B/s; synthetic click EventTiming, not field INP", runs }, null, 2) + "\n");

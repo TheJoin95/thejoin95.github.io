@@ -4,13 +4,11 @@ import Link from "next/link";
 import { siteStyles } from "@/components/site/styles";
 import { Button } from "@/components/ui/button";
 import { NewsletterForm } from "@/components/newsletter-form";
-import { PageIntro, Section } from "@/components/site/primitives";
-import { PaletteStage } from "@/components/home/palette-stage";
+import { Section } from "@/components/site/primitives";
 import { SelectedWork } from "@/components/home/selected-work";
 import { SelectedWriting } from "@/components/home/selected-writing";
 import { homeIdentity, homeStructuredData } from "@/content/home";
 import type { Metadata } from "next";
-import { FoxCompanion } from "@/components/characters/fox-companion";
 
 const homeMetadata = pageMetadata({ title: "Home", description: homeIdentity.description, path: "/" });
 export const metadata: Metadata = { ...homeMetadata, title: { absolute: homeIdentity.title },
@@ -20,8 +18,12 @@ export const metadata: Metadata = { ...homeMetadata, title: { absolute: homeIden
 export default function Home() {
   return <div className="home-page">
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeStructuredData(homeStructuredData(siteOrigin())) }} />
-    <PageIntro className="md:items-start desktop:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]" title="Engineering, with curiosity."><p>I’m Miki, a Senior Software Engineer at Adobe. I build software, contribute to open source, and share what I learn along the way.</p><FoxCompanion /></PageIntro>
-    <PaletteStage />
+    <div className={`${siteStyles.container} pt-10 pb-10 md:pt-20 md:pb-24 desktop:pt-28 desktop:pb-28`}>
+      <div className="max-w-[39rem] text-[clamp(1.75rem,1.5rem_+_0.7vw,2.25rem)] leading-[1.2] tracking-[-0.035em]">
+        <h1 className="inline">I’m Miki, a Senior Software Engineer at Adobe.</h1>{" "}
+        <p className="inline text-muted-foreground">I build software, contribute to open source, and write about what I learn.</p>
+      </div>
+    </div>
     <SelectedWork />
     <SelectedWriting />
     <Section labelledBy="newsletter-title"><div className={siteStyles.editorialRow}>

@@ -1,15 +1,70 @@
 # Editorial gallery design
 
-The latest five mockups attached to MIC-8 are the visual authority. Preserve their
-oversized regular-weight typography, white/charcoal section rhythm, narrow project
-descriptions, square oversized media, expressive palette opening and sparse fox.
+Owner feedback (2026-11-16) identified typography, layout and sizing as
+areas for further refinement. The historical MIC-29 captures show the earlier
+implementation.
+
+## Homepage direction
+
+Home opens with a first-person introduction and brings selected work into the
+first viewport. A continuous light surface, fine row dividers and compact
+project descriptions give the real project media room to lead. Each row links
+to its full story for details and attribution. The Chromatique case study
+links directly to the interactive palette comparison in Lab.
+
+On desktop, the first project column shares the header’s four-column grid.
+The opening copy has a shorter reading measure, and each multi-image gallery
+shows a larger portion of its next frame.
+
+## Lab and navigation motion
+
+Lab presents the interactive colour comparison from Chromatique.
+Play keeps its project and community directory and its existing interactions.
+A client-side pathname change gives the new main content a 220ms entrance.
+The header and footer stay steady. Initial page loads, hash and query changes
+use the existing browser behaviour. Reduced motion skips the entrance.
+
+## Typography
+
+MIC-119 uses Instrument Sans for the editorial interface. Fontsource supplies
+OFL-1.1 variable WOFF2 files for Latin and Latin Extended. The site uses 400 for
+display and prose, with 500–700 available for emphasis and controls. Next.js
+preloads the Latin face and provides a metric-adjusted Arial fallback. Both
+subsets use optional display so a slow response keeps the first layout stable.
+Code retains the system monospaced stack.
+
+The [reference](https://www.daniilch.design/) rendered its opening copy at 32px,
+project titles and descriptions at 18px, and navigation at 13px at 390, 834 and
+1440px. The portfolio adapts its quiet regular weight and compact supporting
+text while retaining the oversized headings from the approved compositions.
+Shared styles set display headings at 48–144px, reader titles at 36–72px, leads
+at 18–26px, prose at 18–20px, and navigation and captions at 16px at the default
+root size. Intro leads use a 32ch measure and the reader uses 68ch for prose.
+
+## Layout and project media
+
+MIC-120 uses fluid page gutters and intro spacing, a compact shared header, and
+approximately 28–44px of padding at each edge of a project row. Project copy
+stacks above media on phones and occupies one quarter of the available row at
+tablet sizes and one fifth on desktop. This follows the [reference's project
+rows](https://www.daniilch.design/) in giving the media most of the available
+width and aligning the controls at the trailing edge.
+
+The reference shows two tall frames across on desktop. Our landscape media
+uses one wider frame with a visible slice of the next item. Slides with
+neighbours take 88%, 84% and 76% of the carousel at phone, tablet and desktop
+widths respectively. Captions, credits and full-size links sit below each
+frame. Native scrolling and the accessible 44px controls share the same
+endpoints. Owner visual acceptance is tracked in MIC-123.
+
+The five mockups attached to MIC-8 document the original visual direction.
+Their oversized regular-weight typography still informs the inner pages.
+Narrow project descriptions and generous media carry forward.
 
 Owner update (2026-11-13): remove all website 3D/Three.js parts. The signature
 image/palette stage remains a controllable HTML comparison; the standalone
-experience, WebGL renderer and Three.js dependencies are removed. Keep the
-coordinated site/character palettes and sparse original fox language. MIC-23
-integrates deliberate 2D fox reactions. Do not reintroduce 3D to satisfy older
-handoff notes; historical implementation records are superseded by this update.
+experience, WebGL renderer and Three.js dependencies were removed.
+The owner also removed the fox from the site. Keep the coordinated site palettes.
 Every implementation includes automated behaviour tests and visual review.
 
 Component design follows atomic composition: shared primitives → small component

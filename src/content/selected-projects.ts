@@ -1,4 +1,4 @@
-import { chromatiqueMedia, imageGoNordMedia, supermarketMedia } from "./featured-media";
+import { chromatiqueMedia, imageGoNordMedia, paletteImages, supermarketMedia } from "./featured-media";
 import type { GalleryMedia } from "@/lib/gallery";
 
 export type SelectedProject = {
@@ -24,7 +24,7 @@ export const chromatiqueProject: SelectedProject = {
   id: "chromatique", title: "Chromatique", status: "In development",
   summary: "One colour engine, several ways to use it: a Rust core with a CLI, language bindings and creative-tool interfaces.",
   contribution: "My work includes image analysis, image comparison and lightness-preserving palette selection.",
-  href: "/media/chromatique/irises-nord.png", linkLabel: "View the generated output", media: chromatiqueMedia,
+  href: paletteImages.palette, linkLabel: "View the generated output", media: chromatiqueMedia,
 };
 
 export const selectedProjects = [imageGoNordProject, supermarketProject, chromatiqueProject] as const;

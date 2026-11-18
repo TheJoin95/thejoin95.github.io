@@ -7,7 +7,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { boundedIndex, galleryImageSizes, indexAtScroll, type GalleryMedia } from "@/lib/gallery";
-import { GalleryCaption, MediaSurface } from "@/components/media/presentation";
+import { GalleryCaption, galleryStyles, MediaSurface } from "@/components/media/presentation";
 
 function GalleryItem({ item, sizes }: { item: GalleryMedia; sizes: string }) {
   const [state, setState] = useState<"loading" | "ready" | "failed">(item.src ? "loading" : "failed");
@@ -15,7 +15,7 @@ function GalleryItem({ item, sizes }: { item: GalleryMedia; sizes: string }) {
   const hydrated = useHydrated();
 
   return <figure className="min-w-0">
-    <MediaSurface className="relative aspect-[4/3] bg-(--experiment-ink) text-(--reverse) md:aspect-[5/3]" aria-busy={hydrated && state === "loading" && item.kind === "image"}>
+    <MediaSurface className={galleryStyles.frame} aria-busy={hydrated && state === "loading" && item.kind === "image"}>
       {item.kind === "image" && item.src && !failed ? (
         <Image src={item.src} alt={item.alt} width={item.width} height={item.height}
           sizes={sizes} loading="lazy"
@@ -72,7 +72,7 @@ export function MediaGallery({ label, items }: { label: string; items: readonly 
     setActive(next);
     announceWhenSettled(next);
     pauseVideos();
-    list.scrollTo({ left: slide.offsetLeft - list.offsetLeft, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
+    list.scrollTo({ left: slide.offsetLeft, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
   }
 
   function manualScroll() {
@@ -84,7 +84,8 @@ export function MediaGallery({ label, items }: { label: string; items: readonly 
     const list = track.current;
     if (!list) return;
     if (requested.current !== null) { announceWhenSettled(requested.current); return; }
-    setActive(indexAtScroll(list.scrollLeft, list.scrollWidth - list.clientWidth, items.length));
+    const offsets = Array.from(list.children, slide => (slide as HTMLElement).offsetLeft);
+    setActive(indexAtScroll(list.scrollLeft, list.scrollWidth - list.clientWidth, offsets));
     // Native video controls stay available; a fully offscreen video stops playing.
     const bounds = list.getBoundingClientRect();
     list.querySelectorAll("video").forEach((video) => {
@@ -98,22 +99,22 @@ export function MediaGallery({ label, items }: { label: string; items: readonly 
   return <div role="region" aria-label={label} className="min-w-0">
     <p id={`${id}-help`} className="sr-only">Browse media by scrolling horizontally, or use the previous and next buttons. Full-size image links and video controls are available inside each item.</p>
     <ol ref={track} id={`${id}-media`} aria-describedby={`${id}-help`} tabIndex={0}
-      className="relative flex snap-x snap-proximity gap-3 overflow-x-auto overscroll-x-contain pb-2 md:gap-4"
+      className={galleryStyles.track}
       onPointerDown={manualScroll} onTouchStart={manualScroll} onWheel={manualScroll} onKeyDown={manualScroll}
       onScroll={syncScroll} onFocusCapture={(event) => {
         const slide = (event.target as HTMLElement).closest<HTMLElement>("[data-media-index]");
         if (slide) { requested.current = Number(slide.dataset.mediaIndex); setActive(requested.current); }
       }}>
       {items.map((item, index) => <li key={item.id} data-media-index={index}
-        className={cn("min-w-0 shrink-0 snap-start", items.length === 1 ? "basis-full" : "basis-[88%] md:basis-[76%] desktop:basis-[48%]")}>
+        className={cn(galleryStyles.slide, items.length === 1 ? "basis-full" : galleryStyles.peek)}>
         <GalleryItem item={item} sizes={galleryImageSizes(items.length)} />
       </li>)}
     </ol>
-    {items.length > 1 && enhanced ? <div className="mt-4 flex flex-wrap items-center justify-between gap-4">
-      <p className="text-base tabular-nums" aria-hidden="true">{selected + 1} of {items.length}</p>
-      <div className="flex max-w-full flex-wrap gap-2">
-        <Button variant="ghost" aria-label={`Previous media in ${label}`} aria-controls={`${id}-media`} disabled={selected === 0} onClick={() => navigate(selected - 1)}><ArrowLeft aria-hidden="true" />Previous</Button>
-        <Button variant="ghost" aria-label={`Next media in ${label}`} aria-controls={`${id}-media`} disabled={selected === items.length - 1} onClick={() => navigate(selected + 1)}>Next<ArrowRight aria-hidden="true" /></Button>
+    {items.length > 1 && enhanced ? <div className="mt-2 flex flex-wrap items-center justify-end gap-x-3 gap-y-1">
+      <p className="text-meta text-muted-foreground tabular-nums" aria-hidden="true">{selected + 1} of {items.length}</p>
+      <div className="flex max-w-full flex-wrap justify-end gap-1">
+        <Button variant="ghost" size="icon" className="px-0" aria-label={`Previous media in ${label}`} aria-controls={`${id}-media`} disabled={selected === 0} onClick={() => navigate(selected - 1)}><ArrowLeft aria-hidden="true" /></Button>
+        <Button variant="ghost" size="icon" className="px-0" aria-label={`Next media in ${label}`} aria-controls={`${id}-media`} disabled={selected === items.length - 1} onClick={() => navigate(selected + 1)}><ArrowRight aria-hidden="true" /></Button>
       </div>
     </div> : null}
     <p role="status" aria-live="polite" aria-atomic="true" className="sr-only">{announcement}</p>

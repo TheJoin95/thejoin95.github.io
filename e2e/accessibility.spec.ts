@@ -123,7 +123,7 @@ test("error recovery announces a visible primary heading and its keyboard Retry 
   await expect(page.getByRole("status")).toHaveText("The recovery callback ran.");
 });
 
-for (const [name, engine] of [["Firefox", firefox], ["WebKit", webkit]] as const) test(`${name} phone/desktop layout, keyboard, fox and Journal discovery`, async () => {
+for (const [name, engine] of [["Firefox", firefox], ["WebKit", webkit]] as const) test(`${name} phone/desktop layout, keyboard, palette and Journal discovery`, async () => {
   test.setTimeout(120000); const browser = await engine.launch();
   try {
     // Independent device sessions also avoid the Firefox driver navigation-bookkeeping
@@ -136,8 +136,9 @@ for (const [name, engine] of [["Firefox", firefox], ["WebKit", webkit]] as const
       for (const path of ["/", "/work", "/play", "/about", "/blog", article]) {
         await page.goto(`http://127.0.0.1:3109${path}`); await expect(page.locator("h1")).toBeVisible(); await noOverflow(page);
       }
-      await page.goto("http://127.0.0.1:3109/play"); const trigger = page.getByRole("button", { name: "Meet the fox", exact: true });
-      await trigger.focus(); await page.keyboard.press("Enter"); await expect(page.getByRole("region", { name: "A quiet corner.", exact: true })).toBeVisible(); await page.keyboard.press("Escape"); await expect(trigger).toBeFocused();
+      await page.goto("http://127.0.0.1:3109/lab");
+      const slider = page.getByRole("slider", { name: "Palette reveal" });
+      await slider.focus(); await page.keyboard.press("End"); await expect(slider).toHaveValue("100");
       await page.goto("http://127.0.0.1:3109/blog"); await page.getByRole("searchbox", { name: "Search writing" }).fill("microfrontend"); await page.getByRole("button", { name: "Search", exact: true }).click();
       await expect(page.getByRole("list", { name: "Archive articles" }).getByRole("listitem")).toHaveCount(1);
       } finally { await context.close(); }
@@ -145,9 +146,9 @@ for (const [name, engine] of [["Firefox", firefox], ["WebKit", webkit]] as const
   } finally { await browser.close(); }
 });
 
-test("open fox, empty search and failed gallery media remain accessible states", async ({ page }) => {
-  await page.emulateMedia({ reducedMotion: "reduce" }); await page.goto("/play");
-  await page.getByRole("button", { name: "Meet the fox", exact: true }).click(); await expect(page.getByRole("region", { name: "A quiet corner.", exact: true })).toBeVisible();
+test("palette comparison, empty search and failed gallery media remain accessible states", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" }); await page.goto("/lab");
+  await expect(page.getByRole("slider", { name: "Palette reveal" })).toBeVisible();
   expect(await scan(page).then(result => result.violations)).toEqual([]);
   await page.goto("/blog?q=no-result-accessibility-specimen"); await expect(page.getByRole("heading", { name: "No matching articles.", exact: true })).toBeVisible();
   expect(await scan(page).then(result => result.violations)).toEqual([]);

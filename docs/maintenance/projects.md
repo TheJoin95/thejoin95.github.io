@@ -77,26 +77,16 @@ the enhanced gallery. Keep dimensions/aspect ratios, native scrolling, keyboard
 controls, live status and failed-media alternatives. Don't replace a small shared
 component with a new carousel/dialog library without a concrete need.
 
-## Fox, palettes and accessibility
+## Palettes and accessibility
 
-The original fox source is `assets/fox/model.ts`. Edit the model/pivots/poses there
-and regenerate with `bun run build:fox`; do not independently hand-edit exported
-SVG/JSON/dotLottie files. Inspect generated diffs and preserve the manifest and
-provenance in [the fox source guide](../../assets/fox/README.md). The generated
-runtime directory is ignored and recreated from locked dependencies at build.
-
-Keep the small sparse fox, its coordinated palette and one-shot clips. Home/Play
-share the existing companion and HTML palette comparison. Preserve lazy player
-loading, reduced-motion/static alternatives, offscreen cancellation, hidden-tab
-pause, no automatic audio and scoped dismissal/focus return. No WebGL/Three.js
-replacement belongs in this website. Do not make decorative character art the
-only way to understand a control or project.
+The palette comparison uses HTML images and native controls. Test its static
+rendering, keyboard controls, and reduced-motion behaviour after changes.
 
 After changes, check phone/tablet/desktop, long text, light/charcoal contrast,
 visible focus, keyboard and touch controls, honest empty/error states and no
 page-wide overflow. Use semantic HTML and existing Radix/shadcn/native behaviour.
 Keep component styling in Tailwind and globals for shared tokens/global rules.
-Shared site/character tokens and the responsive contract remain the authority.
+Shared site tokens and the responsive contract remain the authority.
 
 Metadata comes from the visible records. Titles, descriptions, canonical URLs,
 Person/project attribution, JSON-LD and Open Graph/Twitter cards must agree.

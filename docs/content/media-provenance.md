@@ -1,5 +1,68 @@
 # Project media provenance
 
+## MIC-121 media refresh — 2026-11-18
+
+The [design reference](https://www.daniilch.design/) gives real product
+screens room to read against quiet frames. This refresh applies that approach
+to the existing landscape media and keeps the original project assets available.
+
+| Prominent media | Audit and treatment |
+| --- | --- |
+| Home and Play palette stage | The old 1024×846 raster included the glass-slide mount and stretched across a 1440px panorama. The new 3200×2172 pair removes the mount and draws from the same scan. Both layers share the same frame and focal point. The phone shows a near-full 3:2 composition, the tablet uses 16:9, and the desktop uses a taller 5:2 panorama capped at 560 CSS pixels. |
+| Chromatique project gallery and story | The same high-resolution pair appears uncropped in the gallery. Both full-size study files are available, and the historical 1024px pair remains at its original URLs. |
+| ImageGoNord project gallery and story | The 1200×870 empty converter and 1200×363 intro were recaptured in Chromium at 2×. The 261×710 controls-only slide is now an archive link in the case study. The new lead image shows the complete converter with a local preview, and a wider capture of the Python guide makes a third distinct slide. The gallery contains the captures to keep the text and controls intact. |
+| Supermarket and featured journal diagrams | Both are vector SVG and scale without raster upsampling. The supermarket diagram remains explicitly identified as a source-derived diagram. A verified period screenshot of the supermarket map is still missing. |
+| Personal photography | `public/images/miki.jpg` (2073×2008) and `miki_old.jpg` (256×256) exist on `origin/old` and remain in the current repository. The main pages do not display a portrait. No newly approved portrait or owner-supplied photograph was identified for this refresh. |
+
+### Chromatique input and output
+
+The [Library of Congress catalogue](https://www.loc.gov/pictures/item/2007686318/)
+credits Frances Benjamin Johnston and gives the rights advisory as no known
+restrictions on publication. The [6090×5032 TIFF master](https://cdn.loc.gov/master/pnp/ppmsca/16300/16318u.tif)
+has SHA-256 `e78630710ad2872b18252f9528930fc3974f925a6685d86bd0cc4bff7ca69878`.
+The study crops the master from left/top/right/bottom
+`(1000, 1160, 5170, 3990)`, converts the embedded profile to sRGB, and
+downsamples with Lanczos to 3200×2172. The input is JPEG quality 91 with full
+chroma resolution. Chromatique generates the matching indexed PNG directly
+from that JPEG, with no further crop or resampling.
+
+```sh
+chromatique map --palette nord --palette-dir /path/to/chromatique/palettes \
+  --space oklab --dither none --backend cpu --indexed \
+  public/media/chromatique/irises-study-original.jpg \
+  -o public/media/chromatique/irises-study-nord.png
+```
+
+| File under `public/media/chromatique/` | Dimensions | SHA-256 |
+| --- | --- | --- |
+| `irises-study-original.jpg` | 3200×2172 | `9f40a3088d6059fd8639688cd9e21e48cd8c7015b2b965bf06193d30ed7a7262` |
+| `irises-study-nord.png` | 3200×2172 | `55a69c93f2131b020a6225aae277e1b4491159bcca58bc635fb4ba0199cacc84` |
+
+The on-page comparison uses Next.js responsive derivatives at quality 75 for
+the scan and 70 for the mapped layer. The 2880px and 3200px candidates cover
+1440px and 1600px displays at 2×. The stage reserves its layout space before
+either image loads. The downloadable indexed PNG preserves the exact Nord
+palette credited to Sven Greb.
+
+The local production optimizer served 146 KB combined for the two 640px WebP
+derivatives and 1.38 MB combined for the two 2880px derivatives.
+
+### ImageGoNord captures
+
+Source and attribution are the [public ImageGoNord demo](https://ign.schroedinger-hat.org/)
+and [Python documentation](https://ign.schroedinger-hat.org/documentation/python),
+ImageGoNord / Schrödinger Hat. The converter displays the credited Johnston
+crop in its local browser preview. HTTP requests were blocked during file
+selection, and no conversion was submitted. The photo preview is rendered
+by the app’s own canvas. Chromium captured the surrounding interface at
+device scale 2; there was no post-capture enlargement.
+
+| File under `public/media/imagegonord/` | Region and dimensions | SHA-256 |
+| --- | --- | --- |
+| `converter-preview-2x.png` | `.demo-wrapper`, 2400×1420 | `33537a49241a01e6036b7e227c4529dd394a123e0e96730df3178283c1dead31` |
+| `introduction-2x.png` | `.main`, 2000×916 | `cd7c84845ca88caa2cbdec85b7b04a88265d1045c7e79096681cd6e6f02c6498` |
+| `python-documentation-2x.png` | Opening of `.guide.python`, 1720×1032 | `345375caabcce8b7edd1b8117953cc11d7b5813018eac7702a1ffc89f92e61e3` |
+
 ## ImageGoNord interface captures — 2026-11-12
 
 Captured from the [live ImageGoNord website](https://ign.schroedinger-hat.org/)

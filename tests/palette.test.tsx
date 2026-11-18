@@ -1,7 +1,8 @@
 import { expect, test } from "bun:test";
 import { renderToStaticMarkup } from "react-dom/server";
 import { PaletteStage } from "@/components/home/palette-stage";
-import { paletteImages, revealAt } from "@/components/palette/reveal";
+import { revealAt } from "@/components/palette/reveal";
+import { paletteImages } from "@/content/featured-media";
 
 test("reveal input clamps at both endpoints and reverses the right-hand palette fraction", () => {
   expect(revealAt(100, 100, 400)).toBe(100);

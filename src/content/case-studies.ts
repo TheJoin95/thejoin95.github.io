@@ -1,3 +1,4 @@
+import { paletteImages } from "./featured-media";
 import { chromatiqueProject, imageGoNordProject, supermarketProject, type SelectedProject } from "./selected-projects";
 
 export type StorySection = { id: string; title: string; paragraphs: readonly string[]; links?: readonly { href: string; label: string }[]; code?: string };
@@ -23,9 +24,9 @@ const stories: readonly CaseStudy[] = [
         "I co-authored ImageGoNord with Wabri. Keeping that attribution visible matters: the package, website and later community contributions form a shared open-source project. A description of the overall system does not mean I independently built every later version or deployment.",
       ], links: [{ href: "https://github.com/Schroedinger-Hat/ImageGoNord-pip", label: "Explore the Python package" }] },
       { id: "evidence", title: "Try the idea. Read the implementation.", paragraphs: [
-        "The gallery shows the real browser interface, its palette groups and conversion settings. The live demo and public source provide different ways to explore the same tool: try an image, inspect the package boundary or follow a conversion job through the web application.",
+        "The gallery shows the real browser interface, including palette groups and conversion settings, alongside the Python guide. The live demo and public source provide different ways to explore the same tool: try an image, inspect the package boundary or follow a conversion job through the web application.",
         "The engineering lesson is the value of a reusable conversion boundary. It lets an interactive demonstration and a programmatic workflow share the same purpose, while making the cost of the web layer explicit.",
-      ], links: [{ href: "https://ign.schroedinger-hat.org/", label: "Open the ImageGoNord demo" }, { href: imageGoNordProject.href, label: "Read the web application source" }] },
+      ], links: [{ href: "https://ign.schroedinger-hat.org/", label: "Open the ImageGoNord demo" }, { href: "/media/imagegonord/palette-controls.png", label: "View the archived palette controls detail" }, { href: imageGoNordProject.href, label: "Read the web application source" }] },
     ],
   },
   {
@@ -56,7 +57,7 @@ const stories: readonly CaseStudy[] = [
     project: chromatiqueProject, published: true,
     introduction: "One colour engine, several ways to use it. Chromatique explores how the same palette-processing behaviour can be reused through a command line, language bindings and creative-tool interfaces. It is still in development.",
     team: "An evolving ecosystem with a shared engine and several integration surfaces. The available CLI example demonstrates one operation; it does not independently verify every integration as a finished release.",
-    mediaNote: "A licensed source photograph beside actual Chromatique CLI output. The example uses ordinary OKLab palette mapping without dithering; it does not demonstrate the optional lightness-preservation mode.",
+    mediaNote: "A higher-resolution crop from the Library of Congress scan beside actual Chromatique CLI output. The example uses ordinary OKLab palette mapping without dithering; it does not demonstrate the optional lightness-preservation mode.",
     sections: [
       { id: "problem", title: "A shared colour contract", paragraphs: [
         "A palette engine is useful in more than one environment. Reimplementing its algorithms independently in each language would make it harder to keep defaults, colour selection and output behaviour consistent across those entry points.",
@@ -73,7 +74,7 @@ const stories: readonly CaseStudy[] = [
       { id: "evidence", title: "An input, a recipe, a real output", paragraphs: [
         "The gallery pairs Frances Benjamin Johnston’s 1921 photograph of irises at West Potomac Park with the actual output from Chromatique 0.2.0. The input’s Library of Congress rights advisory records no known restrictions on publication. The output uses the sixteen-colour Nord palette, credited to Sven Greb.",
         "This run uses the CPU path, OKLab and no dithering. It demonstrates a reproducible palette conversion, not a performance benchmark or the optional lightness-preservation algorithm. The lesson is to make each operation’s contract clear enough to inspect and test without confusing it with another operation.",
-      ], code: "chromatique map --palette nord --palette-dir ./palettes \\\n  --space oklab --dither none --indexed \\\n  irises-original.jpg -o irises-nord.png", links: [{ href: "/media/chromatique/irises-original.jpg", label: "Download the original input" }, { href: chromatiqueProject.href, label: "View the actual CLI output" }, { href: "https://www.loc.gov/pictures/item/2007686318/", label: "Read the photograph’s catalogue and rights advisory" }] },
+      ], code: "chromatique map --palette nord --palette-dir ./palettes \\\n  --space oklab --dither none --indexed \\\n  irises-study-original.jpg -o irises-study-nord.png", links: [{ href: paletteImages.original, label: "Download the cropped input" }, { href: chromatiqueProject.href, label: "View the actual CLI output" }, { href: "/lab#palette-comparison", label: "Try the interactive palette comparison" }, { href: "https://www.loc.gov/pictures/item/2007686318/", label: "Read the photograph’s catalogue and rights advisory" }] },
     ],
   },
 ];

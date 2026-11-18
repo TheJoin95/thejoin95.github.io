@@ -59,7 +59,7 @@ test("project metadata and schema match visible identity, roles and actual socia
   expect(await crawler.text()).toContain("Choose lightness deliberately");
 });
 test("failed project media keeps the story, explanation and onward navigation usable", async ({ page }) => {
-  await page.route("**/_next/image?**", route => new URL(route.request().url()).searchParams.get("url") === "/media/chromatique/irises-nord.png" ? route.abort() : route.continue());
+  await page.route("**/_next/image?**", route => new URL(route.request().url()).searchParams.get("url") === "/media/chromatique/irises-study-nord.png" ? route.abort() : route.continue());
   await page.goto("/work/chromatique");
   await page.getByRole("region", { name: "Chromatique project media", exact: true }).scrollIntoViewIfNeeded();
   await expect(page.getByText("Image unavailable", { exact: false })).toBeVisible();

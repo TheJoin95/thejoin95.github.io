@@ -10,7 +10,7 @@ async function fixture(page: Page) {
   await expect(page.getByRole("region", { name: "Single", exact: true })).toBeVisible();
 }
 
-for (const width of [390, 834, 1440]) {
+for (const width of [320, 390, 767, 768, 834, 1199, 1200, 1440]) {
   test(`gallery controls, peeking frame and overflow at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 1000 });
     await page.goto("/work");
@@ -20,11 +20,26 @@ for (const width of [390, 834, 1440]) {
     await expect(gallery.getByRole("button", { name: /Next/ })).toBeVisible();
     const first = await list.locator("li").first().boundingBox();
     const bounds = await list.boundingBox();
-    const expected = width >= 1200 ? 0.48 : width >= 768 ? 0.76 : 0.88;
+    const nextSlide = await list.locator("li").nth(1).boundingBox();
+    const expected = width >= 1200 ? 0.76 : width >= 768 ? 0.84 : 0.88;
     expect(first!.width / bounds!.width).toBeCloseTo(expected, 2);
+    const peek = bounds!.x + bounds!.width - nextSlide!.x;
+    expect(peek).toBeGreaterThan(20);
+    expect(peek).toBeLessThan(nextSlide!.width / 3);
+    const details = await page.locator("#imagegonord").locator("..").boundingBox();
+    if (width >= 768) {
+      expect(details!.x + details!.width).toBeLessThan(bounds!.x);
+      expect(details!.width / (details!.width + bounds!.width)).toBeCloseTo(width >= 1200 ? 0.2 : 0.25, 2);
+    } else {
+      expect(details!.y + details!.height).toBeLessThan(bounds!.y);
+    }
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     const previous = gallery.getByRole("button", { name: /Previous/ });
     const next = gallery.getByRole("button", { name: /Next/ });
+    const nextControl = await next.boundingBox();
+    expect(nextControl!.x + nextControl!.width).toBeCloseTo(bounds!.x + bounds!.width, 0);
+    expect(nextControl!.width).toBeGreaterThanOrEqual(44);
+    expect(nextControl!.height).toBeGreaterThanOrEqual(44);
     await expect(previous).toBeDisabled();
     await next.focus();
     await page.keyboard.press("Enter");
@@ -32,10 +47,12 @@ for (const width of [390, 834, 1440]) {
     await expect(gallery.getByRole("status")).toContainText("2 of 3");
     await page.keyboard.press("Enter");
     await expect(next).toBeDisabled();
+    await expect.poll(() => list.evaluate(el => Math.abs(el.scrollWidth - el.clientWidth - el.scrollLeft))).toBeLessThanOrEqual(1);
     await previous.click();
     await expect(gallery.getByRole("status")).toContainText("2 of 3");
     await previous.click();
     await expect(previous).toBeDisabled();
+    await expect.poll(() => list.evaluate(el => el.scrollLeft)).toBeLessThanOrEqual(1);
   });
 }
 
@@ -68,7 +85,7 @@ test("slow and failed images keep their dimensions, captions and project link", 
   release();
   await expect(gallery.getByText("Image unavailable.").first()).toBeVisible();
   expect((await frame.boundingBox())!.height).toBeCloseTo(before!.height, 1);
-  await expect(gallery.getByText("The conversion interface: upload an image and choose palette options.")).toBeVisible();
+  await expect(gallery.getByText("ImageGoNord’s browser preview and conversion settings.")).toBeVisible();
   await expect(page.locator("#imagegonord").locator("..").getByRole("link", { name: "Explore ImageGoNord on GitHub" })).toBeVisible();
   await gallery.getByRole("button", { name: /Next/ }).click();
   await expect(gallery.getByRole("status")).toContainText("2 of 3");

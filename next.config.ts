@@ -4,6 +4,11 @@ const seo = seoConfiguration(process.env);
 
 const nextConfig: NextConfig = {
   env: { NEXT_PUBLIC_SITE_URL: seo.origin, PORTFOLIO_INDEXABLE: String(seo.indexable) },
+  images: {
+    qualities: [70, 75],
+    // Match the full-width stage at 1440px and its 1600px cap on 2× screens.
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 2880, 3200, 3840],
+  },
   async redirects() {
     return [
       { source: "/experience", destination: "/play", permanent: true },

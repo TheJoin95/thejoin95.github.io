@@ -8,7 +8,7 @@ verification (MIC-31) are still Backlog; this guide does not claim they happened
 | --- | --- |
 | Create, preview, publish or withdraw a blog post | [Journal guide](../publishing/journal.md) |
 | Start from an editable article or sketchbook | [Article template](../publishing/templates/article.md) · [Sketchbook template](../publishing/templates/sketchbook.md) |
-| Add/edit a project, case study, photo or fox asset | [Project and asset updates](projects.md) |
+| Add/edit a project, case study or photo | [Project and asset updates](projects.md) |
 | Preview, release or recover a change | [Deployment and recovery](deployment.md) |
 | Record a real production release | [Release record template](release-record.md) |
 | Understand tests and their reports | [Regression guide](../regression-checks.md) |
@@ -33,7 +33,6 @@ GitHub Pages/static export cannot replace the current deployment unchanged.
 | Home identity/featured writing | `src/content/home.ts` |
 | About/talks and contact destinations | `src/content/about.ts`, `src/lib/site.ts`, About page/components |
 | Shared metadata/discovery | `src/lib/seo.ts`, `src/lib/discovery.ts`, existing share-image routes |
-| Fox source and provenance | `assets/fox/model.ts`, `assets/fox/README.md`, `assets/fox/manifest.json` |
 | Design rules | `DESIGN.md`, `docs/design/responsive-layouts.md` |
 
 Blog date, draft and filename changes require regeneration/rebuild/restart.

@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 
-const routes = ["/", "/work", "/blog", "/play", "/about", "/newsletter/confirmed"];
+const routes = ["/", "/work", "/blog", "/play", "/about", "/lab", "/newsletter/confirmed"];
 for (const width of [320, 390, 768, 1024, 1200, 1440]) {
   test(`shell reflows and all destinations work at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 1000 });
@@ -15,7 +15,7 @@ for (const width of [320, 390, 768, 1024, 1200, 1440]) {
         await expect.poll(async () => (await link.boundingBox())?.height || 0).toBeGreaterThanOrEqual(44);
         await expect.poll(async () => (await link.boundingBox())?.width || 0).toBeGreaterThanOrEqual(44);
       }
-      if (["/work", "/blog", "/play", "/about"].includes(route)) {
+      if (["/work", "/blog", "/play", "/about", "/lab"].includes(route)) {
         await expect(page.locator(`nav[aria-label="Primary"] a[href="${route}"]`)).toHaveAttribute("aria-current", "page");
       }
     }
@@ -43,7 +43,7 @@ test("no-script navigation, PDF and useful 404", async ({ browser }) => {
   const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 390, height: 844 } });
   const page = await context.newPage();
   await page.goto("/");
-  for (const [label, route] of [["Work", "/work"], ["Journal", "/blog"], ["Play", "/play"], ["About", "/about"]]) {
+  for (const [label, route] of [["Work", "/work"], ["Journal", "/blog"], ["Play", "/play"], ["About", "/about"], ["Lab", "/lab"]]) {
     await page.getByRole("navigation", { name: "Primary" }).getByRole("link", { name: label, exact: true }).click();
     await expect(page).toHaveURL(new RegExp(`${route}$`));
     await expect(page.locator("h1")).toBeVisible();
@@ -88,4 +88,57 @@ test("newsletter controls retain sizing, disabled feedback and invalid focus", a
   await button.evaluate((el) => (el as HTMLButtonElement).disabled = true);
   await expect(button).toBeDisabled();
   await expect(button).toHaveCSS("opacity", "0.65");
+});
+
+test("Lab is crawlable and offers a working colour experiment", async ({ page, request }) => {
+  const response = await request.get("/lab", { headers: { "User-Agent": "Googlebot" } });
+  expect(response.ok()).toBe(true);
+  const html = await response.text();
+  expect(html).toContain("A photograph, two palettes.");
+  expect(html).toContain('property="og:image"');
+  expect(html).toContain('rel="canonical" href="http://127.0.0.1:3109/lab"');
+
+  await page.goto("/lab");
+  const range = page.getByRole("slider", { name: "Palette reveal" });
+  await range.focus();
+  await page.keyboard.press("End");
+  await expect(range).toHaveValue("100");
+});
+
+test("client navigation animates the page content and respects reduced motion", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  await page.addInitScript(() => {
+    const animate = Element.prototype.animate;
+    Element.prototype.animate = function (keyframes, options) {
+      if (this.id === "main-content") {
+        const count = Number(document.body.dataset.routeMotionCount || 0);
+        document.body.dataset.routeMotionCount = String(count + 1);
+      }
+      return animate.call(this, keyframes, options);
+    };
+  });
+  await page.goto("/");
+  const nav = page.getByRole("navigation", { name: "Primary" });
+  await expect(page.locator("body")).not.toHaveAttribute("data-route-motion-count", /.+/);
+  await nav.getByRole("link", { name: "Lab", exact: true }).click();
+  await expect(page.getByRole("heading", { name: "Lab", exact: true })).toBeVisible();
+  await expect(page.locator("body")).toHaveAttribute("data-route-motion-count", "1");
+  await page.goBack();
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("I’m Miki");
+  await expect(page.locator("body")).toHaveAttribute("data-route-motion-count", "2");
+
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await nav.getByRole("link", { name: "Work", exact: true }).click();
+  await expect(nav.getByRole("link", { name: "Work", exact: true })).toHaveAttribute("aria-current", "page");
+  await expect(page.locator("body")).toHaveAttribute("data-route-motion-count", "2");
+  await expect(page.locator("main")).toHaveCSS("opacity", "1");
+});
+
+test("Home, Play and Lab omit the retired mascot and its runtime", async ({ request }) => {
+  for (const path of ["/", "/play", "/lab"]) {
+    const response = await request.get(path);
+    expect(response.ok()).toBe(true);
+    expect(await response.text()).not.toMatch(/Meet the fox|data-fox-companion|\/characters\/fox\/|dotlottie-player\.wasm/);
+  }
+  expect((await request.get("/characters/fox/rest.svg")).status()).toBe(404);
 });

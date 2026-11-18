@@ -1,19 +1,32 @@
 import type { GalleryMedia } from "@/lib/gallery";
 
+export const paletteImages = {
+  original: "/media/chromatique/irises-study-original.jpg",
+  palette: "/media/chromatique/irises-study-nord.png",
+  width: 3200,
+  height: 2172,
+} as const;
+
 // Real UI captures. Provenance and source URLs: docs/content/media-provenance.md.
 export const imageGoNordMedia: readonly GalleryMedia[] = [
-  { id: "ign-conversion", kind: "image", src: "/media/imagegonord/conversion-interface.png", width: 1200, height: 870,
-    alt: "ImageGoNord upload area beside Nord palette swatches and conversion options.", caption: "The conversion interface: upload an image and choose palette options.", credit: "ImageGoNord / Schrödinger Hat · interface capture, November 2026" },
-  { id: "ign-introduction", kind: "image", src: "/media/imagegonord/introduction.png", width: 1200, height: 363,
-    alt: "ImageGoNord’s introduction with links to more palettes and documentation.", caption: "The live website’s introduction to palette conversion.", credit: "ImageGoNord / Schrödinger Hat · interface capture, November 2026" },
-  { id: "ign-palette", kind: "image", src: "/media/imagegonord/palette-controls.png", width: 261, height: 710,
-    alt: "Polar Night, Snow Storm, Frost and Aurora colour swatches above conversion settings.", caption: "Palette groups and conversion settings. Open the full-size image to read the controls.", credit: "ImageGoNord / Schrödinger Hat · interface detail, November 2026" },
+  { id: "ign-conversion", kind: "image", src: "/media/imagegonord/converter-preview-2x.png", width: 2400, height: 1420,
+    alt: "A garden photograph preview beside Nord palette swatches and conversion options.",
+    caption: "ImageGoNord’s browser preview and conversion settings.",
+    credit: "ImageGoNord / Schrödinger Hat · photograph: Frances Benjamin Johnston / Library of Congress" },
+  { id: "ign-introduction", kind: "image", src: "/media/imagegonord/introduction-2x.png", width: 2000, height: 916,
+    alt: "ImageGoNord’s introduction with links to more palettes and documentation.",
+    caption: "The live website’s introduction to palette conversion.",
+    credit: "ImageGoNord / Schrödinger Hat · interface capture, November 2026" },
+  { id: "ign-python-docs", kind: "image", src: "/media/imagegonord/python-documentation-2x.png", width: 1720, height: 1032,
+    alt: "ImageGoNord’s Python documentation introduces the NordPaletteFile class and palette groups.",
+    caption: "The live Python guide explains how the package organises palette files.",
+    credit: "ImageGoNord / Schrödinger Hat · documentation capture, November 2026" },
 ];
 
 export const chromatiqueMedia: readonly GalleryMedia[] = [
-  { id: "chromatique-original", kind: "image", src: "/media/chromatique/irises-original.jpg", width: 1024, height: 846,
-    alt: "Hand-coloured photograph of irises and trees along the West Potomac Park embankment.", caption: "Original input: Irises along the embankment, West Potomac Park, 1921.", credit: "Frances Benjamin Johnston / Library of Congress · no known restrictions on publication" },
-  { id: "chromatique-nord", kind: "image", src: "/media/chromatique/irises-nord.png", width: 1024, height: 846,
+  { id: "chromatique-original", kind: "image", src: paletteImages.original, width: paletteImages.width, height: paletteImages.height,
+    alt: "Hand-coloured photograph of irises and trees along the West Potomac Park embankment.", caption: "Cropped scan used as input: Irises along the embankment, West Potomac Park, 1921.", credit: "Frances Benjamin Johnston / Library of Congress · no known restrictions on publication" },
+  { id: "chromatique-nord", kind: "image", src: paletteImages.palette, width: paletteImages.width, height: paletteImages.height,
     alt: "The same garden photograph mapped to the sixteen colours of the Nord palette.", caption: "Actual Chromatique CLI output: Nord palette, OKLab, CPU, no dithering.", credit: "Chromatique 0.2.0 · source photograph: Frances Benjamin Johnston / Library of Congress; Nord palette: Sven Greb" },
 ];
 

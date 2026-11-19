@@ -18,7 +18,7 @@ export default function Play() {
     <Section labelledBy="play-directory-title"><div className={siteStyles.container}>
       <h2 id="play-directory-title" className={siteStyles.sectionTitle}>Projects &amp; community.</h2>
       <p className="mt-6 max-w-[68ch]">Things I build, contribute to, and keep exploring. Some are public; others are still taking shape.</p>
-      <ProjectDirectory entries={playProjects} />
+      <ProjectDirectory entries={playProjects} showPreviews />
     </div></Section>
     <Section labelledBy="github-projects"><div className={siteStyles.container}>
       <h2 id="github-projects" className={siteStyles.sectionTitle}>GitHub project index</h2>

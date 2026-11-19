@@ -106,3 +106,28 @@ test("Lab and Play expose the named project stories and their branded share card
   const fallback = await request.get("/opengraph-image");
   expect((await card.body()).equals(await fallback.body())).toBe(false);
 });
+
+test("Lab and Play render optimized project covers and local share-card fallbacks", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/lab");
+  const primary = page.getByRole("img", { name: /Certo’s public share card/ });
+  await primary.scrollIntoViewIfNeeded();
+  await expect.poll(() => primary.evaluate((image: HTMLImageElement) => image.naturalWidth)).toBeGreaterThan(0);
+  const primaryUrl = new URL(await primary.evaluate((image: HTMLImageElement) => image.currentSrc));
+  expect(primaryUrl.pathname).toBe("/_next/image");
+  expect(primaryUrl.searchParams.get("url")).toBe("/media/project-covers/certo.webp");
+
+  const audioCard = page.getByRole("link", { name: "Ambisonic Audio", exact: true }).locator("../..");
+  const fallback = audioCard.locator("img");
+  await fallback.scrollIntoViewIfNeeded();
+  await expect.poll(() => fallback.evaluate((image: HTMLImageElement) => image.naturalWidth)).toBeGreaterThan(0);
+  const fallbackUrl = new URL(await fallback.evaluate((image: HTMLImageElement) => image.currentSrc));
+  expect(fallbackUrl.searchParams.get("url")).toBe("/share/projects/ambisonic-audio");
+  await expect(fallback).toHaveAttribute("alt", "");
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+
+  await page.goto("/play");
+  const screenshot = page.getByRole("img", { name: /garden photograph preview beside Nord palette/ });
+  await screenshot.scrollIntoViewIfNeeded();
+  await expect.poll(() => screenshot.evaluate((image: HTMLImageElement) => image.naturalWidth)).toBeGreaterThan(0);
+});

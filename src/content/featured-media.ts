@@ -1,5 +1,22 @@
 import type { GalleryMedia } from "@/lib/gallery";
 
+export type ProjectPreview = { src: string; alt: string; fit?: "contain" | "cover" };
+
+const projectCovers: Readonly<Record<string, ProjectPreview>> = {
+  certo: { src: "/media/project-covers/certo.webp", alt: "Certo’s public share card showing its certificate design interface." },
+  vitni: { src: "/media/project-covers/vitni.webp", alt: "Vitni Repair’s public share card with its illustrated repair mascot." },
+  "vitni-credentials": { src: "/media/project-covers/vitni-credentials.webp", alt: "Vitni Credentials’ public share card featuring a blue credential badge." },
+};
+
+export function projectPreview(project: { id: string; media: readonly GalleryMedia[] }): ProjectPreview {
+  if (projectCovers[project.id]) return projectCovers[project.id];
+  const still = project.media.find(item => item.kind === "image" && item.src);
+  if (still?.kind === "image" && still.src) {
+    return { src: still.src, alt: still.alt, fit: still.fit };
+  }
+  return { src: `/share/projects/${project.id}`, alt: "" };
+}
+
 export const paletteImages = {
   original: "/media/chromatique/irises-study-original.jpg",
   palette: "/media/chromatique/irises-study-nord.png",

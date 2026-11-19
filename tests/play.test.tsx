@@ -54,6 +54,22 @@ describe("Play directory and comic-learning preview", () => {
     expect(comic).toContain('href="/blog"'); expect(comic).toContain('href="/rss.xml"');
     for (const tag of ["<img", "<svg", "<canvas"]) expect(comic).not.toContain(tag);
   });
+  test("case-study cards prefer sourced images and use same-origin share cards as fallbacks", () => {
+    const expected = {
+      certo: "/media/project-covers/certo.webp",
+      vitni: "/media/project-covers/vitni.webp",
+      "vitni-credentials": "/media/project-covers/vitni-credentials.webp",
+      imagegonord: "/media/imagegonord/converter-preview-2x.png",
+      "ambisonic-audio": "/share/projects/ambisonic-audio",
+    };
+    for (const [id, src] of Object.entries(expected)) {
+      expect(playProjects.find(project => project.id === id)?.preview?.src).toBe(src);
+    }
+    const html = renderToStaticMarkup(<ProjectDirectory entries={playProjects} showPreviews />);
+    expect(html.match(/<img\b/g)).toHaveLength(19);
+    expect(html.match(/loading="lazy"/g)).toHaveLength(19);
+    expect(playProjects.find(project => project.id === "ambisonic-audio")?.preview?.alt).toBe("");
+  });
   test("metadata and structured data describe the visible collection and only its actual destinations", () => {
     expect(metadata.alternates?.canonical).toBe("https://example.com/play");
     expect(metadata.openGraph).toMatchObject({ type: "website", images: [{ url: "https://example.com/opengraph-image" }] });

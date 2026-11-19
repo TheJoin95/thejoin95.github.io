@@ -187,3 +187,18 @@ screenshot, original project architecture evidence or comic artwork. That
 distinction is visible in the caption and SVG description. There is no external
 asset dependency or third-party photograph. Dimensions: 1200 × 630. SHA-256:
 `f7d6e846eedf5850c9e5d3935c0da7065ba822cf14e10716bd4d6a27d628cbe3`.
+
+## Project directory covers
+
+Lab and Play use the project’s own social card when one is available, then a
+still from its existing gallery. Otherwise the directory uses the locally
+generated case-study share card. Images keep their proportions inside a frame
+with a 1200×630 aspect ratio and load lazily from the portfolio’s origin.
+
+| Cover | Source |
+| --- | --- |
+| `/media/project-covers/certo.webp` | [Certo’s project card](https://github.com/Schroedinger-Hat/certo/blob/ffe9619e1df336aa829f3ad836d2c6abce6e5202/src/frontend/public/og-default.png), credited to Certo / Schrödinger Hat. |
+| `/media/project-covers/vitni.webp` | [Vitni Repair’s public Open Graph card](https://vitni.cc/images/og/repairlens-share.png), credited to Vitni. |
+| `/media/project-covers/vitni-credentials.webp` | [Vitni Credentials’ public Open Graph card](https://certificate.vitni.cc/media/vitni-social-card.png), credited to Vitni. |
+
+The three copies are WebP conversions of the projects’ 1200×630 source PNGs.

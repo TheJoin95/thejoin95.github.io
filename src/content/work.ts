@@ -1,8 +1,9 @@
 import { caseStudyPath, publishedCaseStudies } from "./case-studies";
+import { projectPreview, type ProjectPreview } from "./featured-media";
 import { chromatiqueProject, imageGoNordProject, supermarketProject, selectedProjects } from "./selected-projects";
 
 export type ProjectIndexEntry = {
-  id: string; title: string; summary: string; contribution: string; status: string; href?: string;
+  id: string; title: string; summary: string; contribution: string; status: string; href?: string; preview?: ProjectPreview;
 };
 
 export const sideProjectCaseStudies: readonly (ProjectIndexEntry & { href: string })[] = publishedCaseStudies
@@ -11,6 +12,7 @@ export const sideProjectCaseStudies: readonly (ProjectIndexEntry & { href: strin
     id: project.id, title: project.title, summary: project.summary,
     contribution: project.contribution, status: project.status ?? "Project",
     href: caseStudyPath(project),
+    preview: projectPreview(project),
   }));
 
 export const projectIndex: readonly ProjectIndexEntry[] = [
@@ -19,7 +21,7 @@ export const projectIndex: readonly ProjectIndexEntry[] = [
     contribution: "I co-founded the community and contribute as a speaker. This is collective work.", href: "https://schroedinger-hat.org/" },
   { id: "broskis", title: "Broskis", status: "Publication",
     summary: "My personal publication on Substack.", contribution: "I write here.", href: "https://broski.substack.com/" },
-  { ...chromatiqueProject, status: "In development", href: caseStudyPath(chromatiqueProject) },
+  { ...chromatiqueProject, status: "In development", href: caseStudyPath(chromatiqueProject), preview: projectPreview(chromatiqueProject) },
   { id: "holy-card-generator", title: "HolyCard AI", status: "Digital-only beta",
     summary: "An editable devotional portrait-card studio with PNG and PDF exports.",
     contribution: "I developed the card studio, image-generation flow and forms." },
@@ -34,8 +36,8 @@ export const projectIndex: readonly ProjectIndexEntry[] = [
     contribution: "I’m developing the meeting-app prototype." },
   { id: "social-post", title: "Social post", status: "In progress",
     summary: "An ongoing personal project around social posts.", contribution: "Personal work in progress." },
-  { ...imageGoNordProject, status: "Public source", href: caseStudyPath(imageGoNordProject) },
-  { ...supermarketProject, id: "supermarket-waiting-times", status: "Archived project · 2020", href: caseStudyPath(supermarketProject) },
+  { ...imageGoNordProject, status: "Public source", href: caseStudyPath(imageGoNordProject), preview: projectPreview(imageGoNordProject) },
+  { ...supermarketProject, id: "supermarket-waiting-times", status: "Archived project · 2020", href: caseStudyPath(supermarketProject), preview: projectPreview(supermarketProject) },
   ...sideProjectCaseStudies,
   { id: "comic-learning", title: "Learning to make comic books", status: "In progress",
     summary: "Learning to tell stories through comic-book drawings.", contribution: "I’m learning and practising." },

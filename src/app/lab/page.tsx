@@ -35,7 +35,7 @@ export default function Lab() {
     <PageIntro title="Lab"><p>Side projects, open-source contributions, and experiments you can try.</p></PageIntro>
     <section className={`${siteStyles.container} ${siteStyles.sectionSpace}`} aria-labelledby="lab-projects">
       <h2 id="lab-projects" className={siteStyles.sectionTitle}>Project case studies</h2>
-      <ProjectDirectory entries={sideProjectCaseStudies} />
+      <ProjectDirectory entries={sideProjectCaseStudies} showPreviews />
       <Link href="/play#github-projects" className={`${siteStyles.link} mt-8 underline underline-offset-4`}>Browse the GitHub project index</Link>
     </section>
     <section aria-labelledby="lab-colour-title">

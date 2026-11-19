@@ -28,13 +28,38 @@ test("editorial hierarchy keeps the opening and project rhythm proportionate", a
   expect(title!.x).toBeCloseTo(logo!.x, 0);
   expect(projectTitle!.x).toBeCloseTo(logo!.x, 0);
   expect(trackBox!.x).toBeCloseTo(headerColumn!.x, 0);
-  expect(slide!.width / trackBox!.width).toBeCloseTo(0.64, 2);
+  expect(slide!.width / trackBox!.width).toBeCloseTo(0.53, 2);
+  const nextSlide = (await track.locator("li").nth(1).boundingBox())!;
+  expect((trackBox!.x + trackBox!.width - nextSlide.x) / nextSlide.width).toBeGreaterThan(0.8);
   for (const project of await projects.all()) {
     const spacing = await project.evaluate(element => ({
       top: parseFloat(getComputedStyle(element).paddingTop),
       bottom: parseFloat(getComputedStyle(element).paddingBottom),
     }));
     expect(spacing.top + spacing.bottom).toBeLessThanOrEqual(88);
+  }
+});
+
+test("Home brings the first gallery into view on phones and shares the portfolio palette", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/");
+  const header = page.locator(".site-header");
+  const gallery = page.getByRole("region", { name: "ImageGoNord media", exact: true });
+  const frame = gallery.locator("img").first();
+  expect((await frame.boundingBox())!.y).toBeLessThan(540);
+  const track = await gallery.locator("ol").boundingBox();
+  expect((await frame.boundingBox())!.width / track!.width).toBeCloseTo(0.76, 2);
+  await expect(header).toHaveCSS("background-color", "rgb(17, 17, 17)");
+  await expect(page.getByRole("link", { name: "Read the ImageGoNord story" })).toHaveCSS("border-top-style", "solid");
+  const homeGutter = (await page.getByRole("heading", { level: 1 }).boundingBox())!.x;
+  for (const url of ["/work", "/lab"]) {
+    await page.goto(url);
+    await expect(header).toHaveCSS("background-color", "rgb(17, 17, 17)");
+    const intro = page.getByRole("heading", { level: 1 });
+    expect((await intro.boundingBox())!.x).toBeCloseTo(homeGutter, 0);
+    const size = await intro.evaluate(element => parseFloat(getComputedStyle(element).fontSize));
+    expect(size).toBeGreaterThanOrEqual(40);
+    expect(size).toBeLessThan(44);
   }
 });
 

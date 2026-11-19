@@ -174,21 +174,22 @@
   --space-12: 3rem;
   --space-18: 4.5rem;
   --space-24: 6rem;
-  --gutter: clamp(1rem, 0.5rem + 3.1vw, 3rem);
+  --gutter: clamp(1.25rem, 4.5vw, 5rem);
   --section-space: var(--space-12);
   --intro-space: clamp(2rem, 1.5rem + 2vw, 3rem);
   --project-space: clamp(1.75rem, 1.25rem + 1.7vw, 2.75rem);
 }
-body:has(main > .home-page) {
-  --gutter: clamp(1rem, 5vw, 5rem);
+body:has(main > [data-surface="charcoal"]) {
   --header-columns: repeat(4, minmax(0, 1fr));
   --header-column-gap: 2rem;
+  --header-contact-align: start;
 }
 
 .surface-charcoal, body:has(main > [data-surface="charcoal"]) .site-header {
   --background: var(--charcoal);
   --foreground: var(--reverse);
   --muted-foreground: #bdbdbd;
+  --border: #ffffff24;
   --muted: var(--experiment-ink);
   --accent: var(--experiment-ink);
   --accent-foreground: var(--reverse);

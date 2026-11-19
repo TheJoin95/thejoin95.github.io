@@ -16,6 +16,11 @@ for (const [width, columns] of [[320, 1], [390, 1], [834, 2], [1440, 3]]) {
     expect(columnStarts).toHaveLength(columns);
     expect(columnStarts).toEqual([...columnStarts].sort((a, b) => a - b));
     expect(new Set(cards.map(card => Math.round(card.height))).size).toBeGreaterThan(3);
+    const cover = (title: string) => index.getByRole("listitem")
+      .filter({ has: page.getByRole("heading", { name: title, exact: true }) }).locator(":scope > div").first();
+    const photograph = (await cover("Chromatique").boundingBox())!;
+    const wordmark = (await cover("Broskis").boundingBox())!;
+    expect(photograph.height / photograph.width).toBeGreaterThan(wordmark.height / wordmark.width);
     for (const [i, card] of cards.entries()) {
       expect(card.contained).toBe(true);
       expect(card.x).toBeGreaterThanOrEqual(0);

@@ -99,7 +99,9 @@ test("Lab is crawlable and offers a working colour experiment", async ({ page, r
   expect(html).toContain('rel="canonical" href="http://127.0.0.1:3109/lab"');
 
   await page.goto("/lab");
-  const range = page.getByRole("slider", { name: "Palette reveal" });
+  const stage = page.getByRole("region", { name: "Chromatique palette comparison" });
+  await stage.scrollIntoViewIfNeeded();
+  const range = stage.getByRole("slider", { name: "Palette reveal" });
   await range.focus();
   await page.keyboard.press("End");
   await expect(range).toHaveValue("100");
@@ -120,6 +122,7 @@ test("client navigation animates the page content and active underline and respe
     };
   });
   await page.goto("/");
+  await expect(page.getByRole("button", { name: "Next media in ImageGoNord media" })).toBeVisible();
   const nav = page.getByRole("navigation", { name: "Primary" });
   await expect(page.locator("body")).not.toHaveAttribute("data-route-motion-count", /.+/);
   await expect(page.locator("body")).not.toHaveAttribute("data-nav-motion-count", /.+/);

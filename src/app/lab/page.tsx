@@ -30,9 +30,9 @@ export default function Lab() {
     },
   };
 
-  return <>
+  return <div className="surface-charcoal" data-surface="charcoal">
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeStructuredData(structuredData) }} />
-    <PageIntro title="Lab"><p>Side projects, open-source contributions, and experiments you can try.</p></PageIntro>
+    <PageIntro title="Lab" className="[&>h1]:text-[2.625rem] md:[&>h1]:text-[clamp(2.5rem,1.75rem_+_3.2vw,5rem)]"><p>Side projects, open-source contributions, and experiments you can try.</p></PageIntro>
     <ProjectDirectorySection id="lab-projects" title="Project case studies" entries={sideProjectCaseStudies} showPreviews eagerFirstPreview>
       <Link href="/play#github-projects" className="underline-offset-4">Browse the GitHub project index</Link>
     </ProjectDirectorySection>
@@ -45,5 +45,5 @@ export default function Lab() {
       </div>
       <PaletteStage href="/work/chromatique" eager={false} />
     </section>
-  </>;
+  </div>;
 }

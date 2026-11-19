@@ -14,7 +14,7 @@ export const metadata: Metadata = pageMetadata({ title: "Work", description: wor
 export default function Work() {
   return <div className="surface-charcoal" data-surface="charcoal">
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeStructuredData(workStructuredData(siteOrigin())) }} />
-    <PageIntro title="Selected work.">
+    <PageIntro title="Selected work." className="[&>h1]:text-[2.625rem] md:[&>h1]:text-[clamp(2.5rem,1.75rem_+_3.2vw,5rem)]">
       <p>Software, systems, and open-source contributions. Explore the problem, the implementation and the decisions behind each project.</p>
       <Link href="#project-index-title" className={`${siteStyles.link} text-base`}>Browse the complete index</Link>
     </PageIntro>

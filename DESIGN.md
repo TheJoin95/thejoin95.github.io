@@ -7,14 +7,17 @@ implementation.
 ## Homepage direction
 
 Home opens with a first-person introduction and brings selected work into the
-first viewport. A continuous light surface, fine row dividers and compact
-project descriptions give the real project media room to lead. Each row links
+first viewport. A charcoal surface, quiet row dividers and compact
+project descriptions give the real project media room to lead. Journal and
+newsletter sections use the paper palette. Each project row links
 to its full story for details and attribution. The Chromatique case study
 links directly to the interactive palette comparison in Lab.
 
-On desktop, the first project column shares the header’s four-column grid.
-The opening copy has a shorter reading measure, and each multi-image gallery
-shows a larger portion of its next frame.
+Home, Work and Lab share the charcoal masthead and site gutters. The
+first Home project column follows the header’s four-column grid on desktop.
+On Home, the 53% desktop gallery frame exposes most of the next image.
+Phones use 76% frames and tighter spacing to bring project media into the
+opening viewport.
 
 ## Lab and navigation motion
 
@@ -45,7 +48,7 @@ remain above the index, and Home links directly to the collection.
 The cover proportions reserve space before the lazy preview loads. Available
 project photos, captures, diagrams and official share artwork use the
 existing media paths and static derivatives. Entries without source media use
-editorial wordmarks in the existing experiment palette. The same composition
+shallower editorial wordmarks in the existing experiment palette. The same composition
 shows through if a preview fails. CSS columns cover the layout and reading
 order without a library or client measurement.
 

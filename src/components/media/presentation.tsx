@@ -5,7 +5,7 @@ import type { GalleryMedia } from "@/lib/gallery";
 export const galleryStyles = {
   track: "relative flex snap-x snap-proximity gap-3 overflow-x-auto overscroll-x-contain pb-2 md:gap-4",
   slide: "min-w-0 shrink-0 snap-start",
-  peek: "basis-[88%] md:basis-[84%] desktop:basis-[var(--gallery-slide-width,76%)]",
+  peek: "basis-[var(--gallery-mobile-slide-width,88%)] md:basis-[84%] desktop:basis-[var(--gallery-slide-width,76%)]",
   frame: "relative aspect-[4/3] bg-(--experiment-ink) text-(--reverse) md:aspect-[5/3]",
 };
 

@@ -11,7 +11,7 @@ export function SiteHeader() {
     <Link href="/" className={cn(siteStyles.link, "self-start text-xl tracking-[-0.035em] hover:underline")} aria-label="Miki Lombardi — Home">Miki Lombardi</Link>
     <p className="py-2 text-meta desktop:py-3">Software engineer<br className="hidden desktop:block" /> &amp; open-source contributor</p>
     <Suspense fallback={<NavigationLinks />}><Navigation /></Suspense>
-    <div className={cn("hidden desktop:flex desktop:flex-col desktop:items-start desktop:justify-self-end", "[&_a]:inline-flex [&_a]:min-h-11 [&_a]:items-center [&_a]:gap-[0.35rem] [&_a:hover]:underline")}>
+    <div className={cn("hidden desktop:flex desktop:flex-col desktop:items-start desktop:justify-self-[var(--header-contact-align,end)]", "[&_a]:inline-flex [&_a]:min-h-11 [&_a]:items-center [&_a]:gap-[0.35rem] [&_a:hover]:underline")}>
       <a href="https://github.com/TheJoin95">GitHub <ArrowUpRight aria-hidden="true" size={18} /></a>
       <a href="https://www.linkedin.com/in/miki-lombardi/">LinkedIn <ArrowUpRight aria-hidden="true" size={18} /></a>
       <Link href="/about#contact">Get in touch <ArrowUpRight aria-hidden="true" size={18} /></Link>

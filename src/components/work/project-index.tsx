@@ -26,8 +26,8 @@ export function ProjectIndex() {
           const hasMedia = preview && !preview.src.startsWith("/share/projects/");
           const diagram = preview?.src.endsWith(".svg");
           return <li key={project.id} className="mb-10 break-inside-avoid last:mb-0 desktop:mb-14">
-            <div className={`relative isolate flex items-end overflow-hidden p-[7%] ${coverRatios[index % coverRatios.length]} ${coverPalettes[index % coverPalettes.length]}`}>
-              <span aria-hidden="true" className="w-full border-t border-current pt-4 text-[clamp(1.65rem,3vw,3rem)] leading-none tracking-[-0.05em] text-balance">
+            <div className={`relative isolate flex items-end overflow-hidden p-[7%] ${hasMedia ? coverRatios[index % coverRatios.length] : "aspect-[2/1]"} ${coverPalettes[index % coverPalettes.length]}`}>
+              <span aria-hidden="true" className="w-full border-t border-current pt-3 text-[clamp(1.4rem,2.5vw,2.5rem)] leading-none tracking-[-0.04em] text-balance">
                 {project.title}
               </span>
               {hasMedia ? <ProjectCoverImage

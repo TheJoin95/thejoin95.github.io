@@ -49,3 +49,18 @@ noindex review run.
   review captured the served reader routes.
 - Hosted Netlify behavior and production domain behavior are outside this
   local review. The owner’s design decision remains open in MIC-123.
+
+## Alignment follow-up
+
+The owner found the first review preview too far from the reference.
+The revised Home brings imagery forward on phones and lets most of the
+next frame show on desktops. Its opening and selected work share the
+charcoal palette with Work and Lab. The routes use common gutters and
+the Work and Lab intros have smaller titles. Work’s text-only covers are
+shallower so source photography and project artwork carry more weight.
+The first review captures above document the earlier build.
+
+At 390 px, the first Home gallery starts at 528 px, 87 px earlier than
+the previous preview. The new phone and desktop gallery frames occupy
+76% and 53% of their tracks. The follow-up passed 128 unit tests, 55
+targeted browser checks, and the local production build.

@@ -16,15 +16,17 @@ export const metadata: Metadata = { ...homeMetadata, title: { absolute: homeIden
 
 
 export default function Home() {
-  return <div className="home-page">
+  return <div data-surface="charcoal">
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeStructuredData(homeStructuredData(siteOrigin())) }} />
-    <div className={`${siteStyles.container} pt-10 pb-10 md:pt-20 md:pb-24 desktop:pt-28 desktop:pb-28`}>
-      <div className="max-w-[39rem] text-[clamp(1.75rem,1.5rem_+_0.7vw,2.25rem)] leading-[1.2] tracking-[-0.035em]">
-        <h1 className="inline">I’m Miki, a Senior Software Engineer at Adobe.</h1>{" "}
-        <p className="inline text-muted-foreground">I build software, contribute to open source, and write about what I learn.</p>
+    <div className="surface-charcoal">
+      <div className={`${siteStyles.container} pt-6 pb-5 md:pt-14 md:pb-16 desktop:pt-16 desktop:pb-20`}>
+        <div className="max-w-[36rem] text-[clamp(1.5rem,1.325rem_+_0.6vw,2rem)] leading-[1.2] tracking-[-0.03em]">
+          <h1 className="inline">I’m Miki, a Senior Software Engineer at Adobe.</h1>{" "}
+          <p className="inline text-muted-foreground">I build software, contribute to open source, and write about what I learn.</p>
+        </div>
       </div>
+      <SelectedWork />
     </div>
-    <SelectedWork />
     <SelectedWriting />
     <Section labelledBy="newsletter-title"><div className={siteStyles.editorialRow}>
       <h2 id="newsletter-title" className={siteStyles.sectionTitle}>Stay in the loop.</h2>

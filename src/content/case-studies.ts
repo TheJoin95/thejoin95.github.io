@@ -1,3 +1,4 @@
+import { organizationProjectStories } from "./organization-project-stories";
 import { sideProjectStories } from "./side-project-stories";
 import { paletteImages } from "./featured-media";
 import { chromatiqueProject, imageGoNordProject, supermarketProject, type SelectedProject } from "./selected-projects";
@@ -79,6 +80,7 @@ const stories: readonly CaseStudy[] = [
     ],
   },
   ...sideProjectStories,
+  ...organizationProjectStories,
 ];
 
 export function caseStudyPath(project: Pick<SelectedProject, "id">) { return `/work/${project.id}`; }

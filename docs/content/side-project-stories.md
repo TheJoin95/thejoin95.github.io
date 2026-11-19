@@ -17,7 +17,14 @@ history for projects whose contributions are documented in GitHub.
 - Open Source Wrapped and YouTube to Anchor.fm cite their public source and
   the relevant commits from project history.
 
-The GitHub index uses public non-fork repositories on TheJoin95's profile and
-public merged pull requests authored by TheJoin95. The latter were checked in
-four date buckets through 2026-11-18. The link to GitHub search includes public
-pull requests of all statuses.
+The GitHub index includes public original repositories on TheJoin95’s profile
+and public repositories where TheJoin95 authored a merged pull request. The
+cutoff is five stars, using the counts verified through GitHub on 2026-11-19.
+Each contribution entry links to its supporting pull request. The broader
+GitHub search also includes public pull requests of other statuses.
+
+The upstream case studies cite the relevant merged contributions. Puppeteer
+covers its documentation upgrade, GitHub Explore covers the Made in Italy
+collection, and Omnixent covers the Bing integration and market-selection
+follow-up. The other studies describe the documented scope on ImageGoNord CLI,
+the Schrödinger Hat website, Tanglecat, Peoplez, and Snackjob.

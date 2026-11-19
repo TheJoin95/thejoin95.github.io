@@ -4,14 +4,24 @@ import { readFileSync, existsSync } from "node:fs";
 import { CaseStudyPage } from "@/components/work/case-study";
 import { caseStudyPath, caseStudyStructuredData, findCaseStudy, isPublishableStory, publishedCaseStudies } from "@/content/case-studies";
 import { selectedProjects } from "@/content/selected-projects";
+import { organizationProjectStories } from "@/content/organization-project-stories";
+import { organizationGitHubRepositories } from "@/content/github-projects";
 import ProjectStory, { generateMetadata, generateStaticParams } from "@/app/work/[slug]/page";
 import { proxy } from "@/proxy";
 import { NextRequest } from "next/server";
 
 describe("evidenced project stories", () => {
+  test("new upstream case studies cite repositories in the five-star index", () => {
+    for (const story of organizationProjectStories) {
+      const evidence = story.sections.flatMap(section => section.links ?? []);
+      expect(organizationGitHubRepositories.some(({ repository }) => evidence.some(({ href }) =>
+        href.startsWith(`https://github.com/${repository}/pull/`),
+      ))).toBe(true);
+    }
+  });
   test("featured and side-project stories publish with distinct decisions and real evidence", () => {
     expect(publishedCaseStudies.slice(0, selectedProjects.length).map(story => story.project)).toEqual([...selectedProjects]);
-    expect(publishedCaseStudies.slice(3).map(({ project }) => project.id)).toEqual(["certo", "vitni", "vitni-credentials", "ambisonic-audio", "open-source-day", "browsir", "open-source-wrapped", "youtube-to-anchorfm"]);
+    expect(publishedCaseStudies.slice(3).map(({ project }) => project.id)).toEqual(["certo", "vitni", "vitni-credentials", "ambisonic-audio", "open-source-day", "browsir", "open-source-wrapped", "youtube-to-anchorfm", "puppeteer", "github-explore", "omnixent", "imagegonord-cli", "schrodinger-hat-website", "tanglecat", "peoplez", "snackjob"]);
     expect(generateStaticParams()).toEqual(publishedCaseStudies.map(({ project }) => ({ slug: project.id })));
     for (const story of publishedCaseStudies) {
       expect(story.sections.map(section => section.id)).toEqual(["problem", "decisions", "implementation", "evidence"]);

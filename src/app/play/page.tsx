@@ -7,7 +7,7 @@ import { PaletteStage } from "@/components/home/palette-stage";
 import { ProjectDirectory } from "@/components/projects/project-directory";
 import { ComicPreview } from "@/components/play/comic-preview";
 import { playDescription, playProjects, playStructuredData } from "@/content/play";
-import { publicGitHubRepositories, publicPullRequestRepositories } from "@/content/github-projects";
+import { githubStarsVerifiedAt, minimumGitHubStars, organizationGitHubRepositories, publicGitHubRepositories } from "@/content/github-projects";
 
 export const metadata = pageMetadata({ title: "Play", description: playDescription, path: "/play" });
 export default function Play() {
@@ -22,19 +22,25 @@ export default function Play() {
     </div></Section>
     <Section labelledBy="github-projects"><div className={siteStyles.container}>
       <h2 id="github-projects" className={siteStyles.sectionTitle}>GitHub project index</h2>
+      <p className="mt-4 text-meta text-muted-foreground">
+        Public projects with {minimumGitHubStars} or more stars. Counts checked <time dateTime={githubStarsVerifiedAt}>{githubStarsVerifiedAt}</time>.
+      </p>
       <details className="mt-6 border-y border-border py-3">
         <summary className="min-h-11 cursor-pointer py-2">Public repositories on my GitHub profile</summary>
         <ul className="grid gap-x-6 md:grid-cols-2">
-          {publicGitHubRepositories.map(repository => <li key={repository}>
+          {publicGitHubRepositories.map(({ repository, stars }) => <li key={repository} className="[overflow-wrap:anywhere]">
             <a className={`${siteStyles.link} underline underline-offset-4`} href={`https://github.com/${repository}`}>{repository.split("/")[1]}</a>
+            <span className="ms-2 text-meta text-muted-foreground">{stars.toLocaleString("en-US")} stars</span>
           </li>)}
         </ul>
       </details>
       <details className="border-b border-border py-3">
-        <summary className="min-h-11 cursor-pointer py-2">Repositories with my merged pull requests</summary>
+        <summary className="min-h-11 cursor-pointer py-2">Projects I contributed to</summary>
         <ul className="grid gap-x-6 md:grid-cols-2">
-          {publicPullRequestRepositories.map(repository => <li key={repository}>
-            <a className={`${siteStyles.link} underline underline-offset-4`} href={`https://github.com/${repository}/pulls?q=is%3Apr+is%3Amerged+author%3ATheJoin95`}>{repository}</a>
+          {organizationGitHubRepositories.map(({ repository, stars, contribution }) => <li key={repository} className="[overflow-wrap:anywhere]">
+            <a className={`${siteStyles.link} underline underline-offset-4`} href={`https://github.com/${repository}`}>{repository}</a>
+            <span className="ms-2 text-meta text-muted-foreground">{stars.toLocaleString("en-US")} stars</span>
+            <a className={`${siteStyles.link} ms-2 text-meta underline underline-offset-4`} href={contribution} aria-label={`View my contribution to ${repository}`}>Contribution</a>
           </li>)}
         </ul>
       </details>

@@ -9,7 +9,7 @@ import Work, { metadata } from "@/app/work/page";
 describe("Work gallery and complete project index", () => {
   test("publishes every approved inventory entry once, preserving shared featured copy", () => {
     expect(projectIndex.map(project => project.id).sort()).toEqual([...inventory.projects, ...sideProjectCaseStudies].map(project => project.id).sort());
-    expect(new Set(projectIndex.map(project => project.id)).size).toBe(19);
+    expect(new Set(projectIndex.map(project => project.id)).size).toBe(27);
     for (const featured of selectedProjects) {
       const entry = projectIndex.find(project => project.title === featured.title)!;
       expect(entry.summary).toBe(featured.summary);
@@ -21,10 +21,10 @@ describe("Work gallery and complete project index", () => {
   });
   test("renders usable destinations and honest unlinked prototypes in semantic HTML", () => {
     const html = renderToStaticMarkup(<ProjectIndex />);
-    expect(html.match(/<li /g)).toHaveLength(19);
-    expect(html.match(/<h3/g)).toHaveLength(19);
+    expect(html.match(/<li /g)).toHaveLength(27);
+    expect(html.match(/<h3/g)).toHaveLength(27);
     expect(html.match(/No public link yet/g)).toHaveLength(6);
-    expect(html.match(/<a /g)).toHaveLength(13);
+    expect(html.match(/<a /g)).toHaveLength(21);
     expect(html).toContain('href="https://broski.substack.com/"');
     expect(html).toContain("co-founded");
     expect(html).toContain("collective work");
@@ -47,7 +47,7 @@ describe("Work gallery and complete project index", () => {
   test("structured data mirrors all visible entries without inventing URLs or claims", () => {
     const schema = workStructuredData("https://example.com");
     expect(schema.url).toBe("https://example.com/work");
-    expect(schema.mainEntity.numberOfItems).toBe(19);
+    expect(schema.mainEntity.numberOfItems).toBe(27);
     schema.mainEntity.itemListElement.forEach((item, index) => {
       const project = projectIndex[index];
       expect(item.position).toBe(index + 1);

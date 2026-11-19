@@ -3,10 +3,10 @@ for (const [width, columns] of [[320, 1], [390, 1], [834, 2], [1440, 3]]) test(`
   const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width, height: 1000 } });
   const page = await context.newPage(); await page.goto("http://127.0.0.1:3109/play");
   const directory = page.getByRole("region", { name: "Projects & community.", exact: true });
-  await expect(directory.getByRole("listitem")).toHaveCount(18);
+  await expect(directory.getByRole("listitem")).toHaveCount(26);
   expect(await directory.locator("ul").evaluate(element => getComputedStyle(element).gridTemplateColumns.split(" ").length)).toBe(columns);
   await expect(directory.getByText("No public link yet.", { exact: true })).toHaveCount(5);
-  await expect(directory.getByRole("link")).toHaveCount(13);
+  await expect(directory.getByRole("link")).toHaveCount(21);
   for (const title of ["Broskis", "Chromatique", "HolyCard AI", "CoproSync", "Alerting", "Hop", "Social post", "ImageGoNord", "Supermarket waiting times", "Schrödinger Hat"]) await expect(directory.getByRole("heading", { level: 3, name: title, exact: true })).toBeVisible();
   const comic = page.getByRole("region", { name: "Learning to make comic books.", exact: true });
   await expect(comic).toContainText("A work in progress"); await expect(comic.locator("img, canvas, svg")).toHaveCount(0);
@@ -33,7 +33,7 @@ test("Play provides crawler-visible collection schema, canonical and the real de
   await page.goto("/play");
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", "http://127.0.0.1:3109/play");
   const schema = JSON.parse((await page.locator('script[type="application/ld+json"]').textContent())!);
-  expect(schema.mainEntity.numberOfItems).toBe(18); expect(schema.hasPart.name).toBe("Learning to make comic books");
+  expect(schema.mainEntity.numberOfItems).toBe(26); expect(schema.hasPart.name).toBe("Learning to make comic books");
   const imageUrl = await page.locator('meta[property="og:image"]').getAttribute("content");
   const response = await request.get(imageUrl!); expect(response.status()).toBe(200);
   expect(response.headers()["content-type"]).toContain("image/png");

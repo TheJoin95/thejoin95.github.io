@@ -115,7 +115,7 @@ export const sideProjectStories = [
       { id: "problem", title: "Publish an episode in two places", paragraphs: ["The live show already had a video episode. Preparing a second version for podcast listeners created a recurring publishing task for the team."] },
       { id: "decisions", title: "Package the workflow as an action", paragraphs: ["The team packaged the workflow as a GitHub Action, so a repository could run it as part of its publishing process. The integration was built around Anchor.fm as it existed at the time."] },
       { id: "implementation", title: "Maintain the shared integration", paragraphs: ["My work included release and documentation changes and merging contributed fixes. The public history records changes to Spotify login and action error handling from collaborators."], links: [{ href: `${podcast}/commit/601d281daadd2c210649aed350520a58cfad35eb`, label: "See the version 2.5.0 release commit" }] },
-      { id: "evidence", title: "Read the original workflow", paragraphs: ["The project README documents the original use case and configuration. Provider changes can affect whether the historic integration still runs today."], links: [{ href: podcast, label: "Explore the action on GitHub" }] },
+      { id: "evidence", title: "Read the original workflow", paragraphs: ["The project README documents the original use case and configuration. Provider changes can affect whether the historic integration still runs today."], links: [{ href: podcast, label: "Explore the action on GitHub" }, { href: "https://github.com/sdras/awesome-actions/pull/482", label: "Read my Awesome Actions submission" }] },
     ],
   },
 ] satisfies readonly CaseStudy[];

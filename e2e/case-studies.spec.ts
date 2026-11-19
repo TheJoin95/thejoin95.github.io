@@ -23,7 +23,7 @@ for (const width of [320, 390, 834, 1440]) test(`all project stories are readabl
       await page.screenshot({ path: `/tmp/mic16-${story.id}-${width}.png`, fullPage: true });
       await page.screenshot({ path: `/tmp/mic16-${story.id}-${width}-opening.png` });
     }
-    await expect(page.getByRole("navigation", { name: "More project stories" }).getByRole("link")).toHaveCount(11);
+    await expect(page.getByRole("navigation", { name: "More project stories" }).getByRole("link")).toHaveCount(19);
     await page.getByRole("link", { name: "← All work", exact: true }).click();
     await expect(page.getByRole("heading", { level: 1 })).toHaveText("Selected work.");
   }
@@ -89,8 +89,13 @@ test("Lab and Play expose the named project stories and their branded share card
   }
   const githubIndex = page.getByRole("region", { name: "GitHub project index", exact: true });
   await expect(githubIndex.getByRole("link", { name: "Search all my public pull requests on GitHub" })).toBeVisible();
-  await githubIndex.getByText("Repositories with my merged pull requests", { exact: true }).click();
-  await expect(githubIndex.getByRole("link", { name: "puppeteer/puppeteer", exact: true })).toBeVisible();
+  await githubIndex.getByText("Projects I contributed to", { exact: true }).click();
+  await expect(githubIndex.getByRole("link", { name: "puppeteer/puppeteer", exact: true })).toHaveAttribute("href", "https://github.com/puppeteer/puppeteer");
+  await expect(githubIndex.getByRole("link", { name: "View my contribution to puppeteer/puppeteer", exact: true })).toHaveAttribute("href", "https://github.com/puppeteer/puppeteer/pull/11434");
+  await page.getByRole("link", { name: "Puppeteer", exact: true }).click();
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Puppeteer");
+  await expect(page.getByRole("link", { name: "Read the Docusaurus migration pull request" })).toHaveAttribute("href", "https://github.com/puppeteer/puppeteer/pull/11434");
+  await page.goBack();
   await page.getByRole("link", { name: "Ambisonic Audio", exact: true }).click();
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Ambisonic Audio");
   await expect(page.getByRole("link", { name: "Read the original journal article" })).toHaveAttribute("href", "/blog/2018-10-28-how-make-8d-ambisonic-audio-track-python");

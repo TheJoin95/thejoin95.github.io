@@ -6,16 +6,29 @@ import { ComicPreview } from "@/components/play/comic-preview";
 import { ProjectDirectory } from "@/components/projects/project-directory";
 import { playProjects, comicLearning, playStructuredData } from "@/content/play";
 import { sideProjectCaseStudies, projectIndex } from "@/content/work";
+import { minimumGitHubStars, organizationGitHubRepositories, publicGitHubRepositories } from "@/content/github-projects";
 
 describe("Play directory and comic-learning preview", () => {
+  test("the public GitHub index lists only qualifying repositories and includes contribution evidence", () => {
+    const repositories = [...publicGitHubRepositories, ...organizationGitHubRepositories];
+    expect(minimumGitHubStars).toBe(5);
+    expect(repositories.every(({ stars }) => Number.isInteger(stars) && stars >= minimumGitHubStars)).toBe(true);
+    expect(new Set(repositories.map(({ repository }) => repository.toLowerCase())).size).toBe(repositories.length);
+    const html = renderToStaticMarkup(<Play />);
+    expect(html).toContain("Public projects with 5 or more stars.");
+    for (const { repository, contribution } of organizationGitHubRepositories) {
+      expect(html).toContain(`href="https://github.com/${repository}"`);
+      expect(html).toContain(`href="${contribution}"`);
+    }
+  });
   test("the directory and separate comic preview cover every approved project using shared records", () => {
     expect([...playProjects, comicLearning].map(project => project.id).sort()).toEqual([...inventory.projects, ...sideProjectCaseStudies].map(project => project.id).sort());
-    expect(playProjects).toHaveLength(18);
+    expect(playProjects).toHaveLength(26);
     for (const project of playProjects) expect(project).toBe(projectIndex.find(entry => entry.id === project.id)!);
     expect(playProjects.find(project => project.id === "hop")!.title).toBe("Hop");
     expect(playProjects.find(project => project.id === "broskis")!.href).toBe("https://broski.substack.com/");
     expect(playProjects.find(project => project.id === "supermarket-waiting-times")!.status).toBe("Archived project · 2020");
-    expect(playProjects.filter(project => project.href)).toHaveLength(13);
+    expect(playProjects.filter(project => project.href)).toHaveLength(21);
   });
   test("unlinked prototypes retain honest states and never get fake actions or external arrows", () => {
     const entries = playProjects.filter(project => !project.href);
@@ -45,7 +58,7 @@ describe("Play directory and comic-learning preview", () => {
     expect(metadata.alternates?.canonical).toBe("https://example.com/play");
     expect(metadata.openGraph).toMatchObject({ type: "website", images: [{ url: "https://example.com/opengraph-image" }] });
     const schema = playStructuredData("https://example.com");
-    expect(schema.mainEntity.numberOfItems).toBe(18);
+    expect(schema.mainEntity.numberOfItems).toBe(26);
     schema.mainEntity.itemListElement.forEach((item, index) => {
       const project = playProjects[index];
       expect(item.name).toBe(project.title); expect(item.position).toBe(index + 1);

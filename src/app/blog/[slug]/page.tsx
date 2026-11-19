@@ -1,3 +1,4 @@
+import { PageTransition } from "@/components/site/page-transition";
 import { articleMetadata, serializeStructuredData } from "@/lib/seo";
 import { siteOrigin } from "@/lib/seo-config";
 import { findArticle, publishedArticles } from "@/lib/journal-server";
@@ -18,6 +19,6 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   if (!article) notFound();
   const { html, contents } = await renderReading(article.body, article.archival);
   const origin = siteOrigin();
-  return <><ReadingTemplate article={article} html={html} contents={contents} related={relatedWriting(article, await publishedArticles())} />
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeStructuredData(articleStructuredData(article, origin)) }} /></>;
+  return <PageTransition key={article.slug}><ReadingTemplate article={article} html={html} contents={contents} related={relatedWriting(article, await publishedArticles())} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeStructuredData(articleStructuredData(article, origin)) }} /></PageTransition>;
 }

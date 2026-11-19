@@ -1,3 +1,4 @@
+import { PageTransition } from "@/components/site/page-transition";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CaseStudyPage } from "@/components/work/case-study";
@@ -14,5 +15,5 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function ProjectStory({ params }: { params: Promise<{ slug: string }> }) {
   const story = findCaseStudy((await params).slug);
   if (!story) notFound();
-  return <><CaseStudyPage story={story} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeStructuredData(caseStudyStructuredData(story, siteOrigin())) }} /></>;
+  return <PageTransition key={story.project.id}><CaseStudyPage story={story} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeStructuredData(caseStudyStructuredData(story, siteOrigin())) }} /></PageTransition>;
 }

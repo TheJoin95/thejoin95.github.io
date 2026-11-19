@@ -1,3 +1,4 @@
+import { PageTransition } from "@/components/site/page-transition";
 import { pageMetadata, serializeStructuredData } from "@/lib/seo";
 import { siteOrigin } from "@/lib/seo-config";
 import type { Metadata } from "next";
@@ -12,7 +13,7 @@ import { workDescription, workStructuredData } from "@/content/work";
 export const metadata: Metadata = pageMetadata({ title: "Work", description: workDescription, path: "/work" });
 
 export default function Work() {
-  return <div className="surface-charcoal" data-surface="charcoal">
+  return <PageTransition className="surface-charcoal" data-surface="charcoal">
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeStructuredData(workStructuredData(siteOrigin())) }} />
     <PageIntro title="Selected work." className="[&>h1]:text-[2.625rem] md:[&>h1]:text-[clamp(2.5rem,1.75rem_+_3.2vw,5rem)]">
       <p>Software, systems, and open-source contributions. Explore the problem, the implementation and the decisions behind each project.</p>
@@ -24,5 +25,5 @@ export default function Work() {
       <h2 id="work-play-title" className={siteStyles.sectionTitle}>Beyond the brief.</h2>
       <div className={siteStyles.copy}><p>Small experiments and things I’m learning along the way.</p><Link href="/play" className={siteStyles.link}>Explore Play</Link></div>
     </div></Section>
-  </div>;
+  </PageTransition>;
 }

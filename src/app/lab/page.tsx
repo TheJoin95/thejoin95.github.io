@@ -1,3 +1,4 @@
+import { PageTransition } from "@/components/site/page-transition";
 import Link from "next/link";
 import { PaletteStage } from "@/components/home/palette-stage";
 import { PageIntro } from "@/components/site/primitives";
@@ -30,7 +31,7 @@ export default function Lab() {
     },
   };
 
-  return <div className="surface-charcoal" data-surface="charcoal">
+  return <PageTransition className="surface-charcoal" data-surface="charcoal">
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeStructuredData(structuredData) }} />
     <PageIntro title="Lab" className="[&>h1]:text-[2.625rem] md:[&>h1]:text-[clamp(2.5rem,1.75rem_+_3.2vw,5rem)]"><p>Side projects, open-source contributions, and experiments you can try.</p></PageIntro>
     <ProjectDirectorySection id="lab-projects" title="Project case studies" entries={sideProjectCaseStudies} showPreviews eagerFirstPreview>
@@ -45,5 +46,5 @@ export default function Lab() {
       </div>
       <PaletteStage href="/work/chromatique" eager={false} />
     </section>
-  </div>;
+  </PageTransition>;
 }

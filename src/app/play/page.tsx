@@ -1,3 +1,4 @@
+import { PageTransition } from "@/components/site/page-transition";
 import { pageMetadata, serializeStructuredData } from "@/lib/seo";
 import { siteOrigin } from "@/lib/seo-config";
 import { siteStyles } from "@/components/site/styles";
@@ -11,7 +12,7 @@ import { githubStarsVerifiedAt, minimumGitHubStars, organizationGitHubRepositori
 
 export const metadata = pageMetadata({ title: "Play", description: playDescription, path: "/play" });
 export default function Play() {
-  return <>
+  return <PageTransition>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeStructuredData(playStructuredData(siteOrigin())) }} />
     <PageIntro title="Built out of curiosity."><p>Side projects, community, and experiments.</p></PageIntro>
     <PaletteStage href="/work/chromatique" />
@@ -55,5 +56,5 @@ export default function Play() {
         <div className={siteStyles.actions}><Link href="/about">More about Miki</Link></div>
       </div>
     </div></Section>
-  </>;
+  </PageTransition>;
 }

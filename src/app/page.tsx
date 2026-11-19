@@ -1,3 +1,4 @@
+import { PageTransition } from "@/components/site/page-transition";
 import { pageMetadata, serializeStructuredData } from "@/lib/seo";
 import { siteOrigin } from "@/lib/seo-config";
 import Link from "next/link";
@@ -16,7 +17,7 @@ export const metadata: Metadata = { ...homeMetadata, title: { absolute: homeIden
 
 
 export default function Home() {
-  return <div data-surface="charcoal">
+  return <PageTransition data-surface="charcoal">
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeStructuredData(homeStructuredData(siteOrigin())) }} />
     <div className="surface-charcoal">
       <div className={`${siteStyles.container} pt-6 pb-5 md:pt-14 md:pb-16 desktop:pt-16 desktop:pb-20`}>
@@ -32,5 +33,5 @@ export default function Home() {
       <h2 id="newsletter-title" className={siteStyles.sectionTitle}>Stay in the loop.</h2>
       <div className={siteStyles.copy}><p>Subscribe for new writing and updates. Unsubscribe at any time.</p><NewsletterForm /><Button asChild variant="link"><Link href="/blog">Read the Journal</Link></Button></div>
     </div></Section>
-  </div>;
+  </PageTransition>;
 }

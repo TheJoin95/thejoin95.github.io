@@ -14,16 +14,19 @@ export function RouteMotion({ pathname }: { pathname: string }) {
     if (preference.matches || !main?.animate) return;
 
     const easing = "cubic-bezier(0.2, 0.7, 0.3, 1)";
-    const entrance = main.animate(
-      [{ opacity: 0.64, translate: "0 12px" }, { opacity: 1, translate: "none" }],
-      { duration: 280, easing },
+    const hasViewTransition = CSS.supports("view-transition-class: page-change")
+      && CSS.supports("selector(:active-view-transition)")
+      && document.documentElement.matches(":active-view-transition");
+    const entrance = hasViewTransition ? undefined : main.animate(
+      [{ opacity: 0.35, translate: "0 22px" }, { opacity: 1, translate: "none" }],
+      { duration: 360, easing },
     );
     const indicator = document.querySelector<HTMLElement>("[data-nav-indicator]")?.animate(
       [{ opacity: 0.45, scale: "0.35 1" }, { opacity: 1, scale: "1 1" }],
       { duration: 220, easing },
     );
     const cancel = () => {
-      entrance.cancel();
+      entrance?.cancel();
       indicator?.cancel();
     };
     const respectPreference = () => {

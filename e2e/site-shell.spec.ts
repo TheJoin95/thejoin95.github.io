@@ -107,9 +107,10 @@ test("Lab is crawlable and offers a working colour experiment", async ({ page, r
   await expect(range).toHaveValue("100");
 });
 
-test("client navigation animates the page content and active underline and respects reduced motion", async ({ page }) => {
+test("fallback navigation animates the page and active underline and respects reduced motion", async ({ page }) => {
   await page.emulateMedia({ reducedMotion: "no-preference" });
   await page.addInitScript(() => {
+    Object.defineProperty(document, "startViewTransition", { value: undefined });
     const animate = Element.prototype.animate;
     Element.prototype.animate = function (keyframes, options) {
       const target = this.id === "main-content" ? "routeMotionCount"
@@ -149,6 +150,73 @@ test("client navigation animates the page content and active underline and respe
   await expect(page.locator("body")).toHaveAttribute("data-route-motion-count", "2");
   await expect(page.locator("body")).toHaveAttribute("data-nav-motion-count", "1");
   await expect(page.locator("main")).toHaveCSS("opacity", "1");
+});
+
+test("page transitions animate the outgoing and incoming views with a fixed header", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  await page.addInitScript(() => {
+    function observeAnimations() {
+      if (document.body) {
+        const previous = document.body.dataset.pageAnimations;
+        const names = previous?.split(" ") ?? [];
+        for (const animation of document.getAnimations()) {
+          if (animation instanceof CSSAnimation && /^page-(in|out)$/.test(animation.animationName)) {
+            if (!names.includes(animation.animationName)) names.push(animation.animationName);
+          }
+          if (!(animation instanceof CSSAnimation) && animation.effect instanceof KeyframeEffect
+            && animation.effect.target?.id === "main-content" && !names.includes("history-in")) {
+            names.push("history-in");
+          }
+        }
+        const next = names.join(" ").trim();
+        if (next !== previous) document.body.dataset.pageAnimations = next;
+      }
+      requestAnimationFrame(observeAnimations);
+    }
+    requestAnimationFrame(observeAnimations);
+  });
+  await page.goto("/work");
+  const header = page.locator("header.site-header");
+  const headerBox = await header.boundingBox();
+  const nav = header.getByRole("navigation", { name: "Primary" });
+  await expect(nav.getByRole("link", { name: "Work", exact: true })).toHaveAttribute("aria-current", "page");
+  await expect(page.getByRole("button", { name: "Next media in ImageGoNord media" })).toBeVisible();
+  await expect(page.locator("body")).toHaveAttribute("data-page-animations", "");
+  const story = page.getByRole("link", { name: "Read the ImageGoNord story", exact: true }).first();
+  await story.click();
+  await expect(page).toHaveURL(/\/work\/imagegonord$/);
+  await expect(page.getByRole("heading", { level: 1, name: "ImageGoNord" })).toBeVisible();
+  await expect(page.locator("body")).toHaveAttribute("data-page-animations", /page-out/);
+  await expect(page.locator("body")).toHaveAttribute("data-page-animations", /page-in/);
+  expect(await header.boundingBox()).toEqual(headerBox);
+
+  const resetMotion = async () => {
+    await expect.poll(() => page.evaluate(() => document.getAnimations()
+      .some(animation => (animation instanceof CSSAnimation && /^page-(in|out)$/.test(animation.animationName))
+        || (animation.effect instanceof KeyframeEffect && animation.effect.target?.id === "main-content")))).toBe(false);
+    await page.evaluate(() => { document.body.dataset.pageAnimations = ""; });
+  };
+  await resetMotion();
+  await page.goBack();
+  await expect(page).toHaveURL(/\/work$/);
+  await expect(page.locator("body")).toHaveAttribute("data-page-animations", /history-in/);
+  await resetMotion();
+
+  await page.getByRole("link", { name: "Browse the complete index", exact: true }).click();
+  await expect(page).toHaveURL(/#project-index-title$/);
+  await expect(page.locator("body")).toHaveAttribute("data-page-animations", "");
+  await nav.getByRole("link", { name: "Lab", exact: true }).click();
+  await expect(page).toHaveURL(/\/lab$/);
+  await expect(page.getByRole("heading", { name: "Lab", exact: true })).toBeVisible();
+  await expect(page.locator("body")).toHaveAttribute("data-page-animations", /page-out/);
+  await expect(page.locator("body")).toHaveAttribute("data-page-animations", /page-in/);
+  await resetMotion();
+
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await nav.getByRole("link", { name: "Play", exact: true }).click();
+  await expect(page).toHaveURL(/\/play$/);
+  await expect(page.getByRole("heading", { name: "Built out of curiosity.", exact: true })).toBeVisible();
+  await expect(page.locator("body")).toHaveAttribute("data-page-animations", "");
 });
 
 test("Home, Play and Lab omit the retired mascot and its runtime", async ({ request }) => {

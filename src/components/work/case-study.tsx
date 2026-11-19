@@ -12,7 +12,10 @@ function StoryBodySection({ section }: { section: StorySection }) {
     <div className={`${siteStyles.copy} text-lg leading-relaxed`}>
       {section.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
       {section.code ? <div role="region" aria-label="Reproduce the palette conversion" tabIndex={0} className="max-w-full overflow-x-auto bg-(--ink) p-5 text-sm text-(--paper)"><pre><code>{section.code}</code></pre></div> : null}
-      {section.links ? <ul className="flex list-none flex-col gap-2 p-0">{section.links.map(link => <li key={link.href}><a className="inline-flex min-h-11 items-center underline underline-offset-4" href={link.href}>{link.label}</a></li>)}</ul> : null}
+      {section.links ? <ul className="flex list-none flex-col gap-2 p-0">{section.links.map(link => {
+        const StoryLink = link.href.startsWith("/work/") || link.href.startsWith("/blog/") ? Link : "a";
+        return <li key={link.href}><StoryLink className="inline-flex min-h-11 items-center underline underline-offset-4" href={link.href}>{link.label}</StoryLink></li>;
+      })}</ul> : null}
     </div>
   </div></Section>;
 }

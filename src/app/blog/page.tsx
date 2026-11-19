@@ -1,3 +1,4 @@
+import { PageTransition } from "@/components/site/page-transition";
 import type { Metadata } from "next";
 import { pageMetadata, serializeStructuredData } from "@/lib/seo";
 import { siteOrigin } from "@/lib/seo-config";
@@ -22,10 +23,10 @@ export default async function Journal({ searchParams = Promise.resolve({}) }: Pr
   const articles = await publishedArticles();
   const view = archiveView(articles, await searchParams);
   const featured = articles.find(article => `/blog/${article.slug}` === featuredWriting.href) || articles[0];
-  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeStructuredData(archiveStructuredData(view, siteOrigin())) }} /><PageIntro title="Notes & experiments."><p>On software, architecture, and learning by making.</p></PageIntro>
+  return <PageTransition><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeStructuredData(archiveStructuredData(view, siteOrigin())) }} /><PageIntro title="Notes & experiments."><p>On software, architecture, and learning by making.</p></PageIntro>
     {featured ? <FeaturedWriting article={featured} /> : null}
     <JournalArchive view={view} />
     <SketchbookDiscovery articles={articles} />
     <Section labelledBy="journal-rss-title"><div className={siteStyles.editorialRow}><h2 id="journal-rss-title" className={siteStyles.sectionTitle}>Follow the writing.</h2><div className={siteStyles.copy}><p>The complete Journal feed, independent of archive filters.</p><a href="/rss.xml" className={siteStyles.link}>Subscribe via RSS</a></div></div></Section>
-  </>;
+  </PageTransition>;
 }

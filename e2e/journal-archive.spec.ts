@@ -56,11 +56,15 @@ test("keyboard search, URL restoration, page reset and 200% type remain usable",
 test("crawler HTML, pagination canonicals, schema, social image and filter indexing agree", async ({ browser, request }) => {
   const context = await browser.newContext({ javaScriptEnabled: false, userAgent: "OAI-SearchBot" });
   const page = await context.newPage();
-  for (const [path, canonical, position] of [["/blog", "/blog", 1], ["/blog?page=2", "/blog?page=2", 9], ["/blog?page=999", "/blog?page=2", 9]] as const) {
+  const pageSize = 8;
+  const lastPage = Math.ceil(slugs.length / pageSize);
+  const lastPosition = (lastPage - 1) * pageSize + 1;
+  for (const [path, canonical, position] of [["/blog", "/blog", 1], ["/blog?page=2", "/blog?page=2", 9], ["/blog?page=999", `/blog?page=${lastPage}`, lastPosition]] as const) {
     expect((await page.goto(`http://127.0.0.1:3109${path}`))!.status()).toBe(200);
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", `http://127.0.0.1:3109${canonical}`);
     const schema = JSON.parse((await page.locator('script[type="application/ld+json"]').textContent())!);
-    expect(schema["@type"]).toBe("CollectionPage"); expect(schema.mainEntity.numberOfItems).toBe(8);
+    expect(schema["@type"]).toBe("CollectionPage");
+    expect(schema.mainEntity.numberOfItems).toBe(Math.min(pageSize, slugs.length - position + 1));
     expect(schema.mainEntity.itemListElement[0].position).toBe(position);
     expect(schema.mainEntity.itemListElement.map((entry: { item: { headline: string } }) => entry.item.headline)).toEqual(await page.locator('#archive h3').allTextContents());
   }

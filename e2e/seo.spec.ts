@@ -32,7 +32,7 @@ test("all public pages serve consistent metadata, noindex and social PNGs to cra
   }
   await context.close();
 });
-test("RSS parses as XML, contains the 16 public articles and prelaunch sitemap stays empty", async ({ page, request }) => {
+test("RSS parses as XML, contains all public articles and prelaunch sitemap stays empty", async ({ page, request }) => {
   const rss = await request.get("/rss.xml");
   expect(rss.headers()["content-type"]).toContain("application/rss+xml");
   expect(rss.headers()["x-robots-tag"]).toContain("noindex");

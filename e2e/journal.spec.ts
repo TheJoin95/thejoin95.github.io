@@ -4,6 +4,58 @@ import { createHash } from "node:crypto";
 import manifest from "../docs/migration/legacy-manifest.json";
 import slugs from "../src/content/journal-routes.json";
 const hash = (data: Buffer) => createHash("sha256").update(data).digest("hex");
+
+const mediumArticles = [
+  ["2022-09-20-upgrading-to-react18-is-easy", "Upgrading to React18 is easy", "f4c41b0b74a1", 3],
+  ["2022-08-17-optimize-user-experience-and-performance-with-lighthouse", "Optimize the User Experience and Performance via Node.js and Lighthouse", "bfd8107fe248", 5],
+  ["2022-08-15-upgrading-to-react-18-isnt-that-hard", "Upgrading To React 18 Isn’t That Hard. Here’s How To Do It.", "bf054418b782", 3],
+  ["2022-08-03-use-conventional-commit-messages-to-improve-team-communication", "Use Conventional Commit Messages to Improve Team Communication", "4c7d9cc8f939", 3],
+  ["2020-08-30-automate-podcast-publishing-with-github-actions", "Automate the Publishing Process of Your Podcast With GitHub Actions", "1dbb0fc90560", 1],
+  ["2020-01-03-ambisonic-audio-generator-audio-in-3d", "Ambisonic audio generator — Audio in 3D", "3f649c7669ab", 1],
+] as const;
+
+test("the Medium imports expose original titles, dates, source links, figures and social cards to crawlers", async ({ request, browser }) => {
+  const context = await browser.newContext({ javaScriptEnabled: false, userAgent: "OAI-SearchBot" });
+  const page = await context.newPage();
+  const rss = await (await request.get("/rss.xml")).text();
+  const checkedImages = new Set<string>();
+  for (const [slug, title, sourceId, figureCount] of mediumArticles) {
+    const url = `http://127.0.0.1:3109/blog/${slug}`;
+    const date = slug.slice(0, 10);
+    expect((await page.goto(url))!.status()).toBe(200);
+    await expect(page.locator("h1")).toHaveText([title]);
+    await expect(page.locator("article time")).toHaveAttribute("datetime", date);
+    await expect(page.locator(`article a[href$="-${sourceId}"]`)).toHaveCount(1);
+    await expect(page.locator("article iframe")).toHaveCount(0);
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", url);
+    const schema = JSON.parse((await page.locator('script[type="application/ld+json"]').textContent())!);
+    expect(schema).toMatchObject({ "@type": "BlogPosting", headline: title, datePublished: date, mainEntityOfPage: url });
+    expect(rss).toContain(`<link>${url}</link>`);
+    const images = page.locator("article figure img");
+    await expect(images).toHaveCount(figureCount);
+    for (const image of await images.all()) {
+      const src = (await image.getAttribute("src"))!;
+      expect(src).toMatch(/^\/media\/journal\/medium\/.+\.webp$/);
+      await expect(image).toHaveAttribute("alt", /\S/);
+      await expect(image).toHaveAttribute("width", /^[1-9]\d*$/);
+      await expect(image).toHaveAttribute("height", /^[1-9]\d*$/);
+      await expect(image).toHaveAttribute("loading", "lazy");
+      if (checkedImages.has(src)) continue;
+      const response = await request.get(src);
+      expect(response.ok()).toBe(true);
+      expect(response.headers()["content-type"]).toContain("image/webp");
+      checkedImages.add(src);
+    }
+    await expect(page.locator('meta[property="og:image"]')).toHaveAttribute("content", `${url}/share`);
+    const card = await request.get(`${url}/share`);
+    expect(card.ok()).toBe(true);
+    const png = await card.body();
+    expect(png.readUInt32BE(16)).toBe(1200);
+    expect(png.readUInt32BE(20)).toBe(630);
+  }
+  await context.close();
+});
+
 test("all historical routes, source downloads, aliases and assets survive in the production server", async ({ request, browser }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();

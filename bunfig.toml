@@ -11,8 +11,8 @@ saveTextLockfile = true
 root = "tests"
 preload = ["./tests/setup.ts"]
 coverageSkipTestFiles = true
-# Browser media and animation lifecycle, motion preferences and form interactions are exercised in Playwright.
-coveragePathIgnorePatterns = ["tests/**", "src/components/gallery/media-gallery.tsx", "src/hooks/use-reduced-motion.ts", "src/components/palette/palette-reveal.tsx", "src/components/site/route-motion.tsx", "src/components/newsletter-form.tsx", "src/hooks/use-hydrated.ts", "src/components/work/project-cover-image.tsx"]
+# Browser media, motion, form interactions and analytics events are exercised in Playwright.
+coveragePathIgnorePatterns = ["tests/**", "src/components/gallery/media-gallery.tsx", "src/hooks/use-reduced-motion.ts", "src/components/palette/palette-reveal.tsx", "src/components/site/route-motion.tsx", "src/components/newsletter-form.tsx", "src/hooks/use-hydrated.ts", "src/components/work/project-cover-image.tsx", "src/components/analytics.tsx"]
 coverageReporter = ["text", "lcov"]
 coverageDir = "coverage"
 coverageThreshold = { lines = 0.85, functions = 0.85 }

@@ -18,7 +18,7 @@
     "verify:services": "bun ./scripts/verify-env.ts --remote",
     "test:e2e": "bun run build:test-fixtures && bun --bun playwright test",
     "test:release": "bun scripts/check-release.ts",
-    "build:test-fixtures": "bun build e2e/fixtures/gallery.tsx e2e/fixtures/accessibility.tsx --target=browser --env=disable --define 'process.env={\"NODE_ENV\":\"production\"}' --outdir=.test-fixtures && bun scripts/build-reader-fixture.tsx",
+    "build:test-fixtures": "bun build e2e/fixtures/gallery.tsx e2e/fixtures/accessibility.tsx --target=browser --env=disable --define 'process.env={\"NODE_ENV\":\"production\"}' --outdir=.test-fixtures && bun build e2e/fixtures/analytics.tsx --target=browser --env=disable --define 'process.env={\"NODE_ENV\":\"production\",\"NEXT_PUBLIC_SITE_URL\":\"https://portfolio.example\",\"NEXT_PUBLIC_GA_MEASUREMENT_ID\":\"G-TESTPORTFOLIO\"}' --outdir=.test-fixtures && bun scripts/build-reader-fixture.tsx",
     "build:journal": "bun scripts/build-journal.ts",
     "build:previews": "bun scripts/build-previews.ts",
     "migrate:legacy": "bun scripts/migrate-legacy.ts",

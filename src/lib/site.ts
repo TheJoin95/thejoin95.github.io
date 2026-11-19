@@ -4,10 +4,10 @@ export const navigation = [
 ] as const;
 
 export const contacts = [
-  { href: "mailto:miki.lombi@gmail.com", label: "Email Miki" },
+  { href: "mailto:miki.lombi@gmail.com", label: "Email Miki", action: "contact_email_click" },
   { href: "https://github.com/TheJoin95", label: "GitHub" },
   { href: "https://www.linkedin.com/in/miki-lombardi/", label: "LinkedIn" },
-  { href: "/miki-lombardi-resume.pdf", label: "Download CV", detail: "PDF", download: "miki-lombardi-resume.pdf" },
+  { href: "/miki-lombardi-resume.pdf", label: "Download CV", detail: "PDF", download: "miki-lombardi-resume.pdf", action: "cv_download_click" },
 ] as const;
 
 export function currentSection(pathname: string, href: string) {

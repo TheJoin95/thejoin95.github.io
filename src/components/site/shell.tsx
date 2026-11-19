@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Suspense } from "react";
 import { ArrowUpRight } from "lucide-react";
+import { AnalyticsActionLink } from "@/components/analytics";
 import { contacts } from "@/lib/site";
 import { Navigation, NavigationLinks } from "./navigation";
 import { cn } from "@/lib/utils";
@@ -22,9 +23,10 @@ export function SiteHeader() {
 export function SiteFooter() {
   return <footer className="surface-charcoal [padding-block:var(--section-space)_max(var(--section-space),env(safe-area-inset-bottom))]" id="contact"><div className={cn(siteStyles.container, "grid gap-8 desktop:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] desktop:items-center")}>
     <h2 className={siteStyles.sectionTitle}>Let’s talk.</h2>
-    <nav aria-label="Contact"><ul className="flex list-none flex-col flex-wrap gap-2 p-0 md:grid md:grid-cols-2 desktop:flex desktop:flex-row desktop:justify-between">{contacts.map((contact) => <li key={contact.href}><a className={siteStyles.link} href={contact.href} download={"download" in contact ? contact.download : undefined}>
-      {contact.label}{"detail" in contact ? <span className="text-meta text-muted-foreground"> ({contact.detail})</span> : null}
-      {contact.href.startsWith("https:") ? <ArrowUpRight size={18} aria-hidden="true" /> : null}
-    </a></li>)}</ul></nav>
+    <nav aria-label="Contact"><ul className="flex list-none flex-col flex-wrap gap-2 p-0 md:grid md:grid-cols-2 desktop:flex desktop:flex-row desktop:justify-between">{contacts.map(contact => <li key={contact.href}>
+      {"action" in contact ? <AnalyticsActionLink className={siteStyles.link} href={contact.href} action={contact.action} download={"download" in contact ? contact.download : undefined}>
+        {contact.label}{"detail" in contact ? <span className="text-meta text-muted-foreground"> ({contact.detail})</span> : null}
+      </AnalyticsActionLink> : <a className={siteStyles.link} href={contact.href}>{contact.label}<ArrowUpRight size={18} aria-hidden="true" /></a>}
+    </li>)}</ul></nav>
   </div></footer>;
 }

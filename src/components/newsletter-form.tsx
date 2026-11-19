@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Button } from "@/components/ui/button";
+import { useAnalyticsAction } from "@/components/analytics";
 import { Input } from "@/components/ui/input";
 import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
 import { useHydrated } from "@/hooks/use-hydrated";
@@ -10,6 +11,7 @@ import { cn } from "@/lib/utils";
 export function NewsletterForm() {
   const [pending, setPending] = useState(false);
   const hydrated = useHydrated();
+  const track = useAnalyticsAction();
   const summary = useRef<HTMLParagraphElement>(null);
   const [status, setStatus] = useState<{ message: string; error: boolean; invalidEmail?: boolean } | null>(null);
   useEffect(() => { if (status?.error) summary.current?.focus(); }, [status]);
@@ -28,7 +30,10 @@ export function NewsletterForm() {
       });
       const result = await response.json();
       setStatus({ message: result.message, error: !response.ok, invalidEmail: response.status === 400 });
-      if (response.ok) form.reset();
+      if (response.ok) {
+        if (!data.get("website")) track("newsletter_signup_requested");
+        form.reset();
+      }
     } catch {
       setStatus({ message: "Unable to subscribe right now. Please try again.", error: true });
     } finally {

@@ -28,11 +28,24 @@ describe("Work gallery and complete project index", () => {
     expect(html).toContain('href="https://broski.substack.com/"');
     expect(html).toContain("co-founded");
     expect(html).toContain("collective work");
+    for (const project of projectIndex) {
+      expect(html).toContain(project.status);
+      if (project.href) expect(html).toContain(`href="${project.href}"`);
+    }
     for (const id of ["holy-card-generator", "copro-syndic", "alerting", "hop", "social-post", "comic-learning"]) {
       expect(projectIndex.find(project => project.id === id)?.href).toBeUndefined();
     }
     expect(html).not.toContain('href="#"');
     expect(html).not.toContain("disabled");
+  });
+  test("uses source media where available and HTML lettering for entries without it", () => {
+    const html = renderToStaticMarkup(<ProjectIndex />);
+    const sourcePreviews = projectIndex.filter(project => project.preview && !project.preview.src.startsWith("/share/projects/"));
+    expect(html.match(/<img /g)).toHaveLength(sourcePreviews.length);
+    expect(html.match(/loading="lazy"/g)).toHaveLength(sourcePreviews.length);
+    expect(html).toContain("/media/supermarket/architecture.svg");
+    expect(html).toContain("/media/previews/imagegonord-480.webp");
+    expect(html).not.toContain("/share/projects/");
   });
   test("renders all three galleries, Play onward link and crawlable social metadata", () => {
     const html = renderToStaticMarkup(<Work />);

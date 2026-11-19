@@ -23,7 +23,7 @@ describe("editorial homepage", () => {
     expect(html).toContain("An open-source tool for converting images into a chosen palette.");
     expect(html).toContain("Archived project · 2020");
     expect(html).toContain("In development");
-    expect(html).toContain('href="/work"');
+    expect(html).toContain('href="/work#project-index-title"');
     expect(html).toContain('href="/play"');
     expect(html).toContain('href="/about"');
   });

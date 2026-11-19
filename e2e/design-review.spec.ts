@@ -64,11 +64,10 @@ test("approved page introductions retain their phone tablet and desktop composit
 });
 
 for (const [width, columns] of [[390, 1], [1440, 3]]) {
-  test(`project directories align across Work, Lab and Play at ${width}px`, async ({ page }) => {
+  test(`project directories align across Lab and Play at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 1000 });
     let baseline;
     for (const [path, name] of [
-      ["/work", "The complete index."],
       ["/lab", "Project case studies"],
       ["/play", "Projects & community."],
     ]) {

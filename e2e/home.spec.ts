@@ -33,8 +33,16 @@ test("homepage stays readable and navigable without JavaScript", async ({ browse
   await expect(page.getByRole("region", { name: "ImageGoNord media", exact: true }).locator("li")).toHaveCount(3);
   await expect(page.getByRole("heading", { name: "Micro Frontends - From the 00s to 20s", exact: true })).toBeVisible();
   await page.getByRole("link", { name: "Explore all work", exact: true }).click();
-  await expect(page).toHaveURL(/\/work$/);
+  await expect(page).toHaveURL(/\/work#project-index-title$/);
+  await expect(page.getByRole("heading", { name: "The complete index." })).toBeInViewport();
   await context.close();
+});
+
+test("Home opens the collection directly during client navigation", async ({ page }) => {
+  await page.goto("/");
+  await page.getByRole("link", { name: "Explore all work", exact: true }).click();
+  await expect(page).toHaveURL(/\/work#project-index-title$/);
+  await expect(page.getByRole("heading", { name: "The complete index." })).toBeInViewport();
 });
 
 test("homepage exposes canonical, structured data and actual social image bytes", async ({ page }) => {

@@ -16,12 +16,12 @@ export const sideProjectCaseStudies: readonly (ProjectIndexEntry & { href: strin
   }));
 
 export const projectIndex: readonly ProjectIndexEntry[] = [
+  { ...chromatiqueProject, status: "In development", href: caseStudyPath(chromatiqueProject), preview: projectPreview(chromatiqueProject) },
   { id: "schrodinger-hat", title: "Schrödinger Hat", status: "Open-source community",
     summary: "Software, events, talks and a podcast made together.",
     contribution: "I co-founded the community and contribute as a speaker. This is collective work.", href: "https://schroedinger-hat.org/" },
   { id: "broskis", title: "Broskis", status: "Publication",
     summary: "My personal publication on Substack.", contribution: "I write here.", href: "https://broski.substack.com/" },
-  { ...chromatiqueProject, status: "In development", href: caseStudyPath(chromatiqueProject), preview: projectPreview(chromatiqueProject) },
   { id: "holy-card-generator", title: "HolyCard AI", status: "Digital-only beta",
     summary: "An editable devotional portrait-card studio with PNG and PDF exports.",
     contribution: "I developed the card studio, image-generation flow and forms." },

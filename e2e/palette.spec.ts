@@ -93,7 +93,7 @@ test("touch uses explicit range input while the image retains vertical page scro
 
 test("failed media retains an honest explanation, dimensions, provenance and project destination", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
-  await page.route("**/_next/image?**", route => decodeURIComponent(route.request().url()).includes("/media/chromatique/irises-study-nord.png") ? route.abort() : route.continue());
+  await page.route("**/media/previews/palette-nord-*.webp", route => route.abort());
   await page.goto("/play"); const stage = region(page);
   await expect(stage.getByText(/comparison image could not load/)).toBeVisible();
   const frame = await stage.locator("[data-palette-surface]").boundingBox();

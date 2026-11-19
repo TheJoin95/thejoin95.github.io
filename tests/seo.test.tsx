@@ -4,7 +4,7 @@ import { seoConfiguration } from "@/lib/seo-config";
 import { articleMetadata, pageMetadata, publicPages, serializeStructuredData } from "@/lib/seo";
 import { journalFeed, sitemapEntries } from "@/lib/discovery";
 import { parseArticle, publishedArticles } from "@/lib/journal";
-import { TitleCard } from "@/components/social/title-card";
+import { projectTitleImage, TitleCard } from "@/components/social/title-card";
 import { workStructuredData } from "@/content/work";
 import robots from "@/app/robots";
 const origin = "https://example.com";
@@ -112,4 +112,13 @@ test("a very long title produces real image bytes without a remote artwork depen
   expect(png.readUInt32BE(16)).toBe(1200); expect(png.readUInt32BE(20)).toBe(630);
   await Bun.write("/tmp/mic25-long-title.png", png);
   } finally { globalThis.fetch = previousFetch; }
+});
+
+test("the project thumbnail source is the same full-size PNG used for sharing", async () => {
+  const title = "Ambisonic Audio";
+  const response = projectTitleImage({ title });
+  const png = Buffer.from(await response.arrayBuffer());
+  expect(response.headers.get("content-type")).toBe("image/png");
+  expect(png.readUInt32BE(16)).toBe(1200);
+  expect(png.readUInt32BE(20)).toBe(630);
 });

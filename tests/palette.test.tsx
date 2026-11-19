@@ -2,7 +2,6 @@ import { expect, test } from "bun:test";
 import { renderToStaticMarkup } from "react-dom/server";
 import { PaletteStage } from "@/components/home/palette-stage";
 import { revealAt } from "@/components/palette/reveal";
-import { paletteImages } from "@/content/featured-media";
 
 test("reveal input clamps at both endpoints and reverses the right-hand palette fraction", () => {
   expect(revealAt(100, 100, 400)).toBe(100);
@@ -16,8 +15,8 @@ test("reveal input clamps at both endpoints and reverses the right-hand palette 
 test("initial HTML is a useful 50/50 comparison with authentic sources and no inoperative controls", () => {
   const html = renderToStaticMarkup(<PaletteStage href="/work/chromatique" />);
   expect(html).toContain('clip-path:inset(0 0 0 50%)');
-  expect(html).toContain(encodeURIComponent(paletteImages.original));
-  expect(html).toContain(encodeURIComponent(paletteImages.palette));
+  expect(html).toContain('src="/media/previews/palette-original-480.webp"');
+  expect(html).toContain('src="/media/previews/palette-nord-480.webp"');
   expect(html).toContain('sizes="(min-width: 1600px) 1600px, 100vw"');
   expect(html).toContain("no dithering");
   expect(html).toContain("Frances Benjamin Johnston");
@@ -25,4 +24,10 @@ test("initial HTML is a useful 50/50 comparison with authentic sources and no in
   expect(html).not.toContain("<canvas");
   expect(html).not.toContain('type="range"');
   expect(html).not.toContain("<button");
+});
+
+test("the below-the-fold comparison serves lazy images without a preload", () => {
+  const html = renderToStaticMarkup(<PaletteStage eager={false} />);
+  expect(html.match(/loading="lazy"/g)).toHaveLength(2);
+  expect(html).not.toContain('rel="preload"');
 });

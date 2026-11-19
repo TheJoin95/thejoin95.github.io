@@ -19,6 +19,7 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       ...(!seo.indexable ? [{ source: "/:path*", headers: [{ key: "X-Robots-Tag", value: "noindex, follow" }] }] : []),
+      { source: "/media/previews/:path*", headers: [{ key: "Cache-Control", value: "public, max-age=3600" }] },
       { source: "/articles/:path*", headers: [{ key: "X-Robots-Tag", value: "noindex" }] },
       { source: "/rss.xml", headers: [{ key: "X-Robots-Tag", value: "noindex" }] },
     ];

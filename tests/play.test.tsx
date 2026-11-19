@@ -68,6 +68,8 @@ describe("Play directory and comic-learning preview", () => {
     const html = renderToStaticMarkup(<ProjectDirectory entries={playProjects} showPreviews />);
     expect(html.match(/<img\b/g)).toHaveLength(19);
     expect(html.match(/loading="lazy"/g)).toHaveLength(19);
+    expect(html).toContain("/media/previews/ambisonic-audio-480.webp 480w, /media/previews/ambisonic-audio-960.webp 960w");
+    expect(html).not.toContain("/_next/image");
     expect(playProjects.find(project => project.id === "ambisonic-audio")?.preview?.alt).toBe("");
   });
   test("metadata and structured data describe the visible collection and only its actual destinations", () => {

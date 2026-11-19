@@ -17,4 +17,4 @@ export function proxy(request: NextRequest) {
   if (!siteIndexable() || requestHost !== new URL(siteOrigin()).host) response.headers.set("X-Robots-Tag", "noindex, follow");
   return response;
 }
-export const config = { matcher: ["/((?!_next/static|_next/image|favicon.ico).*)"] };
+export const config = { matcher: ["/((?!_next/static|_next/image|media/previews/|favicon.ico).*)"] };

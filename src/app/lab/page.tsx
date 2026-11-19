@@ -33,7 +33,7 @@ export default function Lab() {
   return <>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeStructuredData(structuredData) }} />
     <PageIntro title="Lab"><p>Side projects, open-source contributions, and experiments you can try.</p></PageIntro>
-    <ProjectDirectorySection id="lab-projects" title="Project case studies" entries={sideProjectCaseStudies} showPreviews>
+    <ProjectDirectorySection id="lab-projects" title="Project case studies" entries={sideProjectCaseStudies} showPreviews eagerFirstPreview>
       <Link href="/play#github-projects" className="underline-offset-4">Browse the GitHub project index</Link>
     </ProjectDirectorySection>
     <section aria-labelledby="lab-colour-title">
@@ -43,7 +43,7 @@ export default function Lab() {
           <p>Slide between a 1921 hand-coloured photograph and the same image mapped to Nord by Chromatique.</p>
         </div>
       </div>
-      <PaletteStage href="/work/chromatique" />
+      <PaletteStage href="/work/chromatique" eager={false} />
     </section>
   </>;
 }

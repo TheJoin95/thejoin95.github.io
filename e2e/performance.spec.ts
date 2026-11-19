@@ -11,7 +11,7 @@ test("Play requests responsive palette media without raw fallback downloads or i
   for (const image of await stage.locator("img").all()) {
     await expect.poll(() => image.evaluate(el => (el as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
     const source = new URL(await image.evaluate(el => (el as HTMLImageElement).currentSrc));
-    expect(source.pathname).toBe("/_next/image"); expect(Number(source.searchParams.get("w"))).toBeLessThanOrEqual(1080);
+    expect(source.pathname).toMatch(/^\/media\/previews\/palette-(original|nord)-480\.webp$/);
   }
   const imageUrls = await stage.locator("img").evaluateAll(images => images.map(image => (image as HTMLImageElement).currentSrc));
   const assets = await Promise.all(imageUrls.map(url => page.request.get(url, { headers: { Accept: "image/webp" } })));
@@ -24,12 +24,13 @@ test("Play requests responsive palette media without raw fallback downloads or i
   await stage.getByRole("slider").focus(); await page.keyboard.press("End"); await expect(stage.getByRole("slider")).toHaveValue("100");
 });
 
-test("image optimizer serves smaller phone derivatives while full-size originals remain available", async ({ request }) => {
-  for (const source of [paletteImages.original, paletteImages.palette]) {
+test("static palette derivatives are cacheable and preserve the full-size originals", async ({ request }) => {
+  for (const [source, variant] of [[paletteImages.original, "palette-original"], [paletteImages.palette, "palette-nord"]]) {
     const original = await request.get(source);
-    const optimized = await request.get(`/_next/image?url=${encodeURIComponent(source)}&w=828&q=75`, { headers: { Accept: "image/webp" } });
+    const optimized = await request.get(`/media/previews/${variant}-828.webp`);
     expect(original.status()).toBe(200); expect(optimized.status()).toBe(200);
     expect(optimized.headers()["content-type"]).toContain("image/webp");
+    expect(optimized.headers()["cache-control"]).toContain("max-age=3600");
     expect((await optimized.body()).length).toBeLessThan((await original.body()).length * .7);
   }
 });
@@ -44,6 +45,7 @@ test("desktop 2× stage derivatives resolve the display area without upscaling t
     for (const image of await images.all()) {
       await expect.poll(() => image.evaluate(element => (element as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
       const url = await image.evaluate(element => (element as HTMLImageElement).currentSrc);
+      expect(new URL(url).pathname).toMatch(/^\/media\/previews\/palette-(original|nord)-2880\.webp$/);
       const response = await context.request.get(url, { headers: { Accept: "image/webp" } });
       expect(response.ok()).toBe(true);
       expect(response.headers()["content-type"]).toContain("image/webp");

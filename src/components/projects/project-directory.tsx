@@ -1,17 +1,21 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
+import { PreviewImage } from "@/components/media/preview-image";
 import { Section } from "@/components/site/primitives";
 import { siteStyles } from "@/components/site/styles";
 import type { ProjectIndexEntry } from "@/content/work";
+import { previewSources, projectPreviewWidths } from "@/lib/preview-images";
+
+const coverSizes = "(min-width: 1600px) 475px, (min-width: 1200px) 30vw, (min-width: 768px) 44vw, 92vw";
 
 type ProjectDirectoryProps = {
   entries: readonly ProjectIndexEntry[];
   showPreviews?: boolean;
+  eagerFirstPreview?: boolean;
 };
 
-export function ProjectDirectorySection({ id, title, description, children, entries, showPreviews }: ProjectDirectoryProps & {
+export function ProjectDirectorySection({ id, title, description, children, ...directory }: ProjectDirectoryProps & {
   id: string;
   title: string;
   description?: string;
@@ -21,20 +25,25 @@ export function ProjectDirectorySection({ id, title, description, children, entr
     <div className={siteStyles.container}>
       <h2 id={id} className={siteStyles.sectionTitle}>{title}</h2>
       {description ? <p className="mt-4 max-w-[60ch]">{description}</p> : null}
-      <ProjectDirectory entries={entries} showPreviews={showPreviews} />
+      <ProjectDirectory {...directory} />
       {children ? <div className={`${siteStyles.actions} mt-8`}>{children}</div> : null}
     </div>
   </Section>;
 }
 
-export function ProjectDirectory({ entries, showPreviews = false }: ProjectDirectoryProps) {
+export function ProjectDirectory({ entries, showPreviews = false, eagerFirstPreview = false }: ProjectDirectoryProps) {
+  const eagerProject = eagerFirstPreview ? entries.find(project => project.preview) : undefined;
   return <ul className="mt-8 grid gap-x-8 gap-y-10 md:mt-10 md:grid-cols-2 desktop:grid-cols-3 desktop:gap-x-10">
     {entries.map(project => <li key={project.id} className="min-w-0 border-t border-border pt-4 [overflow-wrap:anywhere]">
       {showPreviews && project.preview ? (
         <div className="relative mb-5 aspect-[40/21] overflow-hidden rounded-sm border border-border bg-muted">
-          <Image src={project.preview.src} alt={project.preview.alt} fill loading="lazy"
-            sizes="auto, (min-width: 1600px) 470px, (min-width: 1200px) 30vw, (min-width: 768px) 44vw, 92vw"
-            className={project.preview.fit === "cover" ? "object-cover" : "object-contain"} />
+          <PreviewImage
+            {...(project.preview.src.endsWith(".svg") ? { src: project.preview.src } : previewSources(project.id, projectPreviewWidths, coverSizes))}
+            alt={project.preview.alt}
+            loading={project === eagerProject ? "eager" : "lazy"}
+            fetchPriority={project === eagerProject ? "high" : undefined}
+            className={`absolute inset-0 h-full w-full ${project.preview.fit === "cover" ? "object-cover" : "object-contain"}`}
+          />
         </div>
       ) : null}
       <h3 className="flex min-h-11 items-center text-[clamp(1.5rem,2vw,2rem)] leading-tight tracking-[-0.025em]">

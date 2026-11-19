@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "bun run verify:seo && bun run build:journal && bun --bun next dev --turbopack",
-    "build": "bun run verify:seo && bun run build:journal && bun run build:tools && bun --bun next build --turbopack",
+    "dev": "bun run verify:seo && bun run build:journal && bun run build:previews && bun --bun next dev --turbopack",
+    "build": "bun run verify:seo && bun run build:journal && bun run build:previews && bun run build:tools && bun --bun next build --turbopack",
     "start": "bun --bun next start",
     "lint": "bun --bun eslint .",
     "typecheck": "bun --bun next typegen && bun --bun tsc --noEmit",
@@ -20,6 +20,7 @@
     "test:release": "bun scripts/check-release.ts",
     "build:test-fixtures": "bun build e2e/fixtures/gallery.tsx e2e/fixtures/accessibility.tsx --target=browser --env=disable --define 'process.env={\"NODE_ENV\":\"production\"}' --outdir=.test-fixtures && bun scripts/build-reader-fixture.tsx",
     "build:journal": "bun scripts/build-journal.ts",
+    "build:previews": "bun scripts/build-previews.ts",
     "migrate:legacy": "bun scripts/migrate-legacy.ts",
     "verify:seo": "bun scripts/verify-seo.ts"
   },
@@ -61,6 +62,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.4.6",
+    "sharp": "0.35.5",
     "tailwindcss": "4.3.3",
     "typescript": "^5"
   },

@@ -1,19 +1,20 @@
 "use client";
 
-import Image from "next/image";
 import { useHydrated } from "@/hooks/use-hydrated";
 import { useCallback, useId, useState, type PointerEvent } from "react";
 import { MediaSurface } from "@/components/media/presentation";
+import { PreviewImage } from "@/components/media/preview-image";
 import { Button } from "@/components/ui/button";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { paletteImages } from "@/content/featured-media";
+import { palettePreviewWidths, previewSources } from "@/lib/preview-images";
 import { revealAt } from "./reveal";
 
 const imageStyle = "h-full w-full object-cover object-[50%_64%]";
 const imageSizes = "(min-width: 1600px) 1600px, 100vw";
 const controlStyle = "max-w-full shrink [overflow-wrap:anywhere]";
 
-export function PaletteReveal() {
+export function PaletteReveal({ eager = true }: { eager?: boolean }) {
   const hydrated = useHydrated();
   const reducedMotion = useReducedMotion();
   const id = useId();
@@ -21,8 +22,9 @@ export function PaletteReveal() {
   const [preview, setPreview] = useState<number | null>(null);
   const [imageFailed, setImageFailed] = useState(false);
   const value = reducedMotion ? selected : preview ?? selected;
+  const loading = eager ? "eager" : "lazy";
   const checkImage = useCallback((image: HTMLImageElement | null) => {
-    // A failed eager image can finish before hydration attaches onError.
+    // An image can fail before hydration attaches onError.
     if (image?.complete && image.naturalWidth === 0) setImageFailed(true);
   }, []);
 
@@ -44,15 +46,15 @@ export function PaletteReveal() {
       }} onPointerUp={event => { if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId); }}
       onPointerLeave={() => setPreview(null)} onPointerCancel={() => setPreview(null)}>
       {/* The same accessible HTML images serve the initial and interactive comparison. */}
-      <Image ref={checkImage} draggable={false} src={paletteImages.original} width={paletteImages.width} height={paletteImages.height}
-        sizes={imageSizes}
+      <PreviewImage ref={checkImage} draggable={false} width={paletteImages.width} height={paletteImages.height}
+        {...previewSources("palette-original", palettePreviewWidths, imageSizes)}
         alt="Original hand-coloured garden photograph by Frances Benjamin Johnston."
-        loading="eager" fetchPriority="high" onError={() => setImageFailed(true)} className={`absolute inset-0 ${imageStyle}`} />
+        loading={loading} fetchPriority={eager ? "high" : undefined} onError={() => setImageFailed(true)} className={`absolute inset-0 ${imageStyle}`} />
       <div className="absolute inset-0" data-palette-output style={{ clipPath: `inset(0 0 0 ${100 - value}%)` }}>
-        <Image ref={checkImage} draggable={false} src={paletteImages.palette} width={paletteImages.width} height={paletteImages.height}
-          sizes={imageSizes} quality={70}
+        <PreviewImage ref={checkImage} draggable={false} width={paletteImages.width} height={paletteImages.height}
+          {...previewSources("palette-nord", palettePreviewWidths, imageSizes)}
           alt="The same photograph converted by Chromatique into the Nord palette."
-          loading="eager" onError={() => setImageFailed(true)} className={imageStyle} />
+          loading={loading} onError={() => setImageFailed(true)} className={imageStyle} />
       </div>
       {imageFailed ? <p className="absolute inset-x-4 bottom-4 bg-(--charcoal) p-3 text-(--reverse)">The comparison image could not load. Explore the palette study below for the project and full-size output.</p> : null}
       <div className="pointer-events-none absolute inset-x-0 top-6 hidden justify-between gap-3 px-8 text-base text-(--reverse) md:flex">

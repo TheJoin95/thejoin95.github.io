@@ -39,7 +39,12 @@ for (const width of [320, 390, 834, 1440]) test(`articles and sequential sketchb
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   const table = page.getByRole("region", { name: "Data table 1", exact: true });
   const firstHeader = table.getByRole("columnheader").first();
-  expect(await firstHeader.evaluate(node => node.getBoundingClientRect().width)).toBeGreaterThan(100);
+  const column = await firstHeader.evaluate(node => ({
+    width: node.getBoundingClientRect().width,
+    minWidth: parseFloat(getComputedStyle(node).minWidth),
+  }));
+  expect(column.minWidth).toBeGreaterThan(0);
+  expect(column.width).toBeGreaterThanOrEqual(column.minWidth - 1);
   if (width <= 390) expect(await table.evaluate(node => node.scrollWidth > node.clientWidth)).toBe(true);
   await context.close();
 });

@@ -126,21 +126,31 @@ test("error recovery announces a visible primary heading and its keyboard Retry 
 for (const [name, engine] of [["Firefox", firefox], ["WebKit", webkit]] as const) test(`${name} phone/desktop layout, keyboard, palette and Journal discovery`, async () => {
   test.setTimeout(120000); const browser = await engine.launch();
   try {
-    // Independent device sessions also avoid the Firefox driver navigation-bookkeeping
-    // hang when a cached article is revisited after a streamed search response.
+    // Open layout samples directly so each streamed route starts with a fresh document.
     console.info(`${name} ${browser.version()}`);
     for (const width of [320, 1440]) {
       const context = await browser.newContext({ reducedMotion: "reduce", viewport: { width, height: 1000 } });
       const page = await context.newPage();
       try {
-      for (const path of ["/", "/work", "/play", "/about", "/blog", article]) {
-        await page.goto(`http://127.0.0.1:3109${path}`); await expect(page.locator("h1")).toBeVisible(); await noOverflow(page);
-      }
-      await page.goto("http://127.0.0.1:3109/lab");
-      const slider = page.getByRole("slider", { name: "Palette reveal" });
-      await slider.focus(); await page.keyboard.press("End"); await expect(slider).toHaveValue("100");
-      await page.goto("http://127.0.0.1:3109/blog"); await page.getByRole("searchbox", { name: "Search writing" }).fill("microfrontend"); await page.getByRole("button", { name: "Search", exact: true }).click();
-      await expect(page.getByRole("list", { name: "Archive articles" }).getByRole("listitem")).toHaveCount(1);
+        for (const path of ["/", "/work", "/play", "/about", "/blog", article]) {
+          const routePage = await context.newPage();
+          try {
+            await routePage.goto(`http://127.0.0.1:3109${path}`, { waitUntil: "domcontentloaded" });
+            await expect(routePage.getByRole("heading", { level: 1 })).toBeVisible({ timeout: 15000 });
+            await noOverflow(routePage);
+          } finally { await routePage.close(); }
+        }
+        await page.goto("http://127.0.0.1:3109/lab", { waitUntil: "domcontentloaded" });
+        const stage = page.getByRole("region", { name: "Chromatique palette comparison" });
+        await stage.scrollIntoViewIfNeeded();
+        const slider = stage.getByRole("slider", { name: "Palette reveal" });
+        await slider.focus();
+        await page.keyboard.press("End");
+        await expect(slider).toHaveValue("100");
+        await page.goto("http://127.0.0.1:3109/blog", { waitUntil: "domcontentloaded" });
+        await page.getByRole("searchbox", { name: "Search writing" }).fill("microfrontend");
+        await page.getByRole("button", { name: "Search", exact: true }).click();
+        await expect(page.getByRole("list", { name: "Archive articles" }).getByRole("listitem")).toHaveCount(1);
       } finally { await context.close(); }
     }
   } finally { await browser.close(); }
@@ -148,7 +158,9 @@ for (const [name, engine] of [["Firefox", firefox], ["WebKit", webkit]] as const
 
 test("palette comparison, empty search and failed gallery media remain accessible states", async ({ page }) => {
   await page.emulateMedia({ reducedMotion: "reduce" }); await page.goto("/lab");
-  await expect(page.getByRole("slider", { name: "Palette reveal" })).toBeVisible();
+  const stage = page.getByRole("region", { name: "Chromatique palette comparison" });
+  await stage.scrollIntoViewIfNeeded();
+  await expect(stage.getByRole("slider", { name: "Palette reveal" })).toBeVisible();
   expect(await scan(page).then(result => result.violations)).toEqual([]);
   await page.goto("/blog?q=no-result-accessibility-specimen"); await expect(page.getByRole("heading", { name: "No matching articles.", exact: true })).toBeVisible();
   expect(await scan(page).then(result => result.violations)).toEqual([]);

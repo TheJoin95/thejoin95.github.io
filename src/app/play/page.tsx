@@ -4,7 +4,7 @@ import { siteStyles } from "@/components/site/styles";
 import Link from "next/link";
 import { PageIntro, Section } from "@/components/site/primitives";
 import { PaletteStage } from "@/components/home/palette-stage";
-import { ProjectDirectory } from "@/components/projects/project-directory";
+import { ProjectDirectorySection } from "@/components/projects/project-directory";
 import { ComicPreview } from "@/components/play/comic-preview";
 import { playDescription, playProjects, playStructuredData } from "@/content/play";
 import { githubStarsVerifiedAt, minimumGitHubStars, organizationGitHubRepositories, publicGitHubRepositories } from "@/content/github-projects";
@@ -13,13 +13,15 @@ export const metadata = pageMetadata({ title: "Play", description: playDescripti
 export default function Play() {
   return <>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeStructuredData(playStructuredData(siteOrigin())) }} />
-    <PageIntro className="md:items-start" title="Built out of curiosity."><p>Side projects, community, and experiments.</p></PageIntro>
+    <PageIntro title="Built out of curiosity."><p>Side projects, community, and experiments.</p></PageIntro>
     <PaletteStage href="/work/chromatique" />
-    <Section labelledBy="play-directory-title"><div className={siteStyles.container}>
-      <h2 id="play-directory-title" className={siteStyles.sectionTitle}>Projects &amp; community.</h2>
-      <p className="mt-6 max-w-[68ch]">Things I build, contribute to, and keep exploring. Some are public; others are still taking shape.</p>
-      <ProjectDirectory entries={playProjects} showPreviews />
-    </div></Section>
+    <ProjectDirectorySection
+      id="play-directory-title"
+      title="Projects & community."
+      description="Things I build, contribute to, and keep exploring. Some are public; others are still taking shape."
+      entries={playProjects}
+      showPreviews
+    />
     <Section labelledBy="github-projects"><div className={siteStyles.container}>
       <h2 id="github-projects" className={siteStyles.sectionTitle}>GitHub project index</h2>
       <p className="mt-4 text-meta text-muted-foreground">

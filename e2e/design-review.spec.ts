@@ -63,6 +63,38 @@ test("approved page introductions retain their phone tablet and desktop composit
   }
 });
 
+for (const [width, columns] of [[390, 1], [1440, 3]]) {
+  test(`project directories align across Work, Lab and Play at ${width}px`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 1000 });
+    let baseline;
+    for (const [path, name] of [
+      ["/work", "The complete index."],
+      ["/lab", "Project case studies"],
+      ["/play", "Projects & community."],
+    ]) {
+      await page.goto(new URL(path, process.env.REVIEW_BASE_URL || "http://127.0.0.1:3109").href);
+      const directory = page.getByRole("region", { name, exact: true });
+      const list = directory.getByRole("list");
+      const heading = directory.getByRole("heading", { level: 2 });
+      const grid = await list.evaluate(element => {
+        const { gridTemplateColumns, columnGap, rowGap, marginTop } = getComputedStyle(element);
+        return { gridTemplateColumns, columnGap, rowGap, marginTop };
+      });
+      expect(grid.gridTemplateColumns.split(" ")).toHaveLength(columns);
+      const headingBox = (await heading.boundingBox())!;
+      expect((await list.boundingBox())!.x).toBeCloseTo(headingBox.x, 0);
+      const card = directory.getByRole("listitem").first();
+      const typography = await card.getByRole("heading", { level: 3 }).evaluate(element => ({
+        titleSize: getComputedStyle(element).fontSize,
+        statusSize: getComputedStyle(element.nextElementSibling!).fontSize,
+      }));
+      const styles = { ...grid, ...typography, x: headingBox.x };
+      baseline ??= styles;
+      expect(styles).toEqual(baseline);
+    }
+  });
+}
+
 test("review build loads its assets and supports the complete visitor journey", async ({ page, request }) => {
   const origin = process.env.REVIEW_BASE_URL || "http://127.0.0.1:3109";
   const failedAssets: string[] = [];

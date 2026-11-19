@@ -20,9 +20,13 @@ shows a larger portion of its next frame.
 
 Lab presents the interactive colour comparison from Chromatique.
 Play keeps its project and community directory and its existing interactions.
-A client-side pathname change gives the new main content a 220ms entrance.
-The header and footer stay steady. Initial page loads, hash and query changes
-use the existing browser behaviour. Reduced motion skips the entrance.
+The Work, Lab and Play project directories share the same gutters, responsive
+grid, and card typography. Lab and Play show project covers.
+
+On a client-side pathname change, the new main content fades and rises over
+280ms, and the active navigation underline draws in over 220ms. The header
+and footer stay in place. Initial loads, hash navigation and query changes
+use the existing browser behaviour. Reduced motion skips both animations.
 
 ## Typography
 

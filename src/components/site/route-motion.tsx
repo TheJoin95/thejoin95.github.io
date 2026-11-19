@@ -13,17 +13,26 @@ export function RouteMotion({ pathname }: { pathname: string }) {
     const main = document.getElementById("main-content");
     if (preference.matches || !main?.animate) return;
 
+    const easing = "cubic-bezier(0.2, 0.7, 0.3, 1)";
     const entrance = main.animate(
-      [{ opacity: 0.78, translate: "0 6px" }, { opacity: 1, translate: "none" }],
-      { duration: 220, easing: "cubic-bezier(0.2, 0.7, 0.3, 1)" },
+      [{ opacity: 0.64, translate: "0 12px" }, { opacity: 1, translate: "none" }],
+      { duration: 280, easing },
     );
+    const indicator = document.querySelector<HTMLElement>("[data-nav-indicator]")?.animate(
+      [{ opacity: 0.45, scale: "0.35 1" }, { opacity: 1, scale: "1 1" }],
+      { duration: 220, easing },
+    );
+    const cancel = () => {
+      entrance.cancel();
+      indicator?.cancel();
+    };
     const respectPreference = () => {
-      if (preference.matches) entrance.cancel();
+      if (preference.matches) cancel();
     };
     preference.addEventListener("change", respectPreference);
     return () => {
       preference.removeEventListener("change", respectPreference);
-      entrance.cancel();
+      cancel();
     };
   }, [pathname]);
 

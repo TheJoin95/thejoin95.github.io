@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { PaletteStage } from "@/components/home/palette-stage";
 import { PageIntro } from "@/components/site/primitives";
-import { ProjectDirectory } from "@/components/projects/project-directory";
+import { ProjectDirectorySection } from "@/components/projects/project-directory";
 import { sideProjectCaseStudies } from "@/content/work";
 import { siteStyles } from "@/components/site/styles";
 import { pageMetadata, serializeStructuredData } from "@/lib/seo";
@@ -33,11 +33,9 @@ export default function Lab() {
   return <>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeStructuredData(structuredData) }} />
     <PageIntro title="Lab"><p>Side projects, open-source contributions, and experiments you can try.</p></PageIntro>
-    <section className={`${siteStyles.container} ${siteStyles.sectionSpace}`} aria-labelledby="lab-projects">
-      <h2 id="lab-projects" className={siteStyles.sectionTitle}>Project case studies</h2>
-      <ProjectDirectory entries={sideProjectCaseStudies} showPreviews />
-      <Link href="/play#github-projects" className={`${siteStyles.link} mt-8 underline underline-offset-4`}>Browse the GitHub project index</Link>
-    </section>
+    <ProjectDirectorySection id="lab-projects" title="Project case studies" entries={sideProjectCaseStudies} showPreviews>
+      <Link href="/play#github-projects" className="underline-offset-4">Browse the GitHub project index</Link>
+    </ProjectDirectorySection>
     <section aria-labelledby="lab-colour-title">
       <div className={`${siteStyles.editorialRow} pb-8`}>
         <h2 id="lab-colour-title" className={siteStyles.sectionTitle}>A photograph, two palettes.</h2>

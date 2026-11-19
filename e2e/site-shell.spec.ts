@@ -105,14 +105,16 @@ test("Lab is crawlable and offers a working colour experiment", async ({ page, r
   await expect(range).toHaveValue("100");
 });
 
-test("client navigation animates the page content and respects reduced motion", async ({ page }) => {
+test("client navigation animates the page content and active underline and respects reduced motion", async ({ page }) => {
   await page.emulateMedia({ reducedMotion: "no-preference" });
   await page.addInitScript(() => {
     const animate = Element.prototype.animate;
     Element.prototype.animate = function (keyframes, options) {
-      if (this.id === "main-content") {
-        const count = Number(document.body.dataset.routeMotionCount || 0);
-        document.body.dataset.routeMotionCount = String(count + 1);
+      const target = this.id === "main-content" ? "routeMotionCount"
+        : this.hasAttribute("data-nav-indicator") ? "navMotionCount" : null;
+      if (target) {
+        const count = Number(document.body.dataset[target] || 0);
+        document.body.dataset[target] = String(count + 1);
       }
       return animate.call(this, keyframes, options);
     };
@@ -120,17 +122,29 @@ test("client navigation animates the page content and respects reduced motion", 
   await page.goto("/");
   const nav = page.getByRole("navigation", { name: "Primary" });
   await expect(page.locator("body")).not.toHaveAttribute("data-route-motion-count", /.+/);
+  await expect(page.locator("body")).not.toHaveAttribute("data-nav-motion-count", /.+/);
   await nav.getByRole("link", { name: "Lab", exact: true }).click();
   await expect(page.getByRole("heading", { name: "Lab", exact: true })).toBeVisible();
   await expect(page.locator("body")).toHaveAttribute("data-route-motion-count", "1");
+  await expect(page.locator("body")).toHaveAttribute("data-nav-motion-count", "1");
+  await expect(nav.locator('[aria-current="page"] [data-nav-indicator]')).toBeVisible();
+  await page.evaluate(() => history.pushState(null, "", "/lab?view=projects#lab-projects"));
+  await expect(page).toHaveURL(/\/lab\?view=projects#lab-projects$/);
+  await expect(page.locator("body")).toHaveAttribute("data-route-motion-count", "1");
+  await expect(page.locator("body")).toHaveAttribute("data-nav-motion-count", "1");
+  await page.goBack();
+  await expect(page).toHaveURL(/\/lab$/);
   await page.goBack();
   await expect(page.getByRole("heading", { level: 1 })).toContainText("I’m Miki");
   await expect(page.locator("body")).toHaveAttribute("data-route-motion-count", "2");
+  await expect(page.locator("body")).toHaveAttribute("data-nav-motion-count", "1");
 
   await page.emulateMedia({ reducedMotion: "reduce" });
   await nav.getByRole("link", { name: "Work", exact: true }).click();
   await expect(nav.getByRole("link", { name: "Work", exact: true })).toHaveAttribute("aria-current", "page");
+  await expect(nav.locator('[aria-current="page"] [data-nav-indicator]')).toBeVisible();
   await expect(page.locator("body")).toHaveAttribute("data-route-motion-count", "2");
+  await expect(page.locator("body")).toHaveAttribute("data-nav-motion-count", "1");
   await expect(page.locator("main")).toHaveCSS("opacity", "1");
 });
 

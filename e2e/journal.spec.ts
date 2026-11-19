@@ -24,9 +24,10 @@ test("all historical routes, source downloads, aliases and assets survive in the
     expect(raw.headers()["x-robots-tag"]).toContain("noindex");
     expect(hash(await raw.body())).toBe(record.sha256);
     for (const alias of record.aliases) {
-      const redirect = await request.get(alias, { maxRedirects: 0 });
+      const redirect = await request.get(`${alias}?source=legacy`, { maxRedirects: 0 });
       expect(redirect.status()).toBe(308);
-      expect(redirect.headers().location).toBe(record.canonical);
+      const destination = new URL(redirect.headers().location, redirect.url());
+      expect(destination.href).toBe(new URL(`${record.canonical}?source=legacy`, redirect.url()).href);
     }
     for (const image of await page.locator("article img").all()) {
       expect(await image.getAttribute("src")).toMatch(/^\/media\/blog\//);

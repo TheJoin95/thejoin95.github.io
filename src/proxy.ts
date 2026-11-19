@@ -6,13 +6,19 @@ import publishedSlugs from "./content/journal-routes.json";
 // Reject unknown/private articles before the cached page shell starts streaming.
 // A streamed notFound() alone would retain HTTP 200 under Cache Components.
 export function proxy(request: NextRequest) {
-  const slug = request.nextUrl.pathname.split("/")[2];
-  const unknownArticle = request.nextUrl.pathname.startsWith("/blog/") && !publishedSlugs.includes(slug);
-  const unknownStory = request.nextUrl.pathname.startsWith("/work/") && !findCaseStudy(slug);
+  const { pathname, search } = request.nextUrl;
+  const slug = pathname.split("/")[2];
+  // Netlify runs the proxy before Next config redirects. Resolve the preserved
+  // alias here before the unpublished-article check.
+  const supermarketAlias = pathname === "/blog/2021-04-16-covid19-supermarket-waiting-times-2020-recap";
+  const unknownArticle = pathname.startsWith("/blog/") && !supermarketAlias && !publishedSlugs.includes(slug);
+  const unknownStory = pathname.startsWith("/work/") && !findCaseStudy(slug);
   if (unknownArticle || unknownStory) {
     return NextResponse.rewrite(new URL("/not-found", request.url), { status: 404, headers: { "X-Robots-Tag": "noindex" } });
   }
-  const response = NextResponse.next();
+  const response = supermarketAlias
+    ? NextResponse.redirect(new URL(`/blog/2021-04-17-covid19-supermarket-waiting-times-2020-recap${search}`, request.url), 308)
+    : NextResponse.next();
   const requestHost = (request.headers.get("host") || request.nextUrl.host).toLowerCase();
   if (!siteIndexable() || requestHost !== new URL(siteOrigin()).host) response.headers.set("X-Robots-Tag", "noindex, follow");
   return response;

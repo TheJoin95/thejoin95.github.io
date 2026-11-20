@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
 import { siteOrigin } from "./seo-config";
 
-export const defaultShareAlt = "Miki Lombardi — Engineering, with curiosity.";
+export const defaultShareAlt = "Miki Lombardi — Software engineering & open source";
 export const publicPages = ["/", "/work", "/blog", "/about", "/play", "/lab"] as const;
 export function pageMetadata({ title, description, path, image = "/opengraph-image", imageAlt = defaultShareAlt }: {
   title: string; description: string; path: string; image?: string; imageAlt?: string;
 }): Metadata {
   const url = new URL(path, siteOrigin()).href;
-  const images = [{ url: new URL(image, siteOrigin()).href, alt: imageAlt, width: 1200, height: 630 }];
+  const shareImage = { url: new URL(image, siteOrigin()).href, alt: imageAlt, width: 1200, height: 630 };
   return { title, description, alternates: { canonical: url, types: { "application/rss+xml": new URL("/rss.xml", siteOrigin()).href } },
-    openGraph: { type: "website", url, title: `${title} — Miki Lombardi`, description, siteName: "Miki Lombardi", images },
-    twitter: { card: "summary_large_image", title: `${title} — Miki Lombardi`, description, images } };
+    openGraph: { type: "website", url, title: `${title} — Miki Lombardi`, description, siteName: "Miki Lombardi", images: [{ ...shareImage, type: "image/png" }] },
+    twitter: { card: "summary_large_image", title: `${title} — Miki Lombardi`, description, images: [shareImage] } };
 }
 export function serializeStructuredData(value: unknown) { return JSON.stringify(value).replace(/</g, "\\u003c"); }
 

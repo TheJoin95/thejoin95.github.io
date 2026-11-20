@@ -1,8 +1,28 @@
 import { test, expect } from "@playwright/test";
-import { writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 import slugs from "../src/content/journal-routes.json";
-const pages = ["/", "/work", "/about", "/blog", "/play"];
+const pages = ["/", "/work", "/about", "/blog", "/play", "/lab"];
 const article = "/blog/2019-12-21-microfrontend-from-00-to-20s";
+
+test("the branded favicon and home-screen icon are advertised and served", async ({ page, request }) => {
+  await page.goto("/");
+  const favicon = page.locator('head link[rel="icon"]');
+  const appleIcon = page.locator('head link[rel="apple-touch-icon"]');
+  await expect(favicon).toHaveAttribute("href", /^\/favicon\.ico(?:\?|$)/);
+  await expect(appleIcon).toHaveAttribute("sizes", "180x180");
+  const icon = await request.get((await favicon.getAttribute("href"))!);
+  expect(icon.ok()).toBe(true);
+  expect(icon.headers()["content-type"]).toMatch(/^image\/(x-icon|vnd.microsoft.icon)/);
+  const bytes = await icon.body();
+  expect(bytes.equals(readFileSync("src/app/favicon.ico"))).toBe(true);
+  expect(bytes.readUInt16LE(4)).toBe(3);
+  expect([bytes[6], bytes[22], bytes[38]]).toEqual([16, 32, 48]);
+  const touch = await request.get((await appleIcon.getAttribute("href"))!);
+  expect(touch.ok()).toBe(true);
+  expect(touch.headers()["content-type"]).toContain("image/png");
+  expect((await touch.body()).equals(readFileSync("src/app/apple-icon.png"))).toBe(true);
+});
+
 test("all public pages serve consistent metadata, noindex and social PNGs to crawlers without JavaScript", async ({ browser, request }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();
@@ -16,8 +36,10 @@ test("all public pages serve consistent metadata, noindex and social PNGs to cra
     await expect(page.locator('meta[name="twitter:card"]')).toHaveAttribute("content", "summary_large_image");
     await expect(page.locator('meta[property="og:image:width"]')).toHaveAttribute("content", "1200");
     await expect(page.locator('meta[property="og:image:height"]')).toHaveAttribute("content", "630");
-    const image = await page.locator('meta[property="og:image"]').getAttribute("content");
-    expect(image).toMatch(/^http:\/\/127.0.0.1:3109\//);
+    await expect(page.locator('meta[property="og:image:type"]')).toHaveAttribute("content", "image/png");
+    const image = path === article ? `http://127.0.0.1:3109${article}/share` : "http://127.0.0.1:3109/opengraph-image";
+    await expect(page.locator('meta[property="og:image"]')).toHaveAttribute("content", image);
+    await expect(page.locator('meta[name="twitter:image"]')).toHaveAttribute("content", image);
     expect(await page.locator('meta[property="og:image:alt"]').getAttribute("content")).toBeTruthy();
     await expect(page.locator('link[type="application/rss+xml"]')).toHaveAttribute("href", "http://127.0.0.1:3109/rss.xml");
     const png = await request.get(image!);

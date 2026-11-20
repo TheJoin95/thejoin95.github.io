@@ -75,10 +75,14 @@ test("RSS parses as XML, contains all public articles and prelaunch sitemap stay
   }
 });
 test("three specific project cards and the missing-project fallback return real PNGs", async ({ request, page }) => {
+  const defaultCard = await request.get("/opengraph-image");
+  expect(defaultCard.ok()).toBe(true);
+  const defaultBytes = await defaultCard.body();
   for (const id of ["imagegonord", "supermarket", "chromatique", "missing-project"]) {
     const response = await request.get(`/share/projects/${id}`);
     expect(response.status()).toBe(200); expect(response.headers()["content-type"]).toContain("image/png");
     const bytes = await response.body(); expect(bytes.readUInt32BE(16)).toBe(1200); expect(bytes.readUInt32BE(20)).toBe(630);
+    expect(bytes.equals(defaultBytes)).toBe(id === "missing-project");
     writeFileSync(`/tmp/mic25-share-${id}.png`, bytes);
   }
   await page.goto("/work");

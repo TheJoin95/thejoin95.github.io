@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { siteOrigin } from "./seo-config";
 
-export const defaultShareAlt = "Miki Lombardi — Software engineering & open source";
+export const defaultShareAlt = "Portrait of Miki Lombardi. Software engineering & open source.";
 export const publicPages = ["/", "/work", "/blog", "/about", "/play", "/lab"] as const;
 export function pageMetadata({ title, description, path, image = "/opengraph-image", imageAlt = defaultShareAlt }: {
   title: string; description: string; path: string; image?: string; imageAlt?: string;

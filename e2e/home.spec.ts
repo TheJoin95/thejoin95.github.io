@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import sharp from "sharp";
 
 for (const width of [390, 834, 1440]) {
   test(`homepage composition and real destinations at ${width}px`, async ({ page }) => {
@@ -62,6 +63,10 @@ test("homepage exposes canonical, structured data and actual social image bytes"
   expect(bytes.toString("ascii", 1, 4)).toBe("PNG");
   expect(bytes.readUInt32BE(16)).toBe(1200);
   expect(bytes.readUInt32BE(20)).toBe(630);
+  await expect(page.locator('meta[property="og:image:alt"]')).toHaveAttribute("content", "Portrait of Miki Lombardi. Software engineering & open source.");
+  const portrait = await sharp(bytes).extract({ left: 700, top: 40, width: 460, height: 550 }).removeAlpha().toBuffer();
+  const { channels } = await sharp(portrait).stats();
+  expect(channels.slice(0, 3).every(channel => channel.stdev > 30)).toBe(true);
   const twitter = await page.locator('meta[name="twitter:image"]').getAttribute("content");
   expect((await page.request.get(twitter!)).status()).toBe(200);
   const crawler = await page.request.get("/", { headers: { "User-Agent": "Twitterbot/1.0" } });

@@ -1,9 +1,9 @@
 # Miki Lombardi website
 
 Next.js App Router + React + TypeScript, managed with Bun. Tailwind CSS and
-Radix-based shadcn/ui provide the UI foundation. Google Analytics 4 handles optional
-analytics; Brevo handles newsletter double opt in. The palette comparison uses
-HTML images and native controls.
+Radix-based shadcn/ui provide the UI foundation. Umami and optional Google
+Analytics 4 handle analytics; Brevo handles newsletter double opt in. The
+palette comparison uses HTML images and native controls.
 
 Start with the [maintenance guide](docs/maintenance/README.md) to
 [create a blog post](docs/publishing/journal.md#create-a-blog-post-step-by-step),
@@ -128,17 +128,25 @@ embedded at build time; rebuild after changing them. Keep `.env.local` untracked
 
 ### Analytics
 
+Umami automatically tracks production pageviews, including App Router navigation,
+and link/button clicks. Existing contact, CV download and newsletter actions are
+sent to both providers. Umami loads automatically only on the canonical HTTPS
+production origin; local, preview, Netlify-alias and Vercel-alias origins are
+excluded. Generic click events contain only the element kind and page path; form
+values, click text and target URLs are not sent. This integration does not add a
+cookie-consent prompt or user identification.
+
 Set `NEXT_PUBLIC_GA_MEASUREMENT_ID` to your GA4 web stream's measurement ID
 (for example, `G-XXXXXXXXXX`). The official `@next/third-parties/google`
-integration loads Google Analytics after hydration. Tracking is disabled when
-the ID is missing or invalid, in development, and on Vercel preview deployments.
+integration loads Google Analytics after hydration. GA4 tracking is disabled when
+the ID is missing or invalid, outside production, or off the canonical origin.
 No subscriber email is sent to analytics.
 
 In GA4, enable Enhanced Measurement and its "Page changes based on browser
 history events" setting to track Next.js client-side navigation. Do not also
-send manual pageviews or install another Google tag for the same stream.
-Connect your site's consent management before enabling analytics where required.
-After deployment, verify pageviews in GA4 Realtime or DebugView.
+send manual pageviews or install another Google tag for the same stream. Check
+applicable privacy requirements for GA4 before enabling it. After deployment,
+verify pageviews in GA4 Realtime or DebugView and in Umami.
 See [Next.js's Google Analytics guide](https://nextjs.org/docs/app/guides/third-party-libraries#google-analytics).
 
 ### Newsletter
